@@ -1,0 +1,5 @@
+# Presentación {.unnumbered}
+
+La obra sigue el recorrido de un primer curso universitario de probabilidad: conjuntos, espacios muestrales, eventos, axiomas, probabilidad condicional, Bayes, variables aleatorias, esperanza, distribuciones conjuntas y distribuciones discretas y continuas importantes.
+
+A diferencia del libro aplicado, aquí se desarrollarán con mayor detalle las definiciones, propiedades y demostraciones, procurando mantener un nivel accesible para estudiantes de ingeniería y ciencias con formación en cálculo.
