@@ -150,163 +150,183 @@
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html",
-    "href": "02-conjuntos-espacios-eventos.html",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "objectID": "02-espacios-eventos.html",
+    "href": "02-espacios-eventos.html",
+    "title": "3  Espacios muestrales y álgebra de eventos",
     "section": "",
-    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante será capaz de formular con precisión el espacio muestral de un experimento, representar eventos como subconjuntos, utilizar operaciones de conjuntos para construir eventos compuestos y distinguir entre espacios muestrales discretos y continuos.",
+    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante podrá:",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#lenguaje-de-conjuntos",
-    "href": "02-conjuntos-espacios-eventos.html#lenguaje-de-conjuntos",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "objectID": "02-espacios-eventos.html#objetivos",
+    "href": "02-espacios-eventos.html#objetivos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "",
+    "text": "formular con precisión un espacio muestral;\nrepresentar eventos como subconjuntos del espacio muestral;\ndistinguir puntos muestrales, eventos y familias de eventos;\ndemostrar identidades del álgebra de conjuntos mediante argumentos de pertenencia;\nreconocer particiones y eventos mutuamente excluyentes;\nrelacionar el enfoque elemental de eventos con la terna \\((\\Omega,\\mathcal{F},P)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#lenguaje-de-conjuntos",
+    "href": "02-espacios-eventos.html#lenguaje-de-conjuntos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
     "section": "3.2 Lenguaje de conjuntos",
-    "text": "3.2 Lenguaje de conjuntos\nLa teoría de probabilidad se apoya en el lenguaje de conjuntos. Un conjunto es una colección de elementos bien determinados. Si \\(x\\) pertenece a \\(A\\), escribimos \\(x\\in A\\); si no pertenece, \\(x\\notin A\\).\nDecimos que \\(A\\) es subconjunto de \\(B\\) cuando\n\\[\nA\\subseteq B\n\\]\nsi todo elemento de \\(A\\) pertenece también a \\(B\\).\nEl conjunto vacío se denota por \\(\\varnothing\\).",
+    "text": "3.2 Lenguaje de conjuntos\nLa teoría de probabilidad utiliza el lenguaje de conjuntos para separar dos niveles:\n\nel resultado individual de un experimento;\nlas afirmaciones acerca de ese resultado.\n\nUn conjunto es una colección bien definida de objetos. Si \\(x\\) es elemento de \\(A\\), escribimos \\(x\\in A\\). La negación se expresa como \\(x\\notin A\\).\n\nInclusión e igualdad\nSean \\(A\\) y \\(B\\) conjuntos. Definimos\n\\[\nA\\subseteq B\n\\quad\\Longleftrightarrow\\quad\n\\forall x\\,(x\\in A\\Rightarrow x\\in B).\n\\]\nLa igualdad queda caracterizada por doble inclusión:\n\\[\nA=B\n\\quad\\Longleftrightarrow\\quad\nA\\subseteq B\\text{ y }B\\subseteq A.\n\\]\nEsta caracterización será nuestra herramienta principal para demostrar identidades entre eventos.\n\n\nConjunto vacío y conjunto potencia\nEl conjunto vacío, \\(\\varnothing\\), no contiene elementos. Es subconjunto de cualquier conjunto.\nEl conjunto potencia de \\(\\Omega\\), denotado por \\(\\mathcal{P}(\\Omega)\\), es la colección de todos sus subconjuntos:\n\\[\n\\mathcal{P}(\\Omega)=\\{A:A\\subseteq\\Omega\\}.\n\\]\nSi \\(\\Omega\\) tiene \\(n\\) elementos, entonces\n\\[\n|\\mathcal{P}(\\Omega)|=2^n.\n\\]\nEn efecto, para formar un subconjunto decidimos, para cada uno de los \\(n\\) elementos, incluirlo o no incluirlo. Existen dos decisiones independientes por elemento, lo que produce \\(2^n\\) subconjuntos.\n\n\nProducto cartesiano\nEl producto cartesiano de \\(A\\) y \\(B\\) es\n\\[\nA\\times B=\\{(a,b):a\\in A,\\ b\\in B\\}.\n\\]\nSi \\(A\\) y \\(B\\) son finitos,\n\\[\n|A\\times B|=|A|\\,|B|.\n\\]\nLos productos cartesianos permiten describir experimentos compuestos. Dos lanzamientos de un dado tienen como espacio muestral\n\\[\n\\{1,2,3,4,5,6\\}\\times\\{1,2,3,4,5,6\\}.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#operaciones-fundamentales",
-    "href": "02-conjuntos-espacios-eventos.html#operaciones-fundamentales",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.3 Operaciones fundamentales",
-    "text": "3.3 Operaciones fundamentales\nSean \\(A\\) y \\(B\\) subconjuntos de un conjunto universal \\(S\\).\nLa unión se define por\n\\[\nA\\cup B=\\{x:x\\in A\\text{ o }x\\in B\\}.\n\\]\nLa intersección se define por\n\\[\nA\\cap B=\\{x:x\\in A\\text{ y }x\\in B\\}.\n\\]\nEl complemento de \\(A\\) respecto de \\(S\\) es\n\\[\nA^c=\\{x\\in S:x\\notin A\\}.\n\\]\nLa diferencia de conjuntos es\n\\[\nA\\setminus B=\\{x\\in A:x\\notin B\\}.\n\\]\nDos conjuntos son disjuntos cuando\n\\[\nA\\cap B=\\varnothing.\n\\]",
+    "objectID": "02-espacios-eventos.html#operaciones-con-conjuntos",
+    "href": "02-espacios-eventos.html#operaciones-con-conjuntos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.3 Operaciones con conjuntos",
+    "text": "3.3 Operaciones con conjuntos\nPara \\(A,B\\subseteq\\Omega\\), definimos:\n\\[\nA\\cup B=\\{x\\in\\Omega:x\\in A\\text{ o }x\\in B\\},\n\\]\n\\[\nA\\cap B=\\{x\\in\\Omega:x\\in A\\text{ y }x\\in B\\},\n\\]\n\\[\nA\\setminus B=\\{x\\in\\Omega:x\\in A\\text{ y }x\\notin B\\},\n\\]\n\\[\nA^c=\\Omega\\setminus A.\n\\]\nLa diferencia simétrica es\n\\[\nA\\triangle B=(A\\setminus B)\\cup(B\\setminus A).\n\\]\nTambién puede escribirse como\n\\[\nA\\triangle B=(A\\cup B)\\setminus(A\\cap B).\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#propiedades-algebraicas",
-    "href": "02-conjuntos-espacios-eventos.html#propiedades-algebraicas",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.4 Propiedades algebraicas",
-    "text": "3.4 Propiedades algebraicas\nLas operaciones de conjuntos satisfacen leyes que serán utilizadas después para obtener reglas de probabilidad.\n\nConmutatividad\n\\[\nA\\cup B=B\\cup A,\n\\]\n\\[\nA\\cap B=B\\cap A.\n\\]\n\n\nAsociatividad\n\\[\n(A\\cup B)\\cup C=A\\cup(B\\cup C),\n\\]\n\\[\n(A\\cap B)\\cap C=A\\cap(B\\cap C).\n\\]\n\n\nDistributividad\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C),\n\\]\n\\[\nA\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C).\n\\]\n\n\nLeyes de De Morgan\n\\[\n(A\\cup B)^c=A^c\\cap B^c,\n\\]\n\\[\n(A\\cap B)^c=A^c\\cup B^c.\n\\]\nEstas identidades permiten transformar expresiones de eventos sin alterar su significado.",
+    "objectID": "02-espacios-eventos.html#propiedades-del-álgebra-de-conjuntos",
+    "href": "02-espacios-eventos.html#propiedades-del-álgebra-de-conjuntos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.4 Propiedades del álgebra de conjuntos",
+    "text": "3.4 Propiedades del álgebra de conjuntos\nPara cualesquiera \\(A,B,C\\subseteq\\Omega\\) se cumplen:\n\nLeyes conmutativas\n\\[\nA\\cup B=B\\cup A,\n\\qquad\nA\\cap B=B\\cap A.\n\\]\n\n\nLeyes asociativas\n\\[\n(A\\cup B)\\cup C=A\\cup(B\\cup C),\n\\]\n\\[\n(A\\cap B)\\cap C=A\\cap(B\\cap C).\n\\]\n\n\nLeyes distributivas\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C),\n\\]\n\\[\nA\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C).\n\\]\n\n\nLeyes de identidad y complemento\n\\[\nA\\cup\\varnothing=A,\n\\qquad\nA\\cap\\Omega=A,\n\\]\n\\[\nA\\cup\\Omega=\\Omega,\n\\qquad\nA\\cap\\varnothing=\\varnothing,\n\\]\n\\[\nA\\cup A^c=\\Omega,\n\\qquad\nA\\cap A^c=\\varnothing,\n\\]\n\\[\n(A^c)^c=A.\n\\]\n\n\nLeyes de De Morgan\n\\[\n(A\\cup B)^c=A^c\\cap B^c,\n\\]\n\\[\n(A\\cap B)^c=A^c\\cup B^c.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#experimentos-y-resultados",
-    "href": "02-conjuntos-espacios-eventos.html#experimentos-y-resultados",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.5 Experimentos y resultados",
-    "text": "3.5 Experimentos y resultados\nUn experimento aleatorio es un procedimiento que, bajo una descripción suficientemente precisa, puede producir distintos resultados posibles y cuyo resultado particular no se conoce con certeza antes de realizarlo.\nCada posible resultado individual se denomina resultado elemental o punto muestral.",
+    "objectID": "02-espacios-eventos.html#demostraciones-por-pertenencia",
+    "href": "02-espacios-eventos.html#demostraciones-por-pertenencia",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.5 Demostraciones por pertenencia",
+    "text": "3.5 Demostraciones por pertenencia\n\nPrimera ley de De Morgan\nDemostraremos\n\\[\n(A\\cup B)^c=A^c\\cap B^c.\n\\]\nSea \\(x\\in\\Omega\\). Entonces\n\\[\n\\begin{aligned}\nx\\in(A\\cup B)^c\n&\\Longleftrightarrow x\\notin A\\cup B\\\\\n&\\Longleftrightarrow (x\\notin A)\\text{ y }(x\\notin B)\\\\\n&\\Longleftrightarrow (x\\in A^c)\\text{ y }(x\\in B^c)\\\\\n&\\Longleftrightarrow x\\in A^c\\cap B^c.\n\\end{aligned}\n\\]\nComo la equivalencia se cumple para todo \\(x\\in\\Omega\\), los conjuntos son iguales.\n\n\nLey distributiva\nDemostremos\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C).\n\\]\nPara cualquier \\(x\\in\\Omega\\),\n\\[\n\\begin{aligned}\nx\\in A\\cap(B\\cup C)\n&\\Longleftrightarrow x\\in A\\text{ y }(x\\in B\\text{ o }x\\in C)\\\\\n&\\Longleftrightarrow (x\\in A\\text{ y }x\\in B)\n\\text{ o }(x\\in A\\text{ y }x\\in C)\\\\\n&\\Longleftrightarrow x\\in(A\\cap B)\\cup(A\\cap C).\n\\end{aligned}\n\\]\nLa demostración reproduce una ley distributiva de la lógica proposicional. Esta correspondencia entre lógica y conjuntos será constante en probabilidad.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#espacio-muestral",
-    "href": "02-conjuntos-espacios-eventos.html#espacio-muestral",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.6 Espacio muestral",
-    "text": "3.6 Espacio muestral\nEl espacio muestral \\(S\\) o \\(\\Omega\\) de un experimento es el conjunto de todos los resultados elementales considerados por el modelo.\nLa elección de \\(S\\) depende del nivel de descripción pertinente.\n\nEjemplo\nEn dos lanzamientos de una moneda,\n\\[\nS=\\{CC,CX,XC,XX\\}.\n\\]\nSi solo interesa el número de caras, puede utilizarse en cambio\n\\[\nS'=\\{0,1,2\\}.\n\\]\nAmbos espacios describen el mismo procedimiento físico desde perspectivas distintas. Esto muestra que el espacio muestral forma parte del modelo matemático y no es simplemente una lista impuesta por el fenómeno.",
+    "objectID": "02-espacios-eventos.html#experimento-aleatorio-y-espacio-muestral",
+    "href": "02-espacios-eventos.html#experimento-aleatorio-y-espacio-muestral",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.6 Experimento aleatorio y espacio muestral",
+    "text": "3.6 Experimento aleatorio y espacio muestral\nUn experimento aleatorio es un procedimiento cuyo resultado concreto no se conoce antes de realizarlo, aunque el conjunto de resultados posibles pueda especificarse.\nEl espacio muestral \\(\\Omega\\) es el conjunto de todos los resultados posibles que distingue el modelo. Sus elementos \\(\\omega\\in\\Omega\\) reciben el nombre de puntos muestrales.\nLa frase “que distingue el modelo” es importante. Un mismo procedimiento admite diferentes espacios muestrales según la información que se registre.\n\nEjemplo\nAl lanzar un dado y registrar el número de puntos,\n\\[\n\\Omega_1=\\{1,2,3,4,5,6\\}.\n\\]\nSi sólo se registra la paridad,\n\\[\n\\Omega_2=\\{\\text{par},\\text{impar}\\}.\n\\]\nExiste una función \\(g:\\Omega_1\\to\\Omega_2\\) que asigna a cada número su paridad. El segundo modelo es una descripción menos fina del primero.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#espacios-discretos-y-continuos",
-    "href": "02-conjuntos-espacios-eventos.html#espacios-discretos-y-continuos",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.7 Espacios discretos y continuos",
-    "text": "3.7 Espacios discretos y continuos\nUn espacio muestral es discreto cuando es finito o infinito numerable.\nPor ejemplo,\n\\[\nS=\\{0,1,2,\\ldots\\}\n\\]\npuede representar un número de intentos.\nUn espacio muestral es continuo cuando contiene un intervalo de números reales o, más generalmente, una colección no numerable de resultados.\nPor ejemplo,\n\\[\nS=[0,\\infty)\n\\]\npuede representar un tiempo de vida.\nEsta distinción será esencial al introducir variables aleatorias discretas y continuas.",
+    "objectID": "02-espacios-eventos.html#clasificación-de-espacios-muestrales",
+    "href": "02-espacios-eventos.html#clasificación-de-espacios-muestrales",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.7 Clasificación de espacios muestrales",
+    "text": "3.7 Clasificación de espacios muestrales\n\nEspacio finito\n\\(\\Omega\\) contiene un número finito de puntos. Por ejemplo, para dos bits transmitidos,\n\\[\n\\Omega=\\{00,01,10,11\\}.\n\\]\n\n\nEspacio infinito numerable\nSus puntos pueden ponerse en correspondencia con un subconjunto de los números naturales. El número de intentos hasta obtener el primer éxito tiene espacio muestral\n\\[\n\\Omega=\\{1,2,3,\\ldots\\}.\n\\]\n\n\nEspacio no numerable\nContiene un continuo de resultados. El tiempo de vida de un dispositivo puede modelarse mediante\n\\[\n\\Omega=[0,\\infty).\n\\]\nLa distinción entre espacios discretos y continuos determinará posteriormente cómo se asignan probabilidades y cómo se definen las variables aleatorias.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#eventos",
-    "href": "02-conjuntos-espacios-eventos.html#eventos",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.8 Eventos",
-    "text": "3.8 Eventos\nEn un enfoque elemental, un evento es un subconjunto del espacio muestral.\nSi el resultado observado \\(\\omega\\) pertenece a \\(A\\), decimos que ocurre el evento \\(A\\).\nEl evento imposible es\n\\[\n\\varnothing,\n\\]\ny el evento seguro es\n\\[\nS.\n\\]\nUn evento que contiene un único resultado elemental puede llamarse evento simple; uno que contiene varios resultados es un evento compuesto.",
+    "objectID": "02-espacios-eventos.html#eventos-como-subconjuntos",
+    "href": "02-espacios-eventos.html#eventos-como-subconjuntos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.8 Eventos como subconjuntos",
+    "text": "3.8 Eventos como subconjuntos\nUn evento \\(A\\) es un subconjunto de \\(\\Omega\\). Decimos que \\(A\\) ocurre si el resultado observado \\(\\omega\\) pertenece a \\(A\\).\nEsta definición distingue correctamente:\n\npunto muestral: \\(\\omega\\in\\Omega\\);\nevento elemental: \\(\\{\\omega\\}\\subseteq\\Omega\\);\nevento general: \\(A\\subseteq\\Omega\\).\n\nEl evento seguro es \\(\\Omega\\) y el evento imposible es \\(\\varnothing\\).\n\nEjemplo\nPara \\(\\Omega=\\{1,2,3,4,5,6\\}\\), definamos\n\\[\nA=\\{2,4,6\\},\\qquad B=\\{4,5,6\\}.\n\\]\n\\(A\\) es el evento “resultado par” y \\(B\\) es “resultado mayor que 3”. De aquí,\n\\[\nA\\cap B=\\{4,6\\},\n\\]\n\\[\nA\\cup B=\\{2,4,5,6\\},\n\\]\n\\[\nA^c=\\{1,3,5\\}.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#combinación-de-eventos",
-    "href": "02-conjuntos-espacios-eventos.html#combinación-de-eventos",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.9 Combinación de eventos",
-    "text": "3.9 Combinación de eventos\nLas operaciones de conjuntos adquieren una interpretación probabilística directa:\n\n\\(A\\cup B\\): ocurre \\(A\\), ocurre \\(B\\) o ocurren ambos;\n\\(A\\cap B\\): ocurren simultáneamente \\(A\\) y \\(B\\);\n\\(A^c\\): no ocurre \\(A\\);\n\\(A\\setminus B\\): ocurre \\(A\\) pero no \\(B\\).\n\nSi\n\\[\nA\\cap B=\\varnothing,\n\\]\nlos eventos son mutuamente excluyentes o disjuntos.",
+    "objectID": "02-espacios-eventos.html#eventos-disjuntos-y-familias-exhaustivas",
+    "href": "02-espacios-eventos.html#eventos-disjuntos-y-familias-exhaustivas",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.9 Eventos disjuntos y familias exhaustivas",
+    "text": "3.9 Eventos disjuntos y familias exhaustivas\nDos eventos \\(A\\) y \\(B\\) son mutuamente excluyentes o disjuntos si\n\\[\nA\\cap B=\\varnothing.\n\\]\nUna familia \\(A_1,\\ldots,A_n\\) es exhaustiva si\n\\[\n\\bigcup_{i=1}^{n}A_i=\\Omega.\n\\]\nLa exhaustividad no implica disjunción. Los eventos pueden cubrir todo \\(\\Omega\\) y superponerse.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#familias-de-eventos",
-    "href": "02-conjuntos-espacios-eventos.html#familias-de-eventos",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.10 Familias de eventos",
-    "text": "3.10 Familias de eventos\nPodemos trabajar con colecciones\n\\[\nA_1,A_2,\\ldots,A_n\n\\]\ny construir\n\\[\n\\bigcup_{i=1}^n A_i\n\\]\no\n\\[\n\\bigcap_{i=1}^n A_i.\n\\]\nCuando la colección es infinita, estas operaciones se escriben como\n\\[\n\\bigcup_{i=1}^{\\infty} A_i,\n\\qquad\n\\bigcap_{i=1}^{\\infty} A_i.\n\\]\nEsta notación será necesaria para formular posteriormente el axioma de aditividad numerable.",
+    "objectID": "02-espacios-eventos.html#particiones",
+    "href": "02-espacios-eventos.html#particiones",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.10 Particiones",
+    "text": "3.10 Particiones\nUna colección no vacía \\(\\{A_i:i\\in I\\}\\) es una partición de \\(\\Omega\\) si:\n\n\\(A_i\\neq\\varnothing\\) para todo \\(i\\);\n\\(A_i\\cap A_j=\\varnothing\\) cuando \\(i\\neq j\\);\n\\(\\bigcup_{i\\in I}A_i=\\Omega\\).\n\nCada punto muestral pertenece exactamente a un bloque de la partición.\n\nEjemplo\nEn \\(\\Omega=\\{1,2,3,4,5,6\\}\\),\n\\[\nA_1=\\{1,3,5\\},\\qquad A_2=\\{2,4,6\\}\n\\]\nforman una partición. En cambio,\n\\[\nB_1=\\{1,2,3\\},\\qquad B_2=\\{3,4,5,6\\}\n\\]\nson exhaustivos, pero no forman una partición porque \\(B_1\\cap B_2=\\{3\\}\\).\nLas particiones serán esenciales para la regla de probabilidad total y el teorema de Bayes.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#particiones-del-espacio-muestral",
-    "href": "02-conjuntos-espacios-eventos.html#particiones-del-espacio-muestral",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.11 Particiones del espacio muestral",
-    "text": "3.11 Particiones del espacio muestral\nUna colección de eventos\n\\[\nA_1,A_2,\\ldots,A_n\n\\]\nforma una partición de \\(S\\) si:\n\n\\(A_i\\cap A_j=\\varnothing\\) para \\(i\\ne j\\);\n\\(\\displaystyle \\bigcup_{i=1}^n A_i=S\\).\n\nLas particiones serán fundamentales para la regla de probabilidad total y el teorema de Bayes.",
+    "objectID": "02-espacios-eventos.html#familias-de-eventos",
+    "href": "02-espacios-eventos.html#familias-de-eventos",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.11 Familias de eventos",
+    "text": "3.11 Familias de eventos\nEn un espacio muestral finito suele tomarse como colección de eventos todo el conjunto potencia:\n\\[\n\\mathcal{F}=\\mathcal{P}(\\Omega).\n\\]\nEn espacios infinitos, especialmente no numerables, no siempre se asigna probabilidad a cada subconjunto. Se selecciona una colección \\(\\mathcal{F}\\) que cumpla propiedades de cierre.\n\nDefinición: sigma-álgebra\nUna colección \\(\\mathcal{F}\\subseteq\\mathcal{P}(\\Omega)\\) es una sigma-álgebra si:\n\n\\(\\Omega\\in\\mathcal{F}\\);\nsi \\(A\\in\\mathcal{F}\\), entonces \\(A^c\\in\\mathcal{F}\\);\nsi \\(A_1,A_2,\\ldots\\in\\mathcal{F}\\), entonces \\(\\bigcup_{i=1}^{\\infty}A_i\\in\\mathcal{F}\\).\n\nLos elementos de \\(\\mathcal{F}\\) son los eventos a los que podrá asignarse probabilidad.\nDe estas condiciones se deduce que \\(\\varnothing\\in\\mathcal{F}\\) y que \\(\\mathcal{F}\\) es cerrada bajo intersecciones numerables. En efecto,\n\\[\n\\bigcap_{i=1}^{\\infty}A_i\n=\n\\left(\\bigcup_{i=1}^{\\infty}A_i^c\\right)^c.\n\\]\nPara el curso elemental bastará, en la mayoría de los ejemplos finitos, trabajar con \\(\\mathcal{P}(\\Omega)\\). La sigma-álgebra explica por qué la terna formal es\n\\[\n(\\Omega,\\mathcal{F},P)\n\\]\ny no solamente \\((\\Omega,P)\\).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#nota-sobre-rigor-matemático",
-    "href": "02-conjuntos-espacios-eventos.html#nota-sobre-rigor-matemático",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.12 Nota sobre rigor matemático",
-    "text": "3.12 Nota sobre rigor matemático\nEn espacios muestrales finitos o numerables, resulta natural pensar que cualquier subconjunto puede utilizarse como evento. En espacios no numerables aparecen cuestiones más delicadas: no todos los subconjuntos son necesariamente apropiados para asignarles probabilidad de manera consistente.\nPor ello, en la formulación rigurosa de un espacio de probabilidad se utiliza una colección \\(\\mathcal F\\) de eventos que satisface propiedades específicas. Más adelante introduciremos esa estructura con mayor detalle; por ahora, para los ejemplos elementales, trabajaremos con los eventos usuales del espacio muestral.",
+    "objectID": "02-espacios-eventos.html#ejemplo-integrador",
+    "href": "02-espacios-eventos.html#ejemplo-integrador",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.12 Ejemplo integrador",
+    "text": "3.12 Ejemplo integrador\nSe inspeccionan dos componentes. Cada uno se clasifica como conforme (\\(C\\)), reparable (\\(R\\)) o desecho (\\(D\\)). Como el orden identifica la posición del componente,\n\\[\n\\Omega=\\{CC,CR,CD,RC,RR,RD,DC,DR,DD\\}.\n\\]\nSea\n\\[\nA=\\{\\omega\\in\\Omega:\\text{al menos un componente es }D\\}\n\\]\ny\n\\[\nB=\\{\\omega\\in\\Omega:\\text{ambos componentes tienen la misma clasificación}\\}.\n\\]\nEntonces\n\\[\nA=\\{CD,RD,DC,DR,DD\\},\n\\]\n\\[\nB=\\{CC,RR,DD\\}.\n\\]\nPor tanto,\n\\[\nA\\cap B=\\{DD\\},\n\\]\n\\[\nA\\setminus B=\\{CD,RD,DC,DR\\},\n\\]\n\\[\n(A\\cup B)^c=\\{CR,RC\\}.\n\\]\nLos eventos\n\\[\nC_0=\\{CC,CR,RC,RR\\},\n\\]\n\\[\nC_1=\\{CD,RD,DC,DR\\},\n\\]\n\\[\nC_2=\\{DD\\}\n\\]\nforman una partición de \\(\\Omega\\) de acuerdo con el número de componentes clasificados como desecho.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#ejemplo-integrador",
-    "href": "02-conjuntos-espacios-eventos.html#ejemplo-integrador",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.13 Ejemplo integrador",
-    "text": "3.13 Ejemplo integrador\nSea\n\\[\nS=\\{1,2,3,4,5,6\\}\n\\]\npara un lanzamiento de dado, y sean\n\\[\nA=\\{2,4,6\\},\n\\qquad\nB=\\{4,5,6\\}.\n\\]\nEntonces\n\\[\nA\\cap B=\\{4,6\\},\n\\]\n\\[\nA\\cup B=\\{2,4,5,6\\},\n\\]\n\\[\nA^c=\\{1,3,5\\},\n\\]\ny\n\\[\nB^c=\\{1,2,3\\}.\n\\]\nLas identidades algebraicas de conjuntos pueden verificarse directamente en este espacio finito.",
+    "objectID": "02-espacios-eventos.html#proposición-caracterización-de-la-inclusión",
+    "href": "02-espacios-eventos.html#proposición-caracterización-de-la-inclusión",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.13 Proposición: caracterización de la inclusión",
+    "text": "3.13 Proposición: caracterización de la inclusión\nPara \\(A,B\\subseteq\\Omega\\), son equivalentes:\n\n\\(A\\subseteq B\\);\n\\(A\\cap B=A\\);\n\\(A\\cup B=B\\).\n\n\nDemostración\nSupongamos \\(A\\subseteq B\\). Si \\(x\\in A\\cap B\\), entonces \\(x\\in A\\); por tanto, \\(A\\cap B\\subseteq A\\). La inclusión contraria se obtiene porque \\(x\\in A\\) implica \\(x\\in B\\), de modo que \\(x\\in A\\cap B\\). Así, \\(A\\cap B=A\\).\nAhora supongamos \\(A\\cap B=A\\). Si \\(x\\in A\\), entonces \\(x\\in A\\cap B\\), y por ello \\(x\\in B\\). Luego \\(A\\subseteq B\\).\nLa equivalencia entre \\(A\\subseteq B\\) y \\(A\\cup B=B\\) se demuestra de manera análoga. \\(\\square\\)",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#ideas-clave",
-    "href": "02-conjuntos-espacios-eventos.html#ideas-clave",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.14 Ideas clave",
-    "text": "3.14 Ideas clave\n\nLa teoría de conjuntos proporciona el lenguaje formal de los eventos.\nUn espacio muestral contiene los resultados elementales considerados por el modelo.\nLa elección del espacio muestral depende del propósito de la modelación.\nLos eventos son subconjuntos del espacio muestral.\nUnión, intersección, complemento y diferencia expresan relaciones lógicas entre eventos.\nLas particiones preparan el camino para probabilidad total y Bayes.\nLa formulación rigurosa de probabilidad requiere especificar una familia adecuada de eventos.",
+    "objectID": "02-espacios-eventos.html#errores-conceptuales-frecuentes",
+    "href": "02-espacios-eventos.html#errores-conceptuales-frecuentes",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.14 Errores conceptuales frecuentes",
+    "text": "3.14 Errores conceptuales frecuentes\n\nEscribir \\(\\omega\\subseteq\\Omega\\) cuando \\(\\omega\\) es un punto muestral; debe escribirse \\(\\omega\\in\\Omega\\).\nConfundir \\(\\varnothing\\) con \\(\\{\\varnothing\\}\\). El primero no tiene elementos; el segundo contiene un elemento.\nAfirmar que eventos disjuntos son independientes. La independencia requiere una definición probabilística posterior.\nCalcular \\(A^c\\) sin especificar el espacio muestral.\nOmitir resultados en experimentos por etapas o tratar pares ordenados como si el orden no importara.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#ejercicios",
-    "href": "02-conjuntos-espacios-eventos.html#ejercicios",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.15 Ejercicios",
-    "text": "3.15 Ejercicios\n\nDemuestra las dos leyes de De Morgan utilizando pertenencia de elementos.\nSea \\(S=\\{1,2,3,4,5,6\\}\\), \\(A=\\{1,2,3\\}\\) y \\(B=\\{3,4,5\\}\\). Calcula unión, intersección, complementos y diferencias.\nConstruye dos espacios muestrales distintos para el experimento de lanzar tres monedas, según dos objetivos de análisis diferentes.\nDa un ejemplo de espacio muestral infinito numerable y otro continuo.\nSean \\(A_1,A_2,A_3\\) eventos disjuntos cuya unión es \\(S\\). Explica por qué forman una partición.\nExpresa mediante operaciones de conjuntos: “ocurre al menos uno de \\(A\\) y \\(B\\)”, “ocurre exactamente uno” y “no ocurre ninguno”.\nDemuestra que \\(A\\setminus B=A\\cap B^c\\).\n★ Explica por qué la afirmación “todo subconjunto de cualquier espacio muestral es un evento” requiere cautela en una teoría rigurosa de probabilidad.",
+    "objectID": "02-espacios-eventos.html#ideas-clave",
+    "href": "02-espacios-eventos.html#ideas-clave",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.15 Ideas clave",
+    "text": "3.15 Ideas clave\n\nEl espacio muestral reúne los resultados que distingue el modelo.\nLos eventos son subconjuntos, no resultados individuales.\nEl álgebra de eventos hereda las leyes del álgebra de conjuntos.\nLas identidades se demuestran rigurosamente mediante pertenencia o doble inclusión.\nUna partición divide \\(\\Omega\\) en bloques no vacíos, disjuntos y exhaustivos.\nLa sigma-álgebra \\(\\mathcal{F}\\) especifica qué subconjuntos se consideran eventos medibles.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
-    "objectID": "02-conjuntos-espacios-eventos.html#referencias-del-capítulo",
-    "href": "02-conjuntos-espacios-eventos.html#referencias-del-capítulo",
-    "title": "3  Conjuntos, espacios muestrales y eventos",
-    "section": "3.16 Referencias del capítulo",
-    "text": "3.16 Referencias del capítulo\nLa secuencia temática conserva el énfasis curricular del programa de Introducción a la Probabilidad de la UASLP en conjuntos, experimentos, espacios muestrales y eventos. La presentación teórica se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "objectID": "02-espacios-eventos.html#ejercicios",
+    "href": "02-espacios-eventos.html#ejercicios",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.16 Ejercicios",
+    "text": "3.16 Ejercicios\n\nConceptos y operaciones\n\nSea \\(\\Omega=\\{1,2,\\ldots,12\\}\\), \\(A\\) el conjunto de múltiplos de 2 y \\(B\\) el conjunto de múltiplos de 3. Obtén \\(A\\cap B\\), \\(A\\cup B\\), \\(A^c\\), \\(B^c\\) y \\(A\\triangle B\\).\nCalcula \\(\\mathcal{P}(\\{a,b,c\\})\\) y verifica que contiene \\(2^3\\) elementos.\nConstruye el espacio muestral de tres lanzamientos de una moneda mediante un producto cartesiano.\nDa un ejemplo de una familia exhaustiva que no sea una partición.\n\n\n\nDemostraciones\n\nDemuestra la segunda ley de De Morgan por pertenencia.\nDemuestra \\(A\\setminus(B\\cup C)=(A\\setminus B)\\cap(A\\setminus C)\\).\nDemuestra \\(A\\triangle B=(A\\cup B)\\setminus(A\\cap B)\\).\nPrueba que \\(A\\subseteq B\\) implica \\(B^c\\subseteq A^c\\).\nDemuestra que una partición finita \\(A_1,\\ldots,A_n\\) satisface que cada \\(\\omega\\in\\Omega\\) pertenece a un único \\(A_i\\).\n\n\n\nModelación\n\nUn experimento registra el estado de tres interruptores, cada uno encendido o apagado. Define \\(\\Omega\\) y los eventos “exactamente dos están encendidos” y “el primero está apagado”.\nSe mide el tiempo hasta la primera falla de un sistema. Propón un espacio muestral continuo y tres eventos expresados mediante intervalos.\nSe extraen dos piezas sin reemplazo de un lote con piezas identificadas. Explica cuándo el orden debe formar parte del punto muestral.\n\n\n\nProfundización\n\nSea \\(\\Omega=\\{1,2,3,4\\}\\). Encuentra una sigma-álgebra que contenga \\(\\{1,2\\}\\) pero que no sea \\(\\mathcal{P}(\\Omega)\\).\nComprueba que \\(\\{\\varnothing,\\Omega\\}\\) y \\(\\mathcal{P}(\\Omega)\\) siempre son sigma-álgebras.\nSi \\(\\mathcal{F}\\) es una sigma-álgebra y \\(A,B\\in\\mathcal{F}\\), demuestra que \\(A\\setminus B\\in\\mathcal{F}\\).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-espacios-eventos.html#referencias-del-capítulo",
+    "href": "02-espacios-eventos.html#referencias-del-capítulo",
+    "title": "3  Espacios muestrales y álgebra de eventos",
+    "section": "3.17 Referencias del capítulo",
+    "text": "3.17 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
   },
   {
