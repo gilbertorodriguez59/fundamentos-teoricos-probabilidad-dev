@@ -63,8 +63,8 @@
     "objectID": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
     "href": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.2 1.1 Fenómenos deterministas y aleatorios",
-    "text": "2.2 1.1 Fenómenos deterministas y aleatorios\nUn fenómeno se denomina determinista cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno aleatorio puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.\nLa aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.",
+    "section": "2.2 Fenómenos deterministas y aleatorios",
+    "text": "2.2 Fenómenos deterministas y aleatorios\nUn fenómeno se denomina determinista cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno aleatorio puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.\nLa aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -73,8 +73,8 @@
     "objectID": "01-incertidumbre-modelos.html#experimento-aleatorio",
     "href": "01-incertidumbre-modelos.html#experimento-aleatorio",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.3 1.2 Experimento aleatorio",
-    "text": "2.3 1.2 Experimento aleatorio\nUn experimento aleatorio es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.\nMás adelante llamaremos espacio muestral a ese conjunto de resultados posibles.",
+    "section": "2.3 Experimento aleatorio",
+    "text": "2.3 Experimento aleatorio\nUn experimento aleatorio es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.\nMás adelante llamaremos espacio muestral a ese conjunto de resultados posibles.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -83,8 +83,8 @@
     "objectID": "01-incertidumbre-modelos.html#regularidad-estadística",
     "href": "01-incertidumbre-modelos.html#regularidad-estadística",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.4 1.3 Regularidad estadística",
-    "text": "2.4 1.3 Regularidad estadística\nAunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.\nSi \\(A\\) es un evento y después de \\(n\\) repeticiones ocurre \\(n_A\\) veces, definimos la frecuencia relativa\n\\[\nf_n(A)=\\frac{n_A}{n}.\n\\]\nEl comportamiento de \\(f_n(A)\\) cuando \\(n\\) aumenta será estudiado posteriormente mediante resultados límite.",
+    "section": "2.4 Regularidad estadística",
+    "text": "2.4 Regularidad estadística\nAunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.\nSi \\(A\\) es un evento y después de \\(n\\) repeticiones ocurre \\(n_A\\) veces, definimos la frecuencia relativa\n\\[\nf_n(A)=\\frac{n_A}{n}.\n\\]\nEl comportamiento de \\(f_n(A)\\) cuando \\(n\\) aumenta será estudiado posteriormente mediante resultados límite.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -93,8 +93,8 @@
     "objectID": "01-incertidumbre-modelos.html#modelo-probabilístico",
     "href": "01-incertidumbre-modelos.html#modelo-probabilístico",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.5 1.4 Modelo probabilístico",
-    "text": "2.5 1.4 Modelo probabilístico\nUn modelo probabilístico elemental consta de dos componentes:\n\nuna descripción de los resultados posibles;\nuna regla que asigna probabilidades a los eventos.\n\nEn una formulación más avanzada, un espacio de probabilidad se representa mediante la terna\n\\[\n(\\Omega,\\mathcal{F},P),\n\\]\ndonde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una colección adecuada de eventos y \\(P\\) es una medida de probabilidad.\nEn este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer \\(P\\).",
+    "section": "2.5 Modelo probabilístico",
+    "text": "2.5 Modelo probabilístico\nUn modelo probabilístico elemental consta de dos componentes:\n\nuna descripción de los resultados posibles;\nuna regla que asigna probabilidades a los eventos.\n\nEn una formulación más avanzada, un espacio de probabilidad se representa mediante la terna\n\\[\n(\\Omega,\\mathcal{F},P),\n\\]\ndonde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una colección adecuada de eventos y \\(P\\) es una medida de probabilidad.\nEn este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer \\(P\\).",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -103,8 +103,8 @@
     "objectID": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
     "href": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.6 1.5 Probabilidad como modelo, no como predicción exacta",
-    "text": "2.6 1.5 Probabilidad como modelo, no como predicción exacta\nAsignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.\nPor ejemplo, si una moneda ideal se modela con\n\\[\nP(\\text{cara})=\\frac12,\n\\]\nesto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.",
+    "section": "2.6 Probabilidad como modelo, no como predicción exacta",
+    "text": "2.6 Probabilidad como modelo, no como predicción exacta\nAsignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.\nPor ejemplo, si una moneda ideal se modela con\n\\[\nP(\\text{cara})=\\frac12,\n\\]\nesto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -113,8 +113,8 @@
     "objectID": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
     "href": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.7 1.6 Papel de la probabilidad en ingeniería y ciencias",
-    "text": "2.7 1.6 Papel de la probabilidad en ingeniería y ciencias\nLos modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.\nLa utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.",
+    "section": "2.7 Papel de la probabilidad en ingeniería y ciencias",
+    "text": "2.7 Papel de la probabilidad en ingeniería y ciencias\nLos modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.\nLa utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -123,8 +123,8 @@
     "objectID": "01-incertidumbre-modelos.html#ideas-clave",
     "href": "01-incertidumbre-modelos.html#ideas-clave",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.8 1.7 Ideas clave",
-    "text": "2.8 1.7 Ideas clave\n\nAleatoriedad no significa ausencia de leyes matemáticas.\nUn experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.\nLa probabilidad se construye sobre eventos asociados a un espacio muestral.\nEl modelo probabilístico abstrae los rasgos relevantes del fenómeno real.",
+    "section": "2.8 Ideas clave",
+    "text": "2.8 Ideas clave\n\nAleatoriedad no significa ausencia de leyes matemáticas.\nUn experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.\nLa probabilidad se construye sobre eventos asociados a un espacio muestral.\nEl modelo probabilístico abstrae los rasgos relevantes del fenómeno real.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -133,8 +133,8 @@
     "objectID": "01-incertidumbre-modelos.html#ejercicios",
     "href": "01-incertidumbre-modelos.html#ejercicios",
     "title": "2  Incertidumbre y modelos probabilísticos",
-    "section": "2.9 1.8 Ejercicios",
-    "text": "2.9 1.8 Ejercicios\n\nDa dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.\nExplica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.\nDescribe los resultados posibles de lanzar dos monedas.\n¿Por qué \\(P(A)=0.7\\) no significa que el evento \\(A\\) ocurrirá siete veces en cada bloque de diez repeticiones?\nExplica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.",
+    "section": "2.9 Ejercicios",
+    "text": "2.9 Ejercicios\n\nDa dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.\nExplica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.\nDescribe los resultados posibles de lanzar dos monedas.\n¿Por qué \\(P(A)=0.7\\) no significa que el evento \\(A\\) ocurrirá siete veces en cada bloque de diez repeticiones?\nExplica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -147,6 +147,166 @@
     "text": "2.10 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html",
+    "href": "02-conjuntos-espacios-eventos.html",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "",
+    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante será capaz de formular con precisión el espacio muestral de un experimento, representar eventos como subconjuntos, utilizar operaciones de conjuntos para construir eventos compuestos y distinguir entre espacios muestrales discretos y continuos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#lenguaje-de-conjuntos",
+    "href": "02-conjuntos-espacios-eventos.html#lenguaje-de-conjuntos",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.2 Lenguaje de conjuntos",
+    "text": "3.2 Lenguaje de conjuntos\nLa teoría de probabilidad se apoya en el lenguaje de conjuntos. Un conjunto es una colección de elementos bien determinados. Si \\(x\\) pertenece a \\(A\\), escribimos \\(x\\in A\\); si no pertenece, \\(x\\notin A\\).\nDecimos que \\(A\\) es subconjunto de \\(B\\) cuando\n\\[\nA\\subseteq B\n\\]\nsi todo elemento de \\(A\\) pertenece también a \\(B\\).\nEl conjunto vacío se denota por \\(\\varnothing\\).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#operaciones-fundamentales",
+    "href": "02-conjuntos-espacios-eventos.html#operaciones-fundamentales",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.3 Operaciones fundamentales",
+    "text": "3.3 Operaciones fundamentales\nSean \\(A\\) y \\(B\\) subconjuntos de un conjunto universal \\(S\\).\nLa unión se define por\n\\[\nA\\cup B=\\{x:x\\in A\\text{ o }x\\in B\\}.\n\\]\nLa intersección se define por\n\\[\nA\\cap B=\\{x:x\\in A\\text{ y }x\\in B\\}.\n\\]\nEl complemento de \\(A\\) respecto de \\(S\\) es\n\\[\nA^c=\\{x\\in S:x\\notin A\\}.\n\\]\nLa diferencia de conjuntos es\n\\[\nA\\setminus B=\\{x\\in A:x\\notin B\\}.\n\\]\nDos conjuntos son disjuntos cuando\n\\[\nA\\cap B=\\varnothing.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#propiedades-algebraicas",
+    "href": "02-conjuntos-espacios-eventos.html#propiedades-algebraicas",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.4 Propiedades algebraicas",
+    "text": "3.4 Propiedades algebraicas\nLas operaciones de conjuntos satisfacen leyes que serán utilizadas después para obtener reglas de probabilidad.\n\nConmutatividad\n\\[\nA\\cup B=B\\cup A,\n\\]\n\\[\nA\\cap B=B\\cap A.\n\\]\n\n\nAsociatividad\n\\[\n(A\\cup B)\\cup C=A\\cup(B\\cup C),\n\\]\n\\[\n(A\\cap B)\\cap C=A\\cap(B\\cap C).\n\\]\n\n\nDistributividad\n\\[\nA\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C),\n\\]\n\\[\nA\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C).\n\\]\n\n\nLeyes de De Morgan\n\\[\n(A\\cup B)^c=A^c\\cap B^c,\n\\]\n\\[\n(A\\cap B)^c=A^c\\cup B^c.\n\\]\nEstas identidades permiten transformar expresiones de eventos sin alterar su significado.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#experimentos-y-resultados",
+    "href": "02-conjuntos-espacios-eventos.html#experimentos-y-resultados",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.5 Experimentos y resultados",
+    "text": "3.5 Experimentos y resultados\nUn experimento aleatorio es un procedimiento que, bajo una descripción suficientemente precisa, puede producir distintos resultados posibles y cuyo resultado particular no se conoce con certeza antes de realizarlo.\nCada posible resultado individual se denomina resultado elemental o punto muestral.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#espacio-muestral",
+    "href": "02-conjuntos-espacios-eventos.html#espacio-muestral",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.6 Espacio muestral",
+    "text": "3.6 Espacio muestral\nEl espacio muestral \\(S\\) o \\(\\Omega\\) de un experimento es el conjunto de todos los resultados elementales considerados por el modelo.\nLa elección de \\(S\\) depende del nivel de descripción pertinente.\n\nEjemplo\nEn dos lanzamientos de una moneda,\n\\[\nS=\\{CC,CX,XC,XX\\}.\n\\]\nSi solo interesa el número de caras, puede utilizarse en cambio\n\\[\nS'=\\{0,1,2\\}.\n\\]\nAmbos espacios describen el mismo procedimiento físico desde perspectivas distintas. Esto muestra que el espacio muestral forma parte del modelo matemático y no es simplemente una lista impuesta por el fenómeno.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#espacios-discretos-y-continuos",
+    "href": "02-conjuntos-espacios-eventos.html#espacios-discretos-y-continuos",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.7 Espacios discretos y continuos",
+    "text": "3.7 Espacios discretos y continuos\nUn espacio muestral es discreto cuando es finito o infinito numerable.\nPor ejemplo,\n\\[\nS=\\{0,1,2,\\ldots\\}\n\\]\npuede representar un número de intentos.\nUn espacio muestral es continuo cuando contiene un intervalo de números reales o, más generalmente, una colección no numerable de resultados.\nPor ejemplo,\n\\[\nS=[0,\\infty)\n\\]\npuede representar un tiempo de vida.\nEsta distinción será esencial al introducir variables aleatorias discretas y continuas.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#eventos",
+    "href": "02-conjuntos-espacios-eventos.html#eventos",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.8 Eventos",
+    "text": "3.8 Eventos\nEn un enfoque elemental, un evento es un subconjunto del espacio muestral.\nSi el resultado observado \\(\\omega\\) pertenece a \\(A\\), decimos que ocurre el evento \\(A\\).\nEl evento imposible es\n\\[\n\\varnothing,\n\\]\ny el evento seguro es\n\\[\nS.\n\\]\nUn evento que contiene un único resultado elemental puede llamarse evento simple; uno que contiene varios resultados es un evento compuesto.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#combinación-de-eventos",
+    "href": "02-conjuntos-espacios-eventos.html#combinación-de-eventos",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.9 Combinación de eventos",
+    "text": "3.9 Combinación de eventos\nLas operaciones de conjuntos adquieren una interpretación probabilística directa:\n\n\\(A\\cup B\\): ocurre \\(A\\), ocurre \\(B\\) o ocurren ambos;\n\\(A\\cap B\\): ocurren simultáneamente \\(A\\) y \\(B\\);\n\\(A^c\\): no ocurre \\(A\\);\n\\(A\\setminus B\\): ocurre \\(A\\) pero no \\(B\\).\n\nSi\n\\[\nA\\cap B=\\varnothing,\n\\]\nlos eventos son mutuamente excluyentes o disjuntos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#familias-de-eventos",
+    "href": "02-conjuntos-espacios-eventos.html#familias-de-eventos",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.10 Familias de eventos",
+    "text": "3.10 Familias de eventos\nPodemos trabajar con colecciones\n\\[\nA_1,A_2,\\ldots,A_n\n\\]\ny construir\n\\[\n\\bigcup_{i=1}^n A_i\n\\]\no\n\\[\n\\bigcap_{i=1}^n A_i.\n\\]\nCuando la colección es infinita, estas operaciones se escriben como\n\\[\n\\bigcup_{i=1}^{\\infty} A_i,\n\\qquad\n\\bigcap_{i=1}^{\\infty} A_i.\n\\]\nEsta notación será necesaria para formular posteriormente el axioma de aditividad numerable.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#particiones-del-espacio-muestral",
+    "href": "02-conjuntos-espacios-eventos.html#particiones-del-espacio-muestral",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.11 Particiones del espacio muestral",
+    "text": "3.11 Particiones del espacio muestral\nUna colección de eventos\n\\[\nA_1,A_2,\\ldots,A_n\n\\]\nforma una partición de \\(S\\) si:\n\n\\(A_i\\cap A_j=\\varnothing\\) para \\(i\\ne j\\);\n\\(\\displaystyle \\bigcup_{i=1}^n A_i=S\\).\n\nLas particiones serán fundamentales para la regla de probabilidad total y el teorema de Bayes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#nota-sobre-rigor-matemático",
+    "href": "02-conjuntos-espacios-eventos.html#nota-sobre-rigor-matemático",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.12 Nota sobre rigor matemático",
+    "text": "3.12 Nota sobre rigor matemático\nEn espacios muestrales finitos o numerables, resulta natural pensar que cualquier subconjunto puede utilizarse como evento. En espacios no numerables aparecen cuestiones más delicadas: no todos los subconjuntos son necesariamente apropiados para asignarles probabilidad de manera consistente.\nPor ello, en la formulación rigurosa de un espacio de probabilidad se utiliza una colección \\(\\mathcal F\\) de eventos que satisface propiedades específicas. Más adelante introduciremos esa estructura con mayor detalle; por ahora, para los ejemplos elementales, trabajaremos con los eventos usuales del espacio muestral.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#ejemplo-integrador",
+    "href": "02-conjuntos-espacios-eventos.html#ejemplo-integrador",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.13 Ejemplo integrador",
+    "text": "3.13 Ejemplo integrador\nSea\n\\[\nS=\\{1,2,3,4,5,6\\}\n\\]\npara un lanzamiento de dado, y sean\n\\[\nA=\\{2,4,6\\},\n\\qquad\nB=\\{4,5,6\\}.\n\\]\nEntonces\n\\[\nA\\cap B=\\{4,6\\},\n\\]\n\\[\nA\\cup B=\\{2,4,5,6\\},\n\\]\n\\[\nA^c=\\{1,3,5\\},\n\\]\ny\n\\[\nB^c=\\{1,2,3\\}.\n\\]\nLas identidades algebraicas de conjuntos pueden verificarse directamente en este espacio finito.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#ideas-clave",
+    "href": "02-conjuntos-espacios-eventos.html#ideas-clave",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.14 Ideas clave",
+    "text": "3.14 Ideas clave\n\nLa teoría de conjuntos proporciona el lenguaje formal de los eventos.\nUn espacio muestral contiene los resultados elementales considerados por el modelo.\nLa elección del espacio muestral depende del propósito de la modelación.\nLos eventos son subconjuntos del espacio muestral.\nUnión, intersección, complemento y diferencia expresan relaciones lógicas entre eventos.\nLas particiones preparan el camino para probabilidad total y Bayes.\nLa formulación rigurosa de probabilidad requiere especificar una familia adecuada de eventos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#ejercicios",
+    "href": "02-conjuntos-espacios-eventos.html#ejercicios",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.15 Ejercicios",
+    "text": "3.15 Ejercicios\n\nDemuestra las dos leyes de De Morgan utilizando pertenencia de elementos.\nSea \\(S=\\{1,2,3,4,5,6\\}\\), \\(A=\\{1,2,3\\}\\) y \\(B=\\{3,4,5\\}\\). Calcula unión, intersección, complementos y diferencias.\nConstruye dos espacios muestrales distintos para el experimento de lanzar tres monedas, según dos objetivos de análisis diferentes.\nDa un ejemplo de espacio muestral infinito numerable y otro continuo.\nSean \\(A_1,A_2,A_3\\) eventos disjuntos cuya unión es \\(S\\). Explica por qué forman una partición.\nExpresa mediante operaciones de conjuntos: “ocurre al menos uno de \\(A\\) y \\(B\\)”, “ocurre exactamente uno” y “no ocurre ninguno”.\nDemuestra que \\(A\\setminus B=A\\cap B^c\\).\n★ Explica por qué la afirmación “todo subconjunto de cualquier espacio muestral es un evento” requiere cautela en una teoría rigurosa de probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
+    ]
+  },
+  {
+    "objectID": "02-conjuntos-espacios-eventos.html#referencias-del-capítulo",
+    "href": "02-conjuntos-espacios-eventos.html#referencias-del-capítulo",
+    "title": "3  Conjuntos, espacios muestrales y eventos",
+    "section": "3.16 Referencias del capítulo",
+    "text": "3.16 Referencias del capítulo\nLa secuencia temática conserva el énfasis curricular del programa de Introducción a la Probabilidad de la UASLP en conjuntos, experimentos, espacios muestrales y eventos. La presentación teórica se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conjuntos, espacios muestrales y eventos</span>"
     ]
   },
   {
