@@ -1,0 +1,14 @@
+# Notación general {.unnumbered}
+
+- $\Omega$: espacio muestral.
+- $\mathcal{F}$: colección de eventos.
+- $A,B,C$: eventos.
+- $A^c$: complemento de $A$.
+- $P$: medida de probabilidad.
+- $P(A\mid B)$: probabilidad condicional.
+- $X,Y$: variables aleatorias.
+- $F_X$: función de distribución de $X$.
+- $E(X)$: esperanza matemática.
+- $\operatorname{Var}(X)$: varianza.
+- $\operatorname{Cov}(X,Y)$: covarianza.
+- $\rho_{XY}$: coeficiente de correlación.
