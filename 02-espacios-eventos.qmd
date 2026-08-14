@@ -1,0 +1,515 @@
+# Espacios muestrales y álgebra de eventos
+
+## Objetivos
+
+Al finalizar este capítulo, el estudiante podrá:
+
+- formular con precisión un espacio muestral;
+- representar eventos como subconjuntos del espacio muestral;
+- distinguir puntos muestrales, eventos y familias de eventos;
+- demostrar identidades del álgebra de conjuntos mediante argumentos de pertenencia;
+- reconocer particiones y eventos mutuamente excluyentes;
+- relacionar el enfoque elemental de eventos con la terna $(\Omega,\mathcal{F},P)$.
+
+## Lenguaje de conjuntos
+
+La teoría de probabilidad utiliza el lenguaje de conjuntos para separar dos niveles:
+
+- el **resultado individual** de un experimento;
+- las **afirmaciones** acerca de ese resultado.
+
+Un conjunto es una colección bien definida de objetos. Si $x$ es elemento de $A$, escribimos $x\in A$. La negación se expresa como $x\notin A$.
+
+### Inclusión e igualdad
+
+Sean $A$ y $B$ conjuntos. Definimos
+
+$$
+A\subseteq B
+\quad\Longleftrightarrow\quad
+\forall x\,(x\in A\Rightarrow x\in B).
+$$
+
+La igualdad queda caracterizada por doble inclusión:
+
+$$
+A=B
+\quad\Longleftrightarrow\quad
+A\subseteq B\text{ y }B\subseteq A.
+$$
+
+Esta caracterización será nuestra herramienta principal para demostrar identidades entre eventos.
+
+### Conjunto vacío y conjunto potencia
+
+El **conjunto vacío**, $\varnothing$, no contiene elementos. Es subconjunto de cualquier conjunto.
+
+El **conjunto potencia** de $\Omega$, denotado por $\mathcal{P}(\Omega)$, es la colección de todos sus subconjuntos:
+
+$$
+\mathcal{P}(\Omega)=\{A:A\subseteq\Omega\}.
+$$
+
+Si $\Omega$ tiene $n$ elementos, entonces
+
+$$
+|\mathcal{P}(\Omega)|=2^n.
+$$
+
+En efecto, para formar un subconjunto decidimos, para cada uno de los $n$ elementos, incluirlo o no incluirlo. Existen dos decisiones independientes por elemento, lo que produce $2^n$ subconjuntos.
+
+### Producto cartesiano
+
+El producto cartesiano de $A$ y $B$ es
+
+$$
+A\times B=\{(a,b):a\in A,\ b\in B\}.
+$$
+
+Si $A$ y $B$ son finitos,
+
+$$
+|A\times B|=|A|\,|B|.
+$$
+
+Los productos cartesianos permiten describir experimentos compuestos. Dos lanzamientos de un dado tienen como espacio muestral
+
+$$
+\{1,2,3,4,5,6\}\times\{1,2,3,4,5,6\}.
+$$
+
+## Operaciones con conjuntos
+
+Para $A,B\subseteq\Omega$, definimos:
+
+$$
+A\cup B=\{x\in\Omega:x\in A\text{ o }x\in B\},
+$$
+
+$$
+A\cap B=\{x\in\Omega:x\in A\text{ y }x\in B\},
+$$
+
+$$
+A\setminus B=\{x\in\Omega:x\in A\text{ y }x\notin B\},
+$$
+
+$$
+A^c=\Omega\setminus A.
+$$
+
+La diferencia simétrica es
+
+$$
+A\triangle B=(A\setminus B)\cup(B\setminus A).
+$$
+
+También puede escribirse como
+
+$$
+A\triangle B=(A\cup B)\setminus(A\cap B).
+$$
+
+## Propiedades del álgebra de conjuntos
+
+Para cualesquiera $A,B,C\subseteq\Omega$ se cumplen:
+
+### Leyes conmutativas
+
+$$
+A\cup B=B\cup A,
+\qquad
+A\cap B=B\cap A.
+$$
+
+### Leyes asociativas
+
+$$
+(A\cup B)\cup C=A\cup(B\cup C),
+$$
+
+$$
+(A\cap B)\cap C=A\cap(B\cap C).
+$$
+
+### Leyes distributivas
+
+$$
+A\cap(B\cup C)=(A\cap B)\cup(A\cap C),
+$$
+
+$$
+A\cup(B\cap C)=(A\cup B)\cap(A\cup C).
+$$
+
+### Leyes de identidad y complemento
+
+$$
+A\cup\varnothing=A,
+\qquad
+A\cap\Omega=A,
+$$
+
+$$
+A\cup\Omega=\Omega,
+\qquad
+A\cap\varnothing=\varnothing,
+$$
+
+$$
+A\cup A^c=\Omega,
+\qquad
+A\cap A^c=\varnothing,
+$$
+
+$$
+(A^c)^c=A.
+$$
+
+### Leyes de De Morgan
+
+$$
+(A\cup B)^c=A^c\cap B^c,
+$$
+
+$$
+(A\cap B)^c=A^c\cup B^c.
+$$
+
+## Demostraciones por pertenencia
+
+### Primera ley de De Morgan
+
+Demostraremos
+
+$$
+(A\cup B)^c=A^c\cap B^c.
+$$
+
+Sea $x\in\Omega$. Entonces
+
+$$
+\begin{aligned}
+x\in(A\cup B)^c
+&\Longleftrightarrow x\notin A\cup B\\
+&\Longleftrightarrow (x\notin A)\text{ y }(x\notin B)\\
+&\Longleftrightarrow (x\in A^c)\text{ y }(x\in B^c)\\
+&\Longleftrightarrow x\in A^c\cap B^c.
+\end{aligned}
+$$
+
+Como la equivalencia se cumple para todo $x\in\Omega$, los conjuntos son iguales.
+
+### Ley distributiva
+
+Demostremos
+
+$$
+A\cap(B\cup C)=(A\cap B)\cup(A\cap C).
+$$
+
+Para cualquier $x\in\Omega$,
+
+$$
+\begin{aligned}
+x\in A\cap(B\cup C)
+&\Longleftrightarrow x\in A\text{ y }(x\in B\text{ o }x\in C)\\
+&\Longleftrightarrow (x\in A\text{ y }x\in B)
+\text{ o }(x\in A\text{ y }x\in C)\\
+&\Longleftrightarrow x\in(A\cap B)\cup(A\cap C).
+\end{aligned}
+$$
+
+La demostración reproduce una ley distributiva de la lógica proposicional. Esta correspondencia entre lógica y conjuntos será constante en probabilidad.
+
+## Experimento aleatorio y espacio muestral
+
+Un **experimento aleatorio** es un procedimiento cuyo resultado concreto no se conoce antes de realizarlo, aunque el conjunto de resultados posibles pueda especificarse.
+
+El **espacio muestral** $\Omega$ es el conjunto de todos los resultados posibles que distingue el modelo. Sus elementos $\omega\in\Omega$ reciben el nombre de **puntos muestrales**.
+
+La frase “que distingue el modelo” es importante. Un mismo procedimiento admite diferentes espacios muestrales según la información que se registre.
+
+### Ejemplo
+
+Al lanzar un dado y registrar el número de puntos,
+
+$$
+\Omega_1=\{1,2,3,4,5,6\}.
+$$
+
+Si sólo se registra la paridad,
+
+$$
+\Omega_2=\{\text{par},\text{impar}\}.
+$$
+
+Existe una función $g:\Omega_1\to\Omega_2$ que asigna a cada número su paridad. El segundo modelo es una descripción menos fina del primero.
+
+## Clasificación de espacios muestrales
+
+### Espacio finito
+
+$\Omega$ contiene un número finito de puntos. Por ejemplo, para dos bits transmitidos,
+
+$$
+\Omega=\{00,01,10,11\}.
+$$
+
+### Espacio infinito numerable
+
+Sus puntos pueden ponerse en correspondencia con un subconjunto de los números naturales. El número de intentos hasta obtener el primer éxito tiene espacio muestral
+
+$$
+\Omega=\{1,2,3,\ldots\}.
+$$
+
+### Espacio no numerable
+
+Contiene un continuo de resultados. El tiempo de vida de un dispositivo puede modelarse mediante
+
+$$
+\Omega=[0,\infty).
+$$
+
+La distinción entre espacios discretos y continuos determinará posteriormente cómo se asignan probabilidades y cómo se definen las variables aleatorias.
+
+## Eventos como subconjuntos
+
+Un **evento** $A$ es un subconjunto de $\Omega$. Decimos que $A$ ocurre si el resultado observado $\omega$ pertenece a $A$.
+
+Esta definición distingue correctamente:
+
+- punto muestral: $\omega\in\Omega$;
+- evento elemental: $\{\omega\}\subseteq\Omega$;
+- evento general: $A\subseteq\Omega$.
+
+El evento seguro es $\Omega$ y el evento imposible es $\varnothing$.
+
+### Ejemplo
+
+Para $\Omega=\{1,2,3,4,5,6\}$, definamos
+
+$$
+A=\{2,4,6\},\qquad B=\{4,5,6\}.
+$$
+
+$A$ es el evento “resultado par” y $B$ es “resultado mayor que 3”. De aquí,
+
+$$
+A\cap B=\{4,6\},
+$$
+
+$$
+A\cup B=\{2,4,5,6\},
+$$
+
+$$
+A^c=\{1,3,5\}.
+$$
+
+## Eventos disjuntos y familias exhaustivas
+
+Dos eventos $A$ y $B$ son **mutuamente excluyentes** o **disjuntos** si
+
+$$
+A\cap B=\varnothing.
+$$
+
+Una familia $A_1,\ldots,A_n$ es **exhaustiva** si
+
+$$
+\bigcup_{i=1}^{n}A_i=\Omega.
+$$
+
+La exhaustividad no implica disjunción. Los eventos pueden cubrir todo $\Omega$ y superponerse.
+
+## Particiones
+
+Una colección no vacía $\{A_i:i\in I\}$ es una **partición** de $\Omega$ si:
+
+1. $A_i\neq\varnothing$ para todo $i$;
+2. $A_i\cap A_j=\varnothing$ cuando $i\neq j$;
+3. $\bigcup_{i\in I}A_i=\Omega$.
+
+Cada punto muestral pertenece exactamente a un bloque de la partición.
+
+### Ejemplo
+
+En $\Omega=\{1,2,3,4,5,6\}$,
+
+$$
+A_1=\{1,3,5\},\qquad A_2=\{2,4,6\}
+$$
+
+forman una partición. En cambio,
+
+$$
+B_1=\{1,2,3\},\qquad B_2=\{3,4,5,6\}
+$$
+
+son exhaustivos, pero no forman una partición porque $B_1\cap B_2=\{3\}$.
+
+Las particiones serán esenciales para la regla de probabilidad total y el teorema de Bayes.
+
+## Familias de eventos
+
+En un espacio muestral finito suele tomarse como colección de eventos todo el conjunto potencia:
+
+$$
+\mathcal{F}=\mathcal{P}(\Omega).
+$$
+
+En espacios infinitos, especialmente no numerables, no siempre se asigna probabilidad a cada subconjunto. Se selecciona una colección $\mathcal{F}$ que cumpla propiedades de cierre.
+
+### Definición: sigma-álgebra
+
+Una colección $\mathcal{F}\subseteq\mathcal{P}(\Omega)$ es una **sigma-álgebra** si:
+
+1. $\Omega\in\mathcal{F}$;
+2. si $A\in\mathcal{F}$, entonces $A^c\in\mathcal{F}$;
+3. si $A_1,A_2,\ldots\in\mathcal{F}$, entonces $\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$.
+
+Los elementos de $\mathcal{F}$ son los eventos a los que podrá asignarse probabilidad.
+
+De estas condiciones se deduce que $\varnothing\in\mathcal{F}$ y que $\mathcal{F}$ es cerrada bajo intersecciones numerables. En efecto,
+
+$$
+\bigcap_{i=1}^{\infty}A_i
+=
+\left(\bigcup_{i=1}^{\infty}A_i^c\right)^c.
+$$
+
+Para el curso elemental bastará, en la mayoría de los ejemplos finitos, trabajar con $\mathcal{P}(\Omega)$. La sigma-álgebra explica por qué la terna formal es
+
+$$
+(\Omega,\mathcal{F},P)
+$$
+
+y no solamente $(\Omega,P)$.
+
+## Ejemplo integrador
+
+Se inspeccionan dos componentes. Cada uno se clasifica como conforme ($C$), reparable ($R$) o desecho ($D$). Como el orden identifica la posición del componente,
+
+$$
+\Omega=\{CC,CR,CD,RC,RR,RD,DC,DR,DD\}.
+$$
+
+Sea
+
+$$
+A=\{\omega\in\Omega:\text{al menos un componente es }D\}
+$$
+
+y
+
+$$
+B=\{\omega\in\Omega:\text{ambos componentes tienen la misma clasificación}\}.
+$$
+
+Entonces
+
+$$
+A=\{CD,RD,DC,DR,DD\},
+$$
+
+$$
+B=\{CC,RR,DD\}.
+$$
+
+Por tanto,
+
+$$
+A\cap B=\{DD\},
+$$
+
+$$
+A\setminus B=\{CD,RD,DC,DR\},
+$$
+
+$$
+(A\cup B)^c=\{CR,RC\}.
+$$
+
+Los eventos
+
+$$
+C_0=\{CC,CR,RC,RR\},
+$$
+
+$$
+C_1=\{CD,RD,DC,DR\},
+$$
+
+$$
+C_2=\{DD\}
+$$
+
+forman una partición de $\Omega$ de acuerdo con el número de componentes clasificados como desecho.
+
+## Proposición: caracterización de la inclusión
+
+Para $A,B\subseteq\Omega$, son equivalentes:
+
+1. $A\subseteq B$;
+2. $A\cap B=A$;
+3. $A\cup B=B$.
+
+### Demostración
+
+Supongamos $A\subseteq B$. Si $x\in A\cap B$, entonces $x\in A$; por tanto, $A\cap B\subseteq A$. La inclusión contraria se obtiene porque $x\in A$ implica $x\in B$, de modo que $x\in A\cap B$. Así, $A\cap B=A$.
+
+Ahora supongamos $A\cap B=A$. Si $x\in A$, entonces $x\in A\cap B$, y por ello $x\in B$. Luego $A\subseteq B$.
+
+La equivalencia entre $A\subseteq B$ y $A\cup B=B$ se demuestra de manera análoga. $\square$
+
+## Errores conceptuales frecuentes
+
+1. Escribir $\omega\subseteq\Omega$ cuando $\omega$ es un punto muestral; debe escribirse $\omega\in\Omega$.
+2. Confundir $\varnothing$ con $\{\varnothing\}$. El primero no tiene elementos; el segundo contiene un elemento.
+3. Afirmar que eventos disjuntos son independientes. La independencia requiere una definición probabilística posterior.
+4. Calcular $A^c$ sin especificar el espacio muestral.
+5. Omitir resultados en experimentos por etapas o tratar pares ordenados como si el orden no importara.
+
+## Ideas clave
+
+- El espacio muestral reúne los resultados que distingue el modelo.
+- Los eventos son subconjuntos, no resultados individuales.
+- El álgebra de eventos hereda las leyes del álgebra de conjuntos.
+- Las identidades se demuestran rigurosamente mediante pertenencia o doble inclusión.
+- Una partición divide $\Omega$ en bloques no vacíos, disjuntos y exhaustivos.
+- La sigma-álgebra $\mathcal{F}$ especifica qué subconjuntos se consideran eventos medibles.
+
+## Ejercicios
+
+### Conceptos y operaciones
+
+1. Sea $\Omega=\{1,2,\ldots,12\}$, $A$ el conjunto de múltiplos de 2 y $B$ el conjunto de múltiplos de 3. Obtén $A\cap B$, $A\cup B$, $A^c$, $B^c$ y $A\triangle B$.
+2. Calcula $\mathcal{P}(\{a,b,c\})$ y verifica que contiene $2^3$ elementos.
+3. Construye el espacio muestral de tres lanzamientos de una moneda mediante un producto cartesiano.
+4. Da un ejemplo de una familia exhaustiva que no sea una partición.
+
+### Demostraciones
+
+5. Demuestra la segunda ley de De Morgan por pertenencia.
+6. Demuestra $A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C)$.
+7. Demuestra $A\triangle B=(A\cup B)\setminus(A\cap B)$.
+8. Prueba que $A\subseteq B$ implica $B^c\subseteq A^c$.
+9. Demuestra que una partición finita $A_1,\ldots,A_n$ satisface que cada $\omega\in\Omega$ pertenece a un único $A_i$.
+
+### Modelación
+
+10. Un experimento registra el estado de tres interruptores, cada uno encendido o apagado. Define $\Omega$ y los eventos “exactamente dos están encendidos” y “el primero está apagado”.
+11. Se mide el tiempo hasta la primera falla de un sistema. Propón un espacio muestral continuo y tres eventos expresados mediante intervalos.
+12. Se extraen dos piezas sin reemplazo de un lote con piezas identificadas. Explica cuándo el orden debe formar parte del punto muestral.
+
+### Profundización
+
+13. Sea $\Omega=\{1,2,3,4\}$. Encuentra una sigma-álgebra que contenga $\{1,2\}$ pero que no sea $\mathcal{P}(\Omega)$.
+14. Comprueba que $\{\varnothing,\Omega\}$ y $\mathcal{P}(\Omega)$ siempre son sigma-álgebras.
+15. Si $\mathcal{F}$ es una sigma-álgebra y $A,B\in\mathcal{F}$, demuestra que $A\setminus B\in\mathcal{F}$.
+
+## Referencias del capítulo
+
+La secuencia de espacios muestrales y eventos se apoya principalmente en @walpole2012 y en el programa oficial del curso. La formalización se complementa con @devore2016, @montgomery2018 y @johnson2018.
