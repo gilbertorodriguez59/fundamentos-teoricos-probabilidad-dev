@@ -332,171 +332,191 @@
   {
     "objectID": "03-conteo-probabilidad.html",
     "href": "03-conteo-probabilidad.html",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
+    "title": "3  Técnicas de conteo y enumeración",
     "section": "",
-    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante podrá:",
+    "text": "3.1 Objetivos\nAl finalizar este capítulo, el estudiante será capaz de formular y demostrar reglas elementales de conteo, distinguir entre procesos ordenados y no ordenados, obtener fórmulas para permutaciones, arreglos y combinaciones, y utilizar estas herramientas para determinar cardinalidades de espacios muestrales finitos.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#objetivos",
-    "href": "03-conteo-probabilidad.html#objetivos",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "",
-    "text": "formular los axiomas de una medida de probabilidad;\ndeducir sus consecuencias algebraicas fundamentales;\nconstruir medidas de probabilidad sobre espacios finitos;\nreconocer el supuesto de equiprobabilidad y sus límites;\ndemostrar los principios aditivo y multiplicativo de conteo;\nobtener fórmulas de permutaciones, arreglos, combinaciones y coeficientes multinomiales;\nresolver problemas mediante argumentos combinatorios explícitos.",
+    "objectID": "03-conteo-probabilidad.html#cardinalidad-de-conjuntos-finitos",
+    "href": "03-conteo-probabilidad.html#cardinalidad-de-conjuntos-finitos",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.2 Cardinalidad de conjuntos finitos",
+    "text": "3.2 Cardinalidad de conjuntos finitos\nSi \\(A\\) es un conjunto finito, denotamos por\n\\[\n|A|\n\\]\nel número de elementos de \\(A\\).\nLas técnicas de conteo buscan determinar cardinalidades sin necesidad de enumerar explícitamente cada elemento.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#el-espacio-de-probabilidad",
-    "href": "03-conteo-probabilidad.html#el-espacio-de-probabilidad",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.2 El espacio de probabilidad",
-    "text": "3.2 El espacio de probabilidad\nUn modelo probabilístico se representa mediante una terna\n\\[\n(\\Omega,\\mathcal{F},P),\n\\]\ndonde:\n\n\\(\\Omega\\) es el espacio muestral;\n\\(\\mathcal{F}\\) es una colección de eventos;\n\\(P\\) es una función que asigna un número a cada evento.\n\nEn un espacio finito suele tomarse \\(\\mathcal{F}=\\mathcal{P}(\\Omega)\\). En espacios infinitos no siempre se asigna probabilidad a todo subconjunto, por lo que se emplea una sigma-álgebra.\n\nSigma-álgebra\nUna familia \\(\\mathcal{F}\\subseteq\\mathcal{P}(\\Omega)\\) es una sigma-álgebra si:\n\n\\(\\Omega\\in\\mathcal{F}\\);\nsi \\(A\\in\\mathcal{F}\\), entonces \\(A^c\\in\\mathcal{F}\\);\nsi \\(A_1,A_2,\\ldots\\in\\mathcal{F}\\), entonces \\(\\bigcup_{i=1}^{\\infty}A_i\\in\\mathcal{F}\\).\n\nDe estas propiedades se deduce que \\(\\varnothing\\in\\mathcal{F}\\) y que la familia es cerrada bajo intersecciones numerables. Los elementos de \\(\\mathcal{F}\\) son los eventos medibles.",
+    "objectID": "03-conteo-probabilidad.html#principio-aditivo",
+    "href": "03-conteo-probabilidad.html#principio-aditivo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.3 Principio aditivo",
+    "text": "3.3 Principio aditivo\nSean \\(A_1,A_2,\\ldots,A_k\\) conjuntos finitos y mutuamente disjuntos. Entonces\n\\[\n\\left|\\bigcup_{i=1}^k A_i\\right|\n=\\sum_{i=1}^k |A_i|.\n\\]\n\nDemostración\nComo los conjuntos son disjuntos, ningún elemento pertenece simultáneamente a dos de ellos. Por tanto, al sumar sus cardinalidades cada elemento de la unión se cuenta exactamente una vez.\nEl requisito de disjunción es esencial. Si dos conjuntos se superponen, la suma simple cuenta varias veces los elementos comunes.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#axiomas-de-kolmogórov",
-    "href": "03-conteo-probabilidad.html#axiomas-de-kolmogórov",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.3 Axiomas de Kolmogórov",
-    "text": "3.3 Axiomas de Kolmogórov\nUna medida de probabilidad es una función\n\\[\nP:\\mathcal{F}\\longrightarrow[0,1]\n\\]\nque satisface:\n\nNo negatividad: \\(P(A)\\geq0\\) para todo \\(A\\in\\mathcal{F}\\).\nNormalización: \\(P(\\Omega)=1\\).\nAditividad numerable: para toda sucesión de eventos disjuntos dos a dos,\n\n\\[\nP\\left(\\bigcup_{i=1}^{\\infty}A_i\\right)\n=\\sum_{i=1}^{\\infty}P(A_i).\n\\]\nLa aditividad finita es una consecuencia directa del tercer axioma, tomando vacíos todos los eventos restantes.",
+    "objectID": "03-conteo-probabilidad.html#principio-multiplicativo",
+    "href": "03-conteo-probabilidad.html#principio-multiplicativo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.4 Principio multiplicativo",
+    "text": "3.4 Principio multiplicativo\nSean \\(A_1,A_2,\\ldots,A_k\\) conjuntos finitos. El número de elementos del producto cartesiano\n\\[\nA_1\\times A_2\\times\\cdots\\times A_k\n\\]\nes\n\\[\n|A_1||A_2|\\cdots|A_k|.\n\\]\n\nDemostración\nCada elemento del producto cartesiano es una \\(k\\)-tupla\n\\[\n(a_1,a_2,\\ldots,a_k),\n\\]\ncon \\(a_i\\in A_i\\). Para cada elección de \\(a_1\\) existen \\(|A_2|\\) posibilidades para \\(a_2\\), y así sucesivamente. La aplicación sucesiva del principio multiplicativo produce el resultado.\nEste principio proporciona la formulación matemática de los diagramas de árbol y de los experimentos por etapas.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#consecuencias-de-los-axiomas",
-    "href": "03-conteo-probabilidad.html#consecuencias-de-los-axiomas",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.4 Consecuencias de los axiomas",
-    "text": "3.4 Consecuencias de los axiomas\n\nProbabilidad del evento imposible\nComo \\(\\Omega\\) y \\(\\varnothing\\) son disjuntos y \\(\\Omega=\\Omega\\cup\\varnothing\\),\n\\[\n1=P(\\Omega)=P(\\Omega)+P(\\varnothing).\n\\]\nPor tanto,\n\\[\nP(\\varnothing)=0.\n\\]\n\n\nRegla del complemento\nLos eventos \\(A\\) y \\(A^c\\) son disjuntos y su unión es \\(\\Omega\\). En consecuencia,\n\\[\n1=P(\\Omega)=P(A)+P(A^c),\n\\]\nde donde\n\\[\nP(A^c)=1-P(A).\n\\]\n\n\nMonotonía\nSi \\(A\\subseteq B\\), entonces\n\\[\nB=A\\mathbin{\\dot\\cup}(B\\setminus A),\n\\]\ndonde \\(\\dot\\cup\\) indica unión disjunta. Por aditividad,\n\\[\nP(B)=P(A)+P(B\\setminus A)\\geq P(A).\n\\]\nAsí,\n\\[\nA\\subseteq B\\quad\\Longrightarrow\\quad P(A)\\leq P(B).\n\\]\nAdemás,\n\\[\nP(B\\setminus A)=P(B)-P(A).\n\\]\n\n\nFórmula de inclusión-exclusión para dos eventos\nDescomponemos la unión como\n\\[\nA\\cup B=A\\mathbin{\\dot\\cup}(B\\setminus A).\n\\]\nTambién \\(B=(B\\setminus A)\\mathbin{\\dot\\cup}(A\\cap B)\\), de modo que\n\\[\nP(B\\setminus A)=P(B)-P(A\\cap B).\n\\]\nPor tanto,\n\\[\nP(A\\cup B)=P(A)+P(B)-P(A\\cap B).\n\\]\n\n\nSubaditividad\nDe la fórmula anterior,\n\\[\nP(A\\cup B)\\leq P(A)+P(B).\n\\]\nMás generalmente,\n\\[\nP\\left(\\bigcup_{i=1}^{\\infty}A_i\\right)\n\\leq\\sum_{i=1}^{\\infty}P(A_i),\n\\]\ndesigualdad conocida como cota de la unión o desigualdad de Boole.",
+    "objectID": "03-conteo-probabilidad.html#secuencias-con-repetición",
+    "href": "03-conteo-probabilidad.html#secuencias-con-repetición",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.5 Secuencias con repetición",
+    "text": "3.5 Secuencias con repetición\nSea un conjunto de \\(n\\) símbolos. El número de secuencias ordenadas de longitud \\(r\\) que pueden formarse permitiendo repetición es\n\\[\nn^r.\n\\]\nEn efecto, el espacio de secuencias es el producto cartesiano\n\\[\nA^r=A\\times A\\times\\cdots\\times A,\n\\]\ny por el principio multiplicativo\n\\[\n|A^r|=|A|^r=n^r.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#construcción-de-probabilidades-en-espacios-finitos",
-    "href": "03-conteo-probabilidad.html#construcción-de-probabilidades-en-espacios-finitos",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.5 Construcción de probabilidades en espacios finitos",
-    "text": "3.5 Construcción de probabilidades en espacios finitos\nSea\n\\[\n\\Omega=\\{\\omega_1,\\omega_2,\\ldots,\\omega_N\\}\n\\]\ny sean \\(p_1,p_2,\\ldots,p_N\\) números tales que\n\\[\np_i\\geq0,\n\\qquad\n\\sum_{i=1}^{N}p_i=1.\n\\]\nDefinimos, para \\(A\\subseteq\\Omega\\),\n\\[\nP(A)=\\sum_{\\omega_i\\in A}p_i.\n\\]\nEsta definición produce una medida de probabilidad sobre \\(\\mathcal{P}(\\Omega)\\).\n\nVerificación\nLa no negatividad se sigue de \\(p_i\\geq0\\). Además,\n\\[\nP(\\Omega)=\\sum_{i=1}^{N}p_i=1.\n\\]\nSi \\(A_1,A_2,\\ldots\\) son disjuntos, cada punto de \\(\\Omega\\) aparece en a lo sumo uno de ellos. Como \\(\\Omega\\) es finito, sólo un número finito de esos eventos puede contener puntos. Agrupar las masas puntuales demuestra la aditividad numerable.",
+    "objectID": "03-conteo-probabilidad.html#factorial",
+    "href": "03-conteo-probabilidad.html#factorial",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.6 Factorial",
+    "text": "3.6 Factorial\nPara \\(n\\in\\mathbb{N}\\),\n\\[\nn!=n(n-1)\\cdots2\\cdot1,\n\\]\ncon el convenio\n\\[\n0!=1.\n\\]\nEl factorial aparece al contar biyecciones y ordenamientos de conjuntos finitos.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#el-modelo-equiprobable",
-    "href": "03-conteo-probabilidad.html#el-modelo-equiprobable",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.6 El modelo equiprobable",
-    "text": "3.6 El modelo equiprobable\nSi\n\\[\np_1=p_2=\\cdots=p_N,\n\\]\nla normalización implica \\(p_i=1/N\\). Por tanto,\n\\[\nP(A)=\\frac{|A|}{|\\Omega|}.\n\\]\nÉsta es la regla clásica de casos favorables entre casos posibles. Su validez requiere dos condiciones:\n\nel espacio muestral es finito;\nlos puntos muestrales son equiprobables.\n\nLa equiprobabilidad no debe justificarse usando la misma regla que se pretende aplicar. Se fundamenta en simetrías físicas, en el diseño del mecanismo aleatorio o en una hipótesis explícita del modelo.\n\nEjemplo: suma de dos dados\nLos 36 pares ordenados \\((i,j)\\) son equiprobables si los dados son equilibrados e independientes. Sin embargo, las sumas \\(2,3,\\ldots,12\\) no son equiprobables. Por ejemplo,\n\\[\nP(2)=\\frac{1}{36},\n\\qquad\nP(7)=\\frac{6}{36}.\n\\]\nLa elección del nivel de descripción determina cuáles resultados elementales pueden considerarse igualmente probables.",
+    "objectID": "03-conteo-probabilidad.html#permutaciones-de-n-objetos-distintos",
+    "href": "03-conteo-probabilidad.html#permutaciones-de-n-objetos-distintos",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.7 Permutaciones de \\(n\\) objetos distintos",
+    "text": "3.7 Permutaciones de \\(n\\) objetos distintos\nUna permutación de un conjunto de \\(n\\) elementos es una ordenación de todos sus elementos.\n\nTeorema\nEl número de permutaciones de \\(n\\) objetos distintos es\n\\[\nn!.\n\\]\n\n\nDemostración\nLa primera posición puede ocuparse de \\(n\\) maneras. Una vez elegida, la segunda dispone de \\(n-1\\) posibilidades; la tercera, de \\(n-2\\), y así sucesivamente. Por el principio multiplicativo,\n\\[\nn(n-1)(n-2)\\cdots2\\cdot1=n!.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#principios-de-conteo",
-    "href": "03-conteo-probabilidad.html#principios-de-conteo",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.7 Principios de conteo",
-    "text": "3.7 Principios de conteo\n\nPrincipio aditivo\nSi \\(A_1,\\ldots,A_k\\) son conjuntos finitos disjuntos dos a dos, entonces\n\\[\n\\left|\\bigcup_{i=1}^{k}A_i\\right|\n=\\sum_{i=1}^{k}|A_i|.\n\\]\nLa disjunción garantiza que cada elemento se cuente exactamente una vez.\n\n\nPrincipio multiplicativo\nSea un procedimiento con \\(k\\) etapas. Si la primera admite \\(n_1\\) opciones y, para cada elección previa, la etapa \\(i\\) admite \\(n_i\\) opciones, entonces existen\n\\[\n\\prod_{i=1}^{k}n_i\n\\]\nresultados completos.\nFormalmente, cuando las opciones no dependen de elecciones previas, el conjunto de resultados es un producto cartesiano\n\\[\nA_1\\times\\cdots\\times A_k,\n\\]\ny su cardinalidad es\n\\[\n|A_1\\times\\cdots\\times A_k|\n=\\prod_{i=1}^{k}|A_i|.\n\\]",
+    "objectID": "03-conteo-probabilidad.html#arreglos-de-r-objetos-tomados-de-n",
+    "href": "03-conteo-probabilidad.html#arreglos-de-r-objetos-tomados-de-n",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.8 Arreglos de \\(r\\) objetos tomados de \\(n\\)",
+    "text": "3.8 Arreglos de \\(r\\) objetos tomados de \\(n\\)\nUn arreglo sin repetición de longitud \\(r\\) es una secuencia ordenada formada por \\(r\\) elementos distintos elegidos de un conjunto de \\(n\\) elementos.\n\nTeorema\nEl número de arreglos es\n\\[\nP(n,r)=\\frac{n!}{(n-r)!},\n\\qquad 0\\le r\\le n.\n\\]\n\n\nDemostración\nExisten \\(n\\) opciones para la primera posición, \\(n-1\\) para la segunda y, finalmente, \\(n-r+1\\) para la posición \\(r\\). Por tanto,\n\\[\nP(n,r)=n(n-1)\\cdots(n-r+1)\n=\\frac{n!}{(n-r)!}.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
-    ]
-  },
-  {
-    "objectID": "03-conteo-probabilidad.html#permutaciones-y-arreglos",
-    "href": "03-conteo-probabilidad.html#permutaciones-y-arreglos",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.8 Permutaciones y arreglos",
-    "text": "3.8 Permutaciones y arreglos\n\nPermutaciones de objetos distintos\nPara ordenar \\(n\\) objetos distintos hay \\(n\\) opciones para la primera posición, \\(n-1\\) para la segunda y así sucesivamente. Luego,\n\\[\nn!=n(n-1)\\cdots2\\cdot1.\n\\]\nSe define \\(0!=1\\) para conservar identidades como \\(n!=n(n-1)!\\) cuando \\(n=1\\).\n\n\nArreglos sin repetición\nEl número de secuencias de longitud \\(r\\) formadas con objetos distintos elegidos de un conjunto de \\(n\\) es\n\\[\nP(n,r)=n(n-1)\\cdots(n-r+1)\n=\\frac{n!}{(n-r)!}.\n\\]\n\n\nSecuencias con repetición\nSi cada una de las \\(r\\) posiciones puede ocuparse por cualquiera de los \\(n\\) símbolos, el principio multiplicativo da\n\\[\nn^r.\n\\]",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
     "objectID": "03-conteo-probabilidad.html#combinaciones",
     "href": "03-conteo-probabilidad.html#combinaciones",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
+    "title": "3  Técnicas de conteo y enumeración",
     "section": "3.9 Combinaciones",
-    "text": "3.9 Combinaciones\nUna combinación es un subconjunto de \\(r\\) objetos tomado de un conjunto de \\(n\\). El orden no importa.\nCada subconjunto de \\(r\\) elementos genera \\(r!\\) ordenamientos. Como existen \\(P(n,r)\\) arreglos,\n\\[\n\\binom{n}{r}\n=\\frac{P(n,r)}{r!}\n=\\frac{n!}{r!(n-r)!}.\n\\]\n\nIdentidad de simetría\nLa aplicación que asocia a cada subconjunto \\(A\\) su complemento es una biyección entre los subconjuntos de tamaño \\(r\\) y los de tamaño \\(n-r\\). Por ello,\n\\[\n\\binom{n}{r}=\\binom{n}{n-r}.\n\\]\n\n\nIdentidad de Pascal\nFijemos un elemento distinguido \\(x\\). Los subconjuntos de tamaño \\(r\\) se dividen en dos clases disjuntas:\n\nlos que contienen a \\(x\\), determinados al elegir \\(r-1\\) elementos entre los \\(n-1\\) restantes;\nlos que no contienen a \\(x\\), determinados al elegir \\(r\\) elementos entre esos \\(n-1\\).\n\nPor el principio aditivo,\n\\[\n\\binom{n}{r}\n=\\binom{n-1}{r-1}+\\binom{n-1}{r}.\n\\]",
+    "text": "3.9 Combinaciones\nUna combinación de tamaño \\(r\\) es un subconjunto de \\(r\\) elementos de un conjunto de \\(n\\) elementos.\n\nTeorema\nEl número de combinaciones de \\(n\\) elementos tomados de \\(r\\) en \\(r\\) es\n\\[\n\\binom{n}{r}=\\frac{n!}{r!(n-r)!}.\n\\]\n\n\nDemostración\nPrimero contamos arreglos de longitud \\(r\\):\n\\[\nP(n,r)=\\frac{n!}{(n-r)!}.\n\\]\nCada subconjunto de \\(r\\) elementos produce exactamente \\(r!\\) ordenamientos. Por tanto, al dividir entre \\(r!\\) obtenemos\n\\[\n\\binom{n}{r}\n=\\frac{P(n,r)}{r!}\n=\\frac{n!}{r!(n-r)!}.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#permutaciones-con-objetos-repetidos",
-    "href": "03-conteo-probabilidad.html#permutaciones-con-objetos-repetidos",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.10 Permutaciones con objetos repetidos",
-    "text": "3.10 Permutaciones con objetos repetidos\nSupongamos que hay \\(n\\) objetos, de los cuales \\(n_1\\) son de un tipo, \\(n_2\\) de otro, y así sucesivamente, con\n\\[\nn_1+n_2+\\cdots+n_k=n.\n\\]\nEl número de ordenamientos distinguibles es el coeficiente multinomial\n\\[\n\\binom{n}{n_1,n_2,\\ldots,n_k}\n=\\frac{n!}{n_1!n_2!\\cdots n_k!}.\n\\]\nEn efecto, si se etiquetaran temporalmente los objetos iguales habría \\(n!\\) ordenamientos. Cada ordenamiento observable se cuenta \\(n_1!n_2!\\cdots n_k!\\) veces por permutaciones internas invisibles.\n\nEjemplo\nLa palabra PROBABILIDAD tiene 12 letras: aparecen dos veces A, B, D e I; las demás letras aparecen una vez. Por tanto, el número de ordenamientos distinguibles es\n\\[\n\\frac{12!}{2!2!2!2!}=29\\,937\\,600.\n\\]",
+    "objectID": "03-conteo-probabilidad.html#simetría-de-los-coeficientes-binomiales",
+    "href": "03-conteo-probabilidad.html#simetría-de-los-coeficientes-binomiales",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.10 Simetría de los coeficientes binomiales",
+    "text": "3.10 Simetría de los coeficientes binomiales\nPara \\(0\\le r\\le n\\),\n\\[\n\\binom{n}{r}=\\binom{n}{n-r}.\n\\]\n\nInterpretación combinatoria\nElegir los \\(r\\) elementos que pertenecen a un subconjunto equivale a elegir los \\(n-r\\) elementos que quedan fuera. Ambas decisiones determinan exactamente el mismo subconjunto.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#muestreo-sin-reemplazo",
-    "href": "03-conteo-probabilidad.html#muestreo-sin-reemplazo",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.11 Muestreo sin reemplazo",
-    "text": "3.11 Muestreo sin reemplazo\nUna población contiene \\(N\\) objetos, de los cuales \\(K\\) poseen una característica. Se seleccionan \\(n\\) objetos sin reemplazo y sin importar el orden. El número total de muestras es\n\\[\n\\binom{N}{n}.\n\\]\nPara obtener exactamente \\(k\\) objetos con la característica se eligen \\(k\\) de los \\(K\\) disponibles y \\(n-k\\) de los \\(N-K\\) restantes. Si todas las muestras son equiprobables,\n\\[\nP(\\text{exactamente }k)\n=\\frac{\\binom{K}{k}\\binom{N-K}{n-k}}\n{\\binom{N}{n}}.\n\\]\nEsta expresión anticipa la distribución hipergeométrica. Aquí aparece como consecuencia directa del conteo.\n\nEjemplo\nDe 20 dispositivos, 6 presentan una condición crítica. Al seleccionar 5 sin reemplazo,\n\\[\nP(\\text{exactamente 2 críticos})\n=\\frac{\\binom{6}{2}\\binom{14}{3}}\n{\\binom{20}{5}}\n\\approx0.3522.\n\\]",
+    "objectID": "03-conteo-probabilidad.html#identidad-de-pascal",
+    "href": "03-conteo-probabilidad.html#identidad-de-pascal",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.11 Identidad de Pascal",
+    "text": "3.11 Identidad de Pascal\nPara \\(1\\le r\\le n-1\\),\n\\[\n\\binom{n}{r}\n=\n\\binom{n-1}{r-1}\n+\n\\binom{n-1}{r}.\n\\]\n\nDemostración combinatoria\nFijemos un elemento particular \\(x\\) de un conjunto de \\(n\\) elementos. Todo subconjunto de tamaño \\(r\\) pertenece exactamente a una de dos clases:\n\ncontiene a \\(x\\);\nno contiene a \\(x\\).\n\nSi contiene a \\(x\\), faltan por elegir \\(r-1\\) elementos de los \\(n-1\\) restantes, lo que puede hacerse de\n\\[\n\\binom{n-1}{r-1}\n\\]\nformas. Si no contiene a \\(x\\), deben elegirse los \\(r\\) elementos entre los \\(n-1\\) restantes, lo que puede hacerse de\n\\[\n\\binom{n-1}{r}\n\\]\nformas. Como las dos clases son disjuntas, el principio aditivo completa la demostración.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#inclusión-exclusión-para-cardinalidades",
-    "href": "03-conteo-probabilidad.html#inclusión-exclusión-para-cardinalidades",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.12 Inclusión-exclusión para cardinalidades",
-    "text": "3.12 Inclusión-exclusión para cardinalidades\nPara conjuntos finitos,\n\\[\n|A\\cup B|=|A|+|B|-|A\\cap B|.\n\\]\nPara tres conjuntos,\n\\[\n\\begin{aligned}\n|A\\cup B\\cup C|\n={}&|A|+|B|+|C|\\\\\n&-|A\\cap B|-|A\\cap C|-|B\\cap C|\\\\\n&+|A\\cap B\\cap C|.\n\\end{aligned}\n\\]\nLos términos alternan signos para corregir las multiplicidades con las que se cuentan los elementos. La fórmula probabilística correspondiente se obtiene reemplazando cardinalidades por probabilidades.",
+    "objectID": "03-conteo-probabilidad.html#permutaciones-con-repetición",
+    "href": "03-conteo-probabilidad.html#permutaciones-con-repetición",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.12 Permutaciones con repetición",
+    "text": "3.12 Permutaciones con repetición\nSupongamos que se tienen \\(n\\) objetos, de los cuales \\(n_1\\) son indistinguibles de un primer tipo, \\(n_2\\) de un segundo tipo, …, \\(n_k\\) de un último tipo, con\n\\[\nn_1+n_2+\\cdots+n_k=n.\n\\]\nEl número de ordenamientos distintos es\n\\[\n\\frac{n!}{n_1!n_2!\\cdots n_k!}.\n\\]\n\nJustificación\nSi todos los objetos fueran distintos existirían \\(n!\\) ordenamientos. Sin embargo, permutar entre sí los \\(n_i\\) objetos indistinguibles de cada clase no produce un nuevo ordenamiento. Por ello se divide entre\n\\[\nn_1!n_2!\\cdots n_k!.\n\\]",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#una-guía-de-decisión",
-    "href": "03-conteo-probabilidad.html#una-guía-de-decisión",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.13 Una guía de decisión",
-    "text": "3.13 Una guía de decisión\nAntes de elegir una fórmula de conteo, conviene preguntar:\n\n¿El resultado se construye por alternativas o por etapas?\n¿Importa el orden?\n¿Puede repetirse un objeto?\n¿Los grupos considerados son disjuntos?\n¿Los resultados elementales son realmente equiprobables?\n\nLa combinatoria calcula cardinalidades. La probabilidad aparece sólo después de especificar una medida sobre esos resultados.",
+    "objectID": "03-conteo-probabilidad.html#coeficiente-multinomial",
+    "href": "03-conteo-probabilidad.html#coeficiente-multinomial",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.13 Coeficiente multinomial",
+    "text": "3.13 Coeficiente multinomial\nUna generalización natural del coeficiente binomial es\n\\[\n\\binom{n}{n_1,n_2,\\ldots,n_k}\n=\n\\frac{n!}{n_1!n_2!\\cdots n_k!},\n\\]\ncon\n\\[\nn_1+n_2+\\cdots+n_k=n.\n\\]\nEste coeficiente cuenta el número de maneras de dividir \\(n\\) objetos distintos en \\(k\\) grupos etiquetados de tamaños \\(n_1,n_2,\\ldots,n_k\\).",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#resumen",
-    "href": "03-conteo-probabilidad.html#resumen",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.14 Resumen",
-    "text": "3.14 Resumen\n\nLos axiomas de probabilidad producen reglas como complemento, monotonía e inclusión-exclusión.\nUna distribución finita queda determinada por masas puntuales no negativas cuya suma es 1.\nLa regla clásica de conteo exige equiprobabilidad.\nEl principio aditivo se aplica a alternativas disjuntas; el multiplicativo, a procedimientos por etapas.\nPermutaciones, arreglos, combinaciones y coeficientes multinomiales responden a estructuras diferentes.\nLos argumentos biyectivos permiten demostrar identidades combinatorias sin manipulación algebraica.",
+    "objectID": "03-conteo-probabilidad.html#ejemplo-palabras-binarias",
+    "href": "03-conteo-probabilidad.html#ejemplo-palabras-binarias",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.14 Ejemplo: palabras binarias",
+    "text": "3.14 Ejemplo: palabras binarias\nConsideremos cadenas de longitud 8 formadas por ceros y unos.\nEl número total de cadenas es\n\\[\n2^8=256.\n\\]\nEl número de cadenas con exactamente tres unos es\n\\[\n\\binom{8}{3}=56,\n\\]\nporque basta elegir las tres posiciones ocupadas por unos.\nEsta interpretación será útil posteriormente al estudiar la distribución binomial.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ejemplo-selección-de-componentes",
+    "href": "03-conteo-probabilidad.html#ejemplo-selección-de-componentes",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.15 Ejemplo: selección de componentes",
+    "text": "3.15 Ejemplo: selección de componentes\nDe 12 componentes se seleccionan 3.\nSi la selección es un subconjunto sin orden,\n\\[\n\\binom{12}{3}=220.\n\\]\nSi las tres posiciones representan pruebas diferentes y el orden importa,\n\\[\nP(12,3)=\\frac{12!}{9!}=1320.\n\\]\nPor tanto, el mismo conjunto físico de objetos puede inducir distintos problemas combinatorios según la definición del resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#relación-con-espacios-muestrales",
+    "href": "03-conteo-probabilidad.html#relación-con-espacios-muestrales",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.16 Relación con espacios muestrales",
+    "text": "3.16 Relación con espacios muestrales\nLas técnicas de conteo permiten calcular cardinalidades como\n\\[\n|S|\n\\]\ny\n\\[\n|A|,\n\\]\nsin enumerar explícitamente los resultados. En el capítulo siguiente, al introducir formalmente la probabilidad en espacios finitos equiprobables, estas cardinalidades permitirán expresar\n\\[\nP(A)=\\frac{|A|}{|S|}.\n\\]\nPor ahora, lo importante es separar dos cuestiones:\n\ncuántos resultados existen;\nqué probabilidad se asignará a esos resultados.\n\nEl conteo responde la primera pregunta, no la segunda.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
+    "objectID": "03-conteo-probabilidad.html#ideas-clave",
+    "href": "03-conteo-probabilidad.html#ideas-clave",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.17 Ideas clave",
+    "text": "3.17 Ideas clave\n\nLa cardinalidad mide el tamaño de un conjunto finito.\nEl principio aditivo se aplica a alternativas disjuntas.\nEl principio multiplicativo se aplica a elecciones sucesivas.\nLas permutaciones ordenan todos los objetos.\nLos arreglos seleccionan y ordenan una parte de los objetos.\nLas combinaciones seleccionan sin considerar el orden.\nLos coeficientes binomiales satisfacen identidades con interpretaciones combinatorias.\nLas técnicas de conteo preparan el cálculo de probabilidades en espacios finitos.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
     "objectID": "03-conteo-probabilidad.html#ejercicios",
     "href": "03-conteo-probabilidad.html#ejercicios",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.15 Ejercicios",
-    "text": "3.15 Ejercicios\n\nDemuestre a partir de los axiomas que \\(0\\leq P(A)\\leq1\\) para todo evento \\(A\\).\nSi \\(A\\subseteq B\\), demuestre que \\(P(B\\setminus A)=P(B)-P(A)\\).\nDemuestre la fórmula de inclusión-exclusión para tres eventos.\nPruebe la subaditividad finita por inducción.\nSea \\(\\Omega=\\{a,b,c,d\\}\\) con masas \\(p\\), \\(2p\\), \\(3p\\) y \\(4p\\). Determine \\(p\\) y calcule \\(P(\\{b,d\\})\\).\nConstruya dos medidas de probabilidad distintas sobre el mismo espacio de seis puntos y explique por qué la cardinalidad por sí sola no determina probabilidades.\nDetermine cuántas funciones existen de un conjunto de \\(r\\) elementos a uno de \\(n\\) elementos.\nDetermine cuántas funciones inyectivas existen en el ejercicio anterior cuando \\(r\\leq n\\).\nDé una demostración biyectiva de \\(\\binom{n}{r}=\\binom{n}{n-r}\\).\nDé una demostración combinatoria de la identidad de Pascal.\nDemuestre que \\(\\sum_{r=0}^{n}\\binom{n}{r}=2^n\\) contando subconjuntos de dos maneras.\n¿Cuántos ordenamientos distinguibles tiene la palabra ESTADISTICA? Identifique cuidadosamente las multiplicidades.\nDe 18 componentes, 5 son defectuosos. Se eligen 4 sin reemplazo. Calcule la probabilidad de obtener al menos un defectuoso usando el complemento.\nEn dos lanzamientos de un dado equilibrado, demuestre que los pares ordenados pueden ser equiprobables mientras que las sumas no lo son.\nFormule y demuestre la expresión general de inclusión-exclusión para tres conjuntos finitos mediante una tabla de multiplicidades.",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.18 Ejercicios",
+    "text": "3.18 Ejercicios\n\nDemuestra el principio multiplicativo para tres conjuntos finitos utilizando productos cartesianos.\nCalcula el número de cadenas de longitud 6 formadas por cuatro símbolos cuando se permite repetición.\n¿Cuántas permutaciones existen de 9 objetos distintos?\n¿Cuántos arreglos de longitud 4 pueden formarse a partir de 10 objetos distintos?\nDemuestra algebraicamente la identidad \\(\\binom{n}{r}=\\binom{n}{n-r}\\).\nDemuestra la identidad de Pascal mediante manipulación algebraica de factoriales.\n¿Cuántas cadenas binarias de longitud 12 contienen exactamente cinco unos?\nObtén el número de permutaciones distintas de las letras de la palabra PROBABILIDAD.\nExplica por qué el conteo de comités utiliza combinaciones mientras que la asignación de cargos utiliza arreglos.\n★ Demuestra que\n\n\\[\n\\sum_{r=0}^n \\binom{n}{r}=2^n\n\\]\ninterpretando ambos lados como el número de subconjuntos de un conjunto de \\(n\\) elementos.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
     "objectID": "03-conteo-probabilidad.html#referencias-del-capítulo",
     "href": "03-conteo-probabilidad.html#referencias-del-capítulo",
-    "title": "3  Axiomas, espacios finitos y métodos de conteo",
-    "section": "3.16 Referencias del capítulo",
-    "text": "3.16 Referencias del capítulo\nLa formulación axiomática, las consecuencias algebraicas y los argumentos combinatorios se desarrollan siguiendo a Walpole et al. (2012) y Devore (2016), con énfasis adicional en la construcción formal del espacio de probabilidad.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.19 Referencias del capítulo",
+    "text": "3.19 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Axiomas, espacios finitos y métodos de conteo</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
   },
   {
