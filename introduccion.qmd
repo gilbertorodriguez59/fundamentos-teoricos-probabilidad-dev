@@ -1,0 +1,7 @@
+# Introducción {.unnumbered}
+
+La probabilidad transforma la incertidumbre en un objeto matemático susceptible de análisis. Su punto de partida es describir los resultados posibles de un experimento y representar mediante conjuntos los sucesos de interés. A partir de ahí se construye una medida de probabilidad y se estudian sus consecuencias.
+
+El desarrollo será progresivo. Primero estableceremos el lenguaje de experimentos, espacios muestrales y eventos; después formularemos los axiomas y sus propiedades; más adelante introduciremos variables aleatorias, funciones de distribución, esperanza, momentos y distribuciones conjuntas.
+
+El objetivo no será únicamente aplicar fórmulas, sino comprender por qué funcionan y bajo qué hipótesis pueden utilizarse.
