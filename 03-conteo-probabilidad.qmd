@@ -1,294 +1,161 @@
-# Axiomas, espacios finitos y métodos de conteo
+# Técnicas de conteo y enumeración
 
 ## Objetivos
 
-Al finalizar este capítulo, el estudiante podrá:
+Al finalizar este capítulo, el estudiante será capaz de formular y demostrar reglas elementales de conteo, distinguir entre procesos ordenados y no ordenados, obtener fórmulas para permutaciones, arreglos y combinaciones, y utilizar estas herramientas para determinar cardinalidades de espacios muestrales finitos.
 
-- formular los axiomas de una medida de probabilidad;
-- deducir sus consecuencias algebraicas fundamentales;
-- construir medidas de probabilidad sobre espacios finitos;
-- reconocer el supuesto de equiprobabilidad y sus límites;
-- demostrar los principios aditivo y multiplicativo de conteo;
-- obtener fórmulas de permutaciones, arreglos, combinaciones y coeficientes multinomiales;
-- resolver problemas mediante argumentos combinatorios explícitos.
+## Cardinalidad de conjuntos finitos
 
-## El espacio de probabilidad
-
-Un modelo probabilístico se representa mediante una terna
+Si $A$ es un conjunto finito, denotamos por
 
 $$
-(\Omega,\mathcal{F},P),
+|A|
 $$
 
-donde:
+el número de elementos de $A$.
 
-- $\Omega$ es el espacio muestral;
-- $\mathcal{F}$ es una colección de eventos;
-- $P$ es una función que asigna un número a cada evento.
+Las técnicas de conteo buscan determinar cardinalidades sin necesidad de enumerar explícitamente cada elemento.
 
-En un espacio finito suele tomarse $\mathcal{F}=\mathcal{P}(\Omega)$. En espacios infinitos no siempre se asigna probabilidad a todo subconjunto, por lo que se emplea una sigma-álgebra.
+## Principio aditivo
 
-### Sigma-álgebra
-
-Una familia $\mathcal{F}\subseteq\mathcal{P}(\Omega)$ es una **sigma-álgebra** si:
-
-1. $\Omega\in\mathcal{F}$;
-2. si $A\in\mathcal{F}$, entonces $A^c\in\mathcal{F}$;
-3. si $A_1,A_2,\ldots\in\mathcal{F}$, entonces $\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$.
-
-De estas propiedades se deduce que $\varnothing\in\mathcal{F}$ y que la familia es cerrada bajo intersecciones numerables. Los elementos de $\mathcal{F}$ son los **eventos medibles**.
-
-## Axiomas de Kolmogórov
-
-Una **medida de probabilidad** es una función
+Sean $A_1,A_2,\ldots,A_k$ conjuntos finitos y mutuamente disjuntos. Entonces
 
 $$
-P:\mathcal{F}\longrightarrow[0,1]
+\left|\bigcup_{i=1}^k A_i\right|
+=\sum_{i=1}^k |A_i|.
 $$
 
-que satisface:
+### Demostración
 
-1. **No negatividad:** $P(A)\geq0$ para todo $A\in\mathcal{F}$.
-2. **Normalización:** $P(\Omega)=1$.
-3. **Aditividad numerable:** para toda sucesión de eventos disjuntos dos a dos,
+Como los conjuntos son disjuntos, ningún elemento pertenece simultáneamente a dos de ellos. Por tanto, al sumar sus cardinalidades cada elemento de la unión se cuenta exactamente una vez.
 
-$$
-P\left(\bigcup_{i=1}^{\infty}A_i\right)
-=\sum_{i=1}^{\infty}P(A_i).
-$$
+El requisito de disjunción es esencial. Si dos conjuntos se superponen, la suma simple cuenta varias veces los elementos comunes.
 
-La aditividad finita es una consecuencia directa del tercer axioma, tomando vacíos todos los eventos restantes.
+## Principio multiplicativo
 
-## Consecuencias de los axiomas
-
-### Probabilidad del evento imposible
-
-Como $\Omega$ y $\varnothing$ son disjuntos y $\Omega=\Omega\cup\varnothing$,
+Sean $A_1,A_2,\ldots,A_k$ conjuntos finitos. El número de elementos del producto cartesiano
 
 $$
-1=P(\Omega)=P(\Omega)+P(\varnothing).
+A_1\times A_2\times\cdots\times A_k
 $$
 
-Por tanto,
+es
 
 $$
-P(\varnothing)=0.
+|A_1||A_2|\cdots|A_k|.
 $$
 
-### Regla del complemento
+### Demostración
 
-Los eventos $A$ y $A^c$ son disjuntos y su unión es $\Omega$. En consecuencia,
-
-$$
-1=P(\Omega)=P(A)+P(A^c),
-$$
-
-de donde
+Cada elemento del producto cartesiano es una $k$-tupla
 
 $$
-P(A^c)=1-P(A).
+(a_1,a_2,\ldots,a_k),
 $$
 
-### Monotonía
+con $a_i\in A_i$. Para cada elección de $a_1$ existen $|A_2|$ posibilidades para $a_2$, y así sucesivamente. La aplicación sucesiva del principio multiplicativo produce el resultado.
 
-Si $A\subseteq B$, entonces
+Este principio proporciona la formulación matemática de los diagramas de árbol y de los experimentos por etapas.
 
-$$
-B=A\mathbin{\dot\cup}(B\setminus A),
-$$
+## Secuencias con repetición
 
-donde $\dot\cup$ indica unión disjunta. Por aditividad,
+Sea un conjunto de $n$ símbolos. El número de secuencias ordenadas de longitud $r$ que pueden formarse permitiendo repetición es
 
 $$
-P(B)=P(A)+P(B\setminus A)\geq P(A).
+n^r.
 $$
 
-Así,
+En efecto, el espacio de secuencias es el producto cartesiano
 
 $$
-A\subseteq B\quad\Longrightarrow\quad P(A)\leq P(B).
+A^r=A\times A\times\cdots\times A,
 $$
 
-Además,
+y por el principio multiplicativo
 
 $$
-P(B\setminus A)=P(B)-P(A).
+|A^r|=|A|^r=n^r.
 $$
 
-### Fórmula de inclusión-exclusión para dos eventos
+## Factorial
 
-Descomponemos la unión como
-
-$$
-A\cup B=A\mathbin{\dot\cup}(B\setminus A).
-$$
-
-También $B=(B\setminus A)\mathbin{\dot\cup}(A\cap B)$, de modo que
+Para $n\in\mathbb{N}$,
 
 $$
-P(B\setminus A)=P(B)-P(A\cap B).
+n!=n(n-1)\cdots2\cdot1,
 $$
 
-Por tanto,
+con el convenio
 
 $$
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
+0!=1.
 $$
 
-### Subaditividad
+El factorial aparece al contar biyecciones y ordenamientos de conjuntos finitos.
 
-De la fórmula anterior,
+## Permutaciones de $n$ objetos distintos
 
-$$
-P(A\cup B)\leq P(A)+P(B).
-$$
+Una permutación de un conjunto de $n$ elementos es una ordenación de todos sus elementos.
 
-Más generalmente,
+### Teorema
 
-$$
-P\left(\bigcup_{i=1}^{\infty}A_i\right)
-\leq\sum_{i=1}^{\infty}P(A_i),
-$$
-
-desigualdad conocida como cota de la unión o desigualdad de Boole.
-
-## Construcción de probabilidades en espacios finitos
-
-Sea
+El número de permutaciones de $n$ objetos distintos es
 
 $$
-\Omega=\{\omega_1,\omega_2,\ldots,\omega_N\}
+n!.
 $$
 
-y sean $p_1,p_2,\ldots,p_N$ números tales que
+### Demostración
+
+La primera posición puede ocuparse de $n$ maneras. Una vez elegida, la segunda dispone de $n-1$ posibilidades; la tercera, de $n-2$, y así sucesivamente. Por el principio multiplicativo,
 
 $$
-p_i\geq0,
-\qquad
-\sum_{i=1}^{N}p_i=1.
+n(n-1)(n-2)\cdots2\cdot1=n!.
 $$
 
-Definimos, para $A\subseteq\Omega$,
+## Arreglos de $r$ objetos tomados de $n$
+
+Un arreglo sin repetición de longitud $r$ es una secuencia ordenada formada por $r$ elementos distintos elegidos de un conjunto de $n$ elementos.
+
+### Teorema
+
+El número de arreglos es
 
 $$
-P(A)=\sum_{\omega_i\in A}p_i.
+P(n,r)=\frac{n!}{(n-r)!},
+\qquad 0\le r\le n.
 $$
 
-Esta definición produce una medida de probabilidad sobre $\mathcal{P}(\Omega)$.
+### Demostración
 
-### Verificación
-
-La no negatividad se sigue de $p_i\geq0$. Además,
-
-$$
-P(\Omega)=\sum_{i=1}^{N}p_i=1.
-$$
-
-Si $A_1,A_2,\ldots$ son disjuntos, cada punto de $\Omega$ aparece en a lo sumo uno de ellos. Como $\Omega$ es finito, sólo un número finito de esos eventos puede contener puntos. Agrupar las masas puntuales demuestra la aditividad numerable.
-
-## El modelo equiprobable
-
-Si
-
-$$
-p_1=p_2=\cdots=p_N,
-$$
-
-la normalización implica $p_i=1/N$. Por tanto,
-
-$$
-P(A)=\frac{|A|}{|\Omega|}.
-$$
-
-Ésta es la regla clásica de casos favorables entre casos posibles. Su validez requiere dos condiciones:
-
-1. el espacio muestral es finito;
-2. los puntos muestrales son equiprobables.
-
-La equiprobabilidad no debe justificarse usando la misma regla que se pretende aplicar. Se fundamenta en simetrías físicas, en el diseño del mecanismo aleatorio o en una hipótesis explícita del modelo.
-
-### Ejemplo: suma de dos dados
-
-Los 36 pares ordenados $(i,j)$ son equiprobables si los dados son equilibrados e independientes. Sin embargo, las sumas $2,3,\ldots,12$ no son equiprobables. Por ejemplo,
-
-$$
-P(2)=\frac{1}{36},
-\qquad
-P(7)=\frac{6}{36}.
-$$
-
-La elección del nivel de descripción determina cuáles resultados elementales pueden considerarse igualmente probables.
-
-## Principios de conteo
-
-### Principio aditivo
-
-Si $A_1,\ldots,A_k$ son conjuntos finitos disjuntos dos a dos, entonces
-
-$$
-\left|\bigcup_{i=1}^{k}A_i\right|
-=\sum_{i=1}^{k}|A_i|.
-$$
-
-La disjunción garantiza que cada elemento se cuente exactamente una vez.
-
-### Principio multiplicativo
-
-Sea un procedimiento con $k$ etapas. Si la primera admite $n_1$ opciones y, para cada elección previa, la etapa $i$ admite $n_i$ opciones, entonces existen
-
-$$
-\prod_{i=1}^{k}n_i
-$$
-
-resultados completos.
-
-Formalmente, cuando las opciones no dependen de elecciones previas, el conjunto de resultados es un producto cartesiano
-
-$$
-A_1\times\cdots\times A_k,
-$$
-
-y su cardinalidad es
-
-$$
-|A_1\times\cdots\times A_k|
-=\prod_{i=1}^{k}|A_i|.
-$$
-
-## Permutaciones y arreglos
-
-### Permutaciones de objetos distintos
-
-Para ordenar $n$ objetos distintos hay $n$ opciones para la primera posición, $n-1$ para la segunda y así sucesivamente. Luego,
-
-$$
-n!=n(n-1)\cdots2\cdot1.
-$$
-
-Se define $0!=1$ para conservar identidades como $n!=n(n-1)!$ cuando $n=1$.
-
-### Arreglos sin repetición
-
-El número de secuencias de longitud $r$ formadas con objetos distintos elegidos de un conjunto de $n$ es
+Existen $n$ opciones para la primera posición, $n-1$ para la segunda y, finalmente, $n-r+1$ para la posición $r$. Por tanto,
 
 $$
 P(n,r)=n(n-1)\cdots(n-r+1)
 =\frac{n!}{(n-r)!}.
 $$
 
-### Secuencias con repetición
-
-Si cada una de las $r$ posiciones puede ocuparse por cualquiera de los $n$ símbolos, el principio multiplicativo da
-
-$$
-n^r.
-$$
-
 ## Combinaciones
 
-Una combinación es un subconjunto de $r$ objetos tomado de un conjunto de $n$. El orden no importa.
+Una combinación de tamaño $r$ es un subconjunto de $r$ elementos de un conjunto de $n$ elementos.
 
-Cada subconjunto de $r$ elementos genera $r!$ ordenamientos. Como existen $P(n,r)$ arreglos,
+### Teorema
+
+El número de combinaciones de $n$ elementos tomados de $r$ en $r$ es
+
+$$
+\binom{n}{r}=\frac{n!}{r!(n-r)!}.
+$$
+
+### Demostración
+
+Primero contamos arreglos de longitud $r$:
+
+$$
+P(n,r)=\frac{n!}{(n-r)!}.
+$$
+
+Cada subconjunto de $r$ elementos produce exactamente $r!$ ordenamientos. Por tanto, al dividir entre $r!$ obtenemos
 
 $$
 \binom{n}{r}
@@ -296,142 +163,186 @@ $$
 =\frac{n!}{r!(n-r)!}.
 $$
 
-### Identidad de simetría
+## Simetría de los coeficientes binomiales
 
-La aplicación que asocia a cada subconjunto $A$ su complemento es una biyección entre los subconjuntos de tamaño $r$ y los de tamaño $n-r$. Por ello,
+Para $0\le r\le n$,
 
 $$
 \binom{n}{r}=\binom{n}{n-r}.
 $$
 
-### Identidad de Pascal
+### Interpretación combinatoria
 
-Fijemos un elemento distinguido $x$. Los subconjuntos de tamaño $r$ se dividen en dos clases disjuntas:
+Elegir los $r$ elementos que pertenecen a un subconjunto equivale a elegir los $n-r$ elementos que quedan fuera. Ambas decisiones determinan exactamente el mismo subconjunto.
 
-- los que contienen a $x$, determinados al elegir $r-1$ elementos entre los $n-1$ restantes;
-- los que no contienen a $x$, determinados al elegir $r$ elementos entre esos $n-1$.
+## Identidad de Pascal
 
-Por el principio aditivo,
+Para $1\le r\le n-1$,
 
 $$
 \binom{n}{r}
-=\binom{n-1}{r-1}+\binom{n-1}{r}.
+=
+\binom{n-1}{r-1}
++
+\binom{n-1}{r}.
 $$
 
-## Permutaciones con objetos repetidos
+### Demostración combinatoria
 
-Supongamos que hay $n$ objetos, de los cuales $n_1$ son de un tipo, $n_2$ de otro, y así sucesivamente, con
+Fijemos un elemento particular $x$ de un conjunto de $n$ elementos. Todo subconjunto de tamaño $r$ pertenece exactamente a una de dos clases:
+
+1. contiene a $x$;
+2. no contiene a $x$.
+
+Si contiene a $x$, faltan por elegir $r-1$ elementos de los $n-1$ restantes, lo que puede hacerse de
+
+$$
+\binom{n-1}{r-1}
+$$
+
+formas. Si no contiene a $x$, deben elegirse los $r$ elementos entre los $n-1$ restantes, lo que puede hacerse de
+
+$$
+\binom{n-1}{r}
+$$
+
+formas. Como las dos clases son disjuntas, el principio aditivo completa la demostración.
+
+## Permutaciones con repetición
+
+Supongamos que se tienen $n$ objetos, de los cuales $n_1$ son indistinguibles de un primer tipo, $n_2$ de un segundo tipo, ..., $n_k$ de un último tipo, con
 
 $$
 n_1+n_2+\cdots+n_k=n.
 $$
 
-El número de ordenamientos distinguibles es el coeficiente multinomial
+El número de ordenamientos distintos es
+
+$$
+\frac{n!}{n_1!n_2!\cdots n_k!}.
+$$
+
+### Justificación
+
+Si todos los objetos fueran distintos existirían $n!$ ordenamientos. Sin embargo, permutar entre sí los $n_i$ objetos indistinguibles de cada clase no produce un nuevo ordenamiento. Por ello se divide entre
+
+$$
+n_1!n_2!\cdots n_k!.
+$$
+
+## Coeficiente multinomial
+
+Una generalización natural del coeficiente binomial es
 
 $$
 \binom{n}{n_1,n_2,\ldots,n_k}
-=\frac{n!}{n_1!n_2!\cdots n_k!}.
+=
+\frac{n!}{n_1!n_2!\cdots n_k!},
 $$
 
-En efecto, si se etiquetaran temporalmente los objetos iguales habría $n!$ ordenamientos. Cada ordenamiento observable se cuenta $n_1!n_2!\cdots n_k!$ veces por permutaciones internas invisibles.
-
-### Ejemplo
-
-La palabra **PROBABILIDAD** tiene 12 letras: aparecen dos veces A, B, D e I; las demás letras aparecen una vez. Por tanto, el número de ordenamientos distinguibles es
+con
 
 $$
-\frac{12!}{2!2!2!2!}=29\,937\,600.
+n_1+n_2+\cdots+n_k=n.
 $$
 
-## Muestreo sin reemplazo
+Este coeficiente cuenta el número de maneras de dividir $n$ objetos distintos en $k$ grupos etiquetados de tamaños $n_1,n_2,\ldots,n_k$.
 
-Una población contiene $N$ objetos, de los cuales $K$ poseen una característica. Se seleccionan $n$ objetos sin reemplazo y sin importar el orden. El número total de muestras es
+## Ejemplo: palabras binarias
 
-$$
-\binom{N}{n}.
-$$
+Consideremos cadenas de longitud 8 formadas por ceros y unos.
 
-Para obtener exactamente $k$ objetos con la característica se eligen $k$ de los $K$ disponibles y $n-k$ de los $N-K$ restantes. Si todas las muestras son equiprobables,
+El número total de cadenas es
 
 $$
-P(\text{exactamente }k)
-=\frac{\binom{K}{k}\binom{N-K}{n-k}}
-{\binom{N}{n}}.
+2^8=256.
 $$
 
-Esta expresión anticipa la distribución hipergeométrica. Aquí aparece como consecuencia directa del conteo.
-
-### Ejemplo
-
-De 20 dispositivos, 6 presentan una condición crítica. Al seleccionar 5 sin reemplazo,
+El número de cadenas con exactamente tres unos es
 
 $$
-P(\text{exactamente 2 críticos})
-=\frac{\binom{6}{2}\binom{14}{3}}
-{\binom{20}{5}}
-\approx0.3522.
+\binom{8}{3}=56,
 $$
 
-## Inclusión-exclusión para cardinalidades
+porque basta elegir las tres posiciones ocupadas por unos.
 
-Para conjuntos finitos,
+Esta interpretación será útil posteriormente al estudiar la distribución binomial.
+
+## Ejemplo: selección de componentes
+
+De 12 componentes se seleccionan 3.
+
+Si la selección es un subconjunto sin orden,
 
 $$
-|A\cup B|=|A|+|B|-|A\cap B|.
+\binom{12}{3}=220.
 $$
 
-Para tres conjuntos,
+Si las tres posiciones representan pruebas diferentes y el orden importa,
 
 $$
-\begin{aligned}
-|A\cup B\cup C|
-={}&|A|+|B|+|C|\\
-&-|A\cap B|-|A\cap C|-|B\cap C|\\
-&+|A\cap B\cap C|.
-\end{aligned}
+P(12,3)=\frac{12!}{9!}=1320.
 $$
 
-Los términos alternan signos para corregir las multiplicidades con las que se cuentan los elementos. La fórmula probabilística correspondiente se obtiene reemplazando cardinalidades por probabilidades.
+Por tanto, el mismo conjunto físico de objetos puede inducir distintos problemas combinatorios según la definición del resultado.
 
-## Una guía de decisión
+## Relación con espacios muestrales
 
-Antes de elegir una fórmula de conteo, conviene preguntar:
+Las técnicas de conteo permiten calcular cardinalidades como
 
-1. ¿El resultado se construye por alternativas o por etapas?
-2. ¿Importa el orden?
-3. ¿Puede repetirse un objeto?
-4. ¿Los grupos considerados son disjuntos?
-5. ¿Los resultados elementales son realmente equiprobables?
+$$
+|S|
+$$
 
-La combinatoria calcula cardinalidades. La probabilidad aparece sólo después de especificar una medida sobre esos resultados.
+y
 
-## Resumen
+$$
+|A|,
+$$
 
-- Los axiomas de probabilidad producen reglas como complemento, monotonía e inclusión-exclusión.
-- Una distribución finita queda determinada por masas puntuales no negativas cuya suma es 1.
-- La regla clásica de conteo exige equiprobabilidad.
-- El principio aditivo se aplica a alternativas disjuntas; el multiplicativo, a procedimientos por etapas.
-- Permutaciones, arreglos, combinaciones y coeficientes multinomiales responden a estructuras diferentes.
-- Los argumentos biyectivos permiten demostrar identidades combinatorias sin manipulación algebraica.
+sin enumerar explícitamente los resultados. En el capítulo siguiente, al introducir formalmente la probabilidad en espacios finitos equiprobables, estas cardinalidades permitirán expresar
+
+$$
+P(A)=\frac{|A|}{|S|}.
+$$
+
+Por ahora, lo importante es separar dos cuestiones:
+
+1. cuántos resultados existen;
+2. qué probabilidad se asignará a esos resultados.
+
+El conteo responde la primera pregunta, no la segunda.
+
+## Ideas clave
+
+- La cardinalidad mide el tamaño de un conjunto finito.
+- El principio aditivo se aplica a alternativas disjuntas.
+- El principio multiplicativo se aplica a elecciones sucesivas.
+- Las permutaciones ordenan todos los objetos.
+- Los arreglos seleccionan y ordenan una parte de los objetos.
+- Las combinaciones seleccionan sin considerar el orden.
+- Los coeficientes binomiales satisfacen identidades con interpretaciones combinatorias.
+- Las técnicas de conteo preparan el cálculo de probabilidades en espacios finitos.
 
 ## Ejercicios
 
-1. Demuestre a partir de los axiomas que $0\leq P(A)\leq1$ para todo evento $A$.
-2. Si $A\subseteq B$, demuestre que $P(B\setminus A)=P(B)-P(A)$.
-3. Demuestre la fórmula de inclusión-exclusión para tres eventos.
-4. Pruebe la subaditividad finita por inducción.
-5. Sea $\Omega=\{a,b,c,d\}$ con masas $p$, $2p$, $3p$ y $4p$. Determine $p$ y calcule $P(\{b,d\})$.
-6. Construya dos medidas de probabilidad distintas sobre el mismo espacio de seis puntos y explique por qué la cardinalidad por sí sola no determina probabilidades.
-7. Determine cuántas funciones existen de un conjunto de $r$ elementos a uno de $n$ elementos.
-8. Determine cuántas funciones inyectivas existen en el ejercicio anterior cuando $r\leq n$.
-9. Dé una demostración biyectiva de $\binom{n}{r}=\binom{n}{n-r}$.
-10. Dé una demostración combinatoria de la identidad de Pascal.
-11. Demuestre que $\sum_{r=0}^{n}\binom{n}{r}=2^n$ contando subconjuntos de dos maneras.
-12. ¿Cuántos ordenamientos distinguibles tiene la palabra ESTADISTICA? Identifique cuidadosamente las multiplicidades.
-13. De 18 componentes, 5 son defectuosos. Se eligen 4 sin reemplazo. Calcule la probabilidad de obtener al menos un defectuoso usando el complemento.
-14. En dos lanzamientos de un dado equilibrado, demuestre que los pares ordenados pueden ser equiprobables mientras que las sumas no lo son.
-15. Formule y demuestre la expresión general de inclusión-exclusión para tres conjuntos finitos mediante una tabla de multiplicidades.
+1. Demuestra el principio multiplicativo para tres conjuntos finitos utilizando productos cartesianos.
+2. Calcula el número de cadenas de longitud 6 formadas por cuatro símbolos cuando se permite repetición.
+3. ¿Cuántas permutaciones existen de 9 objetos distintos?
+4. ¿Cuántos arreglos de longitud 4 pueden formarse a partir de 10 objetos distintos?
+5. Demuestra algebraicamente la identidad $\binom{n}{r}=\binom{n}{n-r}$.
+6. Demuestra la identidad de Pascal mediante manipulación algebraica de factoriales.
+7. ¿Cuántas cadenas binarias de longitud 12 contienen exactamente cinco unos?
+8. Obtén el número de permutaciones distintas de las letras de la palabra PROBABILIDAD.
+9. Explica por qué el conteo de comités utiliza combinaciones mientras que la asignación de cargos utiliza arreglos.
+10. ★ Demuestra que
+
+$$
+\sum_{r=0}^n \binom{n}{r}=2^n
+$$
+
+interpretando ambos lados como el número de subconjuntos de un conjunto de $n$ elementos.
 
 ## Referencias del capítulo
 
-La formulación axiomática, las consecuencias algebraicas y los argumentos combinatorios se desarrollan siguiendo a @walpole2012 y @devore2016, con énfasis adicional en la construcción formal del espacio de probabilidad.
+El desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
