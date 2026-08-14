@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Axiomas, espacios finitos y métodos de conteo – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./02-espacios-eventos.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d0a12195134012fdee000f1b653dae58.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-conteo-probabilidad.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Axiomas, espacios finitos y métodos de conteo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Contenido del libro</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/gilbertorodriguez59/fundamentos-teoricos-probabilidad-dev" title="Ejecutar el código" class="quarto-navigation-tool px-1" aria-label="Ejecutar el código"><i class="bi bi-github"></i></a>
+    <a href="./Fundamentos-Teoricos-de-Introduccion-a-la-Probabilidad.pdf" title="Descargar PDF" class="quarto-navigation-tool px-1" aria-label="Descargar PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portada</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bienvenida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bienvenida</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notación general</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-espacios-eventos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-conteo-probabilidad.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Axiomas, espacios finitos y métodos de conteo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En este capítulo</h2>
+   
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">3.1</span> Objetivos</a></li>
+  <li><a href="#el-espacio-de-probabilidad" id="toc-el-espacio-de-probabilidad" class="nav-link" data-scroll-target="#el-espacio-de-probabilidad"><span class="header-section-number">3.2</span> El espacio de probabilidad</a>
+  <ul class="collapse">
+  <li><a href="#sigma-álgebra" id="toc-sigma-álgebra" class="nav-link" data-scroll-target="#sigma-álgebra">Sigma-álgebra</a></li>
+  </ul></li>
+  <li><a href="#axiomas-de-kolmogórov" id="toc-axiomas-de-kolmogórov" class="nav-link" data-scroll-target="#axiomas-de-kolmogórov"><span class="header-section-number">3.3</span> Axiomas de Kolmogórov</a></li>
+  <li><a href="#consecuencias-de-los-axiomas" id="toc-consecuencias-de-los-axiomas" class="nav-link" data-scroll-target="#consecuencias-de-los-axiomas"><span class="header-section-number">3.4</span> Consecuencias de los axiomas</a>
+  <ul class="collapse">
+  <li><a href="#probabilidad-del-evento-imposible" id="toc-probabilidad-del-evento-imposible" class="nav-link" data-scroll-target="#probabilidad-del-evento-imposible">Probabilidad del evento imposible</a></li>
+  <li><a href="#regla-del-complemento" id="toc-regla-del-complemento" class="nav-link" data-scroll-target="#regla-del-complemento">Regla del complemento</a></li>
+  <li><a href="#monotonía" id="toc-monotonía" class="nav-link" data-scroll-target="#monotonía">Monotonía</a></li>
+  <li><a href="#fórmula-de-inclusión-exclusión-para-dos-eventos" id="toc-fórmula-de-inclusión-exclusión-para-dos-eventos" class="nav-link" data-scroll-target="#fórmula-de-inclusión-exclusión-para-dos-eventos">Fórmula de inclusión-exclusión para dos eventos</a></li>
+  <li><a href="#subaditividad" id="toc-subaditividad" class="nav-link" data-scroll-target="#subaditividad">Subaditividad</a></li>
+  </ul></li>
+  <li><a href="#construcción-de-probabilidades-en-espacios-finitos" id="toc-construcción-de-probabilidades-en-espacios-finitos" class="nav-link" data-scroll-target="#construcción-de-probabilidades-en-espacios-finitos"><span class="header-section-number">3.5</span> Construcción de probabilidades en espacios finitos</a>
+  <ul class="collapse">
+  <li><a href="#verificación" id="toc-verificación" class="nav-link" data-scroll-target="#verificación">Verificación</a></li>
+  </ul></li>
+  <li><a href="#el-modelo-equiprobable" id="toc-el-modelo-equiprobable" class="nav-link" data-scroll-target="#el-modelo-equiprobable"><span class="header-section-number">3.6</span> El modelo equiprobable</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-suma-de-dos-dados" id="toc-ejemplo-suma-de-dos-dados" class="nav-link" data-scroll-target="#ejemplo-suma-de-dos-dados">Ejemplo: suma de dos dados</a></li>
+  </ul></li>
+  <li><a href="#principios-de-conteo" id="toc-principios-de-conteo" class="nav-link" data-scroll-target="#principios-de-conteo"><span class="header-section-number">3.7</span> Principios de conteo</a>
+  <ul class="collapse">
+  <li><a href="#principio-aditivo" id="toc-principio-aditivo" class="nav-link" data-scroll-target="#principio-aditivo">Principio aditivo</a></li>
+  <li><a href="#principio-multiplicativo" id="toc-principio-multiplicativo" class="nav-link" data-scroll-target="#principio-multiplicativo">Principio multiplicativo</a></li>
+  </ul></li>
+  <li><a href="#permutaciones-y-arreglos" id="toc-permutaciones-y-arreglos" class="nav-link" data-scroll-target="#permutaciones-y-arreglos"><span class="header-section-number">3.8</span> Permutaciones y arreglos</a>
+  <ul class="collapse">
+  <li><a href="#permutaciones-de-objetos-distintos" id="toc-permutaciones-de-objetos-distintos" class="nav-link" data-scroll-target="#permutaciones-de-objetos-distintos">Permutaciones de objetos distintos</a></li>
+  <li><a href="#arreglos-sin-repetición" id="toc-arreglos-sin-repetición" class="nav-link" data-scroll-target="#arreglos-sin-repetición">Arreglos sin repetición</a></li>
+  <li><a href="#secuencias-con-repetición" id="toc-secuencias-con-repetición" class="nav-link" data-scroll-target="#secuencias-con-repetición">Secuencias con repetición</a></li>
+  </ul></li>
+  <li><a href="#combinaciones" id="toc-combinaciones" class="nav-link" data-scroll-target="#combinaciones"><span class="header-section-number">3.9</span> Combinaciones</a>
+  <ul class="collapse">
+  <li><a href="#identidad-de-simetría" id="toc-identidad-de-simetría" class="nav-link" data-scroll-target="#identidad-de-simetría">Identidad de simetría</a></li>
+  <li><a href="#identidad-de-pascal" id="toc-identidad-de-pascal" class="nav-link" data-scroll-target="#identidad-de-pascal">Identidad de Pascal</a></li>
+  </ul></li>
+  <li><a href="#permutaciones-con-objetos-repetidos" id="toc-permutaciones-con-objetos-repetidos" class="nav-link" data-scroll-target="#permutaciones-con-objetos-repetidos"><span class="header-section-number">3.10</span> Permutaciones con objetos repetidos</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#muestreo-sin-reemplazo" id="toc-muestreo-sin-reemplazo" class="nav-link" data-scroll-target="#muestreo-sin-reemplazo"><span class="header-section-number">3.11</span> Muestreo sin reemplazo</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#inclusión-exclusión-para-cardinalidades" id="toc-inclusión-exclusión-para-cardinalidades" class="nav-link" data-scroll-target="#inclusión-exclusión-para-cardinalidades"><span class="header-section-number">3.12</span> Inclusión-exclusión para cardinalidades</a></li>
+  <li><a href="#una-guía-de-decisión" id="toc-una-guía-de-decisión" class="nav-link" data-scroll-target="#una-guía-de-decisión"><span class="header-section-number">3.13</span> Una guía de decisión</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">3.14</span> Resumen</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">3.15</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">3.16</span> Referencias del capítulo</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Axiomas, espacios finitos y métodos de conteo</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="objetivos" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">3.1</span> Objetivos</h2>
+<p>Al finalizar este capítulo, el estudiante podrá:</p>
+<ul>
+<li>formular los axiomas de una medida de probabilidad;</li>
+<li>deducir sus consecuencias algebraicas fundamentales;</li>
+<li>construir medidas de probabilidad sobre espacios finitos;</li>
+<li>reconocer el supuesto de equiprobabilidad y sus límites;</li>
+<li>demostrar los principios aditivo y multiplicativo de conteo;</li>
+<li>obtener fórmulas de permutaciones, arreglos, combinaciones y coeficientes multinomiales;</li>
+<li>resolver problemas mediante argumentos combinatorios explícitos.</li>
+</ul>
+</section>
+<section id="el-espacio-de-probabilidad" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="el-espacio-de-probabilidad"><span class="header-section-number">3.2</span> El espacio de probabilidad</h2>
+<p>Un modelo probabilístico se representa mediante una terna</p>
+<p><span class="math display">\[
+(\Omega,\mathcal{F},P),
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> es el espacio muestral;</li>
+<li><span class="math inline">\(\mathcal{F}\)</span> es una colección de eventos;</li>
+<li><span class="math inline">\(P\)</span> es una función que asigna un número a cada evento.</li>
+</ul>
+<p>En un espacio finito suele tomarse <span class="math inline">\(\mathcal{F}=\mathcal{P}(\Omega)\)</span>. En espacios infinitos no siempre se asigna probabilidad a todo subconjunto, por lo que se emplea una sigma-álgebra.</p>
+<section id="sigma-álgebra" class="level3">
+<h3 class="anchored" data-anchor-id="sigma-álgebra">Sigma-álgebra</h3>
+<p>Una familia <span class="math inline">\(\mathcal{F}\subseteq\mathcal{P}(\Omega)\)</span> es una <strong>sigma-álgebra</strong> si:</p>
+<ol type="1">
+<li><span class="math inline">\(\Omega\in\mathcal{F}\)</span>;</li>
+<li>si <span class="math inline">\(A\in\mathcal{F}\)</span>, entonces <span class="math inline">\(A^c\in\mathcal{F}\)</span>;</li>
+<li>si <span class="math inline">\(A_1,A_2,\ldots\in\mathcal{F}\)</span>, entonces <span class="math inline">\(\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}\)</span>.</li>
+</ol>
+<p>De estas propiedades se deduce que <span class="math inline">\(\varnothing\in\mathcal{F}\)</span> y que la familia es cerrada bajo intersecciones numerables. Los elementos de <span class="math inline">\(\mathcal{F}\)</span> son los <strong>eventos medibles</strong>.</p>
+</section>
+</section>
+<section id="axiomas-de-kolmogórov" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="axiomas-de-kolmogórov"><span class="header-section-number">3.3</span> Axiomas de Kolmogórov</h2>
+<p>Una <strong>medida de probabilidad</strong> es una función</p>
+<p><span class="math display">\[
+P:\mathcal{F}\longrightarrow[0,1]
+\]</span></p>
+<p>que satisface:</p>
+<ol type="1">
+<li><strong>No negatividad:</strong> <span class="math inline">\(P(A)\geq0\)</span> para todo <span class="math inline">\(A\in\mathcal{F}\)</span>.</li>
+<li><strong>Normalización:</strong> <span class="math inline">\(P(\Omega)=1\)</span>.</li>
+<li><strong>Aditividad numerable:</strong> para toda sucesión de eventos disjuntos dos a dos,</li>
+</ol>
+<p><span class="math display">\[
+P\left(\bigcup_{i=1}^{\infty}A_i\right)
+=\sum_{i=1}^{\infty}P(A_i).
+\]</span></p>
+<p>La aditividad finita es una consecuencia directa del tercer axioma, tomando vacíos todos los eventos restantes.</p>
+</section>
+<section id="consecuencias-de-los-axiomas" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="consecuencias-de-los-axiomas"><span class="header-section-number">3.4</span> Consecuencias de los axiomas</h2>
+<section id="probabilidad-del-evento-imposible" class="level3">
+<h3 class="anchored" data-anchor-id="probabilidad-del-evento-imposible">Probabilidad del evento imposible</h3>
+<p>Como <span class="math inline">\(\Omega\)</span> y <span class="math inline">\(\varnothing\)</span> son disjuntos y <span class="math inline">\(\Omega=\Omega\cup\varnothing\)</span>,</p>
+<p><span class="math display">\[
+1=P(\Omega)=P(\Omega)+P(\varnothing).
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+P(\varnothing)=0.
+\]</span></p>
+</section>
+<section id="regla-del-complemento" class="level3">
+<h3 class="anchored" data-anchor-id="regla-del-complemento">Regla del complemento</h3>
+<p>Los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(A^c\)</span> son disjuntos y su unión es <span class="math inline">\(\Omega\)</span>. En consecuencia,</p>
+<p><span class="math display">\[
+1=P(\Omega)=P(A)+P(A^c),
+\]</span></p>
+<p>de donde</p>
+<p><span class="math display">\[
+P(A^c)=1-P(A).
+\]</span></p>
+</section>
+<section id="monotonía" class="level3">
+<h3 class="anchored" data-anchor-id="monotonía">Monotonía</h3>
+<p>Si <span class="math inline">\(A\subseteq B\)</span>, entonces</p>
+<p><span class="math display">\[
+B=A\mathbin{\dot\cup}(B\setminus A),
+\]</span></p>
+<p>donde <span class="math inline">\(\dot\cup\)</span> indica unión disjunta. Por aditividad,</p>
+<p><span class="math display">\[
+P(B)=P(A)+P(B\setminus A)\geq P(A).
+\]</span></p>
+<p>Así,</p>
+<p><span class="math display">\[
+A\subseteq B\quad\Longrightarrow\quad P(A)\leq P(B).
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+P(B\setminus A)=P(B)-P(A).
+\]</span></p>
+</section>
+<section id="fórmula-de-inclusión-exclusión-para-dos-eventos" class="level3">
+<h3 class="anchored" data-anchor-id="fórmula-de-inclusión-exclusión-para-dos-eventos">Fórmula de inclusión-exclusión para dos eventos</h3>
+<p>Descomponemos la unión como</p>
+<p><span class="math display">\[
+A\cup B=A\mathbin{\dot\cup}(B\setminus A).
+\]</span></p>
+<p>También <span class="math inline">\(B=(B\setminus A)\mathbin{\dot\cup}(A\cap B)\)</span>, de modo que</p>
+<p><span class="math display">\[
+P(B\setminus A)=P(B)-P(A\cap B).
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\]</span></p>
+</section>
+<section id="subaditividad" class="level3">
+<h3 class="anchored" data-anchor-id="subaditividad">Subaditividad</h3>
+<p>De la fórmula anterior,</p>
+<p><span class="math display">\[
+P(A\cup B)\leq P(A)+P(B).
+\]</span></p>
+<p>Más generalmente,</p>
+<p><span class="math display">\[
+P\left(\bigcup_{i=1}^{\infty}A_i\right)
+\leq\sum_{i=1}^{\infty}P(A_i),
+\]</span></p>
+<p>desigualdad conocida como cota de la unión o desigualdad de Boole.</p>
+</section>
+</section>
+<section id="construcción-de-probabilidades-en-espacios-finitos" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="construcción-de-probabilidades-en-espacios-finitos"><span class="header-section-number">3.5</span> Construcción de probabilidades en espacios finitos</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+\Omega=\{\omega_1,\omega_2,\ldots,\omega_N\}
+\]</span></p>
+<p>y sean <span class="math inline">\(p_1,p_2,\ldots,p_N\)</span> números tales que</p>
+<p><span class="math display">\[
+p_i\geq0,
+\qquad
+\sum_{i=1}^{N}p_i=1.
+\]</span></p>
+<p>Definimos, para <span class="math inline">\(A\subseteq\Omega\)</span>,</p>
+<p><span class="math display">\[
+P(A)=\sum_{\omega_i\in A}p_i.
+\]</span></p>
+<p>Esta definición produce una medida de probabilidad sobre <span class="math inline">\(\mathcal{P}(\Omega)\)</span>.</p>
+<section id="verificación" class="level3">
+<h3 class="anchored" data-anchor-id="verificación">Verificación</h3>
+<p>La no negatividad se sigue de <span class="math inline">\(p_i\geq0\)</span>. Además,</p>
+<p><span class="math display">\[
+P(\Omega)=\sum_{i=1}^{N}p_i=1.
+\]</span></p>
+<p>Si <span class="math inline">\(A_1,A_2,\ldots\)</span> son disjuntos, cada punto de <span class="math inline">\(\Omega\)</span> aparece en a lo sumo uno de ellos. Como <span class="math inline">\(\Omega\)</span> es finito, sólo un número finito de esos eventos puede contener puntos. Agrupar las masas puntuales demuestra la aditividad numerable.</p>
+</section>
+</section>
+<section id="el-modelo-equiprobable" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="el-modelo-equiprobable"><span class="header-section-number">3.6</span> El modelo equiprobable</h2>
+<p>Si</p>
+<p><span class="math display">\[
+p_1=p_2=\cdots=p_N,
+\]</span></p>
+<p>la normalización implica <span class="math inline">\(p_i=1/N\)</span>. Por tanto,</p>
+<p><span class="math display">\[
+P(A)=\frac{|A|}{|\Omega|}.
+\]</span></p>
+<p>Ésta es la regla clásica de casos favorables entre casos posibles. Su validez requiere dos condiciones:</p>
+<ol type="1">
+<li>el espacio muestral es finito;</li>
+<li>los puntos muestrales son equiprobables.</li>
+</ol>
+<p>La equiprobabilidad no debe justificarse usando la misma regla que se pretende aplicar. Se fundamenta en simetrías físicas, en el diseño del mecanismo aleatorio o en una hipótesis explícita del modelo.</p>
+<section id="ejemplo-suma-de-dos-dados" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-suma-de-dos-dados">Ejemplo: suma de dos dados</h3>
+<p>Los 36 pares ordenados <span class="math inline">\((i,j)\)</span> son equiprobables si los dados son equilibrados e independientes. Sin embargo, las sumas <span class="math inline">\(2,3,\ldots,12\)</span> no son equiprobables. Por ejemplo,</p>
+<p><span class="math display">\[
+P(2)=\frac{1}{36},
+\qquad
+P(7)=\frac{6}{36}.
+\]</span></p>
+<p>La elección del nivel de descripción determina cuáles resultados elementales pueden considerarse igualmente probables.</p>
+</section>
+</section>
+<section id="principios-de-conteo" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="principios-de-conteo"><span class="header-section-number">3.7</span> Principios de conteo</h2>
+<section id="principio-aditivo" class="level3">
+<h3 class="anchored" data-anchor-id="principio-aditivo">Principio aditivo</h3>
+<p>Si <span class="math inline">\(A_1,\ldots,A_k\)</span> son conjuntos finitos disjuntos dos a dos, entonces</p>
+<p><span class="math display">\[
+\left|\bigcup_{i=1}^{k}A_i\right|
+=\sum_{i=1}^{k}|A_i|.
+\]</span></p>
+<p>La disjunción garantiza que cada elemento se cuente exactamente una vez.</p>
+</section>
+<section id="principio-multiplicativo" class="level3">
+<h3 class="anchored" data-anchor-id="principio-multiplicativo">Principio multiplicativo</h3>
+<p>Sea un procedimiento con <span class="math inline">\(k\)</span> etapas. Si la primera admite <span class="math inline">\(n_1\)</span> opciones y, para cada elección previa, la etapa <span class="math inline">\(i\)</span> admite <span class="math inline">\(n_i\)</span> opciones, entonces existen</p>
+<p><span class="math display">\[
+\prod_{i=1}^{k}n_i
+\]</span></p>
+<p>resultados completos.</p>
+<p>Formalmente, cuando las opciones no dependen de elecciones previas, el conjunto de resultados es un producto cartesiano</p>
+<p><span class="math display">\[
+A_1\times\cdots\times A_k,
+\]</span></p>
+<p>y su cardinalidad es</p>
+<p><span class="math display">\[
+|A_1\times\cdots\times A_k|
+=\prod_{i=1}^{k}|A_i|.
+\]</span></p>
+</section>
+</section>
+<section id="permutaciones-y-arreglos" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="permutaciones-y-arreglos"><span class="header-section-number">3.8</span> Permutaciones y arreglos</h2>
+<section id="permutaciones-de-objetos-distintos" class="level3">
+<h3 class="anchored" data-anchor-id="permutaciones-de-objetos-distintos">Permutaciones de objetos distintos</h3>
+<p>Para ordenar <span class="math inline">\(n\)</span> objetos distintos hay <span class="math inline">\(n\)</span> opciones para la primera posición, <span class="math inline">\(n-1\)</span> para la segunda y así sucesivamente. Luego,</p>
+<p><span class="math display">\[
+n!=n(n-1)\cdots2\cdot1.
+\]</span></p>
+<p>Se define <span class="math inline">\(0!=1\)</span> para conservar identidades como <span class="math inline">\(n!=n(n-1)!\)</span> cuando <span class="math inline">\(n=1\)</span>.</p>
+</section>
+<section id="arreglos-sin-repetición" class="level3">
+<h3 class="anchored" data-anchor-id="arreglos-sin-repetición">Arreglos sin repetición</h3>
+<p>El número de secuencias de longitud <span class="math inline">\(r\)</span> formadas con objetos distintos elegidos de un conjunto de <span class="math inline">\(n\)</span> es</p>
+<p><span class="math display">\[
+P(n,r)=n(n-1)\cdots(n-r+1)
+=\frac{n!}{(n-r)!}.
+\]</span></p>
+</section>
+<section id="secuencias-con-repetición" class="level3">
+<h3 class="anchored" data-anchor-id="secuencias-con-repetición">Secuencias con repetición</h3>
+<p>Si cada una de las <span class="math inline">\(r\)</span> posiciones puede ocuparse por cualquiera de los <span class="math inline">\(n\)</span> símbolos, el principio multiplicativo da</p>
+<p><span class="math display">\[
+n^r.
+\]</span></p>
+</section>
+</section>
+<section id="combinaciones" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="combinaciones"><span class="header-section-number">3.9</span> Combinaciones</h2>
+<p>Una combinación es un subconjunto de <span class="math inline">\(r\)</span> objetos tomado de un conjunto de <span class="math inline">\(n\)</span>. El orden no importa.</p>
+<p>Cada subconjunto de <span class="math inline">\(r\)</span> elementos genera <span class="math inline">\(r!\)</span> ordenamientos. Como existen <span class="math inline">\(P(n,r)\)</span> arreglos,</p>
+<p><span class="math display">\[
+\binom{n}{r}
+=\frac{P(n,r)}{r!}
+=\frac{n!}{r!(n-r)!}.
+\]</span></p>
+<section id="identidad-de-simetría" class="level3">
+<h3 class="anchored" data-anchor-id="identidad-de-simetría">Identidad de simetría</h3>
+<p>La aplicación que asocia a cada subconjunto <span class="math inline">\(A\)</span> su complemento es una biyección entre los subconjuntos de tamaño <span class="math inline">\(r\)</span> y los de tamaño <span class="math inline">\(n-r\)</span>. Por ello,</p>
+<p><span class="math display">\[
+\binom{n}{r}=\binom{n}{n-r}.
+\]</span></p>
+</section>
+<section id="identidad-de-pascal" class="level3">
+<h3 class="anchored" data-anchor-id="identidad-de-pascal">Identidad de Pascal</h3>
+<p>Fijemos un elemento distinguido <span class="math inline">\(x\)</span>. Los subconjuntos de tamaño <span class="math inline">\(r\)</span> se dividen en dos clases disjuntas:</p>
+<ul>
+<li>los que contienen a <span class="math inline">\(x\)</span>, determinados al elegir <span class="math inline">\(r-1\)</span> elementos entre los <span class="math inline">\(n-1\)</span> restantes;</li>
+<li>los que no contienen a <span class="math inline">\(x\)</span>, determinados al elegir <span class="math inline">\(r\)</span> elementos entre esos <span class="math inline">\(n-1\)</span>.</li>
+</ul>
+<p>Por el principio aditivo,</p>
+<p><span class="math display">\[
+\binom{n}{r}
+=\binom{n-1}{r-1}+\binom{n-1}{r}.
+\]</span></p>
+</section>
+</section>
+<section id="permutaciones-con-objetos-repetidos" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="permutaciones-con-objetos-repetidos"><span class="header-section-number">3.10</span> Permutaciones con objetos repetidos</h2>
+<p>Supongamos que hay <span class="math inline">\(n\)</span> objetos, de los cuales <span class="math inline">\(n_1\)</span> son de un tipo, <span class="math inline">\(n_2\)</span> de otro, y así sucesivamente, con</p>
+<p><span class="math display">\[
+n_1+n_2+\cdots+n_k=n.
+\]</span></p>
+<p>El número de ordenamientos distinguibles es el coeficiente multinomial</p>
+<p><span class="math display">\[
+\binom{n}{n_1,n_2,\ldots,n_k}
+=\frac{n!}{n_1!n_2!\cdots n_k!}.
+\]</span></p>
+<p>En efecto, si se etiquetaran temporalmente los objetos iguales habría <span class="math inline">\(n!\)</span> ordenamientos. Cada ordenamiento observable se cuenta <span class="math inline">\(n_1!n_2!\cdots n_k!\)</span> veces por permutaciones internas invisibles.</p>
+<section id="ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo">Ejemplo</h3>
+<p>La palabra <strong>PROBABILIDAD</strong> tiene 12 letras: aparecen dos veces A, B, D e I; las demás letras aparecen una vez. Por tanto, el número de ordenamientos distinguibles es</p>
+<p><span class="math display">\[
+\frac{12!}{2!2!2!2!}=29\,937\,600.
+\]</span></p>
+</section>
+</section>
+<section id="muestreo-sin-reemplazo" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="muestreo-sin-reemplazo"><span class="header-section-number">3.11</span> Muestreo sin reemplazo</h2>
+<p>Una población contiene <span class="math inline">\(N\)</span> objetos, de los cuales <span class="math inline">\(K\)</span> poseen una característica. Se seleccionan <span class="math inline">\(n\)</span> objetos sin reemplazo y sin importar el orden. El número total de muestras es</p>
+<p><span class="math display">\[
+\binom{N}{n}.
+\]</span></p>
+<p>Para obtener exactamente <span class="math inline">\(k\)</span> objetos con la característica se eligen <span class="math inline">\(k\)</span> de los <span class="math inline">\(K\)</span> disponibles y <span class="math inline">\(n-k\)</span> de los <span class="math inline">\(N-K\)</span> restantes. Si todas las muestras son equiprobables,</p>
+<p><span class="math display">\[
+P(\text{exactamente }k)
+=\frac{\binom{K}{k}\binom{N-K}{n-k}}
+{\binom{N}{n}}.
+\]</span></p>
+<p>Esta expresión anticipa la distribución hipergeométrica. Aquí aparece como consecuencia directa del conteo.</p>
+<section id="ejemplo-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h3>
+<p>De 20 dispositivos, 6 presentan una condición crítica. Al seleccionar 5 sin reemplazo,</p>
+<p><span class="math display">\[
+P(\text{exactamente 2 críticos})
+=\frac{\binom{6}{2}\binom{14}{3}}
+{\binom{20}{5}}
+\approx0.3522.
+\]</span></p>
+</section>
+</section>
+<section id="inclusión-exclusión-para-cardinalidades" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="inclusión-exclusión-para-cardinalidades"><span class="header-section-number">3.12</span> Inclusión-exclusión para cardinalidades</h2>
+<p>Para conjuntos finitos,</p>
+<p><span class="math display">\[
+|A\cup B|=|A|+|B|-|A\cap B|.
+\]</span></p>
+<p>Para tres conjuntos,</p>
+<p><span class="math display">\[
+\begin{aligned}
+|A\cup B\cup C|
+={}&amp;|A|+|B|+|C|\\
+&amp;-|A\cap B|-|A\cap C|-|B\cap C|\\
+&amp;+|A\cap B\cap C|.
+\end{aligned}
+\]</span></p>
+<p>Los términos alternan signos para corregir las multiplicidades con las que se cuentan los elementos. La fórmula probabilística correspondiente se obtiene reemplazando cardinalidades por probabilidades.</p>
+</section>
+<section id="una-guía-de-decisión" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="una-guía-de-decisión"><span class="header-section-number">3.13</span> Una guía de decisión</h2>
+<p>Antes de elegir una fórmula de conteo, conviene preguntar:</p>
+<ol type="1">
+<li>¿El resultado se construye por alternativas o por etapas?</li>
+<li>¿Importa el orden?</li>
+<li>¿Puede repetirse un objeto?</li>
+<li>¿Los grupos considerados son disjuntos?</li>
+<li>¿Los resultados elementales son realmente equiprobables?</li>
+</ol>
+<p>La combinatoria calcula cardinalidades. La probabilidad aparece sólo después de especificar una medida sobre esos resultados.</p>
+</section>
+<section id="resumen" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="resumen"><span class="header-section-number">3.14</span> Resumen</h2>
+<ul>
+<li>Los axiomas de probabilidad producen reglas como complemento, monotonía e inclusión-exclusión.</li>
+<li>Una distribución finita queda determinada por masas puntuales no negativas cuya suma es 1.</li>
+<li>La regla clásica de conteo exige equiprobabilidad.</li>
+<li>El principio aditivo se aplica a alternativas disjuntas; el multiplicativo, a procedimientos por etapas.</li>
+<li>Permutaciones, arreglos, combinaciones y coeficientes multinomiales responden a estructuras diferentes.</li>
+<li>Los argumentos biyectivos permiten demostrar identidades combinatorias sin manipulación algebraica.</li>
+</ul>
+</section>
+<section id="ejercicios" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">3.15</span> Ejercicios</h2>
+<ol type="1">
+<li>Demuestre a partir de los axiomas que <span class="math inline">\(0\leq P(A)\leq1\)</span> para todo evento <span class="math inline">\(A\)</span>.</li>
+<li>Si <span class="math inline">\(A\subseteq B\)</span>, demuestre que <span class="math inline">\(P(B\setminus A)=P(B)-P(A)\)</span>.</li>
+<li>Demuestre la fórmula de inclusión-exclusión para tres eventos.</li>
+<li>Pruebe la subaditividad finita por inducción.</li>
+<li>Sea <span class="math inline">\(\Omega=\{a,b,c,d\}\)</span> con masas <span class="math inline">\(p\)</span>, <span class="math inline">\(2p\)</span>, <span class="math inline">\(3p\)</span> y <span class="math inline">\(4p\)</span>. Determine <span class="math inline">\(p\)</span> y calcule <span class="math inline">\(P(\{b,d\})\)</span>.</li>
+<li>Construya dos medidas de probabilidad distintas sobre el mismo espacio de seis puntos y explique por qué la cardinalidad por sí sola no determina probabilidades.</li>
+<li>Determine cuántas funciones existen de un conjunto de <span class="math inline">\(r\)</span> elementos a uno de <span class="math inline">\(n\)</span> elementos.</li>
+<li>Determine cuántas funciones inyectivas existen en el ejercicio anterior cuando <span class="math inline">\(r\leq n\)</span>.</li>
+<li>Dé una demostración biyectiva de <span class="math inline">\(\binom{n}{r}=\binom{n}{n-r}\)</span>.</li>
+<li>Dé una demostración combinatoria de la identidad de Pascal.</li>
+<li>Demuestre que <span class="math inline">\(\sum_{r=0}^{n}\binom{n}{r}=2^n\)</span> contando subconjuntos de dos maneras.</li>
+<li>¿Cuántos ordenamientos distinguibles tiene la palabra ESTADISTICA? Identifique cuidadosamente las multiplicidades.</li>
+<li>De 18 componentes, 5 son defectuosos. Se eligen 4 sin reemplazo. Calcule la probabilidad de obtener al menos un defectuoso usando el complemento.</li>
+<li>En dos lanzamientos de un dado equilibrado, demuestre que los pares ordenados pueden ser equiprobables mientras que las sumas no lo son.</li>
+<li>Formule y demuestre la expresión general de inclusión-exclusión para tres conjuntos finitos mediante una tabla de multiplicidades.</li>
+</ol>
+</section>
+<section id="referencias-del-capítulo" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">3.16</span> Referencias del capítulo</h2>
+<p>La formulación axiomática, las consecuencias algebraicas y los argumentos combinatorios se desarrollan siguiendo a <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, con énfasis adicional en la construcción formal del espacio de probabilidad.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-devore2016" class="csl-entry" role="listitem">
+Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
+</div>
+<div id="ref-walpole2012" class="csl-entry" role="listitem">
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Licencia CC BY-NC-SA 4.0</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

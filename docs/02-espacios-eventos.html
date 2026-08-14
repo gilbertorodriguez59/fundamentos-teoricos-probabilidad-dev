@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Espacios muestrales y álgebra de eventos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>2&nbsp; Espacios muestrales y álgebra de eventos – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,7 +55,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./03-conteo-probabilidad.html" rel="next">
 <link href="./01-incertidumbre-modelos.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-espacios-eventos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-espacios-eventos.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -168,7 +168,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos Teóricos de Introducción a la Probabilidad</span></span></a>
+ <span class="menu-text">Portada</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,13 +198,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-incertidumbre-modelos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-espacios-eventos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-conteo-probabilidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Axiomas, espacios finitos y métodos de conteo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -223,15 +229,15 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">3.1</span> Objetivos</a></li>
-  <li><a href="#lenguaje-de-conjuntos" id="toc-lenguaje-de-conjuntos" class="nav-link" data-scroll-target="#lenguaje-de-conjuntos"><span class="header-section-number">3.2</span> Lenguaje de conjuntos</a>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">2.1</span> Objetivos</a></li>
+  <li><a href="#lenguaje-de-conjuntos" id="toc-lenguaje-de-conjuntos" class="nav-link" data-scroll-target="#lenguaje-de-conjuntos"><span class="header-section-number">2.2</span> Lenguaje de conjuntos</a>
   <ul class="collapse">
   <li><a href="#inclusión-e-igualdad" id="toc-inclusión-e-igualdad" class="nav-link" data-scroll-target="#inclusión-e-igualdad">Inclusión e igualdad</a></li>
   <li><a href="#conjunto-vacío-y-conjunto-potencia" id="toc-conjunto-vacío-y-conjunto-potencia" class="nav-link" data-scroll-target="#conjunto-vacío-y-conjunto-potencia">Conjunto vacío y conjunto potencia</a></li>
   <li><a href="#producto-cartesiano" id="toc-producto-cartesiano" class="nav-link" data-scroll-target="#producto-cartesiano">Producto cartesiano</a></li>
   </ul></li>
-  <li><a href="#operaciones-con-conjuntos" id="toc-operaciones-con-conjuntos" class="nav-link" data-scroll-target="#operaciones-con-conjuntos"><span class="header-section-number">3.3</span> Operaciones con conjuntos</a></li>
-  <li><a href="#propiedades-del-álgebra-de-conjuntos" id="toc-propiedades-del-álgebra-de-conjuntos" class="nav-link" data-scroll-target="#propiedades-del-álgebra-de-conjuntos"><span class="header-section-number">3.4</span> Propiedades del álgebra de conjuntos</a>
+  <li><a href="#operaciones-con-conjuntos" id="toc-operaciones-con-conjuntos" class="nav-link" data-scroll-target="#operaciones-con-conjuntos"><span class="header-section-number">2.3</span> Operaciones con conjuntos</a></li>
+  <li><a href="#propiedades-del-álgebra-de-conjuntos" id="toc-propiedades-del-álgebra-de-conjuntos" class="nav-link" data-scroll-target="#propiedades-del-álgebra-de-conjuntos"><span class="header-section-number">2.4</span> Propiedades del álgebra de conjuntos</a>
   <ul class="collapse">
   <li><a href="#leyes-conmutativas" id="toc-leyes-conmutativas" class="nav-link" data-scroll-target="#leyes-conmutativas">Leyes conmutativas</a></li>
   <li><a href="#leyes-asociativas" id="toc-leyes-asociativas" class="nav-link" data-scroll-target="#leyes-asociativas">Leyes asociativas</a></li>
@@ -239,49 +245,49 @@ window.Quarto = {
   <li><a href="#leyes-de-identidad-y-complemento" id="toc-leyes-de-identidad-y-complemento" class="nav-link" data-scroll-target="#leyes-de-identidad-y-complemento">Leyes de identidad y complemento</a></li>
   <li><a href="#leyes-de-de-morgan" id="toc-leyes-de-de-morgan" class="nav-link" data-scroll-target="#leyes-de-de-morgan">Leyes de De Morgan</a></li>
   </ul></li>
-  <li><a href="#demostraciones-por-pertenencia" id="toc-demostraciones-por-pertenencia" class="nav-link" data-scroll-target="#demostraciones-por-pertenencia"><span class="header-section-number">3.5</span> Demostraciones por pertenencia</a>
+  <li><a href="#demostraciones-por-pertenencia" id="toc-demostraciones-por-pertenencia" class="nav-link" data-scroll-target="#demostraciones-por-pertenencia"><span class="header-section-number">2.5</span> Demostraciones por pertenencia</a>
   <ul class="collapse">
   <li><a href="#primera-ley-de-de-morgan" id="toc-primera-ley-de-de-morgan" class="nav-link" data-scroll-target="#primera-ley-de-de-morgan">Primera ley de De Morgan</a></li>
   <li><a href="#ley-distributiva" id="toc-ley-distributiva" class="nav-link" data-scroll-target="#ley-distributiva">Ley distributiva</a></li>
   </ul></li>
-  <li><a href="#experimento-aleatorio-y-espacio-muestral" id="toc-experimento-aleatorio-y-espacio-muestral" class="nav-link" data-scroll-target="#experimento-aleatorio-y-espacio-muestral"><span class="header-section-number">3.6</span> Experimento aleatorio y espacio muestral</a>
+  <li><a href="#experimento-aleatorio-y-espacio-muestral" id="toc-experimento-aleatorio-y-espacio-muestral" class="nav-link" data-scroll-target="#experimento-aleatorio-y-espacio-muestral"><span class="header-section-number">2.6</span> Experimento aleatorio y espacio muestral</a>
   <ul class="collapse">
   <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   </ul></li>
-  <li><a href="#clasificación-de-espacios-muestrales" id="toc-clasificación-de-espacios-muestrales" class="nav-link" data-scroll-target="#clasificación-de-espacios-muestrales"><span class="header-section-number">3.7</span> Clasificación de espacios muestrales</a>
+  <li><a href="#clasificación-de-espacios-muestrales" id="toc-clasificación-de-espacios-muestrales" class="nav-link" data-scroll-target="#clasificación-de-espacios-muestrales"><span class="header-section-number">2.7</span> Clasificación de espacios muestrales</a>
   <ul class="collapse">
   <li><a href="#espacio-finito" id="toc-espacio-finito" class="nav-link" data-scroll-target="#espacio-finito">Espacio finito</a></li>
   <li><a href="#espacio-infinito-numerable" id="toc-espacio-infinito-numerable" class="nav-link" data-scroll-target="#espacio-infinito-numerable">Espacio infinito numerable</a></li>
   <li><a href="#espacio-no-numerable" id="toc-espacio-no-numerable" class="nav-link" data-scroll-target="#espacio-no-numerable">Espacio no numerable</a></li>
   </ul></li>
-  <li><a href="#eventos-como-subconjuntos" id="toc-eventos-como-subconjuntos" class="nav-link" data-scroll-target="#eventos-como-subconjuntos"><span class="header-section-number">3.8</span> Eventos como subconjuntos</a>
+  <li><a href="#eventos-como-subconjuntos" id="toc-eventos-como-subconjuntos" class="nav-link" data-scroll-target="#eventos-como-subconjuntos"><span class="header-section-number">2.8</span> Eventos como subconjuntos</a>
   <ul class="collapse">
   <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
   </ul></li>
-  <li><a href="#eventos-disjuntos-y-familias-exhaustivas" id="toc-eventos-disjuntos-y-familias-exhaustivas" class="nav-link" data-scroll-target="#eventos-disjuntos-y-familias-exhaustivas"><span class="header-section-number">3.9</span> Eventos disjuntos y familias exhaustivas</a></li>
-  <li><a href="#particiones" id="toc-particiones" class="nav-link" data-scroll-target="#particiones"><span class="header-section-number">3.10</span> Particiones</a>
+  <li><a href="#eventos-disjuntos-y-familias-exhaustivas" id="toc-eventos-disjuntos-y-familias-exhaustivas" class="nav-link" data-scroll-target="#eventos-disjuntos-y-familias-exhaustivas"><span class="header-section-number">2.9</span> Eventos disjuntos y familias exhaustivas</a></li>
+  <li><a href="#particiones" id="toc-particiones" class="nav-link" data-scroll-target="#particiones"><span class="header-section-number">2.10</span> Particiones</a>
   <ul class="collapse">
   <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2">Ejemplo</a></li>
   </ul></li>
-  <li><a href="#familias-de-eventos" id="toc-familias-de-eventos" class="nav-link" data-scroll-target="#familias-de-eventos"><span class="header-section-number">3.11</span> Familias de eventos</a>
+  <li><a href="#familias-de-eventos" id="toc-familias-de-eventos" class="nav-link" data-scroll-target="#familias-de-eventos"><span class="header-section-number">2.11</span> Familias de eventos</a>
   <ul class="collapse">
   <li><a href="#definición-sigma-álgebra" id="toc-definición-sigma-álgebra" class="nav-link" data-scroll-target="#definición-sigma-álgebra">Definición: sigma-álgebra</a></li>
   </ul></li>
-  <li><a href="#ejemplo-integrador" id="toc-ejemplo-integrador" class="nav-link" data-scroll-target="#ejemplo-integrador"><span class="header-section-number">3.12</span> Ejemplo integrador</a></li>
-  <li><a href="#proposición-caracterización-de-la-inclusión" id="toc-proposición-caracterización-de-la-inclusión" class="nav-link" data-scroll-target="#proposición-caracterización-de-la-inclusión"><span class="header-section-number">3.13</span> Proposición: caracterización de la inclusión</a>
+  <li><a href="#ejemplo-integrador" id="toc-ejemplo-integrador" class="nav-link" data-scroll-target="#ejemplo-integrador"><span class="header-section-number">2.12</span> Ejemplo integrador</a></li>
+  <li><a href="#proposición-caracterización-de-la-inclusión" id="toc-proposición-caracterización-de-la-inclusión" class="nav-link" data-scroll-target="#proposición-caracterización-de-la-inclusión"><span class="header-section-number">2.13</span> Proposición: caracterización de la inclusión</a>
   <ul class="collapse">
   <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#errores-conceptuales-frecuentes" id="toc-errores-conceptuales-frecuentes" class="nav-link" data-scroll-target="#errores-conceptuales-frecuentes"><span class="header-section-number">3.14</span> Errores conceptuales frecuentes</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">3.15</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">3.16</span> Ejercicios</a>
+  <li><a href="#errores-conceptuales-frecuentes" id="toc-errores-conceptuales-frecuentes" class="nav-link" data-scroll-target="#errores-conceptuales-frecuentes"><span class="header-section-number">2.14</span> Errores conceptuales frecuentes</a></li>
+  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">2.15</span> Ideas clave</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">2.16</span> Ejercicios</a>
   <ul class="collapse">
   <li><a href="#conceptos-y-operaciones" id="toc-conceptos-y-operaciones" class="nav-link" data-scroll-target="#conceptos-y-operaciones">Conceptos y operaciones</a></li>
   <li><a href="#demostraciones" id="toc-demostraciones" class="nav-link" data-scroll-target="#demostraciones">Demostraciones</a></li>
   <li><a href="#modelación" id="toc-modelación" class="nav-link" data-scroll-target="#modelación">Modelación</a></li>
   <li><a href="#profundización" id="toc-profundización" class="nav-link" data-scroll-target="#profundización">Profundización</a></li>
   </ul></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">3.17</span> Referencias del capítulo</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">2.17</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -290,7 +296,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></h1>
 </div>
 
 
@@ -307,8 +313,8 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">3.1</span> Objetivos</h2>
+<section id="objetivos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">2.1</span> Objetivos</h2>
 <p>Al finalizar este capítulo, el estudiante podrá:</p>
 <ul>
 <li>formular con precisión un espacio muestral;</li>
@@ -319,8 +325,8 @@ window.Quarto = {
 <li>relacionar el enfoque elemental de eventos con la terna <span class="math inline">\((\Omega,\mathcal{F},P)\)</span>.</li>
 </ul>
 </section>
-<section id="lenguaje-de-conjuntos" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="lenguaje-de-conjuntos"><span class="header-section-number">3.2</span> Lenguaje de conjuntos</h2>
+<section id="lenguaje-de-conjuntos" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="lenguaje-de-conjuntos"><span class="header-section-number">2.2</span> Lenguaje de conjuntos</h2>
 <p>La teoría de probabilidad utiliza el lenguaje de conjuntos para separar dos niveles:</p>
 <ul>
 <li>el <strong>resultado individual</strong> de un experimento;</li>
@@ -372,8 +378,8 @@ A\times B=\{(a,b):a\in A,\ b\in B\}.
 \]</span></p>
 </section>
 </section>
-<section id="operaciones-con-conjuntos" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="operaciones-con-conjuntos"><span class="header-section-number">3.3</span> Operaciones con conjuntos</h2>
+<section id="operaciones-con-conjuntos" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="operaciones-con-conjuntos"><span class="header-section-number">2.3</span> Operaciones con conjuntos</h2>
 <p>Para <span class="math inline">\(A,B\subseteq\Omega\)</span>, definimos:</p>
 <p><span class="math display">\[
 A\cup B=\{x\in\Omega:x\in A\text{ o }x\in B\},
@@ -396,8 +402,8 @@ A\triangle B=(A\setminus B)\cup(B\setminus A).
 A\triangle B=(A\cup B)\setminus(A\cap B).
 \]</span></p>
 </section>
-<section id="propiedades-del-álgebra-de-conjuntos" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="propiedades-del-álgebra-de-conjuntos"><span class="header-section-number">3.4</span> Propiedades del álgebra de conjuntos</h2>
+<section id="propiedades-del-álgebra-de-conjuntos" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="propiedades-del-álgebra-de-conjuntos"><span class="header-section-number">2.4</span> Propiedades del álgebra de conjuntos</h2>
 <p>Para cualesquiera <span class="math inline">\(A,B,C\subseteq\Omega\)</span> se cumplen:</p>
 <section id="leyes-conmutativas" class="level3">
 <h3 class="anchored" data-anchor-id="leyes-conmutativas">Leyes conmutativas</h3>
@@ -456,8 +462,8 @@ A\cap A^c=\varnothing,
 \]</span></p>
 </section>
 </section>
-<section id="demostraciones-por-pertenencia" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="demostraciones-por-pertenencia"><span class="header-section-number">3.5</span> Demostraciones por pertenencia</h2>
+<section id="demostraciones-por-pertenencia" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="demostraciones-por-pertenencia"><span class="header-section-number">2.5</span> Demostraciones por pertenencia</h2>
 <section id="primera-ley-de-de-morgan" class="level3">
 <h3 class="anchored" data-anchor-id="primera-ley-de-de-morgan">Primera ley de De Morgan</h3>
 <p>Demostraremos</p>
@@ -495,8 +501,8 @@ x\in A\cap(B\cup C)
 <p>La demostración reproduce una ley distributiva de la lógica proposicional. Esta correspondencia entre lógica y conjuntos será constante en probabilidad.</p>
 </section>
 </section>
-<section id="experimento-aleatorio-y-espacio-muestral" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="experimento-aleatorio-y-espacio-muestral"><span class="header-section-number">3.6</span> Experimento aleatorio y espacio muestral</h2>
+<section id="experimento-aleatorio-y-espacio-muestral" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="experimento-aleatorio-y-espacio-muestral"><span class="header-section-number">2.6</span> Experimento aleatorio y espacio muestral</h2>
 <p>Un <strong>experimento aleatorio</strong> es un procedimiento cuyo resultado concreto no se conoce antes de realizarlo, aunque el conjunto de resultados posibles pueda especificarse.</p>
 <p>El <strong>espacio muestral</strong> <span class="math inline">\(\Omega\)</span> es el conjunto de todos los resultados posibles que distingue el modelo. Sus elementos <span class="math inline">\(\omega\in\Omega\)</span> reciben el nombre de <strong>puntos muestrales</strong>.</p>
 <p>La frase “que distingue el modelo” es importante. Un mismo procedimiento admite diferentes espacios muestrales según la información que se registre.</p>
@@ -513,8 +519,8 @@ x\in A\cap(B\cup C)
 <p>Existe una función <span class="math inline">\(g:\Omega_1\to\Omega_2\)</span> que asigna a cada número su paridad. El segundo modelo es una descripción menos fina del primero.</p>
 </section>
 </section>
-<section id="clasificación-de-espacios-muestrales" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="clasificación-de-espacios-muestrales"><span class="header-section-number">3.7</span> Clasificación de espacios muestrales</h2>
+<section id="clasificación-de-espacios-muestrales" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="clasificación-de-espacios-muestrales"><span class="header-section-number">2.7</span> Clasificación de espacios muestrales</h2>
 <section id="espacio-finito" class="level3">
 <h3 class="anchored" data-anchor-id="espacio-finito">Espacio finito</h3>
 <p><span class="math inline">\(\Omega\)</span> contiene un número finito de puntos. Por ejemplo, para dos bits transmitidos,</p>
@@ -538,8 +544,8 @@ x\in A\cap(B\cup C)
 <p>La distinción entre espacios discretos y continuos determinará posteriormente cómo se asignan probabilidades y cómo se definen las variables aleatorias.</p>
 </section>
 </section>
-<section id="eventos-como-subconjuntos" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="eventos-como-subconjuntos"><span class="header-section-number">3.8</span> Eventos como subconjuntos</h2>
+<section id="eventos-como-subconjuntos" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="eventos-como-subconjuntos"><span class="header-section-number">2.8</span> Eventos como subconjuntos</h2>
 <p>Un <strong>evento</strong> <span class="math inline">\(A\)</span> es un subconjunto de <span class="math inline">\(\Omega\)</span>. Decimos que <span class="math inline">\(A\)</span> ocurre si el resultado observado <span class="math inline">\(\omega\)</span> pertenece a <span class="math inline">\(A\)</span>.</p>
 <p>Esta definición distingue correctamente:</p>
 <ul>
@@ -566,8 +572,8 @@ A^c=\{1,3,5\}.
 \]</span></p>
 </section>
 </section>
-<section id="eventos-disjuntos-y-familias-exhaustivas" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="eventos-disjuntos-y-familias-exhaustivas"><span class="header-section-number">3.9</span> Eventos disjuntos y familias exhaustivas</h2>
+<section id="eventos-disjuntos-y-familias-exhaustivas" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="eventos-disjuntos-y-familias-exhaustivas"><span class="header-section-number">2.9</span> Eventos disjuntos y familias exhaustivas</h2>
 <p>Dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>mutuamente excluyentes</strong> o <strong>disjuntos</strong> si</p>
 <p><span class="math display">\[
 A\cap B=\varnothing.
@@ -578,8 +584,8 @@ A\cap B=\varnothing.
 \]</span></p>
 <p>La exhaustividad no implica disjunción. Los eventos pueden cubrir todo <span class="math inline">\(\Omega\)</span> y superponerse.</p>
 </section>
-<section id="particiones" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="particiones"><span class="header-section-number">3.10</span> Particiones</h2>
+<section id="particiones" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="particiones"><span class="header-section-number">2.10</span> Particiones</h2>
 <p>Una colección no vacía <span class="math inline">\(\{A_i:i\in I\}\)</span> es una <strong>partición</strong> de <span class="math inline">\(\Omega\)</span> si:</p>
 <ol type="1">
 <li><span class="math inline">\(A_i\neq\varnothing\)</span> para todo <span class="math inline">\(i\)</span>;</li>
@@ -601,8 +607,8 @@ B_1=\{1,2,3\},\qquad B_2=\{3,4,5,6\}
 <p>Las particiones serán esenciales para la regla de probabilidad total y el teorema de Bayes.</p>
 </section>
 </section>
-<section id="familias-de-eventos" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="familias-de-eventos"><span class="header-section-number">3.11</span> Familias de eventos</h2>
+<section id="familias-de-eventos" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="familias-de-eventos"><span class="header-section-number">2.11</span> Familias de eventos</h2>
 <p>En un espacio muestral finito suele tomarse como colección de eventos todo el conjunto potencia:</p>
 <p><span class="math display">\[
 \mathcal{F}=\mathcal{P}(\Omega).
@@ -630,8 +636,8 @@ B_1=\{1,2,3\},\qquad B_2=\{3,4,5,6\}
 <p>y no solamente <span class="math inline">\((\Omega,P)\)</span>.</p>
 </section>
 </section>
-<section id="ejemplo-integrador" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="ejemplo-integrador"><span class="header-section-number">3.12</span> Ejemplo integrador</h2>
+<section id="ejemplo-integrador" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="ejemplo-integrador"><span class="header-section-number">2.12</span> Ejemplo integrador</h2>
 <p>Se inspeccionan dos componentes. Cada uno se clasifica como conforme (<span class="math inline">\(C\)</span>), reparable (<span class="math inline">\(R\)</span>) o desecho (<span class="math inline">\(D\)</span>). Como el orden identifica la posición del componente,</p>
 <p><span class="math display">\[
 \Omega=\{CC,CR,CD,RC,RR,RD,DC,DR,DD\}.
@@ -673,8 +679,8 @@ C_2=\{DD\}
 \]</span></p>
 <p>forman una partición de <span class="math inline">\(\Omega\)</span> de acuerdo con el número de componentes clasificados como desecho.</p>
 </section>
-<section id="proposición-caracterización-de-la-inclusión" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="proposición-caracterización-de-la-inclusión"><span class="header-section-number">3.13</span> Proposición: caracterización de la inclusión</h2>
+<section id="proposición-caracterización-de-la-inclusión" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="proposición-caracterización-de-la-inclusión"><span class="header-section-number">2.13</span> Proposición: caracterización de la inclusión</h2>
 <p>Para <span class="math inline">\(A,B\subseteq\Omega\)</span>, son equivalentes:</p>
 <ol type="1">
 <li><span class="math inline">\(A\subseteq B\)</span>;</li>
@@ -688,8 +694,8 @@ C_2=\{DD\}
 <p>La equivalencia entre <span class="math inline">\(A\subseteq B\)</span> y <span class="math inline">\(A\cup B=B\)</span> se demuestra de manera análoga. <span class="math inline">\(\square\)</span></p>
 </section>
 </section>
-<section id="errores-conceptuales-frecuentes" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="errores-conceptuales-frecuentes"><span class="header-section-number">3.14</span> Errores conceptuales frecuentes</h2>
+<section id="errores-conceptuales-frecuentes" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="errores-conceptuales-frecuentes"><span class="header-section-number">2.14</span> Errores conceptuales frecuentes</h2>
 <ol type="1">
 <li>Escribir <span class="math inline">\(\omega\subseteq\Omega\)</span> cuando <span class="math inline">\(\omega\)</span> es un punto muestral; debe escribirse <span class="math inline">\(\omega\in\Omega\)</span>.</li>
 <li>Confundir <span class="math inline">\(\varnothing\)</span> con <span class="math inline">\(\{\varnothing\}\)</span>. El primero no tiene elementos; el segundo contiene un elemento.</li>
@@ -698,8 +704,8 @@ C_2=\{DD\}
 <li>Omitir resultados en experimentos por etapas o tratar pares ordenados como si el orden no importara.</li>
 </ol>
 </section>
-<section id="ideas-clave" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">3.15</span> Ideas clave</h2>
+<section id="ideas-clave" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">2.15</span> Ideas clave</h2>
 <ul>
 <li>El espacio muestral reúne los resultados que distingue el modelo.</li>
 <li>Los eventos son subconjuntos, no resultados individuales.</li>
@@ -709,8 +715,8 @@ C_2=\{DD\}
 <li>La sigma-álgebra <span class="math inline">\(\mathcal{F}\)</span> especifica qué subconjuntos se consideran eventos medibles.</li>
 </ul>
 </section>
-<section id="ejercicios" class="level2" data-number="3.16">
-<h2 data-number="3.16" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">3.16</span> Ejercicios</h2>
+<section id="ejercicios" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">2.16</span> Ejercicios</h2>
 <section id="conceptos-y-operaciones" class="level3">
 <h3 class="anchored" data-anchor-id="conceptos-y-operaciones">Conceptos y operaciones</h3>
 <ol type="1">
@@ -747,8 +753,8 @@ C_2=\{DD\}
 </ol>
 </section>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">3.17</span> Referencias del capítulo</h2>
+<section id="referencias-del-capítulo" class="level2" data-number="2.17">
+<h2 data-number="2.17" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">2.17</span> Referencias del capítulo</h2>
 <p>La secuencia de espacios muestrales y eventos se apoya principalmente en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y en el programa oficial del curso. La formalización se complementa con <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
@@ -1172,12 +1178,12 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./01-incertidumbre-modelos.html" class="pagination-link" aria-label="Incertidumbre y modelos probabilísticos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Incertidumbre y modelos probabilísticos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="Referencias">
-        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-conteo-probabilidad.html" class="pagination-link" aria-label="Axiomas, espacios finitos y métodos de conteo">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Axiomas, espacios finitos y métodos de conteo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
