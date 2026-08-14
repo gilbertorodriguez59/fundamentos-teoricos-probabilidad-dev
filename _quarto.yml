@@ -1,12 +1,15 @@
 project:
   type: book
   output-dir: docs
+  resources:
+    - figures/**
 
 book:
   title: "Fundamentos Teóricos de Introducción a la Probabilidad"
   subtitle: "Conceptos, teoremas, demostraciones y modelos probabilísticos"
   author: "Jesús Gilberto Rodríguez Escobedo"
   date: "2026-08-14"
+  cover-image: figures/portada-editorial.png
   output-file: "Fundamentos-Teoricos-de-Introduccion-a-la-Probabilidad"
   chapters:
     - index.qmd
@@ -44,6 +47,9 @@ format:
   pdf:
     documentclass: scrreprt
     pdf-engine: xelatex
+    include-in-header: header.tex
+    template-partials:
+      - before-body.tex
     toc: true
     colorlinks: true
     keep-tex: false
