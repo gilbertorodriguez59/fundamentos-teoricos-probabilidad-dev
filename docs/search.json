@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentos Teóricos de Introducción a la Probabilidad",
+    "section": "",
+    "text": "Este libro desarrolla la teoría elemental de la probabilidad con énfasis en definiciones precisas, propiedades, teoremas, demostraciones y construcción de modelos.\nSu contenido está pensado como compañero teórico del libro aplicado con R y GeoGebra. Ambos siguen un recorrido común, pero aquí se privilegia la estructura matemática de los conceptos y sus relaciones.\nLa versión actual es de desarrollo.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Fundamentos Teóricos de Introducción a la Probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "bienvenida.html",
+    "href": "bienvenida.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "La teoría de la probabilidad estudia matemáticamente fenómenos en los que intervienen incertidumbre y variación.\nEste libro busca construir los conceptos desde sus fundamentos: conjuntos y eventos, axiomas de probabilidad, independencia, variables aleatorias, esperanza, distribuciones y resultados límite.\nLa intención es que cada fórmula aparezca acompañada de su significado, condiciones de validez y relación con otros resultados.",
+    "crumbs": [
+      "Bienvenida"
+    ]
+  },
+  {
+    "objectID": "presentacion.html",
+    "href": "presentacion.html",
+    "title": "Presentación",
+    "section": "",
+    "text": "La obra sigue el recorrido de un primer curso universitario de probabilidad: conjuntos, espacios muestrales, eventos, axiomas, probabilidad condicional, Bayes, variables aleatorias, esperanza, distribuciones conjuntas y distribuciones discretas y continuas importantes.\nA diferencia del libro aplicado, aquí se desarrollarán con mayor detalle las definiciones, propiedades y demostraciones, procurando mantener un nivel accesible para estudiantes de ingeniería y ciencias con formación en cálculo.",
+    "crumbs": [
+      "Presentación"
+    ]
+  },
+  {
+    "objectID": "introduccion.html",
+    "href": "introduccion.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "La probabilidad transforma la incertidumbre en un objeto matemático susceptible de análisis. Su punto de partida es describir los resultados posibles de un experimento y representar mediante conjuntos los sucesos de interés. A partir de ahí se construye una medida de probabilidad y se estudian sus consecuencias.\nEl desarrollo será progresivo. Primero estableceremos el lenguaje de experimentos, espacios muestrales y eventos; después formularemos los axiomas y sus propiedades; más adelante introduciremos variables aleatorias, funciones de distribución, esperanza, momentos y distribuciones conjuntas.\nEl objetivo no será únicamente aplicar fórmulas, sino comprender por qué funcionan y bajo qué hipótesis pueden utilizarse.",
+    "crumbs": [
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "notacion.html",
+    "href": "notacion.html",
+    "title": "Notación general",
+    "section": "",
+    "text": "\\(\\Omega\\): espacio muestral.\n\\(\\mathcal{F}\\): colección de eventos.\n\\(A,B,C\\): eventos.\n\\(A^c\\): complemento de \\(A\\).\n\\(P\\): medida de probabilidad.\n\\(P(A\\mid B)\\): probabilidad condicional.\n\\(X,Y\\): variables aleatorias.\n\\(F_X\\): función de distribución de \\(X\\).\n\\(E(X)\\): esperanza matemática.\n\\(\\operatorname{Var}(X)\\): varianza.\n\\(\\operatorname{Cov}(X,Y)\\): covarianza.\n\\(\\rho_{XY}\\): coeficiente de correlación.",
+    "crumbs": [
+      "Notación general"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html",
+    "href": "01-incertidumbre-modelos.html",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "",
+    "text": "2.1 Objetivos\nAl finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
+    "href": "01-incertidumbre-modelos.html#fenómenos-deterministas-y-aleatorios",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.2 1.1 Fenómenos deterministas y aleatorios",
+    "text": "2.2 1.1 Fenómenos deterministas y aleatorios\nUn fenómeno se denomina determinista cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno aleatorio puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.\nLa aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#experimento-aleatorio",
+    "href": "01-incertidumbre-modelos.html#experimento-aleatorio",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.3 1.2 Experimento aleatorio",
+    "text": "2.3 1.2 Experimento aleatorio\nUn experimento aleatorio es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.\nMás adelante llamaremos espacio muestral a ese conjunto de resultados posibles.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#regularidad-estadística",
+    "href": "01-incertidumbre-modelos.html#regularidad-estadística",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.4 1.3 Regularidad estadística",
+    "text": "2.4 1.3 Regularidad estadística\nAunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.\nSi \\(A\\) es un evento y después de \\(n\\) repeticiones ocurre \\(n_A\\) veces, definimos la frecuencia relativa\n\\[\nf_n(A)=\\frac{n_A}{n}.\n\\]\nEl comportamiento de \\(f_n(A)\\) cuando \\(n\\) aumenta será estudiado posteriormente mediante resultados límite.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#modelo-probabilístico",
+    "href": "01-incertidumbre-modelos.html#modelo-probabilístico",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.5 1.4 Modelo probabilístico",
+    "text": "2.5 1.4 Modelo probabilístico\nUn modelo probabilístico elemental consta de dos componentes:\n\nuna descripción de los resultados posibles;\nuna regla que asigna probabilidades a los eventos.\n\nEn una formulación más avanzada, un espacio de probabilidad se representa mediante la terna\n\\[\n(\\Omega,\\mathcal{F},P),\n\\]\ndonde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una colección adecuada de eventos y \\(P\\) es una medida de probabilidad.\nEn este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer \\(P\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
+    "href": "01-incertidumbre-modelos.html#probabilidad-como-modelo-no-como-predicción-exacta",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.6 1.5 Probabilidad como modelo, no como predicción exacta",
+    "text": "2.6 1.5 Probabilidad como modelo, no como predicción exacta\nAsignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.\nPor ejemplo, si una moneda ideal se modela con\n\\[\nP(\\text{cara})=\\frac12,\n\\]\nesto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
+    "href": "01-incertidumbre-modelos.html#papel-de-la-probabilidad-en-ingeniería-y-ciencias",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.7 1.6 Papel de la probabilidad en ingeniería y ciencias",
+    "text": "2.7 1.6 Papel de la probabilidad en ingeniería y ciencias\nLos modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.\nLa utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#ideas-clave",
+    "href": "01-incertidumbre-modelos.html#ideas-clave",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.8 1.7 Ideas clave",
+    "text": "2.8 1.7 Ideas clave\n\nAleatoriedad no significa ausencia de leyes matemáticas.\nUn experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.\nLa probabilidad se construye sobre eventos asociados a un espacio muestral.\nEl modelo probabilístico abstrae los rasgos relevantes del fenómeno real.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#ejercicios",
+    "href": "01-incertidumbre-modelos.html#ejercicios",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.9 1.8 Ejercicios",
+    "text": "2.9 1.8 Ejercicios\n\nDa dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.\nExplica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.\nDescribe los resultados posibles de lanzar dos monedas.\n¿Por qué \\(P(A)=0.7\\) no significa que el evento \\(A\\) ocurrirá siete veces en cada bloque de diez repeticiones?\nExplica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "01-incertidumbre-modelos.html#referencias-del-capítulo",
+    "href": "01-incertidumbre-modelos.html#referencias-del-capítulo",
+    "title": "2  Incertidumbre y modelos probabilísticos",
+    "section": "2.10 Referencias del capítulo",
+    "text": "2.10 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Referencias",
+    "section": "",
+    "text": "Devore, Jay L. 2016. Probability and Statistics for Engineering and\nthe Sciences. 9th ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and\nStatistics for Engineers. 9th ed. Pearson.\n\n\nMontgomery, Douglas C., and George C. Runger. 2018. Applied\nStatistics and Probability for Engineers. 7th ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.\n2012. Probabilidad y Estadística Para Ingeniería y Ciencias.\n9th ed. Pearson.",
+    "crumbs": [
+      "Referencias"
+    ]
+  }
+]
