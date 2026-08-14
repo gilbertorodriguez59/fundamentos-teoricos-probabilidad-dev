@@ -1,0 +1,7 @@
+# Bienvenida {.unnumbered}
+
+La teoría de la probabilidad estudia matemáticamente fenómenos en los que intervienen incertidumbre y variación.
+
+Este libro busca construir los conceptos desde sus fundamentos: conjuntos y eventos, axiomas de probabilidad, independencia, variables aleatorias, esperanza, distribuciones y resultados límite.
+
+La intención es que cada fórmula aparezca acompañada de su significado, condiciones de validez y relación con otros resultados.
