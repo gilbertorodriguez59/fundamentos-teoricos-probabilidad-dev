@@ -1,0 +1,302 @@
+# Conjuntos, espacios muestrales y eventos
+
+## Objetivos
+
+Al finalizar este capítulo, el estudiante será capaz de formular con precisión el espacio muestral de un experimento, representar eventos como subconjuntos, utilizar operaciones de conjuntos para construir eventos compuestos y distinguir entre espacios muestrales discretos y continuos.
+
+## Lenguaje de conjuntos
+
+La teoría de probabilidad se apoya en el lenguaje de conjuntos. Un conjunto es una colección de elementos bien determinados. Si $x$ pertenece a $A$, escribimos $x\in A$; si no pertenece, $x\notin A$.
+
+Decimos que $A$ es subconjunto de $B$ cuando
+
+$$
+A\subseteq B
+$$
+
+si todo elemento de $A$ pertenece también a $B$.
+
+El conjunto vacío se denota por $\varnothing$.
+
+## Operaciones fundamentales
+
+Sean $A$ y $B$ subconjuntos de un conjunto universal $S$.
+
+La unión se define por
+
+$$
+A\cup B=\{x:x\in A\text{ o }x\in B\}.
+$$
+
+La intersección se define por
+
+$$
+A\cap B=\{x:x\in A\text{ y }x\in B\}.
+$$
+
+El complemento de $A$ respecto de $S$ es
+
+$$
+A^c=\{x\in S:x\notin A\}.
+$$
+
+La diferencia de conjuntos es
+
+$$
+A\setminus B=\{x\in A:x\notin B\}.
+$$
+
+Dos conjuntos son disjuntos cuando
+
+$$
+A\cap B=\varnothing.
+$$
+
+## Propiedades algebraicas
+
+Las operaciones de conjuntos satisfacen leyes que serán utilizadas después para obtener reglas de probabilidad.
+
+### Conmutatividad
+
+$$
+A\cup B=B\cup A,
+$$
+
+$$
+A\cap B=B\cap A.
+$$
+
+### Asociatividad
+
+$$
+(A\cup B)\cup C=A\cup(B\cup C),
+$$
+
+$$
+(A\cap B)\cap C=A\cap(B\cap C).
+$$
+
+### Distributividad
+
+$$
+A\cap(B\cup C)=(A\cap B)\cup(A\cap C),
+$$
+
+$$
+A\cup(B\cap C)=(A\cup B)\cap(A\cup C).
+$$
+
+### Leyes de De Morgan
+
+$$
+(A\cup B)^c=A^c\cap B^c,
+$$
+
+$$
+(A\cap B)^c=A^c\cup B^c.
+$$
+
+Estas identidades permiten transformar expresiones de eventos sin alterar su significado.
+
+## Experimentos y resultados
+
+Un **experimento aleatorio** es un procedimiento que, bajo una descripción suficientemente precisa, puede producir distintos resultados posibles y cuyo resultado particular no se conoce con certeza antes de realizarlo.
+
+Cada posible resultado individual se denomina **resultado elemental** o **punto muestral**.
+
+## Espacio muestral
+
+El **espacio muestral** $S$ o $\Omega$ de un experimento es el conjunto de todos los resultados elementales considerados por el modelo.
+
+La elección de $S$ depende del nivel de descripción pertinente.
+
+### Ejemplo
+
+En dos lanzamientos de una moneda,
+
+$$
+S=\{CC,CX,XC,XX\}.
+$$
+
+Si solo interesa el número de caras, puede utilizarse en cambio
+
+$$
+S'=\{0,1,2\}.
+$$
+
+Ambos espacios describen el mismo procedimiento físico desde perspectivas distintas. Esto muestra que el espacio muestral forma parte del modelo matemático y no es simplemente una lista impuesta por el fenómeno.
+
+## Espacios discretos y continuos
+
+Un espacio muestral es **discreto** cuando es finito o infinito numerable.
+
+Por ejemplo,
+
+$$
+S=\{0,1,2,\ldots\}
+$$
+
+puede representar un número de intentos.
+
+Un espacio muestral es **continuo** cuando contiene un intervalo de números reales o, más generalmente, una colección no numerable de resultados.
+
+Por ejemplo,
+
+$$
+S=[0,\infty)
+$$
+
+puede representar un tiempo de vida.
+
+Esta distinción será esencial al introducir variables aleatorias discretas y continuas.
+
+## Eventos
+
+En un enfoque elemental, un **evento** es un subconjunto del espacio muestral.
+
+Si el resultado observado $\omega$ pertenece a $A$, decimos que ocurre el evento $A$.
+
+El evento imposible es
+
+$$
+\varnothing,
+$$
+
+y el evento seguro es
+
+$$
+S.
+$$
+
+Un evento que contiene un único resultado elemental puede llamarse evento simple; uno que contiene varios resultados es un evento compuesto.
+
+## Combinación de eventos
+
+Las operaciones de conjuntos adquieren una interpretación probabilística directa:
+
+- $A\cup B$: ocurre $A$, ocurre $B$ o ocurren ambos;
+- $A\cap B$: ocurren simultáneamente $A$ y $B$;
+- $A^c$: no ocurre $A$;
+- $A\setminus B$: ocurre $A$ pero no $B$.
+
+Si
+
+$$
+A\cap B=\varnothing,
+$$
+
+los eventos son mutuamente excluyentes o disjuntos.
+
+## Familias de eventos
+
+Podemos trabajar con colecciones
+
+$$
+A_1,A_2,\ldots,A_n
+$$
+
+y construir
+
+$$
+\bigcup_{i=1}^n A_i
+$$
+
+o
+
+$$
+\bigcap_{i=1}^n A_i.
+$$
+
+Cuando la colección es infinita, estas operaciones se escriben como
+
+$$
+\bigcup_{i=1}^{\infty} A_i,
+\qquad
+\bigcap_{i=1}^{\infty} A_i.
+$$
+
+Esta notación será necesaria para formular posteriormente el axioma de aditividad numerable.
+
+## Particiones del espacio muestral
+
+Una colección de eventos
+
+$$
+A_1,A_2,\ldots,A_n
+$$
+
+forma una **partición** de $S$ si:
+
+1. $A_i\cap A_j=\varnothing$ para $i\ne j$;
+2. $\displaystyle \bigcup_{i=1}^n A_i=S$.
+
+Las particiones serán fundamentales para la regla de probabilidad total y el teorema de Bayes.
+
+## Nota sobre rigor matemático
+
+En espacios muestrales finitos o numerables, resulta natural pensar que cualquier subconjunto puede utilizarse como evento. En espacios no numerables aparecen cuestiones más delicadas: no todos los subconjuntos son necesariamente apropiados para asignarles probabilidad de manera consistente.
+
+Por ello, en la formulación rigurosa de un espacio de probabilidad se utiliza una colección $\mathcal F$ de eventos que satisface propiedades específicas. Más adelante introduciremos esa estructura con mayor detalle; por ahora, para los ejemplos elementales, trabajaremos con los eventos usuales del espacio muestral.
+
+## Ejemplo integrador
+
+Sea
+
+$$
+S=\{1,2,3,4,5,6\}
+$$
+
+para un lanzamiento de dado, y sean
+
+$$
+A=\{2,4,6\},
+\qquad
+B=\{4,5,6\}.
+$$
+
+Entonces
+
+$$
+A\cap B=\{4,6\},
+$$
+
+$$
+A\cup B=\{2,4,5,6\},
+$$
+
+$$
+A^c=\{1,3,5\},
+$$
+
+y
+
+$$
+B^c=\{1,2,3\}.
+$$
+
+Las identidades algebraicas de conjuntos pueden verificarse directamente en este espacio finito.
+
+## Ideas clave
+
+- La teoría de conjuntos proporciona el lenguaje formal de los eventos.
+- Un espacio muestral contiene los resultados elementales considerados por el modelo.
+- La elección del espacio muestral depende del propósito de la modelación.
+- Los eventos son subconjuntos del espacio muestral.
+- Unión, intersección, complemento y diferencia expresan relaciones lógicas entre eventos.
+- Las particiones preparan el camino para probabilidad total y Bayes.
+- La formulación rigurosa de probabilidad requiere especificar una familia adecuada de eventos.
+
+## Ejercicios
+
+1. Demuestra las dos leyes de De Morgan utilizando pertenencia de elementos.
+2. Sea $S=\{1,2,3,4,5,6\}$, $A=\{1,2,3\}$ y $B=\{3,4,5\}$. Calcula unión, intersección, complementos y diferencias.
+3. Construye dos espacios muestrales distintos para el experimento de lanzar tres monedas, según dos objetivos de análisis diferentes.
+4. Da un ejemplo de espacio muestral infinito numerable y otro continuo.
+5. Sean $A_1,A_2,A_3$ eventos disjuntos cuya unión es $S$. Explica por qué forman una partición.
+6. Expresa mediante operaciones de conjuntos: "ocurre al menos uno de $A$ y $B$", "ocurre exactamente uno" y "no ocurre ninguno".
+7. Demuestra que $A\setminus B=A\cap B^c$.
+8. ★ Explica por qué la afirmación "todo subconjunto de cualquier espacio muestral es un evento" requiere cautela en una teoría rigurosa de probabilidad.
+
+## Referencias del capítulo
+
+La secuencia temática conserva el énfasis curricular del programa de Introducción a la Probabilidad de la UASLP en conjuntos, experimentos, espacios muestrales y eventos. La presentación teórica se apoya en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
