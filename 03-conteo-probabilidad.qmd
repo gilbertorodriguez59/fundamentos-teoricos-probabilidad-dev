@@ -1,0 +1,437 @@
+# Axiomas, espacios finitos y métodos de conteo
+
+## Objetivos
+
+Al finalizar este capítulo, el estudiante podrá:
+
+- formular los axiomas de una medida de probabilidad;
+- deducir sus consecuencias algebraicas fundamentales;
+- construir medidas de probabilidad sobre espacios finitos;
+- reconocer el supuesto de equiprobabilidad y sus límites;
+- demostrar los principios aditivo y multiplicativo de conteo;
+- obtener fórmulas de permutaciones, arreglos, combinaciones y coeficientes multinomiales;
+- resolver problemas mediante argumentos combinatorios explícitos.
+
+## El espacio de probabilidad
+
+Un modelo probabilístico se representa mediante una terna
+
+$$
+(\Omega,\mathcal{F},P),
+$$
+
+donde:
+
+- $\Omega$ es el espacio muestral;
+- $\mathcal{F}$ es una colección de eventos;
+- $P$ es una función que asigna un número a cada evento.
+
+En un espacio finito suele tomarse $\mathcal{F}=\mathcal{P}(\Omega)$. En espacios infinitos no siempre se asigna probabilidad a todo subconjunto, por lo que se emplea una sigma-álgebra.
+
+### Sigma-álgebra
+
+Una familia $\mathcal{F}\subseteq\mathcal{P}(\Omega)$ es una **sigma-álgebra** si:
+
+1. $\Omega\in\mathcal{F}$;
+2. si $A\in\mathcal{F}$, entonces $A^c\in\mathcal{F}$;
+3. si $A_1,A_2,\ldots\in\mathcal{F}$, entonces $\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$.
+
+De estas propiedades se deduce que $\varnothing\in\mathcal{F}$ y que la familia es cerrada bajo intersecciones numerables. Los elementos de $\mathcal{F}$ son los **eventos medibles**.
+
+## Axiomas de Kolmogórov
+
+Una **medida de probabilidad** es una función
+
+$$
+P:\mathcal{F}\longrightarrow[0,1]
+$$
+
+que satisface:
+
+1. **No negatividad:** $P(A)\geq0$ para todo $A\in\mathcal{F}$.
+2. **Normalización:** $P(\Omega)=1$.
+3. **Aditividad numerable:** para toda sucesión de eventos disjuntos dos a dos,
+
+$$
+P\left(\bigcup_{i=1}^{\infty}A_i\right)
+=\sum_{i=1}^{\infty}P(A_i).
+$$
+
+La aditividad finita es una consecuencia directa del tercer axioma, tomando vacíos todos los eventos restantes.
+
+## Consecuencias de los axiomas
+
+### Probabilidad del evento imposible
+
+Como $\Omega$ y $\varnothing$ son disjuntos y $\Omega=\Omega\cup\varnothing$,
+
+$$
+1=P(\Omega)=P(\Omega)+P(\varnothing).
+$$
+
+Por tanto,
+
+$$
+P(\varnothing)=0.
+$$
+
+### Regla del complemento
+
+Los eventos $A$ y $A^c$ son disjuntos y su unión es $\Omega$. En consecuencia,
+
+$$
+1=P(\Omega)=P(A)+P(A^c),
+$$
+
+de donde
+
+$$
+P(A^c)=1-P(A).
+$$
+
+### Monotonía
+
+Si $A\subseteq B$, entonces
+
+$$
+B=A\mathbin{\dot\cup}(B\setminus A),
+$$
+
+donde $\dot\cup$ indica unión disjunta. Por aditividad,
+
+$$
+P(B)=P(A)+P(B\setminus A)\geq P(A).
+$$
+
+Así,
+
+$$
+A\subseteq B\quad\Longrightarrow\quad P(A)\leq P(B).
+$$
+
+Además,
+
+$$
+P(B\setminus A)=P(B)-P(A).
+$$
+
+### Fórmula de inclusión-exclusión para dos eventos
+
+Descomponemos la unión como
+
+$$
+A\cup B=A\mathbin{\dot\cup}(B\setminus A).
+$$
+
+También $B=(B\setminus A)\mathbin{\dot\cup}(A\cap B)$, de modo que
+
+$$
+P(B\setminus A)=P(B)-P(A\cap B).
+$$
+
+Por tanto,
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+$$
+
+### Subaditividad
+
+De la fórmula anterior,
+
+$$
+P(A\cup B)\leq P(A)+P(B).
+$$
+
+Más generalmente,
+
+$$
+P\left(\bigcup_{i=1}^{\infty}A_i\right)
+\leq\sum_{i=1}^{\infty}P(A_i),
+$$
+
+desigualdad conocida como cota de la unión o desigualdad de Boole.
+
+## Construcción de probabilidades en espacios finitos
+
+Sea
+
+$$
+\Omega=\{\omega_1,\omega_2,\ldots,\omega_N\}
+$$
+
+y sean $p_1,p_2,\ldots,p_N$ números tales que
+
+$$
+p_i\geq0,
+\qquad
+\sum_{i=1}^{N}p_i=1.
+$$
+
+Definimos, para $A\subseteq\Omega$,
+
+$$
+P(A)=\sum_{\omega_i\in A}p_i.
+$$
+
+Esta definición produce una medida de probabilidad sobre $\mathcal{P}(\Omega)$.
+
+### Verificación
+
+La no negatividad se sigue de $p_i\geq0$. Además,
+
+$$
+P(\Omega)=\sum_{i=1}^{N}p_i=1.
+$$
+
+Si $A_1,A_2,\ldots$ son disjuntos, cada punto de $\Omega$ aparece en a lo sumo uno de ellos. Como $\Omega$ es finito, sólo un número finito de esos eventos puede contener puntos. Agrupar las masas puntuales demuestra la aditividad numerable.
+
+## El modelo equiprobable
+
+Si
+
+$$
+p_1=p_2=\cdots=p_N,
+$$
+
+la normalización implica $p_i=1/N$. Por tanto,
+
+$$
+P(A)=\frac{|A|}{|\Omega|}.
+$$
+
+Ésta es la regla clásica de casos favorables entre casos posibles. Su validez requiere dos condiciones:
+
+1. el espacio muestral es finito;
+2. los puntos muestrales son equiprobables.
+
+La equiprobabilidad no debe justificarse usando la misma regla que se pretende aplicar. Se fundamenta en simetrías físicas, en el diseño del mecanismo aleatorio o en una hipótesis explícita del modelo.
+
+### Ejemplo: suma de dos dados
+
+Los 36 pares ordenados $(i,j)$ son equiprobables si los dados son equilibrados e independientes. Sin embargo, las sumas $2,3,\ldots,12$ no son equiprobables. Por ejemplo,
+
+$$
+P(2)=\frac{1}{36},
+\qquad
+P(7)=\frac{6}{36}.
+$$
+
+La elección del nivel de descripción determina cuáles resultados elementales pueden considerarse igualmente probables.
+
+## Principios de conteo
+
+### Principio aditivo
+
+Si $A_1,\ldots,A_k$ son conjuntos finitos disjuntos dos a dos, entonces
+
+$$
+\left|\bigcup_{i=1}^{k}A_i\right|
+=\sum_{i=1}^{k}|A_i|.
+$$
+
+La disjunción garantiza que cada elemento se cuente exactamente una vez.
+
+### Principio multiplicativo
+
+Sea un procedimiento con $k$ etapas. Si la primera admite $n_1$ opciones y, para cada elección previa, la etapa $i$ admite $n_i$ opciones, entonces existen
+
+$$
+\prod_{i=1}^{k}n_i
+$$
+
+resultados completos.
+
+Formalmente, cuando las opciones no dependen de elecciones previas, el conjunto de resultados es un producto cartesiano
+
+$$
+A_1\times\cdots\times A_k,
+$$
+
+y su cardinalidad es
+
+$$
+|A_1\times\cdots\times A_k|
+=\prod_{i=1}^{k}|A_i|.
+$$
+
+## Permutaciones y arreglos
+
+### Permutaciones de objetos distintos
+
+Para ordenar $n$ objetos distintos hay $n$ opciones para la primera posición, $n-1$ para la segunda y así sucesivamente. Luego,
+
+$$
+n!=n(n-1)\cdots2\cdot1.
+$$
+
+Se define $0!=1$ para conservar identidades como $n!=n(n-1)!$ cuando $n=1$.
+
+### Arreglos sin repetición
+
+El número de secuencias de longitud $r$ formadas con objetos distintos elegidos de un conjunto de $n$ es
+
+$$
+P(n,r)=n(n-1)\cdots(n-r+1)
+=\frac{n!}{(n-r)!}.
+$$
+
+### Secuencias con repetición
+
+Si cada una de las $r$ posiciones puede ocuparse por cualquiera de los $n$ símbolos, el principio multiplicativo da
+
+$$
+n^r.
+$$
+
+## Combinaciones
+
+Una combinación es un subconjunto de $r$ objetos tomado de un conjunto de $n$. El orden no importa.
+
+Cada subconjunto de $r$ elementos genera $r!$ ordenamientos. Como existen $P(n,r)$ arreglos,
+
+$$
+\binom{n}{r}
+=\frac{P(n,r)}{r!}
+=\frac{n!}{r!(n-r)!}.
+$$
+
+### Identidad de simetría
+
+La aplicación que asocia a cada subconjunto $A$ su complemento es una biyección entre los subconjuntos de tamaño $r$ y los de tamaño $n-r$. Por ello,
+
+$$
+\binom{n}{r}=\binom{n}{n-r}.
+$$
+
+### Identidad de Pascal
+
+Fijemos un elemento distinguido $x$. Los subconjuntos de tamaño $r$ se dividen en dos clases disjuntas:
+
+- los que contienen a $x$, determinados al elegir $r-1$ elementos entre los $n-1$ restantes;
+- los que no contienen a $x$, determinados al elegir $r$ elementos entre esos $n-1$.
+
+Por el principio aditivo,
+
+$$
+\binom{n}{r}
+=\binom{n-1}{r-1}+\binom{n-1}{r}.
+$$
+
+## Permutaciones con objetos repetidos
+
+Supongamos que hay $n$ objetos, de los cuales $n_1$ son de un tipo, $n_2$ de otro, y así sucesivamente, con
+
+$$
+n_1+n_2+\cdots+n_k=n.
+$$
+
+El número de ordenamientos distinguibles es el coeficiente multinomial
+
+$$
+\binom{n}{n_1,n_2,\ldots,n_k}
+=\frac{n!}{n_1!n_2!\cdots n_k!}.
+$$
+
+En efecto, si se etiquetaran temporalmente los objetos iguales habría $n!$ ordenamientos. Cada ordenamiento observable se cuenta $n_1!n_2!\cdots n_k!$ veces por permutaciones internas invisibles.
+
+### Ejemplo
+
+La palabra **PROBABILIDAD** tiene 12 letras: aparecen dos veces A, B, D e I; las demás letras aparecen una vez. Por tanto, el número de ordenamientos distinguibles es
+
+$$
+\frac{12!}{2!2!2!2!}=29\,937\,600.
+$$
+
+## Muestreo sin reemplazo
+
+Una población contiene $N$ objetos, de los cuales $K$ poseen una característica. Se seleccionan $n$ objetos sin reemplazo y sin importar el orden. El número total de muestras es
+
+$$
+\binom{N}{n}.
+$$
+
+Para obtener exactamente $k$ objetos con la característica se eligen $k$ de los $K$ disponibles y $n-k$ de los $N-K$ restantes. Si todas las muestras son equiprobables,
+
+$$
+P(\text{exactamente }k)
+=\frac{\binom{K}{k}\binom{N-K}{n-k}}
+{\binom{N}{n}}.
+$$
+
+Esta expresión anticipa la distribución hipergeométrica. Aquí aparece como consecuencia directa del conteo.
+
+### Ejemplo
+
+De 20 dispositivos, 6 presentan una condición crítica. Al seleccionar 5 sin reemplazo,
+
+$$
+P(\text{exactamente 2 críticos})
+=\frac{\binom{6}{2}\binom{14}{3}}
+{\binom{20}{5}}
+\approx0.3522.
+$$
+
+## Inclusión-exclusión para cardinalidades
+
+Para conjuntos finitos,
+
+$$
+|A\cup B|=|A|+|B|-|A\cap B|.
+$$
+
+Para tres conjuntos,
+
+$$
+\begin{aligned}
+|A\cup B\cup C|
+={}&|A|+|B|+|C|\\
+&-|A\cap B|-|A\cap C|-|B\cap C|\\
+&+|A\cap B\cap C|.
+\end{aligned}
+$$
+
+Los términos alternan signos para corregir las multiplicidades con las que se cuentan los elementos. La fórmula probabilística correspondiente se obtiene reemplazando cardinalidades por probabilidades.
+
+## Una guía de decisión
+
+Antes de elegir una fórmula de conteo, conviene preguntar:
+
+1. ¿El resultado se construye por alternativas o por etapas?
+2. ¿Importa el orden?
+3. ¿Puede repetirse un objeto?
+4. ¿Los grupos considerados son disjuntos?
+5. ¿Los resultados elementales son realmente equiprobables?
+
+La combinatoria calcula cardinalidades. La probabilidad aparece sólo después de especificar una medida sobre esos resultados.
+
+## Resumen
+
+- Los axiomas de probabilidad producen reglas como complemento, monotonía e inclusión-exclusión.
+- Una distribución finita queda determinada por masas puntuales no negativas cuya suma es 1.
+- La regla clásica de conteo exige equiprobabilidad.
+- El principio aditivo se aplica a alternativas disjuntas; el multiplicativo, a procedimientos por etapas.
+- Permutaciones, arreglos, combinaciones y coeficientes multinomiales responden a estructuras diferentes.
+- Los argumentos biyectivos permiten demostrar identidades combinatorias sin manipulación algebraica.
+
+## Ejercicios
+
+1. Demuestre a partir de los axiomas que $0\leq P(A)\leq1$ para todo evento $A$.
+2. Si $A\subseteq B$, demuestre que $P(B\setminus A)=P(B)-P(A)$.
+3. Demuestre la fórmula de inclusión-exclusión para tres eventos.
+4. Pruebe la subaditividad finita por inducción.
+5. Sea $\Omega=\{a,b,c,d\}$ con masas $p$, $2p$, $3p$ y $4p$. Determine $p$ y calcule $P(\{b,d\})$.
+6. Construya dos medidas de probabilidad distintas sobre el mismo espacio de seis puntos y explique por qué la cardinalidad por sí sola no determina probabilidades.
+7. Determine cuántas funciones existen de un conjunto de $r$ elementos a uno de $n$ elementos.
+8. Determine cuántas funciones inyectivas existen en el ejercicio anterior cuando $r\leq n$.
+9. Dé una demostración biyectiva de $\binom{n}{r}=\binom{n}{n-r}$.
+10. Dé una demostración combinatoria de la identidad de Pascal.
+11. Demuestre que $\sum_{r=0}^{n}\binom{n}{r}=2^n$ contando subconjuntos de dos maneras.
+12. ¿Cuántos ordenamientos distinguibles tiene la palabra ESTADISTICA? Identifique cuidadosamente las multiplicidades.
+13. De 18 componentes, 5 son defectuosos. Se eligen 4 sin reemplazo. Calcule la probabilidad de obtener al menos un defectuoso usando el complemento.
+14. En dos lanzamientos de un dado equilibrado, demuestre que los pares ordenados pueden ser equiprobables mientras que las sumas no lo son.
+15. Formule y demuestre la expresión general de inclusión-exclusión para tres conjuntos finitos mediante una tabla de multiplicidades.
+
+## Referencias del capítulo
+
+La formulación axiomática, las consecuencias algebraicas y los argumentos combinatorios se desarrollan siguiendo a @walpole2012 y @devore2016, con énfasis adicional en la construcción formal del espacio de probabilidad.
