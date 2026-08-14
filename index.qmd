@@ -1,0 +1,11 @@
+---
+title: "Fundamentos Teóricos de Introducción a la Probabilidad"
+subtitle: "Conceptos, teoremas, demostraciones y modelos probabilísticos"
+author: "Jesús Gilberto Rodríguez Escobedo"
+---
+
+Este libro desarrolla la teoría elemental de la probabilidad con énfasis en definiciones precisas, propiedades, teoremas, demostraciones y construcción de modelos.
+
+Su contenido está pensado como compañero teórico del libro aplicado con R y GeoGebra. Ambos siguen un recorrido común, pero aquí se privilegia la estructura matemática de los conceptos y sus relaciones.
+
+La versión actual es de desarrollo.
