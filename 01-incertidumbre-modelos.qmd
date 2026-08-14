@@ -1,0 +1,83 @@
+# Incertidumbre y modelos probabilísticos
+
+## Objetivos
+
+Al finalizar este capítulo, el estudiante podrá distinguir fenómenos deterministas y aleatorios, identificar los elementos básicos de un experimento aleatorio y explicar el papel de un modelo probabilístico.
+
+## 1.1 Fenómenos deterministas y aleatorios
+
+Un fenómeno se denomina **determinista** cuando, dentro del modelo adoptado, unas mismas condiciones iniciales producen el mismo resultado. En contraste, un fenómeno **aleatorio** puede producir resultados distintos aun cuando el procedimiento se repita bajo condiciones esencialmente iguales.
+
+La aleatoriedad puede originarse en variaciones no controladas, incertidumbre de medición, complejidad del sistema o información incompleta.
+
+## 1.2 Experimento aleatorio
+
+Un **experimento aleatorio** es un procedimiento cuyo resultado específico no puede predecirse con certeza antes de realizarlo, aunque sí es posible describir el conjunto de resultados que pueden ocurrir.
+
+Más adelante llamaremos **espacio muestral** a ese conjunto de resultados posibles.
+
+## 1.3 Regularidad estadística
+
+Aunque una repetición individual sea impredecible, las repeticiones numerosas de un experimento suelen mostrar regularidades. Esta observación constituye una de las motivaciones fundamentales para introducir probabilidades numéricas.
+
+Si $A$ es un evento y después de $n$ repeticiones ocurre $n_A$ veces, definimos la frecuencia relativa
+
+$$
+ f_n(A)=\frac{n_A}{n}.
+$$
+
+El comportamiento de $f_n(A)$ cuando $n$ aumenta será estudiado posteriormente mediante resultados límite.
+
+## 1.4 Modelo probabilístico
+
+Un modelo probabilístico elemental consta de dos componentes:
+
+1. una descripción de los resultados posibles;
+2. una regla que asigna probabilidades a los eventos.
+
+En una formulación más avanzada, un espacio de probabilidad se representa mediante la terna
+
+$$
+(\Omega,\mathcal{F},P),
+$$
+
+donde $\Omega$ es el espacio muestral, $\mathcal{F}$ es una colección adecuada de eventos y $P$ es una medida de probabilidad.
+
+En este libro introduciremos primero estas ideas de manera elemental y más adelante precisaremos las propiedades que debe satisfacer $P$.
+
+## 1.5 Probabilidad como modelo, no como predicción exacta
+
+Asignar una probabilidad a un evento no significa predecir el resultado de una realización particular. La probabilidad describe la incertidumbre dentro de un modelo.
+
+Por ejemplo, si una moneda ideal se modela con
+
+$$
+P(\text{cara})=\frac12,
+$$
+
+esto no implica que en diez lanzamientos aparezcan exactamente cinco caras. La afirmación se refiere al modelo y a su comportamiento probabilístico, no a una secuencia concreta.
+
+## 1.6 Papel de la probabilidad en ingeniería y ciencias
+
+Los modelos probabilísticos aparecen cuando se estudian confiabilidad de componentes, errores de transmisión, tiempos de espera, defectos de fabricación, mediciones ambientales, ruido en señales y muchos otros fenómenos con variabilidad.
+
+La utilidad de la teoría radica en que permite pasar de una descripción cualitativa de la incertidumbre a cálculos y resultados matemáticos verificables.
+
+## 1.7 Ideas clave
+
+- Aleatoriedad no significa ausencia de leyes matemáticas.
+- Un experimento aleatorio puede tener resultados individuales impredecibles y, al mismo tiempo, presentar regularidad colectiva.
+- La probabilidad se construye sobre eventos asociados a un espacio muestral.
+- El modelo probabilístico abstrae los rasgos relevantes del fenómeno real.
+
+## 1.8 Ejercicios
+
+1. Da dos ejemplos de fenómenos deterministas y dos de fenómenos aleatorios.
+2. Explica por qué la medición repetida de una misma magnitud física puede modelarse probabilísticamente.
+3. Describe los resultados posibles de lanzar dos monedas.
+4. ¿Por qué $P(A)=0.7$ no significa que el evento $A$ ocurrirá siete veces en cada bloque de diez repeticiones?
+5. Explica con tus palabras la diferencia entre un sistema físico y su modelo probabilístico.
+
+## Referencias del capítulo
+
+La organización conceptual se apoya principalmente en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
