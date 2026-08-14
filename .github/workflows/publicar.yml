@@ -45,8 +45,7 @@ jobs:
 
       - name: Renderizar HTML y PDF en docs
         run: |
-          quarto render --to html
-          quarto render --to pdf
+          quarto render
           touch docs/.nojekyll
 
       - name: Guardar libro generado en main/docs
