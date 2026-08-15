@@ -1,0 +1,295 @@
+# Variables aleatorias continuas y función de densidad
+
+## Objetivos
+
+En este capítulo se formalizan las variables aleatorias absolutamente continuas, sus funciones de densidad y su relación con la función de distribución acumulada. Se enfatizan las propiedades analíticas que distinguen el caso continuo del discreto.
+
+## Variables aleatorias absolutamente continuas
+
+Sea $X$ una variable aleatoria definida sobre $(\Omega,\mathcal F,P)$. Decimos que $X$ es **absolutamente continua** si existe una función integrable
+
+$$
+f_X:\mathbb R\to[0,\infty)
+$$
+
+tal que, para todo conjunto boreliano $A\subseteq\mathbb R$,
+
+$$
+P(X\in A)=\int_A f_X(x)\,dx.
+$$
+
+La función $f_X$ se denomina **densidad de probabilidad** de $X$.
+
+## Condiciones básicas de una densidad
+
+Toda densidad satisface
+
+$$
+f_X(x)\geq0
+$$
+
+para casi todo $x$, y
+
+$$
+\int_{-\infty}^{\infty} f_X(x)\,dx=1.
+$$
+
+Recíprocamente, toda función medible no negativa con integral total 1 define una distribución absolutamente continua.
+
+## Probabilidad de intervalos
+
+Para $a<b$,
+
+$$
+P(a<X\leq b)=\int_a^b f_X(x)\,dx.
+$$
+
+Como los conjuntos de un solo punto tienen medida de Lebesgue cero,
+
+$$
+P(X=x)=0
+$$
+
+para todo $x\in\mathbb R$.
+
+Por ello,
+
+$$
+P(a<X<b)=P(a\leq X\leq b)=P(a<X\leq b).
+$$
+
+## La densidad no es una probabilidad puntual
+
+En general,
+
+$$
+f_X(x)\neq P(X=x).
+$$
+
+La densidad describe cómo se distribuye localmente la probabilidad respecto de la medida de Lebesgue. Su valor puntual puede ser mayor que 1 sin contradicción, siempre que la integral total permanezca igual a 1.
+
+## Función de distribución acumulada
+
+La CDF de $X$ es
+
+$$
+F_X(x)=P(X\leq x).
+$$
+
+Si $X$ es absolutamente continua,
+
+$$
+\boxed{F_X(x)=\int_{-\infty}^{x}f_X(t)\,dt}.
+$$
+
+En consecuencia, $F_X$ es absolutamente continua y
+
+$$
+F_X'(x)=f_X(x)
+$$
+
+para casi todo $x$.
+
+## Recuperación de probabilidades desde la CDF
+
+Para $a<b$,
+
+$$
+P(a<X\leq b)=F_X(b)-F_X(a).
+$$
+
+Como $P(X=a)=0$,
+
+$$
+P(a<X<b)=F_X(b)-F_X(a).
+$$
+
+También
+
+$$
+P(X>x)=1-F_X(x).
+$$
+
+## Densidad a partir de una CDF
+
+Si una CDF $F$ es absolutamente continua, entonces existe una función integrable $f$ tal que
+
+$$
+F(x)=\int_{-\infty}^{x}f(t)\,dt.
+$$
+
+Además,
+
+$$
+f(x)=F'(x)
+$$
+
+casi en todas partes.
+
+No toda CDF continua posee necesariamente una densidad; la continuidad por sí sola es una condición más débil que la absoluta continuidad.
+
+## Ejemplo normalizado
+
+Sea
+
+$$
+f(x)=
+\begin{cases}
+cx, & 0\leq x\leq2,\\
+0, & \text{en otro caso}.
+\end{cases}
+$$
+
+La condición
+
+$$
+\int_0^2 cx\,dx=1
+$$
+
+produce
+
+$$
+c=\frac12.
+$$
+
+Por tanto,
+
+$$
+f(x)=\frac{x}{2},\qquad0\leq x\leq2.
+$$
+
+La CDF es
+
+$$
+F(x)=
+\begin{cases}
+0, & x<0,\\
+\frac{x^2}{4}, & 0\leq x\leq2,\\
+1, & x>2.
+\end{cases}
+$$
+
+## Propiedad de conjuntos de medida cero
+
+Si $N\subseteq\mathbb R$ tiene medida de Lebesgue cero y $X$ es absolutamente continua, entonces
+
+$$
+P(X\in N)=0.
+$$
+
+Esto incluye todos los conjuntos finitos y numerables. Así, una variable absolutamente continua asigna probabilidad cero a cualquier conjunto numerable de valores.
+
+## Comparación formal con el caso discreto
+
+En el caso discreto,
+
+$$
+P(X=x)=p_X(x)
+$$
+
+puede ser positivo.
+
+En el caso absolutamente continuo,
+
+$$
+P(X=x)=0
+$$
+
+para todo $x$.
+
+La suma
+
+$$
+\sum_x p_X(x)
+$$
+
+del caso discreto es reemplazada por la integral
+
+$$
+\int f_X(x)\,dx.
+$$
+
+## Soporte de una distribución continua
+
+Una noción útil de soporte es el cierre del conjunto donde la densidad es positiva. Si
+
+$$
+f_X(x)>0
+$$
+
+sólo para $x\in(a,b)$, entonces el soporte puede identificarse con $[a,b]$ bajo condiciones regulares.
+
+## Unicidad casi en todas partes
+
+Si dos densidades $f$ y $g$ generan la misma distribución, entonces
+
+$$
+f(x)=g(x)
+$$
+
+para casi todo $x$.
+
+Es decir, pueden diferir en un conjunto de medida cero sin alterar ninguna probabilidad.
+
+## Transformaciones monótonas
+
+Sea $Y=g(X)$, donde $g$ es estrictamente monótona, diferenciable y con inversa diferenciable. Si $X$ tiene densidad $f_X$, entonces
+
+$$
+f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|.
+$$
+
+Esta fórmula se estudiará con mayor detalle al abordar funciones de variables aleatorias.
+
+## Ejemplo de transformación
+
+Si $X$ tiene densidad
+
+$$
+f_X(x)=2x,\qquad0<x<1,
+$$
+
+y definimos
+
+$$
+Y=X^2,
+$$
+
+entonces
+
+$$
+g^{-1}(y)=\sqrt y,
+$$
+
+y
+
+$$
+\frac{d}{dy}g^{-1}(y)=\frac{1}{2\sqrt y}.
+$$
+
+Por tanto,
+
+$$
+f_Y(y)=2\sqrt y\cdot\frac{1}{2\sqrt y}=1,
+$$
+
+para $0<y<1$.
+
+Así, $Y$ tiene densidad uniforme sobre $(0,1)$.
+
+## Ejercicios
+
+1. Demuestra que si $f\geq0$ y $\int_{-\infty}^{\infty}f(x)dx=1$, entonces $P(A)=\int_Af(x)dx$ define una medida de probabilidad sobre los borelianos.
+2. Prueba que una variable absolutamente continua satisface $P(X=x)=0$ para todo $x$.
+3. Sea $f(x)=c(1+x)$ para $0\leq x\leq1$. Determina $c$ y la CDF correspondiente.
+4. Demuestra que, para una variable absolutamente continua, incluir o excluir los extremos de un intervalo no cambia su probabilidad.
+5. Sea $F(x)=x^3$ para $0\leq x\leq1$, con las extensiones usuales fuera del intervalo. Determina la densidad.
+6. Explica por qué modificar una densidad en un solo punto no cambia la distribución.
+7. Si $X$ tiene densidad $2x$ en $(0,1)$ y $Y=X^2$, deriva formalmente la densidad de $Y$.
+8. Prueba que si $N$ es numerable y $X$ es absolutamente continua, entonces $P(X\in N)=0$.
+9. Da un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.
+10. **Reto ★.** Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.
+
+## Referencias del capítulo
+
+El desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018, adaptada al nivel formal de este volumen.
