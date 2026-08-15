@@ -1,0 +1,607 @@
+# Axiomas y propiedades de la probabilidad
+
+## Propósitos de aprendizaje
+
+Al finalizar este capítulo, el lector será capaz de:
+
+- describir formalmente una medida de probabilidad sobre un espacio medible;
+- interpretar los axiomas de Kolmogórov;
+- deducir propiedades fundamentales de una medida de probabilidad;
+- demostrar monotonía, subaditividad e inclusión-exclusión para eventos finitos;
+- distinguir entre propiedades primitivas y resultados derivados;
+- analizar restricciones de coherencia entre probabilidades marginales e intersecciones.
+
+## Espacios de probabilidad
+
+Un **espacio de probabilidad** es una terna
+
+$$
+(\Omega,\mathcal F,P),
+$$
+
+donde:
+
+1. $\Omega$ es un conjunto no vacío llamado espacio muestral;
+2. $\mathcal F$ es una $\sigma$-álgebra de subconjuntos de $\Omega$;
+3. $P:\mathcal F\to[0,1]$ es una medida de probabilidad.
+
+La familia $\mathcal F$ determina cuáles subconjuntos de $\Omega$ son considerados eventos medibles. La función $P$ asigna a cada evento un número real que satisface los axiomas que se presentan a continuación.
+
+## Axiomas de Kolmogórov
+
+Sea $(\Omega,\mathcal F)$ un espacio medible. Una función
+
+$$
+P:\mathcal F\to[0,1]
+$$
+
+es una medida de probabilidad si satisface:
+
+### Axioma 1: no negatividad
+
+Para todo $A\in\mathcal F$,
+
+$$
+P(A)\geq 0.
+$$
+
+### Axioma 2: normalización
+
+$$
+P(\Omega)=1.
+$$
+
+### Axioma 3: aditividad numerable
+
+Si $A_1,A_2,\ldots\in\mathcal F$ son mutuamente excluyentes, es decir,
+
+$$
+A_i\cap A_j=\varnothing\qquad(i\neq j),
+$$
+
+entonces
+
+$$
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+=\sum_{n=1}^{\infty}P(A_n).
+$$
+
+La aditividad numerable es la condición estructural central. Muchas fórmulas elementales de probabilidad se deducen de ella.
+
+## Probabilidad del conjunto vacío
+
+### Proposición
+
+$$
+P(\varnothing)=0.
+$$
+
+### Demostración
+
+Como
+
+$$
+\Omega=\Omega\cup\varnothing
+$$
+
+y los dos conjuntos son disjuntos, por aditividad,
+
+$$
+P(\Omega)=P(\Omega)+P(\varnothing).
+$$
+
+Restando $P(\Omega)$ en ambos lados obtenemos
+
+$$
+P(\varnothing)=0.
+\qquad\square
+$$
+
+## Aditividad finita
+
+### Proposición
+
+Si $A_1,\ldots,A_n\in\mathcal F$ son mutuamente excluyentes, entonces
+
+$$
+P\left(\bigcup_{i=1}^{n}A_i\right)
+=\sum_{i=1}^{n}P(A_i).
+$$
+
+### Justificación
+
+Puede aplicarse la aditividad numerable a la sucesión
+
+$$
+A_1,\ldots,A_n,\varnothing,\varnothing,\ldots
+$$
+
+y utilizar $P(\varnothing)=0$.
+
+## Regla del complemento
+
+### Proposición
+
+Para todo evento $A\in\mathcal F$,
+
+$$
+P(A^c)=1-P(A).
+$$
+
+### Demostración
+
+Como
+
+$$
+A\cap A^c=\varnothing
+$$
+
+y
+
+$$
+A\cup A^c=\Omega,
+$$
+
+por aditividad finita,
+
+$$
+1=P(\Omega)=P(A)+P(A^c).
+$$
+
+Por tanto,
+
+$$
+P(A^c)=1-P(A).
+\qquad\square
+$$
+
+## Monotonía
+
+### Teorema
+
+Si $A,B\in\mathcal F$ y
+
+$$
+A\subseteq B,
+$$
+
+entonces
+
+$$
+P(A)\leq P(B).
+$$
+
+### Demostración
+
+Como
+
+$$
+B=A\cup(B\setminus A)
+$$
+
+y los conjuntos son disjuntos,
+
+$$
+P(B)=P(A)+P(B\setminus A).
+$$
+
+Por no negatividad,
+
+$$
+P(B\setminus A)\geq0.
+$$
+
+Luego
+
+$$
+P(B)\geq P(A).
+\qquad\square
+$$
+
+### Corolario
+
+Para todo $A\in\mathcal F$,
+
+$$
+0\leq P(A)\leq1.
+$$
+
+La cota inferior procede de la no negatividad y la superior de $A\subseteq\Omega$.
+
+## Probabilidad de una diferencia
+
+### Proposición
+
+Para $A,B\in\mathcal F$,
+
+$$
+P(A\setminus B)=P(A)-P(A\cap B).
+$$
+
+### Demostración
+
+La descomposición
+
+$$
+A=(A\setminus B)\cup(A\cap B)
+$$
+
+es disjunta. Por tanto,
+
+$$
+P(A)=P(A\setminus B)+P(A\cap B),
+$$
+
+de donde se obtiene la identidad.
+
+## Fórmula de la unión de dos eventos
+
+### Teorema
+
+Para cualesquiera $A,B\in\mathcal F$,
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+$$
+
+### Demostración
+
+Podemos escribir
+
+$$
+A\cup B=A\cup(B\setminus A),
+$$
+
+donde los dos eventos son disjuntos. Luego
+
+$$
+P(A\cup B)=P(A)+P(B\setminus A).
+$$
+
+Además,
+
+$$
+P(B\setminus A)=P(B)-P(A\cap B).
+$$
+
+Sustituyendo,
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\qquad\square
+$$
+
+## Cotas de Fréchet para dos eventos
+
+A partir de
+
+$$
+P(A\cup B)\leq1
+$$
+
+y de la fórmula de la unión,
+
+$$
+P(A)+P(B)-P(A\cap B)\leq1.
+$$
+
+Por tanto,
+
+$$
+P(A\cap B)\geq P(A)+P(B)-1.
+$$
+
+Como además
+
+$$
+A\cap B\subseteq A
+$$
+
+y
+
+$$
+A\cap B\subseteq B,
+$$
+
+se obtiene
+
+$$
+P(A\cap B)\leq\min\{P(A),P(B)\}.
+$$
+
+En consecuencia,
+
+$$
+\boxed{
+\max\{0,P(A)+P(B)-1\}
+\leq P(A\cap B)
+\leq \min\{P(A),P(B)\}
+}.
+$$
+
+Estas desigualdades caracterizan las restricciones básicas que debe satisfacer una intersección dada la probabilidad marginal de cada evento.
+
+## Subaditividad
+
+### Teorema
+
+Para $A,B\in\mathcal F$,
+
+$$
+P(A\cup B)\leq P(A)+P(B).
+$$
+
+### Demostración
+
+La fórmula de la unión da
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+$$
+
+Como
+
+$$
+P(A\cap B)\geq0,
+$$
+
+se sigue la desigualdad.
+
+### Generalización numerable
+
+Para cualquier sucesión $A_1,A_2,\ldots\in\mathcal F$,
+
+$$
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+\leq\sum_{n=1}^{\infty}P(A_n).
+$$
+
+Esta propiedad se denomina **subaditividad numerable**.
+
+## Inclusión-exclusión para tres eventos
+
+Para $A,B,C\in\mathcal F$,
+
+$$
+\begin{aligned}
+P(A\cup B\cup C)
+={}&P(A)+P(B)+P(C)\\
+&-P(A\cap B)-P(A\cap C)-P(B\cap C)\\
+&+P(A\cap B\cap C).
+\end{aligned}
+$$
+
+La fórmula puede demostrarse aplicando dos veces la regla de la unión y usando identidades de conjuntos.
+
+## Inclusión-exclusión finita
+
+Para eventos $A_1,\ldots,A_n$,
+
+$$
+P\left(\bigcup_{i=1}^{n}A_i\right)
+=
+\sum_iP(A_i)
+-
+\sum_{i<j}P(A_i\cap A_j)
++
+\sum_{i<j<k}P(A_i\cap A_j\cap A_k)
+-\cdots
++(-1)^{n+1}P\left(\bigcap_{i=1}^{n}A_i\right).
+$$
+
+El principio de inclusión-exclusión es una conexión directa entre combinatoria y probabilidad.
+
+## Continuidad de la probabilidad
+
+La aditividad numerable implica propiedades de continuidad que serán importantes al estudiar variables aleatorias y sucesiones de eventos.
+
+### Continuidad desde abajo
+
+Si
+
+$$
+A_1\subseteq A_2\subseteq\cdots
+$$
+
+y
+
+$$
+A=\bigcup_{n=1}^{\infty}A_n,
+$$
+
+entonces
+
+$$
+P(A_n)\longrightarrow P(A).
+$$
+
+### Continuidad desde arriba
+
+Si
+
+$$
+A_1\supseteq A_2\supseteq\cdots
+$$
+
+y
+
+$$
+A=\bigcap_{n=1}^{\infty}A_n,
+$$
+
+entonces
+
+$$
+P(A_n)\longrightarrow P(A).
+$$
+
+En espacios de probabilidad, la condición $P(A_1)<\infty$ necesaria para medidas generales se satisface automáticamente porque $P(A_1)\leq1$.
+
+## Espacios finitos
+
+Sea
+
+$$
+\Omega=\{\omega_1,\ldots,\omega_N\}.
+$$
+
+Si asignamos masas
+
+$$
+p_i=P(\{\omega_i\}),
+$$
+
+con
+
+$$
+p_i\geq0,
+\qquad
+\sum_{i=1}^{N}p_i=1,
+$$
+
+entonces para cualquier evento $A\subseteq\Omega$,
+
+$$
+P(A)=\sum_{\omega_i\in A}p_i.
+$$
+
+Si todos los resultados elementales son equiprobables,
+
+$$
+p_i=\frac1N,
+$$
+
+y se obtiene
+
+$$
+P(A)=\frac{|A|}{|\Omega|}.
+$$
+
+La equiprobabilidad es una hipótesis adicional del modelo, no un axioma de probabilidad.
+
+## Ejemplo formal
+
+Sea
+
+$$
+\Omega=\{1,2,3,4\}
+$$
+
+y supongamos
+
+$$
+P(\{1\})=0.1,
+\quad
+P(\{2\})=0.2,
+\quad
+P(\{3\})=0.3,
+\quad
+P(\{4\})=0.4.
+$$
+
+Definimos
+
+$$
+A=\{1,2,4\},
+\qquad
+B=\{3,4\}.
+$$
+
+Entonces
+
+$$
+P(A)=0.7,
+$$
+
+$$
+P(B)=0.7,
+$$
+
+$$
+P(A\cap B)=0.4,
+$$
+
+y
+
+$$
+P(A\cup B)=0.7+0.7-0.4=1.
+$$
+
+En efecto,
+
+$$
+A\cup B=\Omega.
+$$
+
+## Observación conceptual: probabilidad cero e imposibilidad
+
+El axioma establece
+
+$$
+P(\varnothing)=0,
+$$
+
+pero el recíproco no es válido en general. Puede existir un evento no vacío con probabilidad cero.
+
+En modelos continuos, por ejemplo, un resultado individual puede tener probabilidad cero aunque pertenezca al espacio muestral. Esta distinción será esencial cuando estudiemos distribuciones continuas.
+
+## Errores conceptuales frecuentes
+
+- Tratar $P(A)=|A|/|\Omega|$ como una definición universal de probabilidad.
+- Confundir aditividad para eventos disjuntos con la regla general de la unión.
+- Suponer que $P(A)=0$ implica necesariamente $A=\varnothing$.
+- Utilizar propiedades derivadas como si fueran axiomas independientes.
+- Proponer probabilidades marginales e intersecciones que violan las cotas de Fréchet.
+
+## Ejercicios
+
+1. Demuestre que si $A\subseteq B$, entonces
+
+$$
+P(B\setminus A)=P(B)-P(A).
+$$
+
+2. Demuestre que
+
+$$
+P(A\triangle B)
+=P(A)+P(B)-2P(A\cap B).
+$$
+
+3. Si $P(A)=0.65$ y $P(B)=0.50$, determine todos los valores posibles de $P(A\cap B)$.
+
+4. Demuestre que
+
+$$
+P(A\cap B)\geq P(A)+P(B)-1.
+$$
+
+5. Pruebe la desigualdad
+
+$$
+P(A\cap B)\leq\min\{P(A),P(B)\}.
+$$
+
+6. Derive la fórmula de inclusión-exclusión para tres eventos a partir de la fórmula de dos eventos.
+
+7. Pruebe que
+
+$$
+P(A\cup B\cup C)
+\leq P(A)+P(B)+P(C).
+$$
+
+8. Sea $A_1\subseteq A_2\subseteq\cdots$. Demuestre la continuidad desde abajo descomponiendo la unión en eventos disjuntos.
+
+9. Explique por qué la equiprobabilidad no puede deducirse únicamente del hecho de que $\Omega$ sea finito.
+
+10. **Reto ★.** Sea $(A_n)$ una sucesión de eventos. Demuestre la desigualdad de Boole:
+
+$$
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+\leq\sum_{n=1}^{\infty}P(A_n).
+$$
+
+## Referencias del capítulo
+
+La formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en @walpole2012, @devore2016, @montgomery2018 y @johnson2018. La presentación se ha reescrito de forma original para esta obra.
