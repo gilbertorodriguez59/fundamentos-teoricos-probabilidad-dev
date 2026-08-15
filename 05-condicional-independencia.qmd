@@ -1,0 +1,344 @@
+# Probabilidad condicional e independencia
+
+## Propósitos del capítulo
+
+Este capítulo formaliza dos ideas centrales de la teoría de la probabilidad: la actualización de probabilidades ante información adicional y la independencia entre eventos. Se desarrollan la definición de probabilidad condicional, la regla del producto, la regla de la cadena y criterios equivalentes de independencia.
+
+## Probabilidad condicional
+
+Sea $(\Omega,\mathcal F,P)$ un espacio de probabilidad y sean $A,B\in\mathcal F$ con $P(B)>0$. La probabilidad condicional de $A$ dado $B$ se define por
+
+$$
+\boxed{P(A\mid B)=\frac{P(A\cap B)}{P(B)}}.
+$$
+
+Esta definición puede interpretarse como una renormalización de la medida de probabilidad al restringir el espacio al evento $B$.
+
+### Propiedad de normalización
+
+Para $P(B)>0$,
+
+$$
+P(B\mid B)=1.
+$$
+
+En efecto,
+
+$$
+P(B\mid B)=\frac{P(B\cap B)}{P(B)}=1.
+$$
+
+### Probabilidad condicional como medida
+
+Fijado un evento $B$ con $P(B)>0$, la aplicación
+
+$$
+P_B(A)=P(A\mid B)
+$$
+
+define una nueva medida de probabilidad sobre $(\Omega,\mathcal F)$.
+
+Se verifica:
+
+1. $P_B(A)\ge 0$;
+2. $P_B(\Omega)=1$;
+3. si $A_1,A_2,\ldots$ son disjuntos,
+
+$$
+P_B\left(\bigcup_{i=1}^\infty A_i\right)
+=\sum_{i=1}^\infty P_B(A_i).
+$$
+
+Por tanto, al condicionar por $B$ no abandonamos la estructura axiomática de la probabilidad.
+
+## Regla del producto
+
+A partir de la definición de probabilidad condicional,
+
+$$
+P(A\cap B)=P(B)P(A\mid B).
+$$
+
+Si además $P(A)>0$,
+
+$$
+P(A\cap B)=P(A)P(B\mid A).
+$$
+
+Por tanto,
+
+$$
+P(A)P(B\mid A)=P(B)P(A\mid B).
+$$
+
+Esta igualdad es la identidad algebraica que posteriormente conduce al teorema de Bayes.
+
+## Regla de la cadena
+
+Para eventos $A_1,\ldots,A_n$ tales que las probabilidades condicionales involucradas estén definidas,
+
+$$
+P\left(\bigcap_{i=1}^{n}A_i\right)
+=P(A_1)\prod_{k=2}^{n}
+P\left(A_k\mid\bigcap_{j=1}^{k-1}A_j\right).
+$$
+
+Para $n=3$,
+
+$$
+P(A\cap B\cap C)
+=P(A)P(B\mid A)P(C\mid A\cap B).
+$$
+
+### Demostración para tres eventos
+
+Por la regla del producto,
+
+$$
+P(A\cap B\cap C)
+=P(A\cap B)P(C\mid A\cap B).
+$$
+
+Además,
+
+$$
+P(A\cap B)=P(A)P(B\mid A).
+$$
+
+Sustituyendo se obtiene el resultado.
+
+## Independencia de dos eventos
+
+Dos eventos $A$ y $B$ son independientes si
+
+$$
+\boxed{P(A\cap B)=P(A)P(B)}.
+$$
+
+Esta definición no requiere que $P(A)$ ni $P(B)$ sean positivas.
+
+### Equivalencia con probabilidad condicional
+
+Si $P(B)>0$, entonces $A$ y $B$ son independientes si y sólo si
+
+$$
+P(A\mid B)=P(A).
+$$
+
+De manera análoga, si $P(A)>0$,
+
+$$
+P(B\mid A)=P(B).
+$$
+
+### Demostración
+
+Si $A$ y $B$ son independientes,
+
+$$
+P(A\mid B)
+=\frac{P(A\cap B)}{P(B)}
+=\frac{P(A)P(B)}{P(B)}
+=P(A).
+$$
+
+El recíproco se obtiene multiplicando por $P(B)$.
+
+## Independencia y complementos
+
+Si $A$ y $B$ son independientes, también lo son:
+
+$$
+A^c\text{ y }B,
+$$
+
+$$
+A\text{ y }B^c,
+$$
+
+y
+
+$$
+A^c\text{ y }B^c.
+$$
+
+### Demostración para $A^c$ y $B$
+
+Como
+
+$$
+B=(A\cap B)\cup(A^c\cap B)
+$$
+
+y la unión es disjunta,
+
+$$
+P(A^c\cap B)=P(B)-P(A\cap B).
+$$
+
+Usando independencia,
+
+$$
+P(A^c\cap B)=P(B)-P(A)P(B)
+=(1-P(A))P(B)
+=P(A^c)P(B).
+$$
+
+## Exclusión mutua e independencia
+
+Si $A$ y $B$ son mutuamente excluyentes,
+
+$$
+P(A\cap B)=0.
+$$
+
+Si además $P(A)>0$ y $P(B)>0$, entonces
+
+$$
+P(A)P(B)>0,
+$$
+
+por lo que no pueden ser independientes.
+
+Así, para eventos de probabilidad positiva, exclusión mutua e independencia son conceptos incompatibles.
+
+## Independencia de varios eventos
+
+Para tres eventos $A,B,C$, la independencia por pares significa
+
+$$
+P(A\cap B)=P(A)P(B),
+$$
+
+$$
+P(A\cap C)=P(A)P(C),
+$$
+
+$$
+P(B\cap C)=P(B)P(C).
+$$
+
+Sin embargo, esto no basta para garantizar independencia conjunta. Para independencia mutua se requiere además
+
+$$
+P(A\cap B\cap C)=P(A)P(B)P(C).
+$$
+
+En general, una familia $A_1,\ldots,A_n$ es mutuamente independiente si para todo subconjunto no vacío de índices $I\subseteq\{1,\ldots,n\}$,
+
+$$
+P\left(\bigcap_{i\in I}A_i\right)
+=\prod_{i\in I}P(A_i).
+$$
+
+## Ejemplo clásico: independencia por pares sin independencia mutua
+
+Considérese el espacio equiprobable
+
+$$
+\Omega=\{1,2,3,4\}
+$$
+
+y los eventos
+
+$$
+A=\{1,2\},\qquad
+B=\{1,3\},\qquad
+C=\{1,4\}.
+$$
+
+Cada evento tiene probabilidad $1/2$. Además,
+
+$$
+P(A\cap B)=P(A\cap C)=P(B\cap C)=\frac14,
+$$
+
+por lo que son independientes por pares.
+
+Sin embargo,
+
+$$
+A\cap B\cap C=\{1\},
+$$
+
+de modo que
+
+$$
+P(A\cap B\cap C)=\frac14
+\neq
+\frac18
+=P(A)P(B)P(C).
+$$
+
+Por tanto, no son mutuamente independientes.
+
+## Dependencia inducida por muestreo sin reemplazo
+
+Sea una urna con $N$ objetos, de los cuales $K$ poseen cierta propiedad. Si se extraen dos objetos sin reemplazo y definimos
+
+- $A=$ “el primero posee la propiedad”;
+- $B=$ “el segundo posee la propiedad”,
+
+entonces
+
+$$
+P(A)=\frac KN,
+$$
+
+pero
+
+$$
+P(B\mid A)=\frac{K-1}{N-1}.
+$$
+
+En general,
+
+$$
+\frac{K-1}{N-1}\neq\frac KN,
+$$
+
+por lo que $A$ y $B$ no son independientes.
+
+## Observación sobre eventos de probabilidad cero
+
+La igualdad
+
+$$
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+$$
+
+sólo está definida mediante esta fórmula cuando $P(B)>0$.
+
+En cursos más avanzados se introduce la probabilidad condicional respecto de sigma-álgebras y variables aleatorias mediante esperanza condicional, lo que permite tratar situaciones más generales. Ese desarrollo queda fuera del alcance de este volumen introductorio.
+
+## Proposición: criterio de independencia mediante complementos
+
+Sean $A$ y $B$ eventos. Son equivalentes:
+
+1. $A$ y $B$ son independientes;
+2. $A^c$ y $B$ son independientes;
+3. $A$ y $B^c$ son independientes;
+4. $A^c$ y $B^c$ son independientes.
+
+La demostración se obtiene aplicando repetidamente las identidades del complemento y la aditividad.
+
+## Ejercicios conceptuales y de demostración
+
+1. Demuestra que, para $P(B)>0$, la aplicación $P_B(A)=P(A\mid B)$ satisface los axiomas de probabilidad.
+2. Prueba la regla de la cadena para cuatro eventos.
+3. Sean $A$ y $B$ independientes. Demuestra que $A^c$ y $B^c$ son independientes.
+4. Demuestra que si $A\subseteq B$, $P(A)>0$ y $A$ es independiente de $B$, entonces $P(B)=1$.
+5. Sean $A$ y $B$ mutuamente excluyentes. Determina todas las condiciones bajo las cuales también pueden ser independientes.
+6. Construye un ejemplo de tres eventos independientes por pares que no sean mutuamente independientes.
+7. Si $A$ y $B$ son independientes y $P(A)=0.4$, $P(B)=0.7$, calcula la probabilidad de cada una de las cuatro regiones $A\cap B$, $A\cap B^c$, $A^c\cap B$ y $A^c\cap B^c$.
+8. Demuestra que si $A$ y $B$ son independientes, entonces
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A)P(B).
+$$
+
+9. **Reto ★.** Sea $A_1,\ldots,A_n$ una familia mutuamente independiente. Demuestra que sustituir cualquiera de los eventos por su complemento conserva la independencia mutua.
+
+## Referencias del capítulo
+
+La presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de @walpole2012, @devore2016, @montgomery2018 y @johnson2018, adaptada a la organización formal de este libro.
