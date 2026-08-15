@@ -520,6 +520,216 @@
     ]
   },
   {
+    "objectID": "04-axiomas-probabilidad.html",
+    "href": "04-axiomas-probabilidad.html",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "",
+    "text": "4.1 Propósitos de aprendizaje\nAl finalizar este capítulo, el lector será capaz de:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#propósitos-de-aprendizaje",
+    "href": "04-axiomas-probabilidad.html#propósitos-de-aprendizaje",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "",
+    "text": "describir formalmente una medida de probabilidad sobre un espacio medible;\ninterpretar los axiomas de Kolmogórov;\ndeducir propiedades fundamentales de una medida de probabilidad;\ndemostrar monotonía, subaditividad e inclusión-exclusión para eventos finitos;\ndistinguir entre propiedades primitivas y resultados derivados;\nanalizar restricciones de coherencia entre probabilidades marginales e intersecciones.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#espacios-de-probabilidad",
+    "href": "04-axiomas-probabilidad.html#espacios-de-probabilidad",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.2 Espacios de probabilidad",
+    "text": "4.2 Espacios de probabilidad\nUn espacio de probabilidad es una terna\n\\[\n(\\Omega,\\mathcal F,P),\n\\]\ndonde:\n\n\\(\\Omega\\) es un conjunto no vacío llamado espacio muestral;\n\\(\\mathcal F\\) es una \\(\\sigma\\)-álgebra de subconjuntos de \\(\\Omega\\);\n\\(P:\\mathcal F\\to[0,1]\\) es una medida de probabilidad.\n\nLa familia \\(\\mathcal F\\) determina cuáles subconjuntos de \\(\\Omega\\) son considerados eventos medibles. La función \\(P\\) asigna a cada evento un número real que satisface los axiomas que se presentan a continuación.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#axiomas-de-kolmogórov",
+    "href": "04-axiomas-probabilidad.html#axiomas-de-kolmogórov",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.3 Axiomas de Kolmogórov",
+    "text": "4.3 Axiomas de Kolmogórov\nSea \\((\\Omega,\\mathcal F)\\) un espacio medible. Una función\n\\[\nP:\\mathcal F\\to[0,1]\n\\]\nes una medida de probabilidad si satisface:\n\nAxioma 1: no negatividad\nPara todo \\(A\\in\\mathcal F\\),\n\\[\nP(A)\\geq 0.\n\\]\n\n\nAxioma 2: normalización\n\\[\nP(\\Omega)=1.\n\\]\n\n\nAxioma 3: aditividad numerable\nSi \\(A_1,A_2,\\ldots\\in\\mathcal F\\) son mutuamente excluyentes, es decir,\n\\[\nA_i\\cap A_j=\\varnothing\\qquad(i\\neq j),\n\\]\nentonces\n\\[\nP\\left(\\bigcup_{n=1}^{\\infty}A_n\\right)\n=\\sum_{n=1}^{\\infty}P(A_n).\n\\]\nLa aditividad numerable es la condición estructural central. Muchas fórmulas elementales de probabilidad se deducen de ella.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#probabilidad-del-conjunto-vacío",
+    "href": "04-axiomas-probabilidad.html#probabilidad-del-conjunto-vacío",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.4 Probabilidad del conjunto vacío",
+    "text": "4.4 Probabilidad del conjunto vacío\n\nProposición\n\\[\nP(\\varnothing)=0.\n\\]\n\n\nDemostración\nComo\n\\[\n\\Omega=\\Omega\\cup\\varnothing\n\\]\ny los dos conjuntos son disjuntos, por aditividad,\n\\[\nP(\\Omega)=P(\\Omega)+P(\\varnothing).\n\\]\nRestando \\(P(\\Omega)\\) en ambos lados obtenemos\n\\[\nP(\\varnothing)=0.\n\\qquad\\square\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#aditividad-finita",
+    "href": "04-axiomas-probabilidad.html#aditividad-finita",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.5 Aditividad finita",
+    "text": "4.5 Aditividad finita\n\nProposición\nSi \\(A_1,\\ldots,A_n\\in\\mathcal F\\) son mutuamente excluyentes, entonces\n\\[\nP\\left(\\bigcup_{i=1}^{n}A_i\\right)\n=\\sum_{i=1}^{n}P(A_i).\n\\]\n\n\nJustificación\nPuede aplicarse la aditividad numerable a la sucesión\n\\[\nA_1,\\ldots,A_n,\\varnothing,\\varnothing,\\ldots\n\\]\ny utilizar \\(P(\\varnothing)=0\\).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#regla-del-complemento",
+    "href": "04-axiomas-probabilidad.html#regla-del-complemento",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.6 Regla del complemento",
+    "text": "4.6 Regla del complemento\n\nProposición\nPara todo evento \\(A\\in\\mathcal F\\),\n\\[\nP(A^c)=1-P(A).\n\\]\n\n\nDemostración\nComo\n\\[\nA\\cap A^c=\\varnothing\n\\]\ny\n\\[\nA\\cup A^c=\\Omega,\n\\]\npor aditividad finita,\n\\[\n1=P(\\Omega)=P(A)+P(A^c).\n\\]\nPor tanto,\n\\[\nP(A^c)=1-P(A).\n\\qquad\\square\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#monotonía",
+    "href": "04-axiomas-probabilidad.html#monotonía",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.7 Monotonía",
+    "text": "4.7 Monotonía\n\nTeorema\nSi \\(A,B\\in\\mathcal F\\) y\n\\[\nA\\subseteq B,\n\\]\nentonces\n\\[\nP(A)\\leq P(B).\n\\]\n\n\nDemostración\nComo\n\\[\nB=A\\cup(B\\setminus A)\n\\]\ny los conjuntos son disjuntos,\n\\[\nP(B)=P(A)+P(B\\setminus A).\n\\]\nPor no negatividad,\n\\[\nP(B\\setminus A)\\geq0.\n\\]\nLuego\n\\[\nP(B)\\geq P(A).\n\\qquad\\square\n\\]\n\n\nCorolario\nPara todo \\(A\\in\\mathcal F\\),\n\\[\n0\\leq P(A)\\leq1.\n\\]\nLa cota inferior procede de la no negatividad y la superior de \\(A\\subseteq\\Omega\\).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#probabilidad-de-una-diferencia",
+    "href": "04-axiomas-probabilidad.html#probabilidad-de-una-diferencia",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.8 Probabilidad de una diferencia",
+    "text": "4.8 Probabilidad de una diferencia\n\nProposición\nPara \\(A,B\\in\\mathcal F\\),\n\\[\nP(A\\setminus B)=P(A)-P(A\\cap B).\n\\]\n\n\nDemostración\nLa descomposición\n\\[\nA=(A\\setminus B)\\cup(A\\cap B)\n\\]\nes disjunta. Por tanto,\n\\[\nP(A)=P(A\\setminus B)+P(A\\cap B),\n\\]\nde donde se obtiene la identidad.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#fórmula-de-la-unión-de-dos-eventos",
+    "href": "04-axiomas-probabilidad.html#fórmula-de-la-unión-de-dos-eventos",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.9 Fórmula de la unión de dos eventos",
+    "text": "4.9 Fórmula de la unión de dos eventos\n\nTeorema\nPara cualesquiera \\(A,B\\in\\mathcal F\\),\n\\[\nP(A\\cup B)=P(A)+P(B)-P(A\\cap B).\n\\]\n\n\nDemostración\nPodemos escribir\n\\[\nA\\cup B=A\\cup(B\\setminus A),\n\\]\ndonde los dos eventos son disjuntos. Luego\n\\[\nP(A\\cup B)=P(A)+P(B\\setminus A).\n\\]\nAdemás,\n\\[\nP(B\\setminus A)=P(B)-P(A\\cap B).\n\\]\nSustituyendo,\n\\[\nP(A\\cup B)=P(A)+P(B)-P(A\\cap B).\n\\qquad\\square\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#cotas-de-fréchet-para-dos-eventos",
+    "href": "04-axiomas-probabilidad.html#cotas-de-fréchet-para-dos-eventos",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.10 Cotas de Fréchet para dos eventos",
+    "text": "4.10 Cotas de Fréchet para dos eventos\nA partir de\n\\[\nP(A\\cup B)\\leq1\n\\]\ny de la fórmula de la unión,\n\\[\nP(A)+P(B)-P(A\\cap B)\\leq1.\n\\]\nPor tanto,\n\\[\nP(A\\cap B)\\geq P(A)+P(B)-1.\n\\]\nComo además\n\\[\nA\\cap B\\subseteq A\n\\]\ny\n\\[\nA\\cap B\\subseteq B,\n\\]\nse obtiene\n\\[\nP(A\\cap B)\\leq\\min\\{P(A),P(B)\\}.\n\\]\nEn consecuencia,\n\\[\n\\boxed{\n\\max\\{0,P(A)+P(B)-1\\}\n\\leq P(A\\cap B)\n\\leq \\min\\{P(A),P(B)\\}\n}.\n\\]\nEstas desigualdades caracterizan las restricciones básicas que debe satisfacer una intersección dada la probabilidad marginal de cada evento.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#subaditividad",
+    "href": "04-axiomas-probabilidad.html#subaditividad",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.11 Subaditividad",
+    "text": "4.11 Subaditividad\n\nTeorema\nPara \\(A,B\\in\\mathcal F\\),\n\\[\nP(A\\cup B)\\leq P(A)+P(B).\n\\]\n\n\nDemostración\nLa fórmula de la unión da\n\\[\nP(A\\cup B)=P(A)+P(B)-P(A\\cap B).\n\\]\nComo\n\\[\nP(A\\cap B)\\geq0,\n\\]\nse sigue la desigualdad.\n\n\nGeneralización numerable\nPara cualquier sucesión \\(A_1,A_2,\\ldots\\in\\mathcal F\\),\n\\[\nP\\left(\\bigcup_{n=1}^{\\infty}A_n\\right)\n\\leq\\sum_{n=1}^{\\infty}P(A_n).\n\\]\nEsta propiedad se denomina subaditividad numerable.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#inclusión-exclusión-para-tres-eventos",
+    "href": "04-axiomas-probabilidad.html#inclusión-exclusión-para-tres-eventos",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.12 Inclusión-exclusión para tres eventos",
+    "text": "4.12 Inclusión-exclusión para tres eventos\nPara \\(A,B,C\\in\\mathcal F\\),\n\\[\n\\begin{aligned}\nP(A\\cup B\\cup C)\n={}&P(A)+P(B)+P(C)\\\\\n&-P(A\\cap B)-P(A\\cap C)-P(B\\cap C)\\\\\n&+P(A\\cap B\\cap C).\n\\end{aligned}\n\\]\nLa fórmula puede demostrarse aplicando dos veces la regla de la unión y usando identidades de conjuntos.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#inclusión-exclusión-finita",
+    "href": "04-axiomas-probabilidad.html#inclusión-exclusión-finita",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.13 Inclusión-exclusión finita",
+    "text": "4.13 Inclusión-exclusión finita\nPara eventos \\(A_1,\\ldots,A_n\\),\n\\[\nP\\left(\\bigcup_{i=1}^{n}A_i\\right)\n=\n\\sum_iP(A_i)\n-\n\\sum_{i&lt;j}P(A_i\\cap A_j)\n+\n\\sum_{i&lt;j&lt;k}P(A_i\\cap A_j\\cap A_k)\n-\\cdots\n+(-1)^{n+1}P\\left(\\bigcap_{i=1}^{n}A_i\\right).\n\\]\nEl principio de inclusión-exclusión es una conexión directa entre combinatoria y probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#continuidad-de-la-probabilidad",
+    "href": "04-axiomas-probabilidad.html#continuidad-de-la-probabilidad",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.14 Continuidad de la probabilidad",
+    "text": "4.14 Continuidad de la probabilidad\nLa aditividad numerable implica propiedades de continuidad que serán importantes al estudiar variables aleatorias y sucesiones de eventos.\n\nContinuidad desde abajo\nSi\n\\[\nA_1\\subseteq A_2\\subseteq\\cdots\n\\]\ny\n\\[\nA=\\bigcup_{n=1}^{\\infty}A_n,\n\\]\nentonces\n\\[\nP(A_n)\\longrightarrow P(A).\n\\]\n\n\nContinuidad desde arriba\nSi\n\\[\nA_1\\supseteq A_2\\supseteq\\cdots\n\\]\ny\n\\[\nA=\\bigcap_{n=1}^{\\infty}A_n,\n\\]\nentonces\n\\[\nP(A_n)\\longrightarrow P(A).\n\\]\nEn espacios de probabilidad, la condición \\(P(A_1)&lt;\\infty\\) necesaria para medidas generales se satisface automáticamente porque \\(P(A_1)\\leq1\\).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#espacios-finitos",
+    "href": "04-axiomas-probabilidad.html#espacios-finitos",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.15 Espacios finitos",
+    "text": "4.15 Espacios finitos\nSea\n\\[\n\\Omega=\\{\\omega_1,\\ldots,\\omega_N\\}.\n\\]\nSi asignamos masas\n\\[\np_i=P(\\{\\omega_i\\}),\n\\]\ncon\n\\[\np_i\\geq0,\n\\qquad\n\\sum_{i=1}^{N}p_i=1,\n\\]\nentonces para cualquier evento \\(A\\subseteq\\Omega\\),\n\\[\nP(A)=\\sum_{\\omega_i\\in A}p_i.\n\\]\nSi todos los resultados elementales son equiprobables,\n\\[\np_i=\\frac1N,\n\\]\ny se obtiene\n\\[\nP(A)=\\frac{|A|}{|\\Omega|}.\n\\]\nLa equiprobabilidad es una hipótesis adicional del modelo, no un axioma de probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#ejemplo-formal",
+    "href": "04-axiomas-probabilidad.html#ejemplo-formal",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.16 Ejemplo formal",
+    "text": "4.16 Ejemplo formal\nSea\n\\[\n\\Omega=\\{1,2,3,4\\}\n\\]\ny supongamos\n\\[\nP(\\{1\\})=0.1,\n\\quad\nP(\\{2\\})=0.2,\n\\quad\nP(\\{3\\})=0.3,\n\\quad\nP(\\{4\\})=0.4.\n\\]\nDefinimos\n\\[\nA=\\{1,2,4\\},\n\\qquad\nB=\\{3,4\\}.\n\\]\nEntonces\n\\[\nP(A)=0.7,\n\\]\n\\[\nP(B)=0.7,\n\\]\n\\[\nP(A\\cap B)=0.4,\n\\]\ny\n\\[\nP(A\\cup B)=0.7+0.7-0.4=1.\n\\]\nEn efecto,\n\\[\nA\\cup B=\\Omega.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#observación-conceptual-probabilidad-cero-e-imposibilidad",
+    "href": "04-axiomas-probabilidad.html#observación-conceptual-probabilidad-cero-e-imposibilidad",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.17 Observación conceptual: probabilidad cero e imposibilidad",
+    "text": "4.17 Observación conceptual: probabilidad cero e imposibilidad\nEl axioma establece\n\\[\nP(\\varnothing)=0,\n\\]\npero el recíproco no es válido en general. Puede existir un evento no vacío con probabilidad cero.\nEn modelos continuos, por ejemplo, un resultado individual puede tener probabilidad cero aunque pertenezca al espacio muestral. Esta distinción será esencial cuando estudiemos distribuciones continuas.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#errores-conceptuales-frecuentes",
+    "href": "04-axiomas-probabilidad.html#errores-conceptuales-frecuentes",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.18 Errores conceptuales frecuentes",
+    "text": "4.18 Errores conceptuales frecuentes\n\nTratar \\(P(A)=|A|/|\\Omega|\\) como una definición universal de probabilidad.\nConfundir aditividad para eventos disjuntos con la regla general de la unión.\nSuponer que \\(P(A)=0\\) implica necesariamente \\(A=\\varnothing\\).\nUtilizar propiedades derivadas como si fueran axiomas independientes.\nProponer probabilidades marginales e intersecciones que violan las cotas de Fréchet.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#ejercicios",
+    "href": "04-axiomas-probabilidad.html#ejercicios",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.19 Ejercicios",
+    "text": "4.19 Ejercicios\n\nDemuestre que si \\(A\\subseteq B\\), entonces\n\n\\[\nP(B\\setminus A)=P(B)-P(A).\n\\]\n\nDemuestre que\n\n\\[\nP(A\\triangle B)\n=P(A)+P(B)-2P(A\\cap B).\n\\]\n\nSi \\(P(A)=0.65\\) y \\(P(B)=0.50\\), determine todos los valores posibles de \\(P(A\\cap B)\\).\nDemuestre que\n\n\\[\nP(A\\cap B)\\geq P(A)+P(B)-1.\n\\]\n\nPruebe la desigualdad\n\n\\[\nP(A\\cap B)\\leq\\min\\{P(A),P(B)\\}.\n\\]\n\nDerive la fórmula de inclusión-exclusión para tres eventos a partir de la fórmula de dos eventos.\nPruebe que\n\n\\[\nP(A\\cup B\\cup C)\n\\leq P(A)+P(B)+P(C).\n\\]\n\nSea \\(A_1\\subseteq A_2\\subseteq\\cdots\\). Demuestre la continuidad desde abajo descomponiendo la unión en eventos disjuntos.\nExplique por qué la equiprobabilidad no puede deducirse únicamente del hecho de que \\(\\Omega\\) sea finito.\nReto ★. Sea \\((A_n)\\) una sucesión de eventos. Demuestre la desigualdad de Boole:\n\n\\[\nP\\left(\\bigcup_{n=1}^{\\infty}A_n\\right)\n\\leq\\sum_{n=1}^{\\infty}P(A_n).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "04-axiomas-probabilidad.html#referencias-del-capítulo",
+    "href": "04-axiomas-probabilidad.html#referencias-del-capítulo",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.20 Referencias del capítulo",
+    "text": "4.20 Referencias del capítulo\nLa formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018). La presentación se ha reescrito de forma original para esta obra.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",

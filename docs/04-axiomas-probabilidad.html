@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Técnicas de conteo y enumeración – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>4&nbsp; Axiomas y propiedades de la probabilidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./04-axiomas-probabilidad.html" rel="next">
-<link href="./02-espacios-eventos.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./03-conteo-probabilidad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-conteo-probabilidad.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-axiomas-probabilidad.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -209,13 +209,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-conteo-probabilidad.html" class="sidebar-item-text sidebar-link active">
+  <a href="./03-conteo-probabilidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span></a>
   </div>
 </li>
@@ -235,52 +235,65 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">3.1</span> Objetivos</a></li>
-  <li><a href="#cardinalidad-de-conjuntos-finitos" id="toc-cardinalidad-de-conjuntos-finitos" class="nav-link" data-scroll-target="#cardinalidad-de-conjuntos-finitos"><span class="header-section-number">3.2</span> Cardinalidad de conjuntos finitos</a></li>
-  <li><a href="#principio-aditivo" id="toc-principio-aditivo" class="nav-link" data-scroll-target="#principio-aditivo"><span class="header-section-number">3.3</span> Principio aditivo</a>
+  <li><a href="#propósitos-de-aprendizaje" id="toc-propósitos-de-aprendizaje" class="nav-link active" data-scroll-target="#propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</a></li>
+  <li><a href="#espacios-de-probabilidad" id="toc-espacios-de-probabilidad" class="nav-link" data-scroll-target="#espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</a></li>
+  <li><a href="#axiomas-de-kolmogórov" id="toc-axiomas-de-kolmogórov" class="nav-link" data-scroll-target="#axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</a>
   <ul class="collapse">
+  <li><a href="#axioma-1-no-negatividad" id="toc-axioma-1-no-negatividad" class="nav-link" data-scroll-target="#axioma-1-no-negatividad">Axioma 1: no negatividad</a></li>
+  <li><a href="#axioma-2-normalización" id="toc-axioma-2-normalización" class="nav-link" data-scroll-target="#axioma-2-normalización">Axioma 2: normalización</a></li>
+  <li><a href="#axioma-3-aditividad-numerable" id="toc-axioma-3-aditividad-numerable" class="nav-link" data-scroll-target="#axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</a></li>
+  </ul></li>
+  <li><a href="#probabilidad-del-conjunto-vacío" id="toc-probabilidad-del-conjunto-vacío" class="nav-link" data-scroll-target="#probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</a>
+  <ul class="collapse">
+  <li><a href="#proposición" id="toc-proposición" class="nav-link" data-scroll-target="#proposición">Proposición</a></li>
   <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#principio-multiplicativo" id="toc-principio-multiplicativo" class="nav-link" data-scroll-target="#principio-multiplicativo"><span class="header-section-number">3.4</span> Principio multiplicativo</a>
+  <li><a href="#aditividad-finita" id="toc-aditividad-finita" class="nav-link" data-scroll-target="#aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</a>
   <ul class="collapse">
+  <li><a href="#proposición-1" id="toc-proposición-1" class="nav-link" data-scroll-target="#proposición-1">Proposición</a></li>
+  <li><a href="#justificación" id="toc-justificación" class="nav-link" data-scroll-target="#justificación">Justificación</a></li>
+  </ul></li>
+  <li><a href="#regla-del-complemento" id="toc-regla-del-complemento" class="nav-link" data-scroll-target="#regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</a>
+  <ul class="collapse">
+  <li><a href="#proposición-2" id="toc-proposición-2" class="nav-link" data-scroll-target="#proposición-2">Proposición</a></li>
   <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
   </ul></li>
-  <li><a href="#secuencias-con-repetición" id="toc-secuencias-con-repetición" class="nav-link" data-scroll-target="#secuencias-con-repetición"><span class="header-section-number">3.5</span> Secuencias con repetición</a></li>
-  <li><a href="#factorial" id="toc-factorial" class="nav-link" data-scroll-target="#factorial"><span class="header-section-number">3.6</span> Factorial</a></li>
-  <li><a href="#permutaciones-de-n-objetos-distintos" id="toc-permutaciones-de-n-objetos-distintos" class="nav-link" data-scroll-target="#permutaciones-de-n-objetos-distintos"><span class="header-section-number">3.7</span> Permutaciones de <span class="math inline">\(n\)</span> objetos distintos</a>
+  <li><a href="#monotonía" id="toc-monotonía" class="nav-link" data-scroll-target="#monotonía"><span class="header-section-number">4.7</span> Monotonía</a>
   <ul class="collapse">
   <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
   <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  <li><a href="#corolario" id="toc-corolario" class="nav-link" data-scroll-target="#corolario">Corolario</a></li>
   </ul></li>
-  <li><a href="#arreglos-de-r-objetos-tomados-de-n" id="toc-arreglos-de-r-objetos-tomados-de-n" class="nav-link" data-scroll-target="#arreglos-de-r-objetos-tomados-de-n"><span class="header-section-number">3.8</span> Arreglos de <span class="math inline">\(r\)</span> objetos tomados de <span class="math inline">\(n\)</span></a>
+  <li><a href="#probabilidad-de-una-diferencia" id="toc-probabilidad-de-una-diferencia" class="nav-link" data-scroll-target="#probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</a>
   <ul class="collapse">
-  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
+  <li><a href="#proposición-3" id="toc-proposición-3" class="nav-link" data-scroll-target="#proposición-3">Proposición</a></li>
   <li><a href="#demostración-3" id="toc-demostración-3" class="nav-link" data-scroll-target="#demostración-3">Demostración</a></li>
   </ul></li>
-  <li><a href="#combinaciones" id="toc-combinaciones" class="nav-link" data-scroll-target="#combinaciones"><span class="header-section-number">3.9</span> Combinaciones</a>
+  <li><a href="#fórmula-de-la-unión-de-dos-eventos" id="toc-fórmula-de-la-unión-de-dos-eventos" class="nav-link" data-scroll-target="#fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</a>
   <ul class="collapse">
-  <li><a href="#teorema-2" id="toc-teorema-2" class="nav-link" data-scroll-target="#teorema-2">Teorema</a></li>
+  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
   <li><a href="#demostración-4" id="toc-demostración-4" class="nav-link" data-scroll-target="#demostración-4">Demostración</a></li>
   </ul></li>
-  <li><a href="#simetría-de-los-coeficientes-binomiales" id="toc-simetría-de-los-coeficientes-binomiales" class="nav-link" data-scroll-target="#simetría-de-los-coeficientes-binomiales"><span class="header-section-number">3.10</span> Simetría de los coeficientes binomiales</a>
+  <li><a href="#cotas-de-fréchet-para-dos-eventos" id="toc-cotas-de-fréchet-para-dos-eventos" class="nav-link" data-scroll-target="#cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</a></li>
+  <li><a href="#subaditividad" id="toc-subaditividad" class="nav-link" data-scroll-target="#subaditividad"><span class="header-section-number">4.11</span> Subaditividad</a>
   <ul class="collapse">
-  <li><a href="#interpretación-combinatoria" id="toc-interpretación-combinatoria" class="nav-link" data-scroll-target="#interpretación-combinatoria">Interpretación combinatoria</a></li>
+  <li><a href="#teorema-2" id="toc-teorema-2" class="nav-link" data-scroll-target="#teorema-2">Teorema</a></li>
+  <li><a href="#demostración-5" id="toc-demostración-5" class="nav-link" data-scroll-target="#demostración-5">Demostración</a></li>
+  <li><a href="#generalización-numerable" id="toc-generalización-numerable" class="nav-link" data-scroll-target="#generalización-numerable">Generalización numerable</a></li>
   </ul></li>
-  <li><a href="#identidad-de-pascal" id="toc-identidad-de-pascal" class="nav-link" data-scroll-target="#identidad-de-pascal"><span class="header-section-number">3.11</span> Identidad de Pascal</a>
+  <li><a href="#inclusión-exclusión-para-tres-eventos" id="toc-inclusión-exclusión-para-tres-eventos" class="nav-link" data-scroll-target="#inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</a></li>
+  <li><a href="#inclusión-exclusión-finita" id="toc-inclusión-exclusión-finita" class="nav-link" data-scroll-target="#inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</a></li>
+  <li><a href="#continuidad-de-la-probabilidad" id="toc-continuidad-de-la-probabilidad" class="nav-link" data-scroll-target="#continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</a>
   <ul class="collapse">
-  <li><a href="#demostración-combinatoria" id="toc-demostración-combinatoria" class="nav-link" data-scroll-target="#demostración-combinatoria">Demostración combinatoria</a></li>
+  <li><a href="#continuidad-desde-abajo" id="toc-continuidad-desde-abajo" class="nav-link" data-scroll-target="#continuidad-desde-abajo">Continuidad desde abajo</a></li>
+  <li><a href="#continuidad-desde-arriba" id="toc-continuidad-desde-arriba" class="nav-link" data-scroll-target="#continuidad-desde-arriba">Continuidad desde arriba</a></li>
   </ul></li>
-  <li><a href="#permutaciones-con-repetición" id="toc-permutaciones-con-repetición" class="nav-link" data-scroll-target="#permutaciones-con-repetición"><span class="header-section-number">3.12</span> Permutaciones con repetición</a>
-  <ul class="collapse">
-  <li><a href="#justificación" id="toc-justificación" class="nav-link" data-scroll-target="#justificación">Justificación</a></li>
-  </ul></li>
-  <li><a href="#coeficiente-multinomial" id="toc-coeficiente-multinomial" class="nav-link" data-scroll-target="#coeficiente-multinomial"><span class="header-section-number">3.13</span> Coeficiente multinomial</a></li>
-  <li><a href="#ejemplo-palabras-binarias" id="toc-ejemplo-palabras-binarias" class="nav-link" data-scroll-target="#ejemplo-palabras-binarias"><span class="header-section-number">3.14</span> Ejemplo: palabras binarias</a></li>
-  <li><a href="#ejemplo-selección-de-componentes" id="toc-ejemplo-selección-de-componentes" class="nav-link" data-scroll-target="#ejemplo-selección-de-componentes"><span class="header-section-number">3.15</span> Ejemplo: selección de componentes</a></li>
-  <li><a href="#relación-con-espacios-muestrales" id="toc-relación-con-espacios-muestrales" class="nav-link" data-scroll-target="#relación-con-espacios-muestrales"><span class="header-section-number">3.16</span> Relación con espacios muestrales</a></li>
-  <li><a href="#ideas-clave" id="toc-ideas-clave" class="nav-link" data-scroll-target="#ideas-clave"><span class="header-section-number">3.17</span> Ideas clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">3.18</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">3.19</span> Referencias del capítulo</a></li>
+  <li><a href="#espacios-finitos" id="toc-espacios-finitos" class="nav-link" data-scroll-target="#espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</a></li>
+  <li><a href="#ejemplo-formal" id="toc-ejemplo-formal" class="nav-link" data-scroll-target="#ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</a></li>
+  <li><a href="#observación-conceptual-probabilidad-cero-e-imposibilidad" id="toc-observación-conceptual-probabilidad-cero-e-imposibilidad" class="nav-link" data-scroll-target="#observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</a></li>
+  <li><a href="#errores-conceptuales-frecuentes" id="toc-errores-conceptuales-frecuentes" class="nav-link" data-scroll-target="#errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">4.19</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +302,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></h1>
 </div>
 
 
@@ -306,295 +319,504 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">3.1</span> Objetivos</h2>
-<p>Al finalizar este capítulo, el estudiante será capaz de formular y demostrar reglas elementales de conteo, distinguir entre procesos ordenados y no ordenados, obtener fórmulas para permutaciones, arreglos y combinaciones, y utilizar estas herramientas para determinar cardinalidades de espacios muestrales finitos.</p>
+<section id="propósitos-de-aprendizaje" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</h2>
+<p>Al finalizar este capítulo, el lector será capaz de:</p>
+<ul>
+<li>describir formalmente una medida de probabilidad sobre un espacio medible;</li>
+<li>interpretar los axiomas de Kolmogórov;</li>
+<li>deducir propiedades fundamentales de una medida de probabilidad;</li>
+<li>demostrar monotonía, subaditividad e inclusión-exclusión para eventos finitos;</li>
+<li>distinguir entre propiedades primitivas y resultados derivados;</li>
+<li>analizar restricciones de coherencia entre probabilidades marginales e intersecciones.</li>
+</ul>
 </section>
-<section id="cardinalidad-de-conjuntos-finitos" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="cardinalidad-de-conjuntos-finitos"><span class="header-section-number">3.2</span> Cardinalidad de conjuntos finitos</h2>
-<p>Si <span class="math inline">\(A\)</span> es un conjunto finito, denotamos por</p>
+<section id="espacios-de-probabilidad" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</h2>
+<p>Un <strong>espacio de probabilidad</strong> es una terna</p>
 <p><span class="math display">\[
-|A|
+(\Omega,\mathcal F,P),
 \]</span></p>
-<p>el número de elementos de <span class="math inline">\(A\)</span>.</p>
-<p>Las técnicas de conteo buscan determinar cardinalidades sin necesidad de enumerar explícitamente cada elemento.</p>
+<p>donde:</p>
+<ol type="1">
+<li><span class="math inline">\(\Omega\)</span> es un conjunto no vacío llamado espacio muestral;</li>
+<li><span class="math inline">\(\mathcal F\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra de subconjuntos de <span class="math inline">\(\Omega\)</span>;</li>
+<li><span class="math inline">\(P:\mathcal F\to[0,1]\)</span> es una medida de probabilidad.</li>
+</ol>
+<p>La familia <span class="math inline">\(\mathcal F\)</span> determina cuáles subconjuntos de <span class="math inline">\(\Omega\)</span> son considerados eventos medibles. La función <span class="math inline">\(P\)</span> asigna a cada evento un número real que satisface los axiomas que se presentan a continuación.</p>
 </section>
-<section id="principio-aditivo" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="principio-aditivo"><span class="header-section-number">3.3</span> Principio aditivo</h2>
-<p>Sean <span class="math inline">\(A_1,A_2,\ldots,A_k\)</span> conjuntos finitos y mutuamente disjuntos. Entonces</p>
+<section id="axiomas-de-kolmogórov" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</h2>
+<p>Sea <span class="math inline">\((\Omega,\mathcal F)\)</span> un espacio medible. Una función</p>
 <p><span class="math display">\[
-\left|\bigcup_{i=1}^k A_i\right|
-=\sum_{i=1}^k |A_i|.
+P:\mathcal F\to[0,1]
 \]</span></p>
+<p>es una medida de probabilidad si satisface:</p>
+<section id="axioma-1-no-negatividad" class="level3">
+<h3 class="anchored" data-anchor-id="axioma-1-no-negatividad">Axioma 1: no negatividad</h3>
+<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P(A)\geq 0.
+\]</span></p>
+</section>
+<section id="axioma-2-normalización" class="level3">
+<h3 class="anchored" data-anchor-id="axioma-2-normalización">Axioma 2: normalización</h3>
+<p><span class="math display">\[
+P(\Omega)=1.
+\]</span></p>
+</section>
+<section id="axioma-3-aditividad-numerable" class="level3">
+<h3 class="anchored" data-anchor-id="axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</h3>
+<p>Si <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span> son mutuamente excluyentes, es decir,</p>
+<p><span class="math display">\[
+A_i\cap A_j=\varnothing\qquad(i\neq j),
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+=\sum_{n=1}^{\infty}P(A_n).
+\]</span></p>
+<p>La aditividad numerable es la condición estructural central. Muchas fórmulas elementales de probabilidad se deducen de ella.</p>
+</section>
+</section>
+<section id="probabilidad-del-conjunto-vacío" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</h2>
+<section id="proposición" class="level3">
+<h3 class="anchored" data-anchor-id="proposición">Proposición</h3>
+<p><span class="math display">\[
+P(\varnothing)=0.
+\]</span></p>
+</section>
 <section id="demostración" class="level3">
 <h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Como los conjuntos son disjuntos, ningún elemento pertenece simultáneamente a dos de ellos. Por tanto, al sumar sus cardinalidades cada elemento de la unión se cuenta exactamente una vez.</p>
-<p>El requisito de disjunción es esencial. Si dos conjuntos se superponen, la suma simple cuenta varias veces los elementos comunes.</p>
+<p>Como</p>
+<p><span class="math display">\[
+\Omega=\Omega\cup\varnothing
+\]</span></p>
+<p>y los dos conjuntos son disjuntos, por aditividad,</p>
+<p><span class="math display">\[
+P(\Omega)=P(\Omega)+P(\varnothing).
+\]</span></p>
+<p>Restando <span class="math inline">\(P(\Omega)\)</span> en ambos lados obtenemos</p>
+<p><span class="math display">\[
+P(\varnothing)=0.
+\qquad\square
+\]</span></p>
 </section>
 </section>
-<section id="principio-multiplicativo" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="principio-multiplicativo"><span class="header-section-number">3.4</span> Principio multiplicativo</h2>
-<p>Sean <span class="math inline">\(A_1,A_2,\ldots,A_k\)</span> conjuntos finitos. El número de elementos del producto cartesiano</p>
+<section id="aditividad-finita" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</h2>
+<section id="proposición-1" class="level3">
+<h3 class="anchored" data-anchor-id="proposición-1">Proposición</h3>
+<p>Si <span class="math inline">\(A_1,\ldots,A_n\in\mathcal F\)</span> son mutuamente excluyentes, entonces</p>
 <p><span class="math display">\[
-A_1\times A_2\times\cdots\times A_k
+P\left(\bigcup_{i=1}^{n}A_i\right)
+=\sum_{i=1}^{n}P(A_i).
 \]</span></p>
-<p>es</p>
+</section>
+<section id="justificación" class="level3">
+<h3 class="anchored" data-anchor-id="justificación">Justificación</h3>
+<p>Puede aplicarse la aditividad numerable a la sucesión</p>
 <p><span class="math display">\[
-|A_1||A_2|\cdots|A_k|.
+A_1,\ldots,A_n,\varnothing,\varnothing,\ldots
 \]</span></p>
+<p>y utilizar <span class="math inline">\(P(\varnothing)=0\)</span>.</p>
+</section>
+</section>
+<section id="regla-del-complemento" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</h2>
+<section id="proposición-2" class="level3">
+<h3 class="anchored" data-anchor-id="proposición-2">Proposición</h3>
+<p>Para todo evento <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P(A^c)=1-P(A).
+\]</span></p>
+</section>
 <section id="demostración-1" class="level3">
 <h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
-<p>Cada elemento del producto cartesiano es una <span class="math inline">\(k\)</span>-tupla</p>
+<p>Como</p>
 <p><span class="math display">\[
-(a_1,a_2,\ldots,a_k),
+A\cap A^c=\varnothing
 \]</span></p>
-<p>con <span class="math inline">\(a_i\in A_i\)</span>. Para cada elección de <span class="math inline">\(a_1\)</span> existen <span class="math inline">\(|A_2|\)</span> posibilidades para <span class="math inline">\(a_2\)</span>, y así sucesivamente. La aplicación sucesiva del principio multiplicativo produce el resultado.</p>
-<p>Este principio proporciona la formulación matemática de los diagramas de árbol y de los experimentos por etapas.</p>
-</section>
-</section>
-<section id="secuencias-con-repetición" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="secuencias-con-repetición"><span class="header-section-number">3.5</span> Secuencias con repetición</h2>
-<p>Sea un conjunto de <span class="math inline">\(n\)</span> símbolos. El número de secuencias ordenadas de longitud <span class="math inline">\(r\)</span> que pueden formarse permitiendo repetición es</p>
+<p>y</p>
 <p><span class="math display">\[
-n^r.
+A\cup A^c=\Omega,
 \]</span></p>
-<p>En efecto, el espacio de secuencias es el producto cartesiano</p>
+<p>por aditividad finita,</p>
 <p><span class="math display">\[
-A^r=A\times A\times\cdots\times A,
+1=P(\Omega)=P(A)+P(A^c).
 \]</span></p>
-<p>y por el principio multiplicativo</p>
+<p>Por tanto,</p>
 <p><span class="math display">\[
-|A^r|=|A|^r=n^r.
+P(A^c)=1-P(A).
+\qquad\square
 \]</span></p>
 </section>
-<section id="factorial" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="factorial"><span class="header-section-number">3.6</span> Factorial</h2>
-<p>Para <span class="math inline">\(n\in\mathbb{N}\)</span>,</p>
-<p><span class="math display">\[
-n!=n(n-1)\cdots2\cdot1,
-\]</span></p>
-<p>con el convenio</p>
-<p><span class="math display">\[
-0!=1.
-\]</span></p>
-<p>El factorial aparece al contar biyecciones y ordenamientos de conjuntos finitos.</p>
 </section>
-<section id="permutaciones-de-n-objetos-distintos" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="permutaciones-de-n-objetos-distintos"><span class="header-section-number">3.7</span> Permutaciones de <span class="math inline">\(n\)</span> objetos distintos</h2>
-<p>Una permutación de un conjunto de <span class="math inline">\(n\)</span> elementos es una ordenación de todos sus elementos.</p>
+<section id="monotonía" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="monotonía"><span class="header-section-number">4.7</span> Monotonía</h2>
 <section id="teorema" class="level3">
 <h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
-<p>El número de permutaciones de <span class="math inline">\(n\)</span> objetos distintos es</p>
+<p>Si <span class="math inline">\(A,B\in\mathcal F\)</span> y</p>
 <p><span class="math display">\[
-n!.
+A\subseteq B,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P(A)\leq P(B).
 \]</span></p>
 </section>
 <section id="demostración-2" class="level3">
 <h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
-<p>La primera posición puede ocuparse de <span class="math inline">\(n\)</span> maneras. Una vez elegida, la segunda dispone de <span class="math inline">\(n-1\)</span> posibilidades; la tercera, de <span class="math inline">\(n-2\)</span>, y así sucesivamente. Por el principio multiplicativo,</p>
+<p>Como</p>
 <p><span class="math display">\[
-n(n-1)(n-2)\cdots2\cdot1=n!.
+B=A\cup(B\setminus A)
+\]</span></p>
+<p>y los conjuntos son disjuntos,</p>
+<p><span class="math display">\[
+P(B)=P(A)+P(B\setminus A).
+\]</span></p>
+<p>Por no negatividad,</p>
+<p><span class="math display">\[
+P(B\setminus A)\geq0.
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+P(B)\geq P(A).
+\qquad\square
 \]</span></p>
 </section>
-</section>
-<section id="arreglos-de-r-objetos-tomados-de-n" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="arreglos-de-r-objetos-tomados-de-n"><span class="header-section-number">3.8</span> Arreglos de <span class="math inline">\(r\)</span> objetos tomados de <span class="math inline">\(n\)</span></h2>
-<p>Un arreglo sin repetición de longitud <span class="math inline">\(r\)</span> es una secuencia ordenada formada por <span class="math inline">\(r\)</span> elementos distintos elegidos de un conjunto de <span class="math inline">\(n\)</span> elementos.</p>
-<section id="teorema-1" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
-<p>El número de arreglos es</p>
+<section id="corolario" class="level3">
+<h3 class="anchored" data-anchor-id="corolario">Corolario</h3>
+<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
 <p><span class="math display">\[
-P(n,r)=\frac{n!}{(n-r)!},
-\qquad 0\le r\le n.
+0\leq P(A)\leq1.
+\]</span></p>
+<p>La cota inferior procede de la no negatividad y la superior de <span class="math inline">\(A\subseteq\Omega\)</span>.</p>
+</section>
+</section>
+<section id="probabilidad-de-una-diferencia" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</h2>
+<section id="proposición-3" class="level3">
+<h3 class="anchored" data-anchor-id="proposición-3">Proposición</h3>
+<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P(A\setminus B)=P(A)-P(A\cap B).
 \]</span></p>
 </section>
 <section id="demostración-3" class="level3">
 <h3 class="anchored" data-anchor-id="demostración-3">Demostración</h3>
-<p>Existen <span class="math inline">\(n\)</span> opciones para la primera posición, <span class="math inline">\(n-1\)</span> para la segunda y, finalmente, <span class="math inline">\(n-r+1\)</span> para la posición <span class="math inline">\(r\)</span>. Por tanto,</p>
+<p>La descomposición</p>
 <p><span class="math display">\[
-P(n,r)=n(n-1)\cdots(n-r+1)
-=\frac{n!}{(n-r)!}.
+A=(A\setminus B)\cup(A\cap B)
 \]</span></p>
-</section>
-</section>
-<section id="combinaciones" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="combinaciones"><span class="header-section-number">3.9</span> Combinaciones</h2>
-<p>Una combinación de tamaño <span class="math inline">\(r\)</span> es un subconjunto de <span class="math inline">\(r\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> elementos.</p>
-<section id="teorema-2" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-2">Teorema</h3>
-<p>El número de combinaciones de <span class="math inline">\(n\)</span> elementos tomados de <span class="math inline">\(r\)</span> en <span class="math inline">\(r\)</span> es</p>
+<p>es disjunta. Por tanto,</p>
 <p><span class="math display">\[
-\binom{n}{r}=\frac{n!}{r!(n-r)!}.
+P(A)=P(A\setminus B)+P(A\cap B),
+\]</span></p>
+<p>de donde se obtiene la identidad.</p>
+</section>
+</section>
+<section id="fórmula-de-la-unión-de-dos-eventos" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</h2>
+<section id="teorema-1" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
+<p>Para cualesquiera <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
 \]</span></p>
 </section>
 <section id="demostración-4" class="level3">
 <h3 class="anchored" data-anchor-id="demostración-4">Demostración</h3>
-<p>Primero contamos arreglos de longitud <span class="math inline">\(r\)</span>:</p>
+<p>Podemos escribir</p>
 <p><span class="math display">\[
-P(n,r)=\frac{n!}{(n-r)!}.
+A\cup B=A\cup(B\setminus A),
 \]</span></p>
-<p>Cada subconjunto de <span class="math inline">\(r\)</span> elementos produce exactamente <span class="math inline">\(r!\)</span> ordenamientos. Por tanto, al dividir entre <span class="math inline">\(r!\)</span> obtenemos</p>
+<p>donde los dos eventos son disjuntos. Luego</p>
 <p><span class="math display">\[
-\binom{n}{r}
-=\frac{P(n,r)}{r!}
-=\frac{n!}{r!(n-r)!}.
+P(A\cup B)=P(A)+P(B\setminus A).
 \]</span></p>
-</section>
-</section>
-<section id="simetría-de-los-coeficientes-binomiales" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="simetría-de-los-coeficientes-binomiales"><span class="header-section-number">3.10</span> Simetría de los coeficientes binomiales</h2>
-<p>Para <span class="math inline">\(0\le r\le n\)</span>,</p>
+<p>Además,</p>
 <p><span class="math display">\[
-\binom{n}{r}=\binom{n}{n-r}.
+P(B\setminus A)=P(B)-P(A\cap B).
 \]</span></p>
-<section id="interpretación-combinatoria" class="level3">
-<h3 class="anchored" data-anchor-id="interpretación-combinatoria">Interpretación combinatoria</h3>
-<p>Elegir los <span class="math inline">\(r\)</span> elementos que pertenecen a un subconjunto equivale a elegir los <span class="math inline">\(n-r\)</span> elementos que quedan fuera. Ambas decisiones determinan exactamente el mismo subconjunto.</p>
-</section>
-</section>
-<section id="identidad-de-pascal" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="identidad-de-pascal"><span class="header-section-number">3.11</span> Identidad de Pascal</h2>
-<p>Para <span class="math inline">\(1\le r\le n-1\)</span>,</p>
+<p>Sustituyendo,</p>
 <p><span class="math display">\[
-\binom{n}{r}
-=
-\binom{n-1}{r-1}
-+
-\binom{n-1}{r}.
-\]</span></p>
-<section id="demostración-combinatoria" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-combinatoria">Demostración combinatoria</h3>
-<p>Fijemos un elemento particular <span class="math inline">\(x\)</span> de un conjunto de <span class="math inline">\(n\)</span> elementos. Todo subconjunto de tamaño <span class="math inline">\(r\)</span> pertenece exactamente a una de dos clases:</p>
-<ol type="1">
-<li>contiene a <span class="math inline">\(x\)</span>;</li>
-<li>no contiene a <span class="math inline">\(x\)</span>.</li>
-</ol>
-<p>Si contiene a <span class="math inline">\(x\)</span>, faltan por elegir <span class="math inline">\(r-1\)</span> elementos de los <span class="math inline">\(n-1\)</span> restantes, lo que puede hacerse de</p>
-<p><span class="math display">\[
-\binom{n-1}{r-1}
-\]</span></p>
-<p>formas. Si no contiene a <span class="math inline">\(x\)</span>, deben elegirse los <span class="math inline">\(r\)</span> elementos entre los <span class="math inline">\(n-1\)</span> restantes, lo que puede hacerse de</p>
-<p><span class="math display">\[
-\binom{n-1}{r}
-\]</span></p>
-<p>formas. Como las dos clases son disjuntas, el principio aditivo completa la demostración.</p>
-</section>
-</section>
-<section id="permutaciones-con-repetición" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="permutaciones-con-repetición"><span class="header-section-number">3.12</span> Permutaciones con repetición</h2>
-<p>Supongamos que se tienen <span class="math inline">\(n\)</span> objetos, de los cuales <span class="math inline">\(n_1\)</span> son indistinguibles de un primer tipo, <span class="math inline">\(n_2\)</span> de un segundo tipo, …, <span class="math inline">\(n_k\)</span> de un último tipo, con</p>
-<p><span class="math display">\[
-n_1+n_2+\cdots+n_k=n.
-\]</span></p>
-<p>El número de ordenamientos distintos es</p>
-<p><span class="math display">\[
-\frac{n!}{n_1!n_2!\cdots n_k!}.
-\]</span></p>
-<section id="justificación" class="level3">
-<h3 class="anchored" data-anchor-id="justificación">Justificación</h3>
-<p>Si todos los objetos fueran distintos existirían <span class="math inline">\(n!\)</span> ordenamientos. Sin embargo, permutar entre sí los <span class="math inline">\(n_i\)</span> objetos indistinguibles de cada clase no produce un nuevo ordenamiento. Por ello se divide entre</p>
-<p><span class="math display">\[
-n_1!n_2!\cdots n_k!.
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\qquad\square
 \]</span></p>
 </section>
 </section>
-<section id="coeficiente-multinomial" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="coeficiente-multinomial"><span class="header-section-number">3.13</span> Coeficiente multinomial</h2>
-<p>Una generalización natural del coeficiente binomial es</p>
+<section id="cotas-de-fréchet-para-dos-eventos" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</h2>
+<p>A partir de</p>
 <p><span class="math display">\[
-\binom{n}{n_1,n_2,\ldots,n_k}
-=
-\frac{n!}{n_1!n_2!\cdots n_k!},
+P(A\cup B)\leq1
 \]</span></p>
-<p>con</p>
+<p>y de la fórmula de la unión,</p>
 <p><span class="math display">\[
-n_1+n_2+\cdots+n_k=n.
+P(A)+P(B)-P(A\cap B)\leq1.
 \]</span></p>
-<p>Este coeficiente cuenta el número de maneras de dividir <span class="math inline">\(n\)</span> objetos distintos en <span class="math inline">\(k\)</span> grupos etiquetados de tamaños <span class="math inline">\(n_1,n_2,\ldots,n_k\)</span>.</p>
-</section>
-<section id="ejemplo-palabras-binarias" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="ejemplo-palabras-binarias"><span class="header-section-number">3.14</span> Ejemplo: palabras binarias</h2>
-<p>Consideremos cadenas de longitud 8 formadas por ceros y unos.</p>
-<p>El número total de cadenas es</p>
+<p>Por tanto,</p>
 <p><span class="math display">\[
-2^8=256.
+P(A\cap B)\geq P(A)+P(B)-1.
 \]</span></p>
-<p>El número de cadenas con exactamente tres unos es</p>
+<p>Como además</p>
 <p><span class="math display">\[
-\binom{8}{3}=56,
-\]</span></p>
-<p>porque basta elegir las tres posiciones ocupadas por unos.</p>
-<p>Esta interpretación será útil posteriormente al estudiar la distribución binomial.</p>
-</section>
-<section id="ejemplo-selección-de-componentes" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="ejemplo-selección-de-componentes"><span class="header-section-number">3.15</span> Ejemplo: selección de componentes</h2>
-<p>De 12 componentes se seleccionan 3.</p>
-<p>Si la selección es un subconjunto sin orden,</p>
-<p><span class="math display">\[
-\binom{12}{3}=220.
-\]</span></p>
-<p>Si las tres posiciones representan pruebas diferentes y el orden importa,</p>
-<p><span class="math display">\[
-P(12,3)=\frac{12!}{9!}=1320.
-\]</span></p>
-<p>Por tanto, el mismo conjunto físico de objetos puede inducir distintos problemas combinatorios según la definición del resultado.</p>
-</section>
-<section id="relación-con-espacios-muestrales" class="level2" data-number="3.16">
-<h2 data-number="3.16" class="anchored" data-anchor-id="relación-con-espacios-muestrales"><span class="header-section-number">3.16</span> Relación con espacios muestrales</h2>
-<p>Las técnicas de conteo permiten calcular cardinalidades como</p>
-<p><span class="math display">\[
-|S|
+A\cap B\subseteq A
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-|A|,
+A\cap B\subseteq B,
 \]</span></p>
-<p>sin enumerar explícitamente los resultados. En el capítulo siguiente, al introducir formalmente la probabilidad en espacios finitos equiprobables, estas cardinalidades permitirán expresar</p>
+<p>se obtiene</p>
 <p><span class="math display">\[
-P(A)=\frac{|A|}{|S|}.
+P(A\cap B)\leq\min\{P(A),P(B)\}.
 \]</span></p>
-<p>Por ahora, lo importante es separar dos cuestiones:</p>
-<ol type="1">
-<li>cuántos resultados existen;</li>
-<li>qué probabilidad se asignará a esos resultados.</li>
-</ol>
-<p>El conteo responde la primera pregunta, no la segunda.</p>
+<p>En consecuencia,</p>
+<p><span class="math display">\[
+\boxed{
+\max\{0,P(A)+P(B)-1\}
+\leq P(A\cap B)
+\leq \min\{P(A),P(B)\}
+}.
+\]</span></p>
+<p>Estas desigualdades caracterizan las restricciones básicas que debe satisfacer una intersección dada la probabilidad marginal de cada evento.</p>
 </section>
-<section id="ideas-clave" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="ideas-clave"><span class="header-section-number">3.17</span> Ideas clave</h2>
+<section id="subaditividad" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="subaditividad"><span class="header-section-number">4.11</span> Subaditividad</h2>
+<section id="teorema-2" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-2">Teorema</h3>
+<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P(A\cup B)\leq P(A)+P(B).
+\]</span></p>
+</section>
+<section id="demostración-5" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-5">Demostración</h3>
+<p>La fórmula de la unión da</p>
+<p><span class="math display">\[
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+P(A\cap B)\geq0,
+\]</span></p>
+<p>se sigue la desigualdad.</p>
+</section>
+<section id="generalización-numerable" class="level3">
+<h3 class="anchored" data-anchor-id="generalización-numerable">Generalización numerable</h3>
+<p>Para cualquier sucesión <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+\leq\sum_{n=1}^{\infty}P(A_n).
+\]</span></p>
+<p>Esta propiedad se denomina <strong>subaditividad numerable</strong>.</p>
+</section>
+</section>
+<section id="inclusión-exclusión-para-tres-eventos" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</h2>
+<p>Para <span class="math inline">\(A,B,C\in\mathcal F\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(A\cup B\cup C)
+={}&amp;P(A)+P(B)+P(C)\\
+&amp;-P(A\cap B)-P(A\cap C)-P(B\cap C)\\
+&amp;+P(A\cap B\cap C).
+\end{aligned}
+\]</span></p>
+<p>La fórmula puede demostrarse aplicando dos veces la regla de la unión y usando identidades de conjuntos.</p>
+</section>
+<section id="inclusión-exclusión-finita" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</h2>
+<p>Para eventos <span class="math inline">\(A_1,\ldots,A_n\)</span>,</p>
+<p><span class="math display">\[
+P\left(\bigcup_{i=1}^{n}A_i\right)
+=
+\sum_iP(A_i)
+-
+\sum_{i&lt;j}P(A_i\cap A_j)
++
+\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k)
+-\cdots
++(-1)^{n+1}P\left(\bigcap_{i=1}^{n}A_i\right).
+\]</span></p>
+<p>El principio de inclusión-exclusión es una conexión directa entre combinatoria y probabilidad.</p>
+</section>
+<section id="continuidad-de-la-probabilidad" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</h2>
+<p>La aditividad numerable implica propiedades de continuidad que serán importantes al estudiar variables aleatorias y sucesiones de eventos.</p>
+<section id="continuidad-desde-abajo" class="level3">
+<h3 class="anchored" data-anchor-id="continuidad-desde-abajo">Continuidad desde abajo</h3>
+<p>Si</p>
+<p><span class="math display">\[
+A_1\subseteq A_2\subseteq\cdots
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+A=\bigcup_{n=1}^{\infty}A_n,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P(A_n)\longrightarrow P(A).
+\]</span></p>
+</section>
+<section id="continuidad-desde-arriba" class="level3">
+<h3 class="anchored" data-anchor-id="continuidad-desde-arriba">Continuidad desde arriba</h3>
+<p>Si</p>
+<p><span class="math display">\[
+A_1\supseteq A_2\supseteq\cdots
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+A=\bigcap_{n=1}^{\infty}A_n,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+P(A_n)\longrightarrow P(A).
+\]</span></p>
+<p>En espacios de probabilidad, la condición <span class="math inline">\(P(A_1)&lt;\infty\)</span> necesaria para medidas generales se satisface automáticamente porque <span class="math inline">\(P(A_1)\leq1\)</span>.</p>
+</section>
+</section>
+<section id="espacios-finitos" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+\Omega=\{\omega_1,\ldots,\omega_N\}.
+\]</span></p>
+<p>Si asignamos masas</p>
+<p><span class="math display">\[
+p_i=P(\{\omega_i\}),
+\]</span></p>
+<p>con</p>
+<p><span class="math display">\[
+p_i\geq0,
+\qquad
+\sum_{i=1}^{N}p_i=1,
+\]</span></p>
+<p>entonces para cualquier evento <span class="math inline">\(A\subseteq\Omega\)</span>,</p>
+<p><span class="math display">\[
+P(A)=\sum_{\omega_i\in A}p_i.
+\]</span></p>
+<p>Si todos los resultados elementales son equiprobables,</p>
+<p><span class="math display">\[
+p_i=\frac1N,
+\]</span></p>
+<p>y se obtiene</p>
+<p><span class="math display">\[
+P(A)=\frac{|A|}{|\Omega|}.
+\]</span></p>
+<p>La equiprobabilidad es una hipótesis adicional del modelo, no un axioma de probabilidad.</p>
+</section>
+<section id="ejemplo-formal" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+\Omega=\{1,2,3,4\}
+\]</span></p>
+<p>y supongamos</p>
+<p><span class="math display">\[
+P(\{1\})=0.1,
+\quad
+P(\{2\})=0.2,
+\quad
+P(\{3\})=0.3,
+\quad
+P(\{4\})=0.4.
+\]</span></p>
+<p>Definimos</p>
+<p><span class="math display">\[
+A=\{1,2,4\},
+\qquad
+B=\{3,4\}.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+P(A)=0.7,
+\]</span></p>
+<p><span class="math display">\[
+P(B)=0.7,
+\]</span></p>
+<p><span class="math display">\[
+P(A\cap B)=0.4,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+P(A\cup B)=0.7+0.7-0.4=1.
+\]</span></p>
+<p>En efecto,</p>
+<p><span class="math display">\[
+A\cup B=\Omega.
+\]</span></p>
+</section>
+<section id="observación-conceptual-probabilidad-cero-e-imposibilidad" class="level2" data-number="4.17">
+<h2 data-number="4.17" class="anchored" data-anchor-id="observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</h2>
+<p>El axioma establece</p>
+<p><span class="math display">\[
+P(\varnothing)=0,
+\]</span></p>
+<p>pero el recíproco no es válido en general. Puede existir un evento no vacío con probabilidad cero.</p>
+<p>En modelos continuos, por ejemplo, un resultado individual puede tener probabilidad cero aunque pertenezca al espacio muestral. Esta distinción será esencial cuando estudiemos distribuciones continuas.</p>
+</section>
+<section id="errores-conceptuales-frecuentes" class="level2" data-number="4.18">
+<h2 data-number="4.18" class="anchored" data-anchor-id="errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</h2>
 <ul>
-<li>La cardinalidad mide el tamaño de un conjunto finito.</li>
-<li>El principio aditivo se aplica a alternativas disjuntas.</li>
-<li>El principio multiplicativo se aplica a elecciones sucesivas.</li>
-<li>Las permutaciones ordenan todos los objetos.</li>
-<li>Los arreglos seleccionan y ordenan una parte de los objetos.</li>
-<li>Las combinaciones seleccionan sin considerar el orden.</li>
-<li>Los coeficientes binomiales satisfacen identidades con interpretaciones combinatorias.</li>
-<li>Las técnicas de conteo preparan el cálculo de probabilidades en espacios finitos.</li>
+<li>Tratar <span class="math inline">\(P(A)=|A|/|\Omega|\)</span> como una definición universal de probabilidad.</li>
+<li>Confundir aditividad para eventos disjuntos con la regla general de la unión.</li>
+<li>Suponer que <span class="math inline">\(P(A)=0\)</span> implica necesariamente <span class="math inline">\(A=\varnothing\)</span>.</li>
+<li>Utilizar propiedades derivadas como si fueran axiomas independientes.</li>
+<li>Proponer probabilidades marginales e intersecciones que violan las cotas de Fréchet.</li>
 </ul>
 </section>
-<section id="ejercicios" class="level2" data-number="3.18">
-<h2 data-number="3.18" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">3.18</span> Ejercicios</h2>
+<section id="ejercicios" class="level2" data-number="4.19">
+<h2 data-number="4.19" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">4.19</span> Ejercicios</h2>
 <ol type="1">
-<li>Demuestra el principio multiplicativo para tres conjuntos finitos utilizando productos cartesianos.</li>
-<li>Calcula el número de cadenas de longitud 6 formadas por cuatro símbolos cuando se permite repetición.</li>
-<li>¿Cuántas permutaciones existen de 9 objetos distintos?</li>
-<li>¿Cuántos arreglos de longitud 4 pueden formarse a partir de 10 objetos distintos?</li>
-<li>Demuestra algebraicamente la identidad <span class="math inline">\(\binom{n}{r}=\binom{n}{n-r}\)</span>.</li>
-<li>Demuestra la identidad de Pascal mediante manipulación algebraica de factoriales.</li>
-<li>¿Cuántas cadenas binarias de longitud 12 contienen exactamente cinco unos?</li>
-<li>Obtén el número de permutaciones distintas de las letras de la palabra PROBABILIDAD.</li>
-<li>Explica por qué el conteo de comités utiliza combinaciones mientras que la asignación de cargos utiliza arreglos.</li>
-<li>★ Demuestra que</li>
+<li>Demuestre que si <span class="math inline">\(A\subseteq B\)</span>, entonces</li>
 </ol>
 <p><span class="math display">\[
-\sum_{r=0}^n \binom{n}{r}=2^n
+P(B\setminus A)=P(B)-P(A).
 \]</span></p>
-<p>interpretando ambos lados como el número de subconjuntos de un conjunto de <span class="math inline">\(n\)</span> elementos.</p>
+<ol start="2" type="1">
+<li>Demuestre que</li>
+</ol>
+<p><span class="math display">\[
+P(A\triangle B)
+=P(A)+P(B)-2P(A\cap B).
+\]</span></p>
+<ol start="3" type="1">
+<li><p>Si <span class="math inline">\(P(A)=0.65\)</span> y <span class="math inline">\(P(B)=0.50\)</span>, determine todos los valores posibles de <span class="math inline">\(P(A\cap B)\)</span>.</p></li>
+<li><p>Demuestre que</p></li>
+</ol>
+<p><span class="math display">\[
+P(A\cap B)\geq P(A)+P(B)-1.
+\]</span></p>
+<ol start="5" type="1">
+<li>Pruebe la desigualdad</li>
+</ol>
+<p><span class="math display">\[
+P(A\cap B)\leq\min\{P(A),P(B)\}.
+\]</span></p>
+<ol start="6" type="1">
+<li><p>Derive la fórmula de inclusión-exclusión para tres eventos a partir de la fórmula de dos eventos.</p></li>
+<li><p>Pruebe que</p></li>
+</ol>
+<p><span class="math display">\[
+P(A\cup B\cup C)
+\leq P(A)+P(B)+P(C).
+\]</span></p>
+<ol start="8" type="1">
+<li><p>Sea <span class="math inline">\(A_1\subseteq A_2\subseteq\cdots\)</span>. Demuestre la continuidad desde abajo descomponiendo la unión en eventos disjuntos.</p></li>
+<li><p>Explique por qué la equiprobabilidad no puede deducirse únicamente del hecho de que <span class="math inline">\(\Omega\)</span> sea finito.</p></li>
+<li><p><strong>Reto ★.</strong> Sea <span class="math inline">\((A_n)\)</span> una sucesión de eventos. Demuestre la desigualdad de Boole:</p></li>
+</ol>
+<p><span class="math display">\[
+P\left(\bigcup_{n=1}^{\infty}A_n\right)
+\leq\sum_{n=1}^{\infty}P(A_n).
+\]</span></p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="3.19">
-<h2 data-number="3.19" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">3.19</span> Referencias del capítulo</h2>
-<p>El desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="4.20">
+<h2 data-number="4.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</h2>
+<p>La formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>. La presentación se ha reescrito de forma original para esta obra.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1016,13 +1238,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-espacios-eventos.html" class="pagination-link" aria-label="Espacios muestrales y álgebra de eventos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Espacios muestrales y álgebra de eventos</span></span>
+      <a href="./03-conteo-probabilidad.html" class="pagination-link" aria-label="Técnicas de conteo y enumeración">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-axiomas-probabilidad.html" class="pagination-link" aria-label="Axiomas y propiedades de la probabilidad">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
