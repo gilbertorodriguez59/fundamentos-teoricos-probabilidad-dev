@@ -1,0 +1,527 @@
+# Esperanza matemática, momentos, varianza y desigualdades probabilísticas
+
+## Objetivos
+
+Este capítulo formaliza la esperanza matemática y la varianza para variables aleatorias discretas y absolutamente continuas, desarrolla sus propiedades fundamentales y establece las desigualdades de Markov y Chebyshev como consecuencias directas de la estructura de integración probabilística.
+
+## Esperanza de una variable aleatoria
+
+Sea $X$ una variable aleatoria definida sobre $(\Omega,\mathcal F,P)$. La esperanza de $X$, cuando existe, se interpreta como la integral de $X$ respecto de la medida de probabilidad $P$:
+
+$$
+E[X]=\int_\Omega X(\omega)\,dP(\omega).
+$$
+
+En los casos elementales estudiados hasta ahora, esta definición adopta formas concretas.
+
+### Caso discreto
+
+Si $X$ tiene soporte numerable $\mathcal S_X$, entonces
+
+$$
+\boxed{E[X]=\sum_{x\in\mathcal S_X}x\,P(X=x)}.
+$$
+
+Esta suma debe converger absolutamente para que $E[X]$ exista como número real finito:
+
+$$
+\sum_x |x|P(X=x)<\infty.
+$$
+
+### Caso absolutamente continuo
+
+Si $X$ tiene densidad $f_X$, entonces
+
+$$
+\boxed{E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx},
+$$
+
+si
+
+$$
+\int_{-\infty}^{\infty}|x|f_X(x)\,dx<\infty.
+$$
+
+## Esperanza de funciones de una variable
+
+Sea $g:\mathbb R\to\mathbb R$ medible. Si $g(X)$ es integrable, entonces
+
+$$
+E[g(X)]=\int_\Omega g(X(\omega))\,dP(\omega).
+$$
+
+En el caso discreto,
+
+$$
+\boxed{E[g(X)]=\sum_x g(x)p_X(x)},
+$$
+
+y en el caso absolutamente continuo,
+
+$$
+\boxed{E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)\,dx}.
+$$
+
+Esta identidad evita construir explícitamente la distribución inducida de $g(X)$.
+
+## Linealidad de la esperanza
+
+Si $X$ y $Y$ son integrables y $a,b\in\mathbb R$, entonces
+
+$$
+\boxed{E[aX+bY]=aE[X]+bE[Y]}.
+$$
+
+### Demostración
+
+Por linealidad de la integral,
+
+$$
+E[aX+bY]
+=\int_\Omega(aX+bY)\,dP
+=a\int_\Omega X\,dP+b\int_\Omega Y\,dP.
+$$
+
+Por tanto,
+
+$$
+E[aX+bY]=aE[X]+bE[Y].
+$$
+
+La independencia no interviene en este resultado.
+
+## Variables indicadoras
+
+Para un evento $A\in\mathcal F$, definimos
+
+$$
+I_A(\omega)=
+\begin{cases}
+1,&\omega\in A,\\
+0,&\omega\notin A.
+\end{cases}
+$$
+
+Entonces
+
+$$
+\boxed{E[I_A]=P(A)}.
+$$
+
+### Demostración
+
+Como $I_A$ sólo toma los valores 0 y 1,
+
+$$
+E[I_A]
+=0\,P(A^c)+1\,P(A)
+=P(A).
+$$
+
+Esta identidad permite convertir problemas de conteo en sumas de esperanzas.
+
+Si
+
+$$
+N=\sum_{i=1}^n I_{A_i},
+$$
+
+entonces
+
+$$
+E[N]=\sum_{i=1}^nP(A_i),
+$$
+
+sin requerir independencia entre los eventos $A_i$.
+
+## Momentos
+
+El momento ordinario de orden $r$ se define por
+
+$$
+\mu_r'=E[X^r],
+$$
+
+si existe.
+
+El momento central de orden $r$ se define por
+
+$$
+\mu_r=E[(X-\mu)^r],
+$$
+
+donde
+
+$$
+\mu=E[X].
+$$
+
+El segundo momento central es especialmente importante.
+
+## Varianza
+
+Si $E[X^2]<\infty$, la varianza de $X$ es
+
+$$
+\boxed{\operatorname{Var}(X)=E[(X-E[X])^2]}.
+$$
+
+Por construcción,
+
+$$
+\operatorname{Var}(X)\ge0.
+$$
+
+La desviación estándar se define por
+
+$$
+\sigma_X=\sqrt{\operatorname{Var}(X)}.
+$$
+
+## Fórmula alternativa de la varianza
+
+Si $E[X^2]<\infty$, entonces
+
+$$
+\boxed{\operatorname{Var}(X)=E[X^2]-E[X]^2}.
+$$
+
+### Demostración
+
+Sea $\mu=E[X]$. Entonces
+
+$$
+\begin{aligned}
+\operatorname{Var}(X)
+&=E[(X-\mu)^2]\\
+&=E[X^2-2\mu X+\mu^2]\\
+&=E[X^2]-2\mu E[X]+\mu^2\\
+&=E[X^2]-2\mu^2+\mu^2\\
+&=E[X^2]-\mu^2.
+\end{aligned}
+$$
+
+## Caracterización de varianza nula
+
+Si $E[X^2]<\infty$, entonces
+
+$$
+\operatorname{Var}(X)=0
+$$
+
+si y sólo si
+
+$$
+P(X=E[X])=1.
+$$
+
+Es decir, una variable tiene varianza cero exactamente cuando es constante casi seguramente.
+
+## Transformaciones afines
+
+Sean $a,b\in\mathbb R$. Entonces
+
+$$
+E[aX+b]=aE[X]+b,
+$$
+
+y
+
+$$
+\boxed{\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)}.
+$$
+
+### Demostración
+
+Sea $\mu=E[X]$. Entonces
+
+$$
+E[aX+b]=a\mu+b.
+$$
+
+Por tanto,
+
+$$
+\begin{aligned}
+\operatorname{Var}(aX+b)
+&=E[(aX+b-(a\mu+b))^2]\\
+&=E[a^2(X-\mu)^2]\\
+&=a^2\operatorname{Var}(X).
+\end{aligned}
+$$
+
+## Covarianza y varianza de una suma
+
+Aunque el estudio detallado de variables conjuntas se realizará más adelante, conviene anticipar una identidad fundamental.
+
+La covarianza se define por
+
+$$
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+$$
+
+Siempre que existan los segundos momentos,
+
+$$
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y)
+}.
+$$
+
+Si $X$ y $Y$ son independientes, entonces
+
+$$
+\operatorname{Cov}(X,Y)=0,
+$$
+
+y por tanto
+
+$$
+\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y).
+$$
+
+La implicación recíproca no es válida en general: covarianza cero no implica independencia.
+
+## Desigualdad de Markov
+
+Sea $X\ge0$ casi seguramente y sea $a>0$. Entonces
+
+$$
+\boxed{P(X\ge a)\le\frac{E[X]}{a}}.
+$$
+
+### Demostración
+
+La desigualdad puntual
+
+$$
+X\ge aI_{\{X\ge a\}}
+$$
+
+implica, por monotonía de la esperanza,
+
+$$
+E[X]\ge aE[I_{\{X\ge a\}}].
+$$
+
+Como
+
+$$
+E[I_{\{X\ge a\}}]=P(X\ge a),
+$$
+
+se obtiene
+
+$$
+E[X]\ge aP(X\ge a),
+$$
+
+y por tanto
+
+$$
+P(X\ge a)\le\frac{E[X]}{a}.
+$$
+
+## Desigualdad de Chebyshev
+
+Sea $X$ una variable aleatoria con media finita $\mu$ y varianza finita $\sigma^2$. Para todo $t>0$,
+
+$$
+\boxed{P(|X-\mu|\ge t)\le\frac{\sigma^2}{t^2}}.
+$$
+
+Tomando
+
+$$
+t=k\sigma,
+$$
+
+con $k>0$, resulta
+
+$$
+\boxed{P(|X-\mu|\ge k\sigma)\le\frac1{k^2}}.
+$$
+
+Equivalentemente,
+
+$$
+\boxed{P(|X-\mu|<k\sigma)\ge1-\frac1{k^2}}.
+$$
+
+### Demostración a partir de Markov
+
+La variable
+
+$$
+Y=(X-\mu)^2
+$$
+
+es no negativa. Aplicando Markov con umbral $t^2$,
+
+$$
+P((X-\mu)^2\ge t^2)
+\le
+\frac{E[(X-\mu)^2]}{t^2}.
+$$
+
+Como
+
+$$
+\{(X-\mu)^2\ge t^2\}=\{|X-\mu|\ge t\}
+$$
+
+y
+
+$$
+E[(X-\mu)^2]=\sigma^2,
+$$
+
+se obtiene el resultado.
+
+## Consecuencia: concentración alrededor de la media
+
+Chebyshev muestra que cualquier distribución con varianza finita debe concentrar una proporción mínima de su masa alrededor de la media.
+
+Para $k=2$,
+
+$$
+P(|X-\mu|<2\sigma)\ge\frac34.
+$$
+
+Para $k=3$,
+
+$$
+P(|X-\mu|<3\sigma)\ge\frac89.
+$$
+
+No se supone normalidad, simetría ni unimodalidad.
+
+## Relación entre Markov y Chebyshev
+
+Markov requiere:
+
+- no negatividad;
+- existencia de $E[X]$.
+
+Chebyshev se obtiene aplicando Markov a $(X-\mu)^2$ y requiere:
+
+- existencia de $E[X]$;
+- existencia de $E[X^2]$.
+
+En este sentido, Chebyshev es una desigualdad de segundo momento.
+
+## Ejemplo teórico: variable de Bernoulli
+
+Sea $X$ una variable Bernoulli con
+
+$$
+P(X=1)=p,
+\qquad
+P(X=0)=1-p.
+$$
+
+Entonces
+
+$$
+E[X]=p,
+$$
+
+$$
+E[X^2]=p,
+$$
+
+porque $X^2=X$. Por tanto,
+
+$$
+\boxed{\operatorname{Var}(X)=p(1-p)}.
+$$
+
+Este resultado será fundamental al estudiar distribuciones binomiales.
+
+## Ejemplo teórico: variable uniforme continua
+
+Sea $X$ uniforme en $[a,b]$ con densidad
+
+$$
+f_X(x)=\frac1{b-a},\qquad a\le x\le b.
+$$
+
+Entonces
+
+$$
+E[X]
+=\frac1{b-a}\int_a^b x\,dx
+=\frac{a+b}{2}.
+$$
+
+Además,
+
+$$
+E[X^2]
+=\frac1{b-a}\int_a^b x^2\,dx
+=\frac{a^2+ab+b^2}{3}.
+$$
+
+Por tanto,
+
+$$
+\boxed{\operatorname{Var}(X)=\frac{(b-a)^2}{12}}.
+$$
+
+## Existencia de momentos
+
+No toda variable aleatoria posee esperanza o varianza finitas.
+
+Puede ocurrir que
+
+$$
+E[|X|]=\infty,
+$$
+
+por lo que $E[X]$ no existe como número real finito.
+
+Incluso puede existir $E[X]$ pero no $E[X^2]$. En ese caso la media existe, pero la varianza es infinita o no está definida como cantidad finita.
+
+Por ello, antes de utilizar fórmulas de momentos es necesario verificar su existencia.
+
+## Momentos y forma de una distribución
+
+Los primeros momentos tienen interpretaciones habituales:
+
+- primer momento: centro;
+- segundo momento central: dispersión;
+- tercer momento central normalizado: asimetría;
+- cuarto momento central normalizado: comportamiento de colas y apuntamiento.
+
+El estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.
+
+## Materiales complementarios del capítulo
+
+| Material | Formato | Acceso | Propósito |
+|---|---|---|---|
+| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/10-esperanza-varianza-chebyshev-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
+| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/10-esperanza-varianza-chebyshev.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
+| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
+| Video | Video | Próximamente | Explicación audiovisual complementaria. |
+| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
+
+Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico.
+
+## Ejercicios teóricos
+
+1. Demuestra directamente la linealidad de la esperanza para variables discretas.
+2. Demuestra que $E[I_A]=P(A)$ para cualquier evento $A$.
+3. Demuestra que $\operatorname{Var}(X)=E[X^2]-E[X]^2$.
+4. Demuestra que $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$.
+5. Demuestra que $\operatorname{Var}(X)=0$ si y sólo si $X$ es constante casi seguramente.
+6. Deriva $E[X]$ y $\operatorname{Var}(X)$ para una Bernoulli$(p)$.
+7. Deriva $E[X]$ y $\operatorname{Var}(X)$ para una uniforme en $[a,b]$.
+8. Demuestra la desigualdad de Markov usando variables indicadoras.
+9. Obtén Chebyshev a partir de Markov aplicada a $(X-E[X])^2$.
+10. Construye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.
+
+## Referencias del capítulo
+
+El tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en @devore2016, @johnson2018, @walpole2012 y @montgomery2018, con apoyo computacional complementario basado en @kerns2010.
