@@ -25,6 +25,7 @@ book:
     - 06-probabilidad-total-bayes.qmd
     - 07-variable-aleatoria-cdf.qmd
     - 08-variables-discretas-pmf.qmd
+    - 09-variables-continuas-densidad.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
