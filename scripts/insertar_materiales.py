@@ -10,6 +10,7 @@ CAPITULOS = {
     "07-variable-aleatoria-cdf.qmd": ("07-variable-aleatoria-cdf-colab.ipynb", "07-variable-aleatoria-cdf.Rmd"),
     "08-variables-discretas-pmf.qmd": ("08-variables-discretas-pmf-colab.ipynb", "08-variables-discretas-pmf.Rmd"),
     "09-variables-continuas-densidad.qmd": ("09-variables-continuas-densidad-colab.ipynb", "09-variables-continuas-densidad.Rmd"),
+    "10-esperanza-varianza-chebyshev.qmd": ("10-esperanza-varianza-chebyshev-colab.ipynb", "10-esperanza-varianza-chebyshev.Rmd"),
 }
 
 BASE = "https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev"
