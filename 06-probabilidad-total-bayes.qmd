@@ -1,0 +1,354 @@
+# Particiones, probabilidad total y teorema de Bayes
+
+## Objetivos
+
+En este capítulo se formalizan las particiones del espacio muestral, la ley de la probabilidad total y el teorema de Bayes. Se estudian sus demostraciones, su interpretación y sus consecuencias algebraicas.
+
+## Particiones del espacio muestral
+
+Una familia finita de eventos
+
+$$
+\{B_1,\ldots,B_k\}\subseteq\mathcal F
+$$
+
+es una **partición** de $\Omega$ si
+
+$$
+B_i\cap B_j=\varnothing\quad(i\neq j),
+$$
+
+y
+
+$$
+\bigcup_{i=1}^{k}B_i=\Omega.
+$$
+
+Si además $P(B_i)>0$ para todo $i$, entonces cada $B_i$ puede utilizarse como evento condicionante.
+
+### Propiedad fundamental
+
+Para cualquier evento $A\in\mathcal F$,
+
+$$
+A=A\cap\Omega
+=A\cap\left(\bigcup_{i=1}^{k}B_i\right)
+=\bigcup_{i=1}^{k}(A\cap B_i).
+$$
+
+Las intersecciones $A\cap B_i$ son mutuamente excluyentes.
+
+## Ley de la probabilidad total
+
+### Teorema
+
+Sea $B_1,\ldots,B_k$ una partición de $\Omega$ con $P(B_i)>0$. Entonces para todo evento $A$,
+
+$$
+\boxed{
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i)
+}.
+$$
+
+### Demostración
+
+Como
+
+$$
+A=\bigcup_{i=1}^{k}(A\cap B_i)
+$$
+
+y las uniones son disjuntas,
+
+$$
+P(A)=\sum_{i=1}^{k}P(A\cap B_i).
+$$
+
+Por la definición de probabilidad condicional,
+
+$$
+P(A\cap B_i)=P(B_i)P(A\mid B_i).
+$$
+
+Sustituyendo,
+
+$$
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i).
+$$
+
+Queda demostrado.
+
+## Caso binario
+
+Si $B$ y $B^c$ forman una partición y $0<P(B)<1$, entonces
+
+$$
+\boxed{
+P(A)=P(B)P(A\mid B)+P(B^c)P(A\mid B^c)
+}.
+$$
+
+Esta forma aparece constantemente en confiabilidad, diagnóstico y clasificación.
+
+## Teorema de Bayes
+
+### Teorema
+
+Sea $B_1,\ldots,B_k$ una partición con $P(B_i)>0$ y sea $A$ un evento con $P(A)>0$. Entonces
+
+$$
+\boxed{
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{k}P(B_j)P(A\mid B_j)}
+}.
+$$
+
+### Demostración
+
+Por definición,
+
+$$
+P(B_i\mid A)=\frac{P(B_i\cap A)}{P(A)}.
+$$
+
+La regla del producto da
+
+$$
+P(B_i\cap A)=P(B_i)P(A\mid B_i).
+$$
+
+La ley de la probabilidad total produce
+
+$$
+P(A)=\sum_{j=1}^{k}P(B_j)P(A\mid B_j).
+$$
+
+Al sustituir ambas expresiones se obtiene la fórmula de Bayes.
+
+## Forma proporcional
+
+La identidad anterior puede escribirse como
+
+$$
+P(B_i\mid A)
+\propto
+P(B_i)P(A\mid B_i).
+$$
+
+El denominador
+
+$$
+P(A)
+$$
+
+actúa como constante de normalización común a todas las hipótesis $B_i$.
+
+Esta forma permite separar tres componentes conceptuales:
+
+- $P(B_i)$: probabilidad previa;
+- $P(A\mid B_i)$: verosimilitud de la evidencia bajo $B_i$;
+- $P(B_i\mid A)$: probabilidad posterior.
+
+## Normalización de las probabilidades posteriores
+
+Como los $B_i$ forman una partición,
+
+$$
+\sum_{i=1}^{k}P(B_i\mid A)=1.
+$$
+
+### Demostración
+
+Usando Bayes,
+
+$$
+\sum_{i=1}^{k}P(B_i\mid A)
+=
+\frac{\sum_{i=1}^{k}P(B_i)P(A\mid B_i)}{P(A)}.
+$$
+
+El numerador es precisamente $P(A)$ por la ley de probabilidad total, de modo que la razón vale 1.
+
+## Odds y forma de Bayes para dos hipótesis
+
+Para una hipótesis $H$ y su complemento $H^c$, Bayes puede expresarse mediante **odds**.
+
+Las odds previas son
+
+$$
+\frac{P(H)}{P(H^c)}.
+$$
+
+Después de observar evidencia $E$,
+
+$$
+\frac{P(H\mid E)}{P(H^c\mid E)}
+=
+\frac{P(H)}{P(H^c)}
+\cdot
+\frac{P(E\mid H)}{P(E\mid H^c)}.
+$$
+
+La razón
+
+$$
+\frac{P(E\mid H)}{P(E\mid H^c)}
+$$
+
+se denomina **razón de verosimilitudes**.
+
+Esta formulación muestra que Bayes actualiza multiplicativamente las odds previas.
+
+## Ejemplo algebraico
+
+Sea
+
+$$
+P(H)=0.10,
+$$
+
+$$
+P(E\mid H)=0.80,
+$$
+
+y
+
+$$
+P(E\mid H^c)=0.20.
+$$
+
+Entonces
+
+$$
+P(E)=0.10(0.80)+0.90(0.20)=0.26.
+$$
+
+Por Bayes,
+
+$$
+P(H\mid E)=\frac{0.10(0.80)}{0.26}=\frac{4}{13}\approx0.3077.
+$$
+
+En términos de odds:
+
+$$
+\frac{P(H)}{P(H^c)}=\frac{1}{9},
+$$
+
+mientras que la razón de verosimilitudes es
+
+$$
+\frac{0.80}{0.20}=4.
+$$
+
+Por tanto, las odds posteriores son
+
+$$
+\frac{4}{9}.
+$$
+
+De ahí se recupera
+
+$$
+P(H\mid E)=\frac{4/9}{1+4/9}=\frac{4}{13}.
+$$
+
+## Particiones numerables
+
+La formulación se extiende a una partición numerable $B_1,B_2,\ldots$ siempre que las sumas estén bien definidas.
+
+Si
+
+$$
+\Omega=\bigcup_{i=1}^{\infty}B_i
+$$
+
+con eventos dos a dos disjuntos y $P(B_i)>0$, entonces
+
+$$
+P(A)=\sum_{i=1}^{\infty}P(B_i)P(A\mid B_i).
+$$
+
+Y, si $P(A)>0$,
+
+$$
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{\infty}P(B_j)P(A\mid B_j)}.
+$$
+
+## Actualización secuencial
+
+Sean $E_1$ y $E_2$ dos evidencias. Entonces
+
+$$
+P(H\mid E_1,E_2)
+=
+\frac{P(H\mid E_1)P(E_2\mid H,E_1)}
+{P(E_2\mid E_1)}.
+$$
+
+La distribución posterior tras observar $E_1$ puede utilizarse como distribución previa en la actualización con $E_2$.
+
+Esto formaliza la idea de aprendizaje secuencial.
+
+## Evidencia condicionalmente independiente
+
+Si $E_1$ y $E_2$ son condicionalmente independientes dado $H$, entonces
+
+$$
+P(E_1\cap E_2\mid H)
+=P(E_1\mid H)P(E_2\mid H).
+$$
+
+Bajo esta hipótesis, la actualización con múltiples evidencias se simplifica.
+
+No debe confundirse independencia ordinaria con independencia condicional.
+
+## Tasa base y posterior
+
+El teorema de Bayes muestra que una gran verosimilitud no garantiza una gran probabilidad posterior. El valor de $P(B_i)$ influye necesariamente en la respuesta.
+
+Por ello, en problemas de clasificación o diagnóstico, ignorar las probabilidades previas puede producir inferencias seriamente engañosas.
+
+## Relación con la probabilidad condicional
+
+Bayes no introduce una nueva noción de probabilidad. Es una consecuencia algebraica directa de
+
+$$
+P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B).
+$$
+
+Siempre que $P(A)>0$ y $P(B)>0$,
+
+$$
+P(B\mid A)
+=\frac{P(B)P(A\mid B)}{P(A)}.
+$$
+
+La ley de la probabilidad total aparece cuando el denominador $P(A)$ debe expresarse en términos de una partición.
+
+## Ejercicios
+
+1. Demuestra la ley de la probabilidad total para una partición de cuatro eventos.
+2. Prueba el teorema de Bayes a partir de la definición de probabilidad condicional y la ley de probabilidad total.
+3. Si $B_1,B_2,B_3$ forman una partición con probabilidades $0.2,0.5,0.3$ y $P(A\mid B_i)=0.1,0.4,0.7$, calcula $P(A)$ y las tres probabilidades posteriores.
+4. Demuestra que las probabilidades posteriores obtenidas en el ejercicio anterior suman 1.
+5. Deriva la forma de Bayes en términos de odds para dos hipótesis complementarias.
+6. Sea $P(H)=p$, $P(E\mid H)=s$ y $P(E\mid H^c)=f$. Demuestra que
+
+$$
+P(H\mid E)=\frac{ps}{ps+(1-p)f}.
+$$
+
+7. Analiza el límite de la expresión anterior cuando $p\to0$ y cuando $p\to1$.
+8. Si $P(E\mid H)=P(E\mid H^c)$, demuestra que $P(H\mid E)=P(H)$.
+9. Si una evidencia tiene razón de verosimilitudes igual a 1, interpreta su efecto sobre las odds previas.
+10. **Reto ★.** Supón que $E_1$ y $E_2$ son condicionalmente independientes dado $H$ y dado $H^c$. Deriva una expresión para las odds posteriores tras observar ambas evidencias.
+
+## Referencias del capítulo
+
+El desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018. La notación se adapta al enfoque formal adoptado en este libro.
