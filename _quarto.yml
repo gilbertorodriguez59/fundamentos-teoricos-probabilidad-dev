@@ -22,6 +22,7 @@ book:
     - 03-conteo-probabilidad.qmd
     - 04-axiomas-probabilidad.qmd
     - 05-condicional-independencia.qmd
+    - 06-probabilidad-total-bayes.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
