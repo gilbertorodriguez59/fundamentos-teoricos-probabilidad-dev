@@ -1030,6 +1030,206 @@
     ]
   },
   {
+    "objectID": "07-variable-aleatoria-cdf.html",
+    "href": "07-variable-aleatoria-cdf.html",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "",
+    "text": "7.1 Objetivos\nEn este capítulo se formaliza el concepto de variable aleatoria como función medible y se estudia la función de distribución acumulada como objeto fundamental asociado a cualquier variable aleatoria real.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#variable-aleatoria",
+    "href": "07-variable-aleatoria-cdf.html#variable-aleatoria",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.2 Variable aleatoria",
+    "text": "7.2 Variable aleatoria\nSea \\((\\Omega,\\mathcal F,P)\\) un espacio de probabilidad. Una variable aleatoria real es una función\n\\[\nX:\\Omega\\longrightarrow\\mathbb R\n\\]\ntal que, para todo \\(x\\in\\mathbb R\\),\n\\[\n\\{\\omega\\in\\Omega:X(\\omega)\\le x\\}\\in\\mathcal F.\n\\]\nEsta condición garantiza que los eventos definidos mediante desigualdades de \\(X\\) tienen probabilidad bien definida.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#interpretación-mediante-preimágenes",
+    "href": "07-variable-aleatoria-cdf.html#interpretación-mediante-preimágenes",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.3 Interpretación mediante preimágenes",
+    "text": "7.3 Interpretación mediante preimágenes\nPara un conjunto \\(B\\subseteq\\mathbb R\\), el evento asociado es la preimagen\n\\[\nX^{-1}(B)=\\{\\omega\\in\\Omega:X(\\omega)\\in B\\}.\n\\]\nPor ejemplo,\n\\[\n\\{X\\le x\\}=X^{-1}(( -\\infty,x]).\n\\]\nLa aleatoriedad reside en el resultado \\(\\omega\\); la función \\(X\\) es determinista una vez definida.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#variables-discretas",
+    "href": "07-variable-aleatoria-cdf.html#variables-discretas",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.4 Variables discretas",
+    "text": "7.4 Variables discretas\nUna variable aleatoria es discreta cuando su imagen\n\\[\nX(\\Omega)\n\\]\nes finita o numerable. Si sus valores son \\(x_1,x_2,\\ldots\\), entonces\n\\[\nP(X=x_i)\n\\]\ndetermina su distribución.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#variables-continuas",
+    "href": "07-variable-aleatoria-cdf.html#variables-continuas",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.5 Variables continuas",
+    "text": "7.5 Variables continuas\nUna variable aleatoria se denomina continua cuando su distribución puede describirse mediante una densidad respecto de la medida de Lebesgue. Este concepto se formalizará posteriormente. Por ahora basta señalar que para variables continuas típicas,\n\\[\nP(X=x)=0\n\\]\npara cada punto individual \\(x\\).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#función-de-distribución-acumulada",
+    "href": "07-variable-aleatoria-cdf.html#función-de-distribución-acumulada",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.6 Función de distribución acumulada",
+    "text": "7.6 Función de distribución acumulada\nLa función de distribución acumulada de \\(X\\) es\n\\[\n\\boxed{\nF_X(x)=P(X\\le x),\\qquad x\\in\\mathbb R.\n}\n\\]\nToda variable aleatoria real induce una CDF y, recíprocamente, toda función que satisfaga las propiedades características de una CDF determina una distribución de probabilidad sobre \\(\\mathbb R\\).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#monotonía",
+    "href": "07-variable-aleatoria-cdf.html#monotonía",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.7 Monotonía",
+    "text": "7.7 Monotonía\nSi \\(x&lt;y\\), entonces\n\\[\n\\{X\\le x\\}\\subseteq\\{X\\le y\\}.\n\\]\nPor monotonía de la probabilidad,\n\\[\nF_X(x)\\le F_X(y).\n\\]\nPor tanto, \\(F_X\\) es no decreciente.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#límites-en-los-extremos",
+    "href": "07-variable-aleatoria-cdf.html#límites-en-los-extremos",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.8 Límites en los extremos",
+    "text": "7.8 Límites en los extremos\nComo los eventos\n\\[\n\\{X\\le x\\}\n\\]\ndisminuyen hacia el evento vacío cuando \\(x\\to-\\infty\\),\n\\[\n\\boxed{\n\\lim_{x\\to-\\infty}F_X(x)=0.\n}\n\\]\nAnálogamente, al crecer \\(x\\) los eventos \\(\\{X\\le x\\}\\) aumentan hacia \\(\\Omega\\), por lo que\n\\[\n\\boxed{\n\\lim_{x\\to\\infty}F_X(x)=1.\n}\n\\]\nEstas conclusiones se apoyan en la continuidad de la medida de probabilidad demostrada en capítulos anteriores.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#continuidad-por-la-derecha",
+    "href": "07-variable-aleatoria-cdf.html#continuidad-por-la-derecha",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.9 Continuidad por la derecha",
+    "text": "7.9 Continuidad por la derecha\n\nTeorema\nToda función de distribución acumulada es continua por la derecha:\n\\[\n\\boxed{\n\\lim_{h\\downarrow0}F_X(x+h)=F_X(x).\n}\n\\]\n\n\nDemostración\nSea \\(x_n\\downarrow x\\). Los eventos\n\\[\nA_n=\\{X\\le x_n\\}\n\\]\nforman una sucesión decreciente y\n\\[\n\\bigcap_{n=1}^{\\infty}A_n=\\{X\\le x\\}.\n\\]\nPor continuidad desde arriba de la probabilidad,\n\\[\nP(A_n)\\to P(X\\le x).\n\\]\nPor tanto,\n\\[\nF_X(x_n)\\to F_X(x).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#límite-por-la-izquierda-y-masa-puntual",
+    "href": "07-variable-aleatoria-cdf.html#límite-por-la-izquierda-y-masa-puntual",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.10 Límite por la izquierda y masa puntual",
+    "text": "7.10 Límite por la izquierda y masa puntual\nDefinimos\n\\[\nF_X(x^-)=\\lim_{t\\uparrow x}F_X(t).\n\\]\nEntonces\n\\[\nP(X&lt;x)=F_X(x^-).\n\\]\nAdemás,\n\\[\n\\boxed{\nP(X=x)=F_X(x)-F_X(x^-).\n}\n\\]\nPor ello, los saltos de la CDF corresponden exactamente a masas puntuales de probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#probabilidades-de-intervalos",
+    "href": "07-variable-aleatoria-cdf.html#probabilidades-de-intervalos",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.11 Probabilidades de intervalos",
+    "text": "7.11 Probabilidades de intervalos\nPara \\(a&lt;b\\),\n\\[\n\\boxed{\nP(a&lt;X\\le b)=F_X(b)-F_X(a).\n}\n\\]\nTambién,\n\\[\nP(X&gt;b)=1-F_X(b),\n\\]\n\\[\nP(a\\le X\\le b)=F_X(b)-F_X(a^-),\n\\]\ny\n\\[\nP(a&lt;X&lt;b)=F_X(b^-)-F_X(a).\n\\]\nEstas identidades muestran que la CDF contiene toda la información de la distribución.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#distribución-inducida-por-una-variable-aleatoria",
+    "href": "07-variable-aleatoria-cdf.html#distribución-inducida-por-una-variable-aleatoria",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.12 Distribución inducida por una variable aleatoria",
+    "text": "7.12 Distribución inducida por una variable aleatoria\nLa variable \\(X\\) induce una medida de probabilidad \\(P_X\\) sobre \\(\\mathbb R\\) definida por\n\\[\nP_X(B)=P(X\\in B)\n\\]\npara conjuntos borelianos \\(B\\).\nEsta medida se denomina distribución o ley de \\(X\\).\nLa CDF puede escribirse como\n\\[\nF_X(x)=P_X(( -\\infty,x]).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#variables-con-la-misma-distribución",
+    "href": "07-variable-aleatoria-cdf.html#variables-con-la-misma-distribución",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.13 Variables con la misma distribución",
+    "text": "7.13 Variables con la misma distribución\nDos variables aleatorias \\(X\\) y \\(Y\\), incluso definidas sobre espacios muestrales diferentes, tienen la misma distribución si\n\\[\nF_X(x)=F_Y(x)\n\\]\npara todo \\(x\\in\\mathbb R\\).\nSe escribe habitualmente\n\\[\nX\\overset{d}=Y.\n\\]\nTener la misma distribución no significa que \\(X(\\omega)=Y(\\omega)\\) punto por punto.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#ejemplo-discreto",
+    "href": "07-variable-aleatoria-cdf.html#ejemplo-discreto",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.14 Ejemplo discreto",
+    "text": "7.14 Ejemplo discreto\nSea\n\\[\nP(X=0)=\\frac14,\n\\qquad\nP(X=1)=\\frac12,\n\\qquad\nP(X=2)=\\frac14.\n\\]\nEntonces\n\\[\nF_X(x)=\n\\begin{cases}\n0,&x&lt;0,\\\\\n1/4,&0\\le x&lt;1,\\\\\n3/4,&1\\le x&lt;2,\\\\\n1,&x\\ge2.\n\\end{cases}\n\\]\nLos saltos en \\(0,1,2\\) tienen magnitudes \\(1/4,1/2,1/4\\), respectivamente.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#caracterización-de-una-función-de-distribución",
+    "href": "07-variable-aleatoria-cdf.html#caracterización-de-una-función-de-distribución",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.15 Caracterización de una función de distribución",
+    "text": "7.15 Caracterización de una función de distribución\nUna función \\(F:\\mathbb R\\to[0,1]\\) es una función de distribución si satisface:\n\n\\(F\\) es no decreciente;\n\\(F\\) es continua por la derecha;\n\\(\\lim_{x\\to-\\infty}F(x)=0\\);\n\\(\\lim_{x\\to\\infty}F(x)=1\\).\n\nEstas condiciones constituyen una caracterización fundamental de las distribuciones sobre la recta real.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#átomos-y-continuidad",
+    "href": "07-variable-aleatoria-cdf.html#átomos-y-continuidad",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.16 Átomos y continuidad",
+    "text": "7.16 Átomos y continuidad\nUn punto \\(x\\) se denomina átomo de la distribución si\n\\[\nP(X=x)&gt;0.\n\\]\nEquivalente:\n\\[\nF_X(x)&gt;F_X(x^-).\n\\]\nUna distribución sin átomos tiene una CDF continua. No toda CDF continua posee necesariamente una densidad, aunque las distribuciones continuas elementales que estudiaremos más adelante sí la tendrán.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#transformaciones-y-eventos",
+    "href": "07-variable-aleatoria-cdf.html#transformaciones-y-eventos",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.17 Transformaciones y eventos",
+    "text": "7.17 Transformaciones y eventos\nPara una función \\(g:\\mathbb R\\to\\mathbb R\\), podemos definir\n\\[\nY=g(X).\n\\]\nEntonces\n\\[\n\\{Y\\le y\\}=\\{g(X)\\le y\\}.\n\\]\nEl cálculo de la distribución de \\(Y\\) mediante preimágenes será el tema central del capítulo sobre funciones de una variable aleatoria.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#materiales-complementarios-del-capítulo",
+    "href": "07-variable-aleatoria-cdf.html#materiales-complementarios-del-capítulo",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.18 Materiales complementarios del capítulo",
+    "text": "7.18 Materiales complementarios del capítulo\nEste libro teórico se acompaña de materiales computacionales en el volumen Introducción a la Probabilidad con R y GeoGebra. Para este capítulo se dispone de un cuaderno de Google Colab y de un cuaderno reproducible en R, en los que se visualizan transformaciones y funciones de distribución acumulada. Las presentaciones, videos e infografías se incorporarán conforme se proporcionen sus enlaces.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#ejercicios",
+    "href": "07-variable-aleatoria-cdf.html#ejercicios",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.19 Ejercicios",
+    "text": "7.19 Ejercicios\n\nSea \\(X\\) el número de caras en dos lanzamientos de moneda. Escribe explícitamente la función \\(X:\\Omega\\to\\mathbb R\\).\nConstruye \\(F_X\\) para la variable anterior y verifica sus cuatro propiedades características.\nDemuestra que \\(F_X\\) es no decreciente a partir de inclusión de eventos.\nDemuestra que \\(P(X=x)=F_X(x)-F_X(x^-)\\).\nPrueba que \\(P(a&lt;X\\le b)=F_X(b)-F_X(a)\\).\nSea\n\n\\[\nF(x)=\n\\begin{cases}\n0,&x&lt;0,\\\\\n1-e^{-x},&x\\ge0.\n\\end{cases}\n\\]\nVerifica que satisface las propiedades de una CDF. 7. Determina si\n\\[\nG(x)=\\frac{1}{1+e^{-x}}\n\\]\npuede ser una CDF y justifica. 8. Da un ejemplo de dos variables distintas con la misma distribución. 9. Si \\(F_X\\) es continua en \\(x\\), demuestra que \\(P(X=x)=0\\). 10. Reto ★. Utiliza continuidad desde arriba para demostrar rigurosamente la continuidad por la derecha de una CDF.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
+    "objectID": "07-variable-aleatoria-cdf.html#referencias-del-capítulo",
+    "href": "07-variable-aleatoria-cdf.html#referencias-del-capítulo",
+    "title": "7  Variable aleatoria y función de distribución acumulada",
+    "section": "7.20 Referencias del capítulo",
+    "text": "7.20 Referencias del capítulo\nEl desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
