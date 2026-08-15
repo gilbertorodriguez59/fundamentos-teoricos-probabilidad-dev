@@ -1,0 +1,349 @@
+# Variable aleatoria y función de distribución acumulada
+
+## Objetivos
+
+En este capítulo se formaliza el concepto de variable aleatoria como función medible y se estudia la función de distribución acumulada como objeto fundamental asociado a cualquier variable aleatoria real.
+
+## Variable aleatoria
+
+Sea $(\Omega,\mathcal F,P)$ un espacio de probabilidad. Una **variable aleatoria real** es una función
+
+$$
+X:\Omega\longrightarrow\mathbb R
+$$
+
+tal que, para todo $x\in\mathbb R$,
+
+$$
+\{\omega\in\Omega:X(\omega)\le x\}\in\mathcal F.
+$$
+
+Esta condición garantiza que los eventos definidos mediante desigualdades de $X$ tienen probabilidad bien definida.
+
+## Interpretación mediante preimágenes
+
+Para un conjunto $B\subseteq\mathbb R$, el evento asociado es la preimagen
+
+$$
+X^{-1}(B)=\{\omega\in\Omega:X(\omega)\in B\}.
+$$
+
+Por ejemplo,
+
+$$
+\{X\le x\}=X^{-1}(( -\infty,x]).
+$$
+
+La aleatoriedad reside en el resultado $\omega$; la función $X$ es determinista una vez definida.
+
+## Variables discretas
+
+Una variable aleatoria es discreta cuando su imagen
+
+$$
+X(\Omega)
+$$
+
+es finita o numerable. Si sus valores son $x_1,x_2,\ldots$, entonces
+
+$$
+P(X=x_i)
+$$
+
+determina su distribución.
+
+## Variables continuas
+
+Una variable aleatoria se denomina continua cuando su distribución puede describirse mediante una densidad respecto de la medida de Lebesgue. Este concepto se formalizará posteriormente. Por ahora basta señalar que para variables continuas típicas,
+
+$$
+P(X=x)=0
+$$
+
+para cada punto individual $x$.
+
+## Función de distribución acumulada
+
+La **función de distribución acumulada** de $X$ es
+
+$$
+\boxed{
+F_X(x)=P(X\le x),\qquad x\in\mathbb R.
+}
+$$
+
+Toda variable aleatoria real induce una CDF y, recíprocamente, toda función que satisfaga las propiedades características de una CDF determina una distribución de probabilidad sobre $\mathbb R$.
+
+## Monotonía
+
+Si $x<y$, entonces
+
+$$
+\{X\le x\}\subseteq\{X\le y\}.
+$$
+
+Por monotonía de la probabilidad,
+
+$$
+F_X(x)\le F_X(y).
+$$
+
+Por tanto, $F_X$ es no decreciente.
+
+## Límites en los extremos
+
+Como los eventos
+
+$$
+\{X\le x\}
+$$
+
+disminuyen hacia el evento vacío cuando $x\to-\infty$,
+
+$$
+\boxed{
+\lim_{x\to-\infty}F_X(x)=0.
+}
+$$
+
+Análogamente, al crecer $x$ los eventos $\{X\le x\}$ aumentan hacia $\Omega$, por lo que
+
+$$
+\boxed{
+\lim_{x\to\infty}F_X(x)=1.
+}
+$$
+
+Estas conclusiones se apoyan en la continuidad de la medida de probabilidad demostrada en capítulos anteriores.
+
+## Continuidad por la derecha
+
+### Teorema
+
+Toda función de distribución acumulada es continua por la derecha:
+
+$$
+\boxed{
+\lim_{h\downarrow0}F_X(x+h)=F_X(x).
+}
+$$
+
+### Demostración
+
+Sea $x_n\downarrow x$. Los eventos
+
+$$
+A_n=\{X\le x_n\}
+$$
+
+forman una sucesión decreciente y
+
+$$
+\bigcap_{n=1}^{\infty}A_n=\{X\le x\}.
+$$
+
+Por continuidad desde arriba de la probabilidad,
+
+$$
+P(A_n)\to P(X\le x).
+$$
+
+Por tanto,
+
+$$
+F_X(x_n)\to F_X(x).
+$$
+
+## Límite por la izquierda y masa puntual
+
+Definimos
+
+$$
+F_X(x^-)=\lim_{t\uparrow x}F_X(t).
+$$
+
+Entonces
+
+$$
+P(X<x)=F_X(x^-).
+$$
+
+Además,
+
+$$
+\boxed{
+P(X=x)=F_X(x)-F_X(x^-).
+}
+$$
+
+Por ello, los saltos de la CDF corresponden exactamente a masas puntuales de probabilidad.
+
+## Probabilidades de intervalos
+
+Para $a<b$,
+
+$$
+\boxed{
+P(a<X\le b)=F_X(b)-F_X(a).
+}
+$$
+
+También,
+
+$$
+P(X>b)=1-F_X(b),
+$$
+
+$$
+P(a\le X\le b)=F_X(b)-F_X(a^-),
+$$
+
+y
+
+$$
+P(a<X<b)=F_X(b^-)-F_X(a).
+$$
+
+Estas identidades muestran que la CDF contiene toda la información de la distribución.
+
+## Distribución inducida por una variable aleatoria
+
+La variable $X$ induce una medida de probabilidad $P_X$ sobre $\mathbb R$ definida por
+
+$$
+P_X(B)=P(X\in B)
+$$
+
+para conjuntos borelianos $B$.
+
+Esta medida se denomina **distribución** o **ley** de $X$.
+
+La CDF puede escribirse como
+
+$$
+F_X(x)=P_X(( -\infty,x]).
+$$
+
+## Variables con la misma distribución
+
+Dos variables aleatorias $X$ y $Y$, incluso definidas sobre espacios muestrales diferentes, tienen la misma distribución si
+
+$$
+F_X(x)=F_Y(x)
+$$
+
+para todo $x\in\mathbb R$.
+
+Se escribe habitualmente
+
+$$
+X\overset{d}=Y.
+$$
+
+Tener la misma distribución no significa que $X(\omega)=Y(\omega)$ punto por punto.
+
+## Ejemplo discreto
+
+Sea
+
+$$
+P(X=0)=\frac14,
+\qquad
+P(X=1)=\frac12,
+\qquad
+P(X=2)=\frac14.
+$$
+
+Entonces
+
+$$
+F_X(x)=
+\begin{cases}
+0,&x<0,\\
+1/4,&0\le x<1,\\
+3/4,&1\le x<2,\\
+1,&x\ge2.
+\end{cases}
+$$
+
+Los saltos en $0,1,2$ tienen magnitudes $1/4,1/2,1/4$, respectivamente.
+
+## Caracterización de una función de distribución
+
+Una función $F:\mathbb R\to[0,1]$ es una función de distribución si satisface:
+
+1. $F$ es no decreciente;
+2. $F$ es continua por la derecha;
+3. $\lim_{x\to-\infty}F(x)=0$;
+4. $\lim_{x\to\infty}F(x)=1$.
+
+Estas condiciones constituyen una caracterización fundamental de las distribuciones sobre la recta real.
+
+## Átomos y continuidad
+
+Un punto $x$ se denomina átomo de la distribución si
+
+$$
+P(X=x)>0.
+$$
+
+Equivalente:
+
+$$
+F_X(x)>F_X(x^-).
+$$
+
+Una distribución sin átomos tiene una CDF continua. No toda CDF continua posee necesariamente una densidad, aunque las distribuciones continuas elementales que estudiaremos más adelante sí la tendrán.
+
+## Transformaciones y eventos
+
+Para una función $g:\mathbb R\to\mathbb R$, podemos definir
+
+$$
+Y=g(X).
+$$
+
+Entonces
+
+$$
+\{Y\le y\}=\{g(X)\le y\}.
+$$
+
+El cálculo de la distribución de $Y$ mediante preimágenes será el tema central del capítulo sobre funciones de una variable aleatoria.
+
+## Materiales complementarios del capítulo
+
+Este libro teórico se acompaña de materiales computacionales en el volumen **Introducción a la Probabilidad con R y GeoGebra**. Para este capítulo se dispone de un cuaderno de Google Colab y de un cuaderno reproducible en R, en los que se visualizan transformaciones y funciones de distribución acumulada. Las presentaciones, videos e infografías se incorporarán conforme se proporcionen sus enlaces.
+
+## Ejercicios
+
+1. Sea $X$ el número de caras en dos lanzamientos de moneda. Escribe explícitamente la función $X:\Omega\to\mathbb R$.
+2. Construye $F_X$ para la variable anterior y verifica sus cuatro propiedades características.
+3. Demuestra que $F_X$ es no decreciente a partir de inclusión de eventos.
+4. Demuestra que $P(X=x)=F_X(x)-F_X(x^-)$.
+5. Prueba que $P(a<X\le b)=F_X(b)-F_X(a)$.
+6. Sea
+
+$$
+F(x)=
+\begin{cases}
+0,&x<0,\\
+1-e^{-x},&x\ge0.
+\end{cases}
+$$
+
+Verifica que satisface las propiedades de una CDF.
+7. Determina si
+
+$$
+G(x)=\frac{1}{1+e^{-x}}
+$$
+
+puede ser una CDF y justifica.
+8. Da un ejemplo de dos variables distintas con la misma distribución.
+9. Si $F_X$ es continua en $x$, demuestra que $P(X=x)=0$.
+10. **Reto ★.** Utiliza continuidad desde arriba para demostrar rigurosamente la continuidad por la derecha de una CDF.
+
+## Referencias del capítulo
+
+El desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018.
