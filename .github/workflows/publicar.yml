@@ -21,6 +21,9 @@ jobs:
       - name: Obtener repositorio
         uses: actions/checkout@v4
 
+      - name: Insertar materiales complementarios en los capítulos
+        run: python scripts/insertar_materiales.py
+
       - name: Instalar Quarto y TinyTeX
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -56,15 +59,15 @@ jobs:
           quarto render
           touch docs/.nojekyll
 
-      - name: Guardar libro generado en main/docs
+      - name: Guardar fuentes y libro generado en main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f docs figures/portada-editorial.png
+          git add -f docs figures/portada-editorial.png 0*.qmd
           if git diff --cached --quiet; then
-            echo "No hay cambios en docs."
+            echo "No hay cambios que guardar."
           else
-            git commit -m "Actualizar sitio web, portada y PDF [skip ci]"
+            git commit -m "Insertar materiales y actualizar sitio [skip ci]"
             git pull --rebase origin main
             git push
           fi
