@@ -9,31 +9,10 @@ local capitulos={
  ["variables aleatorias discretas y función de masa de probabilidad"]={c="08-variables-discretas-pmf-colab.ipynb",r="08-variables-discretas-pmf.Rmd"},
  ["variables aleatorias continuas y función de densidad"]={c="09-variables-continuas-densidad-colab.ipynb",r="09-variables-continuas-densidad.Rmd"}
 }
-
 local function clean(s)
  if not s then return nil end
  return pandoc.utils.stringify(s):lower():gsub("^%s+", ""):gsub("%s+$", "")
 end
-
-local function title(doc)
- local mt=clean(doc.meta and doc.meta.title)
- if mt and capitulos[mt] then return mt end
- for _,b in ipairs(doc.blocks) do
-  if b.t=="Header" and b.level==1 then
-   local ht=clean(b.content)
-   if ht and capitulos[ht] then return ht end
-  end
- end
- return mt
-end
-
-local function already(doc)
- for _,b in ipairs(doc.blocks) do
-  if b.t=="Header" and clean(b.content)=="materiales complementarios del capítulo" then return true end
- end
- return false
-end
-
 local function bloques(cfg)
  local colab="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/"..cfg.c
  local rurl="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/"..cfg.r
@@ -51,20 +30,43 @@ Los cuadernos computacionales se alojan en el volumen **Introducción a la Proba
 ]],colab,rurl)
  return pandoc.read(md,"markdown").blocks
 end
-
 function Pandoc(doc)
- if already(doc) then return doc end
- local cfg=capitulos[title(doc)]
- if not cfg then return doc end
- local extra=bloques(cfg); local out={}; local ins=false
+ local out={}
+ local actual=nil
+ local tiene=false
  for _,b in ipairs(doc.blocks) do
-  if not ins and b.t=="Header" and clean(b.content)=="referencias del capítulo" then
-   for _,x in ipairs(extra)do table.insert(out,x)end
-   ins=true
+  if b.t=="Header" and b.level==1 then
+   local t=clean(b.content)
+   if capitulos[t] then actual=t else actual=nil end
+   tiene=false
+  end
+  if actual and b.t=="Header" and clean(b.content)=="materiales complementarios del capítulo" then tiene=true end
+  if actual and (not tiene) and b.t=="Header" and clean(b.content)=="referencias del capítulo" then
+   for _,x in ipairs(bloques(capitulos[actual]))do table.insert(out,x)end
+   tiene=true
   end
   table.insert(out,b)
  end
- if not ins then for _,x in ipairs(extra)do table.insert(out,x)end end
+ if #out==#doc.blocks then
+  local mt=clean(doc.meta and doc.meta.title)
+  local cfg=mt and capitulos[mt] or nil
+  if cfg then
+   local existe=false
+   for _,b in ipairs(out)do if b.t=="Header" and clean(b.content)=="materiales complementarios del capítulo" then existe=true break end end
+   if not existe then
+    local nuevo={};local inserted=false
+    for _,b in ipairs(out)do
+     if not inserted and b.t=="Header" and clean(b.content)=="referencias del capítulo" then
+      for _,x in ipairs(bloques(cfg))do table.insert(nuevo,x)end
+      inserted=true
+     end
+     table.insert(nuevo,b)
+    end
+    if not inserted then for _,x in ipairs(bloques(cfg))do table.insert(nuevo,x)end end
+    out=nuevo
+   end
+  end
+ end
  doc.blocks=out
  return doc
 end
