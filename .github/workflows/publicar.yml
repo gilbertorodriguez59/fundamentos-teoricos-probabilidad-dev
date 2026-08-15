@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: quarto-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   publicar:
     runs-on: ubuntu-latest
@@ -61,5 +65,6 @@ jobs:
             echo "No hay cambios en docs."
           else
             git commit -m "Actualizar sitio web, portada y PDF [skip ci]"
+            git pull --rebase origin main
             git push
           fi
