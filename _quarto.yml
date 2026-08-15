@@ -24,6 +24,7 @@ book:
     - 05-condicional-independencia.qmd
     - 06-probabilidad-total-bayes.qmd
     - 07-variable-aleatoria-cdf.qmd
+    - 08-variables-discretas-pmf.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
