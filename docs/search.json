@@ -1640,11 +1640,231 @@
     ]
   },
   {
+    "objectID": "10-esperanza-varianza-chebyshev.html",
+    "href": "10-esperanza-varianza-chebyshev.html",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "",
+    "text": "10.1 Objetivos\nEste capítulo formaliza la esperanza matemática y la varianza para variables aleatorias discretas y absolutamente continuas, desarrolla sus propiedades fundamentales y establece las desigualdades de Markov y Chebyshev como consecuencias directas de la estructura de integración probabilística.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#esperanza-de-una-variable-aleatoria",
+    "href": "10-esperanza-varianza-chebyshev.html#esperanza-de-una-variable-aleatoria",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.2 Esperanza de una variable aleatoria",
+    "text": "10.2 Esperanza de una variable aleatoria\nSea \\(X\\) una variable aleatoria definida sobre \\((\\Omega,\\mathcal F,P)\\). La esperanza de \\(X\\), cuando existe, se interpreta como la integral de \\(X\\) respecto de la medida de probabilidad \\(P\\):\n\\[\nE[X]=\\int_\\Omega X(\\omega)\\,dP(\\omega).\n\\]\nEn los casos elementales estudiados hasta ahora, esta definición adopta formas concretas.\n\nCaso discreto\nSi \\(X\\) tiene soporte numerable \\(\\mathcal S_X\\), entonces\n\\[\n\\boxed{E[X]=\\sum_{x\\in\\mathcal S_X}x\\,P(X=x)}.\n\\]\nEsta suma debe converger absolutamente para que \\(E[X]\\) exista como número real finito:\n\\[\n\\sum_x |x|P(X=x)&lt;\\infty.\n\\]\n\n\nCaso absolutamente continuo\nSi \\(X\\) tiene densidad \\(f_X\\), entonces\n\\[\n\\boxed{E[X]=\\int_{-\\infty}^{\\infty}x f_X(x)\\,dx},\n\\]\nsi\n\\[\n\\int_{-\\infty}^{\\infty}|x|f_X(x)\\,dx&lt;\\infty.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#esperanza-de-funciones-de-una-variable",
+    "href": "10-esperanza-varianza-chebyshev.html#esperanza-de-funciones-de-una-variable",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.3 Esperanza de funciones de una variable",
+    "text": "10.3 Esperanza de funciones de una variable\nSea \\(g:\\mathbb R\\to\\mathbb R\\) medible. Si \\(g(X)\\) es integrable, entonces\n\\[\nE[g(X)]=\\int_\\Omega g(X(\\omega))\\,dP(\\omega).\n\\]\nEn el caso discreto,\n\\[\n\\boxed{E[g(X)]=\\sum_x g(x)p_X(x)},\n\\]\ny en el caso absolutamente continuo,\n\\[\n\\boxed{E[g(X)]=\\int_{-\\infty}^{\\infty}g(x)f_X(x)\\,dx}.\n\\]\nEsta identidad evita construir explícitamente la distribución inducida de \\(g(X)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#linealidad-de-la-esperanza",
+    "href": "10-esperanza-varianza-chebyshev.html#linealidad-de-la-esperanza",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.4 Linealidad de la esperanza",
+    "text": "10.4 Linealidad de la esperanza\nSi \\(X\\) y \\(Y\\) son integrables y \\(a,b\\in\\mathbb R\\), entonces\n\\[\n\\boxed{E[aX+bY]=aE[X]+bE[Y]}.\n\\]\n\nDemostración\nPor linealidad de la integral,\n\\[\nE[aX+bY]\n=\\int_\\Omega(aX+bY)\\,dP\n=a\\int_\\Omega X\\,dP+b\\int_\\Omega Y\\,dP.\n\\]\nPor tanto,\n\\[\nE[aX+bY]=aE[X]+bE[Y].\n\\]\nLa independencia no interviene en este resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#variables-indicadoras",
+    "href": "10-esperanza-varianza-chebyshev.html#variables-indicadoras",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.5 Variables indicadoras",
+    "text": "10.5 Variables indicadoras\nPara un evento \\(A\\in\\mathcal F\\), definimos\n\\[\nI_A(\\omega)=\n\\begin{cases}\n1,&\\omega\\in A,\\\\\n0,&\\omega\\notin A.\n\\end{cases}\n\\]\nEntonces\n\\[\n\\boxed{E[I_A]=P(A)}.\n\\]\n\nDemostración\nComo \\(I_A\\) sólo toma los valores 0 y 1,\n\\[\nE[I_A]\n=0\\,P(A^c)+1\\,P(A)\n=P(A).\n\\]\nEsta identidad permite convertir problemas de conteo en sumas de esperanzas.\nSi\n\\[\nN=\\sum_{i=1}^n I_{A_i},\n\\]\nentonces\n\\[\nE[N]=\\sum_{i=1}^nP(A_i),\n\\]\nsin requerir independencia entre los eventos \\(A_i\\).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#momentos",
+    "href": "10-esperanza-varianza-chebyshev.html#momentos",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.6 Momentos",
+    "text": "10.6 Momentos\nEl momento ordinario de orden \\(r\\) se define por\n\\[\n\\mu_r'=E[X^r],\n\\]\nsi existe.\nEl momento central de orden \\(r\\) se define por\n\\[\n\\mu_r=E[(X-\\mu)^r],\n\\]\ndonde\n\\[\n\\mu=E[X].\n\\]\nEl segundo momento central es especialmente importante.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#varianza",
+    "href": "10-esperanza-varianza-chebyshev.html#varianza",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.7 Varianza",
+    "text": "10.7 Varianza\nSi \\(E[X^2]&lt;\\infty\\), la varianza de \\(X\\) es\n\\[\n\\boxed{\\operatorname{Var}(X)=E[(X-E[X])^2]}.\n\\]\nPor construcción,\n\\[\n\\operatorname{Var}(X)\\ge0.\n\\]\nLa desviación estándar se define por\n\\[\n\\sigma_X=\\sqrt{\\operatorname{Var}(X)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#fórmula-alternativa-de-la-varianza",
+    "href": "10-esperanza-varianza-chebyshev.html#fórmula-alternativa-de-la-varianza",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.8 Fórmula alternativa de la varianza",
+    "text": "10.8 Fórmula alternativa de la varianza\nSi \\(E[X^2]&lt;\\infty\\), entonces\n\\[\n\\boxed{\\operatorname{Var}(X)=E[X^2]-E[X]^2}.\n\\]\n\nDemostración\nSea \\(\\mu=E[X]\\). Entonces\n\\[\n\\begin{aligned}\n\\operatorname{Var}(X)\n&=E[(X-\\mu)^2]\\\\\n&=E[X^2-2\\mu X+\\mu^2]\\\\\n&=E[X^2]-2\\mu E[X]+\\mu^2\\\\\n&=E[X^2]-2\\mu^2+\\mu^2\\\\\n&=E[X^2]-\\mu^2.\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#caracterización-de-varianza-nula",
+    "href": "10-esperanza-varianza-chebyshev.html#caracterización-de-varianza-nula",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.9 Caracterización de varianza nula",
+    "text": "10.9 Caracterización de varianza nula\nSi \\(E[X^2]&lt;\\infty\\), entonces\n\\[\n\\operatorname{Var}(X)=0\n\\]\nsi y sólo si\n\\[\nP(X=E[X])=1.\n\\]\nEs decir, una variable tiene varianza cero exactamente cuando es constante casi seguramente.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#transformaciones-afines",
+    "href": "10-esperanza-varianza-chebyshev.html#transformaciones-afines",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.10 Transformaciones afines",
+    "text": "10.10 Transformaciones afines\nSean \\(a,b\\in\\mathbb R\\). Entonces\n\\[\nE[aX+b]=aE[X]+b,\n\\]\ny\n\\[\n\\boxed{\\operatorname{Var}(aX+b)=a^2\\operatorname{Var}(X)}.\n\\]\n\nDemostración\nSea \\(\\mu=E[X]\\). Entonces\n\\[\nE[aX+b]=a\\mu+b.\n\\]\nPor tanto,\n\\[\n\\begin{aligned}\n\\operatorname{Var}(aX+b)\n&=E[(aX+b-(a\\mu+b))^2]\\\\\n&=E[a^2(X-\\mu)^2]\\\\\n&=a^2\\operatorname{Var}(X).\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#covarianza-y-varianza-de-una-suma",
+    "href": "10-esperanza-varianza-chebyshev.html#covarianza-y-varianza-de-una-suma",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.11 Covarianza y varianza de una suma",
+    "text": "10.11 Covarianza y varianza de una suma\nAunque el estudio detallado de variables conjuntas se realizará más adelante, conviene anticipar una identidad fundamental.\nLa covarianza se define por\n\\[\n\\operatorname{Cov}(X,Y)\n=E[(X-E[X])(Y-E[Y])].\n\\]\nSiempre que existan los segundos momentos,\n\\[\n\\boxed{\n\\operatorname{Var}(X+Y)\n=\\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\operatorname{Cov}(X,Y)\n}.\n\\]\nSi \\(X\\) y \\(Y\\) son independientes, entonces\n\\[\n\\operatorname{Cov}(X,Y)=0,\n\\]\ny por tanto\n\\[\n\\operatorname{Var}(X+Y)=\\operatorname{Var}(X)+\\operatorname{Var}(Y).\n\\]\nLa implicación recíproca no es válida en general: covarianza cero no implica independencia.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#desigualdad-de-markov",
+    "href": "10-esperanza-varianza-chebyshev.html#desigualdad-de-markov",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.12 Desigualdad de Markov",
+    "text": "10.12 Desigualdad de Markov\nSea \\(X\\ge0\\) casi seguramente y sea \\(a&gt;0\\). Entonces\n\\[\n\\boxed{P(X\\ge a)\\le\\frac{E[X]}{a}}.\n\\]\n\nDemostración\nLa desigualdad puntual\n\\[\nX\\ge aI_{\\{X\\ge a\\}}\n\\]\nimplica, por monotonía de la esperanza,\n\\[\nE[X]\\ge aE[I_{\\{X\\ge a\\}}].\n\\]\nComo\n\\[\nE[I_{\\{X\\ge a\\}}]=P(X\\ge a),\n\\]\nse obtiene\n\\[\nE[X]\\ge aP(X\\ge a),\n\\]\ny por tanto\n\\[\nP(X\\ge a)\\le\\frac{E[X]}{a}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#desigualdad-de-chebyshev",
+    "href": "10-esperanza-varianza-chebyshev.html#desigualdad-de-chebyshev",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.13 Desigualdad de Chebyshev",
+    "text": "10.13 Desigualdad de Chebyshev\nSea \\(X\\) una variable aleatoria con media finita \\(\\mu\\) y varianza finita \\(\\sigma^2\\). Para todo \\(t&gt;0\\),\n\\[\n\\boxed{P(|X-\\mu|\\ge t)\\le\\frac{\\sigma^2}{t^2}}.\n\\]\nTomando\n\\[\nt=k\\sigma,\n\\]\ncon \\(k&gt;0\\), resulta\n\\[\n\\boxed{P(|X-\\mu|\\ge k\\sigma)\\le\\frac1{k^2}}.\n\\]\nEquivalentemente,\n\\[\n\\boxed{P(|X-\\mu|&lt;k\\sigma)\\ge1-\\frac1{k^2}}.\n\\]\n\nDemostración a partir de Markov\nLa variable\n\\[\nY=(X-\\mu)^2\n\\]\nes no negativa. Aplicando Markov con umbral \\(t^2\\),\n\\[\nP((X-\\mu)^2\\ge t^2)\n\\le\n\\frac{E[(X-\\mu)^2]}{t^2}.\n\\]\nComo\n\\[\n\\{(X-\\mu)^2\\ge t^2\\}=\\{|X-\\mu|\\ge t\\}\n\\]\ny\n\\[\nE[(X-\\mu)^2]=\\sigma^2,\n\\]\nse obtiene el resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#consecuencia-concentración-alrededor-de-la-media",
+    "href": "10-esperanza-varianza-chebyshev.html#consecuencia-concentración-alrededor-de-la-media",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.14 Consecuencia: concentración alrededor de la media",
+    "text": "10.14 Consecuencia: concentración alrededor de la media\nChebyshev muestra que cualquier distribución con varianza finita debe concentrar una proporción mínima de su masa alrededor de la media.\nPara \\(k=2\\),\n\\[\nP(|X-\\mu|&lt;2\\sigma)\\ge\\frac34.\n\\]\nPara \\(k=3\\),\n\\[\nP(|X-\\mu|&lt;3\\sigma)\\ge\\frac89.\n\\]\nNo se supone normalidad, simetría ni unimodalidad.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#relación-entre-markov-y-chebyshev",
+    "href": "10-esperanza-varianza-chebyshev.html#relación-entre-markov-y-chebyshev",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.15 Relación entre Markov y Chebyshev",
+    "text": "10.15 Relación entre Markov y Chebyshev\nMarkov requiere:\n\nno negatividad;\nexistencia de \\(E[X]\\).\n\nChebyshev se obtiene aplicando Markov a \\((X-\\mu)^2\\) y requiere:\n\nexistencia de \\(E[X]\\);\nexistencia de \\(E[X^2]\\).\n\nEn este sentido, Chebyshev es una desigualdad de segundo momento.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#ejemplo-teórico-variable-de-bernoulli",
+    "href": "10-esperanza-varianza-chebyshev.html#ejemplo-teórico-variable-de-bernoulli",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.16 Ejemplo teórico: variable de Bernoulli",
+    "text": "10.16 Ejemplo teórico: variable de Bernoulli\nSea \\(X\\) una variable Bernoulli con\n\\[\nP(X=1)=p,\n\\qquad\nP(X=0)=1-p.\n\\]\nEntonces\n\\[\nE[X]=p,\n\\]\n\\[\nE[X^2]=p,\n\\]\nporque \\(X^2=X\\). Por tanto,\n\\[\n\\boxed{\\operatorname{Var}(X)=p(1-p)}.\n\\]\nEste resultado será fundamental al estudiar distribuciones binomiales.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#ejemplo-teórico-variable-uniforme-continua",
+    "href": "10-esperanza-varianza-chebyshev.html#ejemplo-teórico-variable-uniforme-continua",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.17 Ejemplo teórico: variable uniforme continua",
+    "text": "10.17 Ejemplo teórico: variable uniforme continua\nSea \\(X\\) uniforme en \\([a,b]\\) con densidad\n\\[\nf_X(x)=\\frac1{b-a},\\qquad a\\le x\\le b.\n\\]\nEntonces\n\\[\nE[X]\n=\\frac1{b-a}\\int_a^b x\\,dx\n=\\frac{a+b}{2}.\n\\]\nAdemás,\n\\[\nE[X^2]\n=\\frac1{b-a}\\int_a^b x^2\\,dx\n=\\frac{a^2+ab+b^2}{3}.\n\\]\nPor tanto,\n\\[\n\\boxed{\\operatorname{Var}(X)=\\frac{(b-a)^2}{12}}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#existencia-de-momentos",
+    "href": "10-esperanza-varianza-chebyshev.html#existencia-de-momentos",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.18 Existencia de momentos",
+    "text": "10.18 Existencia de momentos\nNo toda variable aleatoria posee esperanza o varianza finitas.\nPuede ocurrir que\n\\[\nE[|X|]=\\infty,\n\\]\npor lo que \\(E[X]\\) no existe como número real finito.\nIncluso puede existir \\(E[X]\\) pero no \\(E[X^2]\\). En ese caso la media existe, pero la varianza es infinita o no está definida como cantidad finita.\nPor ello, antes de utilizar fórmulas de momentos es necesario verificar su existencia.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#momentos-y-forma-de-una-distribución",
+    "href": "10-esperanza-varianza-chebyshev.html#momentos-y-forma-de-una-distribución",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.19 Momentos y forma de una distribución",
+    "text": "10.19 Momentos y forma de una distribución\nLos primeros momentos tienen interpretaciones habituales:\n\nprimer momento: centro;\nsegundo momento central: dispersión;\ntercer momento central normalizado: asimetría;\ncuarto momento central normalizado: comportamiento de colas y apuntamiento.\n\nEl estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#materiales-complementarios-del-capítulo",
+    "href": "10-esperanza-varianza-chebyshev.html#materiales-complementarios-del-capítulo",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.20 Materiales complementarios del capítulo",
+    "text": "10.20 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#ejercicios-teóricos",
+    "href": "10-esperanza-varianza-chebyshev.html#ejercicios-teóricos",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.21 Ejercicios teóricos",
+    "text": "10.21 Ejercicios teóricos\n\nDemuestra directamente la linealidad de la esperanza para variables discretas.\nDemuestra que \\(E[I_A]=P(A)\\) para cualquier evento \\(A\\).\nDemuestra que \\(\\operatorname{Var}(X)=E[X^2]-E[X]^2\\).\nDemuestra que \\(\\operatorname{Var}(aX+b)=a^2\\operatorname{Var}(X)\\).\nDemuestra que \\(\\operatorname{Var}(X)=0\\) si y sólo si \\(X\\) es constante casi seguramente.\nDeriva \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) para una Bernoulli\\((p)\\).\nDeriva \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) para una uniforme en \\([a,b]\\).\nDemuestra la desigualdad de Markov usando variables indicadoras.\nObtén Chebyshev a partir de Markov aplicada a \\((X-E[X])^2\\).\nConstruye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
+    "objectID": "10-esperanza-varianza-chebyshev.html#referencias-del-capítulo",
+    "href": "10-esperanza-varianza-chebyshev.html#referencias-del-capítulo",
+    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
+    "section": "10.22 Referencias del capítulo",
+    "text": "10.22 Referencias del capítulo\nEl tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en Devore (2016), Johnson (2018), Walpole et al. (2012) y Montgomery y Runger (2018), con apoyo computacional complementario basado en Kerns (2010).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nKerns, G. Jay. 2010. Introduction to Probability and Statistics Using R. 1.ª ed.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
     "section": "",
-    "text": "Devore, Jay L. 2016. Probability and Statistics for Engineering and\nthe Sciences. 9th ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and\nStatistics for Engineers. 9th ed. Pearson.\n\n\nMontgomery, Douglas C., and George C. Runger. 2018. Applied\nStatistics and Probability for Engineers. 7th ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.\n2012. Probabilidad y Estadística Para Ingeniería y Ciencias.\n9th ed. Pearson.",
+    "text": "Devore, Jay L. 2016. Probability and Statistics for Engineering and\nthe Sciences. 9th ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and\nStatistics for Engineers. 9th ed. Pearson.\n\n\nKerns, G. Jay. 2010. Introduction to Probability and Statistics\nUsing r. 1st ed.\n\n\nMontgomery, Douglas C., and George C. Runger. 2018. Applied\nStatistics and Probability for Engineers. 7th ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.\n2012. Probabilidad y Estadística Para Ingeniería y Ciencias.\n9th ed. Pearson.",
     "crumbs": [
       "Referencias"
     ]

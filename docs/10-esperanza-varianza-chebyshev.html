@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Probabilidad condicional e independencia – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>10&nbsp; Esperanza matemática, momentos, varianza y desigualdades probabilísticas – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06-probabilidad-total-bayes.html" rel="next">
-<link href="./04-axiomas-probabilidad.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./09-variables-continuas-densidad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-condicional-independencia.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-esperanza-varianza-chebyshev.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -221,7 +221,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-condicional-independencia.html" class="sidebar-item-text sidebar-link active">
+  <a href="./05-condicional-independencia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span></a>
   </div>
 </li>
@@ -251,7 +251,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-esperanza-varianza-chebyshev.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-esperanza-varianza-chebyshev.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></span></a>
   </div>
 </li>
@@ -271,35 +271,50 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#propósitos-del-capítulo" id="toc-propósitos-del-capítulo" class="nav-link active" data-scroll-target="#propósitos-del-capítulo"><span class="header-section-number">5.1</span> Propósitos del capítulo</a></li>
-  <li><a href="#probabilidad-condicional" id="toc-probabilidad-condicional" class="nav-link" data-scroll-target="#probabilidad-condicional"><span class="header-section-number">5.2</span> Probabilidad condicional</a>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">10.1</span> Objetivos</a></li>
+  <li><a href="#esperanza-de-una-variable-aleatoria" id="toc-esperanza-de-una-variable-aleatoria" class="nav-link" data-scroll-target="#esperanza-de-una-variable-aleatoria"><span class="header-section-number">10.2</span> Esperanza de una variable aleatoria</a>
   <ul class="collapse">
-  <li><a href="#propiedad-de-normalización" id="toc-propiedad-de-normalización" class="nav-link" data-scroll-target="#propiedad-de-normalización">Propiedad de normalización</a></li>
-  <li><a href="#probabilidad-condicional-como-medida" id="toc-probabilidad-condicional-como-medida" class="nav-link" data-scroll-target="#probabilidad-condicional-como-medida">Probabilidad condicional como medida</a></li>
+  <li><a href="#caso-discreto" id="toc-caso-discreto" class="nav-link" data-scroll-target="#caso-discreto">Caso discreto</a></li>
+  <li><a href="#caso-absolutamente-continuo" id="toc-caso-absolutamente-continuo" class="nav-link" data-scroll-target="#caso-absolutamente-continuo">Caso absolutamente continuo</a></li>
   </ul></li>
-  <li><a href="#regla-del-producto" id="toc-regla-del-producto" class="nav-link" data-scroll-target="#regla-del-producto"><span class="header-section-number">5.3</span> Regla del producto</a></li>
-  <li><a href="#regla-de-la-cadena" id="toc-regla-de-la-cadena" class="nav-link" data-scroll-target="#regla-de-la-cadena"><span class="header-section-number">5.4</span> Regla de la cadena</a>
+  <li><a href="#esperanza-de-funciones-de-una-variable" id="toc-esperanza-de-funciones-de-una-variable" class="nav-link" data-scroll-target="#esperanza-de-funciones-de-una-variable"><span class="header-section-number">10.3</span> Esperanza de funciones de una variable</a></li>
+  <li><a href="#linealidad-de-la-esperanza" id="toc-linealidad-de-la-esperanza" class="nav-link" data-scroll-target="#linealidad-de-la-esperanza"><span class="header-section-number">10.4</span> Linealidad de la esperanza</a>
   <ul class="collapse">
-  <li><a href="#demostración-para-tres-eventos" id="toc-demostración-para-tres-eventos" class="nav-link" data-scroll-target="#demostración-para-tres-eventos">Demostración para tres eventos</a></li>
-  </ul></li>
-  <li><a href="#independencia-de-dos-eventos" id="toc-independencia-de-dos-eventos" class="nav-link" data-scroll-target="#independencia-de-dos-eventos"><span class="header-section-number">5.5</span> Independencia de dos eventos</a>
-  <ul class="collapse">
-  <li><a href="#equivalencia-con-probabilidad-condicional" id="toc-equivalencia-con-probabilidad-condicional" class="nav-link" data-scroll-target="#equivalencia-con-probabilidad-condicional">Equivalencia con probabilidad condicional</a></li>
   <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#independencia-y-complementos" id="toc-independencia-y-complementos" class="nav-link" data-scroll-target="#independencia-y-complementos"><span class="header-section-number">5.6</span> Independencia y complementos</a>
+  <li><a href="#variables-indicadoras" id="toc-variables-indicadoras" class="nav-link" data-scroll-target="#variables-indicadoras"><span class="header-section-number">10.5</span> Variables indicadoras</a>
   <ul class="collapse">
-  <li><a href="#demostración-para-ac-y-b" id="toc-demostración-para-ac-y-b" class="nav-link" data-scroll-target="#demostración-para-ac-y-b">Demostración para <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span></a></li>
+  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
   </ul></li>
-  <li><a href="#exclusión-mutua-e-independencia" id="toc-exclusión-mutua-e-independencia" class="nav-link" data-scroll-target="#exclusión-mutua-e-independencia"><span class="header-section-number">5.7</span> Exclusión mutua e independencia</a></li>
-  <li><a href="#independencia-de-varios-eventos" id="toc-independencia-de-varios-eventos" class="nav-link" data-scroll-target="#independencia-de-varios-eventos"><span class="header-section-number">5.8</span> Independencia de varios eventos</a></li>
-  <li><a href="#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" id="toc-ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" class="nav-link" data-scroll-target="#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua"><span class="header-section-number">5.9</span> Ejemplo clásico: independencia por pares sin independencia mutua</a></li>
-  <li><a href="#dependencia-inducida-por-muestreo-sin-reemplazo" id="toc-dependencia-inducida-por-muestreo-sin-reemplazo" class="nav-link" data-scroll-target="#dependencia-inducida-por-muestreo-sin-reemplazo"><span class="header-section-number">5.10</span> Dependencia inducida por muestreo sin reemplazo</a></li>
-  <li><a href="#observación-sobre-eventos-de-probabilidad-cero" id="toc-observación-sobre-eventos-de-probabilidad-cero" class="nav-link" data-scroll-target="#observación-sobre-eventos-de-probabilidad-cero"><span class="header-section-number">5.11</span> Observación sobre eventos de probabilidad cero</a></li>
-  <li><a href="#proposición-criterio-de-independencia-mediante-complementos" id="toc-proposición-criterio-de-independencia-mediante-complementos" class="nav-link" data-scroll-target="#proposición-criterio-de-independencia-mediante-complementos"><span class="header-section-number">5.12</span> Proposición: criterio de independencia mediante complementos</a></li>
-  <li><a href="#ejercicios-conceptuales-y-de-demostración" id="toc-ejercicios-conceptuales-y-de-demostración" class="nav-link" data-scroll-target="#ejercicios-conceptuales-y-de-demostración"><span class="header-section-number">5.13</span> Ejercicios conceptuales y de demostración</a></li>
-  <li><a href="#materiales-complementarios-del-capítulo" id="toc-materiales-complementarios-del-capítulo" class="nav-link" data-scroll-target="#materiales-complementarios-del-capítulo"><span class="header-section-number">5.14</span> Materiales complementarios del capítulo</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">5.15</span> Referencias del capítulo</a></li>
+  <li><a href="#momentos" id="toc-momentos" class="nav-link" data-scroll-target="#momentos"><span class="header-section-number">10.6</span> Momentos</a></li>
+  <li><a href="#varianza" id="toc-varianza" class="nav-link" data-scroll-target="#varianza"><span class="header-section-number">10.7</span> Varianza</a></li>
+  <li><a href="#fórmula-alternativa-de-la-varianza" id="toc-fórmula-alternativa-de-la-varianza" class="nav-link" data-scroll-target="#fórmula-alternativa-de-la-varianza"><span class="header-section-number">10.8</span> Fórmula alternativa de la varianza</a>
+  <ul class="collapse">
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  </ul></li>
+  <li><a href="#caracterización-de-varianza-nula" id="toc-caracterización-de-varianza-nula" class="nav-link" data-scroll-target="#caracterización-de-varianza-nula"><span class="header-section-number">10.9</span> Caracterización de varianza nula</a></li>
+  <li><a href="#transformaciones-afines" id="toc-transformaciones-afines" class="nav-link" data-scroll-target="#transformaciones-afines"><span class="header-section-number">10.10</span> Transformaciones afines</a>
+  <ul class="collapse">
+  <li><a href="#demostración-3" id="toc-demostración-3" class="nav-link" data-scroll-target="#demostración-3">Demostración</a></li>
+  </ul></li>
+  <li><a href="#covarianza-y-varianza-de-una-suma" id="toc-covarianza-y-varianza-de-una-suma" class="nav-link" data-scroll-target="#covarianza-y-varianza-de-una-suma"><span class="header-section-number">10.11</span> Covarianza y varianza de una suma</a></li>
+  <li><a href="#desigualdad-de-markov" id="toc-desigualdad-de-markov" class="nav-link" data-scroll-target="#desigualdad-de-markov"><span class="header-section-number">10.12</span> Desigualdad de Markov</a>
+  <ul class="collapse">
+  <li><a href="#demostración-4" id="toc-demostración-4" class="nav-link" data-scroll-target="#demostración-4">Demostración</a></li>
+  </ul></li>
+  <li><a href="#desigualdad-de-chebyshev" id="toc-desigualdad-de-chebyshev" class="nav-link" data-scroll-target="#desigualdad-de-chebyshev"><span class="header-section-number">10.13</span> Desigualdad de Chebyshev</a>
+  <ul class="collapse">
+  <li><a href="#demostración-a-partir-de-markov" id="toc-demostración-a-partir-de-markov" class="nav-link" data-scroll-target="#demostración-a-partir-de-markov">Demostración a partir de Markov</a></li>
+  </ul></li>
+  <li><a href="#consecuencia-concentración-alrededor-de-la-media" id="toc-consecuencia-concentración-alrededor-de-la-media" class="nav-link" data-scroll-target="#consecuencia-concentración-alrededor-de-la-media"><span class="header-section-number">10.14</span> Consecuencia: concentración alrededor de la media</a></li>
+  <li><a href="#relación-entre-markov-y-chebyshev" id="toc-relación-entre-markov-y-chebyshev" class="nav-link" data-scroll-target="#relación-entre-markov-y-chebyshev"><span class="header-section-number">10.15</span> Relación entre Markov y Chebyshev</a></li>
+  <li><a href="#ejemplo-teórico-variable-de-bernoulli" id="toc-ejemplo-teórico-variable-de-bernoulli" class="nav-link" data-scroll-target="#ejemplo-teórico-variable-de-bernoulli"><span class="header-section-number">10.16</span> Ejemplo teórico: variable de Bernoulli</a></li>
+  <li><a href="#ejemplo-teórico-variable-uniforme-continua" id="toc-ejemplo-teórico-variable-uniforme-continua" class="nav-link" data-scroll-target="#ejemplo-teórico-variable-uniforme-continua"><span class="header-section-number">10.17</span> Ejemplo teórico: variable uniforme continua</a></li>
+  <li><a href="#existencia-de-momentos" id="toc-existencia-de-momentos" class="nav-link" data-scroll-target="#existencia-de-momentos"><span class="header-section-number">10.18</span> Existencia de momentos</a></li>
+  <li><a href="#momentos-y-forma-de-una-distribución" id="toc-momentos-y-forma-de-una-distribución" class="nav-link" data-scroll-target="#momentos-y-forma-de-una-distribución"><span class="header-section-number">10.19</span> Momentos y forma de una distribución</a></li>
+  <li><a href="#materiales-complementarios-del-capítulo" id="toc-materiales-complementarios-del-capítulo" class="nav-link" data-scroll-target="#materiales-complementarios-del-capítulo"><span class="header-section-number">10.20</span> Materiales complementarios del capítulo</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">10.21</span> Ejercicios teóricos</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">10.22</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -308,7 +323,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></h1>
 </div>
 
 
@@ -325,279 +340,394 @@ window.Quarto = {
 </header>
 
 
-<section id="propósitos-del-capítulo" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="propósitos-del-capítulo"><span class="header-section-number">5.1</span> Propósitos del capítulo</h2>
-<p>Este capítulo formaliza dos ideas centrales de la teoría de la probabilidad: la actualización de probabilidades ante información adicional y la independencia entre eventos. Se desarrollan la definición de probabilidad condicional, la regla del producto, la regla de la cadena y criterios equivalentes de independencia.</p>
+<section id="objetivos" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">10.1</span> Objetivos</h2>
+<p>Este capítulo formaliza la esperanza matemática y la varianza para variables aleatorias discretas y absolutamente continuas, desarrolla sus propiedades fundamentales y establece las desigualdades de Markov y Chebyshev como consecuencias directas de la estructura de integración probabilística.</p>
 </section>
-<section id="probabilidad-condicional" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="probabilidad-condicional"><span class="header-section-number">5.2</span> Probabilidad condicional</h2>
-<p>Sea <span class="math inline">\((\Omega,\mathcal F,P)\)</span> un espacio de probabilidad y sean <span class="math inline">\(A,B\in\mathcal F\)</span> con <span class="math inline">\(P(B)&gt;0\)</span>. La probabilidad condicional de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span> se define por</p>
+<section id="esperanza-de-una-variable-aleatoria" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="esperanza-de-una-variable-aleatoria"><span class="header-section-number">10.2</span> Esperanza de una variable aleatoria</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria definida sobre <span class="math inline">\((\Omega,\mathcal F,P)\)</span>. La esperanza de <span class="math inline">\(X\)</span>, cuando existe, se interpreta como la integral de <span class="math inline">\(X\)</span> respecto de la medida de probabilidad <span class="math inline">\(P\)</span>:</p>
 <p><span class="math display">\[
-\boxed{P(A\mid B)=\frac{P(A\cap B)}{P(B)}}.
+E[X]=\int_\Omega X(\omega)\,dP(\omega).
 \]</span></p>
-<p>Esta definición puede interpretarse como una renormalización de la medida de probabilidad al restringir el espacio al evento <span class="math inline">\(B\)</span>.</p>
-<section id="propiedad-de-normalización" class="level3">
-<h3 class="anchored" data-anchor-id="propiedad-de-normalización">Propiedad de normalización</h3>
-<p>Para <span class="math inline">\(P(B)&gt;0\)</span>,</p>
+<p>En los casos elementales estudiados hasta ahora, esta definición adopta formas concretas.</p>
+<section id="caso-discreto" class="level3">
+<h3 class="anchored" data-anchor-id="caso-discreto">Caso discreto</h3>
+<p>Si <span class="math inline">\(X\)</span> tiene soporte numerable <span class="math inline">\(\mathcal S_X\)</span>, entonces</p>
 <p><span class="math display">\[
-P(B\mid B)=1.
+\boxed{E[X]=\sum_{x\in\mathcal S_X}x\,P(X=x)}.
 \]</span></p>
-<p>En efecto,</p>
+<p>Esta suma debe converger absolutamente para que <span class="math inline">\(E[X]\)</span> exista como número real finito:</p>
 <p><span class="math display">\[
-P(B\mid B)=\frac{P(B\cap B)}{P(B)}=1.
+\sum_x |x|P(X=x)&lt;\infty.
 \]</span></p>
 </section>
-<section id="probabilidad-condicional-como-medida" class="level3">
-<h3 class="anchored" data-anchor-id="probabilidad-condicional-como-medida">Probabilidad condicional como medida</h3>
-<p>Fijado un evento <span class="math inline">\(B\)</span> con <span class="math inline">\(P(B)&gt;0\)</span>, la aplicación</p>
+<section id="caso-absolutamente-continuo" class="level3">
+<h3 class="anchored" data-anchor-id="caso-absolutamente-continuo">Caso absolutamente continuo</h3>
+<p>Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f_X\)</span>, entonces</p>
 <p><span class="math display">\[
-P_B(A)=P(A\mid B)
+\boxed{E[X]=\int_{-\infty}^{\infty}x f_X(x)\,dx},
 \]</span></p>
-<p>define una nueva medida de probabilidad sobre <span class="math inline">\((\Omega,\mathcal F)\)</span>.</p>
-<p>Se verifica:</p>
-<ol type="1">
-<li><span class="math inline">\(P_B(A)\ge 0\)</span>;</li>
-<li><span class="math inline">\(P_B(\Omega)=1\)</span>;</li>
-<li>si <span class="math inline">\(A_1,A_2,\ldots\)</span> son disjuntos,</li>
-</ol>
+<p>si</p>
 <p><span class="math display">\[
-P_B\left(\bigcup_{i=1}^\infty A_i\right)
-=\sum_{i=1}^\infty P_B(A_i).
+\int_{-\infty}^{\infty}|x|f_X(x)\,dx&lt;\infty.
 \]</span></p>
-<p>Por tanto, al condicionar por <span class="math inline">\(B\)</span> no abandonamos la estructura axiomática de la probabilidad.</p>
 </section>
 </section>
-<section id="regla-del-producto" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="regla-del-producto"><span class="header-section-number">5.3</span> Regla del producto</h2>
-<p>A partir de la definición de probabilidad condicional,</p>
+<section id="esperanza-de-funciones-de-una-variable" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="esperanza-de-funciones-de-una-variable"><span class="header-section-number">10.3</span> Esperanza de funciones de una variable</h2>
+<p>Sea <span class="math inline">\(g:\mathbb R\to\mathbb R\)</span> medible. Si <span class="math inline">\(g(X)\)</span> es integrable, entonces</p>
 <p><span class="math display">\[
-P(A\cap B)=P(B)P(A\mid B).
+E[g(X)]=\int_\Omega g(X(\omega))\,dP(\omega).
 \]</span></p>
-<p>Si además <span class="math inline">\(P(A)&gt;0\)</span>,</p>
+<p>En el caso discreto,</p>
 <p><span class="math display">\[
-P(A\cap B)=P(A)P(B\mid A).
+\boxed{E[g(X)]=\sum_x g(x)p_X(x)},
+\]</span></p>
+<p>y en el caso absolutamente continuo,</p>
+<p><span class="math display">\[
+\boxed{E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)\,dx}.
+\]</span></p>
+<p>Esta identidad evita construir explícitamente la distribución inducida de <span class="math inline">\(g(X)\)</span>.</p>
+</section>
+<section id="linealidad-de-la-esperanza" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="linealidad-de-la-esperanza"><span class="header-section-number">10.4</span> Linealidad de la esperanza</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son integrables y <span class="math inline">\(a,b\in\mathbb R\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{E[aX+bY]=aE[X]+bE[Y]}.
+\]</span></p>
+<section id="demostración" class="level3">
+<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
+<p>Por linealidad de la integral,</p>
+<p><span class="math display">\[
+E[aX+bY]
+=\int_\Omega(aX+bY)\,dP
+=a\int_\Omega X\,dP+b\int_\Omega Y\,dP.
 \]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[
-P(A)P(B\mid A)=P(B)P(A\mid B).
+E[aX+bY]=aE[X]+bE[Y].
 \]</span></p>
-<p>Esta igualdad es la identidad algebraica que posteriormente conduce al teorema de Bayes.</p>
-</section>
-<section id="regla-de-la-cadena" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="regla-de-la-cadena"><span class="header-section-number">5.4</span> Regla de la cadena</h2>
-<p>Para eventos <span class="math inline">\(A_1,\ldots,A_n\)</span> tales que las probabilidades condicionales involucradas estén definidas,</p>
-<p><span class="math display">\[
-P\left(\bigcap_{i=1}^{n}A_i\right)
-=P(A_1)\prod_{k=2}^{n}
-P\left(A_k\mid\bigcap_{j=1}^{k-1}A_j\right).
-\]</span></p>
-<p>Para <span class="math inline">\(n=3\)</span>,</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)
-=P(A)P(B\mid A)P(C\mid A\cap B).
-\]</span></p>
-<section id="demostración-para-tres-eventos" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-para-tres-eventos">Demostración para tres eventos</h3>
-<p>Por la regla del producto,</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)
-=P(A\cap B)P(C\mid A\cap B).
-\]</span></p>
-<p>Además,</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A)P(B\mid A).
-\]</span></p>
-<p>Sustituyendo se obtiene el resultado.</p>
+<p>La independencia no interviene en este resultado.</p>
 </section>
 </section>
-<section id="independencia-de-dos-eventos" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="independencia-de-dos-eventos"><span class="header-section-number">5.5</span> Independencia de dos eventos</h2>
-<p>Dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si</p>
+<section id="variables-indicadoras" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="variables-indicadoras"><span class="header-section-number">10.5</span> Variables indicadoras</h2>
+<p>Para un evento <span class="math inline">\(A\in\mathcal F\)</span>, definimos</p>
 <p><span class="math display">\[
-\boxed{P(A\cap B)=P(A)P(B)}.
+I_A(\omega)=
+\begin{cases}
+1,&amp;\omega\in A,\\
+0,&amp;\omega\notin A.
+\end{cases}
 \]</span></p>
-<p>Esta definición no requiere que <span class="math inline">\(P(A)\)</span> ni <span class="math inline">\(P(B)\)</span> sean positivas.</p>
-<section id="equivalencia-con-probabilidad-condicional" class="level3">
-<h3 class="anchored" data-anchor-id="equivalencia-con-probabilidad-condicional">Equivalencia con probabilidad condicional</h3>
-<p>Si <span class="math inline">\(P(B)&gt;0\)</span>, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si y sólo si</p>
+<p>Entonces</p>
 <p><span class="math display">\[
-P(A\mid B)=P(A).
+\boxed{E[I_A]=P(A)}.
 \]</span></p>
-<p>De manera análoga, si <span class="math inline">\(P(A)&gt;0\)</span>,</p>
+<section id="demostración-1" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
+<p>Como <span class="math inline">\(I_A\)</span> sólo toma los valores 0 y 1,</p>
 <p><span class="math display">\[
-P(B\mid A)=P(B).
-\]</span></p>
-</section>
-<section id="demostración" class="level3">
-<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes,</p>
-<p><span class="math display">\[
-P(A\mid B)
-=\frac{P(A\cap B)}{P(B)}
-=\frac{P(A)P(B)}{P(B)}
+E[I_A]
+=0\,P(A^c)+1\,P(A)
 =P(A).
 \]</span></p>
-<p>El recíproco se obtiene multiplicando por <span class="math inline">\(P(B)\)</span>.</p>
-</section>
-</section>
-<section id="independencia-y-complementos" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="independencia-y-complementos"><span class="header-section-number">5.6</span> Independencia y complementos</h2>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, también lo son:</p>
+<p>Esta identidad permite convertir problemas de conteo en sumas de esperanzas.</p>
+<p>Si</p>
 <p><span class="math display">\[
-A^c\text{ y }B,
+N=\sum_{i=1}^n I_{A_i},
 \]</span></p>
+<p>entonces</p>
 <p><span class="math display">\[
-A\text{ y }B^c,
+E[N]=\sum_{i=1}^nP(A_i),
+\]</span></p>
+<p>sin requerir independencia entre los eventos <span class="math inline">\(A_i\)</span>.</p>
+</section>
+</section>
+<section id="momentos" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="momentos"><span class="header-section-number">10.6</span> Momentos</h2>
+<p>El momento ordinario de orden <span class="math inline">\(r\)</span> se define por</p>
+<p><span class="math display">\[
+\mu_r'=E[X^r],
+\]</span></p>
+<p>si existe.</p>
+<p>El momento central de orden <span class="math inline">\(r\)</span> se define por</p>
+<p><span class="math display">\[
+\mu_r=E[(X-\mu)^r],
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+\mu=E[X].
+\]</span></p>
+<p>El segundo momento central es especialmente importante.</p>
+</section>
+<section id="varianza" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="varianza"><span class="header-section-number">10.7</span> Varianza</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, la varianza de <span class="math inline">\(X\)</span> es</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=E[(X-E[X])^2]}.
+\]</span></p>
+<p>Por construcción,</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)\ge0.
+\]</span></p>
+<p>La desviación estándar se define por</p>
+<p><span class="math display">\[
+\sigma_X=\sqrt{\operatorname{Var}(X)}.
+\]</span></p>
+</section>
+<section id="fórmula-alternativa-de-la-varianza" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="fórmula-alternativa-de-la-varianza"><span class="header-section-number">10.8</span> Fórmula alternativa de la varianza</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, entonces</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=E[X^2]-E[X]^2}.
+\]</span></p>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Sea <span class="math inline">\(\mu=E[X]\)</span>. Entonces</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X)
+&amp;=E[(X-\mu)^2]\\
+&amp;=E[X^2-2\mu X+\mu^2]\\
+&amp;=E[X^2]-2\mu E[X]+\mu^2\\
+&amp;=E[X^2]-2\mu^2+\mu^2\\
+&amp;=E[X^2]-\mu^2.
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="caracterización-de-varianza-nula" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="caracterización-de-varianza-nula"><span class="header-section-number">10.9</span> Caracterización de varianza nula</h2>
+<p>Si <span class="math inline">\(E[X^2]&lt;\infty\)</span>, entonces</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=0
+\]</span></p>
+<p>si y sólo si</p>
+<p><span class="math display">\[
+P(X=E[X])=1.
+\]</span></p>
+<p>Es decir, una variable tiene varianza cero exactamente cuando es constante casi seguramente.</p>
+</section>
+<section id="transformaciones-afines" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="transformaciones-afines"><span class="header-section-number">10.10</span> Transformaciones afines</h2>
+<p>Sean <span class="math inline">\(a,b\in\mathbb R\)</span>. Entonces</p>
+<p><span class="math display">\[
+E[aX+b]=aE[X]+b,
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-A^c\text{ y }B^c.
+\boxed{\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)}.
 \]</span></p>
-<section id="demostración-para-ac-y-b" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-para-ac-y-b">Demostración para <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span></h3>
+<section id="demostración-3" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-3">Demostración</h3>
+<p>Sea <span class="math inline">\(\mu=E[X]\)</span>. Entonces</p>
+<p><span class="math display">\[
+E[aX+b]=a\mu+b.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(aX+b)
+&amp;=E[(aX+b-(a\mu+b))^2]\\
+&amp;=E[a^2(X-\mu)^2]\\
+&amp;=a^2\operatorname{Var}(X).
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="covarianza-y-varianza-de-una-suma" class="level2" data-number="10.11">
+<h2 data-number="10.11" class="anchored" data-anchor-id="covarianza-y-varianza-de-una-suma"><span class="header-section-number">10.11</span> Covarianza y varianza de una suma</h2>
+<p>Aunque el estudio detallado de variables conjuntas se realizará más adelante, conviene anticipar una identidad fundamental.</p>
+<p>La covarianza se define por</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+\]</span></p>
+<p>Siempre que existan los segundos momentos,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y)
+}.
+\]</span></p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0,
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y).
+\]</span></p>
+<p>La implicación recíproca no es válida en general: covarianza cero no implica independencia.</p>
+</section>
+<section id="desigualdad-de-markov" class="level2" data-number="10.12">
+<h2 data-number="10.12" class="anchored" data-anchor-id="desigualdad-de-markov"><span class="header-section-number">10.12</span> Desigualdad de Markov</h2>
+<p>Sea <span class="math inline">\(X\ge0\)</span> casi seguramente y sea <span class="math inline">\(a&gt;0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\boxed{P(X\ge a)\le\frac{E[X]}{a}}.
+\]</span></p>
+<section id="demostración-4" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-4">Demostración</h3>
+<p>La desigualdad puntual</p>
+<p><span class="math display">\[
+X\ge aI_{\{X\ge a\}}
+\]</span></p>
+<p>implica, por monotonía de la esperanza,</p>
+<p><span class="math display">\[
+E[X]\ge aE[I_{\{X\ge a\}}].
+\]</span></p>
 <p>Como</p>
 <p><span class="math display">\[
-B=(A\cap B)\cup(A^c\cap B)
+E[I_{\{X\ge a\}}]=P(X\ge a),
 \]</span></p>
-<p>y la unión es disjunta,</p>
+<p>se obtiene</p>
 <p><span class="math display">\[
-P(A^c\cap B)=P(B)-P(A\cap B).
+E[X]\ge aP(X\ge a),
 \]</span></p>
-<p>Usando independencia,</p>
+<p>y por tanto</p>
 <p><span class="math display">\[
-P(A^c\cap B)=P(B)-P(A)P(B)
-=(1-P(A))P(B)
-=P(A^c)P(B).
+P(X\ge a)\le\frac{E[X]}{a}.
 \]</span></p>
 </section>
 </section>
-<section id="exclusión-mutua-e-independencia" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="exclusión-mutua-e-independencia"><span class="header-section-number">5.7</span> Exclusión mutua e independencia</h2>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son mutuamente excluyentes,</p>
+<section id="desigualdad-de-chebyshev" class="level2" data-number="10.13">
+<h2 data-number="10.13" class="anchored" data-anchor-id="desigualdad-de-chebyshev"><span class="header-section-number">10.13</span> Desigualdad de Chebyshev</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria con media finita <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>. Para todo <span class="math inline">\(t&gt;0\)</span>,</p>
 <p><span class="math display">\[
-P(A\cap B)=0.
+\boxed{P(|X-\mu|\ge t)\le\frac{\sigma^2}{t^2}}.
 \]</span></p>
-<p>Si además <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(P(B)&gt;0\)</span>, entonces</p>
+<p>Tomando</p>
 <p><span class="math display">\[
-P(A)P(B)&gt;0,
+t=k\sigma,
 \]</span></p>
-<p>por lo que no pueden ser independientes.</p>
-<p>Así, para eventos de probabilidad positiva, exclusión mutua e independencia son conceptos incompatibles.</p>
+<p>con <span class="math inline">\(k&gt;0\)</span>, resulta</p>
+<p><span class="math display">\[
+\boxed{P(|X-\mu|\ge k\sigma)\le\frac1{k^2}}.
+\]</span></p>
+<p>Equivalentemente,</p>
+<p><span class="math display">\[
+\boxed{P(|X-\mu|&lt;k\sigma)\ge1-\frac1{k^2}}.
+\]</span></p>
+<section id="demostración-a-partir-de-markov" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-a-partir-de-markov">Demostración a partir de Markov</h3>
+<p>La variable</p>
+<p><span class="math display">\[
+Y=(X-\mu)^2
+\]</span></p>
+<p>es no negativa. Aplicando Markov con umbral <span class="math inline">\(t^2\)</span>,</p>
+<p><span class="math display">\[
+P((X-\mu)^2\ge t^2)
+\le
+\frac{E[(X-\mu)^2]}{t^2}.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\{(X-\mu)^2\ge t^2\}=\{|X-\mu|\ge t\}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+E[(X-\mu)^2]=\sigma^2,
+\]</span></p>
+<p>se obtiene el resultado.</p>
 </section>
-<section id="independencia-de-varios-eventos" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="independencia-de-varios-eventos"><span class="header-section-number">5.8</span> Independencia de varios eventos</h2>
-<p>Para tres eventos <span class="math inline">\(A,B,C\)</span>, la independencia por pares significa</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A)P(B),
-\]</span></p>
-<p><span class="math display">\[
-P(A\cap C)=P(A)P(C),
-\]</span></p>
-<p><span class="math display">\[
-P(B\cap C)=P(B)P(C).
-\]</span></p>
-<p>Sin embargo, esto no basta para garantizar independencia conjunta. Para independencia mutua se requiere además</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)=P(A)P(B)P(C).
-\]</span></p>
-<p>En general, una familia <span class="math inline">\(A_1,\ldots,A_n\)</span> es mutuamente independiente si para todo subconjunto no vacío de índices <span class="math inline">\(I\subseteq\{1,\ldots,n\}\)</span>,</p>
-<p><span class="math display">\[
-P\left(\bigcap_{i\in I}A_i\right)
-=\prod_{i\in I}P(A_i).
-\]</span></p>
 </section>
-<section id="ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="ejemplo-clásico-independencia-por-pares-sin-independencia-mutua"><span class="header-section-number">5.9</span> Ejemplo clásico: independencia por pares sin independencia mutua</h2>
-<p>Considérese el espacio equiprobable</p>
+<section id="consecuencia-concentración-alrededor-de-la-media" class="level2" data-number="10.14">
+<h2 data-number="10.14" class="anchored" data-anchor-id="consecuencia-concentración-alrededor-de-la-media"><span class="header-section-number">10.14</span> Consecuencia: concentración alrededor de la media</h2>
+<p>Chebyshev muestra que cualquier distribución con varianza finita debe concentrar una proporción mínima de su masa alrededor de la media.</p>
+<p>Para <span class="math inline">\(k=2\)</span>,</p>
 <p><span class="math display">\[
-\Omega=\{1,2,3,4\}
+P(|X-\mu|&lt;2\sigma)\ge\frac34.
 \]</span></p>
-<p>y los eventos</p>
+<p>Para <span class="math inline">\(k=3\)</span>,</p>
 <p><span class="math display">\[
-A=\{1,2\},\qquad
-B=\{1,3\},\qquad
-C=\{1,4\}.
+P(|X-\mu|&lt;3\sigma)\ge\frac89.
 \]</span></p>
-<p>Cada evento tiene probabilidad <span class="math inline">\(1/2\)</span>. Además,</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A\cap C)=P(B\cap C)=\frac14,
-\]</span></p>
-<p>por lo que son independientes por pares.</p>
-<p>Sin embargo,</p>
-<p><span class="math display">\[
-A\cap B\cap C=\{1\},
-\]</span></p>
-<p>de modo que</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)=\frac14
-\neq
-\frac18
-=P(A)P(B)P(C).
-\]</span></p>
-<p>Por tanto, no son mutuamente independientes.</p>
+<p>No se supone normalidad, simetría ni unimodalidad.</p>
 </section>
-<section id="dependencia-inducida-por-muestreo-sin-reemplazo" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="dependencia-inducida-por-muestreo-sin-reemplazo"><span class="header-section-number">5.10</span> Dependencia inducida por muestreo sin reemplazo</h2>
-<p>Sea una urna con <span class="math inline">\(N\)</span> objetos, de los cuales <span class="math inline">\(K\)</span> poseen cierta propiedad. Si se extraen dos objetos sin reemplazo y definimos</p>
+<section id="relación-entre-markov-y-chebyshev" class="level2" data-number="10.15">
+<h2 data-number="10.15" class="anchored" data-anchor-id="relación-entre-markov-y-chebyshev"><span class="header-section-number">10.15</span> Relación entre Markov y Chebyshev</h2>
+<p>Markov requiere:</p>
 <ul>
-<li><span class="math inline">\(A=\)</span> “el primero posee la propiedad”;</li>
-<li><span class="math inline">\(B=\)</span> “el segundo posee la propiedad”,</li>
+<li>no negatividad;</li>
+<li>existencia de <span class="math inline">\(E[X]\)</span>.</li>
 </ul>
-<p>entonces</p>
-<p><span class="math display">\[
-P(A)=\frac KN,
-\]</span></p>
-<p>pero</p>
-<p><span class="math display">\[
-P(B\mid A)=\frac{K-1}{N-1}.
-\]</span></p>
-<p>En general,</p>
-<p><span class="math display">\[
-\frac{K-1}{N-1}\neq\frac KN,
-\]</span></p>
-<p>por lo que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no son independientes.</p>
+<p>Chebyshev se obtiene aplicando Markov a <span class="math inline">\((X-\mu)^2\)</span> y requiere:</p>
+<ul>
+<li>existencia de <span class="math inline">\(E[X]\)</span>;</li>
+<li>existencia de <span class="math inline">\(E[X^2]\)</span>.</li>
+</ul>
+<p>En este sentido, Chebyshev es una desigualdad de segundo momento.</p>
 </section>
-<section id="observación-sobre-eventos-de-probabilidad-cero" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="observación-sobre-eventos-de-probabilidad-cero"><span class="header-section-number">5.11</span> Observación sobre eventos de probabilidad cero</h2>
-<p>La igualdad</p>
+<section id="ejemplo-teórico-variable-de-bernoulli" class="level2" data-number="10.16">
+<h2 data-number="10.16" class="anchored" data-anchor-id="ejemplo-teórico-variable-de-bernoulli"><span class="header-section-number">10.16</span> Ejemplo teórico: variable de Bernoulli</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable Bernoulli con</p>
 <p><span class="math display">\[
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
+P(X=1)=p,
+\qquad
+P(X=0)=1-p.
 \]</span></p>
-<p>sólo está definida mediante esta fórmula cuando <span class="math inline">\(P(B)&gt;0\)</span>.</p>
-<p>En cursos más avanzados se introduce la probabilidad condicional respecto de sigma-álgebras y variables aleatorias mediante esperanza condicional, lo que permite tratar situaciones más generales. Ese desarrollo queda fuera del alcance de este volumen introductorio.</p>
-</section>
-<section id="proposición-criterio-de-independencia-mediante-complementos" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="proposición-criterio-de-independencia-mediante-complementos"><span class="header-section-number">5.12</span> Proposición: criterio de independencia mediante complementos</h2>
-<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> eventos. Son equivalentes:</p>
-<ol type="1">
-<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes;</li>
-<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span> son independientes;</li>
-<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span> son independientes;</li>
-<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
-</ol>
-<p>La demostración se obtiene aplicando repetidamente las identidades del complemento y la aditividad.</p>
-</section>
-<section id="ejercicios-conceptuales-y-de-demostración" class="level2" data-number="5.13">
-<h2 data-number="5.13" class="anchored" data-anchor-id="ejercicios-conceptuales-y-de-demostración"><span class="header-section-number">5.13</span> Ejercicios conceptuales y de demostración</h2>
-<ol type="1">
-<li>Demuestra que, para <span class="math inline">\(P(B)&gt;0\)</span>, la aplicación <span class="math inline">\(P_B(A)=P(A\mid B)\)</span> satisface los axiomas de probabilidad.</li>
-<li>Prueba la regla de la cadena para cuatro eventos.</li>
-<li>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> independientes. Demuestra que <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
-<li>Demuestra que si <span class="math inline">\(A\subseteq B\)</span>, <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(A\)</span> es independiente de <span class="math inline">\(B\)</span>, entonces <span class="math inline">\(P(B)=1\)</span>.</li>
-<li>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> mutuamente excluyentes. Determina todas las condiciones bajo las cuales también pueden ser independientes.</li>
-<li>Construye un ejemplo de tres eventos independientes por pares que no sean mutuamente independientes.</li>
-<li>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes y <span class="math inline">\(P(A)=0.4\)</span>, <span class="math inline">\(P(B)=0.7\)</span>, calcula la probabilidad de cada una de las cuatro regiones <span class="math inline">\(A\cap B\)</span>, <span class="math inline">\(A\cap B^c\)</span>, <span class="math inline">\(A^c\cap B\)</span> y <span class="math inline">\(A^c\cap B^c\)</span>.</li>
-<li>Demuestra que si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, entonces</li>
-</ol>
+<p>Entonces</p>
 <p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A)P(B).
+E[X]=p,
 \]</span></p>
-<ol start="9" type="1">
-<li><strong>Reto ★.</strong> Sea <span class="math inline">\(A_1,\ldots,A_n\)</span> una familia mutuamente independiente. Demuestra que sustituir cualquiera de los eventos por su complemento conserva la independencia mutua.</li>
-</ol>
+<p><span class="math display">\[
+E[X^2]=p,
+\]</span></p>
+<p>porque <span class="math inline">\(X^2=X\)</span>. Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=p(1-p)}.
+\]</span></p>
+<p>Este resultado será fundamental al estudiar distribuciones binomiales.</p>
 </section>
-<section id="materiales-complementarios-del-capítulo" class="level2" data-number="5.14">
-<h2 data-number="5.14" class="anchored" data-anchor-id="materiales-complementarios-del-capítulo"><span class="header-section-number">5.14</span> Materiales complementarios del capítulo</h2>
+<section id="ejemplo-teórico-variable-uniforme-continua" class="level2" data-number="10.17">
+<h2 data-number="10.17" class="anchored" data-anchor-id="ejemplo-teórico-variable-uniforme-continua"><span class="header-section-number">10.17</span> Ejemplo teórico: variable uniforme continua</h2>
+<p>Sea <span class="math inline">\(X\)</span> uniforme en <span class="math inline">\([a,b]\)</span> con densidad</p>
+<p><span class="math display">\[
+f_X(x)=\frac1{b-a},\qquad a\le x\le b.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+E[X]
+=\frac1{b-a}\int_a^b x\,dx
+=\frac{a+b}{2}.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+E[X^2]
+=\frac1{b-a}\int_a^b x^2\,dx
+=\frac{a^2+ab+b^2}{3}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\boxed{\operatorname{Var}(X)=\frac{(b-a)^2}{12}}.
+\]</span></p>
+</section>
+<section id="existencia-de-momentos" class="level2" data-number="10.18">
+<h2 data-number="10.18" class="anchored" data-anchor-id="existencia-de-momentos"><span class="header-section-number">10.18</span> Existencia de momentos</h2>
+<p>No toda variable aleatoria posee esperanza o varianza finitas.</p>
+<p>Puede ocurrir que</p>
+<p><span class="math display">\[
+E[|X|]=\infty,
+\]</span></p>
+<p>por lo que <span class="math inline">\(E[X]\)</span> no existe como número real finito.</p>
+<p>Incluso puede existir <span class="math inline">\(E[X]\)</span> pero no <span class="math inline">\(E[X^2]\)</span>. En ese caso la media existe, pero la varianza es infinita o no está definida como cantidad finita.</p>
+<p>Por ello, antes de utilizar fórmulas de momentos es necesario verificar su existencia.</p>
+</section>
+<section id="momentos-y-forma-de-una-distribución" class="level2" data-number="10.19">
+<h2 data-number="10.19" class="anchored" data-anchor-id="momentos-y-forma-de-una-distribución"><span class="header-section-number">10.19</span> Momentos y forma de una distribución</h2>
+<p>Los primeros momentos tienen interpretaciones habituales:</p>
+<ul>
+<li>primer momento: centro;</li>
+<li>segundo momento central: dispersión;</li>
+<li>tercer momento central normalizado: asimetría;</li>
+<li>cuarto momento central normalizado: comportamiento de colas y apuntamiento.</li>
+</ul>
+<p>El estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.</p>
+</section>
+<section id="materiales-complementarios-del-capítulo" class="level2" data-number="10.20">
+<h2 data-number="10.20" class="anchored" data-anchor-id="materiales-complementarios-del-capítulo"><span class="header-section-number">10.20</span> Materiales complementarios del capítulo</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -611,13 +741,13 @@ P(A\cup B)=P(A)+P(B)-P(A)P(B).
 <tr class="odd">
 <td>Cuaderno de Google Colab</td>
 <td>Notebook interactivo (R)</td>
-<td><a href="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/05-condicional-independencia-colab.ipynb">Abrir en Colab</a></td>
+<td><a href="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/10-esperanza-varianza-chebyshev-colab.ipynb">Abrir en Colab</a></td>
 <td>Explorar computacionalmente los conceptos del capítulo en el volumen aplicado.</td>
 </tr>
 <tr class="even">
 <td>Cuaderno de R</td>
 <td>R Markdown</td>
-<td><a href="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/05-condicional-independencia.Rmd">Abrir cuaderno R</a></td>
+<td><a href="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/10-esperanza-varianza-chebyshev.Rmd">Abrir cuaderno R</a></td>
 <td>Reproducir ejemplos y verificaciones numéricas en R/RStudio.</td>
 </tr>
 <tr class="odd">
@@ -640,11 +770,26 @@ P(A\cup B)=P(A)+P(B)-P(A)P(B).
 </tr>
 </tbody>
 </table>
-<p>Los cuadernos computacionales se alojan en <strong>Introducción a la Probabilidad con R y GeoGebra</strong> y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.</p>
+<p>Los cuadernos computacionales se alojan en <strong>Introducción a la Probabilidad con R y GeoGebra</strong> y sirven como apoyo práctico de este desarrollo teórico.</p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="5.15">
-<h2 data-number="5.15" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">5.15</span> Referencias del capítulo</h2>
-<p>La presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada a la organización formal de este libro.</p>
+<section id="ejercicios-teóricos" class="level2" data-number="10.21">
+<h2 data-number="10.21" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">10.21</span> Ejercicios teóricos</h2>
+<ol type="1">
+<li>Demuestra directamente la linealidad de la esperanza para variables discretas.</li>
+<li>Demuestra que <span class="math inline">\(E[I_A]=P(A)\)</span> para cualquier evento <span class="math inline">\(A\)</span>.</li>
+<li>Demuestra que <span class="math inline">\(\operatorname{Var}(X)=E[X^2]-E[X]^2\)</span>.</li>
+<li>Demuestra que <span class="math inline">\(\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)\)</span>.</li>
+<li>Demuestra que <span class="math inline">\(\operatorname{Var}(X)=0\)</span> si y sólo si <span class="math inline">\(X\)</span> es constante casi seguramente.</li>
+<li>Deriva <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> para una Bernoulli<span class="math inline">\((p)\)</span>.</li>
+<li>Deriva <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> para una uniforme en <span class="math inline">\([a,b]\)</span>.</li>
+<li>Demuestra la desigualdad de Markov usando variables indicadoras.</li>
+<li>Obtén Chebyshev a partir de Markov aplicada a <span class="math inline">\((X-E[X])^2\)</span>.</li>
+<li>Construye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.</li>
+</ol>
+</section>
+<section id="referencias-del-capítulo" class="level2" data-number="10.22">
+<h2 data-number="10.22" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">10.22</span> Referencias del capítulo</h2>
+<p>El tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, con apoyo computacional complementario basado en <span class="citation" data-cites="kerns2010">Kerns (<a href="references.html#ref-kerns2010" role="doc-biblioref">2010</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -653,6 +798,9 @@ Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Scie
 </div>
 <div id="ref-johnson2018" class="csl-entry" role="listitem">
 Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
+</div>
+<div id="ref-kerns2010" class="csl-entry" role="listitem">
+Kerns, G. Jay. 2010. <em>Introduction to Probability and Statistics Using R</em>. 1.ª ed.
 </div>
 <div id="ref-montgomery2018" class="csl-entry" role="listitem">
 Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
@@ -1066,13 +1214,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-axiomas-probabilidad.html" class="pagination-link" aria-label="Axiomas y propiedades de la probabilidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span>
+      <a href="./09-variables-continuas-densidad.html" class="pagination-link" aria-label="Variables aleatorias continuas y función de densidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-probabilidad-total-bayes.html" class="pagination-link" aria-label="Particiones, probabilidad total y teorema de Bayes">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
