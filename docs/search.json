@@ -730,6 +730,146 @@
     ]
   },
   {
+    "objectID": "05-condicional-independencia.html",
+    "href": "05-condicional-independencia.html",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "",
+    "text": "5.1 Propósitos del capítulo\nEste capítulo formaliza dos ideas centrales de la teoría de la probabilidad: la actualización de probabilidades ante información adicional y la independencia entre eventos. Se desarrollan la definición de probabilidad condicional, la regla del producto, la regla de la cadena y criterios equivalentes de independencia.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#probabilidad-condicional",
+    "href": "05-condicional-independencia.html#probabilidad-condicional",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.2 Probabilidad condicional",
+    "text": "5.2 Probabilidad condicional\nSea \\((\\Omega,\\mathcal F,P)\\) un espacio de probabilidad y sean \\(A,B\\in\\mathcal F\\) con \\(P(B)&gt;0\\). La probabilidad condicional de \\(A\\) dado \\(B\\) se define por\n\\[\n\\boxed{P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}}.\n\\]\nEsta definición puede interpretarse como una renormalización de la medida de probabilidad al restringir el espacio al evento \\(B\\).\n\nPropiedad de normalización\nPara \\(P(B)&gt;0\\),\n\\[\nP(B\\mid B)=1.\n\\]\nEn efecto,\n\\[\nP(B\\mid B)=\\frac{P(B\\cap B)}{P(B)}=1.\n\\]\n\n\nProbabilidad condicional como medida\nFijado un evento \\(B\\) con \\(P(B)&gt;0\\), la aplicación\n\\[\nP_B(A)=P(A\\mid B)\n\\]\ndefine una nueva medida de probabilidad sobre \\((\\Omega,\\mathcal F)\\).\nSe verifica:\n\n\\(P_B(A)\\ge 0\\);\n\\(P_B(\\Omega)=1\\);\nsi \\(A_1,A_2,\\ldots\\) son disjuntos,\n\n\\[\nP_B\\left(\\bigcup_{i=1}^\\infty A_i\\right)\n=\\sum_{i=1}^\\infty P_B(A_i).\n\\]\nPor tanto, al condicionar por \\(B\\) no abandonamos la estructura axiomática de la probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#regla-del-producto",
+    "href": "05-condicional-independencia.html#regla-del-producto",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.3 Regla del producto",
+    "text": "5.3 Regla del producto\nA partir de la definición de probabilidad condicional,\n\\[\nP(A\\cap B)=P(B)P(A\\mid B).\n\\]\nSi además \\(P(A)&gt;0\\),\n\\[\nP(A\\cap B)=P(A)P(B\\mid A).\n\\]\nPor tanto,\n\\[\nP(A)P(B\\mid A)=P(B)P(A\\mid B).\n\\]\nEsta igualdad es la identidad algebraica que posteriormente conduce al teorema de Bayes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#regla-de-la-cadena",
+    "href": "05-condicional-independencia.html#regla-de-la-cadena",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.4 Regla de la cadena",
+    "text": "5.4 Regla de la cadena\nPara eventos \\(A_1,\\ldots,A_n\\) tales que las probabilidades condicionales involucradas estén definidas,\n\\[\nP\\left(\\bigcap_{i=1}^{n}A_i\\right)\n=P(A_1)\\prod_{k=2}^{n}\nP\\left(A_k\\mid\\bigcap_{j=1}^{k-1}A_j\\right).\n\\]\nPara \\(n=3\\),\n\\[\nP(A\\cap B\\cap C)\n=P(A)P(B\\mid A)P(C\\mid A\\cap B).\n\\]\n\nDemostración para tres eventos\nPor la regla del producto,\n\\[\nP(A\\cap B\\cap C)\n=P(A\\cap B)P(C\\mid A\\cap B).\n\\]\nAdemás,\n\\[\nP(A\\cap B)=P(A)P(B\\mid A).\n\\]\nSustituyendo se obtiene el resultado.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#independencia-de-dos-eventos",
+    "href": "05-condicional-independencia.html#independencia-de-dos-eventos",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.5 Independencia de dos eventos",
+    "text": "5.5 Independencia de dos eventos\nDos eventos \\(A\\) y \\(B\\) son independientes si\n\\[\n\\boxed{P(A\\cap B)=P(A)P(B)}.\n\\]\nEsta definición no requiere que \\(P(A)\\) ni \\(P(B)\\) sean positivas.\n\nEquivalencia con probabilidad condicional\nSi \\(P(B)&gt;0\\), entonces \\(A\\) y \\(B\\) son independientes si y sólo si\n\\[\nP(A\\mid B)=P(A).\n\\]\nDe manera análoga, si \\(P(A)&gt;0\\),\n\\[\nP(B\\mid A)=P(B).\n\\]\n\n\nDemostración\nSi \\(A\\) y \\(B\\) son independientes,\n\\[\nP(A\\mid B)\n=\\frac{P(A\\cap B)}{P(B)}\n=\\frac{P(A)P(B)}{P(B)}\n=P(A).\n\\]\nEl recíproco se obtiene multiplicando por \\(P(B)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#independencia-y-complementos",
+    "href": "05-condicional-independencia.html#independencia-y-complementos",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.6 Independencia y complementos",
+    "text": "5.6 Independencia y complementos\nSi \\(A\\) y \\(B\\) son independientes, también lo son:\n\\[\nA^c\\text{ y }B,\n\\]\n\\[\nA\\text{ y }B^c,\n\\]\ny\n\\[\nA^c\\text{ y }B^c.\n\\]\n\nDemostración para \\(A^c\\) y \\(B\\)\nComo\n\\[\nB=(A\\cap B)\\cup(A^c\\cap B)\n\\]\ny la unión es disjunta,\n\\[\nP(A^c\\cap B)=P(B)-P(A\\cap B).\n\\]\nUsando independencia,\n\\[\nP(A^c\\cap B)=P(B)-P(A)P(B)\n=(1-P(A))P(B)\n=P(A^c)P(B).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#exclusión-mutua-e-independencia",
+    "href": "05-condicional-independencia.html#exclusión-mutua-e-independencia",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.7 Exclusión mutua e independencia",
+    "text": "5.7 Exclusión mutua e independencia\nSi \\(A\\) y \\(B\\) son mutuamente excluyentes,\n\\[\nP(A\\cap B)=0.\n\\]\nSi además \\(P(A)&gt;0\\) y \\(P(B)&gt;0\\), entonces\n\\[\nP(A)P(B)&gt;0,\n\\]\npor lo que no pueden ser independientes.\nAsí, para eventos de probabilidad positiva, exclusión mutua e independencia son conceptos incompatibles.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#independencia-de-varios-eventos",
+    "href": "05-condicional-independencia.html#independencia-de-varios-eventos",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.8 Independencia de varios eventos",
+    "text": "5.8 Independencia de varios eventos\nPara tres eventos \\(A,B,C\\), la independencia por pares significa\n\\[\nP(A\\cap B)=P(A)P(B),\n\\]\n\\[\nP(A\\cap C)=P(A)P(C),\n\\]\n\\[\nP(B\\cap C)=P(B)P(C).\n\\]\nSin embargo, esto no basta para garantizar independencia conjunta. Para independencia mutua se requiere además\n\\[\nP(A\\cap B\\cap C)=P(A)P(B)P(C).\n\\]\nEn general, una familia \\(A_1,\\ldots,A_n\\) es mutuamente independiente si para todo subconjunto no vacío de índices \\(I\\subseteq\\{1,\\ldots,n\\}\\),\n\\[\nP\\left(\\bigcap_{i\\in I}A_i\\right)\n=\\prod_{i\\in I}P(A_i).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua",
+    "href": "05-condicional-independencia.html#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.9 Ejemplo clásico: independencia por pares sin independencia mutua",
+    "text": "5.9 Ejemplo clásico: independencia por pares sin independencia mutua\nConsidérese el espacio equiprobable\n\\[\n\\Omega=\\{1,2,3,4\\}\n\\]\ny los eventos\n\\[\nA=\\{1,2\\},\\qquad\nB=\\{1,3\\},\\qquad\nC=\\{1,4\\}.\n\\]\nCada evento tiene probabilidad \\(1/2\\). Además,\n\\[\nP(A\\cap B)=P(A\\cap C)=P(B\\cap C)=\\frac14,\n\\]\npor lo que son independientes por pares.\nSin embargo,\n\\[\nA\\cap B\\cap C=\\{1\\},\n\\]\nde modo que\n\\[\nP(A\\cap B\\cap C)=\\frac14\n\\neq\n\\frac18\n=P(A)P(B)P(C).\n\\]\nPor tanto, no son mutuamente independientes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#dependencia-inducida-por-muestreo-sin-reemplazo",
+    "href": "05-condicional-independencia.html#dependencia-inducida-por-muestreo-sin-reemplazo",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.10 Dependencia inducida por muestreo sin reemplazo",
+    "text": "5.10 Dependencia inducida por muestreo sin reemplazo\nSea una urna con \\(N\\) objetos, de los cuales \\(K\\) poseen cierta propiedad. Si se extraen dos objetos sin reemplazo y definimos\n\n\\(A=\\) “el primero posee la propiedad”;\n\\(B=\\) “el segundo posee la propiedad”,\n\nentonces\n\\[\nP(A)=\\frac KN,\n\\]\npero\n\\[\nP(B\\mid A)=\\frac{K-1}{N-1}.\n\\]\nEn general,\n\\[\n\\frac{K-1}{N-1}\\neq\\frac KN,\n\\]\npor lo que \\(A\\) y \\(B\\) no son independientes.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#observación-sobre-eventos-de-probabilidad-cero",
+    "href": "05-condicional-independencia.html#observación-sobre-eventos-de-probabilidad-cero",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.11 Observación sobre eventos de probabilidad cero",
+    "text": "5.11 Observación sobre eventos de probabilidad cero\nLa igualdad\n\\[\nP(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\n\\]\nsólo está definida mediante esta fórmula cuando \\(P(B)&gt;0\\).\nEn cursos más avanzados se introduce la probabilidad condicional respecto de sigma-álgebras y variables aleatorias mediante esperanza condicional, lo que permite tratar situaciones más generales. Ese desarrollo queda fuera del alcance de este volumen introductorio.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#proposición-criterio-de-independencia-mediante-complementos",
+    "href": "05-condicional-independencia.html#proposición-criterio-de-independencia-mediante-complementos",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.12 Proposición: criterio de independencia mediante complementos",
+    "text": "5.12 Proposición: criterio de independencia mediante complementos\nSean \\(A\\) y \\(B\\) eventos. Son equivalentes:\n\n\\(A\\) y \\(B\\) son independientes;\n\\(A^c\\) y \\(B\\) son independientes;\n\\(A\\) y \\(B^c\\) son independientes;\n\\(A^c\\) y \\(B^c\\) son independientes.\n\nLa demostración se obtiene aplicando repetidamente las identidades del complemento y la aditividad.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#ejercicios-conceptuales-y-de-demostración",
+    "href": "05-condicional-independencia.html#ejercicios-conceptuales-y-de-demostración",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.13 Ejercicios conceptuales y de demostración",
+    "text": "5.13 Ejercicios conceptuales y de demostración\n\nDemuestra que, para \\(P(B)&gt;0\\), la aplicación \\(P_B(A)=P(A\\mid B)\\) satisface los axiomas de probabilidad.\nPrueba la regla de la cadena para cuatro eventos.\nSean \\(A\\) y \\(B\\) independientes. Demuestra que \\(A^c\\) y \\(B^c\\) son independientes.\nDemuestra que si \\(A\\subseteq B\\), \\(P(A)&gt;0\\) y \\(A\\) es independiente de \\(B\\), entonces \\(P(B)=1\\).\nSean \\(A\\) y \\(B\\) mutuamente excluyentes. Determina todas las condiciones bajo las cuales también pueden ser independientes.\nConstruye un ejemplo de tres eventos independientes por pares que no sean mutuamente independientes.\nSi \\(A\\) y \\(B\\) son independientes y \\(P(A)=0.4\\), \\(P(B)=0.7\\), calcula la probabilidad de cada una de las cuatro regiones \\(A\\cap B\\), \\(A\\cap B^c\\), \\(A^c\\cap B\\) y \\(A^c\\cap B^c\\).\nDemuestra que si \\(A\\) y \\(B\\) son independientes, entonces\n\n\\[\nP(A\\cup B)=P(A)+P(B)-P(A)P(B).\n\\]\n\nReto ★. Sea \\(A_1,\\ldots,A_n\\) una familia mutuamente independiente. Demuestra que sustituir cualquiera de los eventos por su complemento conserva la independencia mutua.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
+    "objectID": "05-condicional-independencia.html#referencias-del-capítulo",
+    "href": "05-condicional-independencia.html#referencias-del-capítulo",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.14 Referencias del capítulo",
+    "text": "5.14 Referencias del capítulo\nLa presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018), adaptada a la organización formal de este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
