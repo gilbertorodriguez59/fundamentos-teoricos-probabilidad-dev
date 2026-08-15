@@ -339,6 +339,18 @@ $$
 
 9. **Reto ★.** Sea $A_1,\ldots,A_n$ una familia mutuamente independiente. Demuestra que sustituir cualquiera de los eventos por su complemento conserva la independencia mutua.
 
+## Materiales complementarios del capítulo
+
+| Material | Formato | Acceso | Propósito |
+|---|---|---|---|
+| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/05-condicional-independencia-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
+| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/05-condicional-independencia.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
+| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
+| Video | Video | Próximamente | Explicación audiovisual complementaria. |
+| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
+
+Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
+
 ## Referencias del capítulo
 
 La presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de @walpole2012, @devore2016, @montgomery2018 y @johnson2018, adaptada a la organización formal de este libro.

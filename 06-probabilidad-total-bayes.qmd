@@ -349,6 +349,18 @@ $$
 9. Si una evidencia tiene razón de verosimilitudes igual a 1, interpreta su efecto sobre las odds previas.
 10. **Reto ★.** Supón que $E_1$ y $E_2$ son condicionalmente independientes dado $H$ y dado $H^c$. Deriva una expresión para las odds posteriores tras observar ambas evidencias.
 
+## Materiales complementarios del capítulo
+
+| Material | Formato | Acceso | Propósito |
+|---|---|---|---|
+| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/06-probabilidad-total-bayes-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
+| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/06-probabilidad-total-bayes.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
+| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
+| Video | Video | Próximamente | Explicación audiovisual complementaria. |
+| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
+
+Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
+
 ## Referencias del capítulo
 
 El desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018. La notación se adapta al enfoque formal adoptado en este libro.

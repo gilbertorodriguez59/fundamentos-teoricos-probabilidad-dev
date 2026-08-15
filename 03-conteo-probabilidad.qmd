@@ -343,6 +343,18 @@ $$
 
 interpretando ambos lados como el número de subconjuntos de un conjunto de $n$ elementos.
 
+## Materiales complementarios del capítulo
+
+| Material | Formato | Acceso | Propósito |
+|---|---|---|---|
+| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/03-conteo-probabilidad-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
+| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/03-conteo-probabilidad.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
+| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
+| Video | Video | Próximamente | Explicación audiovisual complementaria. |
+| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
+
+Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
+
 ## Referencias del capítulo
 
 El desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.

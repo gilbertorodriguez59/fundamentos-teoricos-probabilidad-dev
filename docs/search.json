@@ -140,11 +140,21 @@
     ]
   },
   {
+    "objectID": "01-incertidumbre-modelos.html#materiales-complementarios-del-capítulo",
+    "href": "01-incertidumbre-modelos.html#materiales-complementarios-del-capítulo",
+    "title": "1  Incertidumbre y modelos probabilísticos",
+    "section": "1.10 Materiales complementarios del capítulo",
+    "text": "1.10 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
+    ]
+  },
+  {
     "objectID": "01-incertidumbre-modelos.html#referencias-del-capítulo",
     "href": "01-incertidumbre-modelos.html#referencias-del-capítulo",
     "title": "1  Incertidumbre y modelos probabilísticos",
-    "section": "1.10 Referencias del capítulo",
-    "text": "1.10 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "1.11 Referencias del capítulo",
+    "text": "1.11 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -320,11 +330,21 @@
     ]
   },
   {
+    "objectID": "02-espacios-eventos.html#materiales-complementarios-del-capítulo",
+    "href": "02-espacios-eventos.html#materiales-complementarios-del-capítulo",
+    "title": "2  Espacios muestrales y álgebra de eventos",
+    "section": "2.17 Materiales complementarios del capítulo",
+    "text": "2.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
+    ]
+  },
+  {
     "objectID": "02-espacios-eventos.html#referencias-del-capítulo",
     "href": "02-espacios-eventos.html#referencias-del-capítulo",
     "title": "2  Espacios muestrales y álgebra de eventos",
-    "section": "2.17 Referencias del capítulo",
-    "text": "2.17 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "2.18 Referencias del capítulo",
+    "text": "2.18 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
@@ -510,11 +530,21 @@
     ]
   },
   {
+    "objectID": "03-conteo-probabilidad.html#materiales-complementarios-del-capítulo",
+    "href": "03-conteo-probabilidad.html#materiales-complementarios-del-capítulo",
+    "title": "3  Técnicas de conteo y enumeración",
+    "section": "3.19 Materiales complementarios del capítulo",
+    "text": "3.19 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
+    ]
+  },
+  {
     "objectID": "03-conteo-probabilidad.html#referencias-del-capítulo",
     "href": "03-conteo-probabilidad.html#referencias-del-capítulo",
     "title": "3  Técnicas de conteo y enumeración",
-    "section": "3.19 Referencias del capítulo",
-    "text": "3.19 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "3.20 Referencias del capítulo",
+    "text": "3.20 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
@@ -720,11 +750,21 @@
     ]
   },
   {
+    "objectID": "04-axiomas-probabilidad.html#materiales-complementarios-del-capítulo",
+    "href": "04-axiomas-probabilidad.html#materiales-complementarios-del-capítulo",
+    "title": "4  Axiomas y propiedades de la probabilidad",
+    "section": "4.20 Materiales complementarios del capítulo",
+    "text": "4.20 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
+    ]
+  },
+  {
     "objectID": "04-axiomas-probabilidad.html#referencias-del-capítulo",
     "href": "04-axiomas-probabilidad.html#referencias-del-capítulo",
     "title": "4  Axiomas y propiedades de la probabilidad",
-    "section": "4.20 Referencias del capítulo",
-    "text": "4.20 Referencias del capítulo\nLa formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018). La presentación se ha reescrito de forma original para esta obra.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "4.21 Referencias del capítulo",
+    "text": "4.21 Referencias del capítulo\nLa formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018). La presentación se ha reescrito de forma original para esta obra.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
     ]
@@ -860,11 +900,21 @@
     ]
   },
   {
+    "objectID": "05-condicional-independencia.html#materiales-complementarios-del-capítulo",
+    "href": "05-condicional-independencia.html#materiales-complementarios-del-capítulo",
+    "title": "5  Probabilidad condicional e independencia",
+    "section": "5.14 Materiales complementarios del capítulo",
+    "text": "5.14 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
+    ]
+  },
+  {
     "objectID": "05-condicional-independencia.html#referencias-del-capítulo",
     "href": "05-condicional-independencia.html#referencias-del-capítulo",
     "title": "5  Probabilidad condicional e independencia",
-    "section": "5.14 Referencias del capítulo",
-    "text": "5.14 Referencias del capítulo\nLa presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018), adaptada a la organización formal de este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "5.15 Referencias del capítulo",
+    "text": "5.15 Referencias del capítulo\nLa presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018), adaptada a la organización formal de este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
     ]
@@ -1020,11 +1070,21 @@
     ]
   },
   {
+    "objectID": "06-probabilidad-total-bayes.html#materiales-complementarios-del-capítulo",
+    "href": "06-probabilidad-total-bayes.html#materiales-complementarios-del-capítulo",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.16 Materiales complementarios del capítulo",
+    "text": "6.16 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
     "objectID": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
     "href": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
     "title": "6  Particiones, probabilidad total y teorema de Bayes",
-    "section": "6.16 Referencias del capítulo",
-    "text": "6.16 Referencias del capítulo\nEl desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018). La notación se adapta al enfoque formal adoptado en este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "6.17 Referencias del capítulo",
+    "text": "6.17 Referencias del capítulo\nEl desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018). La notación se adapta al enfoque formal adoptado en este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
     ]
@@ -1380,11 +1440,21 @@
     ]
   },
   {
+    "objectID": "08-variables-discretas-pmf.html#materiales-complementarios-del-capítulo",
+    "href": "08-variables-discretas-pmf.html#materiales-complementarios-del-capítulo",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.16 Materiales complementarios del capítulo",
+    "text": "8.16 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
     "objectID": "08-variables-discretas-pmf.html#referencias-del-capítulo",
     "href": "08-variables-discretas-pmf.html#referencias-del-capítulo",
     "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
-    "section": "8.16 Referencias del capítulo",
-    "text": "8.16 Referencias del capítulo\nEl desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel teórico de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "8.17 Referencias del capítulo",
+    "text": "8.17 Referencias del capítulo\nEl desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel teórico de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
     ]
@@ -1550,11 +1620,21 @@
     ]
   },
   {
+    "objectID": "09-variables-continuas-densidad.html#materiales-complementarios-del-capítulo",
+    "href": "09-variables-continuas-densidad.html#materiales-complementarios-del-capítulo",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.17 Materiales complementarios del capítulo",
+    "text": "9.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
     "objectID": "09-variables-continuas-densidad.html#referencias-del-capítulo",
     "href": "09-variables-continuas-densidad.html#referencias-del-capítulo",
     "title": "9  Variables aleatorias continuas y función de densidad",
-    "section": "9.17 Referencias del capítulo",
-    "text": "9.17 Referencias del capítulo\nEl desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel formal de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "9.18 Referencias del capítulo",
+    "text": "9.18 Referencias del capítulo\nEl desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel formal de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
     ]
