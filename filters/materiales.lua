@@ -5,7 +5,8 @@ local capitulos={
  ["04-axiomas-probabilidad.qmd"]="04-axiomas-probabilidad-colab.ipynb",
  ["05-condicional-independencia.qmd"]="05-condicional-independencia-colab.ipynb",
  ["06-probabilidad-total-bayes.qmd"]="06-probabilidad-total-bayes-colab.ipynb",
- ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf-colab.ipynb"
+ ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf-colab.ipynb",
+ ["08-variables-discretas-pmf.qmd"]="08-variables-discretas-pmf-colab.ipynb"
 }
 local rfiles={
  ["01-incertidumbre-modelos.qmd"]="01-incertidumbre-probabilidad.Rmd",
@@ -14,7 +15,8 @@ local rfiles={
  ["04-axiomas-probabilidad.qmd"]="04-axiomas-probabilidad.Rmd",
  ["05-condicional-independencia.qmd"]="05-condicional-independencia.Rmd",
  ["06-probabilidad-total-bayes.qmd"]="06-probabilidad-total-bayes.Rmd",
- ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf.Rmd"
+ ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf.Rmd",
+ ["08-variables-discretas-pmf.qmd"]="08-variables-discretas-pmf.Rmd"
 }
 local function base(p)return p:match("([^/\\]+)$")or p end
 local function bloques(name)
