@@ -23,6 +23,7 @@ book:
     - 04-axiomas-probabilidad.qmd
     - 05-condicional-independencia.qmd
     - 06-probabilidad-total-bayes.qmd
+    - 07-variable-aleatoria-cdf.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
