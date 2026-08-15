@@ -20,6 +20,7 @@ book:
     - 01-incertidumbre-modelos.qmd
     - 02-espacios-eventos.qmd
     - 03-conteo-probabilidad.qmd
+    - 04-axiomas-probabilidad.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
