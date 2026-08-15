@@ -870,6 +870,166 @@
     ]
   },
   {
+    "objectID": "06-probabilidad-total-bayes.html",
+    "href": "06-probabilidad-total-bayes.html",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "",
+    "text": "6.1 Objetivos\nEn este capítulo se formalizan las particiones del espacio muestral, la ley de la probabilidad total y el teorema de Bayes. Se estudian sus demostraciones, su interpretación y sus consecuencias algebraicas.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#particiones-del-espacio-muestral",
+    "href": "06-probabilidad-total-bayes.html#particiones-del-espacio-muestral",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.2 Particiones del espacio muestral",
+    "text": "6.2 Particiones del espacio muestral\nUna familia finita de eventos\n\\[\n\\{B_1,\\ldots,B_k\\}\\subseteq\\mathcal F\n\\]\nes una partición de \\(\\Omega\\) si\n\\[\nB_i\\cap B_j=\\varnothing\\quad(i\\neq j),\n\\]\ny\n\\[\n\\bigcup_{i=1}^{k}B_i=\\Omega.\n\\]\nSi además \\(P(B_i)&gt;0\\) para todo \\(i\\), entonces cada \\(B_i\\) puede utilizarse como evento condicionante.\n\nPropiedad fundamental\nPara cualquier evento \\(A\\in\\mathcal F\\),\n\\[\nA=A\\cap\\Omega\n=A\\cap\\left(\\bigcup_{i=1}^{k}B_i\\right)\n=\\bigcup_{i=1}^{k}(A\\cap B_i).\n\\]\nLas intersecciones \\(A\\cap B_i\\) son mutuamente excluyentes.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#ley-de-la-probabilidad-total",
+    "href": "06-probabilidad-total-bayes.html#ley-de-la-probabilidad-total",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.3 Ley de la probabilidad total",
+    "text": "6.3 Ley de la probabilidad total\n\nTeorema\nSea \\(B_1,\\ldots,B_k\\) una partición de \\(\\Omega\\) con \\(P(B_i)&gt;0\\). Entonces para todo evento \\(A\\),\n\\[\n\\boxed{\nP(A)=\\sum_{i=1}^{k}P(B_i)P(A\\mid B_i)\n}.\n\\]\n\n\nDemostración\nComo\n\\[\nA=\\bigcup_{i=1}^{k}(A\\cap B_i)\n\\]\ny las uniones son disjuntas,\n\\[\nP(A)=\\sum_{i=1}^{k}P(A\\cap B_i).\n\\]\nPor la definición de probabilidad condicional,\n\\[\nP(A\\cap B_i)=P(B_i)P(A\\mid B_i).\n\\]\nSustituyendo,\n\\[\nP(A)=\\sum_{i=1}^{k}P(B_i)P(A\\mid B_i).\n\\]\nQueda demostrado.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#caso-binario",
+    "href": "06-probabilidad-total-bayes.html#caso-binario",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.4 Caso binario",
+    "text": "6.4 Caso binario\nSi \\(B\\) y \\(B^c\\) forman una partición y \\(0&lt;P(B)&lt;1\\), entonces\n\\[\n\\boxed{\nP(A)=P(B)P(A\\mid B)+P(B^c)P(A\\mid B^c)\n}.\n\\]\nEsta forma aparece constantemente en confiabilidad, diagnóstico y clasificación.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#teorema-de-bayes",
+    "href": "06-probabilidad-total-bayes.html#teorema-de-bayes",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.5 Teorema de Bayes",
+    "text": "6.5 Teorema de Bayes\n\nTeorema\nSea \\(B_1,\\ldots,B_k\\) una partición con \\(P(B_i)&gt;0\\) y sea \\(A\\) un evento con \\(P(A)&gt;0\\). Entonces\n\\[\n\\boxed{\nP(B_i\\mid A)\n=\n\\frac{P(B_i)P(A\\mid B_i)}\n{\\sum_{j=1}^{k}P(B_j)P(A\\mid B_j)}\n}.\n\\]\n\n\nDemostración\nPor definición,\n\\[\nP(B_i\\mid A)=\\frac{P(B_i\\cap A)}{P(A)}.\n\\]\nLa regla del producto da\n\\[\nP(B_i\\cap A)=P(B_i)P(A\\mid B_i).\n\\]\nLa ley de la probabilidad total produce\n\\[\nP(A)=\\sum_{j=1}^{k}P(B_j)P(A\\mid B_j).\n\\]\nAl sustituir ambas expresiones se obtiene la fórmula de Bayes.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#forma-proporcional",
+    "href": "06-probabilidad-total-bayes.html#forma-proporcional",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.6 Forma proporcional",
+    "text": "6.6 Forma proporcional\nLa identidad anterior puede escribirse como\n\\[\nP(B_i\\mid A)\n\\propto\nP(B_i)P(A\\mid B_i).\n\\]\nEl denominador\n\\[\nP(A)\n\\]\nactúa como constante de normalización común a todas las hipótesis \\(B_i\\).\nEsta forma permite separar tres componentes conceptuales:\n\n\\(P(B_i)\\): probabilidad previa;\n\\(P(A\\mid B_i)\\): verosimilitud de la evidencia bajo \\(B_i\\);\n\\(P(B_i\\mid A)\\): probabilidad posterior.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#normalización-de-las-probabilidades-posteriores",
+    "href": "06-probabilidad-total-bayes.html#normalización-de-las-probabilidades-posteriores",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.7 Normalización de las probabilidades posteriores",
+    "text": "6.7 Normalización de las probabilidades posteriores\nComo los \\(B_i\\) forman una partición,\n\\[\n\\sum_{i=1}^{k}P(B_i\\mid A)=1.\n\\]\n\nDemostración\nUsando Bayes,\n\\[\n\\sum_{i=1}^{k}P(B_i\\mid A)\n=\n\\frac{\\sum_{i=1}^{k}P(B_i)P(A\\mid B_i)}{P(A)}.\n\\]\nEl numerador es precisamente \\(P(A)\\) por la ley de probabilidad total, de modo que la razón vale 1.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#odds-y-forma-de-bayes-para-dos-hipótesis",
+    "href": "06-probabilidad-total-bayes.html#odds-y-forma-de-bayes-para-dos-hipótesis",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.8 Odds y forma de Bayes para dos hipótesis",
+    "text": "6.8 Odds y forma de Bayes para dos hipótesis\nPara una hipótesis \\(H\\) y su complemento \\(H^c\\), Bayes puede expresarse mediante odds.\nLas odds previas son\n\\[\n\\frac{P(H)}{P(H^c)}.\n\\]\nDespués de observar evidencia \\(E\\),\n\\[\n\\frac{P(H\\mid E)}{P(H^c\\mid E)}\n=\n\\frac{P(H)}{P(H^c)}\n\\cdot\n\\frac{P(E\\mid H)}{P(E\\mid H^c)}.\n\\]\nLa razón\n\\[\n\\frac{P(E\\mid H)}{P(E\\mid H^c)}\n\\]\nse denomina razón de verosimilitudes.\nEsta formulación muestra que Bayes actualiza multiplicativamente las odds previas.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#ejemplo-algebraico",
+    "href": "06-probabilidad-total-bayes.html#ejemplo-algebraico",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.9 Ejemplo algebraico",
+    "text": "6.9 Ejemplo algebraico\nSea\n\\[\nP(H)=0.10,\n\\]\n\\[\nP(E\\mid H)=0.80,\n\\]\ny\n\\[\nP(E\\mid H^c)=0.20.\n\\]\nEntonces\n\\[\nP(E)=0.10(0.80)+0.90(0.20)=0.26.\n\\]\nPor Bayes,\n\\[\nP(H\\mid E)=\\frac{0.10(0.80)}{0.26}=\\frac{4}{13}\\approx0.3077.\n\\]\nEn términos de odds:\n\\[\n\\frac{P(H)}{P(H^c)}=\\frac{1}{9},\n\\]\nmientras que la razón de verosimilitudes es\n\\[\n\\frac{0.80}{0.20}=4.\n\\]\nPor tanto, las odds posteriores son\n\\[\n\\frac{4}{9}.\n\\]\nDe ahí se recupera\n\\[\nP(H\\mid E)=\\frac{4/9}{1+4/9}=\\frac{4}{13}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#particiones-numerables",
+    "href": "06-probabilidad-total-bayes.html#particiones-numerables",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.10 Particiones numerables",
+    "text": "6.10 Particiones numerables\nLa formulación se extiende a una partición numerable \\(B_1,B_2,\\ldots\\) siempre que las sumas estén bien definidas.\nSi\n\\[\n\\Omega=\\bigcup_{i=1}^{\\infty}B_i\n\\]\ncon eventos dos a dos disjuntos y \\(P(B_i)&gt;0\\), entonces\n\\[\nP(A)=\\sum_{i=1}^{\\infty}P(B_i)P(A\\mid B_i).\n\\]\nY, si \\(P(A)&gt;0\\),\n\\[\nP(B_i\\mid A)\n=\n\\frac{P(B_i)P(A\\mid B_i)}\n{\\sum_{j=1}^{\\infty}P(B_j)P(A\\mid B_j)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#actualización-secuencial",
+    "href": "06-probabilidad-total-bayes.html#actualización-secuencial",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.11 Actualización secuencial",
+    "text": "6.11 Actualización secuencial\nSean \\(E_1\\) y \\(E_2\\) dos evidencias. Entonces\n\\[\nP(H\\mid E_1,E_2)\n=\n\\frac{P(H\\mid E_1)P(E_2\\mid H,E_1)}\n{P(E_2\\mid E_1)}.\n\\]\nLa distribución posterior tras observar \\(E_1\\) puede utilizarse como distribución previa en la actualización con \\(E_2\\).\nEsto formaliza la idea de aprendizaje secuencial.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#evidencia-condicionalmente-independiente",
+    "href": "06-probabilidad-total-bayes.html#evidencia-condicionalmente-independiente",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.12 Evidencia condicionalmente independiente",
+    "text": "6.12 Evidencia condicionalmente independiente\nSi \\(E_1\\) y \\(E_2\\) son condicionalmente independientes dado \\(H\\), entonces\n\\[\nP(E_1\\cap E_2\\mid H)\n=P(E_1\\mid H)P(E_2\\mid H).\n\\]\nBajo esta hipótesis, la actualización con múltiples evidencias se simplifica.\nNo debe confundirse independencia ordinaria con independencia condicional.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#tasa-base-y-posterior",
+    "href": "06-probabilidad-total-bayes.html#tasa-base-y-posterior",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.13 Tasa base y posterior",
+    "text": "6.13 Tasa base y posterior\nEl teorema de Bayes muestra que una gran verosimilitud no garantiza una gran probabilidad posterior. El valor de \\(P(B_i)\\) influye necesariamente en la respuesta.\nPor ello, en problemas de clasificación o diagnóstico, ignorar las probabilidades previas puede producir inferencias seriamente engañosas.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#relación-con-la-probabilidad-condicional",
+    "href": "06-probabilidad-total-bayes.html#relación-con-la-probabilidad-condicional",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.14 Relación con la probabilidad condicional",
+    "text": "6.14 Relación con la probabilidad condicional\nBayes no introduce una nueva noción de probabilidad. Es una consecuencia algebraica directa de\n\\[\nP(A\\cap B)=P(A)P(B\\mid A)=P(B)P(A\\mid B).\n\\]\nSiempre que \\(P(A)&gt;0\\) y \\(P(B)&gt;0\\),\n\\[\nP(B\\mid A)\n=\\frac{P(B)P(A\\mid B)}{P(A)}.\n\\]\nLa ley de la probabilidad total aparece cuando el denominador \\(P(A)\\) debe expresarse en términos de una partición.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#ejercicios",
+    "href": "06-probabilidad-total-bayes.html#ejercicios",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.15 Ejercicios",
+    "text": "6.15 Ejercicios\n\nDemuestra la ley de la probabilidad total para una partición de cuatro eventos.\nPrueba el teorema de Bayes a partir de la definición de probabilidad condicional y la ley de probabilidad total.\nSi \\(B_1,B_2,B_3\\) forman una partición con probabilidades \\(0.2,0.5,0.3\\) y \\(P(A\\mid B_i)=0.1,0.4,0.7\\), calcula \\(P(A)\\) y las tres probabilidades posteriores.\nDemuestra que las probabilidades posteriores obtenidas en el ejercicio anterior suman 1.\nDeriva la forma de Bayes en términos de odds para dos hipótesis complementarias.\nSea \\(P(H)=p\\), \\(P(E\\mid H)=s\\) y \\(P(E\\mid H^c)=f\\). Demuestra que\n\n\\[\nP(H\\mid E)=\\frac{ps}{ps+(1-p)f}.\n\\]\n\nAnaliza el límite de la expresión anterior cuando \\(p\\to0\\) y cuando \\(p\\to1\\).\nSi \\(P(E\\mid H)=P(E\\mid H^c)\\), demuestra que \\(P(H\\mid E)=P(H)\\).\nSi una evidencia tiene razón de verosimilitudes igual a 1, interpreta su efecto sobre las odds previas.\nReto ★. Supón que \\(E_1\\) y \\(E_2\\) son condicionalmente independientes dado \\(H\\) y dado \\(H^c\\). Deriva una expresión para las odds posteriores tras observar ambas evidencias.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
+    "objectID": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
+    "href": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
+    "title": "6  Particiones, probabilidad total y teorema de Bayes",
+    "section": "6.16 Referencias del capítulo",
+    "text": "6.16 Referencias del capítulo\nEl desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018). La notación se adapta al enfoque formal adoptado en este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Probabilidad condicional e independencia – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>6&nbsp; Particiones, probabilidad total y teorema de Bayes – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./06-probabilidad-total-bayes.html" rel="next">
-<link href="./04-axiomas-probabilidad.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./05-condicional-independencia.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-condicional-independencia.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-probabilidad-total-bayes.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -221,13 +221,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-condicional-independencia.html" class="sidebar-item-text sidebar-link active">
+  <a href="./05-condicional-independencia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-probabilidad-total-bayes.html" class="sidebar-item-text sidebar-link">
+  <a href="./06-probabilidad-total-bayes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></span></a>
   </div>
 </li>
@@ -247,34 +247,36 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#propósitos-del-capítulo" id="toc-propósitos-del-capítulo" class="nav-link active" data-scroll-target="#propósitos-del-capítulo"><span class="header-section-number">5.1</span> Propósitos del capítulo</a></li>
-  <li><a href="#probabilidad-condicional" id="toc-probabilidad-condicional" class="nav-link" data-scroll-target="#probabilidad-condicional"><span class="header-section-number">5.2</span> Probabilidad condicional</a>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">6.1</span> Objetivos</a></li>
+  <li><a href="#particiones-del-espacio-muestral" id="toc-particiones-del-espacio-muestral" class="nav-link" data-scroll-target="#particiones-del-espacio-muestral"><span class="header-section-number">6.2</span> Particiones del espacio muestral</a>
   <ul class="collapse">
-  <li><a href="#propiedad-de-normalización" id="toc-propiedad-de-normalización" class="nav-link" data-scroll-target="#propiedad-de-normalización">Propiedad de normalización</a></li>
-  <li><a href="#probabilidad-condicional-como-medida" id="toc-probabilidad-condicional-como-medida" class="nav-link" data-scroll-target="#probabilidad-condicional-como-medida">Probabilidad condicional como medida</a></li>
+  <li><a href="#propiedad-fundamental" id="toc-propiedad-fundamental" class="nav-link" data-scroll-target="#propiedad-fundamental">Propiedad fundamental</a></li>
   </ul></li>
-  <li><a href="#regla-del-producto" id="toc-regla-del-producto" class="nav-link" data-scroll-target="#regla-del-producto"><span class="header-section-number">5.3</span> Regla del producto</a></li>
-  <li><a href="#regla-de-la-cadena" id="toc-regla-de-la-cadena" class="nav-link" data-scroll-target="#regla-de-la-cadena"><span class="header-section-number">5.4</span> Regla de la cadena</a>
+  <li><a href="#ley-de-la-probabilidad-total" id="toc-ley-de-la-probabilidad-total" class="nav-link" data-scroll-target="#ley-de-la-probabilidad-total"><span class="header-section-number">6.3</span> Ley de la probabilidad total</a>
   <ul class="collapse">
-  <li><a href="#demostración-para-tres-eventos" id="toc-demostración-para-tres-eventos" class="nav-link" data-scroll-target="#demostración-para-tres-eventos">Demostración para tres eventos</a></li>
-  </ul></li>
-  <li><a href="#independencia-de-dos-eventos" id="toc-independencia-de-dos-eventos" class="nav-link" data-scroll-target="#independencia-de-dos-eventos"><span class="header-section-number">5.5</span> Independencia de dos eventos</a>
-  <ul class="collapse">
-  <li><a href="#equivalencia-con-probabilidad-condicional" id="toc-equivalencia-con-probabilidad-condicional" class="nav-link" data-scroll-target="#equivalencia-con-probabilidad-condicional">Equivalencia con probabilidad condicional</a></li>
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
   <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#independencia-y-complementos" id="toc-independencia-y-complementos" class="nav-link" data-scroll-target="#independencia-y-complementos"><span class="header-section-number">5.6</span> Independencia y complementos</a>
+  <li><a href="#caso-binario" id="toc-caso-binario" class="nav-link" data-scroll-target="#caso-binario"><span class="header-section-number">6.4</span> Caso binario</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes"><span class="header-section-number">6.5</span> Teorema de Bayes</a>
   <ul class="collapse">
-  <li><a href="#demostración-para-ac-y-b" id="toc-demostración-para-ac-y-b" class="nav-link" data-scroll-target="#demostración-para-ac-y-b">Demostración para <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span></a></li>
+  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
+  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
   </ul></li>
-  <li><a href="#exclusión-mutua-e-independencia" id="toc-exclusión-mutua-e-independencia" class="nav-link" data-scroll-target="#exclusión-mutua-e-independencia"><span class="header-section-number">5.7</span> Exclusión mutua e independencia</a></li>
-  <li><a href="#independencia-de-varios-eventos" id="toc-independencia-de-varios-eventos" class="nav-link" data-scroll-target="#independencia-de-varios-eventos"><span class="header-section-number">5.8</span> Independencia de varios eventos</a></li>
-  <li><a href="#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" id="toc-ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" class="nav-link" data-scroll-target="#ejemplo-clásico-independencia-por-pares-sin-independencia-mutua"><span class="header-section-number">5.9</span> Ejemplo clásico: independencia por pares sin independencia mutua</a></li>
-  <li><a href="#dependencia-inducida-por-muestreo-sin-reemplazo" id="toc-dependencia-inducida-por-muestreo-sin-reemplazo" class="nav-link" data-scroll-target="#dependencia-inducida-por-muestreo-sin-reemplazo"><span class="header-section-number">5.10</span> Dependencia inducida por muestreo sin reemplazo</a></li>
-  <li><a href="#observación-sobre-eventos-de-probabilidad-cero" id="toc-observación-sobre-eventos-de-probabilidad-cero" class="nav-link" data-scroll-target="#observación-sobre-eventos-de-probabilidad-cero"><span class="header-section-number">5.11</span> Observación sobre eventos de probabilidad cero</a></li>
-  <li><a href="#proposición-criterio-de-independencia-mediante-complementos" id="toc-proposición-criterio-de-independencia-mediante-complementos" class="nav-link" data-scroll-target="#proposición-criterio-de-independencia-mediante-complementos"><span class="header-section-number">5.12</span> Proposición: criterio de independencia mediante complementos</a></li>
-  <li><a href="#ejercicios-conceptuales-y-de-demostración" id="toc-ejercicios-conceptuales-y-de-demostración" class="nav-link" data-scroll-target="#ejercicios-conceptuales-y-de-demostración"><span class="header-section-number">5.13</span> Ejercicios conceptuales y de demostración</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">5.14</span> Referencias del capítulo</a></li>
+  <li><a href="#forma-proporcional" id="toc-forma-proporcional" class="nav-link" data-scroll-target="#forma-proporcional"><span class="header-section-number">6.6</span> Forma proporcional</a></li>
+  <li><a href="#normalización-de-las-probabilidades-posteriores" id="toc-normalización-de-las-probabilidades-posteriores" class="nav-link" data-scroll-target="#normalización-de-las-probabilidades-posteriores"><span class="header-section-number">6.7</span> Normalización de las probabilidades posteriores</a>
+  <ul class="collapse">
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
+  </ul></li>
+  <li><a href="#odds-y-forma-de-bayes-para-dos-hipótesis" id="toc-odds-y-forma-de-bayes-para-dos-hipótesis" class="nav-link" data-scroll-target="#odds-y-forma-de-bayes-para-dos-hipótesis"><span class="header-section-number">6.8</span> Odds y forma de Bayes para dos hipótesis</a></li>
+  <li><a href="#ejemplo-algebraico" id="toc-ejemplo-algebraico" class="nav-link" data-scroll-target="#ejemplo-algebraico"><span class="header-section-number">6.9</span> Ejemplo algebraico</a></li>
+  <li><a href="#particiones-numerables" id="toc-particiones-numerables" class="nav-link" data-scroll-target="#particiones-numerables"><span class="header-section-number">6.10</span> Particiones numerables</a></li>
+  <li><a href="#actualización-secuencial" id="toc-actualización-secuencial" class="nav-link" data-scroll-target="#actualización-secuencial"><span class="header-section-number">6.11</span> Actualización secuencial</a></li>
+  <li><a href="#evidencia-condicionalmente-independiente" id="toc-evidencia-condicionalmente-independiente" class="nav-link" data-scroll-target="#evidencia-condicionalmente-independiente"><span class="header-section-number">6.12</span> Evidencia condicionalmente independiente</a></li>
+  <li><a href="#tasa-base-y-posterior" id="toc-tasa-base-y-posterior" class="nav-link" data-scroll-target="#tasa-base-y-posterior"><span class="header-section-number">6.13</span> Tasa base y posterior</a></li>
+  <li><a href="#relación-con-la-probabilidad-condicional" id="toc-relación-con-la-probabilidad-condicional" class="nav-link" data-scroll-target="#relación-con-la-probabilidad-condicional"><span class="header-section-number">6.14</span> Relación con la probabilidad condicional</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">6.15</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">6.16</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +285,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></h1>
 </div>
 
 
@@ -300,280 +302,288 @@ window.Quarto = {
 </header>
 
 
-<section id="propósitos-del-capítulo" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="propósitos-del-capítulo"><span class="header-section-number">5.1</span> Propósitos del capítulo</h2>
-<p>Este capítulo formaliza dos ideas centrales de la teoría de la probabilidad: la actualización de probabilidades ante información adicional y la independencia entre eventos. Se desarrollan la definición de probabilidad condicional, la regla del producto, la regla de la cadena y criterios equivalentes de independencia.</p>
+<section id="objetivos" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">6.1</span> Objetivos</h2>
+<p>En este capítulo se formalizan las particiones del espacio muestral, la ley de la probabilidad total y el teorema de Bayes. Se estudian sus demostraciones, su interpretación y sus consecuencias algebraicas.</p>
 </section>
-<section id="probabilidad-condicional" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="probabilidad-condicional"><span class="header-section-number">5.2</span> Probabilidad condicional</h2>
-<p>Sea <span class="math inline">\((\Omega,\mathcal F,P)\)</span> un espacio de probabilidad y sean <span class="math inline">\(A,B\in\mathcal F\)</span> con <span class="math inline">\(P(B)&gt;0\)</span>. La probabilidad condicional de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span> se define por</p>
+<section id="particiones-del-espacio-muestral" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="particiones-del-espacio-muestral"><span class="header-section-number">6.2</span> Particiones del espacio muestral</h2>
+<p>Una familia finita de eventos</p>
 <p><span class="math display">\[
-\boxed{P(A\mid B)=\frac{P(A\cap B)}{P(B)}}.
+\{B_1,\ldots,B_k\}\subseteq\mathcal F
 \]</span></p>
-<p>Esta definición puede interpretarse como una renormalización de la medida de probabilidad al restringir el espacio al evento <span class="math inline">\(B\)</span>.</p>
-<section id="propiedad-de-normalización" class="level3">
-<h3 class="anchored" data-anchor-id="propiedad-de-normalización">Propiedad de normalización</h3>
-<p>Para <span class="math inline">\(P(B)&gt;0\)</span>,</p>
+<p>es una <strong>partición</strong> de <span class="math inline">\(\Omega\)</span> si</p>
 <p><span class="math display">\[
-P(B\mid B)=1.
+B_i\cap B_j=\varnothing\quad(i\neq j),
 \]</span></p>
-<p>En efecto,</p>
+<p>y</p>
 <p><span class="math display">\[
-P(B\mid B)=\frac{P(B\cap B)}{P(B)}=1.
+\bigcup_{i=1}^{k}B_i=\Omega.
 \]</span></p>
-</section>
-<section id="probabilidad-condicional-como-medida" class="level3">
-<h3 class="anchored" data-anchor-id="probabilidad-condicional-como-medida">Probabilidad condicional como medida</h3>
-<p>Fijado un evento <span class="math inline">\(B\)</span> con <span class="math inline">\(P(B)&gt;0\)</span>, la aplicación</p>
+<p>Si además <span class="math inline">\(P(B_i)&gt;0\)</span> para todo <span class="math inline">\(i\)</span>, entonces cada <span class="math inline">\(B_i\)</span> puede utilizarse como evento condicionante.</p>
+<section id="propiedad-fundamental" class="level3">
+<h3 class="anchored" data-anchor-id="propiedad-fundamental">Propiedad fundamental</h3>
+<p>Para cualquier evento <span class="math inline">\(A\in\mathcal F\)</span>,</p>
 <p><span class="math display">\[
-P_B(A)=P(A\mid B)
+A=A\cap\Omega
+=A\cap\left(\bigcup_{i=1}^{k}B_i\right)
+=\bigcup_{i=1}^{k}(A\cap B_i).
 \]</span></p>
-<p>define una nueva medida de probabilidad sobre <span class="math inline">\((\Omega,\mathcal F)\)</span>.</p>
-<p>Se verifica:</p>
-<ol type="1">
-<li><span class="math inline">\(P_B(A)\ge 0\)</span>;</li>
-<li><span class="math inline">\(P_B(\Omega)=1\)</span>;</li>
-<li>si <span class="math inline">\(A_1,A_2,\ldots\)</span> son disjuntos,</li>
-</ol>
-<p><span class="math display">\[
-P_B\left(\bigcup_{i=1}^\infty A_i\right)
-=\sum_{i=1}^\infty P_B(A_i).
-\]</span></p>
-<p>Por tanto, al condicionar por <span class="math inline">\(B\)</span> no abandonamos la estructura axiomática de la probabilidad.</p>
+<p>Las intersecciones <span class="math inline">\(A\cap B_i\)</span> son mutuamente excluyentes.</p>
 </section>
 </section>
-<section id="regla-del-producto" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="regla-del-producto"><span class="header-section-number">5.3</span> Regla del producto</h2>
-<p>A partir de la definición de probabilidad condicional,</p>
+<section id="ley-de-la-probabilidad-total" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="ley-de-la-probabilidad-total"><span class="header-section-number">6.3</span> Ley de la probabilidad total</h2>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Sea <span class="math inline">\(B_1,\ldots,B_k\)</span> una partición de <span class="math inline">\(\Omega\)</span> con <span class="math inline">\(P(B_i)&gt;0\)</span>. Entonces para todo evento <span class="math inline">\(A\)</span>,</p>
 <p><span class="math display">\[
-P(A\cap B)=P(B)P(A\mid B).
-\]</span></p>
-<p>Si además <span class="math inline">\(P(A)&gt;0\)</span>,</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A)P(B\mid A).
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-P(A)P(B\mid A)=P(B)P(A\mid B).
-\]</span></p>
-<p>Esta igualdad es la identidad algebraica que posteriormente conduce al teorema de Bayes.</p>
-</section>
-<section id="regla-de-la-cadena" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="regla-de-la-cadena"><span class="header-section-number">5.4</span> Regla de la cadena</h2>
-<p>Para eventos <span class="math inline">\(A_1,\ldots,A_n\)</span> tales que las probabilidades condicionales involucradas estén definidas,</p>
-<p><span class="math display">\[
-P\left(\bigcap_{i=1}^{n}A_i\right)
-=P(A_1)\prod_{k=2}^{n}
-P\left(A_k\mid\bigcap_{j=1}^{k-1}A_j\right).
-\]</span></p>
-<p>Para <span class="math inline">\(n=3\)</span>,</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)
-=P(A)P(B\mid A)P(C\mid A\cap B).
-\]</span></p>
-<section id="demostración-para-tres-eventos" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-para-tres-eventos">Demostración para tres eventos</h3>
-<p>Por la regla del producto,</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)
-=P(A\cap B)P(C\mid A\cap B).
-\]</span></p>
-<p>Además,</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A)P(B\mid A).
-\]</span></p>
-<p>Sustituyendo se obtiene el resultado.</p>
-</section>
-</section>
-<section id="independencia-de-dos-eventos" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="independencia-de-dos-eventos"><span class="header-section-number">5.5</span> Independencia de dos eventos</h2>
-<p>Dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si</p>
-<p><span class="math display">\[
-\boxed{P(A\cap B)=P(A)P(B)}.
-\]</span></p>
-<p>Esta definición no requiere que <span class="math inline">\(P(A)\)</span> ni <span class="math inline">\(P(B)\)</span> sean positivas.</p>
-<section id="equivalencia-con-probabilidad-condicional" class="level3">
-<h3 class="anchored" data-anchor-id="equivalencia-con-probabilidad-condicional">Equivalencia con probabilidad condicional</h3>
-<p>Si <span class="math inline">\(P(B)&gt;0\)</span>, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes si y sólo si</p>
-<p><span class="math display">\[
-P(A\mid B)=P(A).
-\]</span></p>
-<p>De manera análoga, si <span class="math inline">\(P(A)&gt;0\)</span>,</p>
-<p><span class="math display">\[
-P(B\mid A)=P(B).
+\boxed{
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i)
+}.
 \]</span></p>
 </section>
 <section id="demostración" class="level3">
 <h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes,</p>
+<p>Como</p>
 <p><span class="math display">\[
-P(A\mid B)
-=\frac{P(A\cap B)}{P(B)}
-=\frac{P(A)P(B)}{P(B)}
-=P(A).
+A=\bigcup_{i=1}^{k}(A\cap B_i)
 \]</span></p>
-<p>El recíproco se obtiene multiplicando por <span class="math inline">\(P(B)\)</span>.</p>
+<p>y las uniones son disjuntas,</p>
+<p><span class="math display">\[
+P(A)=\sum_{i=1}^{k}P(A\cap B_i).
+\]</span></p>
+<p>Por la definición de probabilidad condicional,</p>
+<p><span class="math display">\[
+P(A\cap B_i)=P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>Sustituyendo,</p>
+<p><span class="math display">\[
+P(A)=\sum_{i=1}^{k}P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>Queda demostrado.</p>
 </section>
 </section>
-<section id="independencia-y-complementos" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="independencia-y-complementos"><span class="header-section-number">5.6</span> Independencia y complementos</h2>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, también lo son:</p>
+<section id="caso-binario" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="caso-binario"><span class="header-section-number">6.4</span> Caso binario</h2>
+<p>Si <span class="math inline">\(B\)</span> y <span class="math inline">\(B^c\)</span> forman una partición y <span class="math inline">\(0&lt;P(B)&lt;1\)</span>, entonces</p>
 <p><span class="math display">\[
-A^c\text{ y }B,
+\boxed{
+P(A)=P(B)P(A\mid B)+P(B^c)P(A\mid B^c)
+}.
+\]</span></p>
+<p>Esta forma aparece constantemente en confiabilidad, diagnóstico y clasificación.</p>
+</section>
+<section id="teorema-de-bayes" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="teorema-de-bayes"><span class="header-section-number">6.5</span> Teorema de Bayes</h2>
+<section id="teorema-1" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
+<p>Sea <span class="math inline">\(B_1,\ldots,B_k\)</span> una partición con <span class="math inline">\(P(B_i)&gt;0\)</span> y sea <span class="math inline">\(A\)</span> un evento con <span class="math inline">\(P(A)&gt;0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\boxed{
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{k}P(B_j)P(A\mid B_j)}
+}.
+\]</span></p>
+</section>
+<section id="demostración-1" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
+<p>Por definición,</p>
+<p><span class="math display">\[
+P(B_i\mid A)=\frac{P(B_i\cap A)}{P(A)}.
+\]</span></p>
+<p>La regla del producto da</p>
+<p><span class="math display">\[
+P(B_i\cap A)=P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>La ley de la probabilidad total produce</p>
+<p><span class="math display">\[
+P(A)=\sum_{j=1}^{k}P(B_j)P(A\mid B_j).
+\]</span></p>
+<p>Al sustituir ambas expresiones se obtiene la fórmula de Bayes.</p>
+</section>
+</section>
+<section id="forma-proporcional" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="forma-proporcional"><span class="header-section-number">6.6</span> Forma proporcional</h2>
+<p>La identidad anterior puede escribirse como</p>
+<p><span class="math display">\[
+P(B_i\mid A)
+\propto
+P(B_i)P(A\mid B_i).
+\]</span></p>
+<p>El denominador</p>
+<p><span class="math display">\[
+P(A)
+\]</span></p>
+<p>actúa como constante de normalización común a todas las hipótesis <span class="math inline">\(B_i\)</span>.</p>
+<p>Esta forma permite separar tres componentes conceptuales:</p>
+<ul>
+<li><span class="math inline">\(P(B_i)\)</span>: probabilidad previa;</li>
+<li><span class="math inline">\(P(A\mid B_i)\)</span>: verosimilitud de la evidencia bajo <span class="math inline">\(B_i\)</span>;</li>
+<li><span class="math inline">\(P(B_i\mid A)\)</span>: probabilidad posterior.</li>
+</ul>
+</section>
+<section id="normalización-de-las-probabilidades-posteriores" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="normalización-de-las-probabilidades-posteriores"><span class="header-section-number">6.7</span> Normalización de las probabilidades posteriores</h2>
+<p>Como los <span class="math inline">\(B_i\)</span> forman una partición,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{k}P(B_i\mid A)=1.
+\]</span></p>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Usando Bayes,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{k}P(B_i\mid A)
+=
+\frac{\sum_{i=1}^{k}P(B_i)P(A\mid B_i)}{P(A)}.
+\]</span></p>
+<p>El numerador es precisamente <span class="math inline">\(P(A)\)</span> por la ley de probabilidad total, de modo que la razón vale 1.</p>
+</section>
+</section>
+<section id="odds-y-forma-de-bayes-para-dos-hipótesis" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="odds-y-forma-de-bayes-para-dos-hipótesis"><span class="header-section-number">6.8</span> Odds y forma de Bayes para dos hipótesis</h2>
+<p>Para una hipótesis <span class="math inline">\(H\)</span> y su complemento <span class="math inline">\(H^c\)</span>, Bayes puede expresarse mediante <strong>odds</strong>.</p>
+<p>Las odds previas son</p>
+<p><span class="math display">\[
+\frac{P(H)}{P(H^c)}.
+\]</span></p>
+<p>Después de observar evidencia <span class="math inline">\(E\)</span>,</p>
+<p><span class="math display">\[
+\frac{P(H\mid E)}{P(H^c\mid E)}
+=
+\frac{P(H)}{P(H^c)}
+\cdot
+\frac{P(E\mid H)}{P(E\mid H^c)}.
+\]</span></p>
+<p>La razón</p>
+<p><span class="math display">\[
+\frac{P(E\mid H)}{P(E\mid H^c)}
+\]</span></p>
+<p>se denomina <strong>razón de verosimilitudes</strong>.</p>
+<p>Esta formulación muestra que Bayes actualiza multiplicativamente las odds previas.</p>
+</section>
+<section id="ejemplo-algebraico" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="ejemplo-algebraico"><span class="header-section-number">6.9</span> Ejemplo algebraico</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+P(H)=0.10,
 \]</span></p>
 <p><span class="math display">\[
-A\text{ y }B^c,
+P(E\mid H)=0.80,
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-A^c\text{ y }B^c.
+P(E\mid H^c)=0.20.
 \]</span></p>
-<section id="demostración-para-ac-y-b" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-para-ac-y-b">Demostración para <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span></h3>
-<p>Como</p>
+<p>Entonces</p>
 <p><span class="math display">\[
-B=(A\cap B)\cup(A^c\cap B)
+P(E)=0.10(0.80)+0.90(0.20)=0.26.
 \]</span></p>
-<p>y la unión es disjunta,</p>
+<p>Por Bayes,</p>
 <p><span class="math display">\[
-P(A^c\cap B)=P(B)-P(A\cap B).
+P(H\mid E)=\frac{0.10(0.80)}{0.26}=\frac{4}{13}\approx0.3077.
 \]</span></p>
-<p>Usando independencia,</p>
+<p>En términos de odds:</p>
 <p><span class="math display">\[
-P(A^c\cap B)=P(B)-P(A)P(B)
-=(1-P(A))P(B)
-=P(A^c)P(B).
+\frac{P(H)}{P(H^c)}=\frac{1}{9},
+\]</span></p>
+<p>mientras que la razón de verosimilitudes es</p>
+<p><span class="math display">\[
+\frac{0.80}{0.20}=4.
+\]</span></p>
+<p>Por tanto, las odds posteriores son</p>
+<p><span class="math display">\[
+\frac{4}{9}.
+\]</span></p>
+<p>De ahí se recupera</p>
+<p><span class="math display">\[
+P(H\mid E)=\frac{4/9}{1+4/9}=\frac{4}{13}.
 \]</span></p>
 </section>
-</section>
-<section id="exclusión-mutua-e-independencia" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="exclusión-mutua-e-independencia"><span class="header-section-number">5.7</span> Exclusión mutua e independencia</h2>
-<p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son mutuamente excluyentes,</p>
+<section id="particiones-numerables" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="particiones-numerables"><span class="header-section-number">6.10</span> Particiones numerables</h2>
+<p>La formulación se extiende a una partición numerable <span class="math inline">\(B_1,B_2,\ldots\)</span> siempre que las sumas estén bien definidas.</p>
+<p>Si</p>
 <p><span class="math display">\[
-P(A\cap B)=0.
+\Omega=\bigcup_{i=1}^{\infty}B_i
 \]</span></p>
-<p>Si además <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(P(B)&gt;0\)</span>, entonces</p>
+<p>con eventos dos a dos disjuntos y <span class="math inline">\(P(B_i)&gt;0\)</span>, entonces</p>
 <p><span class="math display">\[
-P(A)P(B)&gt;0,
+P(A)=\sum_{i=1}^{\infty}P(B_i)P(A\mid B_i).
 \]</span></p>
-<p>por lo que no pueden ser independientes.</p>
-<p>Así, para eventos de probabilidad positiva, exclusión mutua e independencia son conceptos incompatibles.</p>
-</section>
-<section id="independencia-de-varios-eventos" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="independencia-de-varios-eventos"><span class="header-section-number">5.8</span> Independencia de varios eventos</h2>
-<p>Para tres eventos <span class="math inline">\(A,B,C\)</span>, la independencia por pares significa</p>
+<p>Y, si <span class="math inline">\(P(A)&gt;0\)</span>,</p>
 <p><span class="math display">\[
-P(A\cap B)=P(A)P(B),
-\]</span></p>
-<p><span class="math display">\[
-P(A\cap C)=P(A)P(C),
-\]</span></p>
-<p><span class="math display">\[
-P(B\cap C)=P(B)P(C).
-\]</span></p>
-<p>Sin embargo, esto no basta para garantizar independencia conjunta. Para independencia mutua se requiere además</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)=P(A)P(B)P(C).
-\]</span></p>
-<p>En general, una familia <span class="math inline">\(A_1,\ldots,A_n\)</span> es mutuamente independiente si para todo subconjunto no vacío de índices <span class="math inline">\(I\subseteq\{1,\ldots,n\}\)</span>,</p>
-<p><span class="math display">\[
-P\left(\bigcap_{i\in I}A_i\right)
-=\prod_{i\in I}P(A_i).
+P(B_i\mid A)
+=
+\frac{P(B_i)P(A\mid B_i)}
+{\sum_{j=1}^{\infty}P(B_j)P(A\mid B_j)}.
 \]</span></p>
 </section>
-<section id="ejemplo-clásico-independencia-por-pares-sin-independencia-mutua" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="ejemplo-clásico-independencia-por-pares-sin-independencia-mutua"><span class="header-section-number">5.9</span> Ejemplo clásico: independencia por pares sin independencia mutua</h2>
-<p>Considérese el espacio equiprobable</p>
+<section id="actualización-secuencial" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="actualización-secuencial"><span class="header-section-number">6.11</span> Actualización secuencial</h2>
+<p>Sean <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> dos evidencias. Entonces</p>
 <p><span class="math display">\[
-\Omega=\{1,2,3,4\}
+P(H\mid E_1,E_2)
+=
+\frac{P(H\mid E_1)P(E_2\mid H,E_1)}
+{P(E_2\mid E_1)}.
 \]</span></p>
-<p>y los eventos</p>
-<p><span class="math display">\[
-A=\{1,2\},\qquad
-B=\{1,3\},\qquad
-C=\{1,4\}.
-\]</span></p>
-<p>Cada evento tiene probabilidad <span class="math inline">\(1/2\)</span>. Además,</p>
-<p><span class="math display">\[
-P(A\cap B)=P(A\cap C)=P(B\cap C)=\frac14,
-\]</span></p>
-<p>por lo que son independientes por pares.</p>
-<p>Sin embargo,</p>
-<p><span class="math display">\[
-A\cap B\cap C=\{1\},
-\]</span></p>
-<p>de modo que</p>
-<p><span class="math display">\[
-P(A\cap B\cap C)=\frac14
-\neq
-\frac18
-=P(A)P(B)P(C).
-\]</span></p>
-<p>Por tanto, no son mutuamente independientes.</p>
+<p>La distribución posterior tras observar <span class="math inline">\(E_1\)</span> puede utilizarse como distribución previa en la actualización con <span class="math inline">\(E_2\)</span>.</p>
+<p>Esto formaliza la idea de aprendizaje secuencial.</p>
 </section>
-<section id="dependencia-inducida-por-muestreo-sin-reemplazo" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="dependencia-inducida-por-muestreo-sin-reemplazo"><span class="header-section-number">5.10</span> Dependencia inducida por muestreo sin reemplazo</h2>
-<p>Sea una urna con <span class="math inline">\(N\)</span> objetos, de los cuales <span class="math inline">\(K\)</span> poseen cierta propiedad. Si se extraen dos objetos sin reemplazo y definimos</p>
-<ul>
-<li><span class="math inline">\(A=\)</span> “el primero posee la propiedad”;</li>
-<li><span class="math inline">\(B=\)</span> “el segundo posee la propiedad”,</li>
-</ul>
-<p>entonces</p>
+<section id="evidencia-condicionalmente-independiente" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="evidencia-condicionalmente-independiente"><span class="header-section-number">6.12</span> Evidencia condicionalmente independiente</h2>
+<p>Si <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> son condicionalmente independientes dado <span class="math inline">\(H\)</span>, entonces</p>
 <p><span class="math display">\[
-P(A)=\frac KN,
+P(E_1\cap E_2\mid H)
+=P(E_1\mid H)P(E_2\mid H).
 \]</span></p>
-<p>pero</p>
-<p><span class="math display">\[
-P(B\mid A)=\frac{K-1}{N-1}.
-\]</span></p>
-<p>En general,</p>
-<p><span class="math display">\[
-\frac{K-1}{N-1}\neq\frac KN,
-\]</span></p>
-<p>por lo que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no son independientes.</p>
+<p>Bajo esta hipótesis, la actualización con múltiples evidencias se simplifica.</p>
+<p>No debe confundirse independencia ordinaria con independencia condicional.</p>
 </section>
-<section id="observación-sobre-eventos-de-probabilidad-cero" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="observación-sobre-eventos-de-probabilidad-cero"><span class="header-section-number">5.11</span> Observación sobre eventos de probabilidad cero</h2>
-<p>La igualdad</p>
-<p><span class="math display">\[
-P(A\mid B)=\frac{P(A\cap B)}{P(B)}
-\]</span></p>
-<p>sólo está definida mediante esta fórmula cuando <span class="math inline">\(P(B)&gt;0\)</span>.</p>
-<p>En cursos más avanzados se introduce la probabilidad condicional respecto de sigma-álgebras y variables aleatorias mediante esperanza condicional, lo que permite tratar situaciones más generales. Ese desarrollo queda fuera del alcance de este volumen introductorio.</p>
+<section id="tasa-base-y-posterior" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="tasa-base-y-posterior"><span class="header-section-number">6.13</span> Tasa base y posterior</h2>
+<p>El teorema de Bayes muestra que una gran verosimilitud no garantiza una gran probabilidad posterior. El valor de <span class="math inline">\(P(B_i)\)</span> influye necesariamente en la respuesta.</p>
+<p>Por ello, en problemas de clasificación o diagnóstico, ignorar las probabilidades previas puede producir inferencias seriamente engañosas.</p>
 </section>
-<section id="proposición-criterio-de-independencia-mediante-complementos" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="proposición-criterio-de-independencia-mediante-complementos"><span class="header-section-number">5.12</span> Proposición: criterio de independencia mediante complementos</h2>
-<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> eventos. Son equivalentes:</p>
+<section id="relación-con-la-probabilidad-condicional" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="relación-con-la-probabilidad-condicional"><span class="header-section-number">6.14</span> Relación con la probabilidad condicional</h2>
+<p>Bayes no introduce una nueva noción de probabilidad. Es una consecuencia algebraica directa de</p>
+<p><span class="math display">\[
+P(A\cap B)=P(A)P(B\mid A)=P(B)P(A\mid B).
+\]</span></p>
+<p>Siempre que <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(P(B)&gt;0\)</span>,</p>
+<p><span class="math display">\[
+P(B\mid A)
+=\frac{P(B)P(A\mid B)}{P(A)}.
+\]</span></p>
+<p>La ley de la probabilidad total aparece cuando el denominador <span class="math inline">\(P(A)\)</span> debe expresarse en términos de una partición.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">6.15</span> Ejercicios</h2>
 <ol type="1">
-<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes;</li>
-<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B\)</span> son independientes;</li>
-<li><span class="math inline">\(A\)</span> y <span class="math inline">\(B^c\)</span> son independientes;</li>
-<li><span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
-</ol>
-<p>La demostración se obtiene aplicando repetidamente las identidades del complemento y la aditividad.</p>
-</section>
-<section id="ejercicios-conceptuales-y-de-demostración" class="level2" data-number="5.13">
-<h2 data-number="5.13" class="anchored" data-anchor-id="ejercicios-conceptuales-y-de-demostración"><span class="header-section-number">5.13</span> Ejercicios conceptuales y de demostración</h2>
-<ol type="1">
-<li>Demuestra que, para <span class="math inline">\(P(B)&gt;0\)</span>, la aplicación <span class="math inline">\(P_B(A)=P(A\mid B)\)</span> satisface los axiomas de probabilidad.</li>
-<li>Prueba la regla de la cadena para cuatro eventos.</li>
-<li>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> independientes. Demuestra que <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes.</li>
-<li>Demuestra que si <span class="math inline">\(A\subseteq B\)</span>, <span class="math inline">\(P(A)&gt;0\)</span> y <span class="math inline">\(A\)</span> es independiente de <span class="math inline">\(B\)</span>, entonces <span class="math inline">\(P(B)=1\)</span>.</li>
-<li>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> mutuamente excluyentes. Determina todas las condiciones bajo las cuales también pueden ser independientes.</li>
-<li>Construye un ejemplo de tres eventos independientes por pares que no sean mutuamente independientes.</li>
-<li>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes y <span class="math inline">\(P(A)=0.4\)</span>, <span class="math inline">\(P(B)=0.7\)</span>, calcula la probabilidad de cada una de las cuatro regiones <span class="math inline">\(A\cap B\)</span>, <span class="math inline">\(A\cap B^c\)</span>, <span class="math inline">\(A^c\cap B\)</span> y <span class="math inline">\(A^c\cap B^c\)</span>.</li>
-<li>Demuestra que si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes, entonces</li>
+<li>Demuestra la ley de la probabilidad total para una partición de cuatro eventos.</li>
+<li>Prueba el teorema de Bayes a partir de la definición de probabilidad condicional y la ley de probabilidad total.</li>
+<li>Si <span class="math inline">\(B_1,B_2,B_3\)</span> forman una partición con probabilidades <span class="math inline">\(0.2,0.5,0.3\)</span> y <span class="math inline">\(P(A\mid B_i)=0.1,0.4,0.7\)</span>, calcula <span class="math inline">\(P(A)\)</span> y las tres probabilidades posteriores.</li>
+<li>Demuestra que las probabilidades posteriores obtenidas en el ejercicio anterior suman 1.</li>
+<li>Deriva la forma de Bayes en términos de odds para dos hipótesis complementarias.</li>
+<li>Sea <span class="math inline">\(P(H)=p\)</span>, <span class="math inline">\(P(E\mid H)=s\)</span> y <span class="math inline">\(P(E\mid H^c)=f\)</span>. Demuestra que</li>
 </ol>
 <p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A)P(B).
+P(H\mid E)=\frac{ps}{ps+(1-p)f}.
 \]</span></p>
-<ol start="9" type="1">
-<li><strong>Reto ★.</strong> Sea <span class="math inline">\(A_1,\ldots,A_n\)</span> una familia mutuamente independiente. Demuestra que sustituir cualquiera de los eventos por su complemento conserva la independencia mutua.</li>
+<ol start="7" type="1">
+<li>Analiza el límite de la expresión anterior cuando <span class="math inline">\(p\to0\)</span> y cuando <span class="math inline">\(p\to1\)</span>.</li>
+<li>Si <span class="math inline">\(P(E\mid H)=P(E\mid H^c)\)</span>, demuestra que <span class="math inline">\(P(H\mid E)=P(H)\)</span>.</li>
+<li>Si una evidencia tiene razón de verosimilitudes igual a 1, interpreta su efecto sobre las odds previas.</li>
+<li><strong>Reto ★.</strong> Supón que <span class="math inline">\(E_1\)</span> y <span class="math inline">\(E_2\)</span> son condicionalmente independientes dado <span class="math inline">\(H\)</span> y dado <span class="math inline">\(H^c\)</span>. Deriva una expresión para las odds posteriores tras observar ambas evidencias.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="5.14">
-<h2 data-number="5.14" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">5.14</span> Referencias del capítulo</h2>
-<p>La presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada a la organización formal de este libro.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="6.16">
+<h2 data-number="6.16" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">6.16</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>. La notación se adapta al enfoque formal adoptado en este libro.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -995,13 +1005,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04-axiomas-probabilidad.html" class="pagination-link" aria-label="Axiomas y propiedades de la probabilidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span>
+      <a href="./05-condicional-independencia.html" class="pagination-link" aria-label="Probabilidad condicional e independencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06-probabilidad-total-bayes.html" class="pagination-link" aria-label="Particiones, probabilidad total y teorema de Bayes">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Particiones, probabilidad total y teorema de Bayes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
