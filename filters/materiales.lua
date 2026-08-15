@@ -1,30 +1,25 @@
 local capitulos={
- ["01-incertidumbre-modelos.qmd"]="01-incertidumbre-probabilidad-colab.ipynb",
- ["02-espacios-eventos.qmd"]="02-espacios-eventos-colab.ipynb",
- ["03-conteo-probabilidad.qmd"]="03-conteo-probabilidad-colab.ipynb",
- ["04-axiomas-probabilidad.qmd"]="04-axiomas-probabilidad-colab.ipynb",
- ["05-condicional-independencia.qmd"]="05-condicional-independencia-colab.ipynb",
- ["06-probabilidad-total-bayes.qmd"]="06-probabilidad-total-bayes-colab.ipynb",
- ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf-colab.ipynb",
- ["08-variables-discretas-pmf.qmd"]="08-variables-discretas-pmf-colab.ipynb",
- ["09-variables-continuas-densidad.qmd"]="09-variables-continuas-densidad-colab.ipynb"
+ ["incertidumbre y modelos probabilísticos"]={c="01-incertidumbre-probabilidad-colab.ipynb",r="01-incertidumbre-probabilidad.Rmd"},
+ ["espacios muestrales y álgebra de eventos"]={c="02-espacios-eventos-colab.ipynb",r="02-espacios-eventos.Rmd"},
+ ["técnicas de conteo y enumeración"]={c="03-conteo-probabilidad-colab.ipynb",r="03-conteo-probabilidad.Rmd"},
+ ["axiomas y propiedades de la probabilidad"]={c="04-axiomas-probabilidad-colab.ipynb",r="04-axiomas-probabilidad.Rmd"},
+ ["probabilidad condicional e independencia"]={c="05-condicional-independencia-colab.ipynb",r="05-condicional-independencia.Rmd"},
+ ["particiones, probabilidad total y teorema de bayes"]={c="06-probabilidad-total-bayes-colab.ipynb",r="06-probabilidad-total-bayes.Rmd"},
+ ["variable aleatoria y función de distribución acumulada"]={c="07-variable-aleatoria-cdf-colab.ipynb",r="07-variable-aleatoria-cdf.Rmd"},
+ ["variables aleatorias discretas y función de masa de probabilidad"]={c="08-variables-discretas-pmf-colab.ipynb",r="08-variables-discretas-pmf.Rmd"},
+ ["variables aleatorias continuas y función de densidad"]={c="09-variables-continuas-densidad-colab.ipynb",r="09-variables-continuas-densidad.Rmd"}
 }
-local rfiles={
- ["01-incertidumbre-modelos.qmd"]="01-incertidumbre-probabilidad.Rmd",
- ["02-espacios-eventos.qmd"]="02-espacios-eventos.Rmd",
- ["03-conteo-probabilidad.qmd"]="03-conteo-probabilidad.Rmd",
- ["04-axiomas-probabilidad.qmd"]="04-axiomas-probabilidad.Rmd",
- ["05-condicional-independencia.qmd"]="05-condicional-independencia.Rmd",
- ["06-probabilidad-total-bayes.qmd"]="06-probabilidad-total-bayes.Rmd",
- ["07-variable-aleatoria-cdf.qmd"]="07-variable-aleatoria-cdf.Rmd",
- ["08-variables-discretas-pmf.qmd"]="08-variables-discretas-pmf.Rmd",
- ["09-variables-continuas-densidad.qmd"]="09-variables-continuas-densidad.Rmd"
-}
-local function base(p)return p:match("([^/\\]+)$")or p end
-local function bloques(name)
- local c=capitulos[name]; if not c then return {} end
- local colab="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/"..c
- local rurl="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/"..rfiles[name]
+
+local function title(doc)
+ for _,b in ipairs(doc.blocks) do
+  if b.t=="Header" and b.level==1 then return pandoc.utils.stringify(b.content):lower() end
+ end
+ return nil
+end
+
+local function bloques(cfg)
+ local colab="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/"..cfg.c
+ local rurl="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/"..cfg.r
  local md=string.format([[## Materiales complementarios del capítulo
 
 | Material | Formato | Acceso | Propósito |
@@ -39,14 +34,19 @@ Los cuadernos computacionales se alojan en el volumen **Introducción a la Proba
 ]],colab,rurl)
  return pandoc.read(md,"markdown").blocks
 end
+
 function Pandoc(doc)
- if not PANDOC_STATE.input_files or #PANDOC_STATE.input_files==0 then return doc end
- local name=base(PANDOC_STATE.input_files[1]); if not capitulos[name] then return doc end
- local extra=bloques(name); local out={}; local ins=false
+ local cfg=capitulos[title(doc)]
+ if not cfg then return doc end
+ local extra=bloques(cfg); local out={}; local ins=false
  for _,b in ipairs(doc.blocks) do
-  if not ins and b.t=="Header" and pandoc.utils.stringify(b.content):lower():match("referencias del capítulo") then for _,x in ipairs(extra)do table.insert(out,x)end;ins=true end
+  if not ins and b.t=="Header" and pandoc.utils.stringify(b.content):lower():match("referencias del capítulo") then
+   for _,x in ipairs(extra)do table.insert(out,x)end
+   ins=true
+  end
   table.insert(out,b)
  end
  if not ins then for _,x in ipairs(extra)do table.insert(out,x)end end
- doc.blocks=out;return doc
+ doc.blocks=out
+ return doc
 end
