@@ -10,11 +10,28 @@ local capitulos={
  ["variables aleatorias continuas y función de densidad"]={c="09-variables-continuas-densidad-colab.ipynb",r="09-variables-continuas-densidad.Rmd"}
 }
 
+local function clean(s)
+ if not s then return nil end
+ return pandoc.utils.stringify(s):lower():gsub("^%s+", ""):gsub("%s+$", "")
+end
+
 local function title(doc)
+ local mt=clean(doc.meta and doc.meta.title)
+ if mt and capitulos[mt] then return mt end
  for _,b in ipairs(doc.blocks) do
-  if b.t=="Header" and b.level==1 then return pandoc.utils.stringify(b.content):lower() end
+  if b.t=="Header" and b.level==1 then
+   local ht=clean(b.content)
+   if ht and capitulos[ht] then return ht end
+  end
  end
- return nil
+ return mt
+end
+
+local function already(doc)
+ for _,b in ipairs(doc.blocks) do
+  if b.t=="Header" and clean(b.content)=="materiales complementarios del capítulo" then return true end
+ end
+ return false
 end
 
 local function bloques(cfg)
@@ -36,11 +53,12 @@ Los cuadernos computacionales se alojan en el volumen **Introducción a la Proba
 end
 
 function Pandoc(doc)
+ if already(doc) then return doc end
  local cfg=capitulos[title(doc)]
  if not cfg then return doc end
  local extra=bloques(cfg); local out={}; local ins=false
  for _,b in ipairs(doc.blocks) do
-  if not ins and b.t=="Header" and pandoc.utils.stringify(b.content):lower():match("referencias del capítulo") then
+  if not ins and b.t=="Header" and clean(b.content)=="referencias del capítulo" then
    for _,x in ipairs(extra)do table.insert(out,x)end
    ins=true
   end
