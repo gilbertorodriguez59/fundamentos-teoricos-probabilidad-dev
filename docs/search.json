@@ -1390,6 +1390,176 @@
     ]
   },
   {
+    "objectID": "09-variables-continuas-densidad.html",
+    "href": "09-variables-continuas-densidad.html",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "",
+    "text": "9.1 Objetivos\nEn este capítulo se formalizan las variables aleatorias absolutamente continuas, sus funciones de densidad y su relación con la función de distribución acumulada. Se enfatizan las propiedades analíticas que distinguen el caso continuo del discreto.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#variables-aleatorias-absolutamente-continuas",
+    "href": "09-variables-continuas-densidad.html#variables-aleatorias-absolutamente-continuas",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.2 Variables aleatorias absolutamente continuas",
+    "text": "9.2 Variables aleatorias absolutamente continuas\nSea \\(X\\) una variable aleatoria definida sobre \\((\\Omega,\\mathcal F,P)\\). Decimos que \\(X\\) es absolutamente continua si existe una función integrable\n\\[\nf_X:\\mathbb R\\to[0,\\infty)\n\\]\ntal que, para todo conjunto boreliano \\(A\\subseteq\\mathbb R\\),\n\\[\nP(X\\in A)=\\int_A f_X(x)\\,dx.\n\\]\nLa función \\(f_X\\) se denomina densidad de probabilidad de \\(X\\).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#condiciones-básicas-de-una-densidad",
+    "href": "09-variables-continuas-densidad.html#condiciones-básicas-de-una-densidad",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.3 Condiciones básicas de una densidad",
+    "text": "9.3 Condiciones básicas de una densidad\nToda densidad satisface\n\\[\nf_X(x)\\geq0\n\\]\npara casi todo \\(x\\), y\n\\[\n\\int_{-\\infty}^{\\infty} f_X(x)\\,dx=1.\n\\]\nRecíprocamente, toda función medible no negativa con integral total 1 define una distribución absolutamente continua.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#probabilidad-de-intervalos",
+    "href": "09-variables-continuas-densidad.html#probabilidad-de-intervalos",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.4 Probabilidad de intervalos",
+    "text": "9.4 Probabilidad de intervalos\nPara \\(a&lt;b\\),\n\\[\nP(a&lt;X\\leq b)=\\int_a^b f_X(x)\\,dx.\n\\]\nComo los conjuntos de un solo punto tienen medida de Lebesgue cero,\n\\[\nP(X=x)=0\n\\]\npara todo \\(x\\in\\mathbb R\\).\nPor ello,\n\\[\nP(a&lt;X&lt;b)=P(a\\leq X\\leq b)=P(a&lt;X\\leq b).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#la-densidad-no-es-una-probabilidad-puntual",
+    "href": "09-variables-continuas-densidad.html#la-densidad-no-es-una-probabilidad-puntual",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.5 La densidad no es una probabilidad puntual",
+    "text": "9.5 La densidad no es una probabilidad puntual\nEn general,\n\\[\nf_X(x)\\neq P(X=x).\n\\]\nLa densidad describe cómo se distribuye localmente la probabilidad respecto de la medida de Lebesgue. Su valor puntual puede ser mayor que 1 sin contradicción, siempre que la integral total permanezca igual a 1.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#función-de-distribución-acumulada",
+    "href": "09-variables-continuas-densidad.html#función-de-distribución-acumulada",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.6 Función de distribución acumulada",
+    "text": "9.6 Función de distribución acumulada\nLa CDF de \\(X\\) es\n\\[\nF_X(x)=P(X\\leq x).\n\\]\nSi \\(X\\) es absolutamente continua,\n\\[\n\\boxed{F_X(x)=\\int_{-\\infty}^{x}f_X(t)\\,dt}.\n\\]\nEn consecuencia, \\(F_X\\) es absolutamente continua y\n\\[\nF_X'(x)=f_X(x)\n\\]\npara casi todo \\(x\\).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#recuperación-de-probabilidades-desde-la-cdf",
+    "href": "09-variables-continuas-densidad.html#recuperación-de-probabilidades-desde-la-cdf",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.7 Recuperación de probabilidades desde la CDF",
+    "text": "9.7 Recuperación de probabilidades desde la CDF\nPara \\(a&lt;b\\),\n\\[\nP(a&lt;X\\leq b)=F_X(b)-F_X(a).\n\\]\nComo \\(P(X=a)=0\\),\n\\[\nP(a&lt;X&lt;b)=F_X(b)-F_X(a).\n\\]\nTambién\n\\[\nP(X&gt;x)=1-F_X(x).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#densidad-a-partir-de-una-cdf",
+    "href": "09-variables-continuas-densidad.html#densidad-a-partir-de-una-cdf",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.8 Densidad a partir de una CDF",
+    "text": "9.8 Densidad a partir de una CDF\nSi una CDF \\(F\\) es absolutamente continua, entonces existe una función integrable \\(f\\) tal que\n\\[\nF(x)=\\int_{-\\infty}^{x}f(t)\\,dt.\n\\]\nAdemás,\n\\[\nf(x)=F'(x)\n\\]\ncasi en todas partes.\nNo toda CDF continua posee necesariamente una densidad; la continuidad por sí sola es una condición más débil que la absoluta continuidad.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#ejemplo-normalizado",
+    "href": "09-variables-continuas-densidad.html#ejemplo-normalizado",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.9 Ejemplo normalizado",
+    "text": "9.9 Ejemplo normalizado\nSea\n\\[\nf(x)=\n\\begin{cases}\ncx, & 0\\leq x\\leq2,\\\\\n0, & \\text{en otro caso}.\n\\end{cases}\n\\]\nLa condición\n\\[\n\\int_0^2 cx\\,dx=1\n\\]\nproduce\n\\[\nc=\\frac12.\n\\]\nPor tanto,\n\\[\nf(x)=\\frac{x}{2},\\qquad0\\leq x\\leq2.\n\\]\nLa CDF es\n\\[\nF(x)=\n\\begin{cases}\n0, & x&lt;0,\\\\\n\\frac{x^2}{4}, & 0\\leq x\\leq2,\\\\\n1, & x&gt;2.\n\\end{cases}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#propiedad-de-conjuntos-de-medida-cero",
+    "href": "09-variables-continuas-densidad.html#propiedad-de-conjuntos-de-medida-cero",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.10 Propiedad de conjuntos de medida cero",
+    "text": "9.10 Propiedad de conjuntos de medida cero\nSi \\(N\\subseteq\\mathbb R\\) tiene medida de Lebesgue cero y \\(X\\) es absolutamente continua, entonces\n\\[\nP(X\\in N)=0.\n\\]\nEsto incluye todos los conjuntos finitos y numerables. Así, una variable absolutamente continua asigna probabilidad cero a cualquier conjunto numerable de valores.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#comparación-formal-con-el-caso-discreto",
+    "href": "09-variables-continuas-densidad.html#comparación-formal-con-el-caso-discreto",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.11 Comparación formal con el caso discreto",
+    "text": "9.11 Comparación formal con el caso discreto\nEn el caso discreto,\n\\[\nP(X=x)=p_X(x)\n\\]\npuede ser positivo.\nEn el caso absolutamente continuo,\n\\[\nP(X=x)=0\n\\]\npara todo \\(x\\).\nLa suma\n\\[\n\\sum_x p_X(x)\n\\]\ndel caso discreto es reemplazada por la integral\n\\[\n\\int f_X(x)\\,dx.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#soporte-de-una-distribución-continua",
+    "href": "09-variables-continuas-densidad.html#soporte-de-una-distribución-continua",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.12 Soporte de una distribución continua",
+    "text": "9.12 Soporte de una distribución continua\nUna noción útil de soporte es el cierre del conjunto donde la densidad es positiva. Si\n\\[\nf_X(x)&gt;0\n\\]\nsólo para \\(x\\in(a,b)\\), entonces el soporte puede identificarse con \\([a,b]\\) bajo condiciones regulares.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#unicidad-casi-en-todas-partes",
+    "href": "09-variables-continuas-densidad.html#unicidad-casi-en-todas-partes",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.13 Unicidad casi en todas partes",
+    "text": "9.13 Unicidad casi en todas partes\nSi dos densidades \\(f\\) y \\(g\\) generan la misma distribución, entonces\n\\[\nf(x)=g(x)\n\\]\npara casi todo \\(x\\).\nEs decir, pueden diferir en un conjunto de medida cero sin alterar ninguna probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#transformaciones-monótonas",
+    "href": "09-variables-continuas-densidad.html#transformaciones-monótonas",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.14 Transformaciones monótonas",
+    "text": "9.14 Transformaciones monótonas\nSea \\(Y=g(X)\\), donde \\(g\\) es estrictamente monótona, diferenciable y con inversa diferenciable. Si \\(X\\) tiene densidad \\(f_X\\), entonces\n\\[\nf_Y(y)=f_X(g^{-1}(y))\\left|\\frac{d}{dy}g^{-1}(y)\\right|.\n\\]\nEsta fórmula se estudiará con mayor detalle al abordar funciones de variables aleatorias.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#ejemplo-de-transformación",
+    "href": "09-variables-continuas-densidad.html#ejemplo-de-transformación",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.15 Ejemplo de transformación",
+    "text": "9.15 Ejemplo de transformación\nSi \\(X\\) tiene densidad\n\\[\nf_X(x)=2x,\\qquad0&lt;x&lt;1,\n\\]\ny definimos\n\\[\nY=X^2,\n\\]\nentonces\n\\[\ng^{-1}(y)=\\sqrt y,\n\\]\ny\n\\[\n\\frac{d}{dy}g^{-1}(y)=\\frac{1}{2\\sqrt y}.\n\\]\nPor tanto,\n\\[\nf_Y(y)=2\\sqrt y\\cdot\\frac{1}{2\\sqrt y}=1,\n\\]\npara \\(0&lt;y&lt;1\\).\nAsí, \\(Y\\) tiene densidad uniforme sobre \\((0,1)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#ejercicios",
+    "href": "09-variables-continuas-densidad.html#ejercicios",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.16 Ejercicios",
+    "text": "9.16 Ejercicios\n\nDemuestra que si \\(f\\geq0\\) y \\(\\int_{-\\infty}^{\\infty}f(x)dx=1\\), entonces \\(P(A)=\\int_Af(x)dx\\) define una medida de probabilidad sobre los borelianos.\nPrueba que una variable absolutamente continua satisface \\(P(X=x)=0\\) para todo \\(x\\).\nSea \\(f(x)=c(1+x)\\) para \\(0\\leq x\\leq1\\). Determina \\(c\\) y la CDF correspondiente.\nDemuestra que, para una variable absolutamente continua, incluir o excluir los extremos de un intervalo no cambia su probabilidad.\nSea \\(F(x)=x^3\\) para \\(0\\leq x\\leq1\\), con las extensiones usuales fuera del intervalo. Determina la densidad.\nExplica por qué modificar una densidad en un solo punto no cambia la distribución.\nSi \\(X\\) tiene densidad \\(2x\\) en \\((0,1)\\) y \\(Y=X^2\\), deriva formalmente la densidad de \\(Y\\).\nPrueba que si \\(N\\) es numerable y \\(X\\) es absolutamente continua, entonces \\(P(X\\in N)=0\\).\nDa un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.\nReto ★. Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
+    "objectID": "09-variables-continuas-densidad.html#referencias-del-capítulo",
+    "href": "09-variables-continuas-densidad.html#referencias-del-capítulo",
+    "title": "9  Variables aleatorias continuas y función de densidad",
+    "section": "9.17 Referencias del capítulo",
+    "text": "9.17 Referencias del capítulo\nEl desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel formal de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",

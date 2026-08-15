@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Axiomas y propiedades de la probabilidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>9&nbsp; Variables aleatorias continuas y función de densidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-condicional-independencia.html" rel="next">
-<link href="./03-conteo-probabilidad.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./08-variables-discretas-pmf.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-axiomas-probabilidad.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-variables-continuas-densidad.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -215,7 +215,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link active">
+  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span></a>
   </div>
 </li>
@@ -245,7 +245,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span></a>
   </div>
 </li>
@@ -265,65 +265,23 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#propósitos-de-aprendizaje" id="toc-propósitos-de-aprendizaje" class="nav-link active" data-scroll-target="#propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</a></li>
-  <li><a href="#espacios-de-probabilidad" id="toc-espacios-de-probabilidad" class="nav-link" data-scroll-target="#espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</a></li>
-  <li><a href="#axiomas-de-kolmogórov" id="toc-axiomas-de-kolmogórov" class="nav-link" data-scroll-target="#axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</a>
-  <ul class="collapse">
-  <li><a href="#axioma-1-no-negatividad" id="toc-axioma-1-no-negatividad" class="nav-link" data-scroll-target="#axioma-1-no-negatividad">Axioma 1: no negatividad</a></li>
-  <li><a href="#axioma-2-normalización" id="toc-axioma-2-normalización" class="nav-link" data-scroll-target="#axioma-2-normalización">Axioma 2: normalización</a></li>
-  <li><a href="#axioma-3-aditividad-numerable" id="toc-axioma-3-aditividad-numerable" class="nav-link" data-scroll-target="#axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</a></li>
-  </ul></li>
-  <li><a href="#probabilidad-del-conjunto-vacío" id="toc-probabilidad-del-conjunto-vacío" class="nav-link" data-scroll-target="#probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</a>
-  <ul class="collapse">
-  <li><a href="#proposición" id="toc-proposición" class="nav-link" data-scroll-target="#proposición">Proposición</a></li>
-  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
-  </ul></li>
-  <li><a href="#aditividad-finita" id="toc-aditividad-finita" class="nav-link" data-scroll-target="#aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</a>
-  <ul class="collapse">
-  <li><a href="#proposición-1" id="toc-proposición-1" class="nav-link" data-scroll-target="#proposición-1">Proposición</a></li>
-  <li><a href="#justificación" id="toc-justificación" class="nav-link" data-scroll-target="#justificación">Justificación</a></li>
-  </ul></li>
-  <li><a href="#regla-del-complemento" id="toc-regla-del-complemento" class="nav-link" data-scroll-target="#regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</a>
-  <ul class="collapse">
-  <li><a href="#proposición-2" id="toc-proposición-2" class="nav-link" data-scroll-target="#proposición-2">Proposición</a></li>
-  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
-  </ul></li>
-  <li><a href="#monotonía" id="toc-monotonía" class="nav-link" data-scroll-target="#monotonía"><span class="header-section-number">4.7</span> Monotonía</a>
-  <ul class="collapse">
-  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
-  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
-  <li><a href="#corolario" id="toc-corolario" class="nav-link" data-scroll-target="#corolario">Corolario</a></li>
-  </ul></li>
-  <li><a href="#probabilidad-de-una-diferencia" id="toc-probabilidad-de-una-diferencia" class="nav-link" data-scroll-target="#probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</a>
-  <ul class="collapse">
-  <li><a href="#proposición-3" id="toc-proposición-3" class="nav-link" data-scroll-target="#proposición-3">Proposición</a></li>
-  <li><a href="#demostración-3" id="toc-demostración-3" class="nav-link" data-scroll-target="#demostración-3">Demostración</a></li>
-  </ul></li>
-  <li><a href="#fórmula-de-la-unión-de-dos-eventos" id="toc-fórmula-de-la-unión-de-dos-eventos" class="nav-link" data-scroll-target="#fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</a>
-  <ul class="collapse">
-  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
-  <li><a href="#demostración-4" id="toc-demostración-4" class="nav-link" data-scroll-target="#demostración-4">Demostración</a></li>
-  </ul></li>
-  <li><a href="#cotas-de-fréchet-para-dos-eventos" id="toc-cotas-de-fréchet-para-dos-eventos" class="nav-link" data-scroll-target="#cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</a></li>
-  <li><a href="#subaditividad" id="toc-subaditividad" class="nav-link" data-scroll-target="#subaditividad"><span class="header-section-number">4.11</span> Subaditividad</a>
-  <ul class="collapse">
-  <li><a href="#teorema-2" id="toc-teorema-2" class="nav-link" data-scroll-target="#teorema-2">Teorema</a></li>
-  <li><a href="#demostración-5" id="toc-demostración-5" class="nav-link" data-scroll-target="#demostración-5">Demostración</a></li>
-  <li><a href="#generalización-numerable" id="toc-generalización-numerable" class="nav-link" data-scroll-target="#generalización-numerable">Generalización numerable</a></li>
-  </ul></li>
-  <li><a href="#inclusión-exclusión-para-tres-eventos" id="toc-inclusión-exclusión-para-tres-eventos" class="nav-link" data-scroll-target="#inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</a></li>
-  <li><a href="#inclusión-exclusión-finita" id="toc-inclusión-exclusión-finita" class="nav-link" data-scroll-target="#inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</a></li>
-  <li><a href="#continuidad-de-la-probabilidad" id="toc-continuidad-de-la-probabilidad" class="nav-link" data-scroll-target="#continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#continuidad-desde-abajo" id="toc-continuidad-desde-abajo" class="nav-link" data-scroll-target="#continuidad-desde-abajo">Continuidad desde abajo</a></li>
-  <li><a href="#continuidad-desde-arriba" id="toc-continuidad-desde-arriba" class="nav-link" data-scroll-target="#continuidad-desde-arriba">Continuidad desde arriba</a></li>
-  </ul></li>
-  <li><a href="#espacios-finitos" id="toc-espacios-finitos" class="nav-link" data-scroll-target="#espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</a></li>
-  <li><a href="#ejemplo-formal" id="toc-ejemplo-formal" class="nav-link" data-scroll-target="#ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</a></li>
-  <li><a href="#observación-conceptual-probabilidad-cero-e-imposibilidad" id="toc-observación-conceptual-probabilidad-cero-e-imposibilidad" class="nav-link" data-scroll-target="#observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</a></li>
-  <li><a href="#errores-conceptuales-frecuentes" id="toc-errores-conceptuales-frecuentes" class="nav-link" data-scroll-target="#errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">4.19</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">9.1</span> Objetivos</a></li>
+  <li><a href="#variables-aleatorias-absolutamente-continuas" id="toc-variables-aleatorias-absolutamente-continuas" class="nav-link" data-scroll-target="#variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</a></li>
+  <li><a href="#condiciones-básicas-de-una-densidad" id="toc-condiciones-básicas-de-una-densidad" class="nav-link" data-scroll-target="#condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</a></li>
+  <li><a href="#probabilidad-de-intervalos" id="toc-probabilidad-de-intervalos" class="nav-link" data-scroll-target="#probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</a></li>
+  <li><a href="#la-densidad-no-es-una-probabilidad-puntual" id="toc-la-densidad-no-es-una-probabilidad-puntual" class="nav-link" data-scroll-target="#la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</a></li>
+  <li><a href="#función-de-distribución-acumulada" id="toc-función-de-distribución-acumulada" class="nav-link" data-scroll-target="#función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</a></li>
+  <li><a href="#recuperación-de-probabilidades-desde-la-cdf" id="toc-recuperación-de-probabilidades-desde-la-cdf" class="nav-link" data-scroll-target="#recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</a></li>
+  <li><a href="#densidad-a-partir-de-una-cdf" id="toc-densidad-a-partir-de-una-cdf" class="nav-link" data-scroll-target="#densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</a></li>
+  <li><a href="#ejemplo-normalizado" id="toc-ejemplo-normalizado" class="nav-link" data-scroll-target="#ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</a></li>
+  <li><a href="#propiedad-de-conjuntos-de-medida-cero" id="toc-propiedad-de-conjuntos-de-medida-cero" class="nav-link" data-scroll-target="#propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</a></li>
+  <li><a href="#comparación-formal-con-el-caso-discreto" id="toc-comparación-formal-con-el-caso-discreto" class="nav-link" data-scroll-target="#comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</a></li>
+  <li><a href="#soporte-de-una-distribución-continua" id="toc-soporte-de-una-distribución-continua" class="nav-link" data-scroll-target="#soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</a></li>
+  <li><a href="#unicidad-casi-en-todas-partes" id="toc-unicidad-casi-en-todas-partes" class="nav-link" data-scroll-target="#unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</a></li>
+  <li><a href="#transformaciones-monótonas" id="toc-transformaciones-monótonas" class="nav-link" data-scroll-target="#transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</a></li>
+  <li><a href="#ejemplo-de-transformación" id="toc-ejemplo-de-transformación" class="nav-link" data-scroll-target="#ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.16</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -332,7 +290,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></h1>
 </div>
 
 
@@ -349,504 +307,231 @@ window.Quarto = {
 </header>
 
 
-<section id="propósitos-de-aprendizaje" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</h2>
-<p>Al finalizar este capítulo, el lector será capaz de:</p>
-<ul>
-<li>describir formalmente una medida de probabilidad sobre un espacio medible;</li>
-<li>interpretar los axiomas de Kolmogórov;</li>
-<li>deducir propiedades fundamentales de una medida de probabilidad;</li>
-<li>demostrar monotonía, subaditividad e inclusión-exclusión para eventos finitos;</li>
-<li>distinguir entre propiedades primitivas y resultados derivados;</li>
-<li>analizar restricciones de coherencia entre probabilidades marginales e intersecciones.</li>
-</ul>
+<section id="objetivos" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">9.1</span> Objetivos</h2>
+<p>En este capítulo se formalizan las variables aleatorias absolutamente continuas, sus funciones de densidad y su relación con la función de distribución acumulada. Se enfatizan las propiedades analíticas que distinguen el caso continuo del discreto.</p>
 </section>
-<section id="espacios-de-probabilidad" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</h2>
-<p>Un <strong>espacio de probabilidad</strong> es una terna</p>
+<section id="variables-aleatorias-absolutamente-continuas" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria definida sobre <span class="math inline">\((\Omega,\mathcal F,P)\)</span>. Decimos que <span class="math inline">\(X\)</span> es <strong>absolutamente continua</strong> si existe una función integrable</p>
 <p><span class="math display">\[
-(\Omega,\mathcal F,P),
+f_X:\mathbb R\to[0,\infty)
 \]</span></p>
-<p>donde:</p>
-<ol type="1">
-<li><span class="math inline">\(\Omega\)</span> es un conjunto no vacío llamado espacio muestral;</li>
-<li><span class="math inline">\(\mathcal F\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra de subconjuntos de <span class="math inline">\(\Omega\)</span>;</li>
-<li><span class="math inline">\(P:\mathcal F\to[0,1]\)</span> es una medida de probabilidad.</li>
-</ol>
-<p>La familia <span class="math inline">\(\mathcal F\)</span> determina cuáles subconjuntos de <span class="math inline">\(\Omega\)</span> son considerados eventos medibles. La función <span class="math inline">\(P\)</span> asigna a cada evento un número real que satisface los axiomas que se presentan a continuación.</p>
+<p>tal que, para todo conjunto boreliano <span class="math inline">\(A\subseteq\mathbb R\)</span>,</p>
+<p><span class="math display">\[
+P(X\in A)=\int_A f_X(x)\,dx.
+\]</span></p>
+<p>La función <span class="math inline">\(f_X\)</span> se denomina <strong>densidad de probabilidad</strong> de <span class="math inline">\(X\)</span>.</p>
 </section>
-<section id="axiomas-de-kolmogórov" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</h2>
-<p>Sea <span class="math inline">\((\Omega,\mathcal F)\)</span> un espacio medible. Una función</p>
+<section id="condiciones-básicas-de-una-densidad" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</h2>
+<p>Toda densidad satisface</p>
 <p><span class="math display">\[
-P:\mathcal F\to[0,1]
+f_X(x)\geq0
 \]</span></p>
-<p>es una medida de probabilidad si satisface:</p>
-<section id="axioma-1-no-negatividad" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-1-no-negatividad">Axioma 1: no negatividad</h3>
-<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<p>para casi todo <span class="math inline">\(x\)</span>, y</p>
 <p><span class="math display">\[
-P(A)\geq 0.
+\int_{-\infty}^{\infty} f_X(x)\,dx=1.
 \]</span></p>
+<p>Recíprocamente, toda función medible no negativa con integral total 1 define una distribución absolutamente continua.</p>
 </section>
-<section id="axioma-2-normalización" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-2-normalización">Axioma 2: normalización</h3>
+<section id="probabilidad-de-intervalos" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</h2>
+<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
 <p><span class="math display">\[
-P(\Omega)=1.
+P(a&lt;X\leq b)=\int_a^b f_X(x)\,dx.
+\]</span></p>
+<p>Como los conjuntos de un solo punto tienen medida de Lebesgue cero,</p>
+<p><span class="math display">\[
+P(X=x)=0
+\]</span></p>
+<p>para todo <span class="math inline">\(x\in\mathbb R\)</span>.</p>
+<p>Por ello,</p>
+<p><span class="math display">\[
+P(a&lt;X&lt;b)=P(a\leq X\leq b)=P(a&lt;X\leq b).
 \]</span></p>
 </section>
-<section id="axioma-3-aditividad-numerable" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</h3>
-<p>Si <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span> son mutuamente excluyentes, es decir,</p>
+<section id="la-densidad-no-es-una-probabilidad-puntual" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</h2>
+<p>En general,</p>
 <p><span class="math display">\[
-A_i\cap A_j=\varnothing\qquad(i\neq j),
+f_X(x)\neq P(X=x).
 \]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-=\sum_{n=1}^{\infty}P(A_n).
-\]</span></p>
-<p>La aditividad numerable es la condición estructural central. Muchas fórmulas elementales de probabilidad se deducen de ella.</p>
+<p>La densidad describe cómo se distribuye localmente la probabilidad respecto de la medida de Lebesgue. Su valor puntual puede ser mayor que 1 sin contradicción, siempre que la integral total permanezca igual a 1.</p>
 </section>
-</section>
-<section id="probabilidad-del-conjunto-vacío" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</h2>
-<section id="proposición" class="level3">
-<h3 class="anchored" data-anchor-id="proposición">Proposición</h3>
+<section id="función-de-distribución-acumulada" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</h2>
+<p>La CDF de <span class="math inline">\(X\)</span> es</p>
 <p><span class="math display">\[
-P(\varnothing)=0.
+F_X(x)=P(X\leq x).
 \]</span></p>
-</section>
-<section id="demostración" class="level3">
-<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Como</p>
+<p>Si <span class="math inline">\(X\)</span> es absolutamente continua,</p>
 <p><span class="math display">\[
-\Omega=\Omega\cup\varnothing
+\boxed{F_X(x)=\int_{-\infty}^{x}f_X(t)\,dt}.
 \]</span></p>
-<p>y los dos conjuntos son disjuntos, por aditividad,</p>
+<p>En consecuencia, <span class="math inline">\(F_X\)</span> es absolutamente continua y</p>
 <p><span class="math display">\[
-P(\Omega)=P(\Omega)+P(\varnothing).
+F_X'(x)=f_X(x)
 \]</span></p>
-<p>Restando <span class="math inline">\(P(\Omega)\)</span> en ambos lados obtenemos</p>
+<p>para casi todo <span class="math inline">\(x\)</span>.</p>
+</section>
+<section id="recuperación-de-probabilidades-desde-la-cdf" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</h2>
+<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
 <p><span class="math display">\[
-P(\varnothing)=0.
-\qquad\square
+P(a&lt;X\leq b)=F_X(b)-F_X(a).
 \]</span></p>
-</section>
-</section>
-<section id="aditividad-finita" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</h2>
-<section id="proposición-1" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-1">Proposición</h3>
-<p>Si <span class="math inline">\(A_1,\ldots,A_n\in\mathcal F\)</span> son mutuamente excluyentes, entonces</p>
+<p>Como <span class="math inline">\(P(X=a)=0\)</span>,</p>
 <p><span class="math display">\[
-P\left(\bigcup_{i=1}^{n}A_i\right)
-=\sum_{i=1}^{n}P(A_i).
+P(a&lt;X&lt;b)=F_X(b)-F_X(a).
+\]</span></p>
+<p>También</p>
+<p><span class="math display">\[
+P(X&gt;x)=1-F_X(x).
 \]</span></p>
 </section>
-<section id="justificación" class="level3">
-<h3 class="anchored" data-anchor-id="justificación">Justificación</h3>
-<p>Puede aplicarse la aditividad numerable a la sucesión</p>
+<section id="densidad-a-partir-de-una-cdf" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</h2>
+<p>Si una CDF <span class="math inline">\(F\)</span> es absolutamente continua, entonces existe una función integrable <span class="math inline">\(f\)</span> tal que</p>
 <p><span class="math display">\[
-A_1,\ldots,A_n,\varnothing,\varnothing,\ldots
-\]</span></p>
-<p>y utilizar <span class="math inline">\(P(\varnothing)=0\)</span>.</p>
-</section>
-</section>
-<section id="regla-del-complemento" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</h2>
-<section id="proposición-2" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-2">Proposición</h3>
-<p>Para todo evento <span class="math inline">\(A\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A^c)=1-P(A).
-\]</span></p>
-</section>
-<section id="demostración-1" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
-<p>Como</p>
-<p><span class="math display">\[
-A\cap A^c=\varnothing
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A\cup A^c=\Omega,
-\]</span></p>
-<p>por aditividad finita,</p>
-<p><span class="math display">\[
-1=P(\Omega)=P(A)+P(A^c).
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-P(A^c)=1-P(A).
-\qquad\square
-\]</span></p>
-</section>
-</section>
-<section id="monotonía" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="monotonía"><span class="header-section-number">4.7</span> Monotonía</h2>
-<section id="teorema" class="level3">
-<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
-<p>Si <span class="math inline">\(A,B\in\mathcal F\)</span> y</p>
-<p><span class="math display">\[
-A\subseteq B,
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P(A)\leq P(B).
-\]</span></p>
-</section>
-<section id="demostración-2" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
-<p>Como</p>
-<p><span class="math display">\[
-B=A\cup(B\setminus A)
-\]</span></p>
-<p>y los conjuntos son disjuntos,</p>
-<p><span class="math display">\[
-P(B)=P(A)+P(B\setminus A).
-\]</span></p>
-<p>Por no negatividad,</p>
-<p><span class="math display">\[
-P(B\setminus A)\geq0.
-\]</span></p>
-<p>Luego</p>
-<p><span class="math display">\[
-P(B)\geq P(A).
-\qquad\square
-\]</span></p>
-</section>
-<section id="corolario" class="level3">
-<h3 class="anchored" data-anchor-id="corolario">Corolario</h3>
-<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-0\leq P(A)\leq1.
-\]</span></p>
-<p>La cota inferior procede de la no negatividad y la superior de <span class="math inline">\(A\subseteq\Omega\)</span>.</p>
-</section>
-</section>
-<section id="probabilidad-de-una-diferencia" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</h2>
-<section id="proposición-3" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-3">Proposición</h3>
-<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A\setminus B)=P(A)-P(A\cap B).
-\]</span></p>
-</section>
-<section id="demostración-3" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-3">Demostración</h3>
-<p>La descomposición</p>
-<p><span class="math display">\[
-A=(A\setminus B)\cup(A\cap B)
-\]</span></p>
-<p>es disjunta. Por tanto,</p>
-<p><span class="math display">\[
-P(A)=P(A\setminus B)+P(A\cap B),
-\]</span></p>
-<p>de donde se obtiene la identidad.</p>
-</section>
-</section>
-<section id="fórmula-de-la-unión-de-dos-eventos" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</h2>
-<section id="teorema-1" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
-<p>Para cualesquiera <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
-\]</span></p>
-</section>
-<section id="demostración-4" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-4">Demostración</h3>
-<p>Podemos escribir</p>
-<p><span class="math display">\[
-A\cup B=A\cup(B\setminus A),
-\]</span></p>
-<p>donde los dos eventos son disjuntos. Luego</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B\setminus A).
+F(x)=\int_{-\infty}^{x}f(t)\,dt.
 \]</span></p>
 <p>Además,</p>
 <p><span class="math display">\[
-P(B\setminus A)=P(B)-P(A\cap B).
+f(x)=F'(x)
 \]</span></p>
-<p>Sustituyendo,</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
-\qquad\square
-\]</span></p>
+<p>casi en todas partes.</p>
+<p>No toda CDF continua posee necesariamente una densidad; la continuidad por sí sola es una condición más débil que la absoluta continuidad.</p>
 </section>
-</section>
-<section id="cotas-de-fréchet-para-dos-eventos" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</h2>
-<p>A partir de</p>
+<section id="ejemplo-normalizado" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</h2>
+<p>Sea</p>
 <p><span class="math display">\[
-P(A\cup B)\leq1
+f(x)=
+\begin{cases}
+cx, &amp; 0\leq x\leq2,\\
+0, &amp; \text{en otro caso}.
+\end{cases}
 \]</span></p>
-<p>y de la fórmula de la unión,</p>
+<p>La condición</p>
 <p><span class="math display">\[
-P(A)+P(B)-P(A\cap B)\leq1.
+\int_0^2 cx\,dx=1
+\]</span></p>
+<p>produce</p>
+<p><span class="math display">\[
+c=\frac12.
 \]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[
-P(A\cap B)\geq P(A)+P(B)-1.
+f(x)=\frac{x}{2},\qquad0\leq x\leq2.
 \]</span></p>
-<p>Como además</p>
+<p>La CDF es</p>
 <p><span class="math display">\[
-A\cap B\subseteq A
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A\cap B\subseteq B,
-\]</span></p>
-<p>se obtiene</p>
-<p><span class="math display">\[
-P(A\cap B)\leq\min\{P(A),P(B)\}.
-\]</span></p>
-<p>En consecuencia,</p>
-<p><span class="math display">\[
-\boxed{
-\max\{0,P(A)+P(B)-1\}
-\leq P(A\cap B)
-\leq \min\{P(A),P(B)\}
-}.
-\]</span></p>
-<p>Estas desigualdades caracterizan las restricciones básicas que debe satisfacer una intersección dada la probabilidad marginal de cada evento.</p>
-</section>
-<section id="subaditividad" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="subaditividad"><span class="header-section-number">4.11</span> Subaditividad</h2>
-<section id="teorema-2" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-2">Teorema</h3>
-<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A\cup B)\leq P(A)+P(B).
+F(x)=
+\begin{cases}
+0, &amp; x&lt;0,\\
+\frac{x^2}{4}, &amp; 0\leq x\leq2,\\
+1, &amp; x&gt;2.
+\end{cases}
 \]</span></p>
 </section>
-<section id="demostración-5" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-5">Demostración</h3>
-<p>La fórmula de la unión da</p>
+<section id="propiedad-de-conjuntos-de-medida-cero" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</h2>
+<p>Si <span class="math inline">\(N\subseteq\mathbb R\)</span> tiene medida de Lebesgue cero y <span class="math inline">\(X\)</span> es absolutamente continua, entonces</p>
 <p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
+P(X\in N)=0.
 \]</span></p>
-<p>Como</p>
-<p><span class="math display">\[
-P(A\cap B)\geq0,
-\]</span></p>
-<p>se sigue la desigualdad.</p>
+<p>Esto incluye todos los conjuntos finitos y numerables. Así, una variable absolutamente continua asigna probabilidad cero a cualquier conjunto numerable de valores.</p>
 </section>
-<section id="generalización-numerable" class="level3">
-<h3 class="anchored" data-anchor-id="generalización-numerable">Generalización numerable</h3>
-<p>Para cualquier sucesión <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span>,</p>
+<section id="comparación-formal-con-el-caso-discreto" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</h2>
+<p>En el caso discreto,</p>
 <p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-\leq\sum_{n=1}^{\infty}P(A_n).
+P(X=x)=p_X(x)
 \]</span></p>
-<p>Esta propiedad se denomina <strong>subaditividad numerable</strong>.</p>
-</section>
-</section>
-<section id="inclusión-exclusión-para-tres-eventos" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</h2>
-<p>Para <span class="math inline">\(A,B,C\in\mathcal F\)</span>,</p>
+<p>puede ser positivo.</p>
+<p>En el caso absolutamente continuo,</p>
 <p><span class="math display">\[
-\begin{aligned}
-P(A\cup B\cup C)
-={}&amp;P(A)+P(B)+P(C)\\
-&amp;-P(A\cap B)-P(A\cap C)-P(B\cap C)\\
-&amp;+P(A\cap B\cap C).
-\end{aligned}
+P(X=x)=0
 \]</span></p>
-<p>La fórmula puede demostrarse aplicando dos veces la regla de la unión y usando identidades de conjuntos.</p>
-</section>
-<section id="inclusión-exclusión-finita" class="level2" data-number="4.13">
-<h2 data-number="4.13" class="anchored" data-anchor-id="inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</h2>
-<p>Para eventos <span class="math inline">\(A_1,\ldots,A_n\)</span>,</p>
+<p>para todo <span class="math inline">\(x\)</span>.</p>
+<p>La suma</p>
 <p><span class="math display">\[
-P\left(\bigcup_{i=1}^{n}A_i\right)
-=
-\sum_iP(A_i)
--
-\sum_{i&lt;j}P(A_i\cap A_j)
-+
-\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k)
--\cdots
-+(-1)^{n+1}P\left(\bigcap_{i=1}^{n}A_i\right).
+\sum_x p_X(x)
 \]</span></p>
-<p>El principio de inclusión-exclusión es una conexión directa entre combinatoria y probabilidad.</p>
-</section>
-<section id="continuidad-de-la-probabilidad" class="level2" data-number="4.14">
-<h2 data-number="4.14" class="anchored" data-anchor-id="continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</h2>
-<p>La aditividad numerable implica propiedades de continuidad que serán importantes al estudiar variables aleatorias y sucesiones de eventos.</p>
-<section id="continuidad-desde-abajo" class="level3">
-<h3 class="anchored" data-anchor-id="continuidad-desde-abajo">Continuidad desde abajo</h3>
-<p>Si</p>
+<p>del caso discreto es reemplazada por la integral</p>
 <p><span class="math display">\[
-A_1\subseteq A_2\subseteq\cdots
+\int f_X(x)\,dx.
 \]</span></p>
-<p>y</p>
+</section>
+<section id="soporte-de-una-distribución-continua" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</h2>
+<p>Una noción útil de soporte es el cierre del conjunto donde la densidad es positiva. Si</p>
 <p><span class="math display">\[
-A=\bigcup_{n=1}^{\infty}A_n,
+f_X(x)&gt;0
+\]</span></p>
+<p>sólo para <span class="math inline">\(x\in(a,b)\)</span>, entonces el soporte puede identificarse con <span class="math inline">\([a,b]\)</span> bajo condiciones regulares.</p>
+</section>
+<section id="unicidad-casi-en-todas-partes" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</h2>
+<p>Si dos densidades <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> generan la misma distribución, entonces</p>
+<p><span class="math display">\[
+f(x)=g(x)
+\]</span></p>
+<p>para casi todo <span class="math inline">\(x\)</span>.</p>
+<p>Es decir, pueden diferir en un conjunto de medida cero sin alterar ninguna probabilidad.</p>
+</section>
+<section id="transformaciones-monótonas" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</h2>
+<p>Sea <span class="math inline">\(Y=g(X)\)</span>, donde <span class="math inline">\(g\)</span> es estrictamente monótona, diferenciable y con inversa diferenciable. Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<p><span class="math display">\[
+f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|.
+\]</span></p>
+<p>Esta fórmula se estudiará con mayor detalle al abordar funciones de variables aleatorias.</p>
+</section>
+<section id="ejemplo-de-transformación" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</h2>
+<p>Si <span class="math inline">\(X\)</span> tiene densidad</p>
+<p><span class="math display">\[
+f_X(x)=2x,\qquad0&lt;x&lt;1,
+\]</span></p>
+<p>y definimos</p>
+<p><span class="math display">\[
+Y=X^2,
 \]</span></p>
 <p>entonces</p>
 <p><span class="math display">\[
-P(A_n)\longrightarrow P(A).
-\]</span></p>
-</section>
-<section id="continuidad-desde-arriba" class="level3">
-<h3 class="anchored" data-anchor-id="continuidad-desde-arriba">Continuidad desde arriba</h3>
-<p>Si</p>
-<p><span class="math display">\[
-A_1\supseteq A_2\supseteq\cdots
+g^{-1}(y)=\sqrt y,
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-A=\bigcap_{n=1}^{\infty}A_n,
+\frac{d}{dy}g^{-1}(y)=\frac{1}{2\sqrt y}.
 \]</span></p>
-<p>entonces</p>
+<p>Por tanto,</p>
 <p><span class="math display">\[
-P(A_n)\longrightarrow P(A).
+f_Y(y)=2\sqrt y\cdot\frac{1}{2\sqrt y}=1,
 \]</span></p>
-<p>En espacios de probabilidad, la condición <span class="math inline">\(P(A_1)&lt;\infty\)</span> necesaria para medidas generales se satisface automáticamente porque <span class="math inline">\(P(A_1)\leq1\)</span>.</p>
+<p>para <span class="math inline">\(0&lt;y&lt;1\)</span>.</p>
+<p>Así, <span class="math inline">\(Y\)</span> tiene densidad uniforme sobre <span class="math inline">\((0,1)\)</span>.</p>
 </section>
-</section>
-<section id="espacios-finitos" class="level2" data-number="4.15">
-<h2 data-number="4.15" class="anchored" data-anchor-id="espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</h2>
-<p>Sea</p>
-<p><span class="math display">\[
-\Omega=\{\omega_1,\ldots,\omega_N\}.
-\]</span></p>
-<p>Si asignamos masas</p>
-<p><span class="math display">\[
-p_i=P(\{\omega_i\}),
-\]</span></p>
-<p>con</p>
-<p><span class="math display">\[
-p_i\geq0,
-\qquad
-\sum_{i=1}^{N}p_i=1,
-\]</span></p>
-<p>entonces para cualquier evento <span class="math inline">\(A\subseteq\Omega\)</span>,</p>
-<p><span class="math display">\[
-P(A)=\sum_{\omega_i\in A}p_i.
-\]</span></p>
-<p>Si todos los resultados elementales son equiprobables,</p>
-<p><span class="math display">\[
-p_i=\frac1N,
-\]</span></p>
-<p>y se obtiene</p>
-<p><span class="math display">\[
-P(A)=\frac{|A|}{|\Omega|}.
-\]</span></p>
-<p>La equiprobabilidad es una hipótesis adicional del modelo, no un axioma de probabilidad.</p>
-</section>
-<section id="ejemplo-formal" class="level2" data-number="4.16">
-<h2 data-number="4.16" class="anchored" data-anchor-id="ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</h2>
-<p>Sea</p>
-<p><span class="math display">\[
-\Omega=\{1,2,3,4\}
-\]</span></p>
-<p>y supongamos</p>
-<p><span class="math display">\[
-P(\{1\})=0.1,
-\quad
-P(\{2\})=0.2,
-\quad
-P(\{3\})=0.3,
-\quad
-P(\{4\})=0.4.
-\]</span></p>
-<p>Definimos</p>
-<p><span class="math display">\[
-A=\{1,2,4\},
-\qquad
-B=\{3,4\}.
-\]</span></p>
-<p>Entonces</p>
-<p><span class="math display">\[
-P(A)=0.7,
-\]</span></p>
-<p><span class="math display">\[
-P(B)=0.7,
-\]</span></p>
-<p><span class="math display">\[
-P(A\cap B)=0.4,
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-P(A\cup B)=0.7+0.7-0.4=1.
-\]</span></p>
-<p>En efecto,</p>
-<p><span class="math display">\[
-A\cup B=\Omega.
-\]</span></p>
-</section>
-<section id="observación-conceptual-probabilidad-cero-e-imposibilidad" class="level2" data-number="4.17">
-<h2 data-number="4.17" class="anchored" data-anchor-id="observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</h2>
-<p>El axioma establece</p>
-<p><span class="math display">\[
-P(\varnothing)=0,
-\]</span></p>
-<p>pero el recíproco no es válido en general. Puede existir un evento no vacío con probabilidad cero.</p>
-<p>En modelos continuos, por ejemplo, un resultado individual puede tener probabilidad cero aunque pertenezca al espacio muestral. Esta distinción será esencial cuando estudiemos distribuciones continuas.</p>
-</section>
-<section id="errores-conceptuales-frecuentes" class="level2" data-number="4.18">
-<h2 data-number="4.18" class="anchored" data-anchor-id="errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</h2>
-<ul>
-<li>Tratar <span class="math inline">\(P(A)=|A|/|\Omega|\)</span> como una definición universal de probabilidad.</li>
-<li>Confundir aditividad para eventos disjuntos con la regla general de la unión.</li>
-<li>Suponer que <span class="math inline">\(P(A)=0\)</span> implica necesariamente <span class="math inline">\(A=\varnothing\)</span>.</li>
-<li>Utilizar propiedades derivadas como si fueran axiomas independientes.</li>
-<li>Proponer probabilidades marginales e intersecciones que violan las cotas de Fréchet.</li>
-</ul>
-</section>
-<section id="ejercicios" class="level2" data-number="4.19">
-<h2 data-number="4.19" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">4.19</span> Ejercicios</h2>
+<section id="ejercicios" class="level2" data-number="9.16">
+<h2 data-number="9.16" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.16</span> Ejercicios</h2>
 <ol type="1">
-<li>Demuestre que si <span class="math inline">\(A\subseteq B\)</span>, entonces</li>
+<li>Demuestra que si <span class="math inline">\(f\geq0\)</span> y <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx=1\)</span>, entonces <span class="math inline">\(P(A)=\int_Af(x)dx\)</span> define una medida de probabilidad sobre los borelianos.</li>
+<li>Prueba que una variable absolutamente continua satisface <span class="math inline">\(P(X=x)=0\)</span> para todo <span class="math inline">\(x\)</span>.</li>
+<li>Sea <span class="math inline">\(f(x)=c(1+x)\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>. Determina <span class="math inline">\(c\)</span> y la CDF correspondiente.</li>
+<li>Demuestra que, para una variable absolutamente continua, incluir o excluir los extremos de un intervalo no cambia su probabilidad.</li>
+<li>Sea <span class="math inline">\(F(x)=x^3\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>, con las extensiones usuales fuera del intervalo. Determina la densidad.</li>
+<li>Explica por qué modificar una densidad en un solo punto no cambia la distribución.</li>
+<li>Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(2x\)</span> en <span class="math inline">\((0,1)\)</span> y <span class="math inline">\(Y=X^2\)</span>, deriva formalmente la densidad de <span class="math inline">\(Y\)</span>.</li>
+<li>Prueba que si <span class="math inline">\(N\)</span> es numerable y <span class="math inline">\(X\)</span> es absolutamente continua, entonces <span class="math inline">\(P(X\in N)=0\)</span>.</li>
+<li>Da un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.</li>
+<li><strong>Reto ★.</strong> Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.</li>
 </ol>
-<p><span class="math display">\[
-P(B\setminus A)=P(B)-P(A).
-\]</span></p>
-<ol start="2" type="1">
-<li>Demuestre que</li>
-</ol>
-<p><span class="math display">\[
-P(A\triangle B)
-=P(A)+P(B)-2P(A\cap B).
-\]</span></p>
-<ol start="3" type="1">
-<li><p>Si <span class="math inline">\(P(A)=0.65\)</span> y <span class="math inline">\(P(B)=0.50\)</span>, determine todos los valores posibles de <span class="math inline">\(P(A\cap B)\)</span>.</p></li>
-<li><p>Demuestre que</p></li>
-</ol>
-<p><span class="math display">\[
-P(A\cap B)\geq P(A)+P(B)-1.
-\]</span></p>
-<ol start="5" type="1">
-<li>Pruebe la desigualdad</li>
-</ol>
-<p><span class="math display">\[
-P(A\cap B)\leq\min\{P(A),P(B)\}.
-\]</span></p>
-<ol start="6" type="1">
-<li><p>Derive la fórmula de inclusión-exclusión para tres eventos a partir de la fórmula de dos eventos.</p></li>
-<li><p>Pruebe que</p></li>
-</ol>
-<p><span class="math display">\[
-P(A\cup B\cup C)
-\leq P(A)+P(B)+P(C).
-\]</span></p>
-<ol start="8" type="1">
-<li><p>Sea <span class="math inline">\(A_1\subseteq A_2\subseteq\cdots\)</span>. Demuestre la continuidad desde abajo descomponiendo la unión en eventos disjuntos.</p></li>
-<li><p>Explique por qué la equiprobabilidad no puede deducirse únicamente del hecho de que <span class="math inline">\(\Omega\)</span> sea finito.</p></li>
-<li><p><strong>Reto ★.</strong> Sea <span class="math inline">\((A_n)\)</span> una sucesión de eventos. Demuestre la desigualdad de Boole:</p></li>
-</ol>
-<p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-\leq\sum_{n=1}^{\infty}P(A_n).
-\]</span></p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="4.20">
-<h2 data-number="4.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</h2>
-<p>La formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>. La presentación se ha reescrito de forma original para esta obra.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="9.17">
+<h2 data-number="9.17" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada al nivel formal de este volumen.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1268,13 +953,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-conteo-probabilidad.html" class="pagination-link" aria-label="Técnicas de conteo y enumeración">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></span>
+      <a href="./08-variables-discretas-pmf.html" class="pagination-link" aria-label="Variables aleatorias discretas y función de masa de probabilidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-condicional-independencia.html" class="pagination-link" aria-label="Probabilidad condicional e independencia">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
