@@ -1230,6 +1230,166 @@
     ]
   },
   {
+    "objectID": "08-variables-discretas-pmf.html",
+    "href": "08-variables-discretas-pmf.html",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "",
+    "text": "8.1 Objetivos\nEn este capítulo se formaliza el concepto de variable aleatoria discreta, su función de masa de probabilidad, el soporte de la distribución y la relación exacta entre la PMF y la función de distribución acumulada.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#variable-aleatoria-discreta",
+    "href": "08-variables-discretas-pmf.html#variable-aleatoria-discreta",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.2 Variable aleatoria discreta",
+    "text": "8.2 Variable aleatoria discreta\nSea\n\\[\nX:(\\Omega,\\mathcal F)\\to\\mathbb R\n\\]\nuna variable aleatoria. Diremos que \\(X\\) es discreta si existe un conjunto finito o numerable\n\\[\nS_X=\\{x_1,x_2,\\ldots\\}\\subseteq\\mathbb R\n\\]\ntal que\n\\[\nP(X\\in S_X)=1.\n\\]\nEl conjunto\n\\[\n\\mathcal S_X=\\{x\\in\\mathbb R:P(X=x)&gt;0\\}\n\\]\nse denomina soporte efectivo de la distribución.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#función-de-masa-de-probabilidad",
+    "href": "08-variables-discretas-pmf.html#función-de-masa-de-probabilidad",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.3 Función de masa de probabilidad",
+    "text": "8.3 Función de masa de probabilidad\nLa función de masa de probabilidad de \\(X\\) es\n\\[\np_X(x)=P(X=x).\n\\]\n\nProposición\nUna función \\(p:\\mathbb R\\to[0,1]\\) es la PMF de alguna variable aleatoria discreta con soporte numerable \\(S\\) si y sólo si\n\\[\np(x)\\geq0\n\\]\npara todo \\(x\\) y\n\\[\n\\sum_{x\\in S}p(x)=1,\n\\]\ncon \\(p(x)=0\\) fuera de \\(S\\).\n\n\nDemostración\nSi \\(p=p_X\\), la no negatividad se sigue de los axiomas de probabilidad. Como los eventos\n\\[\n\\{X=x\\},\\qquad x\\in S,\n\\]\nson mutuamente excluyentes y su unión tiene probabilidad 1,\n\\[\n1=P(X\\in S)=\\sum_{x\\in S}P(X=x)=\\sum_{x\\in S}p_X(x).\n\\]\nRecíprocamente, dada una sucesión de masas no negativas que suma 1, puede construirse un espacio muestral discreto con probabilidades puntuales iguales a esas masas y definir \\(X\\) como la aplicación identidad sobre el soporte.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#probabilidad-de-eventos-definidos-por-x",
+    "href": "08-variables-discretas-pmf.html#probabilidad-de-eventos-definidos-por-x",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.4 Probabilidad de eventos definidos por \\(X\\)",
+    "text": "8.4 Probabilidad de eventos definidos por \\(X\\)\nSea \\(A\\subseteq\\mathbb R\\). Entonces\n\\[\nP(X\\in A)=\\sum_{x\\in A\\cap\\mathcal S_X}p_X(x).\n\\]\nEn particular,\n\\[\nP(a&lt;X\\leq b)=\\sum_{a&lt;x\\leq b}p_X(x).\n\\]\nEsta identidad es la versión discreta de la regla de integración que aparecerá en variables continuas.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#distribución-inducida-por-una-variable-discreta",
+    "href": "08-variables-discretas-pmf.html#distribución-inducida-por-una-variable-discreta",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.5 Distribución inducida por una variable discreta",
+    "text": "8.5 Distribución inducida por una variable discreta\nLa variable \\(X\\) induce una medida de probabilidad sobre \\(\\mathbb R\\) dada por\n\\[\n\\mu_X(A)=P(X\\in A).\n\\]\nEn el caso discreto,\n\\[\n\\mu_X(A)=\\sum_{x\\in A\\cap\\mathcal S_X}p_X(x).\n\\]\nPor tanto, la distribución completa queda determinada por las masas puntuales \\(p_X(x)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#relación-con-la-función-de-distribución-acumulada",
+    "href": "08-variables-discretas-pmf.html#relación-con-la-función-de-distribución-acumulada",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.6 Relación con la función de distribución acumulada",
+    "text": "8.6 Relación con la función de distribución acumulada\nLa CDF es\n\\[\nF_X(t)=P(X\\leq t).\n\\]\nPara una variable discreta,\n\\[\n\\boxed{\nF_X(t)=\\sum_{x\\leq t}p_X(x)\n}.\n\\]\n\nProposición: saltos de la CDF\nPara todo \\(x\\in\\mathbb R\\),\n\\[\nP(X=x)=F_X(x)-F_X(x^-),\n\\]\ndonde\n\\[\nF_X(x^-)=\\lim_{t\\uparrow x}F_X(t).\n\\]\n\n\nDemostración\nComo\n\\[\n\\{X\\leq x\\}=\\{X&lt;x\\}\\cup\\{X=x\\},\n\\]\ny los dos eventos son disjuntos,\n\\[\nF_X(x)=P(X&lt;x)+P(X=x).\n\\]\nAdemás,\n\\[\nP(X&lt;x)=F_X(x^-).\n\\]\nPor tanto,\n\\[\nP(X=x)=F_X(x)-F_X(x^-).\n\\]\nAsí, los átomos de la distribución coinciden exactamente con los puntos de salto de la CDF.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#átomos-y-distribuciones-discretas",
+    "href": "08-variables-discretas-pmf.html#átomos-y-distribuciones-discretas",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.7 Átomos y distribuciones discretas",
+    "text": "8.7 Átomos y distribuciones discretas\nUn punto \\(x\\) es un átomo de la distribución de \\(X\\) si\n\\[\nP(X=x)&gt;0.\n\\]\nUna distribución discreta está concentrada en un conjunto numerable de átomos.\nSi el soporte es finito,\n\\[\n\\mathcal S_X=\\{x_1,\\ldots,x_n\\},\n\\]\nentonces\n\\[\n\\sum_{i=1}^{n}p_X(x_i)=1.\n\\]\nSi el soporte es infinito numerable,\n\\[\n\\sum_{i=1}^{\\infty}p_X(x_i)=1.\n\\]\nLa convergencia de esta serie es parte esencial de la definición de la distribución.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#soporte-y-representación-no-única",
+    "href": "08-variables-discretas-pmf.html#soporte-y-representación-no-única",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.8 Soporte y representación no única",
+    "text": "8.8 Soporte y representación no única\nPuede ocurrir que una función se describa sobre un conjunto más grande que el soporte efectivo. Por ejemplo, si se declara\n\\[\np(0)=0,\n\\quad p(1)=0.4,\n\\quad p(2)=0.6,\n\\]\nel soporte efectivo es\n\\[\n\\{1,2\\},\n\\]\nno \\(\\{0,1,2\\}\\).\nEsta distinción resulta útil en formulaciones paramétricas.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#construcción-mediante-transformación",
+    "href": "08-variables-discretas-pmf.html#construcción-mediante-transformación",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.9 Construcción mediante transformación",
+    "text": "8.9 Construcción mediante transformación\nSea \\(Y\\) una variable aleatoria discreta con PMF \\(p_Y\\) y sea\n\\[\nX=g(Y).\n\\]\nEntonces\n\\[\nP(X=x)=P(g(Y)=x)\n\\]\ny, por tanto,\n\\[\n\\boxed{\np_X(x)=\\sum_{y:g(y)=x}p_Y(y)\n}.\n\\]\nEsta fórmula agrega las masas de todos los valores de \\(Y\\) que son enviados al mismo valor \\(x\\).\n\nEjemplo\nSea \\(Y\\) uniforme sobre\n\\[\n\\{-2,-1,0,1,2\\}\n\\]\ny defina\n\\[\nX=Y^2.\n\\]\nEntonces\n\\[\n\\mathcal S_X=\\{0,1,4\\}\n\\]\ny\n\\[\np_X(0)=\\frac15,\n\\]\n\\[\np_X(1)=\\frac25,\n\\]\n\\[\np_X(4)=\\frac25.\n\\]\nLas probabilidades de \\(Y=1\\) y \\(Y=-1\\) se suman porque ambas preimágenes producen \\(X=1\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#pmf-a-partir-de-una-cdf-escalonada",
+    "href": "08-variables-discretas-pmf.html#pmf-a-partir-de-una-cdf-escalonada",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.10 PMF a partir de una CDF escalonada",
+    "text": "8.10 PMF a partir de una CDF escalonada\nSi una CDF tiene saltos en puntos\n\\[\nx_1&lt;x_2&lt;\\cdots,\n\\]\nentonces\n\\[\np_X(x_i)=F_X(x_i)-F_X(x_i^-).\n\\]\nPor tanto, para distribuciones discretas, PMF y CDF contienen exactamente la misma información.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#variables-con-soporte-infinito-numerable",
+    "href": "08-variables-discretas-pmf.html#variables-con-soporte-infinito-numerable",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.11 Variables con soporte infinito numerable",
+    "text": "8.11 Variables con soporte infinito numerable\nConsidere\n\\[\np_X(k)=\\frac{1}{2^k},\n\\qquad k=1,2,3,\\ldots\n\\]\nComo\n\\[\n\\sum_{k=1}^{\\infty}\\frac{1}{2^k}=1,\n\\]\nla función define una PMF válida.\nLa CDF para \\(n\\in\\mathbb N\\) es\n\\[\nF_X(n)=\\sum_{k=1}^{n}\\frac{1}{2^k}\n=1-\\frac{1}{2^n}.\n\\]\nY para \\(t\\) no entero,\n\\[\nF_X(t)=F_X(\\lfloor t\\rfloor)\n\\]\nsi \\(t\\geq1\\).",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#unicidad-de-la-pmf",
+    "href": "08-variables-discretas-pmf.html#unicidad-de-la-pmf",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.12 Unicidad de la PMF",
+    "text": "8.12 Unicidad de la PMF\nSi dos variables aleatorias discretas \\(X\\) y \\(Y\\) tienen la misma PMF,\n\\[\np_X(x)=p_Y(x)\n\\]\npara todo \\(x\\), entonces tienen la misma distribución:\n\\[\nP(X\\in A)=P(Y\\in A)\n\\]\npara todo conjunto boreliano \\(A\\).\nNo es necesario que \\(X\\) y \\(Y\\) estén definidas sobre el mismo espacio muestral ni que sean la misma función.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#distribución-conjunta-de-valores-discretos-y-eventos",
+    "href": "08-variables-discretas-pmf.html#distribución-conjunta-de-valores-discretos-y-eventos",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.13 Distribución conjunta de valores discretos y eventos",
+    "text": "8.13 Distribución conjunta de valores discretos y eventos\nPara cualquier subconjunto \\(A\\) del soporte,\n\\[\nP(X\\in A)=\\sum_{x\\in A}p_X(x).\n\\]\nEsta propiedad expresa que la medida inducida por \\(X\\) es completamente atómica.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#comparación-conceptual-con-el-caso-continuo",
+    "href": "08-variables-discretas-pmf.html#comparación-conceptual-con-el-caso-continuo",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.14 Comparación conceptual con el caso continuo",
+    "text": "8.14 Comparación conceptual con el caso continuo\nEn el caso discreto puede existir\n\\[\nP(X=x)&gt;0.\n\\]\nEn el caso continuo típico,\n\\[\nP(X=x)=0\n\\]\npara todo \\(x\\).\nPor ello, una PMF asigna masa a puntos, mientras que una densidad continua asignará probabilidad a intervalos mediante integrales.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#ejercicios",
+    "href": "08-variables-discretas-pmf.html#ejercicios",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.15 Ejercicios",
+    "text": "8.15 Ejercicios\n\nSea \\(p(0)=0.2\\), \\(p(1)=0.5\\) y \\(p(2)=0.3\\). Verifica que define una PMF y construye la CDF completa.\nSea \\(p_X(k)=c/3^k\\) para \\(k=1,2,\\ldots\\). Determina \\(c\\).\nDemuestra que si \\(X\\) es discreta, entonces el conjunto de puntos \\(x\\) tales que \\(P(X=x)&gt;0\\) es a lo sumo numerable.\nSea \\(X\\) con soporte \\(\\{-1,0,1\\}\\) y masas \\(0.25,0.5,0.25\\). Define \\(Y=X^2\\) y determina la PMF de \\(Y\\).\nPrueba la fórmula\n\n\\[\np_X(x)=F_X(x)-F_X(x^-).\n\\]\n\nSi una CDF tiene saltos de tamaño \\(0.1\\), \\(0.2\\), \\(0.3\\) y \\(0.4\\) en \\(x=0,1,3,7\\), determina la PMF.\nConstruye una variable aleatoria discreta con soporte infinito numerable cuya PMF sea proporcional a \\(1/k^2\\).\nExplica por qué no puede existir una variable discreta con un número no numerable de puntos con masa estrictamente positiva.\nSi \\(X\\) y \\(Y\\) tienen la misma PMF, demuestra que tienen la misma CDF.\nReto ★. Sea \\(X\\) discreta y \\(g\\) una función cualquiera. Demuestra que\n\n\\[\np_{g(X)}(y)=\\sum_{x:g(x)=y}p_X(x).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "08-variables-discretas-pmf.html#referencias-del-capítulo",
+    "href": "08-variables-discretas-pmf.html#referencias-del-capítulo",
+    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
+    "section": "8.16 Referencias del capítulo",
+    "text": "8.16 Referencias del capítulo\nEl desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel teórico de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
