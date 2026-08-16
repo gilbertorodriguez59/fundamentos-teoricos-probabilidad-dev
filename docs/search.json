@@ -2410,6 +2410,126 @@
     ]
   },
   {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html",
+    "href": "15-variables-conjuntas-marginales-condicionales.html",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "",
+    "text": "15.1 Objetivos\nAl finalizar este capítulo, el lector podrá formular distribuciones conjuntas discretas y continuas, obtener distribuciones marginales y condicionales, caracterizar independencia mediante factorización y trabajar formalmente con funciones de distribución y densidades conjuntas.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#vectores-aleatorios",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#vectores-aleatorios",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "15.2 Vectores aleatorios",
+    "text": "15.2 Vectores aleatorios\nSea \\((\\Omega,\\mathcal F,P)\\) un espacio de probabilidad. Un vector aleatorio bidimensional es una aplicación\n\\[\n(X,Y):\\Omega\\to\\mathbb R^2\n\\]\ntal que las preimágenes de conjuntos borelianos de \\(\\mathbb R^2\\) son eventos de \\(\\mathcal F\\).\nLa ley conjunta de \\((X,Y)\\) es la medida de probabilidad inducida sobre \\(\\mathbb R^2\\):\n\\[\nP_{(X,Y)}(A)=P\\big((X,Y)\\in A\\big),\n\\]\npara \\(A\\) boreliano.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#función-de-distribución-conjunta",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#función-de-distribución-conjunta",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "15.3 Función de distribución conjunta",
+    "text": "15.3 Función de distribución conjunta\nDefinimos\n\\[\n\\boxed{F_{X,Y}(x,y)=P(X\\le x,Y\\le y)}.\n\\]\nEsta función es no decreciente en cada coordenada, continua por la derecha en el sentido correspondiente y satisface\n\\[\n\\lim_{x\\to-\\infty}F_{X,Y}(x,y)=0,\n\\]\n\\[\n\\lim_{y\\to-\\infty}F_{X,Y}(x,y)=0,\n\\]\ny\n\\[\n\\lim_{x,y\\to\\infty}F_{X,Y}(x,y)=1.\n\\]\nAdemás, para \\(a&lt;b\\) y \\(c&lt;d\\),\n\\[\nP(a&lt;X\\le b,c&lt;Y\\le d)\n\\]\nse obtiene por la fórmula rectangular\n\\[\n\\boxed{\nF(b,d)-F(a,d)-F(b,c)+F(a,c).\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#distribuciones-marginales",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#distribuciones-marginales",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "15.4 Distribuciones marginales",
+    "text": "15.4 Distribuciones marginales\nLas funciones de distribución marginales se recuperan mediante\n\\[\n\\boxed{F_X(x)=\\lim_{y\\to\\infty}F_{X,Y}(x,y)}\n\\]\ny\n\\[\n\\boxed{F_Y(y)=\\lim_{x\\to\\infty}F_{X,Y}(x,y)}.\n\\]\nEsta operación se denomina marginalización.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#probabilidades-sobre-subconjuntos",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#probabilidades-sobre-subconjuntos",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "16.1 Probabilidades sobre subconjuntos",
+    "text": "16.1 Probabilidades sobre subconjuntos\nPara cualquier conjunto \\(A\\) contenido en el soporte conjunto,\n\\[\nP((X,Y)\\in A)=\\sum_{(x,y)\\in A}p_{X,Y}(x,y).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#distribución-condicional-discreta",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#distribución-condicional-discreta",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "16.2 Distribución condicional discreta",
+    "text": "16.2 Distribución condicional discreta\nSi \\(p_Y(y)&gt;0\\),\n\\[\n\\boxed{p_{X\\mid Y}(x\\mid y)=\\frac{p_{X,Y}(x,y)}{p_Y(y)}}.\n\\]\nPara cada \\(y\\) fijo con probabilidad positiva,\n\\[\n\\sum_x p_{X\\mid Y}(x\\mid y)=1.\n\\]\nAnálogamente,\n\\[\np_{Y\\mid X}(y\\mid x)=\\frac{p_{X,Y}(x,y)}{p_X(x)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#densidades-marginales",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#densidades-marginales",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "17.1 Densidades marginales",
+    "text": "17.1 Densidades marginales\nLas marginales se obtienen por integración:\n\\[\n\\boxed{f_X(x)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dy}\n\\]\ny\n\\[\n\\boxed{f_Y(y)=\\int_{-\\infty}^{\\infty}f_{X,Y}(x,y)\\,dx}.\n\\]\nEstas integrales existen en el sentido apropiado y satisfacen\n\\[\n\\int f_X(x)\\,dx=1,\n\\]\n\\[\n\\int f_Y(y)\\,dy=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#densidades-condicionales",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#densidades-condicionales",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "17.2 Densidades condicionales",
+    "text": "17.2 Densidades condicionales\nSi \\(f_Y(y)&gt;0\\), definimos\n\\[\n\\boxed{f_{X\\mid Y}(x\\mid y)=\\frac{f_{X,Y}(x,y)}{f_Y(y)}}.\n\\]\nPara casi todo \\(y\\) con densidad marginal positiva,\n\\[\n\\int_{-\\infty}^{\\infty}f_{X\\mid Y}(x\\mid y)\\,dx=1.\n\\]\nAnálogamente,\n\\[\nf_{Y\\mid X}(y\\mid x)=\\frac{f_{X,Y}(x,y)}{f_X(x)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#caso-discreto-1",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#caso-discreto-1",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "19.1 Caso discreto",
+    "text": "19.1 Caso discreto\nSi \\(X\\) y \\(Y\\) son discretas, la independencia equivale a\n\\[\n\\boxed{p_{X,Y}(x,y)=p_X(x)p_Y(y)}\n\\]\npara todos los valores del soporte.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#caso-continuo",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#caso-continuo",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "19.2 Caso continuo",
+    "text": "19.2 Caso continuo\nSi existe densidad conjunta, la independencia equivale a\n\\[\n\\boxed{f_{X,Y}(x,y)=f_X(x)f_Y(y)}\n\\]\ncasi en todas partes.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#demostración-de-la-factorización-condicional",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#demostración-de-la-factorización-condicional",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "19.3 Demostración de la factorización condicional",
+    "text": "19.3 Demostración de la factorización condicional\nSi \\(X\\) y \\(Y\\) son independientes y \\(f_Y(y)&gt;0\\), entonces\n\\[\nf_{X\\mid Y}(x\\mid y)\n=\\frac{f_X(x)f_Y(y)}{f_Y(y)}\n=f_X(x).\n\\]\nEsto formaliza la idea de que el conocimiento de \\(Y\\) no altera la distribución de \\(X\\).",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
+    "objectID": "15-variables-conjuntas-marginales-condicionales.html#referencias-del-capítulo",
+    "href": "15-variables-conjuntas-marginales-condicionales.html#referencias-del-capítulo",
+    "title": "15  Variables aleatorias conjuntas, distribuciones marginales y condicionales",
+    "section": "26.1 Referencias del capítulo",
+    "text": "26.1 Referencias del capítulo\nLa teoría de distribuciones conjuntas, marginalización, condicionamiento e independencia sigue el desarrollo estándar de textos de probabilidad y estadística matemática, incluyendo Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Variables aleatorias conjuntas, distribuciones marginales y condicionales</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>15&nbsp; Variables aleatorias conjuntas, distribuciones marginales y condicionales – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,7 +26,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -36,8 +55,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./notacion.html" rel="next">
-<link href="./presentacion.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./14-gamma-weibull-beta.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -76,6 +95,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -88,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduccion.html">Introducción</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-variables-conjuntas-marginales-condicionales.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Variables aleatorias conjuntas, distribuciones marginales y condicionales</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -137,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
   </div>
 </li>
@@ -233,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-variables-conjuntas-marginales-condicionales.html" class="sidebar-item-text sidebar-link">
+  <a href="./15-variables-conjuntas-marginales-condicionales.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Variables aleatorias conjuntas, distribuciones marginales y condicionales</span></span></a>
   </div>
 </li>
@@ -248,15 +296,51 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En este capítulo</h2>
+   
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">15.1</span> Objetivos</a></li>
+  <li><a href="#vectores-aleatorios" id="toc-vectores-aleatorios" class="nav-link" data-scroll-target="#vectores-aleatorios"><span class="header-section-number">15.2</span> Vectores aleatorios</a></li>
+  <li><a href="#función-de-distribución-conjunta" id="toc-función-de-distribución-conjunta" class="nav-link" data-scroll-target="#función-de-distribución-conjunta"><span class="header-section-number">15.3</span> Función de distribución conjunta</a></li>
+  <li><a href="#distribuciones-marginales" id="toc-distribuciones-marginales" class="nav-link" data-scroll-target="#distribuciones-marginales"><span class="header-section-number">15.4</span> Distribuciones marginales</a></li>
+  <li><a href="#caso-discreto" id="toc-caso-discreto" class="nav-link" data-scroll-target="#caso-discreto"><span class="header-section-number">16</span> Caso discreto</a>
+  <ul class="collapse">
+  <li><a href="#probabilidades-sobre-subconjuntos" id="toc-probabilidades-sobre-subconjuntos" class="nav-link" data-scroll-target="#probabilidades-sobre-subconjuntos"><span class="header-section-number">16.1</span> Probabilidades sobre subconjuntos</a></li>
+  <li><a href="#distribución-condicional-discreta" id="toc-distribución-condicional-discreta" class="nav-link" data-scroll-target="#distribución-condicional-discreta"><span class="header-section-number">16.2</span> Distribución condicional discreta</a></li>
+  </ul></li>
+  <li><a href="#caso-absolutamente-continuo" id="toc-caso-absolutamente-continuo" class="nav-link" data-scroll-target="#caso-absolutamente-continuo"><span class="header-section-number">17</span> Caso absolutamente continuo</a>
+  <ul class="collapse">
+  <li><a href="#densidades-marginales" id="toc-densidades-marginales" class="nav-link" data-scroll-target="#densidades-marginales"><span class="header-section-number">17.1</span> Densidades marginales</a></li>
+  <li><a href="#densidades-condicionales" id="toc-densidades-condicionales" class="nav-link" data-scroll-target="#densidades-condicionales"><span class="header-section-number">17.2</span> Densidades condicionales</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-triangular" id="toc-ejemplo-triangular" class="nav-link" data-scroll-target="#ejemplo-triangular"><span class="header-section-number">18</span> Ejemplo triangular</a></li>
+  <li><a href="#independencia" id="toc-independencia" class="nav-link" data-scroll-target="#independencia"><span class="header-section-number">19</span> Independencia</a>
+  <ul class="collapse">
+  <li><a href="#caso-discreto-1" id="toc-caso-discreto-1" class="nav-link" data-scroll-target="#caso-discreto-1"><span class="header-section-number">19.1</span> Caso discreto</a></li>
+  <li><a href="#caso-continuo" id="toc-caso-continuo" class="nav-link" data-scroll-target="#caso-continuo"><span class="header-section-number">19.2</span> Caso continuo</a></li>
+  <li><a href="#demostración-de-la-factorización-condicional" id="toc-demostración-de-la-factorización-condicional" class="nav-link" data-scroll-target="#demostración-de-la-factorización-condicional"><span class="header-section-number">19.3</span> Demostración de la factorización condicional</a></li>
+  </ul></li>
+  <li><a href="#el-soporte-conjunto-y-la-independencia" id="toc-el-soporte-conjunto-y-la-independencia" class="nav-link" data-scroll-target="#el-soporte-conjunto-y-la-independencia"><span class="header-section-number">20</span> El soporte conjunto y la independencia</a></li>
+  <li><a href="#teorema-de-tonelli-y-fubini" id="toc-teorema-de-tonelli-y-fubini" class="nav-link" data-scroll-target="#teorema-de-tonelli-y-fubini"><span class="header-section-number">21</span> Teorema de Tonelli y Fubini</a></li>
+  <li><a href="#una-misma-pareja-de-marginales-distintas-conjuntas" id="toc-una-misma-pareja-de-marginales-distintas-conjuntas" class="nav-link" data-scroll-target="#una-misma-pareja-de-marginales-distintas-conjuntas"><span class="header-section-number">22</span> Una misma pareja de marginales, distintas conjuntas</a></li>
+  <li><a href="#probabilidades-condicionales-como-familia-de-leyes" id="toc-probabilidades-condicionales-como-familia-de-leyes" class="nav-link" data-scroll-target="#probabilidades-condicionales-como-familia-de-leyes"><span class="header-section-number">23</span> Probabilidades condicionales como familia de leyes</a></li>
+  <li><a href="#extensión-a-más-dimensiones" id="toc-extensión-a-más-dimensiones" class="nav-link" data-scroll-target="#extensión-a-más-dimensiones"><span class="header-section-number">24</span> Extensión a más dimensiones</a></li>
+  <li><a href="#resumen-teórico" id="toc-resumen-teórico" class="nav-link" data-scroll-target="#resumen-teórico"><span class="header-section-number">25</span> Resumen teórico</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">26</span> Ejercicios teóricos</a>
+  <ul class="collapse">
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">26.1</span> Referencias del capítulo</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción</h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Variables aleatorias conjuntas, distribuciones marginales y condicionales</span></h1>
 </div>
 
 
@@ -273,11 +357,354 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>La probabilidad transforma la incertidumbre en un objeto matemático susceptible de análisis. Su punto de partida es describir los resultados posibles de un experimento y representar mediante conjuntos los sucesos de interés. A partir de ahí se construye una medida de probabilidad y se estudian sus consecuencias.</p>
-<p>El desarrollo será progresivo. Primero estableceremos el lenguaje de experimentos, espacios muestrales y eventos; después formularemos los axiomas y sus propiedades; más adelante introduciremos variables aleatorias, funciones de distribución, esperanza, momentos y distribuciones conjuntas.</p>
-<p>El objetivo no será únicamente aplicar fórmulas, sino comprender por qué funcionan y bajo qué hipótesis pueden utilizarse.</p>
+<section id="objetivos" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">15.1</span> Objetivos</h2>
+<p>Al finalizar este capítulo, el lector podrá formular distribuciones conjuntas discretas y continuas, obtener distribuciones marginales y condicionales, caracterizar independencia mediante factorización y trabajar formalmente con funciones de distribución y densidades conjuntas.</p>
+</section>
+<section id="vectores-aleatorios" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="vectores-aleatorios"><span class="header-section-number">15.2</span> Vectores aleatorios</h2>
+<p>Sea <span class="math inline">\((\Omega,\mathcal F,P)\)</span> un espacio de probabilidad. Un vector aleatorio bidimensional es una aplicación</p>
+<p><span class="math display">\[
+(X,Y):\Omega\to\mathbb R^2
+\]</span></p>
+<p>tal que las preimágenes de conjuntos borelianos de <span class="math inline">\(\mathbb R^2\)</span> son eventos de <span class="math inline">\(\mathcal F\)</span>.</p>
+<p>La ley conjunta de <span class="math inline">\((X,Y)\)</span> es la medida de probabilidad inducida sobre <span class="math inline">\(\mathbb R^2\)</span>:</p>
+<p><span class="math display">\[
+P_{(X,Y)}(A)=P\big((X,Y)\in A\big),
+\]</span></p>
+<p>para <span class="math inline">\(A\)</span> boreliano.</p>
+</section>
+<section id="función-de-distribución-conjunta" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="función-de-distribución-conjunta"><span class="header-section-number">15.3</span> Función de distribución conjunta</h2>
+<p>Definimos</p>
+<p><span class="math display">\[
+\boxed{F_{X,Y}(x,y)=P(X\le x,Y\le y)}.
+\]</span></p>
+<p>Esta función es no decreciente en cada coordenada, continua por la derecha en el sentido correspondiente y satisface</p>
+<p><span class="math display">\[
+\lim_{x\to-\infty}F_{X,Y}(x,y)=0,
+\]</span></p>
+<p><span class="math display">\[
+\lim_{y\to-\infty}F_{X,Y}(x,y)=0,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\lim_{x,y\to\infty}F_{X,Y}(x,y)=1.
+\]</span></p>
+<p>Además, para <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(c&lt;d\)</span>,</p>
+<p><span class="math display">\[
+P(a&lt;X\le b,c&lt;Y\le d)
+\]</span></p>
+<p>se obtiene por la fórmula rectangular</p>
+<p><span class="math display">\[
+\boxed{
+F(b,d)-F(a,d)-F(b,c)+F(a,c).
+}
+\]</span></p>
+</section>
+<section id="distribuciones-marginales" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="distribuciones-marginales"><span class="header-section-number">15.4</span> Distribuciones marginales</h2>
+<p>Las funciones de distribución marginales se recuperan mediante</p>
+<p><span class="math display">\[
+\boxed{F_X(x)=\lim_{y\to\infty}F_{X,Y}(x,y)}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\boxed{F_Y(y)=\lim_{x\to\infty}F_{X,Y}(x,y)}.
+\]</span></p>
+<p>Esta operación se denomina marginalización.</p>
+</section>
+<section id="caso-discreto" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Caso discreto</h1>
+<p>Si <span class="math inline">\((X,Y)\)</span> toma valores en un conjunto numerable, definimos</p>
+<p><span class="math display">\[
+\boxed{p_{X,Y}(x,y)=P(X=x,Y=y)}.
+\]</span></p>
+<p>La función de masa conjunta satisface</p>
+<p><span class="math display">\[
+p_{X,Y}(x,y)\ge0
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\sum_x\sum_y p_{X,Y}(x,y)=1.
+\]</span></p>
+<p>Las marginales son</p>
+<p><span class="math display">\[
+\boxed{p_X(x)=\sum_y p_{X,Y}(x,y)}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\boxed{p_Y(y)=\sum_x p_{X,Y}(x,y)}.
+\]</span></p>
+<section id="probabilidades-sobre-subconjuntos" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="probabilidades-sobre-subconjuntos"><span class="header-section-number">16.1</span> Probabilidades sobre subconjuntos</h2>
+<p>Para cualquier conjunto <span class="math inline">\(A\)</span> contenido en el soporte conjunto,</p>
+<p><span class="math display">\[
+P((X,Y)\in A)=\sum_{(x,y)\in A}p_{X,Y}(x,y).
+\]</span></p>
+</section>
+<section id="distribución-condicional-discreta" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="distribución-condicional-discreta"><span class="header-section-number">16.2</span> Distribución condicional discreta</h2>
+<p>Si <span class="math inline">\(p_Y(y)&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\boxed{p_{X\mid Y}(x\mid y)=\frac{p_{X,Y}(x,y)}{p_Y(y)}}.
+\]</span></p>
+<p>Para cada <span class="math inline">\(y\)</span> fijo con probabilidad positiva,</p>
+<p><span class="math display">\[
+\sum_x p_{X\mid Y}(x\mid y)=1.
+\]</span></p>
+<p>Análogamente,</p>
+<p><span class="math display">\[
+p_{Y\mid X}(y\mid x)=\frac{p_{X,Y}(x,y)}{p_X(x)}.
+\]</span></p>
+</section>
+</section>
+<section id="caso-absolutamente-continuo" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Caso absolutamente continuo</h1>
+<p>Un vector aleatorio <span class="math inline">\((X,Y)\)</span> es absolutamente continuo si existe una función no negativa <span class="math inline">\(f_{X,Y}\)</span> tal que</p>
+<p><span class="math display">\[
+P((X,Y)\in A)=\iint_A f_{X,Y}(x,y)\,dx\,dy
+\]</span></p>
+<p>para todo boreliano <span class="math inline">\(A\)</span>.</p>
+<p>En particular,</p>
+<p><span class="math display">\[
+\boxed{\iint_{\mathbb R^2}f_{X,Y}(x,y)\,dx\,dy=1}.
+\]</span></p>
+<p>La CDF conjunta puede expresarse como</p>
+<p><span class="math display">\[
+F_{X,Y}(x,y)=\int_{-\infty}^x\int_{-\infty}^y f_{X,Y}(u,v)\,dv\,du.
+\]</span></p>
+<section id="densidades-marginales" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="densidades-marginales"><span class="header-section-number">17.1</span> Densidades marginales</h2>
+<p>Las marginales se obtienen por integración:</p>
+<p><span class="math display">\[
+\boxed{f_X(x)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dy}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\boxed{f_Y(y)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dx}.
+\]</span></p>
+<p>Estas integrales existen en el sentido apropiado y satisfacen</p>
+<p><span class="math display">\[
+\int f_X(x)\,dx=1,
+\]</span></p>
+<p><span class="math display">\[
+\int f_Y(y)\,dy=1.
+\]</span></p>
+</section>
+<section id="densidades-condicionales" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="densidades-condicionales"><span class="header-section-number">17.2</span> Densidades condicionales</h2>
+<p>Si <span class="math inline">\(f_Y(y)&gt;0\)</span>, definimos</p>
+<p><span class="math display">\[
+\boxed{f_{X\mid Y}(x\mid y)=\frac{f_{X,Y}(x,y)}{f_Y(y)}}.
+\]</span></p>
+<p>Para casi todo <span class="math inline">\(y\)</span> con densidad marginal positiva,</p>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty}f_{X\mid Y}(x\mid y)\,dx=1.
+\]</span></p>
+<p>Análogamente,</p>
+<p><span class="math display">\[
+f_{Y\mid X}(y\mid x)=\frac{f_{X,Y}(x,y)}{f_X(x)}.
+\]</span></p>
+</section>
+</section>
+<section id="ejemplo-triangular" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Ejemplo triangular</h1>
+<p>Considere</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=2
+\]</span></p>
+<p>sobre</p>
+<p><span class="math display">\[
+0&lt;y&lt;x&lt;1,
+\]</span></p>
+<p>y cero fuera de esa región.</p>
+<p>La normalización es</p>
+<p><span class="math display">\[
+\int_0^1\int_0^x2\,dy\,dx=1.
+\]</span></p>
+<p>Las marginales son</p>
+<p><span class="math display">\[
+\boxed{f_X(x)=2x,\qquad0&lt;x&lt;1}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\boxed{f_Y(y)=2(1-y),\qquad0&lt;y&lt;1}.
+\]</span></p>
+<p>La densidad condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X=x\)</span> es</p>
+<p><span class="math display">\[
+\boxed{f_{Y\mid X}(y\mid x)=\frac1x,\qquad0&lt;y&lt;x}.
+\]</span></p>
+<p>Por tanto, para cada <span class="math inline">\(x\)</span> fijo, la condicional es uniforme en <span class="math inline">\((0,x)\)</span>.</p>
+</section>
+<section id="independencia" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Independencia</h1>
+<p>Las variables <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes si</p>
+<p><span class="math display">\[
+P(X\in A,Y\in B)=P(X\in A)P(Y\in B)
+\]</span></p>
+<p>para todos los borelianos <span class="math inline">\(A,B\subset\mathbb R\)</span>.</p>
+<p>Una caracterización equivalente mediante CDF es</p>
+<p><span class="math display">\[
+\boxed{F_{X,Y}(x,y)=F_X(x)F_Y(y)}
+\]</span></p>
+<p>para todo <span class="math inline">\(x,y\)</span>.</p>
+<section id="caso-discreto-1" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="caso-discreto-1"><span class="header-section-number">19.1</span> Caso discreto</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son discretas, la independencia equivale a</p>
+<p><span class="math display">\[
+\boxed{p_{X,Y}(x,y)=p_X(x)p_Y(y)}
+\]</span></p>
+<p>para todos los valores del soporte.</p>
+</section>
+<section id="caso-continuo" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="caso-continuo"><span class="header-section-number">19.2</span> Caso continuo</h2>
+<p>Si existe densidad conjunta, la independencia equivale a</p>
+<p><span class="math display">\[
+\boxed{f_{X,Y}(x,y)=f_X(x)f_Y(y)}
+\]</span></p>
+<p>casi en todas partes.</p>
+</section>
+<section id="demostración-de-la-factorización-condicional" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="demostración-de-la-factorización-condicional"><span class="header-section-number">19.3</span> Demostración de la factorización condicional</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes y <span class="math inline">\(f_Y(y)&gt;0\)</span>, entonces</p>
+<p><span class="math display">\[
+f_{X\mid Y}(x\mid y)
+=\frac{f_X(x)f_Y(y)}{f_Y(y)}
+=f_X(x).
+\]</span></p>
+<p>Esto formaliza la idea de que el conocimiento de <span class="math inline">\(Y\)</span> no altera la distribución de <span class="math inline">\(X\)</span>.</p>
+</section>
+</section>
+<section id="el-soporte-conjunto-y-la-independencia" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> El soporte conjunto y la independencia</h1>
+<p>Si una densidad conjunta positiva tiene soporte que no puede escribirse como producto cartesiano de dos conjuntos marginales, ello suele ser una señal inmediata de dependencia.</p>
+<p>En el ejemplo triangular,</p>
+<p><span class="math display">\[
+0&lt;y&lt;x&lt;1
+\]</span></p>
+<p>no es un conjunto de la forma <span class="math inline">\(A\times B\)</span>. Por tanto, el soporte ya revela que no puede existir una factorización global de la densidad en producto de marginales positivas.</p>
+</section>
+<section id="teorema-de-tonelli-y-fubini" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Teorema de Tonelli y Fubini</h1>
+<p>La marginalización se apoya en resultados fundamentales de integración.</p>
+<p>Como <span class="math inline">\(f_{X,Y}\ge0\)</span>, el teorema de Tonelli permite intercambiar el orden de integración:</p>
+<p><span class="math display">\[
+\int\left(\int f_{X,Y}(x,y)\,dy\right)dx
+=
+\int\left(\int f_{X,Y}(x,y)\,dx\right)dy
+=1.
+\]</span></p>
+<p>Cuando una función integrable no es necesariamente no negativa, el teorema de Fubini permite intercambiar integrales bajo condiciones de integrabilidad absoluta.</p>
+</section>
+<section id="una-misma-pareja-de-marginales-distintas-conjuntas" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Una misma pareja de marginales, distintas conjuntas</h1>
+<p>Las distribuciones marginales no determinan en general la distribución conjunta.</p>
+<p>Considere dos variables Bernoulli con</p>
+<p><span class="math display">\[
+P(X=1)=P(Y=1)=\frac12.
+\]</span></p>
+<p>Podemos construir:</p>
+<ol type="1">
+<li>un modelo independiente, donde cada una de las cuatro parejas tiene probabilidad <span class="math inline">\(1/4\)</span>;</li>
+<li>un modelo perfectamente asociado, donde</li>
+</ol>
+<p><span class="math display">\[
+P(X=0,Y=0)=\frac12,
+\]</span></p>
+<p><span class="math display">\[
+P(X=1,Y=1)=\frac12,
+\]</span></p>
+<p>y las otras dos parejas tienen probabilidad cero.</p>
+<p>Ambos modelos tienen las mismas marginales, pero distribuciones conjuntas completamente diferentes.</p>
+</section>
+<section id="probabilidades-condicionales-como-familia-de-leyes" class="level1" data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> Probabilidades condicionales como familia de leyes</h1>
+<p>Para cada valor <span class="math inline">\(y\)</span> admisible, la expresión</p>
+<p><span class="math display">\[
+p_{X\mid Y}(\cdot\mid y)
+\]</span></p>
+<p>o</p>
+<p><span class="math display">\[
+f_{X\mid Y}(\cdot\mid y)
+\]</span></p>
+<p>es una distribución de probabilidad sobre <span class="math inline">\(X\)</span>.</p>
+<p>El parámetro <span class="math inline">\(y\)</span> indexa una familia de distribuciones condicionales. Esta idea será fundamental al estudiar esperanza condicional, regresión y modelos jerárquicos.</p>
+</section>
+<section id="extensión-a-más-dimensiones" class="level1" data-number="24">
+<h1 data-number="24"><span class="header-section-number">24</span> Extensión a más dimensiones</h1>
+<p>Para un vector</p>
+<p><span class="math display">\[
+(X_1,\ldots,X_n),
+\]</span></p>
+<p>la distribución conjunta se define de forma análoga. Las marginales se obtienen eliminando variables mediante sumas o integrales y las distribuciones condicionales se obtienen normalizando apropiadamente respecto de las marginales condicionantes.</p>
+<p>Las ideas esenciales de este capítulo se generalizan directamente al caso multivariado.</p>
+</section>
+<section id="resumen-teórico" class="level1" data-number="25">
+<h1 data-number="25"><span class="header-section-number">25</span> Resumen teórico</h1>
+<p>Distribución conjunta discreta:</p>
+<p><span class="math display">\[
+p_{X,Y}(x,y)=P(X=x,Y=y).
+\]</span></p>
+<p>Marginalización:</p>
+<p><span class="math display">\[
+p_X(x)=\sum_y p_{X,Y}(x,y).
+\]</span></p>
+<p>Condicionamiento:</p>
+<p><span class="math display">\[
+p_{X\mid Y}(x\mid y)=\frac{p_{X,Y}(x,y)}{p_Y(y)}.
+\]</span></p>
+<p>Densidad conjunta continua:</p>
+<p><span class="math display">\[
+P((X,Y)\in A)=\iint_A f_{X,Y}(x,y)\,dx\,dy.
+\]</span></p>
+<p>Marginalización continua:</p>
+<p><span class="math display">\[
+f_X(x)=\int f_{X,Y}(x,y)\,dy.
+\]</span></p>
+<p>Independencia:</p>
+<p><span class="math display">\[
+F_{X,Y}=F_XF_Y,
+\]</span></p>
+<p>o equivalentemente mediante masas o densidades cuando existen.</p>
+</section>
+<section id="ejercicios-teóricos" class="level1" data-number="26">
+<h1 data-number="26"><span class="header-section-number">26</span> Ejercicios teóricos</h1>
+<ol type="1">
+<li>Demuestra que las marginales de una PMF conjunta están normalizadas.</li>
+<li>Demuestra que una PMF condicional suma 1.</li>
+<li>Prueba que si <span class="math inline">\(p_{X,Y}(x,y)=p_X(x)p_Y(y)\)</span>, entonces <span class="math inline">\(F_{X,Y}(x,y)=F_X(x)F_Y(y)\)</span>.</li>
+<li>Demuestra la recíproca para variables discretas.</li>
+<li>Para <span class="math inline">\(f(x,y)=2\)</span> en <span class="math inline">\(0&lt;y&lt;x&lt;1\)</span>, obtiene rigurosamente las marginales.</li>
+<li>Obtén <span class="math inline">\(f_{X\mid Y}(x\mid y)\)</span> en el ejemplo triangular.</li>
+<li>Verifica que cada densidad condicional del ejemplo se normaliza.</li>
+<li>Construye dos distribuciones conjuntas discretas distintas con las mismas marginales.</li>
+<li>Demuestra que si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces <span class="math inline">\(P(X\in A\mid Y\in B)=P(X\in A)\)</span> cuando <span class="math inline">\(P(Y\in B)&gt;0\)</span>.</li>
+<li><strong>Reto.</strong> Demuestra que si <span class="math inline">\(f_{X,Y}=f_Xf_Y\)</span> casi en todas partes, entonces <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes.</li>
+<li><strong>Reto.</strong> Justifica la fórmula rectangular para probabilidades a partir de la CDF conjunta.</li>
+<li><strong>Reto.</strong> Explica por qué la marginalización puede interpretarse como una proyección de la ley conjunta sobre cada eje.</li>
+</ol>
+<section id="referencias-del-capítulo" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">26.1</span> Referencias del capítulo</h2>
+<p>La teoría de distribuciones conjuntas, marginalización, condicionamiento e independencia sigue el desarrollo estándar de textos de probabilidad y estadística matemática, incluyendo <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-devore2016" class="csl-entry" role="listitem">
+Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
+</div>
+<div id="ref-johnson2018" class="csl-entry" role="listitem">
+Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
+</div>
+<div id="ref-montgomery2018" class="csl-entry" role="listitem">
+Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
+</div>
+<div id="ref-walpole2012" class="csl-entry" role="listitem">
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -682,13 +1109,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./presentacion.html" class="pagination-link" aria-label="Presentación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Presentación</span>
+      <a href="./14-gamma-weibull-beta.html" class="pagination-link" aria-label="Distribuciones continuas especiales II: Gamma, Weibull y Beta">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales II: Gamma, Weibull y Beta</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./notacion.html" class="pagination-link" aria-label="Notación general">
-        <span class="nav-page-text">Notación general</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
