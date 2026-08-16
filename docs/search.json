@@ -2060,6 +2060,156 @@
     ]
   },
   {
+    "objectID": "13-distribuciones-continuas-especiales.html",
+    "href": "13-distribuciones-continuas-especiales.html",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "",
+    "text": "13.1 Objetivos\nEn este capítulo se establecen formalmente las distribuciones uniforme, exponencial y normal, sus densidades, funciones de distribución, momentos y propiedades estructurales fundamentales.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#distribución-uniforme",
+    "href": "13-distribuciones-continuas-especiales.html#distribución-uniforme",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.2 Distribución uniforme",
+    "text": "13.2 Distribución uniforme\nSea \\(a&lt;b\\). Decimos que\n\\[\nX\\sim U(a,b)\n\\]\nsi su densidad es\n\\[\nf_X(x)=\\frac{1}{b-a}\\mathbf 1_{[a,b]}(x).\n\\]\nLa normalización es inmediata:\n\\[\n\\int_{-\\infty}^{\\infty}f_X(x)\\,dx\n=\\int_a^b\\frac{1}{b-a}\\,dx=1.\n\\]\nLa función de distribución es\n\\[\nF_X(x)=\n\\begin{cases}\n0, & x&lt;a,\\\\\n\\dfrac{x-a}{b-a}, & a\\le x\\le b,\\\\\n1, & x&gt;b.\n\\end{cases}\n\\]\nPor integración directa,\n\\[\nE[X]=\\frac{a+b}{2}\n\\]\ny\n\\[\nE[X^2]=\\frac{a^2+ab+b^2}{3}.\n\\]\nPor tanto,\n\\[\n\\operatorname{Var}(X)=E[X^2]-E[X]^2\n=\\frac{(b-a)^2}{12}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#transformación-afín-de-una-uniforme",
+    "href": "13-distribuciones-continuas-especiales.html#transformación-afín-de-una-uniforme",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.3 Transformación afín de una uniforme",
+    "text": "13.3 Transformación afín de una uniforme\nSi \\(X\\sim U(a,b)\\) y\n\\[\nY=\\frac{X-a}{b-a},\n\\]\nentonces\n\\[\nY\\sim U(0,1).\n\\]\nEste resultado permite reducir propiedades de cualquier uniforme al caso estándar.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#distribución-exponencial",
+    "href": "13-distribuciones-continuas-especiales.html#distribución-exponencial",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.4 Distribución exponencial",
+    "text": "13.4 Distribución exponencial\nSea \\(\\lambda&gt;0\\). Decimos que\n\\[\nX\\sim\\operatorname{Exp}(\\lambda)\n\\]\nsi\n\\[\nf_X(x)=\\lambda e^{-\\lambda x}\\mathbf 1_{[0,\\infty)}(x).\n\\]\nLa función de distribución es\n\\[\nF_X(x)=\n\\begin{cases}\n0, & x&lt;0,\\\\\n1-e^{-\\lambda x}, & x\\ge0.\n\\end{cases}\n\\]\nSu función de supervivencia es\n\\[\n\\overline F_X(x)=P(X&gt;x)=e^{-\\lambda x},\\qquad x\\ge0.\n\\]\nMediante integración por partes,\n\\[\nE[X]=\\frac1\\lambda\n\\]\ny\n\\[\nE[X^2]=\\frac{2}{\\lambda^2}.\n\\]\nPor tanto,\n\\[\n\\operatorname{Var}(X)=\\frac1{\\lambda^2}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#propiedad-sin-memoria",
+    "href": "13-distribuciones-continuas-especiales.html#propiedad-sin-memoria",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.5 Propiedad sin memoria",
+    "text": "13.5 Propiedad sin memoria\nPara \\(s,t\\ge0\\),\n\\[\nP(X&gt;s+t\\mid X&gt;s)\n=\\frac{P(X&gt;s+t)}{P(X&gt;s)}\n=\\frac{e^{-\\lambda(s+t)}}{e^{-\\lambda s}}\n=e^{-\\lambda t}.\n\\]\nLuego\n\\[\n\\boxed{P(X&gt;s+t\\mid X&gt;s)=P(X&gt;t)}.\n\\]\nLa distribución exponencial es la única distribución continua no degenerada sobre \\([0,\\infty)\\) con esta propiedad.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#distribución-normal",
+    "href": "13-distribuciones-continuas-especiales.html#distribución-normal",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.6 Distribución normal",
+    "text": "13.6 Distribución normal\nDecimos que\n\\[\nX\\sim N(\\mu,\\sigma^2),\\qquad \\sigma&gt;0,\n\\]\nsi su densidad es\n\\[\nf_X(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\left[-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right].\n\\]\nLa normalización se reduce a la integral gaussiana\n\\[\n\\int_{-\\infty}^{\\infty}e^{-z^2/2}\\,dz=\\sqrt{2\\pi}.\n\\]\nLa densidad es simétrica respecto de \\(\\mu\\).",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#normal-estándar",
+    "href": "13-distribuciones-continuas-especiales.html#normal-estándar",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.7 Normal estándar",
+    "text": "13.7 Normal estándar\nLa variable\n\\[\nZ\\sim N(0,1)\n\\]\nse denomina normal estándar y tiene densidad\n\\[\n\\phi(z)=\\frac{1}{\\sqrt{2\\pi}}e^{-z^2/2}.\n\\]\nSu función de distribución se denota por\n\\[\n\\Phi(z)=\\int_{-\\infty}^z\\phi(t)\\,dt.\n\\]\nNo existe una expresión elemental cerrada para \\(\\Phi\\).",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#estandarización",
+    "href": "13-distribuciones-continuas-especiales.html#estandarización",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.8 Estandarización",
+    "text": "13.8 Estandarización\nSi\n\\[\nX\\sim N(\\mu,\\sigma^2),\n\\]\nentonces\n\\[\nZ=\\frac{X-\\mu}{\\sigma}\n\\]\nsatisface\n\\[\nZ\\sim N(0,1).\n\\]\nEn consecuencia,\n\\[\nP(X\\le x)=\\Phi\\left(\\frac{x-\\mu}{\\sigma}\\right).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#media-y-varianza-de-la-normal",
+    "href": "13-distribuciones-continuas-especiales.html#media-y-varianza-de-la-normal",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.9 Media y varianza de la normal",
+    "text": "13.9 Media y varianza de la normal\nPor simetría,\n\\[\nE[Z]=0.\n\\]\nAdemás,\n\\[\nE[Z^2]=1.\n\\]\nPor tanto,\n\\[\n\\operatorname{Var}(Z)=1.\n\\]\nComo\n\\[\nX=\\mu+\\sigma Z,\n\\]\nse obtiene\n\\[\nE[X]=\\mu\n\\]\ny\n\\[\n\\operatorname{Var}(X)=\\sigma^2.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#transformaciones-afines",
+    "href": "13-distribuciones-continuas-especiales.html#transformaciones-afines",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.10 Transformaciones afines",
+    "text": "13.10 Transformaciones afines\nSi\n\\[\nX\\sim N(\\mu,\\sigma^2)\n\\]\ny\n\\[\nY=aX+b,\n\\]\nentonces\n\\[\nY\\sim N(a\\mu+b,a^2\\sigma^2).\n\\]\nEste resultado se obtiene mediante cambio de variable o mediante funciones generadoras.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#cuantiles",
+    "href": "13-distribuciones-continuas-especiales.html#cuantiles",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.11 Cuantiles",
+    "text": "13.11 Cuantiles\nPara \\(0&lt;p&lt;1\\), el cuantil \\(z_p\\) de la normal estándar se define mediante\n\\[\n\\Phi(z_p)=p.\n\\]\nPara una normal general,\n\\[\nx_p=\\mu+\\sigma z_p.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#simetría-de-la-cdf-normal",
+    "href": "13-distribuciones-continuas-especiales.html#simetría-de-la-cdf-normal",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.12 Simetría de la CDF normal",
+    "text": "13.12 Simetría de la CDF normal\nLa simetría de \\(\\phi\\) implica\n\\[\n\\Phi(-z)=1-\\Phi(z).\n\\]\nPor tanto,\n\\[\nP(|Z|\\le z)=2\\Phi(z)-1,\n\\]\npara \\(z\\ge0\\).",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#comparación-estructural",
+    "href": "13-distribuciones-continuas-especiales.html#comparación-estructural",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.13 Comparación estructural",
+    "text": "13.13 Comparación estructural\n\n\n\n\n\n\n\n\n\n\n\nDistribución\nSoporte\nParámetros\nMedia\nVarianza\nPropiedad destacada\n\n\n\n\nUniforme\n\\([a,b]\\)\n\\(a,b\\)\n\\((a+b)/2\\)\n\\((b-a)^2/12\\)\ndensidad constante\n\n\nExponencial\n\\([0,\\infty)\\)\n\\(\\lambda\\)\n\\(1/\\lambda\\)\n\\(1/\\lambda^2\\)\nsin memoria\n\n\nNormal\n\\(\\mathbb R\\)\n\\(\\mu,\\sigma^2\\)\n\\(\\mu\\)\n\\(\\sigma^2\\)\ncierre afín",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#ejercicios",
+    "href": "13-distribuciones-continuas-especiales.html#ejercicios",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.14 Ejercicios",
+    "text": "13.14 Ejercicios\n\nDemuestra la expresión de \\(E[X]\\) para \\(X\\sim U(a,b)\\).\nDeduce \\(\\operatorname{Var}(X)\\) para la distribución uniforme.\nDemuestra que \\((X-a)/(b-a)\\sim U(0,1)\\).\nDeriva \\(F_X\\) para \\(X\\sim\\operatorname{Exp}(\\lambda)\\).\nDemuestra la propiedad sin memoria de la exponencial.\nCalcula \\(E[X^2]\\) para una exponencial mediante integración por partes.\nPrueba que la densidad normal es simétrica respecto de \\(\\mu\\).\nDemuestra que la estandarización de una normal produce una normal estándar.\nDeduce \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) a partir de \\(X=\\mu+\\sigma Z\\).\nDemuestra que \\(\\Phi(-z)=1-\\Phi(z)\\).\nObtén la relación entre cuantiles de \\(N(\\mu,\\sigma^2)\\) y los cuantiles de \\(N(0,1)\\).\nReto ★. Demuestra mediante cambio de variable que \\(aX+b\\) es normal cuando \\(X\\) es normal.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
+    "objectID": "13-distribuciones-continuas-especiales.html#referencias-del-capítulo",
+    "href": "13-distribuciones-continuas-especiales.html#referencias-del-capítulo",
+    "title": "13  Distribuciones continuas especiales I: uniforme, exponencial y normal",
+    "section": "13.15 Referencias del capítulo",
+    "text": "13.15 Referencias del capítulo\nEl desarrollo teórico de las distribuciones uniforme, exponencial y normal sigue tratamientos estándar de teoría de probabilidad en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Distribuciones continuas especiales I: uniforme, exponencial y normal</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
