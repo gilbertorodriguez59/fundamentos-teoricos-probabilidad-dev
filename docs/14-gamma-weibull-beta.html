@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Variables aleatorias continuas y función de densidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>14&nbsp; Distribuciones continuas especiales II: Gamma, Weibull y Beta – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10-esperanza-varianza-chebyshev.html" rel="next">
-<link href="./08-variables-discretas-pmf.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./13-distribuciones-continuas-especiales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-variables-continuas-densidad.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-gamma-weibull-beta.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales II: Gamma, Weibull y Beta</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -245,7 +245,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link active">
+  <a href="./09-variables-continuas-densidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span></a>
   </div>
 </li>
@@ -275,7 +275,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-gamma-weibull-beta.html" class="sidebar-item-text sidebar-link">
+  <a href="./14-gamma-weibull-beta.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales II: Gamma, Weibull y Beta</span></span></a>
   </div>
 </li>
@@ -295,23 +295,35 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">9.1</span> Objetivos</a></li>
-  <li><a href="#variables-aleatorias-absolutamente-continuas" id="toc-variables-aleatorias-absolutamente-continuas" class="nav-link" data-scroll-target="#variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</a></li>
-  <li><a href="#condiciones-básicas-de-una-densidad" id="toc-condiciones-básicas-de-una-densidad" class="nav-link" data-scroll-target="#condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</a></li>
-  <li><a href="#probabilidad-de-intervalos" id="toc-probabilidad-de-intervalos" class="nav-link" data-scroll-target="#probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</a></li>
-  <li><a href="#la-densidad-no-es-una-probabilidad-puntual" id="toc-la-densidad-no-es-una-probabilidad-puntual" class="nav-link" data-scroll-target="#la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</a></li>
-  <li><a href="#función-de-distribución-acumulada" id="toc-función-de-distribución-acumulada" class="nav-link" data-scroll-target="#función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</a></li>
-  <li><a href="#recuperación-de-probabilidades-desde-la-cdf" id="toc-recuperación-de-probabilidades-desde-la-cdf" class="nav-link" data-scroll-target="#recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</a></li>
-  <li><a href="#densidad-a-partir-de-una-cdf" id="toc-densidad-a-partir-de-una-cdf" class="nav-link" data-scroll-target="#densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</a></li>
-  <li><a href="#ejemplo-normalizado" id="toc-ejemplo-normalizado" class="nav-link" data-scroll-target="#ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</a></li>
-  <li><a href="#propiedad-de-conjuntos-de-medida-cero" id="toc-propiedad-de-conjuntos-de-medida-cero" class="nav-link" data-scroll-target="#propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</a></li>
-  <li><a href="#comparación-formal-con-el-caso-discreto" id="toc-comparación-formal-con-el-caso-discreto" class="nav-link" data-scroll-target="#comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</a></li>
-  <li><a href="#soporte-de-una-distribución-continua" id="toc-soporte-de-una-distribución-continua" class="nav-link" data-scroll-target="#soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</a></li>
-  <li><a href="#unicidad-casi-en-todas-partes" id="toc-unicidad-casi-en-todas-partes" class="nav-link" data-scroll-target="#unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</a></li>
-  <li><a href="#transformaciones-monótonas" id="toc-transformaciones-monótonas" class="nav-link" data-scroll-target="#transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</a></li>
-  <li><a href="#ejemplo-de-transformación" id="toc-ejemplo-de-transformación" class="nav-link" data-scroll-target="#ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.16</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">14.1</span> Objetivos</a></li>
+  <li><a href="#distribución-gamma" id="toc-distribución-gamma" class="nav-link" data-scroll-target="#distribución-gamma"><span class="header-section-number">15</span> Distribución Gamma</a>
+  <ul class="collapse">
+  <li><a href="#función-gamma" id="toc-función-gamma" class="nav-link" data-scroll-target="#función-gamma"><span class="header-section-number">15.1</span> Función Gamma</a></li>
+  <li><a href="#normalización" id="toc-normalización" class="nav-link" data-scroll-target="#normalización"><span class="header-section-number">15.2</span> Normalización</a></li>
+  <li><a href="#momentos" id="toc-momentos" class="nav-link" data-scroll-target="#momentos"><span class="header-section-number">15.3</span> Momentos</a></li>
+  <li><a href="#caso-exponencial" id="toc-caso-exponencial" class="nav-link" data-scroll-target="#caso-exponencial"><span class="header-section-number">15.4</span> Caso exponencial</a></li>
+  <li><a href="#suma-de-variables-gamma" id="toc-suma-de-variables-gamma" class="nav-link" data-scroll-target="#suma-de-variables-gamma"><span class="header-section-number">15.5</span> Suma de variables Gamma</a></li>
+  </ul></li>
+  <li><a href="#distribución-weibull" id="toc-distribución-weibull" class="nav-link" data-scroll-target="#distribución-weibull"><span class="header-section-number">16</span> Distribución Weibull</a>
+  <ul class="collapse">
+  <li><a href="#función-de-distribución" id="toc-función-de-distribución" class="nav-link" data-scroll-target="#función-de-distribución"><span class="header-section-number">16.1</span> Función de distribución</a></li>
+  <li><a href="#tasa-de-riesgo" id="toc-tasa-de-riesgo" class="nav-link" data-scroll-target="#tasa-de-riesgo"><span class="header-section-number">16.2</span> Tasa de riesgo</a></li>
+  <li><a href="#relación-con-la-exponencial" id="toc-relación-con-la-exponencial" class="nav-link" data-scroll-target="#relación-con-la-exponencial"><span class="header-section-number">16.3</span> Relación con la exponencial</a></li>
+  <li><a href="#momentos-de-weibull" id="toc-momentos-de-weibull" class="nav-link" data-scroll-target="#momentos-de-weibull"><span class="header-section-number">16.4</span> Momentos de Weibull</a></li>
+  <li><a href="#transformación-exponencial" id="toc-transformación-exponencial" class="nav-link" data-scroll-target="#transformación-exponencial"><span class="header-section-number">16.5</span> Transformación exponencial</a></li>
+  </ul></li>
+  <li><a href="#distribución-beta" id="toc-distribución-beta" class="nav-link" data-scroll-target="#distribución-beta"><span class="header-section-number">17</span> Distribución Beta</a>
+  <ul class="collapse">
+  <li><a href="#relación-beta-gamma" id="toc-relación-beta-gamma" class="nav-link" data-scroll-target="#relación-beta-gamma"><span class="header-section-number">17.1</span> Relación Beta-Gamma</a></li>
+  <li><a href="#normalización-1" id="toc-normalización-1" class="nav-link" data-scroll-target="#normalización-1"><span class="header-section-number">17.2</span> Normalización</a></li>
+  <li><a href="#momentos-1" id="toc-momentos-1" class="nav-link" data-scroll-target="#momentos-1"><span class="header-section-number">17.3</span> Momentos</a></li>
+  <li><a href="#simetría" id="toc-simetría" class="nav-link" data-scroll-target="#simetría"><span class="header-section-number">17.4</span> Simetría</a></li>
+  <li><a href="#caso-uniforme" id="toc-caso-uniforme" class="nav-link" data-scroll-target="#caso-uniforme"><span class="header-section-number">17.5</span> Caso uniforme</a></li>
+  <li><a href="#construcción-beta-mediante-variables-gamma" id="toc-construcción-beta-mediante-variables-gamma" class="nav-link" data-scroll-target="#construcción-beta-mediante-variables-gamma"><span class="header-section-number">17.6</span> Construcción Beta mediante variables Gamma</a></li>
+  <li><a href="#comparación-estructural" id="toc-comparación-estructural" class="nav-link" data-scroll-target="#comparación-estructural"><span class="header-section-number">17.7</span> Comparación estructural</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">17.8</span> Ejercicios teóricos</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">17.9</span> Referencias del capítulo</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -320,7 +332,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales II: Gamma, Weibull y Beta</span></h1>
 </div>
 
 
@@ -337,231 +349,259 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">9.1</span> Objetivos</h2>
-<p>En este capítulo se formalizan las variables aleatorias absolutamente continuas, sus funciones de densidad y su relación con la función de distribución acumulada. Se enfatizan las propiedades analíticas que distinguen el caso continuo del discreto.</p>
+<section id="objetivos" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">14.1</span> Objetivos</h2>
+<p>Este capítulo desarrolla con mayor profundidad matemática tres familias continuas: Gamma, Weibull y Beta. Se estudian normalización, momentos, casos particulares, funciones de supervivencia, tasas de falla y relaciones estructurales entre familias.</p>
 </section>
-<section id="variables-aleatorias-absolutamente-continuas" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="variables-aleatorias-absolutamente-continuas"><span class="header-section-number">9.2</span> Variables aleatorias absolutamente continuas</h2>
-<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria definida sobre <span class="math inline">\((\Omega,\mathcal F,P)\)</span>. Decimos que <span class="math inline">\(X\)</span> es <strong>absolutamente continua</strong> si existe una función integrable</p>
+<section id="distribución-gamma" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Distribución Gamma</h1>
+<p>Para <span class="math inline">\(\alpha&gt;0\)</span> y <span class="math inline">\(\lambda&gt;0\)</span>, definimos</p>
 <p><span class="math display">\[
-f_X:\mathbb R\to[0,\infty)
+f(x)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x},\qquad x&gt;0.
 \]</span></p>
-<p>tal que, para todo conjunto boreliano <span class="math inline">\(A\subseteq\mathbb R\)</span>,</p>
+<section id="función-gamma" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="función-gamma"><span class="header-section-number">15.1</span> Función Gamma</h2>
+<p>La función Gamma se define por</p>
 <p><span class="math display">\[
-P(X\in A)=\int_A f_X(x)\,dx.
+\Gamma(\alpha)=\int_0^\infty t^{\alpha-1}e^{-t}\,dt,
 \]</span></p>
-<p>La función <span class="math inline">\(f_X\)</span> se denomina <strong>densidad de probabilidad</strong> de <span class="math inline">\(X\)</span>.</p>
-</section>
-<section id="condiciones-básicas-de-una-densidad" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="condiciones-básicas-de-una-densidad"><span class="header-section-number">9.3</span> Condiciones básicas de una densidad</h2>
-<p>Toda densidad satisface</p>
+<p>para <span class="math inline">\(\alpha&gt;0\)</span>.</p>
+<p>Mediante integración por partes se obtiene</p>
 <p><span class="math display">\[
-f_X(x)\geq0
+\Gamma(\alpha+1)=\alpha\Gamma(\alpha).
 \]</span></p>
-<p>para casi todo <span class="math inline">\(x\)</span>, y</p>
+<p>Si <span class="math inline">\(n\)</span> es entero positivo,</p>
 <p><span class="math display">\[
-\int_{-\infty}^{\infty} f_X(x)\,dx=1.
-\]</span></p>
-<p>Recíprocamente, toda función medible no negativa con integral total 1 define una distribución absolutamente continua.</p>
-</section>
-<section id="probabilidad-de-intervalos" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="probabilidad-de-intervalos"><span class="header-section-number">9.4</span> Probabilidad de intervalos</h2>
-<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
-<p><span class="math display">\[
-P(a&lt;X\leq b)=\int_a^b f_X(x)\,dx.
-\]</span></p>
-<p>Como los conjuntos de un solo punto tienen medida de Lebesgue cero,</p>
-<p><span class="math display">\[
-P(X=x)=0
-\]</span></p>
-<p>para todo <span class="math inline">\(x\in\mathbb R\)</span>.</p>
-<p>Por ello,</p>
-<p><span class="math display">\[
-P(a&lt;X&lt;b)=P(a\leq X\leq b)=P(a&lt;X\leq b).
+\Gamma(n)=(n-1)!.
 \]</span></p>
 </section>
-<section id="la-densidad-no-es-una-probabilidad-puntual" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="la-densidad-no-es-una-probabilidad-puntual"><span class="header-section-number">9.5</span> La densidad no es una probabilidad puntual</h2>
-<p>En general,</p>
+<section id="normalización" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="normalización"><span class="header-section-number">15.2</span> Normalización</h2>
+<p>Haciendo el cambio <span class="math inline">\(t=\lambda x\)</span>,</p>
 <p><span class="math display">\[
-f_X(x)\neq P(X=x).
-\]</span></p>
-<p>La densidad describe cómo se distribuye localmente la probabilidad respecto de la medida de Lebesgue. Su valor puntual puede ser mayor que 1 sin contradicción, siempre que la integral total permanezca igual a 1.</p>
-</section>
-<section id="función-de-distribución-acumulada" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="función-de-distribución-acumulada"><span class="header-section-number">9.6</span> Función de distribución acumulada</h2>
-<p>La CDF de <span class="math inline">\(X\)</span> es</p>
-<p><span class="math display">\[
-F_X(x)=P(X\leq x).
-\]</span></p>
-<p>Si <span class="math inline">\(X\)</span> es absolutamente continua,</p>
-<p><span class="math display">\[
-\boxed{F_X(x)=\int_{-\infty}^{x}f_X(t)\,dt}.
-\]</span></p>
-<p>En consecuencia, <span class="math inline">\(F_X\)</span> es absolutamente continua y</p>
-<p><span class="math display">\[
-F_X'(x)=f_X(x)
-\]</span></p>
-<p>para casi todo <span class="math inline">\(x\)</span>.</p>
-</section>
-<section id="recuperación-de-probabilidades-desde-la-cdf" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="recuperación-de-probabilidades-desde-la-cdf"><span class="header-section-number">9.7</span> Recuperación de probabilidades desde la CDF</h2>
-<p>Para <span class="math inline">\(a&lt;b\)</span>,</p>
-<p><span class="math display">\[
-P(a&lt;X\leq b)=F_X(b)-F_X(a).
-\]</span></p>
-<p>Como <span class="math inline">\(P(X=a)=0\)</span>,</p>
-<p><span class="math display">\[
-P(a&lt;X&lt;b)=F_X(b)-F_X(a).
-\]</span></p>
-<p>También</p>
-<p><span class="math display">\[
-P(X&gt;x)=1-F_X(x).
+\int_0^\infty \frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}\,dx
+=\frac1{\Gamma(\alpha)}\int_0^\infty t^{\alpha-1}e^{-t}\,dt=1.
 \]</span></p>
 </section>
-<section id="densidad-a-partir-de-una-cdf" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="densidad-a-partir-de-una-cdf"><span class="header-section-number">9.8</span> Densidad a partir de una CDF</h2>
-<p>Si una CDF <span class="math inline">\(F\)</span> es absolutamente continua, entonces existe una función integrable <span class="math inline">\(f\)</span> tal que</p>
+<section id="momentos" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="momentos"><span class="header-section-number">15.3</span> Momentos</h2>
+<p>Para <span class="math inline">\(r&gt;-\alpha\)</span>,</p>
 <p><span class="math display">\[
-F(x)=\int_{-\infty}^{x}f(t)\,dt.
+E[X^r]=\frac{\Gamma(\alpha+r)}{\lambda^r\Gamma(\alpha)}.
 \]</span></p>
-<p>Además,</p>
+<p>En particular,</p>
 <p><span class="math display">\[
-f(x)=F'(x)
+E[X]=\frac{\alpha}{\lambda},
 \]</span></p>
-<p>casi en todas partes.</p>
-<p>No toda CDF continua posee necesariamente una densidad; la continuidad por sí sola es una condición más débil que la absoluta continuidad.</p>
-</section>
-<section id="ejemplo-normalizado" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="ejemplo-normalizado"><span class="header-section-number">9.9</span> Ejemplo normalizado</h2>
-<p>Sea</p>
 <p><span class="math display">\[
-f(x)=
-\begin{cases}
-cx, &amp; 0\leq x\leq2,\\
-0, &amp; \text{en otro caso}.
-\end{cases}
+E[X^2]=\frac{\alpha(\alpha+1)}{\lambda^2},
 \]</span></p>
-<p>La condición</p>
+<p>y por tanto</p>
 <p><span class="math display">\[
-\int_0^2 cx\,dx=1
-\]</span></p>
-<p>produce</p>
-<p><span class="math display">\[
-c=\frac12.
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-f(x)=\frac{x}{2},\qquad0\leq x\leq2.
-\]</span></p>
-<p>La CDF es</p>
-<p><span class="math display">\[
-F(x)=
-\begin{cases}
-0, &amp; x&lt;0,\\
-\frac{x^2}{4}, &amp; 0\leq x\leq2,\\
-1, &amp; x&gt;2.
-\end{cases}
+\operatorname{Var}(X)=\frac{\alpha}{\lambda^2}.
 \]</span></p>
 </section>
-<section id="propiedad-de-conjuntos-de-medida-cero" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="propiedad-de-conjuntos-de-medida-cero"><span class="header-section-number">9.10</span> Propiedad de conjuntos de medida cero</h2>
-<p>Si <span class="math inline">\(N\subseteq\mathbb R\)</span> tiene medida de Lebesgue cero y <span class="math inline">\(X\)</span> es absolutamente continua, entonces</p>
+<section id="caso-exponencial" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="caso-exponencial"><span class="header-section-number">15.4</span> Caso exponencial</h2>
+<p>Para <span class="math inline">\(\alpha=1\)</span>,</p>
 <p><span class="math display">\[
-P(X\in N)=0.
+f(x)=\lambda e^{-\lambda x},
 \]</span></p>
-<p>Esto incluye todos los conjuntos finitos y numerables. Así, una variable absolutamente continua asigna probabilidad cero a cualquier conjunto numerable de valores.</p>
-</section>
-<section id="comparación-formal-con-el-caso-discreto" class="level2" data-number="9.11">
-<h2 data-number="9.11" class="anchored" data-anchor-id="comparación-formal-con-el-caso-discreto"><span class="header-section-number">9.11</span> Comparación formal con el caso discreto</h2>
-<p>En el caso discreto,</p>
+<p>por lo que</p>
 <p><span class="math display">\[
-P(X=x)=p_X(x)
-\]</span></p>
-<p>puede ser positivo.</p>
-<p>En el caso absolutamente continuo,</p>
-<p><span class="math display">\[
-P(X=x)=0
-\]</span></p>
-<p>para todo <span class="math inline">\(x\)</span>.</p>
-<p>La suma</p>
-<p><span class="math display">\[
-\sum_x p_X(x)
-\]</span></p>
-<p>del caso discreto es reemplazada por la integral</p>
-<p><span class="math display">\[
-\int f_X(x)\,dx.
+\operatorname{Gamma}(1,\lambda)=\operatorname{Exp}(\lambda).
 \]</span></p>
 </section>
-<section id="soporte-de-una-distribución-continua" class="level2" data-number="9.12">
-<h2 data-number="9.12" class="anchored" data-anchor-id="soporte-de-una-distribución-continua"><span class="header-section-number">9.12</span> Soporte de una distribución continua</h2>
-<p>Una noción útil de soporte es el cierre del conjunto donde la densidad es positiva. Si</p>
+<section id="suma-de-variables-gamma" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="suma-de-variables-gamma"><span class="header-section-number">15.5</span> Suma de variables Gamma</h2>
+<p>Si <span class="math inline">\(X_i\sim\operatorname{Gamma}(\alpha_i,\lambda)\)</span> son independientes con tasa común <span class="math inline">\(\lambda\)</span>, entonces</p>
 <p><span class="math display">\[
-f_X(x)&gt;0
+\sum_{i=1}^n X_i\sim\operatorname{Gamma}\left(\sum_{i=1}^n\alpha_i,\lambda\right).
 \]</span></p>
-<p>sólo para <span class="math inline">\(x\in(a,b)\)</span>, entonces el soporte puede identificarse con <span class="math inline">\([a,b]\)</span> bajo condiciones regulares.</p>
+<p>En particular, la suma de <span class="math inline">\(r\)</span> exponenciales independientes de tasa <span class="math inline">\(\lambda\)</span> tiene distribución Gamma<span class="math inline">\((r,\lambda)\)</span>.</p>
 </section>
-<section id="unicidad-casi-en-todas-partes" class="level2" data-number="9.13">
-<h2 data-number="9.13" class="anchored" data-anchor-id="unicidad-casi-en-todas-partes"><span class="header-section-number">9.13</span> Unicidad casi en todas partes</h2>
-<p>Si dos densidades <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> generan la misma distribución, entonces</p>
-<p><span class="math display">\[
-f(x)=g(x)
-\]</span></p>
-<p>para casi todo <span class="math inline">\(x\)</span>.</p>
-<p>Es decir, pueden diferir en un conjunto de medida cero sin alterar ninguna probabilidad.</p>
 </section>
-<section id="transformaciones-monótonas" class="level2" data-number="9.14">
-<h2 data-number="9.14" class="anchored" data-anchor-id="transformaciones-monótonas"><span class="header-section-number">9.14</span> Transformaciones monótonas</h2>
-<p>Sea <span class="math inline">\(Y=g(X)\)</span>, donde <span class="math inline">\(g\)</span> es estrictamente monótona, diferenciable y con inversa diferenciable. Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(f_X\)</span>, entonces</p>
+<section id="distribución-weibull" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Distribución Weibull</h1>
+<p>Para <span class="math inline">\(k&gt;0\)</span> y <span class="math inline">\(\eta&gt;0\)</span>,</p>
 <p><span class="math display">\[
-f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|.
+f(x)=\frac{k}{\eta}\left(\frac{x}{\eta}\right)^{k-1}
+\exp\left[-\left(\frac{x}{\eta}\right)^k\right],\qquad x\ge0.
 \]</span></p>
-<p>Esta fórmula se estudiará con mayor detalle al abordar funciones de variables aleatorias.</p>
+<section id="función-de-distribución" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="función-de-distribución"><span class="header-section-number">16.1</span> Función de distribución</h2>
+<p>Integrando la densidad,</p>
+<p><span class="math display">\[
+F(x)=1-\exp\left[-\left(\frac{x}{\eta}\right)^k\right].
+\]</span></p>
+<p>La función de supervivencia es</p>
+<p><span class="math display">\[
+S(x)=\exp\left[-\left(\frac{x}{\eta}\right)^k\right].
+\]</span></p>
 </section>
-<section id="ejemplo-de-transformación" class="level2" data-number="9.15">
-<h2 data-number="9.15" class="anchored" data-anchor-id="ejemplo-de-transformación"><span class="header-section-number">9.15</span> Ejemplo de transformación</h2>
-<p>Si <span class="math inline">\(X\)</span> tiene densidad</p>
+<section id="tasa-de-riesgo" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="tasa-de-riesgo"><span class="header-section-number">16.2</span> Tasa de riesgo</h2>
+<p>La tasa de riesgo o hazard es</p>
 <p><span class="math display">\[
-f_X(x)=2x,\qquad0&lt;x&lt;1,
+h(x)=\frac{f(x)}{S(x)}
+=\frac{k}{\eta}\left(\frac{x}{\eta}\right)^{k-1}.
 \]</span></p>
-<p>y definimos</p>
+<p>De aquí se deduce:</p>
+<ul>
+<li><span class="math inline">\(k&lt;1\)</span>: riesgo decreciente;</li>
+<li><span class="math inline">\(k=1\)</span>: riesgo constante;</li>
+<li><span class="math inline">\(k&gt;1\)</span>: riesgo creciente.</li>
+</ul>
+</section>
+<section id="relación-con-la-exponencial" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="relación-con-la-exponencial"><span class="header-section-number">16.3</span> Relación con la exponencial</h2>
+<p>Si <span class="math inline">\(k=1\)</span>,</p>
 <p><span class="math display">\[
-Y=X^2,
+f(x)=\frac1\eta e^{-x/\eta},
 \]</span></p>
-<p>entonces</p>
+<p>que corresponde a una exponencial con tasa <span class="math inline">\(1/\eta\)</span>.</p>
+</section>
+<section id="momentos-de-weibull" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="momentos-de-weibull"><span class="header-section-number">16.4</span> Momentos de Weibull</h2>
+<p>Para <span class="math inline">\(r&gt;-k\)</span>,</p>
 <p><span class="math display">\[
-g^{-1}(y)=\sqrt y,
+E[X^r]=\eta^r\Gamma\left(1+\frac{r}{k}\right).
+\]</span></p>
+<p>En particular,</p>
+<p><span class="math display">\[
+E[X]=\eta\Gamma\left(1+\frac1k\right),
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-\frac{d}{dy}g^{-1}(y)=\frac{1}{2\sqrt y}.
+\operatorname{Var}(X)=\eta^2\left[
+\Gamma\left(1+\frac2k\right)
+-\Gamma^2\left(1+\frac1k\right)
+\right].
 \]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-f_Y(y)=2\sqrt y\cdot\frac{1}{2\sqrt y}=1,
-\]</span></p>
-<p>para <span class="math inline">\(0&lt;y&lt;1\)</span>.</p>
-<p>Así, <span class="math inline">\(Y\)</span> tiene densidad uniforme sobre <span class="math inline">\((0,1)\)</span>.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="9.16">
-<h2 data-number="9.16" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.16</span> Ejercicios</h2>
+<section id="transformación-exponencial" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="transformación-exponencial"><span class="header-section-number">16.5</span> Transformación exponencial</h2>
+<p>Si <span class="math inline">\(X\sim\operatorname{Weibull}(k,\eta)\)</span>, entonces</p>
+<p><span class="math display">\[
+Y=\left(\frac{X}{\eta}\right)^k
+\]</span></p>
+<p>tiene distribución exponencial estándar:</p>
+<p><span class="math display">\[
+Y\sim\operatorname{Exp}(1).
+\]</span></p>
+<p>Esta transformación permite derivar directamente la CDF y los momentos.</p>
+</section>
+</section>
+<section id="distribución-beta" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Distribución Beta</h1>
+<p>Para <span class="math inline">\(\alpha&gt;0\)</span> y <span class="math inline">\(\beta&gt;0\)</span>,</p>
+<p><span class="math display">\[
+f(x)=\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)},\qquad 0&lt;x&lt;1,
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+B(\alpha,\beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}\,dx.
+\]</span></p>
+<section id="relación-beta-gamma" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="relación-beta-gamma"><span class="header-section-number">17.1</span> Relación Beta-Gamma</h2>
+<p>Se cumple</p>
+<p><span class="math display">\[
+\boxed{B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}}.
+\]</span></p>
+<p>Esta identidad conecta de manera profunda las familias Beta y Gamma.</p>
+</section>
+<section id="normalización-1" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="normalización-1"><span class="header-section-number">17.2</span> Normalización</h2>
+<p>Por definición de <span class="math inline">\(B(\alpha,\beta)\)</span>,</p>
+<p><span class="math display">\[
+\int_0^1 f(x)\,dx=1.
+\]</span></p>
+</section>
+<section id="momentos-1" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="momentos-1"><span class="header-section-number">17.3</span> Momentos</h2>
+<p>Para <span class="math inline">\(r&gt;-\alpha\)</span>,</p>
+<p><span class="math display">\[
+E[X^r]=\frac{B(\alpha+r,\beta)}{B(\alpha,\beta)}.
+\]</span></p>
+<p>En particular,</p>
+<p><span class="math display">\[
+E[X]=\frac{\alpha}{\alpha+\beta}.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+E[X^2]=\frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)},
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=
+\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+\]</span></p>
+</section>
+<section id="simetría" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="simetría"><span class="header-section-number">17.4</span> Simetría</h2>
+<p>Si</p>
+<p><span class="math display">\[
+X\sim\operatorname{Beta}(\alpha,\beta),
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+1-X\sim\operatorname{Beta}(\beta,\alpha).
+\]</span></p>
+<p>En particular, cuando <span class="math inline">\(\alpha=\beta\)</span>, la distribución es simétrica respecto de <span class="math inline">\(1/2\)</span>.</p>
+</section>
+<section id="caso-uniforme" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="caso-uniforme"><span class="header-section-number">17.5</span> Caso uniforme</h2>
+<p>Para</p>
+<p><span class="math display">\[
+\alpha=\beta=1,
+\]</span></p>
+<p><span class="math display">\[
+f(x)=1,\qquad 0&lt;x&lt;1,
+\]</span></p>
+<p>por lo que</p>
+<p><span class="math display">\[
+\operatorname{Beta}(1,1)=U(0,1).
+\]</span></p>
+</section>
+<section id="construcción-beta-mediante-variables-gamma" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="construcción-beta-mediante-variables-gamma"><span class="header-section-number">17.6</span> Construcción Beta mediante variables Gamma</h2>
+<p>Si</p>
+<p><span class="math display">\[
+U\sim\operatorname{Gamma}(\alpha,1),\qquad
+V\sim\operatorname{Gamma}(\beta,1)
+\]</span></p>
+<p>son independientes, entonces</p>
+<p><span class="math display">\[
+\boxed{\frac{U}{U+V}\sim\operatorname{Beta}(\alpha,\beta)}.
+\]</span></p>
+<p>Esta representación es fundamental para entender la relación entre ambas familias.</p>
+</section>
+<section id="comparación-estructural" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="comparación-estructural"><span class="header-section-number">17.7</span> Comparación estructural</h2>
+<p>Gamma y Weibull tienen soporte positivo no acotado, pero su estructura es distinta. Gamma aparece naturalmente en sumas de tiempos exponenciales, mientras Weibull permite tasas de riesgo crecientes o decrecientes. Beta, en cambio, vive en un intervalo acotado y resulta especialmente apropiada para proporciones.</p>
+</section>
+<section id="ejercicios-teóricos" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">17.8</span> Ejercicios teóricos</h2>
 <ol type="1">
-<li>Demuestra que si <span class="math inline">\(f\geq0\)</span> y <span class="math inline">\(\int_{-\infty}^{\infty}f(x)dx=1\)</span>, entonces <span class="math inline">\(P(A)=\int_Af(x)dx\)</span> define una medida de probabilidad sobre los borelianos.</li>
-<li>Prueba que una variable absolutamente continua satisface <span class="math inline">\(P(X=x)=0\)</span> para todo <span class="math inline">\(x\)</span>.</li>
-<li>Sea <span class="math inline">\(f(x)=c(1+x)\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>. Determina <span class="math inline">\(c\)</span> y la CDF correspondiente.</li>
-<li>Demuestra que, para una variable absolutamente continua, incluir o excluir los extremos de un intervalo no cambia su probabilidad.</li>
-<li>Sea <span class="math inline">\(F(x)=x^3\)</span> para <span class="math inline">\(0\leq x\leq1\)</span>, con las extensiones usuales fuera del intervalo. Determina la densidad.</li>
-<li>Explica por qué modificar una densidad en un solo punto no cambia la distribución.</li>
-<li>Si <span class="math inline">\(X\)</span> tiene densidad <span class="math inline">\(2x\)</span> en <span class="math inline">\((0,1)\)</span> y <span class="math inline">\(Y=X^2\)</span>, deriva formalmente la densidad de <span class="math inline">\(Y\)</span>.</li>
-<li>Prueba que si <span class="math inline">\(N\)</span> es numerable y <span class="math inline">\(X\)</span> es absolutamente continua, entonces <span class="math inline">\(P(X\in N)=0\)</span>.</li>
-<li>Da un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.</li>
-<li><strong>Reto ★.</strong> Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.</li>
+<li>Demuestra que <span class="math inline">\(\Gamma(n)=(n-1)!\)</span> para entero positivo <span class="math inline">\(n\)</span>.</li>
+<li>Verifica la normalización de la densidad Gamma mediante el cambio <span class="math inline">\(t=\lambda x\)</span>.</li>
+<li>Deriva <span class="math inline">\(E[X^r]\)</span> para una variable Gamma.</li>
+<li>Deduce media y varianza de Gamma a partir de los momentos.</li>
+<li>Demuestra que Gamma<span class="math inline">\((1,\lambda)\)</span> coincide con Exp<span class="math inline">\((\lambda)\)</span>.</li>
+<li>Deriva la CDF de Weibull a partir de su densidad.</li>
+<li>Obtén la tasa de riesgo de Weibull y analiza su monotonía según <span class="math inline">\(k\)</span>.</li>
+<li>Demuestra que <span class="math inline">\((X/\eta)^k\sim\operatorname{Exp}(1)\)</span> cuando <span class="math inline">\(X\)</span> es Weibull.</li>
+<li>Deriva los momentos de Weibull a partir de la transformación anterior.</li>
+<li>Demuestra la identidad <span class="math inline">\(B(\alpha,\beta)=\Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha+\beta)\)</span>.</li>
+<li>Deriva media y varianza de Beta.</li>
+<li>Demuestra que si <span class="math inline">\(X\sim\operatorname{Beta}(\alpha,\beta)\)</span>, entonces <span class="math inline">\(1-X\sim\operatorname{Beta}(\beta,\alpha)\)</span>.</li>
+<li>Demuestra que Beta<span class="math inline">\((1,1)\)</span> es uniforme estándar.</li>
+<li><strong>Reto ★.</strong> Demuestra que si <span class="math inline">\(U\)</span> y <span class="math inline">\(V\)</span> son Gamma independientes con tasa común 1, entonces <span class="math inline">\(U/(U+V)\)</span> tiene distribución Beta.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="9.17">
-<h2 data-number="9.17" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">9.17</span> Referencias del capítulo</h2>
-<p>El desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada al nivel formal de este volumen.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">17.9</span> Referencias del capítulo</h2>
+<p>La exposición teórica sigue tratamientos clásicos de distribuciones continuas y funciones especiales en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -578,6 +618,7 @@ Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Pro
 Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -983,13 +1024,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08-variables-discretas-pmf.html" class="pagination-link" aria-label="Variables aleatorias discretas y función de masa de probabilidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></span>
+      <a href="./13-distribuciones-continuas-especiales.html" class="pagination-link" aria-label="Distribuciones continuas especiales I: uniforme, exponencial y normal">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-esperanza-varianza-chebyshev.html" class="pagination-link" aria-label="Esperanza matemática, momentos, varianza y desigualdades probabilísticas">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

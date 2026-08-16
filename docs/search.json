@@ -2210,6 +2210,206 @@
     ]
   },
   {
+    "objectID": "14-gamma-weibull-beta.html",
+    "href": "14-gamma-weibull-beta.html",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "",
+    "text": "14.1 Objetivos\nEste capítulo desarrolla con mayor profundidad matemática tres familias continuas: Gamma, Weibull y Beta. Se estudian normalización, momentos, casos particulares, funciones de supervivencia, tasas de falla y relaciones estructurales entre familias.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#función-gamma",
+    "href": "14-gamma-weibull-beta.html#función-gamma",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "15.1 Función Gamma",
+    "text": "15.1 Función Gamma\nLa función Gamma se define por\n\\[\n\\Gamma(\\alpha)=\\int_0^\\infty t^{\\alpha-1}e^{-t}\\,dt,\n\\]\npara \\(\\alpha&gt;0\\).\nMediante integración por partes se obtiene\n\\[\n\\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha).\n\\]\nSi \\(n\\) es entero positivo,\n\\[\n\\Gamma(n)=(n-1)!.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#normalización",
+    "href": "14-gamma-weibull-beta.html#normalización",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "15.2 Normalización",
+    "text": "15.2 Normalización\nHaciendo el cambio \\(t=\\lambda x\\),\n\\[\n\\int_0^\\infty \\frac{\\lambda^\\alpha}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\lambda x}\\,dx\n=\\frac1{\\Gamma(\\alpha)}\\int_0^\\infty t^{\\alpha-1}e^{-t}\\,dt=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#momentos",
+    "href": "14-gamma-weibull-beta.html#momentos",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "15.3 Momentos",
+    "text": "15.3 Momentos\nPara \\(r&gt;-\\alpha\\),\n\\[\nE[X^r]=\\frac{\\Gamma(\\alpha+r)}{\\lambda^r\\Gamma(\\alpha)}.\n\\]\nEn particular,\n\\[\nE[X]=\\frac{\\alpha}{\\lambda},\n\\]\n\\[\nE[X^2]=\\frac{\\alpha(\\alpha+1)}{\\lambda^2},\n\\]\ny por tanto\n\\[\n\\operatorname{Var}(X)=\\frac{\\alpha}{\\lambda^2}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#caso-exponencial",
+    "href": "14-gamma-weibull-beta.html#caso-exponencial",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "15.4 Caso exponencial",
+    "text": "15.4 Caso exponencial\nPara \\(\\alpha=1\\),\n\\[\nf(x)=\\lambda e^{-\\lambda x},\n\\]\npor lo que\n\\[\n\\operatorname{Gamma}(1,\\lambda)=\\operatorname{Exp}(\\lambda).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#suma-de-variables-gamma",
+    "href": "14-gamma-weibull-beta.html#suma-de-variables-gamma",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "15.5 Suma de variables Gamma",
+    "text": "15.5 Suma de variables Gamma\nSi \\(X_i\\sim\\operatorname{Gamma}(\\alpha_i,\\lambda)\\) son independientes con tasa común \\(\\lambda\\), entonces\n\\[\n\\sum_{i=1}^n X_i\\sim\\operatorname{Gamma}\\left(\\sum_{i=1}^n\\alpha_i,\\lambda\\right).\n\\]\nEn particular, la suma de \\(r\\) exponenciales independientes de tasa \\(\\lambda\\) tiene distribución Gamma\\((r,\\lambda)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#función-de-distribución",
+    "href": "14-gamma-weibull-beta.html#función-de-distribución",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "16.1 Función de distribución",
+    "text": "16.1 Función de distribución\nIntegrando la densidad,\n\\[\nF(x)=1-\\exp\\left[-\\left(\\frac{x}{\\eta}\\right)^k\\right].\n\\]\nLa función de supervivencia es\n\\[\nS(x)=\\exp\\left[-\\left(\\frac{x}{\\eta}\\right)^k\\right].\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#tasa-de-riesgo",
+    "href": "14-gamma-weibull-beta.html#tasa-de-riesgo",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "16.2 Tasa de riesgo",
+    "text": "16.2 Tasa de riesgo\nLa tasa de riesgo o hazard es\n\\[\nh(x)=\\frac{f(x)}{S(x)}\n=\\frac{k}{\\eta}\\left(\\frac{x}{\\eta}\\right)^{k-1}.\n\\]\nDe aquí se deduce:\n\n\\(k&lt;1\\): riesgo decreciente;\n\\(k=1\\): riesgo constante;\n\\(k&gt;1\\): riesgo creciente.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#relación-con-la-exponencial",
+    "href": "14-gamma-weibull-beta.html#relación-con-la-exponencial",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "16.3 Relación con la exponencial",
+    "text": "16.3 Relación con la exponencial\nSi \\(k=1\\),\n\\[\nf(x)=\\frac1\\eta e^{-x/\\eta},\n\\]\nque corresponde a una exponencial con tasa \\(1/\\eta\\).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#momentos-de-weibull",
+    "href": "14-gamma-weibull-beta.html#momentos-de-weibull",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "16.4 Momentos de Weibull",
+    "text": "16.4 Momentos de Weibull\nPara \\(r&gt;-k\\),\n\\[\nE[X^r]=\\eta^r\\Gamma\\left(1+\\frac{r}{k}\\right).\n\\]\nEn particular,\n\\[\nE[X]=\\eta\\Gamma\\left(1+\\frac1k\\right),\n\\]\ny\n\\[\n\\operatorname{Var}(X)=\\eta^2\\left[\n\\Gamma\\left(1+\\frac2k\\right)\n-\\Gamma^2\\left(1+\\frac1k\\right)\n\\right].\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#transformación-exponencial",
+    "href": "14-gamma-weibull-beta.html#transformación-exponencial",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "16.5 Transformación exponencial",
+    "text": "16.5 Transformación exponencial\nSi \\(X\\sim\\operatorname{Weibull}(k,\\eta)\\), entonces\n\\[\nY=\\left(\\frac{X}{\\eta}\\right)^k\n\\]\ntiene distribución exponencial estándar:\n\\[\nY\\sim\\operatorname{Exp}(1).\n\\]\nEsta transformación permite derivar directamente la CDF y los momentos.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#relación-beta-gamma",
+    "href": "14-gamma-weibull-beta.html#relación-beta-gamma",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.1 Relación Beta-Gamma",
+    "text": "17.1 Relación Beta-Gamma\nSe cumple\n\\[\n\\boxed{B(\\alpha,\\beta)=\\frac{\\Gamma(\\alpha)\\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)}}.\n\\]\nEsta identidad conecta de manera profunda las familias Beta y Gamma.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#normalización-1",
+    "href": "14-gamma-weibull-beta.html#normalización-1",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.2 Normalización",
+    "text": "17.2 Normalización\nPor definición de \\(B(\\alpha,\\beta)\\),\n\\[\n\\int_0^1 f(x)\\,dx=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#momentos-1",
+    "href": "14-gamma-weibull-beta.html#momentos-1",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.3 Momentos",
+    "text": "17.3 Momentos\nPara \\(r&gt;-\\alpha\\),\n\\[\nE[X^r]=\\frac{B(\\alpha+r,\\beta)}{B(\\alpha,\\beta)}.\n\\]\nEn particular,\n\\[\nE[X]=\\frac{\\alpha}{\\alpha+\\beta}.\n\\]\nAdemás,\n\\[\nE[X^2]=\\frac{\\alpha(\\alpha+1)}{(\\alpha+\\beta)(\\alpha+\\beta+1)},\n\\]\ny por tanto\n\\[\n\\operatorname{Var}(X)=\n\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#simetría",
+    "href": "14-gamma-weibull-beta.html#simetría",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.4 Simetría",
+    "text": "17.4 Simetría\nSi\n\\[\nX\\sim\\operatorname{Beta}(\\alpha,\\beta),\n\\]\nentonces\n\\[\n1-X\\sim\\operatorname{Beta}(\\beta,\\alpha).\n\\]\nEn particular, cuando \\(\\alpha=\\beta\\), la distribución es simétrica respecto de \\(1/2\\).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#caso-uniforme",
+    "href": "14-gamma-weibull-beta.html#caso-uniforme",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.5 Caso uniforme",
+    "text": "17.5 Caso uniforme\nPara\n\\[\n\\alpha=\\beta=1,\n\\]\n\\[\nf(x)=1,\\qquad 0&lt;x&lt;1,\n\\]\npor lo que\n\\[\n\\operatorname{Beta}(1,1)=U(0,1).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#construcción-beta-mediante-variables-gamma",
+    "href": "14-gamma-weibull-beta.html#construcción-beta-mediante-variables-gamma",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.6 Construcción Beta mediante variables Gamma",
+    "text": "17.6 Construcción Beta mediante variables Gamma\nSi\n\\[\nU\\sim\\operatorname{Gamma}(\\alpha,1),\\qquad\nV\\sim\\operatorname{Gamma}(\\beta,1)\n\\]\nson independientes, entonces\n\\[\n\\boxed{\\frac{U}{U+V}\\sim\\operatorname{Beta}(\\alpha,\\beta)}.\n\\]\nEsta representación es fundamental para entender la relación entre ambas familias.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#comparación-estructural",
+    "href": "14-gamma-weibull-beta.html#comparación-estructural",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.7 Comparación estructural",
+    "text": "17.7 Comparación estructural\nGamma y Weibull tienen soporte positivo no acotado, pero su estructura es distinta. Gamma aparece naturalmente en sumas de tiempos exponenciales, mientras Weibull permite tasas de riesgo crecientes o decrecientes. Beta, en cambio, vive en un intervalo acotado y resulta especialmente apropiada para proporciones.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#ejercicios-teóricos",
+    "href": "14-gamma-weibull-beta.html#ejercicios-teóricos",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.8 Ejercicios teóricos",
+    "text": "17.8 Ejercicios teóricos\n\nDemuestra que \\(\\Gamma(n)=(n-1)!\\) para entero positivo \\(n\\).\nVerifica la normalización de la densidad Gamma mediante el cambio \\(t=\\lambda x\\).\nDeriva \\(E[X^r]\\) para una variable Gamma.\nDeduce media y varianza de Gamma a partir de los momentos.\nDemuestra que Gamma\\((1,\\lambda)\\) coincide con Exp\\((\\lambda)\\).\nDeriva la CDF de Weibull a partir de su densidad.\nObtén la tasa de riesgo de Weibull y analiza su monotonía según \\(k\\).\nDemuestra que \\((X/\\eta)^k\\sim\\operatorname{Exp}(1)\\) cuando \\(X\\) es Weibull.\nDeriva los momentos de Weibull a partir de la transformación anterior.\nDemuestra la identidad \\(B(\\alpha,\\beta)=\\Gamma(\\alpha)\\Gamma(\\beta)/\\Gamma(\\alpha+\\beta)\\).\nDeriva media y varianza de Beta.\nDemuestra que si \\(X\\sim\\operatorname{Beta}(\\alpha,\\beta)\\), entonces \\(1-X\\sim\\operatorname{Beta}(\\beta,\\alpha)\\).\nDemuestra que Beta\\((1,1)\\) es uniforme estándar.\nReto ★. Demuestra que si \\(U\\) y \\(V\\) son Gamma independientes con tasa común 1, entonces \\(U/(U+V)\\) tiene distribución Beta.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
+    "objectID": "14-gamma-weibull-beta.html#referencias-del-capítulo",
+    "href": "14-gamma-weibull-beta.html#referencias-del-capítulo",
+    "title": "14  Distribuciones continuas especiales II: Gamma, Weibull y Beta",
+    "section": "17.9 Referencias del capítulo",
+    "text": "17.9 Referencias del capítulo\nLa exposición teórica sigue tratamientos clásicos de distribuciones continuas y funciones especiales en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Distribuciones continuas especiales II: Gamma, Weibull y Beta</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
