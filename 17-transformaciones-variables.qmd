@@ -1,0 +1,402 @@
+# Transformaciones de variables aleatorias
+
+## Planteamiento general
+
+Sea $X$ una variable aleatoria y sea $g$ una función medible. La variable
+
+$$
+Y=g(X)
+$$
+
+es nuevamente una variable aleatoria. El problema fundamental consiste en obtener la ley inducida de $Y$ a partir de la ley de $X$.
+
+La transformación puede estudiarse mediante la medida imagen, la función de distribución, el cambio de variable o, en dimensiones superiores, el determinante Jacobiano.
+
+## Ley inducida
+
+Si $P_X$ es la ley de $X$, la ley de $Y=g(X)$ satisface
+
+$$
+P_Y(B)=P_X(g^{-1}(B))
+$$
+
+para todo conjunto boreliano $B$.
+
+Esta identidad es la formulación abstracta del problema de transformación.
+
+## Caso discreto
+
+Si $X$ es discreta,
+
+$$
+P(Y=y)=\sum_{x:g(x)=y}P(X=x).
+$$
+
+Cuando $g$ no es inyectiva, todas las preimágenes de $y$ deben contribuir a la probabilidad.
+
+## Método de la función de distribución
+
+Para cualquier transformación real,
+
+$$
+F_Y(y)=P(g(X)\le y).
+$$
+
+Si $F_Y$ es absolutamente continua, entonces
+
+$$
+f_Y(y)=F_Y'(y)
+$$
+
+casi en todas partes.
+
+Este método no requiere que $g$ sea uno a uno y constituye una herramienta general.
+
+## Transformación monótona creciente
+
+Suponga que $g$ es estrictamente creciente y diferenciable. Entonces
+
+$$
+F_Y(y)=P(X\le g^{-1}(y))
+=F_X(g^{-1}(y)).
+$$
+
+Derivando,
+
+$$
+f_Y(y)=f_X(g^{-1}(y))\frac{d}{dy}g^{-1}(y).
+$$
+
+## Transformación monótona decreciente
+
+Si $g$ es estrictamente decreciente,
+
+$$
+F_Y(y)=P(X\ge g^{-1}(y)).
+$$
+
+La derivación conduce a la fórmula unificada
+
+$$
+\boxed{
+f_Y(y)=f_X(g^{-1}(y))
+\left|\frac{d}{dy}g^{-1}(y)\right|.
+}
+$$
+
+## Transformación afín
+
+Sea
+
+$$
+Y=aX+b,\qquad a\ne0.
+$$
+
+Entonces
+
+$$
+\boxed{
+f_Y(y)=\frac1{|a|}f_X\left(\frac{y-b}{a}\right)}.
+$$
+
+La transformación del soporte debe realizarse simultáneamente.
+
+## Transformación no inyectiva
+
+Suponga que para cada $y$ regular la ecuación
+
+$$
+g(x)=y
+$$
+
+posee un número finito de soluciones $x_1(y),\dots,x_k(y)$ con derivadas inversas bien definidas. Entonces
+
+$$
+\boxed{
+f_Y(y)=\sum_{j=1}^k
+f_X(x_j(y))
+\left|\frac{dx_j}{dy}\right|.
+}
+$$
+
+La fórmula expresa la suma de la masa infinitesimal proveniente de cada rama inversa.
+
+## Ejemplo: cuadrado de una variable uniforme simétrica
+
+Sea
+
+$$
+X\sim U(-1,1),\qquad Y=X^2.
+$$
+
+Para $0<y<1$,
+
+$$
+F_Y(y)=P(-\sqrt y\le X\le\sqrt y)=\sqrt y.
+$$
+
+Así,
+
+$$
+\boxed{f_Y(y)=\frac1{2\sqrt y}},\qquad0<y<1.
+$$
+
+Las dos ramas $\pm\sqrt y$ explican el factor total obtenido.
+
+## Transformada inversa
+
+Si $F$ es una CDF continua y estrictamente creciente y
+
+$$
+U\sim U(0,1),
+$$
+
+entonces
+
+$$
+X=F^{-1}(U)
+$$
+
+tiene CDF $F$.
+
+### Demostración
+
+Para $x$ en el soporte,
+
+$$
+P(F^{-1}(U)\le x)
+=P(U\le F(x))
+=F(x),
+$$
+
+pues $U$ es uniforme estándar.
+
+Este resultado fundamenta uno de los métodos básicos de generación de variables aleatorias.
+
+## Ejemplo exponencial
+
+Para una exponencial de tasa $\lambda$,
+
+$$
+F(x)=1-e^{-\lambda x}.
+$$
+
+Resolviendo $u=F(x)$,
+
+$$
+x=-\frac1\lambda\log(1-u).
+$$
+
+Como $1-U$ también es uniforme estándar, puede escribirse
+
+$$
+X=-\frac1\lambda\log U.
+$$
+
+## Convolución discreta
+
+Sean $X$ y $Y$ independientes y discretas. Para
+
+$$
+S=X+Y,
+$$
+
+$$
+P(S=s)=\sum_xP(X=x,Y=s-x).
+$$
+
+Por independencia,
+
+$$
+\boxed{p_S(s)=\sum_xp_X(x)p_Y(s-x)}.
+$$
+
+## Convolución continua
+
+Si $X$ y $Y$ son independientes con densidades,
+
+$$
+\boxed{
+f_{X+Y}(s)=\int_{-\infty}^{\infty}
+f_X(x)f_Y(s-x)\,dx.
+}
+$$
+
+### Derivación mediante transformación
+
+Defina
+
+$$
+U=X+Y,\qquad V=X.
+$$
+
+La inversa es
+
+$$
+X=V,\qquad Y=U-V.
+$$
+
+El Jacobiano inverso es
+
+$$
+\left|
+\frac{\partial(x,y)}{\partial(u,v)}
+\right|=1.
+$$
+
+Entonces
+
+$$
+f_{U,V}(u,v)=f_{X,Y}(v,u-v).
+$$
+
+Bajo independencia,
+
+$$
+f_{U,V}(u,v)=f_X(v)f_Y(u-v).
+$$
+
+Integrando en $v$ se obtiene la convolución.
+
+## Transformaciones bidimensionales
+
+Sea
+
+$$
+T(x,y)=(g_1(x,y),g_2(x,y))=(u,v)
+$$
+
+una transformación uno a uno y diferenciable sobre una región adecuada. Si su inversa es
+
+$$
+(x,y)=T^{-1}(u,v),
+$$
+
+entonces
+
+$$
+\boxed{
+f_{U,V}(u,v)=
+f_{X,Y}(T^{-1}(u,v))
+\left|\det D T^{-1}(u,v)\right|.
+}
+$$
+
+## El Jacobiano
+
+En dos dimensiones,
+
+$$
+\frac{\partial(x,y)}{\partial(u,v)}
+=
+\begin{vmatrix}
+\partial x/\partial u & \partial x/\partial v\\
+\partial y/\partial u & \partial y/\partial v
+\end{vmatrix}.
+$$
+
+Su valor absoluto representa el factor local de cambio de área.
+
+La presencia del Jacobiano garantiza la conservación de probabilidad:
+
+$$
+f_{X,Y}(x,y)\,dx\,dy
+=f_{U,V}(u,v)\,du\,dv.
+$$
+
+## Transformación del soporte
+
+No basta transformar la fórmula de la densidad. También debe determinarse la imagen del soporte original bajo $T$.
+
+En muchos problemas, la mayor dificultad matemática consiste precisamente en describir correctamente esa nueva región.
+
+## Caso de transformaciones múltiples
+
+Cuando $T$ no es globalmente uno a uno, el dominio puede dividirse en regiones donde sí lo sea. Las contribuciones de las distintas ramas deben sumarse, de manera análoga al caso unidimensional.
+
+## Convolución y normalización
+
+Si $f_X$ y $f_Y$ son densidades,
+
+$$
+f_S(s)=\int f_X(x)f_Y(s-x)\,dx
+$$
+
+es no negativa. Además, por Tonelli y cambio de variable,
+
+$$
+\begin{aligned}
+\int f_S(s)\,ds
+&=\iint f_X(x)f_Y(s-x)\,dx\,ds\\
+&=\int f_X(x)\left[\int f_Y(u)\,du\right]dx\\
+&=1.
+\end{aligned}
+$$
+
+Por tanto, la convolución de dos densidades es nuevamente una densidad.
+
+## Momentos bajo transformaciones
+
+Si $Y=g(X)$ y la esperanza existe,
+
+$$
+E[Y]=E[g(X)].
+$$
+
+No es necesario obtener primero la densidad de $Y$ para calcular esta esperanza. Puede utilizarse directamente
+
+$$
+E[g(X)]=\int g(x)f_X(x)\,dx
+$$
+
+o la suma correspondiente en el caso discreto.
+
+Esta observación distingue dos problemas diferentes:
+
+- obtener la **distribución completa** de una transformación;
+- obtener únicamente alguno de sus **momentos**.
+
+## Mapa conceptual
+
+$$
+X\xrightarrow{g}Y
+$$
+
+puede estudiarse mediante
+
+$$
+\text{CDF}\quad\text{o}\quad
+\text{cambio de variable}.
+$$
+
+Para sumas independientes,
+
+$$
+X+Y\Longrightarrow\text{convolución}.
+$$
+
+Para vectores,
+
+$$
+(X,Y)\xrightarrow{T}(U,V)
+\Longrightarrow\text{Jacobiano}.
+$$
+
+## Ejercicios teóricos
+
+1. Demuestre la fórmula de cambio de variable para una transformación monótona creciente mediante CDF.
+2. Repita la demostración para una transformación decreciente.
+3. Derive la fórmula para una transformación con un número finito de ramas inversas.
+4. Obtenga rigurosamente la densidad de $X^2$ para $X\sim U(-1,1)$.
+5. Demuestre el método de la transformada inversa.
+6. Derive la distribución exponencial a partir de una uniforme mediante transformada inversa.
+7. Demuestre la fórmula de convolución discreta.
+8. Derive la convolución continua mediante la transformación $(X,Y)\mapsto(X+Y,X)$.
+9. Demuestre que la convolución de dos densidades integra 1.
+10. Para una transformación bidimensional lineal no singular, relacione el Jacobiano inverso con el determinante de la matriz de transformación.
+11. Analice por qué debe transformarse también el soporte.
+12. Obtenga la densidad de $|X|$ cuando $X$ posee una densidad simétrica respecto de cero.
+
+## Referencias del capítulo
+
+El desarrollo formal de transformaciones, medida imagen, convolución y cambio de variables sigue los textos principales de probabilidad citados en la bibliografía general del libro.
