@@ -28,6 +28,7 @@ book:
     - 09-variables-continuas-densidad.qmd
     - 10-esperanza-varianza-chebyshev.qmd
     - 11-distribuciones-discretas-especiales.qmd
+    - 12-hipergeometrica-poisson.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
@@ -43,8 +44,6 @@ bibliography: references.bib
 lang: es
 number-depth: 2
 toc-depth: 3
-filters:
-  - filters/materiales.lua
 
 format:
   html:
