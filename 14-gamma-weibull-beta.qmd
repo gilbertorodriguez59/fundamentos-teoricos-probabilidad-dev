@@ -1,0 +1,314 @@
+# Distribuciones continuas especiales II: Gamma, Weibull y Beta
+
+## Objetivos
+
+Este capítulo desarrolla con mayor profundidad matemática tres familias continuas: Gamma, Weibull y Beta. Se estudian normalización, momentos, casos particulares, funciones de supervivencia, tasas de falla y relaciones estructurales entre familias.
+
+# Distribución Gamma
+
+Para $\alpha>0$ y $\lambda>0$, definimos
+
+$$
+f(x)=\frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x},\qquad x>0.
+$$
+
+## Función Gamma
+
+La función Gamma se define por
+
+$$
+\Gamma(\alpha)=\int_0^\infty t^{\alpha-1}e^{-t}\,dt,
+$$
+
+para $\alpha>0$.
+
+Mediante integración por partes se obtiene
+
+$$
+\Gamma(\alpha+1)=\alpha\Gamma(\alpha).
+$$
+
+Si $n$ es entero positivo,
+
+$$
+\Gamma(n)=(n-1)!.
+$$
+
+## Normalización
+
+Haciendo el cambio $t=\lambda x$,
+
+$$
+\int_0^\infty \frac{\lambda^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}\,dx
+=\frac1{\Gamma(\alpha)}\int_0^\infty t^{\alpha-1}e^{-t}\,dt=1.
+$$
+
+## Momentos
+
+Para $r>-\alpha$,
+
+$$
+E[X^r]=\frac{\Gamma(\alpha+r)}{\lambda^r\Gamma(\alpha)}.
+$$
+
+En particular,
+
+$$
+E[X]=\frac{\alpha}{\lambda},
+$$
+
+$$
+E[X^2]=\frac{\alpha(\alpha+1)}{\lambda^2},
+$$
+
+y por tanto
+
+$$
+\operatorname{Var}(X)=\frac{\alpha}{\lambda^2}.
+$$
+
+## Caso exponencial
+
+Para $\alpha=1$,
+
+$$
+f(x)=\lambda e^{-\lambda x},
+$$
+
+por lo que
+
+$$
+\operatorname{Gamma}(1,\lambda)=\operatorname{Exp}(\lambda).
+$$
+
+## Suma de variables Gamma
+
+Si $X_i\sim\operatorname{Gamma}(\alpha_i,\lambda)$ son independientes con tasa común $\lambda$, entonces
+
+$$
+\sum_{i=1}^n X_i\sim\operatorname{Gamma}\left(\sum_{i=1}^n\alpha_i,\lambda\right).
+$$
+
+En particular, la suma de $r$ exponenciales independientes de tasa $\lambda$ tiene distribución Gamma$(r,\lambda)$.
+
+# Distribución Weibull
+
+Para $k>0$ y $\eta>0$,
+
+$$
+f(x)=\frac{k}{\eta}\left(\frac{x}{\eta}\right)^{k-1}
+\exp\left[-\left(\frac{x}{\eta}\right)^k\right],\qquad x\ge0.
+$$
+
+## Función de distribución
+
+Integrando la densidad,
+
+$$
+F(x)=1-\exp\left[-\left(\frac{x}{\eta}\right)^k\right].
+$$
+
+La función de supervivencia es
+
+$$
+S(x)=\exp\left[-\left(\frac{x}{\eta}\right)^k\right].
+$$
+
+## Tasa de riesgo
+
+La tasa de riesgo o hazard es
+
+$$
+h(x)=\frac{f(x)}{S(x)}
+=\frac{k}{\eta}\left(\frac{x}{\eta}\right)^{k-1}.
+$$
+
+De aquí se deduce:
+
+- $k<1$: riesgo decreciente;
+- $k=1$: riesgo constante;
+- $k>1$: riesgo creciente.
+
+## Relación con la exponencial
+
+Si $k=1$,
+
+$$
+f(x)=\frac1\eta e^{-x/\eta},
+$$
+
+que corresponde a una exponencial con tasa $1/\eta$.
+
+## Momentos de Weibull
+
+Para $r>-k$,
+
+$$
+E[X^r]=\eta^r\Gamma\left(1+\frac{r}{k}\right).
+$$
+
+En particular,
+
+$$
+E[X]=\eta\Gamma\left(1+\frac1k\right),
+$$
+
+y
+
+$$
+\operatorname{Var}(X)=\eta^2\left[
+\Gamma\left(1+\frac2k\right)
+-\Gamma^2\left(1+\frac1k\right)
+\right].
+$$
+
+## Transformación exponencial
+
+Si $X\sim\operatorname{Weibull}(k,\eta)$, entonces
+
+$$
+Y=\left(\frac{X}{\eta}\right)^k
+$$
+
+tiene distribución exponencial estándar:
+
+$$
+Y\sim\operatorname{Exp}(1).
+$$
+
+Esta transformación permite derivar directamente la CDF y los momentos.
+
+# Distribución Beta
+
+Para $\alpha>0$ y $\beta>0$,
+
+$$
+f(x)=\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)},\qquad 0<x<1,
+$$
+
+donde
+
+$$
+B(\alpha,\beta)=\int_0^1 x^{\alpha-1}(1-x)^{\beta-1}\,dx.
+$$
+
+## Relación Beta-Gamma
+
+Se cumple
+
+$$
+\boxed{B(\alpha,\beta)=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}}.
+$$
+
+Esta identidad conecta de manera profunda las familias Beta y Gamma.
+
+## Normalización
+
+Por definición de $B(\alpha,\beta)$,
+
+$$
+\int_0^1 f(x)\,dx=1.
+$$
+
+## Momentos
+
+Para $r>-\alpha$,
+
+$$
+E[X^r]=\frac{B(\alpha+r,\beta)}{B(\alpha,\beta)}.
+$$
+
+En particular,
+
+$$
+E[X]=\frac{\alpha}{\alpha+\beta}.
+$$
+
+Además,
+
+$$
+E[X^2]=\frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)},
+$$
+
+y por tanto
+
+$$
+\operatorname{Var}(X)=
+\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.
+$$
+
+## Simetría
+
+Si
+
+$$
+X\sim\operatorname{Beta}(\alpha,\beta),
+$$
+
+entonces
+
+$$
+1-X\sim\operatorname{Beta}(\beta,\alpha).
+$$
+
+En particular, cuando $\alpha=\beta$, la distribución es simétrica respecto de $1/2$.
+
+## Caso uniforme
+
+Para
+
+$$
+\alpha=\beta=1,
+$$
+
+$$
+f(x)=1,\qquad 0<x<1,
+$$
+
+por lo que
+
+$$
+\operatorname{Beta}(1,1)=U(0,1).
+$$
+
+## Construcción Beta mediante variables Gamma
+
+Si
+
+$$
+U\sim\operatorname{Gamma}(\alpha,1),\qquad
+V\sim\operatorname{Gamma}(\beta,1)
+$$
+
+son independientes, entonces
+
+$$
+\boxed{\frac{U}{U+V}\sim\operatorname{Beta}(\alpha,\beta)}.
+$$
+
+Esta representación es fundamental para entender la relación entre ambas familias.
+
+## Comparación estructural
+
+Gamma y Weibull tienen soporte positivo no acotado, pero su estructura es distinta. Gamma aparece naturalmente en sumas de tiempos exponenciales, mientras Weibull permite tasas de riesgo crecientes o decrecientes. Beta, en cambio, vive en un intervalo acotado y resulta especialmente apropiada para proporciones.
+
+## Ejercicios teóricos
+
+1. Demuestra que $\Gamma(n)=(n-1)!$ para entero positivo $n$.
+2. Verifica la normalización de la densidad Gamma mediante el cambio $t=\lambda x$.
+3. Deriva $E[X^r]$ para una variable Gamma.
+4. Deduce media y varianza de Gamma a partir de los momentos.
+5. Demuestra que Gamma$(1,\lambda)$ coincide con Exp$(\lambda)$.
+6. Deriva la CDF de Weibull a partir de su densidad.
+7. Obtén la tasa de riesgo de Weibull y analiza su monotonía según $k$.
+8. Demuestra que $(X/\eta)^k\sim\operatorname{Exp}(1)$ cuando $X$ es Weibull.
+9. Deriva los momentos de Weibull a partir de la transformación anterior.
+10. Demuestra la identidad $B(\alpha,\beta)=\Gamma(\alpha)\Gamma(\beta)/\Gamma(\alpha+\beta)$.
+11. Deriva media y varianza de Beta.
+12. Demuestra que si $X\sim\operatorname{Beta}(\alpha,\beta)$, entonces $1-X\sim\operatorname{Beta}(\beta,\alpha)$.
+13. Demuestra que Beta$(1,1)$ es uniforme estándar.
+14. **Reto ★.** Demuestra que si $U$ y $V$ son Gamma independientes con tasa común 1, entonces $U/(U+V)$ tiene distribución Beta.
+
+## Referencias del capítulo
+
+La exposición teórica sigue tratamientos clásicos de distribuciones continuas y funciones especiales en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
