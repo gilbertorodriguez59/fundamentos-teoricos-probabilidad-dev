@@ -1,0 +1,318 @@
+# Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa
+
+## Objetivos
+
+Este capítulo presenta formalmente cuatro familias discretas construidas a partir de ensayos de Bernoulli. Se estudiarán sus funciones de masa, soportes, momentos, relaciones estructurales y propiedades características.
+
+## Variable de Bernoulli
+
+Sea $X$ una variable con soporte $\{0,1\}$ tal que
+
+$$
+P(X=1)=p,\qquad P(X=0)=1-p,
+$$
+
+con $0\le p\le1$. Entonces
+
+$$
+X\sim\operatorname{Bernoulli}(p).
+$$
+
+Su PMF puede escribirse como
+
+$$
+p_X(x)=p^x(1-p)^{1-x},\qquad x\in\{0,1\}.
+$$
+
+La esperanza es
+
+$$
+E[X]=0(1-p)+1(p)=p,
+$$
+
+y
+
+$$
+E[X^2]=p.
+$$
+
+Por tanto,
+
+$$
+\operatorname{Var}(X)=p-p^2=p(1-p).
+$$
+
+## La binomial como suma de Bernoulli
+
+Sean
+
+$$
+X_1,\ldots,X_n
+$$
+
+variables Bernoulli independientes con parámetro común $p$, y defina
+
+$$
+S_n=X_1+\cdots+X_n.
+$$
+
+Entonces $S_n$ cuenta el número de éxitos y
+
+$$
+\boxed{S_n\sim\operatorname{Binomial}(n,p)}.
+$$
+
+Para $x=0,1,\ldots,n$,
+
+$$
+P(S_n=x)=\binom{n}{x}p^x(1-p)^{n-x}.
+$$
+
+La normalización se verifica mediante el teorema binomial:
+
+$$
+\sum_{x=0}^{n}\binom{n}{x}p^x(1-p)^{n-x}
+=(p+1-p)^n=1.
+$$
+
+## Momentos de la binomial
+
+Por linealidad,
+
+$$
+E[S_n]=\sum_{i=1}^{n}E[X_i]=np.
+$$
+
+Como las variables son independientes,
+
+$$
+\operatorname{Var}(S_n)
+=\sum_{i=1}^{n}\operatorname{Var}(X_i)
+=np(1-p).
+$$
+
+La representación como suma de Bernoulli es más estructural que una derivación puramente algebraica de los momentos.
+
+## Cociente entre masas consecutivas
+
+Para una binomial,
+
+$$
+\frac{P(X=x+1)}{P(X=x)}
+=\frac{n-x}{x+1}\frac{p}{1-p}.
+$$
+
+Esta relación permite estudiar la forma de la PMF y localizar sus modos.
+
+## Distribución geométrica
+
+Considere una sucesión de ensayos de Bernoulli independientes con parámetro $p$. Sea
+
+$$
+T=\inf\{n\ge1:X_n=1\},
+$$
+
+el tiempo discreto hasta el primer éxito.
+
+Entonces
+
+$$
+T\sim\operatorname{Geométrica}(p)
+$$
+
+con soporte $\{1,2,\ldots\}$ y
+
+$$
+P(T=t)=(1-p)^{t-1}p.
+$$
+
+La normalización se obtiene de la serie geométrica:
+
+$$
+\sum_{t=1}^{\infty}(1-p)^{t-1}p
+=p\sum_{j=0}^{\infty}(1-p)^j=1.
+$$
+
+## Función de supervivencia geométrica
+
+Para $t=0,1,2,\ldots$,
+
+$$
+P(T>t)=(1-p)^t.
+$$
+
+Por tanto,
+
+$$
+F_T(t)=1-(1-p)^{\lfloor t\rfloor}
+$$
+
+para $t\ge1$, interpretando adecuadamente la función escalonada.
+
+## Propiedad sin memoria
+
+La geométrica satisface
+
+$$
+P(T>s+t\mid T>s)=P(T>t),
+$$
+
+para $s,t\ge0$ enteros.
+
+Demostración:
+
+$$
+P(T>s+t\mid T>s)
+=\frac{P(T>s+t)}{P(T>s)}
+=\frac{(1-p)^{s+t}}{(1-p)^s}
+=(1-p)^t.
+$$
+
+La distribución geométrica es la única distribución discreta sobre enteros positivos con esta propiedad, bajo condiciones naturales de no degeneración.
+
+## Esperanza de la geométrica
+
+Usando la identidad para variables enteras positivas
+
+$$
+E[T]=\sum_{t=0}^{\infty}P(T>t),
+$$
+
+obtenemos
+
+$$
+E[T]=\sum_{t=0}^{\infty}(1-p)^t=\frac1p.
+$$
+
+Además,
+
+$$
+\operatorname{Var}(T)=\frac{1-p}{p^2}.
+$$
+
+## Distribución binomial negativa
+
+Sea $T_r$ el número total de ensayos necesarios para observar el $r$-ésimo éxito, con $r\in\mathbb N$.
+
+Entonces
+
+$$
+T_r\sim\operatorname{BinomialNegativa}(r,p)
+$$
+
+bajo la parametrización de número total de ensayos, con soporte
+
+$$
+\{r,r+1,r+2,\ldots\}.
+$$
+
+La PMF es
+
+$$
+P(T_r=t)
+=\binom{t-1}{r-1}p^r(1-p)^{t-r},
+$$
+
+para $t\ge r$.
+
+## Derivación de la PMF binomial negativa
+
+El evento $\{T_r=t\}$ exige dos condiciones:
+
+1. en los primeros $t-1$ ensayos ocurren exactamente $r-1$ éxitos;
+2. el ensayo $t$ es éxito.
+
+Por independencia,
+
+$$
+P(T_r=t)
+=\binom{t-1}{r-1}p^{r-1}(1-p)^{t-r}p,
+$$
+
+que conduce a la fórmula anterior.
+
+## Representación como suma de geométricas
+
+Sean $G_1,\ldots,G_r$ independientes y geométricas con parámetro $p$, cada una contando ensayos desde un éxito hasta el siguiente. Entonces
+
+$$
+T_r=G_1+\cdots+G_r.
+$$
+
+De aquí se obtiene inmediatamente
+
+$$
+E[T_r]=\frac{r}{p}
+$$
+
+y
+
+$$
+\operatorname{Var}(T_r)=\frac{r(1-p)}{p^2}.
+$$
+
+## Relación con el conteo de fracasos
+
+Otra parametrización define
+
+$$
+Y=T_r-r,
+$$
+
+que cuenta el número de fracasos antes del $r$-ésimo éxito. Entonces
+
+$$
+P(Y=y)
+=\binom{y+r-1}{r-1}p^r(1-p)^y,
+$$
+
+para $y=0,1,2,\ldots$.
+
+Esta es la convención empleada por las funciones `dnbinom`, `pnbinom` y `rnbinom` de R.
+
+## Relaciones entre las cuatro familias
+
+- Bernoulli es Binomial$(1,p)$.
+- Una binomial es suma de Bernoulli independientes.
+- Una geométrica es BinomialNegativa$(1,p)$ bajo la parametrización de tiempo hasta el éxito.
+- Una binomial negativa es suma de geométricas independientes con el mismo $p$.
+
+Estas relaciones permiten derivar propiedades de una familia a partir de otra.
+
+## Selección estructural del modelo
+
+La pregunta matemática central es qué variable se está definiendo:
+
+- indicador de un solo ensayo $\rightarrow$ Bernoulli;
+- número de éxitos en un número fijo de ensayos $\rightarrow$ binomial;
+- tiempo hasta el primer éxito $\rightarrow$ geométrica;
+- tiempo hasta el $r$-ésimo éxito $\rightarrow$ binomial negativa.
+
+## Ejercicios teóricos
+
+1. Verifica directamente que la PMF Bernoulli suma 1.
+2. Deriva la PMF binomial a partir de una suma de Bernoulli independientes.
+3. Demuestra la normalización binomial mediante el teorema binomial.
+4. Obtén $E[X]$ y $\operatorname{Var}(X)$ de una binomial usando indicadores.
+5. Demuestra la fórmula $P(T>t)=(1-p)^t$ para una geométrica.
+6. Demuestra formalmente la propiedad sin memoria.
+7. Obtén $E[T]=1/p$ usando probabilidades de cola.
+8. Deriva la PMF binomial negativa a partir del evento de que el último ensayo sea el $r$-ésimo éxito.
+9. Usa la representación como suma de geométricas para obtener media y varianza de la binomial negativa.
+10. **Reto ★.** Demuestra que si una distribución sobre los enteros positivos satisface la propiedad sin memoria y $P(T>1)>0$, entonces su cola debe ser geométrica.
+
+## Materiales complementarios del capítulo
+
+| Material | Formato | Acceso | Propósito |
+|---|---|---|---|
+| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/11-distribuciones-discretas-especiales-colab.ipynb) | Explorar computacionalmente las distribuciones del capítulo en el volumen aplicado. |
+| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/11-distribuciones-discretas-especiales.Rmd) | Reproducir cálculos, gráficas y simulaciones en R/RStudio. |
+| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
+| Video | Video | Próximamente | Explicación audiovisual complementaria. |
+| Infografía | Imagen / PDF | Próximamente | Síntesis visual de distribuciones y relaciones estructurales. |
+
+Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico.
+
+## Referencias del capítulo
+
+El desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
