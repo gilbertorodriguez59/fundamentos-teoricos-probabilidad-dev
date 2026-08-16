@@ -1,0 +1,442 @@
+# Esperanza conjunta, covarianza y correlación
+
+## Planteamiento
+
+Sea $(X,Y)$ un vector aleatorio definido sobre un espacio de probabilidad. El conocimiento de su ley conjunta permite estudiar no sólo las distribuciones marginales, sino también funciones de ambas variables y medidas de dependencia lineal.
+
+En este capítulo se formalizan la esperanza de funciones bivariadas, la covarianza, la correlación y la varianza de combinaciones lineales.
+
+## Esperanza de funciones de dos variables
+
+Si $(X,Y)$ es discreto con función de masa conjunta $p_{X,Y}$ y $g:\mathbb R^2\to\mathbb R$ es integrable, entonces
+
+$$
+E[g(X,Y)]=\sum_x\sum_y g(x,y)p_{X,Y}(x,y).
+$$
+
+Si $(X,Y)$ posee densidad conjunta $f_{X,Y}$,
+
+$$
+E[g(X,Y)]=\iint_{\mathbb R^2}g(x,y)f_{X,Y}(x,y)\,dx\,dy.
+$$
+
+Estas expresiones son la versión bidimensional de la ley del estadístico inconsciente.
+
+## Teorema de linealidad
+
+Si $X$ y $Y$ son integrables y $a,b,c\in\mathbb R$, entonces
+
+$$
+E[aX+bY+c]=aE[X]+bE[Y]+c.
+$$
+
+La independencia no es necesaria.
+
+### Demostración
+
+Por linealidad de la integral respecto de la medida conjunta,
+
+$$
+E[aX+bY+c]
+=\int (aX+bY+c)\,dP
+=aE[X]+bE[Y]+c.
+$$
+
+## El momento mixto $E[XY]$
+
+Cuando $XY$ es integrable,
+
+$$
+E[XY]
+$$
+
+se denomina momento mixto de orden $(1,1)$.
+
+Si $X$ y $Y$ son independientes e integrables, entonces
+
+$$
+E[XY]=E[X]E[Y].
+$$
+
+### Demostración en el caso con densidades
+
+La independencia implica
+
+$$
+f_{X,Y}(x,y)=f_X(x)f_Y(y).
+$$
+
+Por Fubini,
+
+$$
+\begin{aligned}
+E[XY]
+&=\iint xyf_X(x)f_Y(y)\,dx\,dy\\
+&=\left(\int xf_X(x)\,dx\right)
+  \left(\int yf_Y(y)\,dy\right)\\
+&=E[X]E[Y].
+\end{aligned}
+$$
+
+La demostración discreta es análoga sustituyendo integrales por sumas.
+
+## Definición de covarianza
+
+Sean $X,Y\in L^2$. Se define
+
+$$
+\boxed{
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+}
+$$
+
+Expandiendo el producto,
+
+$$
+\boxed{
+\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y].
+}
+$$
+
+## Propiedades de la covarianza
+
+Para variables con segundos momentos finitos y constantes $a,b,c,d$:
+
+$$
+\operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X),
+$$
+
+$$
+\operatorname{Cov}(X,X)=\operatorname{Var}(X),
+$$
+
+$$
+\operatorname{Cov}(X,c)=0,
+$$
+
+$$
+\operatorname{Cov}(aX+b,cY+d)=ac\operatorname{Cov}(X,Y).
+$$
+
+Más generalmente, la covarianza es bilineal:
+
+$$
+\operatorname{Cov}(aX+bY,Z)
+=a\operatorname{Cov}(X,Z)+b\operatorname{Cov}(Y,Z).
+$$
+
+## Varianza de una suma
+
+Para $X,Y\in L^2$,
+
+$$
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+}
+$$
+
+### Demostración
+
+Sea
+
+$$
+\widetilde X=X-E[X],\qquad
+\widetilde Y=Y-E[Y].
+$$
+
+Entonces
+
+$$
+\begin{aligned}
+\operatorname{Var}(X+Y)
+&=E[(\widetilde X+\widetilde Y)^2]\\
+&=E[\widetilde X^2]+E[\widetilde Y^2]
++2E[\widetilde X\widetilde Y]\\
+&=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+\end{aligned}
+$$
+
+Por tanto,
+
+$$
+\operatorname{Var}(aX+bY)
+=a^2\operatorname{Var}(X)+b^2\operatorname{Var}(Y)
++2ab\operatorname{Cov}(X,Y).
+$$
+
+## Sumas de muchas variables
+
+Para $X_1,\dots,X_n\in L^2$,
+
+$$
+\boxed{
+\operatorname{Var}\left(\sum_{i=1}^nX_i\right)
+=\sum_{i=1}^n\operatorname{Var}(X_i)
++2\sum_{i<j}\operatorname{Cov}(X_i,X_j).
+}
+$$
+
+Si las variables son independientes, todas las covarianzas cruzadas son cero.
+
+## Independencia e incorrelación
+
+### Teorema
+
+Si $X$ y $Y$ son independientes y tienen segundos momentos finitos, entonces
+
+$$
+\operatorname{Cov}(X,Y)=0.
+$$
+
+### Demostración
+
+Por independencia,
+
+$$
+E[XY]=E[X]E[Y].
+$$
+
+Sustituyendo en la identidad de covarianza,
+
+$$
+\operatorname{Cov}(X,Y)
+=E[XY]-E[X]E[Y]=0.
+$$
+
+El recíproco es falso en general.
+
+## Contraejemplo: incorrelación sin independencia
+
+Sea
+
+$$
+X\sim U(-1,1),\qquad Y=X^2.
+$$
+
+Entonces $Y$ es una función determinista de $X$, de modo que existe dependencia completa. Sin embargo,
+
+$$
+E[X]=0,
+$$
+
+$$
+E[XY]=E[X^3]=0
+$$
+
+por simetría, y por tanto
+
+$$
+\operatorname{Cov}(X,Y)=0.
+$$
+
+Este ejemplo muestra que la covarianza sólo captura un tipo particular de dependencia: la componente lineal.
+
+## Coeficiente de correlación
+
+Si
+
+$$
+0<\operatorname{Var}(X)<\infty,
+\qquad
+0<\operatorname{Var}(Y)<\infty,
+$$
+
+se define
+
+$$
+\boxed{
+\rho_{X,Y}
+=\frac{\operatorname{Cov}(X,Y)}
+{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}.
+}
+$$
+
+## Cota de correlación
+
+Se cumple
+
+$$
+\boxed{|\rho_{X,Y}|\le1}.
+$$
+
+### Demostración mediante Cauchy--Schwarz
+
+Sean
+
+$$
+U=X-E[X],\qquad V=Y-E[Y].
+$$
+
+La desigualdad de Cauchy--Schwarz da
+
+$$
+|E[UV]|^2\le E[U^2]E[V^2].
+$$
+
+Por tanto,
+
+$$
+|\operatorname{Cov}(X,Y)|^2
+\le\operatorname{Var}(X)\operatorname{Var}(Y).
+$$
+
+Dividiendo por el producto positivo de las varianzas,
+
+$$
+|\rho_{X,Y}|\le1.
+$$
+
+## Caso de igualdad
+
+La igualdad en Cauchy--Schwarz ocurre si y sólo si las variables centradas son linealmente dependientes casi seguramente. En consecuencia,
+
+$$
+|\rho_{X,Y}|=1
+$$
+
+si y sólo si existen constantes $a\ne0$ y $b$ tales que
+
+$$
+Y=aX+b
+$$
+
+casi seguramente.
+
+El signo de $a$ determina si $\rho=1$ o $\rho=-1$.
+
+## Invariancia frente a transformaciones afines
+
+Sean
+
+$$
+U=aX+b,\qquad V=cY+d,
+$$
+
+con $a,c\ne0$. Entonces
+
+$$
+\rho_{U,V}=\operatorname{sign}(ac)\rho_{X,Y}.
+$$
+
+Por tanto, cambios positivos de unidades no alteran la correlación.
+
+## Matriz de covarianzas
+
+Para el vector
+
+$$
+\mathbf X=(X_1,\dots,X_n)^T,
+$$
+
+su matriz de covarianzas es
+
+$$
+\Sigma_{ij}=\operatorname{Cov}(X_i,X_j).
+$$
+
+En dimensión dos,
+
+$$
+\Sigma=
+\begin{pmatrix}
+\operatorname{Var}(X)&\operatorname{Cov}(X,Y)\\
+\operatorname{Cov}(X,Y)&\operatorname{Var}(Y)
+\end{pmatrix}.
+$$
+
+## Positividad semidefinida
+
+Para todo vector $a\in\mathbb R^n$,
+
+$$
+a^T\Sigma a
+=\operatorname{Var}(a^T\mathbf X)\ge0.
+$$
+
+Por ello, toda matriz de covarianzas es simétrica y positiva semidefinida.
+
+## Ejemplo continuo triangular
+
+Sea
+
+$$
+f_{X,Y}(x,y)=2,
+\qquad0<y<x<1.
+$$
+
+Las marginales son
+
+$$
+f_X(x)=2x,
+\qquad
+f_Y(y)=2(1-y).
+$$
+
+Se obtiene
+
+$$
+E[X]=\frac23,
+\qquad
+E[Y]=\frac13,
+$$
+
+$$
+E[XY]=\frac14,
+$$
+
+y por tanto
+
+$$
+\operatorname{Cov}(X,Y)
+=\frac14-\frac{2}{9}
+=\frac1{36}.
+$$
+
+Este ejemplo combina dependencia geométrica del soporte con una covarianza positiva.
+
+## Mapa conceptual
+
+La cadena lógica principal es
+
+$$
+\text{ley conjunta}
+\Longrightarrow E[g(X,Y)]
+\Longrightarrow E[XY]
+\Longrightarrow \operatorname{Cov}(X,Y)
+\Longrightarrow \rho_{X,Y}.
+$$
+
+La implicación
+
+$$
+X\perp Y\Longrightarrow\operatorname{Cov}(X,Y)=0
+$$
+
+es válida, pero
+
+$$
+\operatorname{Cov}(X,Y)=0\not\Longrightarrow X\perp Y
+$$
+
+en general.
+
+## Ejercicios teóricos
+
+1. Demuestre la bilinealidad de la covarianza.
+2. Demuestre la fórmula de $\operatorname{Var}(aX+bY)$.
+3. Extienda la fórmula anterior a una suma de $n$ variables.
+4. Demuestre que independencia implica incorrelación bajo segundos momentos finitos.
+5. Verifique rigurosamente el contraejemplo $X\sim U(-1,1)$, $Y=X^2$.
+6. Demuestre $|\rho|\le1$ mediante Cauchy--Schwarz.
+7. Caracterice el caso $|\rho|=1$.
+8. Demuestre la invariancia de $|\rho|$ frente a transformaciones afines no degeneradas.
+9. Demuestre que una matriz de covarianzas es positiva semidefinida.
+10. Para la densidad triangular del capítulo, calcule las dos varianzas y la correlación exacta.
+
+## Referencias del capítulo
+
+El tratamiento formal de momentos conjuntos, covarianza y correlación sigue textos clásicos de probabilidad y estadística matemática citados en la bibliografía general del libro.
