@@ -290,18 +290,6 @@ Así, $Y$ tiene densidad uniforme sobre $(0,1)$.
 9. Da un ejemplo de una CDF continua que no sea absolutamente continua y explica por qué no admite una densidad ordinaria.
 10. **Reto ★.** Demuestra que dos densidades que generan la misma CDF son iguales casi en todas partes.
 
-## Materiales complementarios del capítulo
-
-| Material | Formato | Acceso | Propósito |
-|---|---|---|---|
-| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/09-variables-continuas-densidad-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
-| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/09-variables-continuas-densidad.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
-| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
-| Video | Video | Próximamente | Explicación audiovisual complementaria. |
-| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
-
-Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
-
 ## Referencias del capítulo
 
 El desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018, adaptada al nivel formal de este volumen.

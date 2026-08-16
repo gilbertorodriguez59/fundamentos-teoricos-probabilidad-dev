@@ -311,39 +311,6 @@ $$
 
 El cálculo de la distribución de $Y$ mediante preimágenes será el tema central del capítulo sobre funciones de una variable aleatoria.
 
-## Materiales complementarios del capítulo
-
-Este libro teórico se acompaña de materiales computacionales en el volumen **Introducción a la Probabilidad con R y GeoGebra**. Para este capítulo se dispone de un cuaderno de Google Colab y de un cuaderno reproducible en R, en los que se visualizan transformaciones y funciones de distribución acumulada. Las presentaciones, videos e infografías se incorporarán conforme se proporcionen sus enlaces.
-
-## Ejercicios
-
-1. Sea $X$ el número de caras en dos lanzamientos de moneda. Escribe explícitamente la función $X:\Omega\to\mathbb R$.
-2. Construye $F_X$ para la variable anterior y verifica sus cuatro propiedades características.
-3. Demuestra que $F_X$ es no decreciente a partir de inclusión de eventos.
-4. Demuestra que $P(X=x)=F_X(x)-F_X(x^-)$.
-5. Prueba que $P(a<X\le b)=F_X(b)-F_X(a)$.
-6. Sea
-
-$$
-F(x)=
-\begin{cases}
-0,&x<0,\\
-1-e^{-x},&x\ge0.
-\end{cases}
-$$
-
-Verifica que satisface las propiedades de una CDF.
-7. Determina si
-
-$$
-G(x)=\frac{1}{1+e^{-x}}
-$$
-
-puede ser una CDF y justifica.
-8. Da un ejemplo de dos variables distintas con la misma distribución.
-9. Si $F_X$ es continua en $x$, demuestra que $P(X=x)=0$.
-10. **Reto ★.** Utiliza continuidad desde arriba para demostrar rigurosamente la continuidad por la derecha de una CDF.
-
 ## Referencias del capítulo
 
 El desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018.

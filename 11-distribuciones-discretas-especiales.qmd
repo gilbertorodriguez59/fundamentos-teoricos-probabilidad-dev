@@ -301,18 +301,6 @@ La pregunta matemática central es qué variable se está definiendo:
 9. Usa la representación como suma de geométricas para obtener media y varianza de la binomial negativa.
 10. **Reto ★.** Demuestra que si una distribución sobre los enteros positivos satisface la propiedad sin memoria y $P(T>1)>0$, entonces su cola debe ser geométrica.
 
-## Materiales complementarios del capítulo
-
-| Material | Formato | Acceso | Propósito |
-|---|---|---|---|
-| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/11-distribuciones-discretas-especiales-colab.ipynb) | Explorar computacionalmente las distribuciones del capítulo en el volumen aplicado. |
-| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/11-distribuciones-discretas-especiales.Rmd) | Reproducir cálculos, gráficas y simulaciones en R/RStudio. |
-| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
-| Video | Video | Próximamente | Explicación audiovisual complementaria. |
-| Infografía | Imagen / PDF | Próximamente | Síntesis visual de distribuciones y relaciones estructurales. |
-
-Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico.
-
 ## Referencias del capítulo
 
 El desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de @walpole2012, @devore2016, @montgomery2018 y @johnson2018.

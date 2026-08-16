@@ -388,18 +388,6 @@ $$
 p_{g(X)}(y)=\sum_{x:g(x)=y}p_X(x).
 $$
 
-## Materiales complementarios del capítulo
-
-| Material | Formato | Acceso | Propósito |
-|---|---|---|---|
-| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/08-variables-discretas-pmf-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
-| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/08-variables-discretas-pmf.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
-| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
-| Video | Video | Próximamente | Explicación audiovisual complementaria. |
-| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
-
-Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
-
 ## Referencias del capítulo
 
 El desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de @devore2016, @montgomery2018, @walpole2012 y @johnson2018, adaptada al nivel teórico de este volumen.

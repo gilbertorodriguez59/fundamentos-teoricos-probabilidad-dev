@@ -497,31 +497,6 @@ Los primeros momentos tienen interpretaciones habituales:
 
 El estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.
 
-## Materiales complementarios del capítulo
-
-| Material | Formato | Acceso | Propósito |
-|---|---|---|---|
-| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/10-esperanza-varianza-chebyshev-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
-| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/10-esperanza-varianza-chebyshev.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
-| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
-| Video | Video | Próximamente | Explicación audiovisual complementaria. |
-| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
-
-Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico.
-
-## Ejercicios teóricos
-
-1. Demuestra directamente la linealidad de la esperanza para variables discretas.
-2. Demuestra que $E[I_A]=P(A)$ para cualquier evento $A$.
-3. Demuestra que $\operatorname{Var}(X)=E[X^2]-E[X]^2$.
-4. Demuestra que $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$.
-5. Demuestra que $\operatorname{Var}(X)=0$ si y sólo si $X$ es constante casi seguramente.
-6. Deriva $E[X]$ y $\operatorname{Var}(X)$ para una Bernoulli$(p)$.
-7. Deriva $E[X]$ y $\operatorname{Var}(X)$ para una uniforme en $[a,b]$.
-8. Demuestra la desigualdad de Markov usando variables indicadoras.
-9. Obtén Chebyshev a partir de Markov aplicada a $(X-E[X])^2$.
-10. Construye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.
-
 ## Referencias del capítulo
 
 El tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en @devore2016, @johnson2018, @walpole2012 y @montgomery2018, con apoyo computacional complementario basado en @kerns2010.

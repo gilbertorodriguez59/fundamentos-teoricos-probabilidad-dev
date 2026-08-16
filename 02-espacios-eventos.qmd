@@ -510,18 +510,6 @@ La equivalencia entre $A\subseteq B$ y $A\cup B=B$ se demuestra de manera análo
 14. Comprueba que $\{\varnothing,\Omega\}$ y $\mathcal{P}(\Omega)$ siempre son sigma-álgebras.
 15. Si $\mathcal{F}$ es una sigma-álgebra y $A,B\in\mathcal{F}$, demuestra que $A\setminus B\in\mathcal{F}$.
 
-## Materiales complementarios del capítulo
-
-| Material | Formato | Acceso | Propósito |
-|---|---|---|---|
-| Cuaderno de Google Colab | Notebook interactivo (R) | [Abrir en Colab](https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/02-espacios-eventos-colab.ipynb) | Explorar computacionalmente los conceptos del capítulo en el volumen aplicado. |
-| Cuaderno de R | R Markdown | [Abrir cuaderno R](https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/02-espacios-eventos.Rmd) | Reproducir ejemplos y verificaciones numéricas en R/RStudio. |
-| Presentación | PDF / PPT | Próximamente | Se incorporará cuando se proporcionen los enlaces. |
-| Video | Video | Próximamente | Explicación audiovisual complementaria. |
-| Infografía | Imagen / PDF | Próximamente | Síntesis visual de conceptos y resultados principales. |
-
-Los cuadernos computacionales se alojan en **Introducción a la Probabilidad con R y GeoGebra** y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.
-
 ## Referencias del capítulo
 
 La secuencia de espacios muestrales y eventos se apoya principalmente en @walpole2012 y en el programa oficial del curso. La formalización se complementa con @devore2016, @montgomery2018 y @johnson2018.

@@ -263,6 +263,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -318,9 +324,7 @@ window.Quarto = {
   <li><a href="#ejemplo-teórico-variable-uniforme-continua" id="toc-ejemplo-teórico-variable-uniforme-continua" class="nav-link" data-scroll-target="#ejemplo-teórico-variable-uniforme-continua"><span class="header-section-number">10.17</span> Ejemplo teórico: variable uniforme continua</a></li>
   <li><a href="#existencia-de-momentos" id="toc-existencia-de-momentos" class="nav-link" data-scroll-target="#existencia-de-momentos"><span class="header-section-number">10.18</span> Existencia de momentos</a></li>
   <li><a href="#momentos-y-forma-de-una-distribución" id="toc-momentos-y-forma-de-una-distribución" class="nav-link" data-scroll-target="#momentos-y-forma-de-una-distribución"><span class="header-section-number">10.19</span> Momentos y forma de una distribución</a></li>
-  <li><a href="#materiales-complementarios-del-capítulo" id="toc-materiales-complementarios-del-capítulo" class="nav-link" data-scroll-target="#materiales-complementarios-del-capítulo"><span class="header-section-number">10.20</span> Materiales complementarios del capítulo</a></li>
-  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">10.21</span> Ejercicios teóricos</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">10.22</span> Referencias del capítulo</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">10.20</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -732,69 +736,8 @@ E[|X|]=\infty,
 </ul>
 <p>El estudio detallado de asimetría y curtosis se reservará para capítulos posteriores.</p>
 </section>
-<section id="materiales-complementarios-del-capítulo" class="level2" data-number="10.20">
-<h2 data-number="10.20" class="anchored" data-anchor-id="materiales-complementarios-del-capítulo"><span class="header-section-number">10.20</span> Materiales complementarios del capítulo</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Material</th>
-<th>Formato</th>
-<th>Acceso</th>
-<th>Propósito</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Cuaderno de Google Colab</td>
-<td>Notebook interactivo (R)</td>
-<td><a href="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/10-esperanza-varianza-chebyshev-colab.ipynb">Abrir en Colab</a></td>
-<td>Explorar computacionalmente los conceptos del capítulo en el volumen aplicado.</td>
-</tr>
-<tr class="even">
-<td>Cuaderno de R</td>
-<td>R Markdown</td>
-<td><a href="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/10-esperanza-varianza-chebyshev.Rmd">Abrir cuaderno R</a></td>
-<td>Reproducir ejemplos y verificaciones numéricas en R/RStudio.</td>
-</tr>
-<tr class="odd">
-<td>Presentación</td>
-<td>PDF / PPT</td>
-<td>Próximamente</td>
-<td>Se incorporará cuando se proporcionen los enlaces.</td>
-</tr>
-<tr class="even">
-<td>Video</td>
-<td>Video</td>
-<td>Próximamente</td>
-<td>Explicación audiovisual complementaria.</td>
-</tr>
-<tr class="odd">
-<td>Infografía</td>
-<td>Imagen / PDF</td>
-<td>Próximamente</td>
-<td>Síntesis visual de conceptos y resultados principales.</td>
-</tr>
-</tbody>
-</table>
-<p>Los cuadernos computacionales se alojan en <strong>Introducción a la Probabilidad con R y GeoGebra</strong> y sirven como apoyo práctico de este desarrollo teórico.</p>
-</section>
-<section id="ejercicios-teóricos" class="level2" data-number="10.21">
-<h2 data-number="10.21" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">10.21</span> Ejercicios teóricos</h2>
-<ol type="1">
-<li>Demuestra directamente la linealidad de la esperanza para variables discretas.</li>
-<li>Demuestra que <span class="math inline">\(E[I_A]=P(A)\)</span> para cualquier evento <span class="math inline">\(A\)</span>.</li>
-<li>Demuestra que <span class="math inline">\(\operatorname{Var}(X)=E[X^2]-E[X]^2\)</span>.</li>
-<li>Demuestra que <span class="math inline">\(\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)\)</span>.</li>
-<li>Demuestra que <span class="math inline">\(\operatorname{Var}(X)=0\)</span> si y sólo si <span class="math inline">\(X\)</span> es constante casi seguramente.</li>
-<li>Deriva <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> para una Bernoulli<span class="math inline">\((p)\)</span>.</li>
-<li>Deriva <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> para una uniforme en <span class="math inline">\([a,b]\)</span>.</li>
-<li>Demuestra la desigualdad de Markov usando variables indicadoras.</li>
-<li>Obtén Chebyshev a partir de Markov aplicada a <span class="math inline">\((X-E[X])^2\)</span>.</li>
-<li>Construye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.</li>
-</ol>
-</section>
-<section id="referencias-del-capítulo" class="level2" data-number="10.22">
-<h2 data-number="10.22" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">10.22</span> Referencias del capítulo</h2>
+<section id="referencias-del-capítulo" class="level2" data-number="10.20">
+<h2 data-number="10.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">10.20</span> Referencias del capítulo</h2>
 <p>El tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, con apoyo computacional complementario basado en <span class="citation" data-cites="kerns2010">Kerns (<a href="references.html#ref-kerns2010" role="doc-biblioref">2010</a>)</span>.</p>
 
 

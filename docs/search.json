@@ -140,21 +140,11 @@
     ]
   },
   {
-    "objectID": "01-incertidumbre-modelos.html#materiales-complementarios-del-capítulo",
-    "href": "01-incertidumbre-modelos.html#materiales-complementarios-del-capítulo",
-    "title": "1  Incertidumbre y modelos probabilísticos",
-    "section": "1.10 Materiales complementarios del capítulo",
-    "text": "1.10 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
-    ]
-  },
-  {
     "objectID": "01-incertidumbre-modelos.html#referencias-del-capítulo",
     "href": "01-incertidumbre-modelos.html#referencias-del-capítulo",
     "title": "1  Incertidumbre y modelos probabilísticos",
-    "section": "1.11 Referencias del capítulo",
-    "text": "1.11 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "1.10 Referencias del capítulo",
+    "text": "1.10 Referencias del capítulo\nLa organización conceptual se apoya principalmente en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Incertidumbre y modelos probabilísticos</span>"
     ]
@@ -330,21 +320,11 @@
     ]
   },
   {
-    "objectID": "02-espacios-eventos.html#materiales-complementarios-del-capítulo",
-    "href": "02-espacios-eventos.html#materiales-complementarios-del-capítulo",
-    "title": "2  Espacios muestrales y álgebra de eventos",
-    "section": "2.17 Materiales complementarios del capítulo",
-    "text": "2.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
-    ]
-  },
-  {
     "objectID": "02-espacios-eventos.html#referencias-del-capítulo",
     "href": "02-espacios-eventos.html#referencias-del-capítulo",
     "title": "2  Espacios muestrales y álgebra de eventos",
-    "section": "2.18 Referencias del capítulo",
-    "text": "2.18 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "2.17 Referencias del capítulo",
+    "text": "2.17 Referencias del capítulo\nLa secuencia de espacios muestrales y eventos se apoya principalmente en Walpole et al. (2012) y en el programa oficial del curso. La formalización se complementa con Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Espacios muestrales y álgebra de eventos</span>"
     ]
@@ -530,21 +510,11 @@
     ]
   },
   {
-    "objectID": "03-conteo-probabilidad.html#materiales-complementarios-del-capítulo",
-    "href": "03-conteo-probabilidad.html#materiales-complementarios-del-capítulo",
-    "title": "3  Técnicas de conteo y enumeración",
-    "section": "3.19 Materiales complementarios del capítulo",
-    "text": "3.19 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
-    ]
-  },
-  {
     "objectID": "03-conteo-probabilidad.html#referencias-del-capítulo",
     "href": "03-conteo-probabilidad.html#referencias-del-capítulo",
     "title": "3  Técnicas de conteo y enumeración",
-    "section": "3.20 Referencias del capítulo",
-    "text": "3.20 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "3.19 Referencias del capítulo",
+    "text": "3.19 Referencias del capítulo\nEl desarrollo teórico de los principios de conteo y los coeficientes combinatorios se apoya en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Técnicas de conteo y enumeración</span>"
     ]
@@ -750,21 +720,11 @@
     ]
   },
   {
-    "objectID": "04-axiomas-probabilidad.html#materiales-complementarios-del-capítulo",
-    "href": "04-axiomas-probabilidad.html#materiales-complementarios-del-capítulo",
-    "title": "4  Axiomas y propiedades de la probabilidad",
-    "section": "4.20 Materiales complementarios del capítulo",
-    "text": "4.20 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
-    ]
-  },
-  {
     "objectID": "04-axiomas-probabilidad.html#referencias-del-capítulo",
     "href": "04-axiomas-probabilidad.html#referencias-del-capítulo",
     "title": "4  Axiomas y propiedades de la probabilidad",
-    "section": "4.21 Referencias del capítulo",
-    "text": "4.21 Referencias del capítulo\nLa formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018). La presentación se ha reescrito de forma original para esta obra.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "4.20 Referencias del capítulo",
+    "text": "4.20 Referencias del capítulo\nLa formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018). La presentación se ha reescrito de forma original para esta obra.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Axiomas y propiedades de la probabilidad</span>"
     ]
@@ -900,21 +860,11 @@
     ]
   },
   {
-    "objectID": "05-condicional-independencia.html#materiales-complementarios-del-capítulo",
-    "href": "05-condicional-independencia.html#materiales-complementarios-del-capítulo",
-    "title": "5  Probabilidad condicional e independencia",
-    "section": "5.14 Materiales complementarios del capítulo",
-    "text": "5.14 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
-    ]
-  },
-  {
     "objectID": "05-condicional-independencia.html#referencias-del-capítulo",
     "href": "05-condicional-independencia.html#referencias-del-capítulo",
     "title": "5  Probabilidad condicional e independencia",
-    "section": "5.15 Referencias del capítulo",
-    "text": "5.15 Referencias del capítulo\nLa presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018), adaptada a la organización formal de este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "5.14 Referencias del capítulo",
+    "text": "5.14 Referencias del capítulo\nLa presentación de probabilidad condicional, regla del producto e independencia sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018), adaptada a la organización formal de este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Probabilidad condicional e independencia</span>"
     ]
@@ -1070,21 +1020,11 @@
     ]
   },
   {
-    "objectID": "06-probabilidad-total-bayes.html#materiales-complementarios-del-capítulo",
-    "href": "06-probabilidad-total-bayes.html#materiales-complementarios-del-capítulo",
-    "title": "6  Particiones, probabilidad total y teorema de Bayes",
-    "section": "6.16 Materiales complementarios del capítulo",
-    "text": "6.16 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
-    ]
-  },
-  {
     "objectID": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
     "href": "06-probabilidad-total-bayes.html#referencias-del-capítulo",
     "title": "6  Particiones, probabilidad total y teorema de Bayes",
-    "section": "6.17 Referencias del capítulo",
-    "text": "6.17 Referencias del capítulo\nEl desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018). La notación se adapta al enfoque formal adoptado en este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "6.16 Referencias del capítulo",
+    "text": "6.16 Referencias del capítulo\nEl desarrollo teórico de particiones, ley de probabilidad total y teorema de Bayes sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018). La notación se adapta al enfoque formal adoptado en este libro.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Particiones, probabilidad total y teorema de Bayes</span>"
     ]
@@ -1260,31 +1200,11 @@
     ]
   },
   {
-    "objectID": "07-variable-aleatoria-cdf.html#materiales-complementarios-del-capítulo",
-    "href": "07-variable-aleatoria-cdf.html#materiales-complementarios-del-capítulo",
-    "title": "7  Variable aleatoria y función de distribución acumulada",
-    "section": "7.18 Materiales complementarios del capítulo",
-    "text": "7.18 Materiales complementarios del capítulo\nEste libro teórico se acompaña de materiales computacionales en el volumen Introducción a la Probabilidad con R y GeoGebra. Para este capítulo se dispone de un cuaderno de Google Colab y de un cuaderno reproducible en R, en los que se visualizan transformaciones y funciones de distribución acumulada. Las presentaciones, videos e infografías se incorporarán conforme se proporcionen sus enlaces.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
-    ]
-  },
-  {
-    "objectID": "07-variable-aleatoria-cdf.html#ejercicios",
-    "href": "07-variable-aleatoria-cdf.html#ejercicios",
-    "title": "7  Variable aleatoria y función de distribución acumulada",
-    "section": "7.19 Ejercicios",
-    "text": "7.19 Ejercicios\n\nSea \\(X\\) el número de caras en dos lanzamientos de moneda. Escribe explícitamente la función \\(X:\\Omega\\to\\mathbb R\\).\nConstruye \\(F_X\\) para la variable anterior y verifica sus cuatro propiedades características.\nDemuestra que \\(F_X\\) es no decreciente a partir de inclusión de eventos.\nDemuestra que \\(P(X=x)=F_X(x)-F_X(x^-)\\).\nPrueba que \\(P(a&lt;X\\le b)=F_X(b)-F_X(a)\\).\nSea\n\n\\[\nF(x)=\n\\begin{cases}\n0,&x&lt;0,\\\\\n1-e^{-x},&x\\ge0.\n\\end{cases}\n\\]\nVerifica que satisface las propiedades de una CDF. 7. Determina si\n\\[\nG(x)=\\frac{1}{1+e^{-x}}\n\\]\npuede ser una CDF y justifica. 8. Da un ejemplo de dos variables distintas con la misma distribución. 9. Si \\(F_X\\) es continua en \\(x\\), demuestra que \\(P(X=x)=0\\). 10. Reto ★. Utiliza continuidad desde arriba para demostrar rigurosamente la continuidad por la derecha de una CDF.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
-    ]
-  },
-  {
     "objectID": "07-variable-aleatoria-cdf.html#referencias-del-capítulo",
     "href": "07-variable-aleatoria-cdf.html#referencias-del-capítulo",
     "title": "7  Variable aleatoria y función de distribución acumulada",
-    "section": "7.20 Referencias del capítulo",
-    "text": "7.20 Referencias del capítulo\nEl desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "7.18 Referencias del capítulo",
+    "text": "7.18 Referencias del capítulo\nEl desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Variable aleatoria y función de distribución acumulada</span>"
     ]
@@ -1440,21 +1360,11 @@
     ]
   },
   {
-    "objectID": "08-variables-discretas-pmf.html#materiales-complementarios-del-capítulo",
-    "href": "08-variables-discretas-pmf.html#materiales-complementarios-del-capítulo",
-    "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
-    "section": "8.16 Materiales complementarios del capítulo",
-    "text": "8.16 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
-    ]
-  },
-  {
     "objectID": "08-variables-discretas-pmf.html#referencias-del-capítulo",
     "href": "08-variables-discretas-pmf.html#referencias-del-capítulo",
     "title": "8  Variables aleatorias discretas y función de masa de probabilidad",
-    "section": "8.17 Referencias del capítulo",
-    "text": "8.17 Referencias del capítulo\nEl desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel teórico de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "8.16 Referencias del capítulo",
+    "text": "8.16 Referencias del capítulo\nEl desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel teórico de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Variables aleatorias discretas y función de masa de probabilidad</span>"
     ]
@@ -1620,21 +1530,11 @@
     ]
   },
   {
-    "objectID": "09-variables-continuas-densidad.html#materiales-complementarios-del-capítulo",
-    "href": "09-variables-continuas-densidad.html#materiales-complementarios-del-capítulo",
-    "title": "9  Variables aleatorias continuas y función de densidad",
-    "section": "9.17 Materiales complementarios del capítulo",
-    "text": "9.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico. Las presentaciones, videos e infografías se incorporarán en esta misma tabla cuando estén disponibles.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
-    ]
-  },
-  {
     "objectID": "09-variables-continuas-densidad.html#referencias-del-capítulo",
     "href": "09-variables-continuas-densidad.html#referencias-del-capítulo",
     "title": "9  Variables aleatorias continuas y función de densidad",
-    "section": "9.18 Referencias del capítulo",
-    "text": "9.18 Referencias del capítulo\nEl desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel formal de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "9.17 Referencias del capítulo",
+    "text": "9.17 Referencias del capítulo\nEl desarrollo teórico de variables absolutamente continuas, densidades y funciones de distribución sigue la formulación estándar de Devore (2016), Montgomery y Runger (2018), Walpole et al. (2012) y Johnson (2018), adaptada al nivel formal de este volumen.\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Variables aleatorias continuas y función de densidad</span>"
     ]
@@ -1830,31 +1730,11 @@
     ]
   },
   {
-    "objectID": "10-esperanza-varianza-chebyshev.html#materiales-complementarios-del-capítulo",
-    "href": "10-esperanza-varianza-chebyshev.html#materiales-complementarios-del-capítulo",
-    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
-    "section": "10.20 Materiales complementarios del capítulo",
-    "text": "10.20 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente los conceptos del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir ejemplos y verificaciones numéricas en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de conceptos y resultados principales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico.",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
-    ]
-  },
-  {
-    "objectID": "10-esperanza-varianza-chebyshev.html#ejercicios-teóricos",
-    "href": "10-esperanza-varianza-chebyshev.html#ejercicios-teóricos",
-    "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
-    "section": "10.21 Ejercicios teóricos",
-    "text": "10.21 Ejercicios teóricos\n\nDemuestra directamente la linealidad de la esperanza para variables discretas.\nDemuestra que \\(E[I_A]=P(A)\\) para cualquier evento \\(A\\).\nDemuestra que \\(\\operatorname{Var}(X)=E[X^2]-E[X]^2\\).\nDemuestra que \\(\\operatorname{Var}(aX+b)=a^2\\operatorname{Var}(X)\\).\nDemuestra que \\(\\operatorname{Var}(X)=0\\) si y sólo si \\(X\\) es constante casi seguramente.\nDeriva \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) para una Bernoulli\\((p)\\).\nDeriva \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) para una uniforme en \\([a,b]\\).\nDemuestra la desigualdad de Markov usando variables indicadoras.\nObtén Chebyshev a partir de Markov aplicada a \\((X-E[X])^2\\).\nConstruye un ejemplo de variable con esperanza finita pero segundo momento infinito y explica por qué Chebyshev no puede aplicarse.",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
-    ]
-  },
-  {
     "objectID": "10-esperanza-varianza-chebyshev.html#referencias-del-capítulo",
     "href": "10-esperanza-varianza-chebyshev.html#referencias-del-capítulo",
     "title": "10  Esperanza matemática, momentos, varianza y desigualdades probabilísticas",
-    "section": "10.22 Referencias del capítulo",
-    "text": "10.22 Referencias del capítulo\nEl tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en Devore (2016), Johnson (2018), Walpole et al. (2012) y Montgomery y Runger (2018), con apoyo computacional complementario basado en Kerns (2010).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nKerns, G. Jay. 2010. Introduction to Probability and Statistics Using R. 1.ª ed.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "section": "10.20 Referencias del capítulo",
+    "text": "10.20 Referencias del capítulo\nEl tratamiento formal de esperanza, momentos, varianza, variables indicadoras y desigualdades de Markov y Chebyshev sigue la presentación clásica de teoría de probabilidad desarrollada en Devore (2016), Johnson (2018), Walpole et al. (2012) y Montgomery y Runger (2018), con apoyo computacional complementario basado en Kerns (2010).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nKerns, G. Jay. 2010. Introduction to Probability and Statistics Using R. 1.ª ed.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span>"
     ]
@@ -2020,23 +1900,163 @@
     ]
   },
   {
-    "objectID": "11-distribuciones-discretas-especiales.html#materiales-complementarios-del-capítulo",
-    "href": "11-distribuciones-discretas-especiales.html#materiales-complementarios-del-capítulo",
+    "objectID": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
+    "href": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
     "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
-    "section": "11.17 Materiales complementarios del capítulo",
-    "text": "11.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente las distribuciones del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir cálculos, gráficas y simulaciones en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de distribuciones y relaciones estructurales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico.",
+    "section": "11.17 Referencias del capítulo",
+    "text": "11.17 Referencias del capítulo\nEl desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
     ]
   },
   {
-    "objectID": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
-    "href": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
-    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
-    "section": "11.18 Referencias del capítulo",
-    "text": "11.18 Referencias del capítulo\nEl desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "objectID": "12-hipergeometrica-poisson.html",
+    "href": "12-hipergeometrica-poisson.html",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "",
+    "text": "12.1 Objetivos\nEste capítulo desarrolla formalmente dos familias discretas fundamentales: la distribución hipergeométrica, asociada al muestreo sin reemplazo en poblaciones finitas, y la distribución de Poisson, asociada al conteo de eventos raros o dispersos en intervalos.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#distribución-hipergeométrica",
+    "href": "12-hipergeometrica-poisson.html#distribución-hipergeométrica",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.2 Distribución hipergeométrica",
+    "text": "12.2 Distribución hipergeométrica\nSea una población finita de tamaño \\(N\\) con \\(K\\) elementos clasificados como éxitos y \\(N-K\\) como fracasos. Se extrae una muestra de tamaño \\(n\\) sin reemplazo y se define \\(X\\) como el número de éxitos observados.\nEntonces\n\\[\nP(X=x)=\\frac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}},\n\\]\npara\n\\[\n\\max(0,n-N+K)\\le x\\le\\min(n,K).\n\\]\n\nNormalización\nLa identidad de Vandermonde\n\\[\n\\sum_x \\binom{K}{x}\\binom{N-K}{n-x}=\\binom{N}{n}\n\\]\nimplica inmediatamente que\n\\[\n\\sum_x P(X=x)=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#media-de-la-hipergeométrica",
+    "href": "12-hipergeometrica-poisson.html#media-de-la-hipergeométrica",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.3 Media de la hipergeométrica",
+    "text": "12.3 Media de la hipergeométrica\nEscribamos\n\\[\nX=I_1+\\cdots+I_n,\n\\]\ndonde \\(I_j\\) indica que la extracción \\(j\\) corresponde a uno de los \\(K\\) elementos de interés. Por simetría,\n\\[\nE[I_j]=\\frac KN.\n\\]\nPor linealidad,\n\\[\n\\boxed{E[X]=n\\frac KN}.\n\\]\nLa independencia no es necesaria para este argumento.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#varianza-de-la-hipergeométrica",
+    "href": "12-hipergeometrica-poisson.html#varianza-de-la-hipergeométrica",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.4 Varianza de la hipergeométrica",
+    "text": "12.4 Varianza de la hipergeométrica\nLas variables indicadoras de distintas extracciones no son independientes. Para \\(i\\ne j\\),\n\\[\nE[I_iI_j]=\\frac KN\\frac{K-1}{N-1}.\n\\]\nDe aquí se obtiene\n\\[\n\\operatorname{Cov}(I_i,I_j)\n=-\\frac{K(N-K)}{N^2(N-1)}.\n\\]\nAl sumar varianzas y covarianzas,\n\\[\n\\boxed{\n\\operatorname{Var}(X)\n=n\\frac KN\\left(1-\\frac KN\\right)\\frac{N-n}{N-1}\n}.\n\\]\nEl factor\n\\[\n\\frac{N-n}{N-1}\n\\]\nexpresa la reducción de variabilidad debida al muestreo sin reemplazo.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#aproximación-binomial-de-la-hipergeométrica",
+    "href": "12-hipergeometrica-poisson.html#aproximación-binomial-de-la-hipergeométrica",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.5 Aproximación binomial de la hipergeométrica",
+    "text": "12.5 Aproximación binomial de la hipergeométrica\nSi \\(N\\) es grande respecto de \\(n\\) y\n\\[\np=\\frac KN,\n\\]\nla dependencia inducida por no reemplazar es débil. En este régimen,\n\\[\n\\operatorname{Hipergeométrica}(N,K,n)\n\\approx\n\\operatorname{Binomial}(n,p).\n\\]\nLa convergencia puede verse comparando los factores sucesivos de ambas PMF cuando \\(N\\to\\infty\\), \\(K/N\\to p\\) y \\(n\\) permanece fijo.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#distribución-de-poisson",
+    "href": "12-hipergeometrica-poisson.html#distribución-de-poisson",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.6 Distribución de Poisson",
+    "text": "12.6 Distribución de Poisson\nPara \\(\\lambda&gt;0\\), una variable \\(X\\) tiene distribución de Poisson si\n\\[\n\\boxed{P(X=x)=e^{-\\lambda}\\frac{\\lambda^x}{x!}},\n\\qquad x=0,1,2,\\ldots\n\\]\nEscribimos\n\\[\nX\\sim\\operatorname{Poisson}(\\lambda).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#normalización-1",
+    "href": "12-hipergeometrica-poisson.html#normalización-1",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.7 Normalización",
+    "text": "12.7 Normalización\nPor la serie exponencial,\n\\[\ne^{\\lambda}=\\sum_{x=0}^{\\infty}\\frac{\\lambda^x}{x!}.\n\\]\nPor tanto,\n\\[\n\\sum_{x=0}^{\\infty}e^{-\\lambda}\\frac{\\lambda^x}{x!}=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#media-y-varianza-de-poisson",
+    "href": "12-hipergeometrica-poisson.html#media-y-varianza-de-poisson",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.8 Media y varianza de Poisson",
+    "text": "12.8 Media y varianza de Poisson\nPara la media,\n\\[\nE[X]\n=\\sum_{x=1}^{\\infty}x e^{-\\lambda}\\frac{\\lambda^x}{x!}\n=\\lambda e^{-\\lambda}\\sum_{x=1}^{\\infty}\\frac{\\lambda^{x-1}}{(x-1)!}\n=\\lambda.\n\\]\nAsimismo,\n\\[\nE[X(X-1)]=\\lambda^2.\n\\]\nComo\n\\[\nX^2=X(X-1)+X,\n\\]\nse sigue que\n\\[\nE[X^2]=\\lambda^2+\\lambda\n\\]\ny entonces\n\\[\n\\boxed{\\operatorname{Var}(X)=\\lambda}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#función-generadora-de-probabilidades",
+    "href": "12-hipergeometrica-poisson.html#función-generadora-de-probabilidades",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.9 Función generadora de probabilidades",
+    "text": "12.9 Función generadora de probabilidades\nLa función generadora de probabilidades es\n\\[\nG_X(s)=E[s^X].\n\\]\nPara una Poisson,\n\\[\nG_X(s)=e^{-\\lambda}\\sum_{x=0}^{\\infty}\\frac{(\\lambda s)^x}{x!}\n=\\exp\\{\\lambda(s-1)\\}.\n\\]\nEsta expresión permite obtener momentos y estudiar sumas de variables independientes.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#suma-de-poisson-independientes",
+    "href": "12-hipergeometrica-poisson.html#suma-de-poisson-independientes",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.10 Suma de Poisson independientes",
+    "text": "12.10 Suma de Poisson independientes\nSi\n\\[\nX\\sim\\operatorname{Poisson}(\\lambda_1),\n\\qquad\nY\\sim\\operatorname{Poisson}(\\lambda_2)\n\\]\nson independientes, entonces\n\\[\nG_{X+Y}(s)=G_X(s)G_Y(s)\n=\\exp\\{(\\lambda_1+\\lambda_2)(s-1)\\}.\n\\]\nPor unicidad de la función generadora,\n\\[\n\\boxed{X+Y\\sim\\operatorname{Poisson}(\\lambda_1+\\lambda_2)}.\n\\]\nEl resultado se extiende a cualquier suma finita de variables Poisson independientes.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#límite-de-poisson-de-la-binomial",
+    "href": "12-hipergeometrica-poisson.html#límite-de-poisson-de-la-binomial",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.11 Límite de Poisson de la binomial",
+    "text": "12.11 Límite de Poisson de la binomial\nSea\n\\[\nX_n\\sim\\operatorname{Binomial}(n,p_n),\n\\]\ny supongamos\n\\[\nnp_n\\to\\lambda&gt;0.\n\\]\nPara \\(x\\) fijo,\n\\[\nP(X_n=x)\n=\\binom nx p_n^x(1-p_n)^{n-x}.\n\\]\nTomando, por simplicidad, \\(p_n=\\lambda/n\\),\n\\[\nP(X_n=x)\n=\\frac{n(n-1)\\cdots(n-x+1)}{x!}\n\\left(\\frac{\\lambda}{n}\\right)^x\n\\left(1-\\frac{\\lambda}{n}\\right)^{n-x}.\n\\]\nCuando \\(n\\to\\infty\\),\n\\[\n\\frac{n(n-1)\\cdots(n-x+1)}{n^x}\\to1\n\\]\ny\n\\[\n\\left(1-\\frac{\\lambda}{n}\\right)^n\\to e^{-\\lambda}.\n\\]\nPor tanto,\n\\[\n\\boxed{\nP(X_n=x)\\to e^{-\\lambda}\\frac{\\lambda^x}{x!}\n}.\n\\]\nÉste es el teorema límite de Poisson para eventos raros.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#interpretación-de-lambda",
+    "href": "12-hipergeometrica-poisson.html#interpretación-de-lambda",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.12 Interpretación de \\(\\lambda\\)",
+    "text": "12.12 Interpretación de \\(\\lambda\\)\nEl parámetro \\(\\lambda\\) representa el número esperado de eventos en el intervalo considerado. Si existe una tasa \\(r\\) por unidad y el intervalo tiene longitud \\(t\\), se modela habitualmente con\n\\[\n\\lambda=rt.\n\\]\nEsta interpretación anticipa el proceso de Poisson, que requiere una teoría adicional sobre conteos en intervalos disjuntos y tiempos de llegada.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#diferencias-estructurales",
+    "href": "12-hipergeometrica-poisson.html#diferencias-estructurales",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.13 Diferencias estructurales",
+    "text": "12.13 Diferencias estructurales\nLa hipergeométrica surge de un espacio finito con muestreo sin reemplazo. La Poisson posee soporte infinito y suele aparecer como límite de conteos binomiales de eventos raros. La primera exhibe dependencia negativa entre extracciones; la segunda se caracteriza por igualdad entre media y varianza.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#ejercicios",
+    "href": "12-hipergeometrica-poisson.html#ejercicios",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.14 Ejercicios",
+    "text": "12.14 Ejercicios\n\nDemuestra la normalización hipergeométrica usando la identidad de Vandermonde.\nObtén \\(E[X]\\) de la hipergeométrica mediante variables indicadoras.\nDeriva la covarianza entre dos indicadores de extracciones sin reemplazo.\nA partir del ejercicio anterior, demuestra la fórmula de la varianza hipergeométrica.\nDemuestra la normalización de la distribución Poisson mediante la serie de \\(e^\\lambda\\).\nObtén \\(E[X(X-1)]\\) para \\(X\\sim\\operatorname{Poisson}(\\lambda)\\).\nUsa el resultado anterior para demostrar que \\(\\operatorname{Var}(X)=\\lambda\\).\nDemuestra el resultado de suma de Poisson independientes usando funciones generadoras.\nDemuestra el límite binomial–Poisson para \\(p_n=\\lambda/n\\).\nReto. Discute por qué la varianza hipergeométrica tiende a la binomial cuando \\(N\\to\\infty\\) con \\(K/N\\to p\\) y \\(n\\) fijo.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
+    ]
+  },
+  {
+    "objectID": "12-hipergeometrica-poisson.html#referencias-del-capítulo",
+    "href": "12-hipergeometrica-poisson.html#referencias-del-capítulo",
+    "title": "12  Distribuciones discretas especiales II: hipergeométrica y Poisson",
+    "section": "12.15 Referencias del capítulo",
+    "text": "12.15 Referencias del capítulo\nEl desarrollo teórico de las distribuciones hipergeométrica y de Poisson, sus momentos y resultados límite sigue el tratamiento estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Distribuciones discretas especiales II: hipergeométrica y Poisson</span>"
     ]
   },
   {

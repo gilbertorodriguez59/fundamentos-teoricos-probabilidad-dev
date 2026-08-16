@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Axiomas y propiedades de la probabilidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>12&nbsp; Distribuciones discretas especiales II: hipergeométrica y Poisson – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,8 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./05-condicional-independencia.html" rel="next">
-<link href="./03-conteo-probabilidad.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./11-distribuciones-discretas-especiales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +136,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-axiomas-probabilidad.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-hipergeometrica-poisson.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -215,7 +215,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link active">
+  <a href="./04-axiomas-probabilidad.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></span></a>
   </div>
 </li>
@@ -263,7 +263,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link">
+  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span></a>
   </div>
 </li>
@@ -283,65 +283,24 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#propósitos-de-aprendizaje" id="toc-propósitos-de-aprendizaje" class="nav-link active" data-scroll-target="#propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</a></li>
-  <li><a href="#espacios-de-probabilidad" id="toc-espacios-de-probabilidad" class="nav-link" data-scroll-target="#espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</a></li>
-  <li><a href="#axiomas-de-kolmogórov" id="toc-axiomas-de-kolmogórov" class="nav-link" data-scroll-target="#axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</a>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">12.1</span> Objetivos</a></li>
+  <li><a href="#distribución-hipergeométrica" id="toc-distribución-hipergeométrica" class="nav-link" data-scroll-target="#distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</a>
   <ul class="collapse">
-  <li><a href="#axioma-1-no-negatividad" id="toc-axioma-1-no-negatividad" class="nav-link" data-scroll-target="#axioma-1-no-negatividad">Axioma 1: no negatividad</a></li>
-  <li><a href="#axioma-2-normalización" id="toc-axioma-2-normalización" class="nav-link" data-scroll-target="#axioma-2-normalización">Axioma 2: normalización</a></li>
-  <li><a href="#axioma-3-aditividad-numerable" id="toc-axioma-3-aditividad-numerable" class="nav-link" data-scroll-target="#axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</a></li>
+  <li><a href="#normalización" id="toc-normalización" class="nav-link" data-scroll-target="#normalización">Normalización</a></li>
   </ul></li>
-  <li><a href="#probabilidad-del-conjunto-vacío" id="toc-probabilidad-del-conjunto-vacío" class="nav-link" data-scroll-target="#probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</a>
-  <ul class="collapse">
-  <li><a href="#proposición" id="toc-proposición" class="nav-link" data-scroll-target="#proposición">Proposición</a></li>
-  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
-  </ul></li>
-  <li><a href="#aditividad-finita" id="toc-aditividad-finita" class="nav-link" data-scroll-target="#aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</a>
-  <ul class="collapse">
-  <li><a href="#proposición-1" id="toc-proposición-1" class="nav-link" data-scroll-target="#proposición-1">Proposición</a></li>
-  <li><a href="#justificación" id="toc-justificación" class="nav-link" data-scroll-target="#justificación">Justificación</a></li>
-  </ul></li>
-  <li><a href="#regla-del-complemento" id="toc-regla-del-complemento" class="nav-link" data-scroll-target="#regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</a>
-  <ul class="collapse">
-  <li><a href="#proposición-2" id="toc-proposición-2" class="nav-link" data-scroll-target="#proposición-2">Proposición</a></li>
-  <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
-  </ul></li>
-  <li><a href="#monotonía" id="toc-monotonía" class="nav-link" data-scroll-target="#monotonía"><span class="header-section-number">4.7</span> Monotonía</a>
-  <ul class="collapse">
-  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
-  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
-  <li><a href="#corolario" id="toc-corolario" class="nav-link" data-scroll-target="#corolario">Corolario</a></li>
-  </ul></li>
-  <li><a href="#probabilidad-de-una-diferencia" id="toc-probabilidad-de-una-diferencia" class="nav-link" data-scroll-target="#probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</a>
-  <ul class="collapse">
-  <li><a href="#proposición-3" id="toc-proposición-3" class="nav-link" data-scroll-target="#proposición-3">Proposición</a></li>
-  <li><a href="#demostración-3" id="toc-demostración-3" class="nav-link" data-scroll-target="#demostración-3">Demostración</a></li>
-  </ul></li>
-  <li><a href="#fórmula-de-la-unión-de-dos-eventos" id="toc-fórmula-de-la-unión-de-dos-eventos" class="nav-link" data-scroll-target="#fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</a>
-  <ul class="collapse">
-  <li><a href="#teorema-1" id="toc-teorema-1" class="nav-link" data-scroll-target="#teorema-1">Teorema</a></li>
-  <li><a href="#demostración-4" id="toc-demostración-4" class="nav-link" data-scroll-target="#demostración-4">Demostración</a></li>
-  </ul></li>
-  <li><a href="#cotas-de-fréchet-para-dos-eventos" id="toc-cotas-de-fréchet-para-dos-eventos" class="nav-link" data-scroll-target="#cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</a></li>
-  <li><a href="#subaditividad" id="toc-subaditividad" class="nav-link" data-scroll-target="#subaditividad"><span class="header-section-number">4.11</span> Subaditividad</a>
-  <ul class="collapse">
-  <li><a href="#teorema-2" id="toc-teorema-2" class="nav-link" data-scroll-target="#teorema-2">Teorema</a></li>
-  <li><a href="#demostración-5" id="toc-demostración-5" class="nav-link" data-scroll-target="#demostración-5">Demostración</a></li>
-  <li><a href="#generalización-numerable" id="toc-generalización-numerable" class="nav-link" data-scroll-target="#generalización-numerable">Generalización numerable</a></li>
-  </ul></li>
-  <li><a href="#inclusión-exclusión-para-tres-eventos" id="toc-inclusión-exclusión-para-tres-eventos" class="nav-link" data-scroll-target="#inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</a></li>
-  <li><a href="#inclusión-exclusión-finita" id="toc-inclusión-exclusión-finita" class="nav-link" data-scroll-target="#inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</a></li>
-  <li><a href="#continuidad-de-la-probabilidad" id="toc-continuidad-de-la-probabilidad" class="nav-link" data-scroll-target="#continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#continuidad-desde-abajo" id="toc-continuidad-desde-abajo" class="nav-link" data-scroll-target="#continuidad-desde-abajo">Continuidad desde abajo</a></li>
-  <li><a href="#continuidad-desde-arriba" id="toc-continuidad-desde-arriba" class="nav-link" data-scroll-target="#continuidad-desde-arriba">Continuidad desde arriba</a></li>
-  </ul></li>
-  <li><a href="#espacios-finitos" id="toc-espacios-finitos" class="nav-link" data-scroll-target="#espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</a></li>
-  <li><a href="#ejemplo-formal" id="toc-ejemplo-formal" class="nav-link" data-scroll-target="#ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</a></li>
-  <li><a href="#observación-conceptual-probabilidad-cero-e-imposibilidad" id="toc-observación-conceptual-probabilidad-cero-e-imposibilidad" class="nav-link" data-scroll-target="#observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</a></li>
-  <li><a href="#errores-conceptuales-frecuentes" id="toc-errores-conceptuales-frecuentes" class="nav-link" data-scroll-target="#errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">4.19</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</a></li>
+  <li><a href="#media-de-la-hipergeométrica" id="toc-media-de-la-hipergeométrica" class="nav-link" data-scroll-target="#media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</a></li>
+  <li><a href="#varianza-de-la-hipergeométrica" id="toc-varianza-de-la-hipergeométrica" class="nav-link" data-scroll-target="#varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</a></li>
+  <li><a href="#aproximación-binomial-de-la-hipergeométrica" id="toc-aproximación-binomial-de-la-hipergeométrica" class="nav-link" data-scroll-target="#aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</a></li>
+  <li><a href="#distribución-de-poisson" id="toc-distribución-de-poisson" class="nav-link" data-scroll-target="#distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</a></li>
+  <li><a href="#normalización-1" id="toc-normalización-1" class="nav-link" data-scroll-target="#normalización-1"><span class="header-section-number">12.7</span> Normalización</a></li>
+  <li><a href="#media-y-varianza-de-poisson" id="toc-media-y-varianza-de-poisson" class="nav-link" data-scroll-target="#media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</a></li>
+  <li><a href="#función-generadora-de-probabilidades" id="toc-función-generadora-de-probabilidades" class="nav-link" data-scroll-target="#función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</a></li>
+  <li><a href="#suma-de-poisson-independientes" id="toc-suma-de-poisson-independientes" class="nav-link" data-scroll-target="#suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</a></li>
+  <li><a href="#límite-de-poisson-de-la-binomial" id="toc-límite-de-poisson-de-la-binomial" class="nav-link" data-scroll-target="#límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</a></li>
+  <li><a href="#interpretación-de-lambda" id="toc-interpretación-de-lambda" class="nav-link" data-scroll-target="#interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></a></li>
+  <li><a href="#diferencias-estructurales" id="toc-diferencias-estructurales" class="nav-link" data-scroll-target="#diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">12.14</span> Ejercicios</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -350,7 +309,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomas y propiedades de la probabilidad</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></h1>
 </div>
 
 
@@ -367,504 +326,236 @@ window.Quarto = {
 </header>
 
 
-<section id="propósitos-de-aprendizaje" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="propósitos-de-aprendizaje"><span class="header-section-number">4.1</span> Propósitos de aprendizaje</h2>
-<p>Al finalizar este capítulo, el lector será capaz de:</p>
-<ul>
-<li>describir formalmente una medida de probabilidad sobre un espacio medible;</li>
-<li>interpretar los axiomas de Kolmogórov;</li>
-<li>deducir propiedades fundamentales de una medida de probabilidad;</li>
-<li>demostrar monotonía, subaditividad e inclusión-exclusión para eventos finitos;</li>
-<li>distinguir entre propiedades primitivas y resultados derivados;</li>
-<li>analizar restricciones de coherencia entre probabilidades marginales e intersecciones.</li>
-</ul>
+<section id="objetivos" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">12.1</span> Objetivos</h2>
+<p>Este capítulo desarrolla formalmente dos familias discretas fundamentales: la distribución hipergeométrica, asociada al muestreo sin reemplazo en poblaciones finitas, y la distribución de Poisson, asociada al conteo de eventos raros o dispersos en intervalos.</p>
 </section>
-<section id="espacios-de-probabilidad" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="espacios-de-probabilidad"><span class="header-section-number">4.2</span> Espacios de probabilidad</h2>
-<p>Un <strong>espacio de probabilidad</strong> es una terna</p>
+<section id="distribución-hipergeométrica" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</h2>
+<p>Sea una población finita de tamaño <span class="math inline">\(N\)</span> con <span class="math inline">\(K\)</span> elementos clasificados como éxitos y <span class="math inline">\(N-K\)</span> como fracasos. Se extrae una muestra de tamaño <span class="math inline">\(n\)</span> sin reemplazo y se define <span class="math inline">\(X\)</span> como el número de éxitos observados.</p>
+<p>Entonces</p>
 <p><span class="math display">\[
-(\Omega,\mathcal F,P),
+P(X=x)=\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}},
 \]</span></p>
-<p>donde:</p>
-<ol type="1">
-<li><span class="math inline">\(\Omega\)</span> es un conjunto no vacío llamado espacio muestral;</li>
-<li><span class="math inline">\(\mathcal F\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra de subconjuntos de <span class="math inline">\(\Omega\)</span>;</li>
-<li><span class="math inline">\(P:\mathcal F\to[0,1]\)</span> es una medida de probabilidad.</li>
-</ol>
-<p>La familia <span class="math inline">\(\mathcal F\)</span> determina cuáles subconjuntos de <span class="math inline">\(\Omega\)</span> son considerados eventos medibles. La función <span class="math inline">\(P\)</span> asigna a cada evento un número real que satisface los axiomas que se presentan a continuación.</p>
-</section>
-<section id="axiomas-de-kolmogórov" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="axiomas-de-kolmogórov"><span class="header-section-number">4.3</span> Axiomas de Kolmogórov</h2>
-<p>Sea <span class="math inline">\((\Omega,\mathcal F)\)</span> un espacio medible. Una función</p>
+<p>para</p>
 <p><span class="math display">\[
-P:\mathcal F\to[0,1]
+\max(0,n-N+K)\le x\le\min(n,K).
 \]</span></p>
-<p>es una medida de probabilidad si satisface:</p>
-<section id="axioma-1-no-negatividad" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-1-no-negatividad">Axioma 1: no negatividad</h3>
-<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<section id="normalización" class="level3">
+<h3 class="anchored" data-anchor-id="normalización">Normalización</h3>
+<p>La identidad de Vandermonde</p>
 <p><span class="math display">\[
-P(A)\geq 0.
+\sum_x \binom{K}{x}\binom{N-K}{n-x}=\binom{N}{n}
 \]</span></p>
-</section>
-<section id="axioma-2-normalización" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-2-normalización">Axioma 2: normalización</h3>
+<p>implica inmediatamente que</p>
 <p><span class="math display">\[
-P(\Omega)=1.
-\]</span></p>
-</section>
-<section id="axioma-3-aditividad-numerable" class="level3">
-<h3 class="anchored" data-anchor-id="axioma-3-aditividad-numerable">Axioma 3: aditividad numerable</h3>
-<p>Si <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span> son mutuamente excluyentes, es decir,</p>
-<p><span class="math display">\[
-A_i\cap A_j=\varnothing\qquad(i\neq j),
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-=\sum_{n=1}^{\infty}P(A_n).
-\]</span></p>
-<p>La aditividad numerable es la condición estructural central. Muchas fórmulas elementales de probabilidad se deducen de ella.</p>
-</section>
-</section>
-<section id="probabilidad-del-conjunto-vacío" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="probabilidad-del-conjunto-vacío"><span class="header-section-number">4.4</span> Probabilidad del conjunto vacío</h2>
-<section id="proposición" class="level3">
-<h3 class="anchored" data-anchor-id="proposición">Proposición</h3>
-<p><span class="math display">\[
-P(\varnothing)=0.
-\]</span></p>
-</section>
-<section id="demostración" class="level3">
-<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Como</p>
-<p><span class="math display">\[
-\Omega=\Omega\cup\varnothing
-\]</span></p>
-<p>y los dos conjuntos son disjuntos, por aditividad,</p>
-<p><span class="math display">\[
-P(\Omega)=P(\Omega)+P(\varnothing).
-\]</span></p>
-<p>Restando <span class="math inline">\(P(\Omega)\)</span> en ambos lados obtenemos</p>
-<p><span class="math display">\[
-P(\varnothing)=0.
-\qquad\square
+\sum_x P(X=x)=1.
 \]</span></p>
 </section>
 </section>
-<section id="aditividad-finita" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="aditividad-finita"><span class="header-section-number">4.5</span> Aditividad finita</h2>
-<section id="proposición-1" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-1">Proposición</h3>
-<p>Si <span class="math inline">\(A_1,\ldots,A_n\in\mathcal F\)</span> son mutuamente excluyentes, entonces</p>
+<section id="media-de-la-hipergeométrica" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</h2>
+<p>Escribamos</p>
 <p><span class="math display">\[
-P\left(\bigcup_{i=1}^{n}A_i\right)
-=\sum_{i=1}^{n}P(A_i).
+X=I_1+\cdots+I_n,
 \]</span></p>
+<p>donde <span class="math inline">\(I_j\)</span> indica que la extracción <span class="math inline">\(j\)</span> corresponde a uno de los <span class="math inline">\(K\)</span> elementos de interés. Por simetría,</p>
+<p><span class="math display">\[
+E[I_j]=\frac KN.
+\]</span></p>
+<p>Por linealidad,</p>
+<p><span class="math display">\[
+\boxed{E[X]=n\frac KN}.
+\]</span></p>
+<p>La independencia no es necesaria para este argumento.</p>
 </section>
-<section id="justificación" class="level3">
-<h3 class="anchored" data-anchor-id="justificación">Justificación</h3>
-<p>Puede aplicarse la aditividad numerable a la sucesión</p>
+<section id="varianza-de-la-hipergeométrica" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</h2>
+<p>Las variables indicadoras de distintas extracciones no son independientes. Para <span class="math inline">\(i\ne j\)</span>,</p>
 <p><span class="math display">\[
-A_1,\ldots,A_n,\varnothing,\varnothing,\ldots
+E[I_iI_j]=\frac KN\frac{K-1}{N-1}.
 \]</span></p>
-<p>y utilizar <span class="math inline">\(P(\varnothing)=0\)</span>.</p>
-</section>
-</section>
-<section id="regla-del-complemento" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="regla-del-complemento"><span class="header-section-number">4.6</span> Regla del complemento</h2>
-<section id="proposición-2" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-2">Proposición</h3>
-<p>Para todo evento <span class="math inline">\(A\in\mathcal F\)</span>,</p>
+<p>De aquí se obtiene</p>
 <p><span class="math display">\[
-P(A^c)=1-P(A).
+\operatorname{Cov}(I_i,I_j)
+=-\frac{K(N-K)}{N^2(N-1)}.
 \]</span></p>
-</section>
-<section id="demostración-1" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
-<p>Como</p>
-<p><span class="math display">\[
-A\cap A^c=\varnothing
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A\cup A^c=\Omega,
-\]</span></p>
-<p>por aditividad finita,</p>
-<p><span class="math display">\[
-1=P(\Omega)=P(A)+P(A^c).
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-P(A^c)=1-P(A).
-\qquad\square
-\]</span></p>
-</section>
-</section>
-<section id="monotonía" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="monotonía"><span class="header-section-number">4.7</span> Monotonía</h2>
-<section id="teorema" class="level3">
-<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
-<p>Si <span class="math inline">\(A,B\in\mathcal F\)</span> y</p>
-<p><span class="math display">\[
-A\subseteq B,
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P(A)\leq P(B).
-\]</span></p>
-</section>
-<section id="demostración-2" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
-<p>Como</p>
-<p><span class="math display">\[
-B=A\cup(B\setminus A)
-\]</span></p>
-<p>y los conjuntos son disjuntos,</p>
-<p><span class="math display">\[
-P(B)=P(A)+P(B\setminus A).
-\]</span></p>
-<p>Por no negatividad,</p>
-<p><span class="math display">\[
-P(B\setminus A)\geq0.
-\]</span></p>
-<p>Luego</p>
-<p><span class="math display">\[
-P(B)\geq P(A).
-\qquad\square
-\]</span></p>
-</section>
-<section id="corolario" class="level3">
-<h3 class="anchored" data-anchor-id="corolario">Corolario</h3>
-<p>Para todo <span class="math inline">\(A\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-0\leq P(A)\leq1.
-\]</span></p>
-<p>La cota inferior procede de la no negatividad y la superior de <span class="math inline">\(A\subseteq\Omega\)</span>.</p>
-</section>
-</section>
-<section id="probabilidad-de-una-diferencia" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="probabilidad-de-una-diferencia"><span class="header-section-number">4.8</span> Probabilidad de una diferencia</h2>
-<section id="proposición-3" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-3">Proposición</h3>
-<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A\setminus B)=P(A)-P(A\cap B).
-\]</span></p>
-</section>
-<section id="demostración-3" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-3">Demostración</h3>
-<p>La descomposición</p>
-<p><span class="math display">\[
-A=(A\setminus B)\cup(A\cap B)
-\]</span></p>
-<p>es disjunta. Por tanto,</p>
-<p><span class="math display">\[
-P(A)=P(A\setminus B)+P(A\cap B),
-\]</span></p>
-<p>de donde se obtiene la identidad.</p>
-</section>
-</section>
-<section id="fórmula-de-la-unión-de-dos-eventos" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="fórmula-de-la-unión-de-dos-eventos"><span class="header-section-number">4.9</span> Fórmula de la unión de dos eventos</h2>
-<section id="teorema-1" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-1">Teorema</h3>
-<p>Para cualesquiera <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
-\]</span></p>
-</section>
-<section id="demostración-4" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-4">Demostración</h3>
-<p>Podemos escribir</p>
-<p><span class="math display">\[
-A\cup B=A\cup(B\setminus A),
-\]</span></p>
-<p>donde los dos eventos son disjuntos. Luego</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B\setminus A).
-\]</span></p>
-<p>Además,</p>
-<p><span class="math display">\[
-P(B\setminus A)=P(B)-P(A\cap B).
-\]</span></p>
-<p>Sustituyendo,</p>
-<p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
-\qquad\square
-\]</span></p>
-</section>
-</section>
-<section id="cotas-de-fréchet-para-dos-eventos" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="cotas-de-fréchet-para-dos-eventos"><span class="header-section-number">4.10</span> Cotas de Fréchet para dos eventos</h2>
-<p>A partir de</p>
-<p><span class="math display">\[
-P(A\cup B)\leq1
-\]</span></p>
-<p>y de la fórmula de la unión,</p>
-<p><span class="math display">\[
-P(A)+P(B)-P(A\cap B)\leq1.
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-P(A\cap B)\geq P(A)+P(B)-1.
-\]</span></p>
-<p>Como además</p>
-<p><span class="math display">\[
-A\cap B\subseteq A
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A\cap B\subseteq B,
-\]</span></p>
-<p>se obtiene</p>
-<p><span class="math display">\[
-P(A\cap B)\leq\min\{P(A),P(B)\}.
-\]</span></p>
-<p>En consecuencia,</p>
+<p>Al sumar varianzas y covarianzas,</p>
 <p><span class="math display">\[
 \boxed{
-\max\{0,P(A)+P(B)-1\}
-\leq P(A\cap B)
-\leq \min\{P(A),P(B)\}
+\operatorname{Var}(X)
+=n\frac KN\left(1-\frac KN\right)\frac{N-n}{N-1}
 }.
 \]</span></p>
-<p>Estas desigualdades caracterizan las restricciones básicas que debe satisfacer una intersección dada la probabilidad marginal de cada evento.</p>
-</section>
-<section id="subaditividad" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="subaditividad"><span class="header-section-number">4.11</span> Subaditividad</h2>
-<section id="teorema-2" class="level3">
-<h3 class="anchored" data-anchor-id="teorema-2">Teorema</h3>
-<p>Para <span class="math inline">\(A,B\in\mathcal F\)</span>,</p>
+<p>El factor</p>
 <p><span class="math display">\[
-P(A\cup B)\leq P(A)+P(B).
+\frac{N-n}{N-1}
+\]</span></p>
+<p>expresa la reducción de variabilidad debida al muestreo sin reemplazo.</p>
+</section>
+<section id="aproximación-binomial-de-la-hipergeométrica" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</h2>
+<p>Si <span class="math inline">\(N\)</span> es grande respecto de <span class="math inline">\(n\)</span> y</p>
+<p><span class="math display">\[
+p=\frac KN,
+\]</span></p>
+<p>la dependencia inducida por no reemplazar es débil. En este régimen,</p>
+<p><span class="math display">\[
+\operatorname{Hipergeométrica}(N,K,n)
+\approx
+\operatorname{Binomial}(n,p).
+\]</span></p>
+<p>La convergencia puede verse comparando los factores sucesivos de ambas PMF cuando <span class="math inline">\(N\to\infty\)</span>, <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> permanece fijo.</p>
+</section>
+<section id="distribución-de-poisson" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</h2>
+<p>Para <span class="math inline">\(\lambda&gt;0\)</span>, una variable <span class="math inline">\(X\)</span> tiene distribución de Poisson si</p>
+<p><span class="math display">\[
+\boxed{P(X=x)=e^{-\lambda}\frac{\lambda^x}{x!}},
+\qquad x=0,1,2,\ldots
+\]</span></p>
+<p>Escribimos</p>
+<p><span class="math display">\[
+X\sim\operatorname{Poisson}(\lambda).
 \]</span></p>
 </section>
-<section id="demostración-5" class="level3">
-<h3 class="anchored" data-anchor-id="demostración-5">Demostración</h3>
-<p>La fórmula de la unión da</p>
+<section id="normalización-1" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="normalización-1"><span class="header-section-number">12.7</span> Normalización</h2>
+<p>Por la serie exponencial,</p>
 <p><span class="math display">\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B).
+e^{\lambda}=\sum_{x=0}^{\infty}\frac{\lambda^x}{x!}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\sum_{x=0}^{\infty}e^{-\lambda}\frac{\lambda^x}{x!}=1.
+\]</span></p>
+</section>
+<section id="media-y-varianza-de-poisson" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</h2>
+<p>Para la media,</p>
+<p><span class="math display">\[
+E[X]
+=\sum_{x=1}^{\infty}x e^{-\lambda}\frac{\lambda^x}{x!}
+=\lambda e^{-\lambda}\sum_{x=1}^{\infty}\frac{\lambda^{x-1}}{(x-1)!}
+=\lambda.
+\]</span></p>
+<p>Asimismo,</p>
+<p><span class="math display">\[
+E[X(X-1)]=\lambda^2.
 \]</span></p>
 <p>Como</p>
 <p><span class="math display">\[
-P(A\cap B)\geq0,
+X^2=X(X-1)+X,
 \]</span></p>
-<p>se sigue la desigualdad.</p>
-</section>
-<section id="generalización-numerable" class="level3">
-<h3 class="anchored" data-anchor-id="generalización-numerable">Generalización numerable</h3>
-<p>Para cualquier sucesión <span class="math inline">\(A_1,A_2,\ldots\in\mathcal F\)</span>,</p>
+<p>se sigue que</p>
 <p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-\leq\sum_{n=1}^{\infty}P(A_n).
+E[X^2]=\lambda^2+\lambda
 \]</span></p>
-<p>Esta propiedad se denomina <strong>subaditividad numerable</strong>.</p>
-</section>
-</section>
-<section id="inclusión-exclusión-para-tres-eventos" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="inclusión-exclusión-para-tres-eventos"><span class="header-section-number">4.12</span> Inclusión-exclusión para tres eventos</h2>
-<p>Para <span class="math inline">\(A,B,C\in\mathcal F\)</span>,</p>
+<p>y entonces</p>
 <p><span class="math display">\[
-\begin{aligned}
-P(A\cup B\cup C)
-={}&amp;P(A)+P(B)+P(C)\\
-&amp;-P(A\cap B)-P(A\cap C)-P(B\cap C)\\
-&amp;+P(A\cap B\cap C).
-\end{aligned}
+\boxed{\operatorname{Var}(X)=\lambda}.
 \]</span></p>
-<p>La fórmula puede demostrarse aplicando dos veces la regla de la unión y usando identidades de conjuntos.</p>
 </section>
-<section id="inclusión-exclusión-finita" class="level2" data-number="4.13">
-<h2 data-number="4.13" class="anchored" data-anchor-id="inclusión-exclusión-finita"><span class="header-section-number">4.13</span> Inclusión-exclusión finita</h2>
-<p>Para eventos <span class="math inline">\(A_1,\ldots,A_n\)</span>,</p>
+<section id="función-generadora-de-probabilidades" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</h2>
+<p>La función generadora de probabilidades es</p>
 <p><span class="math display">\[
-P\left(\bigcup_{i=1}^{n}A_i\right)
-=
-\sum_iP(A_i)
--
-\sum_{i&lt;j}P(A_i\cap A_j)
-+
-\sum_{i&lt;j&lt;k}P(A_i\cap A_j\cap A_k)
--\cdots
-+(-1)^{n+1}P\left(\bigcap_{i=1}^{n}A_i\right).
+G_X(s)=E[s^X].
 \]</span></p>
-<p>El principio de inclusión-exclusión es una conexión directa entre combinatoria y probabilidad.</p>
+<p>Para una Poisson,</p>
+<p><span class="math display">\[
+G_X(s)=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda s)^x}{x!}
+=\exp\{\lambda(s-1)\}.
+\]</span></p>
+<p>Esta expresión permite obtener momentos y estudiar sumas de variables independientes.</p>
 </section>
-<section id="continuidad-de-la-probabilidad" class="level2" data-number="4.14">
-<h2 data-number="4.14" class="anchored" data-anchor-id="continuidad-de-la-probabilidad"><span class="header-section-number">4.14</span> Continuidad de la probabilidad</h2>
-<p>La aditividad numerable implica propiedades de continuidad que serán importantes al estudiar variables aleatorias y sucesiones de eventos.</p>
-<section id="continuidad-desde-abajo" class="level3">
-<h3 class="anchored" data-anchor-id="continuidad-desde-abajo">Continuidad desde abajo</h3>
+<section id="suma-de-poisson-independientes" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</h2>
 <p>Si</p>
 <p><span class="math display">\[
-A_1\subseteq A_2\subseteq\cdots
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A=\bigcup_{n=1}^{\infty}A_n,
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P(A_n)\longrightarrow P(A).
-\]</span></p>
-</section>
-<section id="continuidad-desde-arriba" class="level3">
-<h3 class="anchored" data-anchor-id="continuidad-desde-arriba">Continuidad desde arriba</h3>
-<p>Si</p>
-<p><span class="math display">\[
-A_1\supseteq A_2\supseteq\cdots
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-A=\bigcap_{n=1}^{\infty}A_n,
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-P(A_n)\longrightarrow P(A).
-\]</span></p>
-<p>En espacios de probabilidad, la condición <span class="math inline">\(P(A_1)&lt;\infty\)</span> necesaria para medidas generales se satisface automáticamente porque <span class="math inline">\(P(A_1)\leq1\)</span>.</p>
-</section>
-</section>
-<section id="espacios-finitos" class="level2" data-number="4.15">
-<h2 data-number="4.15" class="anchored" data-anchor-id="espacios-finitos"><span class="header-section-number">4.15</span> Espacios finitos</h2>
-<p>Sea</p>
-<p><span class="math display">\[
-\Omega=\{\omega_1,\ldots,\omega_N\}.
-\]</span></p>
-<p>Si asignamos masas</p>
-<p><span class="math display">\[
-p_i=P(\{\omega_i\}),
-\]</span></p>
-<p>con</p>
-<p><span class="math display">\[
-p_i\geq0,
+X\sim\operatorname{Poisson}(\lambda_1),
 \qquad
-\sum_{i=1}^{N}p_i=1,
+Y\sim\operatorname{Poisson}(\lambda_2)
 \]</span></p>
-<p>entonces para cualquier evento <span class="math inline">\(A\subseteq\Omega\)</span>,</p>
+<p>son independientes, entonces</p>
 <p><span class="math display">\[
-P(A)=\sum_{\omega_i\in A}p_i.
+G_{X+Y}(s)=G_X(s)G_Y(s)
+=\exp\{(\lambda_1+\lambda_2)(s-1)\}.
 \]</span></p>
-<p>Si todos los resultados elementales son equiprobables,</p>
+<p>Por unicidad de la función generadora,</p>
 <p><span class="math display">\[
-p_i=\frac1N,
+\boxed{X+Y\sim\operatorname{Poisson}(\lambda_1+\lambda_2)}.
 \]</span></p>
-<p>y se obtiene</p>
-<p><span class="math display">\[
-P(A)=\frac{|A|}{|\Omega|}.
-\]</span></p>
-<p>La equiprobabilidad es una hipótesis adicional del modelo, no un axioma de probabilidad.</p>
+<p>El resultado se extiende a cualquier suma finita de variables Poisson independientes.</p>
 </section>
-<section id="ejemplo-formal" class="level2" data-number="4.16">
-<h2 data-number="4.16" class="anchored" data-anchor-id="ejemplo-formal"><span class="header-section-number">4.16</span> Ejemplo formal</h2>
+<section id="límite-de-poisson-de-la-binomial" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</h2>
 <p>Sea</p>
 <p><span class="math display">\[
-\Omega=\{1,2,3,4\}
+X_n\sim\operatorname{Binomial}(n,p_n),
 \]</span></p>
 <p>y supongamos</p>
 <p><span class="math display">\[
-P(\{1\})=0.1,
-\quad
-P(\{2\})=0.2,
-\quad
-P(\{3\})=0.3,
-\quad
-P(\{4\})=0.4.
+np_n\to\lambda&gt;0.
 \]</span></p>
-<p>Definimos</p>
+<p>Para <span class="math inline">\(x\)</span> fijo,</p>
 <p><span class="math display">\[
-A=\{1,2,4\},
-\qquad
-B=\{3,4\}.
+P(X_n=x)
+=\binom nx p_n^x(1-p_n)^{n-x}.
 \]</span></p>
-<p>Entonces</p>
+<p>Tomando, por simplicidad, <span class="math inline">\(p_n=\lambda/n\)</span>,</p>
 <p><span class="math display">\[
-P(A)=0.7,
+P(X_n=x)
+=\frac{n(n-1)\cdots(n-x+1)}{x!}
+\left(\frac{\lambda}{n}\right)^x
+\left(1-\frac{\lambda}{n}\right)^{n-x}.
 \]</span></p>
+<p>Cuando <span class="math inline">\(n\to\infty\)</span>,</p>
 <p><span class="math display">\[
-P(B)=0.7,
-\]</span></p>
-<p><span class="math display">\[
-P(A\cap B)=0.4,
+\frac{n(n-1)\cdots(n-x+1)}{n^x}\to1
 \]</span></p>
 <p>y</p>
 <p><span class="math display">\[
-P(A\cup B)=0.7+0.7-0.4=1.
+\left(1-\frac{\lambda}{n}\right)^n\to e^{-\lambda}.
 \]</span></p>
-<p>En efecto,</p>
+<p>Por tanto,</p>
 <p><span class="math display">\[
-A\cup B=\Omega.
+\boxed{
+P(X_n=x)\to e^{-\lambda}\frac{\lambda^x}{x!}
+}.
 \]</span></p>
+<p>Éste es el teorema límite de Poisson para eventos raros.</p>
 </section>
-<section id="observación-conceptual-probabilidad-cero-e-imposibilidad" class="level2" data-number="4.17">
-<h2 data-number="4.17" class="anchored" data-anchor-id="observación-conceptual-probabilidad-cero-e-imposibilidad"><span class="header-section-number">4.17</span> Observación conceptual: probabilidad cero e imposibilidad</h2>
-<p>El axioma establece</p>
+<section id="interpretación-de-lambda" class="level2" data-number="12.12">
+<h2 data-number="12.12" class="anchored" data-anchor-id="interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></h2>
+<p>El parámetro <span class="math inline">\(\lambda\)</span> representa el número esperado de eventos en el intervalo considerado. Si existe una tasa <span class="math inline">\(r\)</span> por unidad y el intervalo tiene longitud <span class="math inline">\(t\)</span>, se modela habitualmente con</p>
 <p><span class="math display">\[
-P(\varnothing)=0,
+\lambda=rt.
 \]</span></p>
-<p>pero el recíproco no es válido en general. Puede existir un evento no vacío con probabilidad cero.</p>
-<p>En modelos continuos, por ejemplo, un resultado individual puede tener probabilidad cero aunque pertenezca al espacio muestral. Esta distinción será esencial cuando estudiemos distribuciones continuas.</p>
+<p>Esta interpretación anticipa el proceso de Poisson, que requiere una teoría adicional sobre conteos en intervalos disjuntos y tiempos de llegada.</p>
 </section>
-<section id="errores-conceptuales-frecuentes" class="level2" data-number="4.18">
-<h2 data-number="4.18" class="anchored" data-anchor-id="errores-conceptuales-frecuentes"><span class="header-section-number">4.18</span> Errores conceptuales frecuentes</h2>
-<ul>
-<li>Tratar <span class="math inline">\(P(A)=|A|/|\Omega|\)</span> como una definición universal de probabilidad.</li>
-<li>Confundir aditividad para eventos disjuntos con la regla general de la unión.</li>
-<li>Suponer que <span class="math inline">\(P(A)=0\)</span> implica necesariamente <span class="math inline">\(A=\varnothing\)</span>.</li>
-<li>Utilizar propiedades derivadas como si fueran axiomas independientes.</li>
-<li>Proponer probabilidades marginales e intersecciones que violan las cotas de Fréchet.</li>
-</ul>
+<section id="diferencias-estructurales" class="level2" data-number="12.13">
+<h2 data-number="12.13" class="anchored" data-anchor-id="diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</h2>
+<p>La hipergeométrica surge de un espacio finito con muestreo sin reemplazo. La Poisson posee soporte infinito y suele aparecer como límite de conteos binomiales de eventos raros. La primera exhibe dependencia negativa entre extracciones; la segunda se caracteriza por igualdad entre media y varianza.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="4.19">
-<h2 data-number="4.19" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">4.19</span> Ejercicios</h2>
+<section id="ejercicios" class="level2" data-number="12.14">
+<h2 data-number="12.14" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">12.14</span> Ejercicios</h2>
 <ol type="1">
-<li>Demuestre que si <span class="math inline">\(A\subseteq B\)</span>, entonces</li>
+<li>Demuestra la normalización hipergeométrica usando la identidad de Vandermonde.</li>
+<li>Obtén <span class="math inline">\(E[X]\)</span> de la hipergeométrica mediante variables indicadoras.</li>
+<li>Deriva la covarianza entre dos indicadores de extracciones sin reemplazo.</li>
+<li>A partir del ejercicio anterior, demuestra la fórmula de la varianza hipergeométrica.</li>
+<li>Demuestra la normalización de la distribución Poisson mediante la serie de <span class="math inline">\(e^\lambda\)</span>.</li>
+<li>Obtén <span class="math inline">\(E[X(X-1)]\)</span> para <span class="math inline">\(X\sim\operatorname{Poisson}(\lambda)\)</span>.</li>
+<li>Usa el resultado anterior para demostrar que <span class="math inline">\(\operatorname{Var}(X)=\lambda\)</span>.</li>
+<li>Demuestra el resultado de suma de Poisson independientes usando funciones generadoras.</li>
+<li>Demuestra el límite binomial–Poisson para <span class="math inline">\(p_n=\lambda/n\)</span>.</li>
+<li><strong>Reto.</strong> Discute por qué la varianza hipergeométrica tiende a la binomial cuando <span class="math inline">\(N\to\infty\)</span> con <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> fijo.</li>
 </ol>
-<p><span class="math display">\[
-P(B\setminus A)=P(B)-P(A).
-\]</span></p>
-<ol start="2" type="1">
-<li>Demuestre que</li>
-</ol>
-<p><span class="math display">\[
-P(A\triangle B)
-=P(A)+P(B)-2P(A\cap B).
-\]</span></p>
-<ol start="3" type="1">
-<li><p>Si <span class="math inline">\(P(A)=0.65\)</span> y <span class="math inline">\(P(B)=0.50\)</span>, determine todos los valores posibles de <span class="math inline">\(P(A\cap B)\)</span>.</p></li>
-<li><p>Demuestre que</p></li>
-</ol>
-<p><span class="math display">\[
-P(A\cap B)\geq P(A)+P(B)-1.
-\]</span></p>
-<ol start="5" type="1">
-<li>Pruebe la desigualdad</li>
-</ol>
-<p><span class="math display">\[
-P(A\cap B)\leq\min\{P(A),P(B)\}.
-\]</span></p>
-<ol start="6" type="1">
-<li><p>Derive la fórmula de inclusión-exclusión para tres eventos a partir de la fórmula de dos eventos.</p></li>
-<li><p>Pruebe que</p></li>
-</ol>
-<p><span class="math display">\[
-P(A\cup B\cup C)
-\leq P(A)+P(B)+P(C).
-\]</span></p>
-<ol start="8" type="1">
-<li><p>Sea <span class="math inline">\(A_1\subseteq A_2\subseteq\cdots\)</span>. Demuestre la continuidad desde abajo descomponiendo la unión en eventos disjuntos.</p></li>
-<li><p>Explique por qué la equiprobabilidad no puede deducirse únicamente del hecho de que <span class="math inline">\(\Omega\)</span> sea finito.</p></li>
-<li><p><strong>Reto ★.</strong> Sea <span class="math inline">\((A_n)\)</span> una sucesión de eventos. Demuestre la desigualdad de Boole:</p></li>
-</ol>
-<p><span class="math display">\[
-P\left(\bigcup_{n=1}^{\infty}A_n\right)
-\leq\sum_{n=1}^{\infty}P(A_n).
-\]</span></p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="4.20">
-<h2 data-number="4.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">4.20</span> Referencias del capítulo</h2>
-<p>La formulación axiomática y las propiedades derivadas siguen el tratamiento estándar de probabilidad matemática y de textos para ingeniería y ciencias, con apoyo en <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>. La presentación se ha reescrito de forma original para esta obra.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="12.15">
+<h2 data-number="12.15" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</h2>
+<p>El desarrollo teórico de las distribuciones hipergeométrica y de Poisson, sus momentos y resultados límite sigue el tratamiento estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1286,13 +977,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-conteo-probabilidad.html" class="pagination-link" aria-label="Técnicas de conteo y enumeración">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Técnicas de conteo y enumeración</span></span>
+      <a href="./11-distribuciones-discretas-especiales.html" class="pagination-link" aria-label="Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-condicional-independencia.html" class="pagination-link" aria-label="Probabilidad condicional e independencia">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidad condicional e independencia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -263,6 +263,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -298,9 +304,7 @@ window.Quarto = {
   <li><a href="#caracterización-de-una-función-de-distribución" id="toc-caracterización-de-una-función-de-distribución" class="nav-link" data-scroll-target="#caracterización-de-una-función-de-distribución"><span class="header-section-number">7.15</span> Caracterización de una función de distribución</a></li>
   <li><a href="#átomos-y-continuidad" id="toc-átomos-y-continuidad" class="nav-link" data-scroll-target="#átomos-y-continuidad"><span class="header-section-number">7.16</span> Átomos y continuidad</a></li>
   <li><a href="#transformaciones-y-eventos" id="toc-transformaciones-y-eventos" class="nav-link" data-scroll-target="#transformaciones-y-eventos"><span class="header-section-number">7.17</span> Transformaciones y eventos</a></li>
-  <li><a href="#materiales-complementarios-del-capítulo" id="toc-materiales-complementarios-del-capítulo" class="nav-link" data-scroll-target="#materiales-complementarios-del-capítulo"><span class="header-section-number">7.18</span> Materiales complementarios del capítulo</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">7.19</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">7.20</span> Referencias del capítulo</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">7.18</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -569,35 +573,8 @@ Y=g(X).
 \]</span></p>
 <p>El cálculo de la distribución de <span class="math inline">\(Y\)</span> mediante preimágenes será el tema central del capítulo sobre funciones de una variable aleatoria.</p>
 </section>
-<section id="materiales-complementarios-del-capítulo" class="level2" data-number="7.18">
-<h2 data-number="7.18" class="anchored" data-anchor-id="materiales-complementarios-del-capítulo"><span class="header-section-number">7.18</span> Materiales complementarios del capítulo</h2>
-<p>Este libro teórico se acompaña de materiales computacionales en el volumen <strong>Introducción a la Probabilidad con R y GeoGebra</strong>. Para este capítulo se dispone de un cuaderno de Google Colab y de un cuaderno reproducible en R, en los que se visualizan transformaciones y funciones de distribución acumulada. Las presentaciones, videos e infografías se incorporarán conforme se proporcionen sus enlaces.</p>
-</section>
-<section id="ejercicios" class="level2" data-number="7.19">
-<h2 data-number="7.19" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">7.19</span> Ejercicios</h2>
-<ol type="1">
-<li>Sea <span class="math inline">\(X\)</span> el número de caras en dos lanzamientos de moneda. Escribe explícitamente la función <span class="math inline">\(X:\Omega\to\mathbb R\)</span>.</li>
-<li>Construye <span class="math inline">\(F_X\)</span> para la variable anterior y verifica sus cuatro propiedades características.</li>
-<li>Demuestra que <span class="math inline">\(F_X\)</span> es no decreciente a partir de inclusión de eventos.</li>
-<li>Demuestra que <span class="math inline">\(P(X=x)=F_X(x)-F_X(x^-)\)</span>.</li>
-<li>Prueba que <span class="math inline">\(P(a&lt;X\le b)=F_X(b)-F_X(a)\)</span>.</li>
-<li>Sea</li>
-</ol>
-<p><span class="math display">\[
-F(x)=
-\begin{cases}
-0,&amp;x&lt;0,\\
-1-e^{-x},&amp;x\ge0.
-\end{cases}
-\]</span></p>
-<p>Verifica que satisface las propiedades de una CDF. 7. Determina si</p>
-<p><span class="math display">\[
-G(x)=\frac{1}{1+e^{-x}}
-\]</span></p>
-<p>puede ser una CDF y justifica. 8. Da un ejemplo de dos variables distintas con la misma distribución. 9. Si <span class="math inline">\(F_X\)</span> es continua en <span class="math inline">\(x\)</span>, demuestra que <span class="math inline">\(P(X=x)=0\)</span>. 10. <strong>Reto ★.</strong> Utiliza continuidad desde arriba para demostrar rigurosamente la continuidad por la derecha de una CDF.</p>
-</section>
-<section id="referencias-del-capítulo" class="level2" data-number="7.20">
-<h2 data-number="7.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">7.20</span> Referencias del capítulo</h2>
+<section id="referencias-del-capítulo" class="level2" data-number="7.18">
+<h2 data-number="7.18" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">7.18</span> Referencias del capítulo</h2>
 <p>El desarrollo formal de variables aleatorias, distribuciones inducidas y funciones de distribución acumulada sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
 
 
