@@ -33,6 +33,7 @@ book:
     - 14-gamma-weibull-beta.qmd
     - 15-variables-conjuntas-marginales-condicionales.qmd
     - 16-esperanza-covarianza-correlacion.qmd
+    - 17-transformaciones-variables.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
