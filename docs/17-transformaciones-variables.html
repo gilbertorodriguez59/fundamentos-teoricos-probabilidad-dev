@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>12&nbsp; Distribuciones discretas especiales II: hipergeométrica y Poisson – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>17&nbsp; Transformaciones de variables aleatorias – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -55,8 +36,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./13-distribuciones-continuas-especiales.html" rel="next">
-<link href="./11-distribuciones-discretas-especiales.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./16-esperanza-covarianza-correlacion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-hipergeometrica-poisson.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./17-transformaciones-variables.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformaciones de variables aleatorias</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -263,7 +244,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link active">
+  <a href="./12-hipergeometrica-poisson.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></span></a>
   </div>
 </li>
@@ -293,7 +274,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17-transformaciones-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="./17-transformaciones-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformaciones de variables aleatorias</span></span></a>
   </div>
 </li>
@@ -313,24 +294,34 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">12.1</span> Objetivos</a></li>
-  <li><a href="#distribución-hipergeométrica" id="toc-distribución-hipergeométrica" class="nav-link" data-scroll-target="#distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</a>
+  <li><a href="#planteamiento-general" id="toc-planteamiento-general" class="nav-link active" data-scroll-target="#planteamiento-general"><span class="header-section-number">17.1</span> Planteamiento general</a></li>
+  <li><a href="#ley-inducida" id="toc-ley-inducida" class="nav-link" data-scroll-target="#ley-inducida"><span class="header-section-number">17.2</span> Ley inducida</a></li>
+  <li><a href="#caso-discreto" id="toc-caso-discreto" class="nav-link" data-scroll-target="#caso-discreto"><span class="header-section-number">17.3</span> Caso discreto</a></li>
+  <li><a href="#método-de-la-función-de-distribución" id="toc-método-de-la-función-de-distribución" class="nav-link" data-scroll-target="#método-de-la-función-de-distribución"><span class="header-section-number">17.4</span> Método de la función de distribución</a></li>
+  <li><a href="#transformación-monótona-creciente" id="toc-transformación-monótona-creciente" class="nav-link" data-scroll-target="#transformación-monótona-creciente"><span class="header-section-number">17.5</span> Transformación monótona creciente</a></li>
+  <li><a href="#transformación-monótona-decreciente" id="toc-transformación-monótona-decreciente" class="nav-link" data-scroll-target="#transformación-monótona-decreciente"><span class="header-section-number">17.6</span> Transformación monótona decreciente</a></li>
+  <li><a href="#transformación-afín" id="toc-transformación-afín" class="nav-link" data-scroll-target="#transformación-afín"><span class="header-section-number">17.7</span> Transformación afín</a></li>
+  <li><a href="#transformación-no-inyectiva" id="toc-transformación-no-inyectiva" class="nav-link" data-scroll-target="#transformación-no-inyectiva"><span class="header-section-number">17.8</span> Transformación no inyectiva</a></li>
+  <li><a href="#ejemplo-cuadrado-de-una-variable-uniforme-simétrica" id="toc-ejemplo-cuadrado-de-una-variable-uniforme-simétrica" class="nav-link" data-scroll-target="#ejemplo-cuadrado-de-una-variable-uniforme-simétrica"><span class="header-section-number">17.9</span> Ejemplo: cuadrado de una variable uniforme simétrica</a></li>
+  <li><a href="#transformada-inversa" id="toc-transformada-inversa" class="nav-link" data-scroll-target="#transformada-inversa"><span class="header-section-number">17.10</span> Transformada inversa</a>
   <ul class="collapse">
-  <li><a href="#normalización" id="toc-normalización" class="nav-link" data-scroll-target="#normalización">Normalización</a></li>
+  <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#media-de-la-hipergeométrica" id="toc-media-de-la-hipergeométrica" class="nav-link" data-scroll-target="#media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</a></li>
-  <li><a href="#varianza-de-la-hipergeométrica" id="toc-varianza-de-la-hipergeométrica" class="nav-link" data-scroll-target="#varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</a></li>
-  <li><a href="#aproximación-binomial-de-la-hipergeométrica" id="toc-aproximación-binomial-de-la-hipergeométrica" class="nav-link" data-scroll-target="#aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</a></li>
-  <li><a href="#distribución-de-poisson" id="toc-distribución-de-poisson" class="nav-link" data-scroll-target="#distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</a></li>
-  <li><a href="#normalización-1" id="toc-normalización-1" class="nav-link" data-scroll-target="#normalización-1"><span class="header-section-number">12.7</span> Normalización</a></li>
-  <li><a href="#media-y-varianza-de-poisson" id="toc-media-y-varianza-de-poisson" class="nav-link" data-scroll-target="#media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</a></li>
-  <li><a href="#función-generadora-de-probabilidades" id="toc-función-generadora-de-probabilidades" class="nav-link" data-scroll-target="#función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</a></li>
-  <li><a href="#suma-de-poisson-independientes" id="toc-suma-de-poisson-independientes" class="nav-link" data-scroll-target="#suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</a></li>
-  <li><a href="#límite-de-poisson-de-la-binomial" id="toc-límite-de-poisson-de-la-binomial" class="nav-link" data-scroll-target="#límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</a></li>
-  <li><a href="#interpretación-de-lambda" id="toc-interpretación-de-lambda" class="nav-link" data-scroll-target="#interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></a></li>
-  <li><a href="#diferencias-estructurales" id="toc-diferencias-estructurales" class="nav-link" data-scroll-target="#diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">12.14</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</a></li>
+  <li><a href="#ejemplo-exponencial" id="toc-ejemplo-exponencial" class="nav-link" data-scroll-target="#ejemplo-exponencial"><span class="header-section-number">17.11</span> Ejemplo exponencial</a></li>
+  <li><a href="#convolución-discreta" id="toc-convolución-discreta" class="nav-link" data-scroll-target="#convolución-discreta"><span class="header-section-number">17.12</span> Convolución discreta</a></li>
+  <li><a href="#convolución-continua" id="toc-convolución-continua" class="nav-link" data-scroll-target="#convolución-continua"><span class="header-section-number">17.13</span> Convolución continua</a>
+  <ul class="collapse">
+  <li><a href="#derivación-mediante-transformación" id="toc-derivación-mediante-transformación" class="nav-link" data-scroll-target="#derivación-mediante-transformación">Derivación mediante transformación</a></li>
+  </ul></li>
+  <li><a href="#transformaciones-bidimensionales" id="toc-transformaciones-bidimensionales" class="nav-link" data-scroll-target="#transformaciones-bidimensionales"><span class="header-section-number">17.14</span> Transformaciones bidimensionales</a></li>
+  <li><a href="#el-jacobiano" id="toc-el-jacobiano" class="nav-link" data-scroll-target="#el-jacobiano"><span class="header-section-number">17.15</span> El Jacobiano</a></li>
+  <li><a href="#transformación-del-soporte" id="toc-transformación-del-soporte" class="nav-link" data-scroll-target="#transformación-del-soporte"><span class="header-section-number">17.16</span> Transformación del soporte</a></li>
+  <li><a href="#caso-de-transformaciones-múltiples" id="toc-caso-de-transformaciones-múltiples" class="nav-link" data-scroll-target="#caso-de-transformaciones-múltiples"><span class="header-section-number">17.17</span> Caso de transformaciones múltiples</a></li>
+  <li><a href="#convolución-y-normalización" id="toc-convolución-y-normalización" class="nav-link" data-scroll-target="#convolución-y-normalización"><span class="header-section-number">17.18</span> Convolución y normalización</a></li>
+  <li><a href="#momentos-bajo-transformaciones" id="toc-momentos-bajo-transformaciones" class="nav-link" data-scroll-target="#momentos-bajo-transformaciones"><span class="header-section-number">17.19</span> Momentos bajo transformaciones</a></li>
+  <li><a href="#mapa-conceptual" id="toc-mapa-conceptual" class="nav-link" data-scroll-target="#mapa-conceptual"><span class="header-section-number">17.20</span> Mapa conceptual</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">17.21</span> Ejercicios teóricos</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">17.22</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -339,7 +330,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales II: hipergeométrica y Poisson</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Transformaciones de variables aleatorias</span></h1>
 </div>
 
 
@@ -356,252 +347,326 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">12.1</span> Objetivos</h2>
-<p>Este capítulo desarrolla formalmente dos familias discretas fundamentales: la distribución hipergeométrica, asociada al muestreo sin reemplazo en poblaciones finitas, y la distribución de Poisson, asociada al conteo de eventos raros o dispersos en intervalos.</p>
+<section id="planteamiento-general" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="planteamiento-general"><span class="header-section-number">17.1</span> Planteamiento general</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable aleatoria y sea <span class="math inline">\(g\)</span> una función medible. La variable</p>
+<p><span class="math display">\[
+Y=g(X)
+\]</span></p>
+<p>es nuevamente una variable aleatoria. El problema fundamental consiste en obtener la ley inducida de <span class="math inline">\(Y\)</span> a partir de la ley de <span class="math inline">\(X\)</span>.</p>
+<p>La transformación puede estudiarse mediante la medida imagen, la función de distribución, el cambio de variable o, en dimensiones superiores, el determinante Jacobiano.</p>
 </section>
-<section id="distribución-hipergeométrica" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="distribución-hipergeométrica"><span class="header-section-number">12.2</span> Distribución hipergeométrica</h2>
-<p>Sea una población finita de tamaño <span class="math inline">\(N\)</span> con <span class="math inline">\(K\)</span> elementos clasificados como éxitos y <span class="math inline">\(N-K\)</span> como fracasos. Se extrae una muestra de tamaño <span class="math inline">\(n\)</span> sin reemplazo y se define <span class="math inline">\(X\)</span> como el número de éxitos observados.</p>
-<p>Entonces</p>
+<section id="ley-inducida" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="ley-inducida"><span class="header-section-number">17.2</span> Ley inducida</h2>
+<p>Si <span class="math inline">\(P_X\)</span> es la ley de <span class="math inline">\(X\)</span>, la ley de <span class="math inline">\(Y=g(X)\)</span> satisface</p>
 <p><span class="math display">\[
-P(X=x)=\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}},
+P_Y(B)=P_X(g^{-1}(B))
 \]</span></p>
-<p>para</p>
+<p>para todo conjunto boreliano <span class="math inline">\(B\)</span>.</p>
+<p>Esta identidad es la formulación abstracta del problema de transformación.</p>
+</section>
+<section id="caso-discreto" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="caso-discreto"><span class="header-section-number">17.3</span> Caso discreto</h2>
+<p>Si <span class="math inline">\(X\)</span> es discreta,</p>
 <p><span class="math display">\[
-\max(0,n-N+K)\le x\le\min(n,K).
+P(Y=y)=\sum_{x:g(x)=y}P(X=x).
 \]</span></p>
-<section id="normalización" class="level3">
-<h3 class="anchored" data-anchor-id="normalización">Normalización</h3>
-<p>La identidad de Vandermonde</p>
+<p>Cuando <span class="math inline">\(g\)</span> no es inyectiva, todas las preimágenes de <span class="math inline">\(y\)</span> deben contribuir a la probabilidad.</p>
+</section>
+<section id="método-de-la-función-de-distribución" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="método-de-la-función-de-distribución"><span class="header-section-number">17.4</span> Método de la función de distribución</h2>
+<p>Para cualquier transformación real,</p>
 <p><span class="math display">\[
-\sum_x \binom{K}{x}\binom{N-K}{n-x}=\binom{N}{n}
+F_Y(y)=P(g(X)\le y).
 \]</span></p>
-<p>implica inmediatamente que</p>
+<p>Si <span class="math inline">\(F_Y\)</span> es absolutamente continua, entonces</p>
 <p><span class="math display">\[
-\sum_x P(X=x)=1.
+f_Y(y)=F_Y'(y)
+\]</span></p>
+<p>casi en todas partes.</p>
+<p>Este método no requiere que <span class="math inline">\(g\)</span> sea uno a uno y constituye una herramienta general.</p>
+</section>
+<section id="transformación-monótona-creciente" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="transformación-monótona-creciente"><span class="header-section-number">17.5</span> Transformación monótona creciente</h2>
+<p>Suponga que <span class="math inline">\(g\)</span> es estrictamente creciente y diferenciable. Entonces</p>
+<p><span class="math display">\[
+F_Y(y)=P(X\le g^{-1}(y))
+=F_X(g^{-1}(y)).
+\]</span></p>
+<p>Derivando,</p>
+<p><span class="math display">\[
+f_Y(y)=f_X(g^{-1}(y))\frac{d}{dy}g^{-1}(y).
 \]</span></p>
 </section>
-</section>
-<section id="media-de-la-hipergeométrica" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="media-de-la-hipergeométrica"><span class="header-section-number">12.3</span> Media de la hipergeométrica</h2>
-<p>Escribamos</p>
+<section id="transformación-monótona-decreciente" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="transformación-monótona-decreciente"><span class="header-section-number">17.6</span> Transformación monótona decreciente</h2>
+<p>Si <span class="math inline">\(g\)</span> es estrictamente decreciente,</p>
 <p><span class="math display">\[
-X=I_1+\cdots+I_n,
+F_Y(y)=P(X\ge g^{-1}(y)).
 \]</span></p>
-<p>donde <span class="math inline">\(I_j\)</span> indica que la extracción <span class="math inline">\(j\)</span> corresponde a uno de los <span class="math inline">\(K\)</span> elementos de interés. Por simetría,</p>
-<p><span class="math display">\[
-E[I_j]=\frac KN.
-\]</span></p>
-<p>Por linealidad,</p>
-<p><span class="math display">\[
-\boxed{E[X]=n\frac KN}.
-\]</span></p>
-<p>La independencia no es necesaria para este argumento.</p>
-</section>
-<section id="varianza-de-la-hipergeométrica" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="varianza-de-la-hipergeométrica"><span class="header-section-number">12.4</span> Varianza de la hipergeométrica</h2>
-<p>Las variables indicadoras de distintas extracciones no son independientes. Para <span class="math inline">\(i\ne j\)</span>,</p>
-<p><span class="math display">\[
-E[I_iI_j]=\frac KN\frac{K-1}{N-1}.
-\]</span></p>
-<p>De aquí se obtiene</p>
-<p><span class="math display">\[
-\operatorname{Cov}(I_i,I_j)
-=-\frac{K(N-K)}{N^2(N-1)}.
-\]</span></p>
-<p>Al sumar varianzas y covarianzas,</p>
+<p>La derivación conduce a la fórmula unificada</p>
 <p><span class="math display">\[
 \boxed{
-\operatorname{Var}(X)
-=n\frac KN\left(1-\frac KN\right)\frac{N-n}{N-1}
-}.
-\]</span></p>
-<p>El factor</p>
-<p><span class="math display">\[
-\frac{N-n}{N-1}
-\]</span></p>
-<p>expresa la reducción de variabilidad debida al muestreo sin reemplazo.</p>
-</section>
-<section id="aproximación-binomial-de-la-hipergeométrica" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="aproximación-binomial-de-la-hipergeométrica"><span class="header-section-number">12.5</span> Aproximación binomial de la hipergeométrica</h2>
-<p>Si <span class="math inline">\(N\)</span> es grande respecto de <span class="math inline">\(n\)</span> y</p>
-<p><span class="math display">\[
-p=\frac KN,
-\]</span></p>
-<p>la dependencia inducida por no reemplazar es débil. En este régimen,</p>
-<p><span class="math display">\[
-\operatorname{Hipergeométrica}(N,K,n)
-\approx
-\operatorname{Binomial}(n,p).
-\]</span></p>
-<p>La convergencia puede verse comparando los factores sucesivos de ambas PMF cuando <span class="math inline">\(N\to\infty\)</span>, <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> permanece fijo.</p>
-</section>
-<section id="distribución-de-poisson" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="distribución-de-poisson"><span class="header-section-number">12.6</span> Distribución de Poisson</h2>
-<p>Para <span class="math inline">\(\lambda&gt;0\)</span>, una variable <span class="math inline">\(X\)</span> tiene distribución de Poisson si</p>
-<p><span class="math display">\[
-\boxed{P(X=x)=e^{-\lambda}\frac{\lambda^x}{x!}},
-\qquad x=0,1,2,\ldots
-\]</span></p>
-<p>Escribimos</p>
-<p><span class="math display">\[
-X\sim\operatorname{Poisson}(\lambda).
+f_Y(y)=f_X(g^{-1}(y))
+\left|\frac{d}{dy}g^{-1}(y)\right|.
+}
 \]</span></p>
 </section>
-<section id="normalización-1" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="normalización-1"><span class="header-section-number">12.7</span> Normalización</h2>
-<p>Por la serie exponencial,</p>
-<p><span class="math display">\[
-e^{\lambda}=\sum_{x=0}^{\infty}\frac{\lambda^x}{x!}.
-\]</span></p>
-<p>Por tanto,</p>
-<p><span class="math display">\[
-\sum_{x=0}^{\infty}e^{-\lambda}\frac{\lambda^x}{x!}=1.
-\]</span></p>
-</section>
-<section id="media-y-varianza-de-poisson" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="media-y-varianza-de-poisson"><span class="header-section-number">12.8</span> Media y varianza de Poisson</h2>
-<p>Para la media,</p>
-<p><span class="math display">\[
-E[X]
-=\sum_{x=1}^{\infty}x e^{-\lambda}\frac{\lambda^x}{x!}
-=\lambda e^{-\lambda}\sum_{x=1}^{\infty}\frac{\lambda^{x-1}}{(x-1)!}
-=\lambda.
-\]</span></p>
-<p>Asimismo,</p>
-<p><span class="math display">\[
-E[X(X-1)]=\lambda^2.
-\]</span></p>
-<p>Como</p>
-<p><span class="math display">\[
-X^2=X(X-1)+X,
-\]</span></p>
-<p>se sigue que</p>
-<p><span class="math display">\[
-E[X^2]=\lambda^2+\lambda
-\]</span></p>
-<p>y entonces</p>
-<p><span class="math display">\[
-\boxed{\operatorname{Var}(X)=\lambda}.
-\]</span></p>
-</section>
-<section id="función-generadora-de-probabilidades" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="función-generadora-de-probabilidades"><span class="header-section-number">12.9</span> Función generadora de probabilidades</h2>
-<p>La función generadora de probabilidades es</p>
-<p><span class="math display">\[
-G_X(s)=E[s^X].
-\]</span></p>
-<p>Para una Poisson,</p>
-<p><span class="math display">\[
-G_X(s)=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda s)^x}{x!}
-=\exp\{\lambda(s-1)\}.
-\]</span></p>
-<p>Esta expresión permite obtener momentos y estudiar sumas de variables independientes.</p>
-</section>
-<section id="suma-de-poisson-independientes" class="level2" data-number="12.10">
-<h2 data-number="12.10" class="anchored" data-anchor-id="suma-de-poisson-independientes"><span class="header-section-number">12.10</span> Suma de Poisson independientes</h2>
-<p>Si</p>
-<p><span class="math display">\[
-X\sim\operatorname{Poisson}(\lambda_1),
-\qquad
-Y\sim\operatorname{Poisson}(\lambda_2)
-\]</span></p>
-<p>son independientes, entonces</p>
-<p><span class="math display">\[
-G_{X+Y}(s)=G_X(s)G_Y(s)
-=\exp\{(\lambda_1+\lambda_2)(s-1)\}.
-\]</span></p>
-<p>Por unicidad de la función generadora,</p>
-<p><span class="math display">\[
-\boxed{X+Y\sim\operatorname{Poisson}(\lambda_1+\lambda_2)}.
-\]</span></p>
-<p>El resultado se extiende a cualquier suma finita de variables Poisson independientes.</p>
-</section>
-<section id="límite-de-poisson-de-la-binomial" class="level2" data-number="12.11">
-<h2 data-number="12.11" class="anchored" data-anchor-id="límite-de-poisson-de-la-binomial"><span class="header-section-number">12.11</span> Límite de Poisson de la binomial</h2>
+<section id="transformación-afín" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="transformación-afín"><span class="header-section-number">17.7</span> Transformación afín</h2>
 <p>Sea</p>
 <p><span class="math display">\[
-X_n\sim\operatorname{Binomial}(n,p_n),
+Y=aX+b,\qquad a\ne0.
 \]</span></p>
-<p>y supongamos</p>
-<p><span class="math display">\[
-np_n\to\lambda&gt;0.
-\]</span></p>
-<p>Para <span class="math inline">\(x\)</span> fijo,</p>
-<p><span class="math display">\[
-P(X_n=x)
-=\binom nx p_n^x(1-p_n)^{n-x}.
-\]</span></p>
-<p>Tomando, por simplicidad, <span class="math inline">\(p_n=\lambda/n\)</span>,</p>
-<p><span class="math display">\[
-P(X_n=x)
-=\frac{n(n-1)\cdots(n-x+1)}{x!}
-\left(\frac{\lambda}{n}\right)^x
-\left(1-\frac{\lambda}{n}\right)^{n-x}.
-\]</span></p>
-<p>Cuando <span class="math inline">\(n\to\infty\)</span>,</p>
-<p><span class="math display">\[
-\frac{n(n-1)\cdots(n-x+1)}{n^x}\to1
-\]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-\left(1-\frac{\lambda}{n}\right)^n\to e^{-\lambda}.
-\]</span></p>
-<p>Por tanto,</p>
+<p>Entonces</p>
 <p><span class="math display">\[
 \boxed{
-P(X_n=x)\to e^{-\lambda}\frac{\lambda^x}{x!}
-}.
+f_Y(y)=\frac1{|a|}f_X\left(\frac{y-b}{a}\right)}.
 \]</span></p>
-<p>Éste es el teorema límite de Poisson para eventos raros.</p>
+<p>La transformación del soporte debe realizarse simultáneamente.</p>
 </section>
-<section id="interpretación-de-lambda" class="level2" data-number="12.12">
-<h2 data-number="12.12" class="anchored" data-anchor-id="interpretación-de-lambda"><span class="header-section-number">12.12</span> Interpretación de <span class="math inline">\(\lambda\)</span></h2>
-<p>El parámetro <span class="math inline">\(\lambda\)</span> representa el número esperado de eventos en el intervalo considerado. Si existe una tasa <span class="math inline">\(r\)</span> por unidad y el intervalo tiene longitud <span class="math inline">\(t\)</span>, se modela habitualmente con</p>
+<section id="transformación-no-inyectiva" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="transformación-no-inyectiva"><span class="header-section-number">17.8</span> Transformación no inyectiva</h2>
+<p>Suponga que para cada <span class="math inline">\(y\)</span> regular la ecuación</p>
 <p><span class="math display">\[
-\lambda=rt.
+g(x)=y
 \]</span></p>
-<p>Esta interpretación anticipa el proceso de Poisson, que requiere una teoría adicional sobre conteos en intervalos disjuntos y tiempos de llegada.</p>
+<p>posee un número finito de soluciones <span class="math inline">\(x_1(y),\dots,x_k(y)\)</span> con derivadas inversas bien definidas. Entonces</p>
+<p><span class="math display">\[
+\boxed{
+f_Y(y)=\sum_{j=1}^k
+f_X(x_j(y))
+\left|\frac{dx_j}{dy}\right|.
+}
+\]</span></p>
+<p>La fórmula expresa la suma de la masa infinitesimal proveniente de cada rama inversa.</p>
 </section>
-<section id="diferencias-estructurales" class="level2" data-number="12.13">
-<h2 data-number="12.13" class="anchored" data-anchor-id="diferencias-estructurales"><span class="header-section-number">12.13</span> Diferencias estructurales</h2>
-<p>La hipergeométrica surge de un espacio finito con muestreo sin reemplazo. La Poisson posee soporte infinito y suele aparecer como límite de conteos binomiales de eventos raros. La primera exhibe dependencia negativa entre extracciones; la segunda se caracteriza por igualdad entre media y varianza.</p>
+<section id="ejemplo-cuadrado-de-una-variable-uniforme-simétrica" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="ejemplo-cuadrado-de-una-variable-uniforme-simétrica"><span class="header-section-number">17.9</span> Ejemplo: cuadrado de una variable uniforme simétrica</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+X\sim U(-1,1),\qquad Y=X^2.
+\]</span></p>
+<p>Para <span class="math inline">\(0&lt;y&lt;1\)</span>,</p>
+<p><span class="math display">\[
+F_Y(y)=P(-\sqrt y\le X\le\sqrt y)=\sqrt y.
+\]</span></p>
+<p>Así,</p>
+<p><span class="math display">\[
+\boxed{f_Y(y)=\frac1{2\sqrt y}},\qquad0&lt;y&lt;1.
+\]</span></p>
+<p>Las dos ramas <span class="math inline">\(\pm\sqrt y\)</span> explican el factor total obtenido.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="12.14">
-<h2 data-number="12.14" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">12.14</span> Ejercicios</h2>
+<section id="transformada-inversa" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="transformada-inversa"><span class="header-section-number">17.10</span> Transformada inversa</h2>
+<p>Si <span class="math inline">\(F\)</span> es una CDF continua y estrictamente creciente y</p>
+<p><span class="math display">\[
+U\sim U(0,1),
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+X=F^{-1}(U)
+\]</span></p>
+<p>tiene CDF <span class="math inline">\(F\)</span>.</p>
+<section id="demostración" class="level3">
+<h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
+<p>Para <span class="math inline">\(x\)</span> en el soporte,</p>
+<p><span class="math display">\[
+P(F^{-1}(U)\le x)
+=P(U\le F(x))
+=F(x),
+\]</span></p>
+<p>pues <span class="math inline">\(U\)</span> es uniforme estándar.</p>
+<p>Este resultado fundamenta uno de los métodos básicos de generación de variables aleatorias.</p>
+</section>
+</section>
+<section id="ejemplo-exponencial" class="level2" data-number="17.11">
+<h2 data-number="17.11" class="anchored" data-anchor-id="ejemplo-exponencial"><span class="header-section-number">17.11</span> Ejemplo exponencial</h2>
+<p>Para una exponencial de tasa <span class="math inline">\(\lambda\)</span>,</p>
+<p><span class="math display">\[
+F(x)=1-e^{-\lambda x}.
+\]</span></p>
+<p>Resolviendo <span class="math inline">\(u=F(x)\)</span>,</p>
+<p><span class="math display">\[
+x=-\frac1\lambda\log(1-u).
+\]</span></p>
+<p>Como <span class="math inline">\(1-U\)</span> también es uniforme estándar, puede escribirse</p>
+<p><span class="math display">\[
+X=-\frac1\lambda\log U.
+\]</span></p>
+</section>
+<section id="convolución-discreta" class="level2" data-number="17.12">
+<h2 data-number="17.12" class="anchored" data-anchor-id="convolución-discreta"><span class="header-section-number">17.12</span> Convolución discreta</h2>
+<p>Sean <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> independientes y discretas. Para</p>
+<p><span class="math display">\[
+S=X+Y,
+\]</span></p>
+<p><span class="math display">\[
+P(S=s)=\sum_xP(X=x,Y=s-x).
+\]</span></p>
+<p>Por independencia,</p>
+<p><span class="math display">\[
+\boxed{p_S(s)=\sum_xp_X(x)p_Y(s-x)}.
+\]</span></p>
+</section>
+<section id="convolución-continua" class="level2" data-number="17.13">
+<h2 data-number="17.13" class="anchored" data-anchor-id="convolución-continua"><span class="header-section-number">17.13</span> Convolución continua</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes con densidades,</p>
+<p><span class="math display">\[
+\boxed{
+f_{X+Y}(s)=\int_{-\infty}^{\infty}
+f_X(x)f_Y(s-x)\,dx.
+}
+\]</span></p>
+<section id="derivación-mediante-transformación" class="level3">
+<h3 class="anchored" data-anchor-id="derivación-mediante-transformación">Derivación mediante transformación</h3>
+<p>Defina</p>
+<p><span class="math display">\[
+U=X+Y,\qquad V=X.
+\]</span></p>
+<p>La inversa es</p>
+<p><span class="math display">\[
+X=V,\qquad Y=U-V.
+\]</span></p>
+<p>El Jacobiano inverso es</p>
+<p><span class="math display">\[
+\left|
+\frac{\partial(x,y)}{\partial(u,v)}
+\right|=1.
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+f_{U,V}(u,v)=f_{X,Y}(v,u-v).
+\]</span></p>
+<p>Bajo independencia,</p>
+<p><span class="math display">\[
+f_{U,V}(u,v)=f_X(v)f_Y(u-v).
+\]</span></p>
+<p>Integrando en <span class="math inline">\(v\)</span> se obtiene la convolución.</p>
+</section>
+</section>
+<section id="transformaciones-bidimensionales" class="level2" data-number="17.14">
+<h2 data-number="17.14" class="anchored" data-anchor-id="transformaciones-bidimensionales"><span class="header-section-number">17.14</span> Transformaciones bidimensionales</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+T(x,y)=(g_1(x,y),g_2(x,y))=(u,v)
+\]</span></p>
+<p>una transformación uno a uno y diferenciable sobre una región adecuada. Si su inversa es</p>
+<p><span class="math display">\[
+(x,y)=T^{-1}(u,v),
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+\boxed{
+f_{U,V}(u,v)=
+f_{X,Y}(T^{-1}(u,v))
+\left|\det D T^{-1}(u,v)\right|.
+}
+\]</span></p>
+</section>
+<section id="el-jacobiano" class="level2" data-number="17.15">
+<h2 data-number="17.15" class="anchored" data-anchor-id="el-jacobiano"><span class="header-section-number">17.15</span> El Jacobiano</h2>
+<p>En dos dimensiones,</p>
+<p><span class="math display">\[
+\frac{\partial(x,y)}{\partial(u,v)}
+=
+\begin{vmatrix}
+\partial x/\partial u &amp; \partial x/\partial v\\
+\partial y/\partial u &amp; \partial y/\partial v
+\end{vmatrix}.
+\]</span></p>
+<p>Su valor absoluto representa el factor local de cambio de área.</p>
+<p>La presencia del Jacobiano garantiza la conservación de probabilidad:</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)\,dx\,dy
+=f_{U,V}(u,v)\,du\,dv.
+\]</span></p>
+</section>
+<section id="transformación-del-soporte" class="level2" data-number="17.16">
+<h2 data-number="17.16" class="anchored" data-anchor-id="transformación-del-soporte"><span class="header-section-number">17.16</span> Transformación del soporte</h2>
+<p>No basta transformar la fórmula de la densidad. También debe determinarse la imagen del soporte original bajo <span class="math inline">\(T\)</span>.</p>
+<p>En muchos problemas, la mayor dificultad matemática consiste precisamente en describir correctamente esa nueva región.</p>
+</section>
+<section id="caso-de-transformaciones-múltiples" class="level2" data-number="17.17">
+<h2 data-number="17.17" class="anchored" data-anchor-id="caso-de-transformaciones-múltiples"><span class="header-section-number">17.17</span> Caso de transformaciones múltiples</h2>
+<p>Cuando <span class="math inline">\(T\)</span> no es globalmente uno a uno, el dominio puede dividirse en regiones donde sí lo sea. Las contribuciones de las distintas ramas deben sumarse, de manera análoga al caso unidimensional.</p>
+</section>
+<section id="convolución-y-normalización" class="level2" data-number="17.18">
+<h2 data-number="17.18" class="anchored" data-anchor-id="convolución-y-normalización"><span class="header-section-number">17.18</span> Convolución y normalización</h2>
+<p>Si <span class="math inline">\(f_X\)</span> y <span class="math inline">\(f_Y\)</span> son densidades,</p>
+<p><span class="math display">\[
+f_S(s)=\int f_X(x)f_Y(s-x)\,dx
+\]</span></p>
+<p>es no negativa. Además, por Tonelli y cambio de variable,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int f_S(s)\,ds
+&amp;=\iint f_X(x)f_Y(s-x)\,dx\,ds\\
+&amp;=\int f_X(x)\left[\int f_Y(u)\,du\right]dx\\
+&amp;=1.
+\end{aligned}
+\]</span></p>
+<p>Por tanto, la convolución de dos densidades es nuevamente una densidad.</p>
+</section>
+<section id="momentos-bajo-transformaciones" class="level2" data-number="17.19">
+<h2 data-number="17.19" class="anchored" data-anchor-id="momentos-bajo-transformaciones"><span class="header-section-number">17.19</span> Momentos bajo transformaciones</h2>
+<p>Si <span class="math inline">\(Y=g(X)\)</span> y la esperanza existe,</p>
+<p><span class="math display">\[
+E[Y]=E[g(X)].
+\]</span></p>
+<p>No es necesario obtener primero la densidad de <span class="math inline">\(Y\)</span> para calcular esta esperanza. Puede utilizarse directamente</p>
+<p><span class="math display">\[
+E[g(X)]=\int g(x)f_X(x)\,dx
+\]</span></p>
+<p>o la suma correspondiente en el caso discreto.</p>
+<p>Esta observación distingue dos problemas diferentes:</p>
+<ul>
+<li>obtener la <strong>distribución completa</strong> de una transformación;</li>
+<li>obtener únicamente alguno de sus <strong>momentos</strong>.</li>
+</ul>
+</section>
+<section id="mapa-conceptual" class="level2" data-number="17.20">
+<h2 data-number="17.20" class="anchored" data-anchor-id="mapa-conceptual"><span class="header-section-number">17.20</span> Mapa conceptual</h2>
+<p><span class="math display">\[
+X\xrightarrow{g}Y
+\]</span></p>
+<p>puede estudiarse mediante</p>
+<p><span class="math display">\[
+\text{CDF}\quad\text{o}\quad
+\text{cambio de variable}.
+\]</span></p>
+<p>Para sumas independientes,</p>
+<p><span class="math display">\[
+X+Y\Longrightarrow\text{convolución}.
+\]</span></p>
+<p>Para vectores,</p>
+<p><span class="math display">\[
+(X,Y)\xrightarrow{T}(U,V)
+\Longrightarrow\text{Jacobiano}.
+\]</span></p>
+</section>
+<section id="ejercicios-teóricos" class="level2" data-number="17.21">
+<h2 data-number="17.21" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">17.21</span> Ejercicios teóricos</h2>
 <ol type="1">
-<li>Demuestra la normalización hipergeométrica usando la identidad de Vandermonde.</li>
-<li>Obtén <span class="math inline">\(E[X]\)</span> de la hipergeométrica mediante variables indicadoras.</li>
-<li>Deriva la covarianza entre dos indicadores de extracciones sin reemplazo.</li>
-<li>A partir del ejercicio anterior, demuestra la fórmula de la varianza hipergeométrica.</li>
-<li>Demuestra la normalización de la distribución Poisson mediante la serie de <span class="math inline">\(e^\lambda\)</span>.</li>
-<li>Obtén <span class="math inline">\(E[X(X-1)]\)</span> para <span class="math inline">\(X\sim\operatorname{Poisson}(\lambda)\)</span>.</li>
-<li>Usa el resultado anterior para demostrar que <span class="math inline">\(\operatorname{Var}(X)=\lambda\)</span>.</li>
-<li>Demuestra el resultado de suma de Poisson independientes usando funciones generadoras.</li>
-<li>Demuestra el límite binomial–Poisson para <span class="math inline">\(p_n=\lambda/n\)</span>.</li>
-<li><strong>Reto.</strong> Discute por qué la varianza hipergeométrica tiende a la binomial cuando <span class="math inline">\(N\to\infty\)</span> con <span class="math inline">\(K/N\to p\)</span> y <span class="math inline">\(n\)</span> fijo.</li>
+<li>Demuestre la fórmula de cambio de variable para una transformación monótona creciente mediante CDF.</li>
+<li>Repita la demostración para una transformación decreciente.</li>
+<li>Derive la fórmula para una transformación con un número finito de ramas inversas.</li>
+<li>Obtenga rigurosamente la densidad de <span class="math inline">\(X^2\)</span> para <span class="math inline">\(X\sim U(-1,1)\)</span>.</li>
+<li>Demuestre el método de la transformada inversa.</li>
+<li>Derive la distribución exponencial a partir de una uniforme mediante transformada inversa.</li>
+<li>Demuestre la fórmula de convolución discreta.</li>
+<li>Derive la convolución continua mediante la transformación <span class="math inline">\((X,Y)\mapsto(X+Y,X)\)</span>.</li>
+<li>Demuestre que la convolución de dos densidades integra 1.</li>
+<li>Para una transformación bidimensional lineal no singular, relacione el Jacobiano inverso con el determinante de la matriz de transformación.</li>
+<li>Analice por qué debe transformarse también el soporte.</li>
+<li>Obtenga la densidad de <span class="math inline">\(|X|\)</span> cuando <span class="math inline">\(X\)</span> posee una densidad simétrica respecto de cero.</li>
 </ol>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="12.15">
-<h2 data-number="12.15" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">12.15</span> Referencias del capítulo</h2>
-<p>El desarrollo teórico de las distribuciones hipergeométrica y de Poisson, sus momentos y resultados límite sigue el tratamiento estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="17.22">
+<h2 data-number="17.22" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">17.22</span> Referencias del capítulo</h2>
+<p>El desarrollo formal de transformaciones, medida imagen, convolución y cambio de variables sigue los textos principales de probabilidad citados en la bibliografía general del libro.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-devore2016" class="csl-entry" role="listitem">
-Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
-</div>
-<div id="ref-johnson2018" class="csl-entry" role="listitem">
-Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
-</div>
-<div id="ref-montgomery2018" class="csl-entry" role="listitem">
-Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
-</div>
-<div id="ref-walpole2012" class="csl-entry" role="listitem">
-Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -1007,13 +1072,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11-distribuciones-discretas-especiales.html" class="pagination-link" aria-label="Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span>
+      <a href="./16-esperanza-covarianza-correlacion.html" class="pagination-link" aria-label="Esperanza conjunta, covarianza y correlación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./13-distribuciones-continuas-especiales.html" class="pagination-link" aria-label="Distribuciones continuas especiales I: uniforme, exponencial y normal">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Distribuciones continuas especiales I: uniforme, exponencial y normal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

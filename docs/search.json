@@ -2730,6 +2730,226 @@
     ]
   },
   {
+    "objectID": "17-transformaciones-variables.html",
+    "href": "17-transformaciones-variables.html",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "",
+    "text": "17.1 Planteamiento general\nSea \\(X\\) una variable aleatoria y sea \\(g\\) una función medible. La variable\n\\[\nY=g(X)\n\\]\nes nuevamente una variable aleatoria. El problema fundamental consiste en obtener la ley inducida de \\(Y\\) a partir de la ley de \\(X\\).\nLa transformación puede estudiarse mediante la medida imagen, la función de distribución, el cambio de variable o, en dimensiones superiores, el determinante Jacobiano.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#ley-inducida",
+    "href": "17-transformaciones-variables.html#ley-inducida",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.2 Ley inducida",
+    "text": "17.2 Ley inducida\nSi \\(P_X\\) es la ley de \\(X\\), la ley de \\(Y=g(X)\\) satisface\n\\[\nP_Y(B)=P_X(g^{-1}(B))\n\\]\npara todo conjunto boreliano \\(B\\).\nEsta identidad es la formulación abstracta del problema de transformación.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#caso-discreto",
+    "href": "17-transformaciones-variables.html#caso-discreto",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.3 Caso discreto",
+    "text": "17.3 Caso discreto\nSi \\(X\\) es discreta,\n\\[\nP(Y=y)=\\sum_{x:g(x)=y}P(X=x).\n\\]\nCuando \\(g\\) no es inyectiva, todas las preimágenes de \\(y\\) deben contribuir a la probabilidad.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#método-de-la-función-de-distribución",
+    "href": "17-transformaciones-variables.html#método-de-la-función-de-distribución",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.4 Método de la función de distribución",
+    "text": "17.4 Método de la función de distribución\nPara cualquier transformación real,\n\\[\nF_Y(y)=P(g(X)\\le y).\n\\]\nSi \\(F_Y\\) es absolutamente continua, entonces\n\\[\nf_Y(y)=F_Y'(y)\n\\]\ncasi en todas partes.\nEste método no requiere que \\(g\\) sea uno a uno y constituye una herramienta general.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformación-monótona-creciente",
+    "href": "17-transformaciones-variables.html#transformación-monótona-creciente",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.5 Transformación monótona creciente",
+    "text": "17.5 Transformación monótona creciente\nSuponga que \\(g\\) es estrictamente creciente y diferenciable. Entonces\n\\[\nF_Y(y)=P(X\\le g^{-1}(y))\n=F_X(g^{-1}(y)).\n\\]\nDerivando,\n\\[\nf_Y(y)=f_X(g^{-1}(y))\\frac{d}{dy}g^{-1}(y).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformación-monótona-decreciente",
+    "href": "17-transformaciones-variables.html#transformación-monótona-decreciente",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.6 Transformación monótona decreciente",
+    "text": "17.6 Transformación monótona decreciente\nSi \\(g\\) es estrictamente decreciente,\n\\[\nF_Y(y)=P(X\\ge g^{-1}(y)).\n\\]\nLa derivación conduce a la fórmula unificada\n\\[\n\\boxed{\nf_Y(y)=f_X(g^{-1}(y))\n\\left|\\frac{d}{dy}g^{-1}(y)\\right|.\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformación-afín",
+    "href": "17-transformaciones-variables.html#transformación-afín",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.7 Transformación afín",
+    "text": "17.7 Transformación afín\nSea\n\\[\nY=aX+b,\\qquad a\\ne0.\n\\]\nEntonces\n\\[\n\\boxed{\nf_Y(y)=\\frac1{|a|}f_X\\left(\\frac{y-b}{a}\\right)}.\n\\]\nLa transformación del soporte debe realizarse simultáneamente.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformación-no-inyectiva",
+    "href": "17-transformaciones-variables.html#transformación-no-inyectiva",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.8 Transformación no inyectiva",
+    "text": "17.8 Transformación no inyectiva\nSuponga que para cada \\(y\\) regular la ecuación\n\\[\ng(x)=y\n\\]\nposee un número finito de soluciones \\(x_1(y),\\dots,x_k(y)\\) con derivadas inversas bien definidas. Entonces\n\\[\n\\boxed{\nf_Y(y)=\\sum_{j=1}^k\nf_X(x_j(y))\n\\left|\\frac{dx_j}{dy}\\right|.\n}\n\\]\nLa fórmula expresa la suma de la masa infinitesimal proveniente de cada rama inversa.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#ejemplo-cuadrado-de-una-variable-uniforme-simétrica",
+    "href": "17-transformaciones-variables.html#ejemplo-cuadrado-de-una-variable-uniforme-simétrica",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.9 Ejemplo: cuadrado de una variable uniforme simétrica",
+    "text": "17.9 Ejemplo: cuadrado de una variable uniforme simétrica\nSea\n\\[\nX\\sim U(-1,1),\\qquad Y=X^2.\n\\]\nPara \\(0&lt;y&lt;1\\),\n\\[\nF_Y(y)=P(-\\sqrt y\\le X\\le\\sqrt y)=\\sqrt y.\n\\]\nAsí,\n\\[\n\\boxed{f_Y(y)=\\frac1{2\\sqrt y}},\\qquad0&lt;y&lt;1.\n\\]\nLas dos ramas \\(\\pm\\sqrt y\\) explican el factor total obtenido.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformada-inversa",
+    "href": "17-transformaciones-variables.html#transformada-inversa",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.10 Transformada inversa",
+    "text": "17.10 Transformada inversa\nSi \\(F\\) es una CDF continua y estrictamente creciente y\n\\[\nU\\sim U(0,1),\n\\]\nentonces\n\\[\nX=F^{-1}(U)\n\\]\ntiene CDF \\(F\\).\n\nDemostración\nPara \\(x\\) en el soporte,\n\\[\nP(F^{-1}(U)\\le x)\n=P(U\\le F(x))\n=F(x),\n\\]\npues \\(U\\) es uniforme estándar.\nEste resultado fundamenta uno de los métodos básicos de generación de variables aleatorias.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#ejemplo-exponencial",
+    "href": "17-transformaciones-variables.html#ejemplo-exponencial",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.11 Ejemplo exponencial",
+    "text": "17.11 Ejemplo exponencial\nPara una exponencial de tasa \\(\\lambda\\),\n\\[\nF(x)=1-e^{-\\lambda x}.\n\\]\nResolviendo \\(u=F(x)\\),\n\\[\nx=-\\frac1\\lambda\\log(1-u).\n\\]\nComo \\(1-U\\) también es uniforme estándar, puede escribirse\n\\[\nX=-\\frac1\\lambda\\log U.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#convolución-discreta",
+    "href": "17-transformaciones-variables.html#convolución-discreta",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.12 Convolución discreta",
+    "text": "17.12 Convolución discreta\nSean \\(X\\) y \\(Y\\) independientes y discretas. Para\n\\[\nS=X+Y,\n\\]\n\\[\nP(S=s)=\\sum_xP(X=x,Y=s-x).\n\\]\nPor independencia,\n\\[\n\\boxed{p_S(s)=\\sum_xp_X(x)p_Y(s-x)}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#convolución-continua",
+    "href": "17-transformaciones-variables.html#convolución-continua",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.13 Convolución continua",
+    "text": "17.13 Convolución continua\nSi \\(X\\) y \\(Y\\) son independientes con densidades,\n\\[\n\\boxed{\nf_{X+Y}(s)=\\int_{-\\infty}^{\\infty}\nf_X(x)f_Y(s-x)\\,dx.\n}\n\\]\n\nDerivación mediante transformación\nDefina\n\\[\nU=X+Y,\\qquad V=X.\n\\]\nLa inversa es\n\\[\nX=V,\\qquad Y=U-V.\n\\]\nEl Jacobiano inverso es\n\\[\n\\left|\n\\frac{\\partial(x,y)}{\\partial(u,v)}\n\\right|=1.\n\\]\nEntonces\n\\[\nf_{U,V}(u,v)=f_{X,Y}(v,u-v).\n\\]\nBajo independencia,\n\\[\nf_{U,V}(u,v)=f_X(v)f_Y(u-v).\n\\]\nIntegrando en \\(v\\) se obtiene la convolución.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformaciones-bidimensionales",
+    "href": "17-transformaciones-variables.html#transformaciones-bidimensionales",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.14 Transformaciones bidimensionales",
+    "text": "17.14 Transformaciones bidimensionales\nSea\n\\[\nT(x,y)=(g_1(x,y),g_2(x,y))=(u,v)\n\\]\nuna transformación uno a uno y diferenciable sobre una región adecuada. Si su inversa es\n\\[\n(x,y)=T^{-1}(u,v),\n\\]\nentonces\n\\[\n\\boxed{\nf_{U,V}(u,v)=\nf_{X,Y}(T^{-1}(u,v))\n\\left|\\det D T^{-1}(u,v)\\right|.\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#el-jacobiano",
+    "href": "17-transformaciones-variables.html#el-jacobiano",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.15 El Jacobiano",
+    "text": "17.15 El Jacobiano\nEn dos dimensiones,\n\\[\n\\frac{\\partial(x,y)}{\\partial(u,v)}\n=\n\\begin{vmatrix}\n\\partial x/\\partial u & \\partial x/\\partial v\\\\\n\\partial y/\\partial u & \\partial y/\\partial v\n\\end{vmatrix}.\n\\]\nSu valor absoluto representa el factor local de cambio de área.\nLa presencia del Jacobiano garantiza la conservación de probabilidad:\n\\[\nf_{X,Y}(x,y)\\,dx\\,dy\n=f_{U,V}(u,v)\\,du\\,dv.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#transformación-del-soporte",
+    "href": "17-transformaciones-variables.html#transformación-del-soporte",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.16 Transformación del soporte",
+    "text": "17.16 Transformación del soporte\nNo basta transformar la fórmula de la densidad. También debe determinarse la imagen del soporte original bajo \\(T\\).\nEn muchos problemas, la mayor dificultad matemática consiste precisamente en describir correctamente esa nueva región.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#caso-de-transformaciones-múltiples",
+    "href": "17-transformaciones-variables.html#caso-de-transformaciones-múltiples",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.17 Caso de transformaciones múltiples",
+    "text": "17.17 Caso de transformaciones múltiples\nCuando \\(T\\) no es globalmente uno a uno, el dominio puede dividirse en regiones donde sí lo sea. Las contribuciones de las distintas ramas deben sumarse, de manera análoga al caso unidimensional.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#convolución-y-normalización",
+    "href": "17-transformaciones-variables.html#convolución-y-normalización",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.18 Convolución y normalización",
+    "text": "17.18 Convolución y normalización\nSi \\(f_X\\) y \\(f_Y\\) son densidades,\n\\[\nf_S(s)=\\int f_X(x)f_Y(s-x)\\,dx\n\\]\nes no negativa. Además, por Tonelli y cambio de variable,\n\\[\n\\begin{aligned}\n\\int f_S(s)\\,ds\n&=\\iint f_X(x)f_Y(s-x)\\,dx\\,ds\\\\\n&=\\int f_X(x)\\left[\\int f_Y(u)\\,du\\right]dx\\\\\n&=1.\n\\end{aligned}\n\\]\nPor tanto, la convolución de dos densidades es nuevamente una densidad.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#momentos-bajo-transformaciones",
+    "href": "17-transformaciones-variables.html#momentos-bajo-transformaciones",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.19 Momentos bajo transformaciones",
+    "text": "17.19 Momentos bajo transformaciones\nSi \\(Y=g(X)\\) y la esperanza existe,\n\\[\nE[Y]=E[g(X)].\n\\]\nNo es necesario obtener primero la densidad de \\(Y\\) para calcular esta esperanza. Puede utilizarse directamente\n\\[\nE[g(X)]=\\int g(x)f_X(x)\\,dx\n\\]\no la suma correspondiente en el caso discreto.\nEsta observación distingue dos problemas diferentes:\n\nobtener la distribución completa de una transformación;\nobtener únicamente alguno de sus momentos.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#mapa-conceptual",
+    "href": "17-transformaciones-variables.html#mapa-conceptual",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.20 Mapa conceptual",
+    "text": "17.20 Mapa conceptual\n\\[\nX\\xrightarrow{g}Y\n\\]\npuede estudiarse mediante\n\\[\n\\text{CDF}\\quad\\text{o}\\quad\n\\text{cambio de variable}.\n\\]\nPara sumas independientes,\n\\[\nX+Y\\Longrightarrow\\text{convolución}.\n\\]\nPara vectores,\n\\[\n(X,Y)\\xrightarrow{T}(U,V)\n\\Longrightarrow\\text{Jacobiano}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#ejercicios-teóricos",
+    "href": "17-transformaciones-variables.html#ejercicios-teóricos",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.21 Ejercicios teóricos",
+    "text": "17.21 Ejercicios teóricos\n\nDemuestre la fórmula de cambio de variable para una transformación monótona creciente mediante CDF.\nRepita la demostración para una transformación decreciente.\nDerive la fórmula para una transformación con un número finito de ramas inversas.\nObtenga rigurosamente la densidad de \\(X^2\\) para \\(X\\sim U(-1,1)\\).\nDemuestre el método de la transformada inversa.\nDerive la distribución exponencial a partir de una uniforme mediante transformada inversa.\nDemuestre la fórmula de convolución discreta.\nDerive la convolución continua mediante la transformación \\((X,Y)\\mapsto(X+Y,X)\\).\nDemuestre que la convolución de dos densidades integra 1.\nPara una transformación bidimensional lineal no singular, relacione el Jacobiano inverso con el determinante de la matriz de transformación.\nAnalice por qué debe transformarse también el soporte.\nObtenga la densidad de \\(|X|\\) cuando \\(X\\) posee una densidad simétrica respecto de cero.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
+    "objectID": "17-transformaciones-variables.html#referencias-del-capítulo",
+    "href": "17-transformaciones-variables.html#referencias-del-capítulo",
+    "title": "17  Transformaciones de variables aleatorias",
+    "section": "17.22 Referencias del capítulo",
+    "text": "17.22 Referencias del capítulo\nEl desarrollo formal de transformaciones, medida imagen, convolución y cambio de variables sigue los textos principales de probabilidad citados en la bibliografía general del libro.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Transformaciones de variables aleatorias</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
