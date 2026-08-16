@@ -1,0 +1,327 @@
+# Distribuciones continuas especiales I: uniforme, exponencial y normal
+
+## Objetivos
+
+En este capítulo se establecen formalmente las distribuciones uniforme, exponencial y normal, sus densidades, funciones de distribución, momentos y propiedades estructurales fundamentales.
+
+## Distribución uniforme
+
+Sea $a<b$. Decimos que
+
+$$
+X\sim U(a,b)
+$$
+
+si su densidad es
+
+$$
+f_X(x)=\frac{1}{b-a}\mathbf 1_{[a,b]}(x).
+$$
+
+La normalización es inmediata:
+
+$$
+\int_{-\infty}^{\infty}f_X(x)\,dx
+=\int_a^b\frac{1}{b-a}\,dx=1.
+$$
+
+La función de distribución es
+
+$$
+F_X(x)=
+\begin{cases}
+0, & x<a,\\
+\dfrac{x-a}{b-a}, & a\le x\le b,\\
+1, & x>b.
+\end{cases}
+$$
+
+Por integración directa,
+
+$$
+E[X]=\frac{a+b}{2}
+$$
+
+y
+
+$$
+E[X^2]=\frac{a^2+ab+b^2}{3}.
+$$
+
+Por tanto,
+
+$$
+\operatorname{Var}(X)=E[X^2]-E[X]^2
+=\frac{(b-a)^2}{12}.
+$$
+
+## Transformación afín de una uniforme
+
+Si $X\sim U(a,b)$ y
+
+$$
+Y=\frac{X-a}{b-a},
+$$
+
+entonces
+
+$$
+Y\sim U(0,1).
+$$
+
+Este resultado permite reducir propiedades de cualquier uniforme al caso estándar.
+
+## Distribución exponencial
+
+Sea $\lambda>0$. Decimos que
+
+$$
+X\sim\operatorname{Exp}(\lambda)
+$$
+
+si
+
+$$
+f_X(x)=\lambda e^{-\lambda x}\mathbf 1_{[0,\infty)}(x).
+$$
+
+La función de distribución es
+
+$$
+F_X(x)=
+\begin{cases}
+0, & x<0,\\
+1-e^{-\lambda x}, & x\ge0.
+\end{cases}
+$$
+
+Su función de supervivencia es
+
+$$
+\overline F_X(x)=P(X>x)=e^{-\lambda x},\qquad x\ge0.
+$$
+
+Mediante integración por partes,
+
+$$
+E[X]=\frac1\lambda
+$$
+
+y
+
+$$
+E[X^2]=\frac{2}{\lambda^2}.
+$$
+
+Por tanto,
+
+$$
+\operatorname{Var}(X)=\frac1{\lambda^2}.
+$$
+
+## Propiedad sin memoria
+
+Para $s,t\ge0$,
+
+$$
+P(X>s+t\mid X>s)
+=\frac{P(X>s+t)}{P(X>s)}
+=\frac{e^{-\lambda(s+t)}}{e^{-\lambda s}}
+=e^{-\lambda t}.
+$$
+
+Luego
+
+$$
+\boxed{P(X>s+t\mid X>s)=P(X>t)}.
+$$
+
+La distribución exponencial es la única distribución continua no degenerada sobre $[0,\infty)$ con esta propiedad.
+
+## Distribución normal
+
+Decimos que
+
+$$
+X\sim N(\mu,\sigma^2),\qquad \sigma>0,
+$$
+
+si su densidad es
+
+$$
+f_X(x)=\frac{1}{\sigma\sqrt{2\pi}}
+\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
+$$
+
+La normalización se reduce a la integral gaussiana
+
+$$
+\int_{-\infty}^{\infty}e^{-z^2/2}\,dz=\sqrt{2\pi}.
+$$
+
+La densidad es simétrica respecto de $\mu$.
+
+## Normal estándar
+
+La variable
+
+$$
+Z\sim N(0,1)
+$$
+
+se denomina normal estándar y tiene densidad
+
+$$
+\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-z^2/2}.
+$$
+
+Su función de distribución se denota por
+
+$$
+\Phi(z)=\int_{-\infty}^z\phi(t)\,dt.
+$$
+
+No existe una expresión elemental cerrada para $\Phi$.
+
+## Estandarización
+
+Si
+
+$$
+X\sim N(\mu,\sigma^2),
+$$
+
+entonces
+
+$$
+Z=\frac{X-\mu}{\sigma}
+$$
+
+satisface
+
+$$
+Z\sim N(0,1).
+$$
+
+En consecuencia,
+
+$$
+P(X\le x)=\Phi\left(\frac{x-\mu}{\sigma}\right).
+$$
+
+## Media y varianza de la normal
+
+Por simetría,
+
+$$
+E[Z]=0.
+$$
+
+Además,
+
+$$
+E[Z^2]=1.
+$$
+
+Por tanto,
+
+$$
+\operatorname{Var}(Z)=1.
+$$
+
+Como
+
+$$
+X=\mu+\sigma Z,
+$$
+
+se obtiene
+
+$$
+E[X]=\mu
+$$
+
+y
+
+$$
+\operatorname{Var}(X)=\sigma^2.
+$$
+
+## Transformaciones afines
+
+Si
+
+$$
+X\sim N(\mu,\sigma^2)
+$$
+
+y
+
+$$
+Y=aX+b,
+$$
+
+entonces
+
+$$
+Y\sim N(a\mu+b,a^2\sigma^2).
+$$
+
+Este resultado se obtiene mediante cambio de variable o mediante funciones generadoras.
+
+## Cuantiles
+
+Para $0<p<1$, el cuantil $z_p$ de la normal estándar se define mediante
+
+$$
+\Phi(z_p)=p.
+$$
+
+Para una normal general,
+
+$$
+x_p=\mu+\sigma z_p.
+$$
+
+## Simetría de la CDF normal
+
+La simetría de $\phi$ implica
+
+$$
+\Phi(-z)=1-\Phi(z).
+$$
+
+Por tanto,
+
+$$
+P(|Z|\le z)=2\Phi(z)-1,
+$$
+
+para $z\ge0$.
+
+## Comparación estructural
+
+| Distribución | Soporte | Parámetros | Media | Varianza | Propiedad destacada |
+|---|---|---|---|---|---|
+| Uniforme | $[a,b]$ | $a,b$ | $(a+b)/2$ | $(b-a)^2/12$ | densidad constante |
+| Exponencial | $[0,\infty)$ | $\lambda$ | $1/\lambda$ | $1/\lambda^2$ | sin memoria |
+| Normal | $\mathbb R$ | $\mu,\sigma^2$ | $\mu$ | $\sigma^2$ | cierre afín |
+
+## Ejercicios
+
+1. Demuestra la expresión de $E[X]$ para $X\sim U(a,b)$.
+2. Deduce $\operatorname{Var}(X)$ para la distribución uniforme.
+3. Demuestra que $(X-a)/(b-a)\sim U(0,1)$.
+4. Deriva $F_X$ para $X\sim\operatorname{Exp}(\lambda)$.
+5. Demuestra la propiedad sin memoria de la exponencial.
+6. Calcula $E[X^2]$ para una exponencial mediante integración por partes.
+7. Prueba que la densidad normal es simétrica respecto de $\mu$.
+8. Demuestra que la estandarización de una normal produce una normal estándar.
+9. Deduce $E[X]$ y $\operatorname{Var}(X)$ a partir de $X=\mu+\sigma Z$.
+10. Demuestra que $\Phi(-z)=1-\Phi(z)$.
+11. Obtén la relación entre cuantiles de $N(\mu,\sigma^2)$ y los cuantiles de $N(0,1)$.
+12. **Reto ★.** Demuestra mediante cambio de variable que $aX+b$ es normal cuando $X$ es normal.
+
+## Referencias del capítulo
+
+El desarrollo teórico de las distribuciones uniforme, exponencial y normal sigue tratamientos estándar de teoría de probabilidad en @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
