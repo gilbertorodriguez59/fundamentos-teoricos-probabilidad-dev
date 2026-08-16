@@ -1,0 +1,438 @@
+# Variables aleatorias conjuntas, distribuciones marginales y condicionales
+
+## Objetivos
+
+Al finalizar este capítulo, el lector podrá formular distribuciones conjuntas discretas y continuas, obtener distribuciones marginales y condicionales, caracterizar independencia mediante factorización y trabajar formalmente con funciones de distribución y densidades conjuntas.
+
+## Vectores aleatorios
+
+Sea $(\Omega,\mathcal F,P)$ un espacio de probabilidad. Un vector aleatorio bidimensional es una aplicación
+
+$$
+(X,Y):\Omega\to\mathbb R^2
+$$
+
+tal que las preimágenes de conjuntos borelianos de $\mathbb R^2$ son eventos de $\mathcal F$.
+
+La ley conjunta de $(X,Y)$ es la medida de probabilidad inducida sobre $\mathbb R^2$:
+
+$$
+P_{(X,Y)}(A)=P\big((X,Y)\in A\big),
+$$
+
+para $A$ boreliano.
+
+## Función de distribución conjunta
+
+Definimos
+
+$$
+\boxed{F_{X,Y}(x,y)=P(X\le x,Y\le y)}.
+$$
+
+Esta función es no decreciente en cada coordenada, continua por la derecha en el sentido correspondiente y satisface
+
+$$
+\lim_{x\to-\infty}F_{X,Y}(x,y)=0,
+$$
+
+$$
+\lim_{y\to-\infty}F_{X,Y}(x,y)=0,
+$$
+
+y
+
+$$
+\lim_{x,y\to\infty}F_{X,Y}(x,y)=1.
+$$
+
+Además, para $a<b$ y $c<d$,
+
+$$
+P(a<X\le b,c<Y\le d)
+$$
+
+se obtiene por la fórmula rectangular
+
+$$
+\boxed{
+F(b,d)-F(a,d)-F(b,c)+F(a,c).
+}
+$$
+
+## Distribuciones marginales
+
+Las funciones de distribución marginales se recuperan mediante
+
+$$
+\boxed{F_X(x)=\lim_{y\to\infty}F_{X,Y}(x,y)}
+$$
+
+y
+
+$$
+\boxed{F_Y(y)=\lim_{x\to\infty}F_{X,Y}(x,y)}.
+$$
+
+Esta operación se denomina marginalización.
+
+# Caso discreto
+
+Si $(X,Y)$ toma valores en un conjunto numerable, definimos
+
+$$
+\boxed{p_{X,Y}(x,y)=P(X=x,Y=y)}.
+$$
+
+La función de masa conjunta satisface
+
+$$
+p_{X,Y}(x,y)\ge0
+$$
+
+y
+
+$$
+\sum_x\sum_y p_{X,Y}(x,y)=1.
+$$
+
+Las marginales son
+
+$$
+\boxed{p_X(x)=\sum_y p_{X,Y}(x,y)}
+$$
+
+y
+
+$$
+\boxed{p_Y(y)=\sum_x p_{X,Y}(x,y)}.
+$$
+
+## Probabilidades sobre subconjuntos
+
+Para cualquier conjunto $A$ contenido en el soporte conjunto,
+
+$$
+P((X,Y)\in A)=\sum_{(x,y)\in A}p_{X,Y}(x,y).
+$$
+
+## Distribución condicional discreta
+
+Si $p_Y(y)>0$,
+
+$$
+\boxed{p_{X\mid Y}(x\mid y)=\frac{p_{X,Y}(x,y)}{p_Y(y)}}.
+$$
+
+Para cada $y$ fijo con probabilidad positiva,
+
+$$
+\sum_x p_{X\mid Y}(x\mid y)=1.
+$$
+
+Análogamente,
+
+$$
+p_{Y\mid X}(y\mid x)=\frac{p_{X,Y}(x,y)}{p_X(x)}.
+$$
+
+# Caso absolutamente continuo
+
+Un vector aleatorio $(X,Y)$ es absolutamente continuo si existe una función no negativa $f_{X,Y}$ tal que
+
+$$
+P((X,Y)\in A)=\iint_A f_{X,Y}(x,y)\,dx\,dy
+$$
+
+para todo boreliano $A$.
+
+En particular,
+
+$$
+\boxed{\iint_{\mathbb R^2}f_{X,Y}(x,y)\,dx\,dy=1}.
+$$
+
+La CDF conjunta puede expresarse como
+
+$$
+F_{X,Y}(x,y)=\int_{-\infty}^x\int_{-\infty}^y f_{X,Y}(u,v)\,dv\,du.
+$$
+
+## Densidades marginales
+
+Las marginales se obtienen por integración:
+
+$$
+\boxed{f_X(x)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dy}
+$$
+
+y
+
+$$
+\boxed{f_Y(y)=\int_{-\infty}^{\infty}f_{X,Y}(x,y)\,dx}.
+$$
+
+Estas integrales existen en el sentido apropiado y satisfacen
+
+$$
+\int f_X(x)\,dx=1,
+$$
+
+$$
+\int f_Y(y)\,dy=1.
+$$
+
+## Densidades condicionales
+
+Si $f_Y(y)>0$, definimos
+
+$$
+\boxed{f_{X\mid Y}(x\mid y)=\frac{f_{X,Y}(x,y)}{f_Y(y)}}.
+$$
+
+Para casi todo $y$ con densidad marginal positiva,
+
+$$
+\int_{-\infty}^{\infty}f_{X\mid Y}(x\mid y)\,dx=1.
+$$
+
+Análogamente,
+
+$$
+f_{Y\mid X}(y\mid x)=\frac{f_{X,Y}(x,y)}{f_X(x)}.
+$$
+
+# Ejemplo triangular
+
+Considere
+
+$$
+f_{X,Y}(x,y)=2
+$$
+
+sobre
+
+$$
+0<y<x<1,
+$$
+
+y cero fuera de esa región.
+
+La normalización es
+
+$$
+\int_0^1\int_0^x2\,dy\,dx=1.
+$$
+
+Las marginales son
+
+$$
+\boxed{f_X(x)=2x,\qquad0<x<1}
+$$
+
+y
+
+$$
+\boxed{f_Y(y)=2(1-y),\qquad0<y<1}.
+$$
+
+La densidad condicional de $Y$ dado $X=x$ es
+
+$$
+\boxed{f_{Y\mid X}(y\mid x)=\frac1x,\qquad0<y<x}.
+$$
+
+Por tanto, para cada $x$ fijo, la condicional es uniforme en $(0,x)$.
+
+# Independencia
+
+Las variables $X$ y $Y$ son independientes si
+
+$$
+P(X\in A,Y\in B)=P(X\in A)P(Y\in B)
+$$
+
+para todos los borelianos $A,B\subset\mathbb R$.
+
+Una caracterización equivalente mediante CDF es
+
+$$
+\boxed{F_{X,Y}(x,y)=F_X(x)F_Y(y)}
+$$
+
+para todo $x,y$.
+
+## Caso discreto
+
+Si $X$ y $Y$ son discretas, la independencia equivale a
+
+$$
+\boxed{p_{X,Y}(x,y)=p_X(x)p_Y(y)}
+$$
+
+para todos los valores del soporte.
+
+## Caso continuo
+
+Si existe densidad conjunta, la independencia equivale a
+
+$$
+\boxed{f_{X,Y}(x,y)=f_X(x)f_Y(y)}
+$$
+
+casi en todas partes.
+
+## Demostración de la factorización condicional
+
+Si $X$ y $Y$ son independientes y $f_Y(y)>0$, entonces
+
+$$
+f_{X\mid Y}(x\mid y)
+=\frac{f_X(x)f_Y(y)}{f_Y(y)}
+=f_X(x).
+$$
+
+Esto formaliza la idea de que el conocimiento de $Y$ no altera la distribución de $X$.
+
+# El soporte conjunto y la independencia
+
+Si una densidad conjunta positiva tiene soporte que no puede escribirse como producto cartesiano de dos conjuntos marginales, ello suele ser una señal inmediata de dependencia.
+
+En el ejemplo triangular,
+
+$$
+0<y<x<1
+$$
+
+no es un conjunto de la forma $A\times B$. Por tanto, el soporte ya revela que no puede existir una factorización global de la densidad en producto de marginales positivas.
+
+# Teorema de Tonelli y Fubini
+
+La marginalización se apoya en resultados fundamentales de integración.
+
+Como $f_{X,Y}\ge0$, el teorema de Tonelli permite intercambiar el orden de integración:
+
+$$
+\int\left(\int f_{X,Y}(x,y)\,dy\right)dx
+=
+\int\left(\int f_{X,Y}(x,y)\,dx\right)dy
+=1.
+$$
+
+Cuando una función integrable no es necesariamente no negativa, el teorema de Fubini permite intercambiar integrales bajo condiciones de integrabilidad absoluta.
+
+# Una misma pareja de marginales, distintas conjuntas
+
+Las distribuciones marginales no determinan en general la distribución conjunta.
+
+Considere dos variables Bernoulli con
+
+$$
+P(X=1)=P(Y=1)=\frac12.
+$$
+
+Podemos construir:
+
+1. un modelo independiente, donde cada una de las cuatro parejas tiene probabilidad $1/4$;
+2. un modelo perfectamente asociado, donde
+
+$$
+P(X=0,Y=0)=\frac12,
+$$
+
+$$
+P(X=1,Y=1)=\frac12,
+$$
+
+y las otras dos parejas tienen probabilidad cero.
+
+Ambos modelos tienen las mismas marginales, pero distribuciones conjuntas completamente diferentes.
+
+# Probabilidades condicionales como familia de leyes
+
+Para cada valor $y$ admisible, la expresión
+
+$$
+p_{X\mid Y}(\cdot\mid y)
+$$
+
+o
+
+$$
+f_{X\mid Y}(\cdot\mid y)
+$$
+
+es una distribución de probabilidad sobre $X$.
+
+El parámetro $y$ indexa una familia de distribuciones condicionales. Esta idea será fundamental al estudiar esperanza condicional, regresión y modelos jerárquicos.
+
+# Extensión a más dimensiones
+
+Para un vector
+
+$$
+(X_1,\ldots,X_n),
+$$
+
+la distribución conjunta se define de forma análoga. Las marginales se obtienen eliminando variables mediante sumas o integrales y las distribuciones condicionales se obtienen normalizando apropiadamente respecto de las marginales condicionantes.
+
+Las ideas esenciales de este capítulo se generalizan directamente al caso multivariado.
+
+# Resumen teórico
+
+Distribución conjunta discreta:
+
+$$
+p_{X,Y}(x,y)=P(X=x,Y=y).
+$$
+
+Marginalización:
+
+$$
+p_X(x)=\sum_y p_{X,Y}(x,y).
+$$
+
+Condicionamiento:
+
+$$
+p_{X\mid Y}(x\mid y)=\frac{p_{X,Y}(x,y)}{p_Y(y)}.
+$$
+
+Densidad conjunta continua:
+
+$$
+P((X,Y)\in A)=\iint_A f_{X,Y}(x,y)\,dx\,dy.
+$$
+
+Marginalización continua:
+
+$$
+f_X(x)=\int f_{X,Y}(x,y)\,dy.
+$$
+
+Independencia:
+
+$$
+F_{X,Y}=F_XF_Y,
+$$
+
+o equivalentemente mediante masas o densidades cuando existen.
+
+# Ejercicios teóricos
+
+1. Demuestra que las marginales de una PMF conjunta están normalizadas.
+2. Demuestra que una PMF condicional suma 1.
+3. Prueba que si $p_{X,Y}(x,y)=p_X(x)p_Y(y)$, entonces $F_{X,Y}(x,y)=F_X(x)F_Y(y)$.
+4. Demuestra la recíproca para variables discretas.
+5. Para $f(x,y)=2$ en $0<y<x<1$, obtiene rigurosamente las marginales.
+6. Obtén $f_{X\mid Y}(x\mid y)$ en el ejemplo triangular.
+7. Verifica que cada densidad condicional del ejemplo se normaliza.
+8. Construye dos distribuciones conjuntas discretas distintas con las mismas marginales.
+9. Demuestra que si $X$ y $Y$ son independientes, entonces $P(X\in A\mid Y\in B)=P(X\in A)$ cuando $P(Y\in B)>0$.
+10. **Reto.** Demuestra que si $f_{X,Y}=f_Xf_Y$ casi en todas partes, entonces $X$ y $Y$ son independientes.
+11. **Reto.** Justifica la fórmula rectangular para probabilidades a partir de la CDF conjunta.
+12. **Reto.** Explica por qué la marginalización puede interpretarse como una proyección de la ley conjunta sobre cada eje.
+
+## Referencias del capítulo
+
+La teoría de distribuciones conjuntas, marginalización, condicionamiento e independencia sigue el desarrollo estándar de textos de probabilidad y estadística matemática, incluyendo @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
