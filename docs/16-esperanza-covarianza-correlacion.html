@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Variables aleatorias discretas y función de masa de probabilidad – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>16&nbsp; Esperanza conjunta, covarianza y correlación – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -55,8 +36,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./09-variables-continuas-densidad.html" rel="next">
-<link href="./07-variable-aleatoria-cdf.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./15-variables-conjuntas-marginales-condicionales.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -136,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-variables-discretas-pmf.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16-esperanza-covarianza-correlacion.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -239,7 +220,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-variables-discretas-pmf.html" class="sidebar-item-text sidebar-link active">
+  <a href="./08-variables-discretas-pmf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></span></a>
   </div>
 </li>
@@ -287,7 +268,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-esperanza-covarianza-correlacion.html" class="sidebar-item-text sidebar-link">
+  <a href="./16-esperanza-covarianza-correlacion.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></span></a>
   </div>
 </li>
@@ -307,33 +288,42 @@ window.Quarto = {
     <h2 id="toc-title">En este capítulo</h2>
    
   <ul>
-  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">8.1</span> Objetivos</a></li>
-  <li><a href="#variable-aleatoria-discreta" id="toc-variable-aleatoria-discreta" class="nav-link" data-scroll-target="#variable-aleatoria-discreta"><span class="header-section-number">8.2</span> Variable aleatoria discreta</a></li>
-  <li><a href="#función-de-masa-de-probabilidad" id="toc-función-de-masa-de-probabilidad" class="nav-link" data-scroll-target="#función-de-masa-de-probabilidad"><span class="header-section-number">8.3</span> Función de masa de probabilidad</a>
+  <li><a href="#planteamiento" id="toc-planteamiento" class="nav-link active" data-scroll-target="#planteamiento"><span class="header-section-number">16.1</span> Planteamiento</a></li>
+  <li><a href="#esperanza-de-funciones-de-dos-variables" id="toc-esperanza-de-funciones-de-dos-variables" class="nav-link" data-scroll-target="#esperanza-de-funciones-de-dos-variables"><span class="header-section-number">16.2</span> Esperanza de funciones de dos variables</a></li>
+  <li><a href="#teorema-de-linealidad" id="toc-teorema-de-linealidad" class="nav-link" data-scroll-target="#teorema-de-linealidad"><span class="header-section-number">16.3</span> Teorema de linealidad</a>
   <ul class="collapse">
-  <li><a href="#proposición" id="toc-proposición" class="nav-link" data-scroll-target="#proposición">Proposición</a></li>
   <li><a href="#demostración" id="toc-demostración" class="nav-link" data-scroll-target="#demostración">Demostración</a></li>
   </ul></li>
-  <li><a href="#probabilidad-de-eventos-definidos-por-x" id="toc-probabilidad-de-eventos-definidos-por-x" class="nav-link" data-scroll-target="#probabilidad-de-eventos-definidos-por-x"><span class="header-section-number">8.4</span> Probabilidad de eventos definidos por <span class="math inline">\(X\)</span></a></li>
-  <li><a href="#distribución-inducida-por-una-variable-discreta" id="toc-distribución-inducida-por-una-variable-discreta" class="nav-link" data-scroll-target="#distribución-inducida-por-una-variable-discreta"><span class="header-section-number">8.5</span> Distribución inducida por una variable discreta</a></li>
-  <li><a href="#relación-con-la-función-de-distribución-acumulada" id="toc-relación-con-la-función-de-distribución-acumulada" class="nav-link" data-scroll-target="#relación-con-la-función-de-distribución-acumulada"><span class="header-section-number">8.6</span> Relación con la función de distribución acumulada</a>
+  <li><a href="#el-momento-mixto-exy" id="toc-el-momento-mixto-exy" class="nav-link" data-scroll-target="#el-momento-mixto-exy"><span class="header-section-number">16.4</span> El momento mixto <span class="math inline">\(E[XY]\)</span></a>
   <ul class="collapse">
-  <li><a href="#proposición-saltos-de-la-cdf" id="toc-proposición-saltos-de-la-cdf" class="nav-link" data-scroll-target="#proposición-saltos-de-la-cdf">Proposición: saltos de la CDF</a></li>
+  <li><a href="#demostración-en-el-caso-con-densidades" id="toc-demostración-en-el-caso-con-densidades" class="nav-link" data-scroll-target="#demostración-en-el-caso-con-densidades">Demostración en el caso con densidades</a></li>
+  </ul></li>
+  <li><a href="#definición-de-covarianza" id="toc-definición-de-covarianza" class="nav-link" data-scroll-target="#definición-de-covarianza"><span class="header-section-number">16.5</span> Definición de covarianza</a></li>
+  <li><a href="#propiedades-de-la-covarianza" id="toc-propiedades-de-la-covarianza" class="nav-link" data-scroll-target="#propiedades-de-la-covarianza"><span class="header-section-number">16.6</span> Propiedades de la covarianza</a></li>
+  <li><a href="#varianza-de-una-suma" id="toc-varianza-de-una-suma" class="nav-link" data-scroll-target="#varianza-de-una-suma"><span class="header-section-number">16.7</span> Varianza de una suma</a>
+  <ul class="collapse">
   <li><a href="#demostración-1" id="toc-demostración-1" class="nav-link" data-scroll-target="#demostración-1">Demostración</a></li>
   </ul></li>
-  <li><a href="#átomos-y-distribuciones-discretas" id="toc-átomos-y-distribuciones-discretas" class="nav-link" data-scroll-target="#átomos-y-distribuciones-discretas"><span class="header-section-number">8.7</span> Átomos y distribuciones discretas</a></li>
-  <li><a href="#soporte-y-representación-no-única" id="toc-soporte-y-representación-no-única" class="nav-link" data-scroll-target="#soporte-y-representación-no-única"><span class="header-section-number">8.8</span> Soporte y representación no única</a></li>
-  <li><a href="#construcción-mediante-transformación" id="toc-construcción-mediante-transformación" class="nav-link" data-scroll-target="#construcción-mediante-transformación"><span class="header-section-number">8.9</span> Construcción mediante transformación</a>
+  <li><a href="#sumas-de-muchas-variables" id="toc-sumas-de-muchas-variables" class="nav-link" data-scroll-target="#sumas-de-muchas-variables"><span class="header-section-number">16.8</span> Sumas de muchas variables</a></li>
+  <li><a href="#independencia-e-incorrelación" id="toc-independencia-e-incorrelación" class="nav-link" data-scroll-target="#independencia-e-incorrelación"><span class="header-section-number">16.9</span> Independencia e incorrelación</a>
   <ul class="collapse">
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
+  <li><a href="#demostración-2" id="toc-demostración-2" class="nav-link" data-scroll-target="#demostración-2">Demostración</a></li>
   </ul></li>
-  <li><a href="#pmf-a-partir-de-una-cdf-escalonada" id="toc-pmf-a-partir-de-una-cdf-escalonada" class="nav-link" data-scroll-target="#pmf-a-partir-de-una-cdf-escalonada"><span class="header-section-number">8.10</span> PMF a partir de una CDF escalonada</a></li>
-  <li><a href="#variables-con-soporte-infinito-numerable" id="toc-variables-con-soporte-infinito-numerable" class="nav-link" data-scroll-target="#variables-con-soporte-infinito-numerable"><span class="header-section-number">8.11</span> Variables con soporte infinito numerable</a></li>
-  <li><a href="#unicidad-de-la-pmf" id="toc-unicidad-de-la-pmf" class="nav-link" data-scroll-target="#unicidad-de-la-pmf"><span class="header-section-number">8.12</span> Unicidad de la PMF</a></li>
-  <li><a href="#distribución-conjunta-de-valores-discretos-y-eventos" id="toc-distribución-conjunta-de-valores-discretos-y-eventos" class="nav-link" data-scroll-target="#distribución-conjunta-de-valores-discretos-y-eventos"><span class="header-section-number">8.13</span> Distribución conjunta de valores discretos y eventos</a></li>
-  <li><a href="#comparación-conceptual-con-el-caso-continuo" id="toc-comparación-conceptual-con-el-caso-continuo" class="nav-link" data-scroll-target="#comparación-conceptual-con-el-caso-continuo"><span class="header-section-number">8.14</span> Comparación conceptual con el caso continuo</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">8.15</span> Ejercicios</a></li>
-  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">8.16</span> Referencias del capítulo</a></li>
+  <li><a href="#contraejemplo-incorrelación-sin-independencia" id="toc-contraejemplo-incorrelación-sin-independencia" class="nav-link" data-scroll-target="#contraejemplo-incorrelación-sin-independencia"><span class="header-section-number">16.10</span> Contraejemplo: incorrelación sin independencia</a></li>
+  <li><a href="#coeficiente-de-correlación" id="toc-coeficiente-de-correlación" class="nav-link" data-scroll-target="#coeficiente-de-correlación"><span class="header-section-number">16.11</span> Coeficiente de correlación</a></li>
+  <li><a href="#cota-de-correlación" id="toc-cota-de-correlación" class="nav-link" data-scroll-target="#cota-de-correlación"><span class="header-section-number">16.12</span> Cota de correlación</a>
+  <ul class="collapse">
+  <li><a href="#demostración-mediante-cauchyschwarz" id="toc-demostración-mediante-cauchyschwarz" class="nav-link" data-scroll-target="#demostración-mediante-cauchyschwarz">Demostración mediante Cauchy–Schwarz</a></li>
+  </ul></li>
+  <li><a href="#caso-de-igualdad" id="toc-caso-de-igualdad" class="nav-link" data-scroll-target="#caso-de-igualdad"><span class="header-section-number">16.13</span> Caso de igualdad</a></li>
+  <li><a href="#invariancia-frente-a-transformaciones-afines" id="toc-invariancia-frente-a-transformaciones-afines" class="nav-link" data-scroll-target="#invariancia-frente-a-transformaciones-afines"><span class="header-section-number">16.14</span> Invariancia frente a transformaciones afines</a></li>
+  <li><a href="#matriz-de-covarianzas" id="toc-matriz-de-covarianzas" class="nav-link" data-scroll-target="#matriz-de-covarianzas"><span class="header-section-number">16.15</span> Matriz de covarianzas</a></li>
+  <li><a href="#positividad-semidefinida" id="toc-positividad-semidefinida" class="nav-link" data-scroll-target="#positividad-semidefinida"><span class="header-section-number">16.16</span> Positividad semidefinida</a></li>
+  <li><a href="#ejemplo-continuo-triangular" id="toc-ejemplo-continuo-triangular" class="nav-link" data-scroll-target="#ejemplo-continuo-triangular"><span class="header-section-number">16.17</span> Ejemplo continuo triangular</a></li>
+  <li><a href="#mapa-conceptual" id="toc-mapa-conceptual" class="nav-link" data-scroll-target="#mapa-conceptual"><span class="header-section-number">16.18</span> Mapa conceptual</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">16.19</span> Ejercicios teóricos</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">16.20</span> Referencias del capítulo</a></li>
   </ul>
 </nav>
     </div>
@@ -342,7 +332,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variables aleatorias discretas y función de masa de probabilidad</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Esperanza conjunta, covarianza y correlación</span></h1>
 </div>
 
 
@@ -359,320 +349,364 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">8.1</span> Objetivos</h2>
-<p>En este capítulo se formaliza el concepto de variable aleatoria discreta, su función de masa de probabilidad, el soporte de la distribución y la relación exacta entre la PMF y la función de distribución acumulada.</p>
+<section id="planteamiento" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="planteamiento"><span class="header-section-number">16.1</span> Planteamiento</h2>
+<p>Sea <span class="math inline">\((X,Y)\)</span> un vector aleatorio definido sobre un espacio de probabilidad. El conocimiento de su ley conjunta permite estudiar no sólo las distribuciones marginales, sino también funciones de ambas variables y medidas de dependencia lineal.</p>
+<p>En este capítulo se formalizan la esperanza de funciones bivariadas, la covarianza, la correlación y la varianza de combinaciones lineales.</p>
 </section>
-<section id="variable-aleatoria-discreta" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="variable-aleatoria-discreta"><span class="header-section-number">8.2</span> Variable aleatoria discreta</h2>
-<p>Sea</p>
+<section id="esperanza-de-funciones-de-dos-variables" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="esperanza-de-funciones-de-dos-variables"><span class="header-section-number">16.2</span> Esperanza de funciones de dos variables</h2>
+<p>Si <span class="math inline">\((X,Y)\)</span> es discreto con función de masa conjunta <span class="math inline">\(p_{X,Y}\)</span> y <span class="math inline">\(g:\mathbb R^2\to\mathbb R\)</span> es integrable, entonces</p>
 <p><span class="math display">\[
-X:(\Omega,\mathcal F)\to\mathbb R
+E[g(X,Y)]=\sum_x\sum_y g(x,y)p_{X,Y}(x,y).
 \]</span></p>
-<p>una variable aleatoria. Diremos que <span class="math inline">\(X\)</span> es <strong>discreta</strong> si existe un conjunto finito o numerable</p>
+<p>Si <span class="math inline">\((X,Y)\)</span> posee densidad conjunta <span class="math inline">\(f_{X,Y}\)</span>,</p>
 <p><span class="math display">\[
-S_X=\{x_1,x_2,\ldots\}\subseteq\mathbb R
+E[g(X,Y)]=\iint_{\mathbb R^2}g(x,y)f_{X,Y}(x,y)\,dx\,dy.
 \]</span></p>
-<p>tal que</p>
-<p><span class="math display">\[
-P(X\in S_X)=1.
-\]</span></p>
-<p>El conjunto</p>
-<p><span class="math display">\[
-\mathcal S_X=\{x\in\mathbb R:P(X=x)&gt;0\}
-\]</span></p>
-<p>se denomina <strong>soporte efectivo</strong> de la distribución.</p>
+<p>Estas expresiones son la versión bidimensional de la ley del estadístico inconsciente.</p>
 </section>
-<section id="función-de-masa-de-probabilidad" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="función-de-masa-de-probabilidad"><span class="header-section-number">8.3</span> Función de masa de probabilidad</h2>
-<p>La función de masa de probabilidad de <span class="math inline">\(X\)</span> es</p>
+<section id="teorema-de-linealidad" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="teorema-de-linealidad"><span class="header-section-number">16.3</span> Teorema de linealidad</h2>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son integrables y <span class="math inline">\(a,b,c\in\mathbb R\)</span>, entonces</p>
 <p><span class="math display">\[
-p_X(x)=P(X=x).
+E[aX+bY+c]=aE[X]+bE[Y]+c.
 \]</span></p>
-<section id="proposición" class="level3">
-<h3 class="anchored" data-anchor-id="proposición">Proposición</h3>
-<p>Una función <span class="math inline">\(p:\mathbb R\to[0,1]\)</span> es la PMF de alguna variable aleatoria discreta con soporte numerable <span class="math inline">\(S\)</span> si y sólo si</p>
-<p><span class="math display">\[
-p(x)\geq0
-\]</span></p>
-<p>para todo <span class="math inline">\(x\)</span> y</p>
-<p><span class="math display">\[
-\sum_{x\in S}p(x)=1,
-\]</span></p>
-<p>con <span class="math inline">\(p(x)=0\)</span> fuera de <span class="math inline">\(S\)</span>.</p>
-</section>
+<p>La independencia no es necesaria.</p>
 <section id="demostración" class="level3">
 <h3 class="anchored" data-anchor-id="demostración">Demostración</h3>
-<p>Si <span class="math inline">\(p=p_X\)</span>, la no negatividad se sigue de los axiomas de probabilidad. Como los eventos</p>
+<p>Por linealidad de la integral respecto de la medida conjunta,</p>
 <p><span class="math display">\[
-\{X=x\},\qquad x\in S,
+E[aX+bY+c]
+=\int (aX+bY+c)\,dP
+=aE[X]+bE[Y]+c.
 \]</span></p>
-<p>son mutuamente excluyentes y su unión tiene probabilidad 1,</p>
-<p><span class="math display">\[
-1=P(X\in S)=\sum_{x\in S}P(X=x)=\sum_{x\in S}p_X(x).
-\]</span></p>
-<p>Recíprocamente, dada una sucesión de masas no negativas que suma 1, puede construirse un espacio muestral discreto con probabilidades puntuales iguales a esas masas y definir <span class="math inline">\(X\)</span> como la aplicación identidad sobre el soporte.</p>
 </section>
 </section>
-<section id="probabilidad-de-eventos-definidos-por-x" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="probabilidad-de-eventos-definidos-por-x"><span class="header-section-number">8.4</span> Probabilidad de eventos definidos por <span class="math inline">\(X\)</span></h2>
-<p>Sea <span class="math inline">\(A\subseteq\mathbb R\)</span>. Entonces</p>
+<section id="el-momento-mixto-exy" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="el-momento-mixto-exy"><span class="header-section-number">16.4</span> El momento mixto <span class="math inline">\(E[XY]\)</span></h2>
+<p>Cuando <span class="math inline">\(XY\)</span> es integrable,</p>
 <p><span class="math display">\[
-P(X\in A)=\sum_{x\in A\cap\mathcal S_X}p_X(x).
+E[XY]
 \]</span></p>
-<p>En particular,</p>
+<p>se denomina momento mixto de orden <span class="math inline">\((1,1)\)</span>.</p>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes e integrables, entonces</p>
 <p><span class="math display">\[
-P(a&lt;X\leq b)=\sum_{a&lt;x\leq b}p_X(x).
+E[XY]=E[X]E[Y].
 \]</span></p>
-<p>Esta identidad es la versión discreta de la regla de integración que aparecerá en variables continuas.</p>
+<section id="demostración-en-el-caso-con-densidades" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-en-el-caso-con-densidades">Demostración en el caso con densidades</h3>
+<p>La independencia implica</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=f_X(x)f_Y(y).
+\]</span></p>
+<p>Por Fubini,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E[XY]
+&amp;=\iint xyf_X(x)f_Y(y)\,dx\,dy\\
+&amp;=\left(\int xf_X(x)\,dx\right)
+  \left(\int yf_Y(y)\,dy\right)\\
+&amp;=E[X]E[Y].
+\end{aligned}
+\]</span></p>
+<p>La demostración discreta es análoga sustituyendo integrales por sumas.</p>
 </section>
-<section id="distribución-inducida-por-una-variable-discreta" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="distribución-inducida-por-una-variable-discreta"><span class="header-section-number">8.5</span> Distribución inducida por una variable discreta</h2>
-<p>La variable <span class="math inline">\(X\)</span> induce una medida de probabilidad sobre <span class="math inline">\(\mathbb R\)</span> dada por</p>
-<p><span class="math display">\[
-\mu_X(A)=P(X\in A).
-\]</span></p>
-<p>En el caso discreto,</p>
-<p><span class="math display">\[
-\mu_X(A)=\sum_{x\in A\cap\mathcal S_X}p_X(x).
-\]</span></p>
-<p>Por tanto, la distribución completa queda determinada por las masas puntuales <span class="math inline">\(p_X(x)\)</span>.</p>
 </section>
-<section id="relación-con-la-función-de-distribución-acumulada" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="relación-con-la-función-de-distribución-acumulada"><span class="header-section-number">8.6</span> Relación con la función de distribución acumulada</h2>
-<p>La CDF es</p>
-<p><span class="math display">\[
-F_X(t)=P(X\leq t).
-\]</span></p>
-<p>Para una variable discreta,</p>
+<section id="definición-de-covarianza" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="definición-de-covarianza"><span class="header-section-number">16.5</span> Definición de covarianza</h2>
+<p>Sean <span class="math inline">\(X,Y\in L^2\)</span>. Se define</p>
 <p><span class="math display">\[
 \boxed{
-F_X(t)=\sum_{x\leq t}p_X(x)
-}.
+\operatorname{Cov}(X,Y)
+=E[(X-E[X])(Y-E[Y])].
+}
 \]</span></p>
-<section id="proposición-saltos-de-la-cdf" class="level3">
-<h3 class="anchored" data-anchor-id="proposición-saltos-de-la-cdf">Proposición: saltos de la CDF</h3>
-<p>Para todo <span class="math inline">\(x\in\mathbb R\)</span>,</p>
+<p>Expandiendo el producto,</p>
 <p><span class="math display">\[
-P(X=x)=F_X(x)-F_X(x^-),
-\]</span></p>
-<p>donde</p>
-<p><span class="math display">\[
-F_X(x^-)=\lim_{t\uparrow x}F_X(t).
+\boxed{
+\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y].
+}
 \]</span></p>
 </section>
+<section id="propiedades-de-la-covarianza" class="level2" data-number="16.6">
+<h2 data-number="16.6" class="anchored" data-anchor-id="propiedades-de-la-covarianza"><span class="header-section-number">16.6</span> Propiedades de la covarianza</h2>
+<p>Para variables con segundos momentos finitos y constantes <span class="math inline">\(a,b,c,d\)</span>:</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=\operatorname{Cov}(Y,X),
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,X)=\operatorname{Var}(X),
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,c)=0,
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{Cov}(aX+b,cY+d)=ac\operatorname{Cov}(X,Y).
+\]</span></p>
+<p>Más generalmente, la covarianza es bilineal:</p>
+<p><span class="math display">\[
+\operatorname{Cov}(aX+bY,Z)
+=a\operatorname{Cov}(X,Z)+b\operatorname{Cov}(Y,Z).
+\]</span></p>
+</section>
+<section id="varianza-de-una-suma" class="level2" data-number="16.7">
+<h2 data-number="16.7" class="anchored" data-anchor-id="varianza-de-una-suma"><span class="header-section-number">16.7</span> Varianza de una suma</h2>
+<p>Para <span class="math inline">\(X,Y\in L^2\)</span>,</p>
+<p><span class="math display">\[
+\boxed{
+\operatorname{Var}(X+Y)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+}
+\]</span></p>
 <section id="demostración-1" class="level3">
 <h3 class="anchored" data-anchor-id="demostración-1">Demostración</h3>
-<p>Como</p>
+<p>Sea</p>
 <p><span class="math display">\[
-\{X\leq x\}=\{X&lt;x\}\cup\{X=x\},
+\widetilde X=X-E[X],\qquad
+\widetilde Y=Y-E[Y].
 \]</span></p>
-<p>y los dos eventos son disjuntos,</p>
+<p>Entonces</p>
 <p><span class="math display">\[
-F_X(x)=P(X&lt;x)+P(X=x).
-\]</span></p>
-<p>Además,</p>
-<p><span class="math display">\[
-P(X&lt;x)=F_X(x^-).
+\begin{aligned}
+\operatorname{Var}(X+Y)
+&amp;=E[(\widetilde X+\widetilde Y)^2]\\
+&amp;=E[\widetilde X^2]+E[\widetilde Y^2]
++2E[\widetilde X\widetilde Y]\\
+&amp;=\operatorname{Var}(X)+\operatorname{Var}(Y)
++2\operatorname{Cov}(X,Y).
+\end{aligned}
 \]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[
-P(X=x)=F_X(x)-F_X(x^-).
+\operatorname{Var}(aX+bY)
+=a^2\operatorname{Var}(X)+b^2\operatorname{Var}(Y)
++2ab\operatorname{Cov}(X,Y).
 \]</span></p>
-<p>Así, los átomos de la distribución coinciden exactamente con los puntos de salto de la CDF.</p>
 </section>
 </section>
-<section id="átomos-y-distribuciones-discretas" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="átomos-y-distribuciones-discretas"><span class="header-section-number">8.7</span> Átomos y distribuciones discretas</h2>
-<p>Un punto <span class="math inline">\(x\)</span> es un <strong>átomo</strong> de la distribución de <span class="math inline">\(X\)</span> si</p>
-<p><span class="math display">\[
-P(X=x)&gt;0.
-\]</span></p>
-<p>Una distribución discreta está concentrada en un conjunto numerable de átomos.</p>
-<p>Si el soporte es finito,</p>
-<p><span class="math display">\[
-\mathcal S_X=\{x_1,\ldots,x_n\},
-\]</span></p>
-<p>entonces</p>
-<p><span class="math display">\[
-\sum_{i=1}^{n}p_X(x_i)=1.
-\]</span></p>
-<p>Si el soporte es infinito numerable,</p>
-<p><span class="math display">\[
-\sum_{i=1}^{\infty}p_X(x_i)=1.
-\]</span></p>
-<p>La convergencia de esta serie es parte esencial de la definición de la distribución.</p>
-</section>
-<section id="soporte-y-representación-no-única" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="soporte-y-representación-no-única"><span class="header-section-number">8.8</span> Soporte y representación no única</h2>
-<p>Puede ocurrir que una función se describa sobre un conjunto más grande que el soporte efectivo. Por ejemplo, si se declara</p>
-<p><span class="math display">\[
-p(0)=0,
-\quad p(1)=0.4,
-\quad p(2)=0.6,
-\]</span></p>
-<p>el soporte efectivo es</p>
-<p><span class="math display">\[
-\{1,2\},
-\]</span></p>
-<p>no <span class="math inline">\(\{0,1,2\}\)</span>.</p>
-<p>Esta distinción resulta útil en formulaciones paramétricas.</p>
-</section>
-<section id="construcción-mediante-transformación" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="construcción-mediante-transformación"><span class="header-section-number">8.9</span> Construcción mediante transformación</h2>
-<p>Sea <span class="math inline">\(Y\)</span> una variable aleatoria discreta con PMF <span class="math inline">\(p_Y\)</span> y sea</p>
-<p><span class="math display">\[
-X=g(Y).
-\]</span></p>
-<p>Entonces</p>
-<p><span class="math display">\[
-P(X=x)=P(g(Y)=x)
-\]</span></p>
-<p>y, por tanto,</p>
+<section id="sumas-de-muchas-variables" class="level2" data-number="16.8">
+<h2 data-number="16.8" class="anchored" data-anchor-id="sumas-de-muchas-variables"><span class="header-section-number">16.8</span> Sumas de muchas variables</h2>
+<p>Para <span class="math inline">\(X_1,\dots,X_n\in L^2\)</span>,</p>
 <p><span class="math display">\[
 \boxed{
-p_X(x)=\sum_{y:g(y)=x}p_Y(y)
-}.
+\operatorname{Var}\left(\sum_{i=1}^nX_i\right)
+=\sum_{i=1}^n\operatorname{Var}(X_i)
++2\sum_{i&lt;j}\operatorname{Cov}(X_i,X_j).
+}
 \]</span></p>
-<p>Esta fórmula agrega las masas de todos los valores de <span class="math inline">\(Y\)</span> que son enviados al mismo valor <span class="math inline">\(x\)</span>.</p>
-<section id="ejemplo" class="level3">
-<h3 class="anchored" data-anchor-id="ejemplo">Ejemplo</h3>
-<p>Sea <span class="math inline">\(Y\)</span> uniforme sobre</p>
+<p>Si las variables son independientes, todas las covarianzas cruzadas son cero.</p>
+</section>
+<section id="independencia-e-incorrelación" class="level2" data-number="16.9">
+<h2 data-number="16.9" class="anchored" data-anchor-id="independencia-e-incorrelación"><span class="header-section-number">16.9</span> Independencia e incorrelación</h2>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes y tienen segundos momentos finitos, entonces</p>
 <p><span class="math display">\[
-\{-2,-1,0,1,2\}
+\operatorname{Cov}(X,Y)=0.
 \]</span></p>
-<p>y defina</p>
+</section>
+<section id="demostración-2" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-2">Demostración</h3>
+<p>Por independencia,</p>
 <p><span class="math display">\[
-X=Y^2.
+E[XY]=E[X]E[Y].
 \]</span></p>
-<p>Entonces</p>
+<p>Sustituyendo en la identidad de covarianza,</p>
 <p><span class="math display">\[
-\mathcal S_X=\{0,1,4\}
+\operatorname{Cov}(X,Y)
+=E[XY]-E[X]E[Y]=0.
 \]</span></p>
-<p>y</p>
-<p><span class="math display">\[
-p_X(0)=\frac15,
-\]</span></p>
-<p><span class="math display">\[
-p_X(1)=\frac25,
-\]</span></p>
-<p><span class="math display">\[
-p_X(4)=\frac25.
-\]</span></p>
-<p>Las probabilidades de <span class="math inline">\(Y=1\)</span> y <span class="math inline">\(Y=-1\)</span> se suman porque ambas preimágenes producen <span class="math inline">\(X=1\)</span>.</p>
+<p>El recíproco es falso en general.</p>
 </section>
 </section>
-<section id="pmf-a-partir-de-una-cdf-escalonada" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="pmf-a-partir-de-una-cdf-escalonada"><span class="header-section-number">8.10</span> PMF a partir de una CDF escalonada</h2>
-<p>Si una CDF tiene saltos en puntos</p>
+<section id="contraejemplo-incorrelación-sin-independencia" class="level2" data-number="16.10">
+<h2 data-number="16.10" class="anchored" data-anchor-id="contraejemplo-incorrelación-sin-independencia"><span class="header-section-number">16.10</span> Contraejemplo: incorrelación sin independencia</h2>
+<p>Sea</p>
 <p><span class="math display">\[
-x_1&lt;x_2&lt;\cdots,
+X\sim U(-1,1),\qquad Y=X^2.
 \]</span></p>
-<p>entonces</p>
+<p>Entonces <span class="math inline">\(Y\)</span> es una función determinista de <span class="math inline">\(X\)</span>, de modo que existe dependencia completa. Sin embargo,</p>
 <p><span class="math display">\[
-p_X(x_i)=F_X(x_i)-F_X(x_i^-).
+E[X]=0,
 \]</span></p>
-<p>Por tanto, para distribuciones discretas, PMF y CDF contienen exactamente la misma información.</p>
+<p><span class="math display">\[
+E[XY]=E[X^3]=0
+\]</span></p>
+<p>por simetría, y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0.
+\]</span></p>
+<p>Este ejemplo muestra que la covarianza sólo captura un tipo particular de dependencia: la componente lineal.</p>
 </section>
-<section id="variables-con-soporte-infinito-numerable" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="variables-con-soporte-infinito-numerable"><span class="header-section-number">8.11</span> Variables con soporte infinito numerable</h2>
-<p>Considere</p>
+<section id="coeficiente-de-correlación" class="level2" data-number="16.11">
+<h2 data-number="16.11" class="anchored" data-anchor-id="coeficiente-de-correlación"><span class="header-section-number">16.11</span> Coeficiente de correlación</h2>
+<p>Si</p>
 <p><span class="math display">\[
-p_X(k)=\frac{1}{2^k},
-\qquad k=1,2,3,\ldots
+0&lt;\operatorname{Var}(X)&lt;\infty,
+\qquad
+0&lt;\operatorname{Var}(Y)&lt;\infty,
 \]</span></p>
-<p>Como</p>
+<p>se define</p>
 <p><span class="math display">\[
-\sum_{k=1}^{\infty}\frac{1}{2^k}=1,
+\boxed{
+\rho_{X,Y}
+=\frac{\operatorname{Cov}(X,Y)}
+{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}.
+}
 \]</span></p>
-<p>la función define una PMF válida.</p>
-<p>La CDF para <span class="math inline">\(n\in\mathbb N\)</span> es</p>
-<p><span class="math display">\[
-F_X(n)=\sum_{k=1}^{n}\frac{1}{2^k}
-=1-\frac{1}{2^n}.
-\]</span></p>
-<p>Y para <span class="math inline">\(t\)</span> no entero,</p>
-<p><span class="math display">\[
-F_X(t)=F_X(\lfloor t\rfloor)
-\]</span></p>
-<p>si <span class="math inline">\(t\geq1\)</span>.</p>
 </section>
-<section id="unicidad-de-la-pmf" class="level2" data-number="8.12">
-<h2 data-number="8.12" class="anchored" data-anchor-id="unicidad-de-la-pmf"><span class="header-section-number">8.12</span> Unicidad de la PMF</h2>
-<p>Si dos variables aleatorias discretas <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> tienen la misma PMF,</p>
+<section id="cota-de-correlación" class="level2" data-number="16.12">
+<h2 data-number="16.12" class="anchored" data-anchor-id="cota-de-correlación"><span class="header-section-number">16.12</span> Cota de correlación</h2>
+<p>Se cumple</p>
 <p><span class="math display">\[
-p_X(x)=p_Y(x)
+\boxed{|\rho_{X,Y}|\le1}.
 \]</span></p>
-<p>para todo <span class="math inline">\(x\)</span>, entonces tienen la misma distribución:</p>
+<section id="demostración-mediante-cauchyschwarz" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-mediante-cauchyschwarz">Demostración mediante Cauchy–Schwarz</h3>
+<p>Sean</p>
 <p><span class="math display">\[
-P(X\in A)=P(Y\in A)
+U=X-E[X],\qquad V=Y-E[Y].
 \]</span></p>
-<p>para todo conjunto boreliano <span class="math inline">\(A\)</span>.</p>
-<p>No es necesario que <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> estén definidas sobre el mismo espacio muestral ni que sean la misma función.</p>
+<p>La desigualdad de Cauchy–Schwarz da</p>
+<p><span class="math display">\[
+|E[UV]|^2\le E[U^2]E[V^2].
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+|\operatorname{Cov}(X,Y)|^2
+\le\operatorname{Var}(X)\operatorname{Var}(Y).
+\]</span></p>
+<p>Dividiendo por el producto positivo de las varianzas,</p>
+<p><span class="math display">\[
+|\rho_{X,Y}|\le1.
+\]</span></p>
 </section>
-<section id="distribución-conjunta-de-valores-discretos-y-eventos" class="level2" data-number="8.13">
-<h2 data-number="8.13" class="anchored" data-anchor-id="distribución-conjunta-de-valores-discretos-y-eventos"><span class="header-section-number">8.13</span> Distribución conjunta de valores discretos y eventos</h2>
-<p>Para cualquier subconjunto <span class="math inline">\(A\)</span> del soporte,</p>
-<p><span class="math display">\[
-P(X\in A)=\sum_{x\in A}p_X(x).
-\]</span></p>
-<p>Esta propiedad expresa que la medida inducida por <span class="math inline">\(X\)</span> es completamente atómica.</p>
 </section>
-<section id="comparación-conceptual-con-el-caso-continuo" class="level2" data-number="8.14">
-<h2 data-number="8.14" class="anchored" data-anchor-id="comparación-conceptual-con-el-caso-continuo"><span class="header-section-number">8.14</span> Comparación conceptual con el caso continuo</h2>
-<p>En el caso discreto puede existir</p>
+<section id="caso-de-igualdad" class="level2" data-number="16.13">
+<h2 data-number="16.13" class="anchored" data-anchor-id="caso-de-igualdad"><span class="header-section-number">16.13</span> Caso de igualdad</h2>
+<p>La igualdad en Cauchy–Schwarz ocurre si y sólo si las variables centradas son linealmente dependientes casi seguramente. En consecuencia,</p>
 <p><span class="math display">\[
-P(X=x)&gt;0.
+|\rho_{X,Y}|=1
 \]</span></p>
-<p>En el caso continuo típico,</p>
+<p>si y sólo si existen constantes <span class="math inline">\(a\ne0\)</span> y <span class="math inline">\(b\)</span> tales que</p>
 <p><span class="math display">\[
-P(X=x)=0
+Y=aX+b
 \]</span></p>
-<p>para todo <span class="math inline">\(x\)</span>.</p>
-<p>Por ello, una PMF asigna masa a puntos, mientras que una densidad continua asignará probabilidad a intervalos mediante integrales.</p>
+<p>casi seguramente.</p>
+<p>El signo de <span class="math inline">\(a\)</span> determina si <span class="math inline">\(\rho=1\)</span> o <span class="math inline">\(\rho=-1\)</span>.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="8.15">
-<h2 data-number="8.15" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">8.15</span> Ejercicios</h2>
+<section id="invariancia-frente-a-transformaciones-afines" class="level2" data-number="16.14">
+<h2 data-number="16.14" class="anchored" data-anchor-id="invariancia-frente-a-transformaciones-afines"><span class="header-section-number">16.14</span> Invariancia frente a transformaciones afines</h2>
+<p>Sean</p>
+<p><span class="math display">\[
+U=aX+b,\qquad V=cY+d,
+\]</span></p>
+<p>con <span class="math inline">\(a,c\ne0\)</span>. Entonces</p>
+<p><span class="math display">\[
+\rho_{U,V}=\operatorname{sign}(ac)\rho_{X,Y}.
+\]</span></p>
+<p>Por tanto, cambios positivos de unidades no alteran la correlación.</p>
+</section>
+<section id="matriz-de-covarianzas" class="level2" data-number="16.15">
+<h2 data-number="16.15" class="anchored" data-anchor-id="matriz-de-covarianzas"><span class="header-section-number">16.15</span> Matriz de covarianzas</h2>
+<p>Para el vector</p>
+<p><span class="math display">\[
+\mathbf X=(X_1,\dots,X_n)^T,
+\]</span></p>
+<p>su matriz de covarianzas es</p>
+<p><span class="math display">\[
+\Sigma_{ij}=\operatorname{Cov}(X_i,X_j).
+\]</span></p>
+<p>En dimensión dos,</p>
+<p><span class="math display">\[
+\Sigma=
+\begin{pmatrix}
+\operatorname{Var}(X)&amp;\operatorname{Cov}(X,Y)\\
+\operatorname{Cov}(X,Y)&amp;\operatorname{Var}(Y)
+\end{pmatrix}.
+\]</span></p>
+</section>
+<section id="positividad-semidefinida" class="level2" data-number="16.16">
+<h2 data-number="16.16" class="anchored" data-anchor-id="positividad-semidefinida"><span class="header-section-number">16.16</span> Positividad semidefinida</h2>
+<p>Para todo vector <span class="math inline">\(a\in\mathbb R^n\)</span>,</p>
+<p><span class="math display">\[
+a^T\Sigma a
+=\operatorname{Var}(a^T\mathbf X)\ge0.
+\]</span></p>
+<p>Por ello, toda matriz de covarianzas es simétrica y positiva semidefinida.</p>
+</section>
+<section id="ejemplo-continuo-triangular" class="level2" data-number="16.17">
+<h2 data-number="16.17" class="anchored" data-anchor-id="ejemplo-continuo-triangular"><span class="header-section-number">16.17</span> Ejemplo continuo triangular</h2>
+<p>Sea</p>
+<p><span class="math display">\[
+f_{X,Y}(x,y)=2,
+\qquad0&lt;y&lt;x&lt;1.
+\]</span></p>
+<p>Las marginales son</p>
+<p><span class="math display">\[
+f_X(x)=2x,
+\qquad
+f_Y(y)=2(1-y).
+\]</span></p>
+<p>Se obtiene</p>
+<p><span class="math display">\[
+E[X]=\frac23,
+\qquad
+E[Y]=\frac13,
+\]</span></p>
+<p><span class="math display">\[
+E[XY]=\frac14,
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)
+=\frac14-\frac{2}{9}
+=\frac1{36}.
+\]</span></p>
+<p>Este ejemplo combina dependencia geométrica del soporte con una covarianza positiva.</p>
+</section>
+<section id="mapa-conceptual" class="level2" data-number="16.18">
+<h2 data-number="16.18" class="anchored" data-anchor-id="mapa-conceptual"><span class="header-section-number">16.18</span> Mapa conceptual</h2>
+<p>La cadena lógica principal es</p>
+<p><span class="math display">\[
+\text{ley conjunta}
+\Longrightarrow E[g(X,Y)]
+\Longrightarrow E[XY]
+\Longrightarrow \operatorname{Cov}(X,Y)
+\Longrightarrow \rho_{X,Y}.
+\]</span></p>
+<p>La implicación</p>
+<p><span class="math display">\[
+X\perp Y\Longrightarrow\operatorname{Cov}(X,Y)=0
+\]</span></p>
+<p>es válida, pero</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y)=0\not\Longrightarrow X\perp Y
+\]</span></p>
+<p>en general.</p>
+</section>
+<section id="ejercicios-teóricos" class="level2" data-number="16.19">
+<h2 data-number="16.19" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">16.19</span> Ejercicios teóricos</h2>
 <ol type="1">
-<li>Sea <span class="math inline">\(p(0)=0.2\)</span>, <span class="math inline">\(p(1)=0.5\)</span> y <span class="math inline">\(p(2)=0.3\)</span>. Verifica que define una PMF y construye la CDF completa.</li>
-<li>Sea <span class="math inline">\(p_X(k)=c/3^k\)</span> para <span class="math inline">\(k=1,2,\ldots\)</span>. Determina <span class="math inline">\(c\)</span>.</li>
-<li>Demuestra que si <span class="math inline">\(X\)</span> es discreta, entonces el conjunto de puntos <span class="math inline">\(x\)</span> tales que <span class="math inline">\(P(X=x)&gt;0\)</span> es a lo sumo numerable.</li>
-<li>Sea <span class="math inline">\(X\)</span> con soporte <span class="math inline">\(\{-1,0,1\}\)</span> y masas <span class="math inline">\(0.25,0.5,0.25\)</span>. Define <span class="math inline">\(Y=X^2\)</span> y determina la PMF de <span class="math inline">\(Y\)</span>.</li>
-<li>Prueba la fórmula</li>
+<li>Demuestre la bilinealidad de la covarianza.</li>
+<li>Demuestre la fórmula de <span class="math inline">\(\operatorname{Var}(aX+bY)\)</span>.</li>
+<li>Extienda la fórmula anterior a una suma de <span class="math inline">\(n\)</span> variables.</li>
+<li>Demuestre que independencia implica incorrelación bajo segundos momentos finitos.</li>
+<li>Verifique rigurosamente el contraejemplo <span class="math inline">\(X\sim U(-1,1)\)</span>, <span class="math inline">\(Y=X^2\)</span>.</li>
+<li>Demuestre <span class="math inline">\(|\rho|\le1\)</span> mediante Cauchy–Schwarz.</li>
+<li>Caracterice el caso <span class="math inline">\(|\rho|=1\)</span>.</li>
+<li>Demuestre la invariancia de <span class="math inline">\(|\rho|\)</span> frente a transformaciones afines no degeneradas.</li>
+<li>Demuestre que una matriz de covarianzas es positiva semidefinida.</li>
+<li>Para la densidad triangular del capítulo, calcule las dos varianzas y la correlación exacta.</li>
 </ol>
-<p><span class="math display">\[
-p_X(x)=F_X(x)-F_X(x^-).
-\]</span></p>
-<ol start="6" type="1">
-<li>Si una CDF tiene saltos de tamaño <span class="math inline">\(0.1\)</span>, <span class="math inline">\(0.2\)</span>, <span class="math inline">\(0.3\)</span> y <span class="math inline">\(0.4\)</span> en <span class="math inline">\(x=0,1,3,7\)</span>, determina la PMF.</li>
-<li>Construye una variable aleatoria discreta con soporte infinito numerable cuya PMF sea proporcional a <span class="math inline">\(1/k^2\)</span>.</li>
-<li>Explica por qué no puede existir una variable discreta con un número no numerable de puntos con masa estrictamente positiva.</li>
-<li>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> tienen la misma PMF, demuestra que tienen la misma CDF.</li>
-<li><strong>Reto ★.</strong> Sea <span class="math inline">\(X\)</span> discreta y <span class="math inline">\(g\)</span> una función cualquiera. Demuestra que</li>
-</ol>
-<p><span class="math display">\[
-p_{g(X)}(y)=\sum_{x:g(x)=y}p_X(x).
-\]</span></p>
 </section>
-<section id="referencias-del-capítulo" class="level2" data-number="8.16">
-<h2 data-number="8.16" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">8.16</span> Referencias del capítulo</h2>
-<p>El desarrollo formal de variables aleatorias discretas, distribuciones atómicas, PMF y su relación con la CDF sigue la formulación estándar de <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>, adaptada al nivel teórico de este volumen.</p>
+<section id="referencias-del-capítulo" class="level2" data-number="16.20">
+<h2 data-number="16.20" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">16.20</span> Referencias del capítulo</h2>
+<p>El tratamiento formal de momentos conjuntos, covarianza y correlación sigue textos clásicos de probabilidad y estadística matemática citados en la bibliografía general del libro.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-devore2016" class="csl-entry" role="listitem">
-Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
-</div>
-<div id="ref-johnson2018" class="csl-entry" role="listitem">
-Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
-</div>
-<div id="ref-montgomery2018" class="csl-entry" role="listitem">
-Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
-</div>
-<div id="ref-walpole2012" class="csl-entry" role="listitem">
-Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -1078,13 +1112,13 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Pr
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07-variable-aleatoria-cdf.html" class="pagination-link" aria-label="Variable aleatoria y función de distribución acumulada">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Variable aleatoria y función de distribución acumulada</span></span>
+      <a href="./15-variables-conjuntas-marginales-condicionales.html" class="pagination-link" aria-label="Variables aleatorias conjuntas, distribuciones marginales y condicionales">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Variables aleatorias conjuntas, distribuciones marginales y condicionales</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./09-variables-continuas-densidad.html" class="pagination-link" aria-label="Variables aleatorias continuas y función de densidad">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variables aleatorias continuas y función de densidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2530,6 +2530,206 @@
     ]
   },
   {
+    "objectID": "16-esperanza-covarianza-correlacion.html",
+    "href": "16-esperanza-covarianza-correlacion.html",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "",
+    "text": "16.1 Planteamiento\nSea \\((X,Y)\\) un vector aleatorio definido sobre un espacio de probabilidad. El conocimiento de su ley conjunta permite estudiar no sólo las distribuciones marginales, sino también funciones de ambas variables y medidas de dependencia lineal.\nEn este capítulo se formalizan la esperanza de funciones bivariadas, la covarianza, la correlación y la varianza de combinaciones lineales.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#esperanza-de-funciones-de-dos-variables",
+    "href": "16-esperanza-covarianza-correlacion.html#esperanza-de-funciones-de-dos-variables",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.2 Esperanza de funciones de dos variables",
+    "text": "16.2 Esperanza de funciones de dos variables\nSi \\((X,Y)\\) es discreto con función de masa conjunta \\(p_{X,Y}\\) y \\(g:\\mathbb R^2\\to\\mathbb R\\) es integrable, entonces\n\\[\nE[g(X,Y)]=\\sum_x\\sum_y g(x,y)p_{X,Y}(x,y).\n\\]\nSi \\((X,Y)\\) posee densidad conjunta \\(f_{X,Y}\\),\n\\[\nE[g(X,Y)]=\\iint_{\\mathbb R^2}g(x,y)f_{X,Y}(x,y)\\,dx\\,dy.\n\\]\nEstas expresiones son la versión bidimensional de la ley del estadístico inconsciente.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#teorema-de-linealidad",
+    "href": "16-esperanza-covarianza-correlacion.html#teorema-de-linealidad",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.3 Teorema de linealidad",
+    "text": "16.3 Teorema de linealidad\nSi \\(X\\) y \\(Y\\) son integrables y \\(a,b,c\\in\\mathbb R\\), entonces\n\\[\nE[aX+bY+c]=aE[X]+bE[Y]+c.\n\\]\nLa independencia no es necesaria.\n\nDemostración\nPor linealidad de la integral respecto de la medida conjunta,\n\\[\nE[aX+bY+c]\n=\\int (aX+bY+c)\\,dP\n=aE[X]+bE[Y]+c.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#el-momento-mixto-exy",
+    "href": "16-esperanza-covarianza-correlacion.html#el-momento-mixto-exy",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.4 El momento mixto \\(E[XY]\\)",
+    "text": "16.4 El momento mixto \\(E[XY]\\)\nCuando \\(XY\\) es integrable,\n\\[\nE[XY]\n\\]\nse denomina momento mixto de orden \\((1,1)\\).\nSi \\(X\\) y \\(Y\\) son independientes e integrables, entonces\n\\[\nE[XY]=E[X]E[Y].\n\\]\n\nDemostración en el caso con densidades\nLa independencia implica\n\\[\nf_{X,Y}(x,y)=f_X(x)f_Y(y).\n\\]\nPor Fubini,\n\\[\n\\begin{aligned}\nE[XY]\n&=\\iint xyf_X(x)f_Y(y)\\,dx\\,dy\\\\\n&=\\left(\\int xf_X(x)\\,dx\\right)\n  \\left(\\int yf_Y(y)\\,dy\\right)\\\\\n&=E[X]E[Y].\n\\end{aligned}\n\\]\nLa demostración discreta es análoga sustituyendo integrales por sumas.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#definición-de-covarianza",
+    "href": "16-esperanza-covarianza-correlacion.html#definición-de-covarianza",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.5 Definición de covarianza",
+    "text": "16.5 Definición de covarianza\nSean \\(X,Y\\in L^2\\). Se define\n\\[\n\\boxed{\n\\operatorname{Cov}(X,Y)\n=E[(X-E[X])(Y-E[Y])].\n}\n\\]\nExpandiendo el producto,\n\\[\n\\boxed{\n\\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y].\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#propiedades-de-la-covarianza",
+    "href": "16-esperanza-covarianza-correlacion.html#propiedades-de-la-covarianza",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.6 Propiedades de la covarianza",
+    "text": "16.6 Propiedades de la covarianza\nPara variables con segundos momentos finitos y constantes \\(a,b,c,d\\):\n\\[\n\\operatorname{Cov}(X,Y)=\\operatorname{Cov}(Y,X),\n\\]\n\\[\n\\operatorname{Cov}(X,X)=\\operatorname{Var}(X),\n\\]\n\\[\n\\operatorname{Cov}(X,c)=0,\n\\]\n\\[\n\\operatorname{Cov}(aX+b,cY+d)=ac\\operatorname{Cov}(X,Y).\n\\]\nMás generalmente, la covarianza es bilineal:\n\\[\n\\operatorname{Cov}(aX+bY,Z)\n=a\\operatorname{Cov}(X,Z)+b\\operatorname{Cov}(Y,Z).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#varianza-de-una-suma",
+    "href": "16-esperanza-covarianza-correlacion.html#varianza-de-una-suma",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.7 Varianza de una suma",
+    "text": "16.7 Varianza de una suma\nPara \\(X,Y\\in L^2\\),\n\\[\n\\boxed{\n\\operatorname{Var}(X+Y)\n=\\operatorname{Var}(X)+\\operatorname{Var}(Y)\n+2\\operatorname{Cov}(X,Y).\n}\n\\]\n\nDemostración\nSea\n\\[\n\\widetilde X=X-E[X],\\qquad\n\\widetilde Y=Y-E[Y].\n\\]\nEntonces\n\\[\n\\begin{aligned}\n\\operatorname{Var}(X+Y)\n&=E[(\\widetilde X+\\widetilde Y)^2]\\\\\n&=E[\\widetilde X^2]+E[\\widetilde Y^2]\n+2E[\\widetilde X\\widetilde Y]\\\\\n&=\\operatorname{Var}(X)+\\operatorname{Var}(Y)\n+2\\operatorname{Cov}(X,Y).\n\\end{aligned}\n\\]\nPor tanto,\n\\[\n\\operatorname{Var}(aX+bY)\n=a^2\\operatorname{Var}(X)+b^2\\operatorname{Var}(Y)\n+2ab\\operatorname{Cov}(X,Y).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#sumas-de-muchas-variables",
+    "href": "16-esperanza-covarianza-correlacion.html#sumas-de-muchas-variables",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.8 Sumas de muchas variables",
+    "text": "16.8 Sumas de muchas variables\nPara \\(X_1,\\dots,X_n\\in L^2\\),\n\\[\n\\boxed{\n\\operatorname{Var}\\left(\\sum_{i=1}^nX_i\\right)\n=\\sum_{i=1}^n\\operatorname{Var}(X_i)\n+2\\sum_{i&lt;j}\\operatorname{Cov}(X_i,X_j).\n}\n\\]\nSi las variables son independientes, todas las covarianzas cruzadas son cero.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#independencia-e-incorrelación",
+    "href": "16-esperanza-covarianza-correlacion.html#independencia-e-incorrelación",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.9 Independencia e incorrelación",
+    "text": "16.9 Independencia e incorrelación\n\nTeorema\nSi \\(X\\) y \\(Y\\) son independientes y tienen segundos momentos finitos, entonces\n\\[\n\\operatorname{Cov}(X,Y)=0.\n\\]\n\n\nDemostración\nPor independencia,\n\\[\nE[XY]=E[X]E[Y].\n\\]\nSustituyendo en la identidad de covarianza,\n\\[\n\\operatorname{Cov}(X,Y)\n=E[XY]-E[X]E[Y]=0.\n\\]\nEl recíproco es falso en general.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#contraejemplo-incorrelación-sin-independencia",
+    "href": "16-esperanza-covarianza-correlacion.html#contraejemplo-incorrelación-sin-independencia",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.10 Contraejemplo: incorrelación sin independencia",
+    "text": "16.10 Contraejemplo: incorrelación sin independencia\nSea\n\\[\nX\\sim U(-1,1),\\qquad Y=X^2.\n\\]\nEntonces \\(Y\\) es una función determinista de \\(X\\), de modo que existe dependencia completa. Sin embargo,\n\\[\nE[X]=0,\n\\]\n\\[\nE[XY]=E[X^3]=0\n\\]\npor simetría, y por tanto\n\\[\n\\operatorname{Cov}(X,Y)=0.\n\\]\nEste ejemplo muestra que la covarianza sólo captura un tipo particular de dependencia: la componente lineal.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#coeficiente-de-correlación",
+    "href": "16-esperanza-covarianza-correlacion.html#coeficiente-de-correlación",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.11 Coeficiente de correlación",
+    "text": "16.11 Coeficiente de correlación\nSi\n\\[\n0&lt;\\operatorname{Var}(X)&lt;\\infty,\n\\qquad\n0&lt;\\operatorname{Var}(Y)&lt;\\infty,\n\\]\nse define\n\\[\n\\boxed{\n\\rho_{X,Y}\n=\\frac{\\operatorname{Cov}(X,Y)}\n{\\sqrt{\\operatorname{Var}(X)\\operatorname{Var}(Y)}}.\n}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#cota-de-correlación",
+    "href": "16-esperanza-covarianza-correlacion.html#cota-de-correlación",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.12 Cota de correlación",
+    "text": "16.12 Cota de correlación\nSe cumple\n\\[\n\\boxed{|\\rho_{X,Y}|\\le1}.\n\\]\n\nDemostración mediante Cauchy–Schwarz\nSean\n\\[\nU=X-E[X],\\qquad V=Y-E[Y].\n\\]\nLa desigualdad de Cauchy–Schwarz da\n\\[\n|E[UV]|^2\\le E[U^2]E[V^2].\n\\]\nPor tanto,\n\\[\n|\\operatorname{Cov}(X,Y)|^2\n\\le\\operatorname{Var}(X)\\operatorname{Var}(Y).\n\\]\nDividiendo por el producto positivo de las varianzas,\n\\[\n|\\rho_{X,Y}|\\le1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#caso-de-igualdad",
+    "href": "16-esperanza-covarianza-correlacion.html#caso-de-igualdad",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.13 Caso de igualdad",
+    "text": "16.13 Caso de igualdad\nLa igualdad en Cauchy–Schwarz ocurre si y sólo si las variables centradas son linealmente dependientes casi seguramente. En consecuencia,\n\\[\n|\\rho_{X,Y}|=1\n\\]\nsi y sólo si existen constantes \\(a\\ne0\\) y \\(b\\) tales que\n\\[\nY=aX+b\n\\]\ncasi seguramente.\nEl signo de \\(a\\) determina si \\(\\rho=1\\) o \\(\\rho=-1\\).",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#invariancia-frente-a-transformaciones-afines",
+    "href": "16-esperanza-covarianza-correlacion.html#invariancia-frente-a-transformaciones-afines",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.14 Invariancia frente a transformaciones afines",
+    "text": "16.14 Invariancia frente a transformaciones afines\nSean\n\\[\nU=aX+b,\\qquad V=cY+d,\n\\]\ncon \\(a,c\\ne0\\). Entonces\n\\[\n\\rho_{U,V}=\\operatorname{sign}(ac)\\rho_{X,Y}.\n\\]\nPor tanto, cambios positivos de unidades no alteran la correlación.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#matriz-de-covarianzas",
+    "href": "16-esperanza-covarianza-correlacion.html#matriz-de-covarianzas",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.15 Matriz de covarianzas",
+    "text": "16.15 Matriz de covarianzas\nPara el vector\n\\[\n\\mathbf X=(X_1,\\dots,X_n)^T,\n\\]\nsu matriz de covarianzas es\n\\[\n\\Sigma_{ij}=\\operatorname{Cov}(X_i,X_j).\n\\]\nEn dimensión dos,\n\\[\n\\Sigma=\n\\begin{pmatrix}\n\\operatorname{Var}(X)&\\operatorname{Cov}(X,Y)\\\\\n\\operatorname{Cov}(X,Y)&\\operatorname{Var}(Y)\n\\end{pmatrix}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#positividad-semidefinida",
+    "href": "16-esperanza-covarianza-correlacion.html#positividad-semidefinida",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.16 Positividad semidefinida",
+    "text": "16.16 Positividad semidefinida\nPara todo vector \\(a\\in\\mathbb R^n\\),\n\\[\na^T\\Sigma a\n=\\operatorname{Var}(a^T\\mathbf X)\\ge0.\n\\]\nPor ello, toda matriz de covarianzas es simétrica y positiva semidefinida.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#ejemplo-continuo-triangular",
+    "href": "16-esperanza-covarianza-correlacion.html#ejemplo-continuo-triangular",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.17 Ejemplo continuo triangular",
+    "text": "16.17 Ejemplo continuo triangular\nSea\n\\[\nf_{X,Y}(x,y)=2,\n\\qquad0&lt;y&lt;x&lt;1.\n\\]\nLas marginales son\n\\[\nf_X(x)=2x,\n\\qquad\nf_Y(y)=2(1-y).\n\\]\nSe obtiene\n\\[\nE[X]=\\frac23,\n\\qquad\nE[Y]=\\frac13,\n\\]\n\\[\nE[XY]=\\frac14,\n\\]\ny por tanto\n\\[\n\\operatorname{Cov}(X,Y)\n=\\frac14-\\frac{2}{9}\n=\\frac1{36}.\n\\]\nEste ejemplo combina dependencia geométrica del soporte con una covarianza positiva.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#mapa-conceptual",
+    "href": "16-esperanza-covarianza-correlacion.html#mapa-conceptual",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.18 Mapa conceptual",
+    "text": "16.18 Mapa conceptual\nLa cadena lógica principal es\n\\[\n\\text{ley conjunta}\n\\Longrightarrow E[g(X,Y)]\n\\Longrightarrow E[XY]\n\\Longrightarrow \\operatorname{Cov}(X,Y)\n\\Longrightarrow \\rho_{X,Y}.\n\\]\nLa implicación\n\\[\nX\\perp Y\\Longrightarrow\\operatorname{Cov}(X,Y)=0\n\\]\nes válida, pero\n\\[\n\\operatorname{Cov}(X,Y)=0\\not\\Longrightarrow X\\perp Y\n\\]\nen general.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#ejercicios-teóricos",
+    "href": "16-esperanza-covarianza-correlacion.html#ejercicios-teóricos",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.19 Ejercicios teóricos",
+    "text": "16.19 Ejercicios teóricos\n\nDemuestre la bilinealidad de la covarianza.\nDemuestre la fórmula de \\(\\operatorname{Var}(aX+bY)\\).\nExtienda la fórmula anterior a una suma de \\(n\\) variables.\nDemuestre que independencia implica incorrelación bajo segundos momentos finitos.\nVerifique rigurosamente el contraejemplo \\(X\\sim U(-1,1)\\), \\(Y=X^2\\).\nDemuestre \\(|\\rho|\\le1\\) mediante Cauchy–Schwarz.\nCaracterice el caso \\(|\\rho|=1\\).\nDemuestre la invariancia de \\(|\\rho|\\) frente a transformaciones afines no degeneradas.\nDemuestre que una matriz de covarianzas es positiva semidefinida.\nPara la densidad triangular del capítulo, calcule las dos varianzas y la correlación exacta.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
+    "objectID": "16-esperanza-covarianza-correlacion.html#referencias-del-capítulo",
+    "href": "16-esperanza-covarianza-correlacion.html#referencias-del-capítulo",
+    "title": "16  Esperanza conjunta, covarianza y correlación",
+    "section": "16.20 Referencias del capítulo",
+    "text": "16.20 Referencias del capítulo\nEl tratamiento formal de momentos conjuntos, covarianza y correlación sigue textos clásicos de probabilidad y estadística matemática citados en la bibliografía general del libro.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Esperanza conjunta, covarianza y correlación</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",
