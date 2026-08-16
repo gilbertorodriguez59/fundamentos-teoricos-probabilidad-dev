@@ -1860,6 +1860,186 @@
     ]
   },
   {
+    "objectID": "11-distribuciones-discretas-especiales.html",
+    "href": "11-distribuciones-discretas-especiales.html",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "",
+    "text": "11.1 Objetivos\nEste capítulo presenta formalmente cuatro familias discretas construidas a partir de ensayos de Bernoulli. Se estudiarán sus funciones de masa, soportes, momentos, relaciones estructurales y propiedades características.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#variable-de-bernoulli",
+    "href": "11-distribuciones-discretas-especiales.html#variable-de-bernoulli",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.2 Variable de Bernoulli",
+    "text": "11.2 Variable de Bernoulli\nSea \\(X\\) una variable con soporte \\(\\{0,1\\}\\) tal que\n\\[\nP(X=1)=p,\\qquad P(X=0)=1-p,\n\\]\ncon \\(0\\le p\\le1\\). Entonces\n\\[\nX\\sim\\operatorname{Bernoulli}(p).\n\\]\nSu PMF puede escribirse como\n\\[\np_X(x)=p^x(1-p)^{1-x},\\qquad x\\in\\{0,1\\}.\n\\]\nLa esperanza es\n\\[\nE[X]=0(1-p)+1(p)=p,\n\\]\ny\n\\[\nE[X^2]=p.\n\\]\nPor tanto,\n\\[\n\\operatorname{Var}(X)=p-p^2=p(1-p).\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#la-binomial-como-suma-de-bernoulli",
+    "href": "11-distribuciones-discretas-especiales.html#la-binomial-como-suma-de-bernoulli",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.3 La binomial como suma de Bernoulli",
+    "text": "11.3 La binomial como suma de Bernoulli\nSean\n\\[\nX_1,\\ldots,X_n\n\\]\nvariables Bernoulli independientes con parámetro común \\(p\\), y defina\n\\[\nS_n=X_1+\\cdots+X_n.\n\\]\nEntonces \\(S_n\\) cuenta el número de éxitos y\n\\[\n\\boxed{S_n\\sim\\operatorname{Binomial}(n,p)}.\n\\]\nPara \\(x=0,1,\\ldots,n\\),\n\\[\nP(S_n=x)=\\binom{n}{x}p^x(1-p)^{n-x}.\n\\]\nLa normalización se verifica mediante el teorema binomial:\n\\[\n\\sum_{x=0}^{n}\\binom{n}{x}p^x(1-p)^{n-x}\n=(p+1-p)^n=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#momentos-de-la-binomial",
+    "href": "11-distribuciones-discretas-especiales.html#momentos-de-la-binomial",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.4 Momentos de la binomial",
+    "text": "11.4 Momentos de la binomial\nPor linealidad,\n\\[\nE[S_n]=\\sum_{i=1}^{n}E[X_i]=np.\n\\]\nComo las variables son independientes,\n\\[\n\\operatorname{Var}(S_n)\n=\\sum_{i=1}^{n}\\operatorname{Var}(X_i)\n=np(1-p).\n\\]\nLa representación como suma de Bernoulli es más estructural que una derivación puramente algebraica de los momentos.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#cociente-entre-masas-consecutivas",
+    "href": "11-distribuciones-discretas-especiales.html#cociente-entre-masas-consecutivas",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.5 Cociente entre masas consecutivas",
+    "text": "11.5 Cociente entre masas consecutivas\nPara una binomial,\n\\[\n\\frac{P(X=x+1)}{P(X=x)}\n=\\frac{n-x}{x+1}\\frac{p}{1-p}.\n\\]\nEsta relación permite estudiar la forma de la PMF y localizar sus modos.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#distribución-geométrica",
+    "href": "11-distribuciones-discretas-especiales.html#distribución-geométrica",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.6 Distribución geométrica",
+    "text": "11.6 Distribución geométrica\nConsidere una sucesión de ensayos de Bernoulli independientes con parámetro \\(p\\). Sea\n\\[\nT=\\inf\\{n\\ge1:X_n=1\\},\n\\]\nel tiempo discreto hasta el primer éxito.\nEntonces\n\\[\nT\\sim\\operatorname{Geométrica}(p)\n\\]\ncon soporte \\(\\{1,2,\\ldots\\}\\) y\n\\[\nP(T=t)=(1-p)^{t-1}p.\n\\]\nLa normalización se obtiene de la serie geométrica:\n\\[\n\\sum_{t=1}^{\\infty}(1-p)^{t-1}p\n=p\\sum_{j=0}^{\\infty}(1-p)^j=1.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#función-de-supervivencia-geométrica",
+    "href": "11-distribuciones-discretas-especiales.html#función-de-supervivencia-geométrica",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.7 Función de supervivencia geométrica",
+    "text": "11.7 Función de supervivencia geométrica\nPara \\(t=0,1,2,\\ldots\\),\n\\[\nP(T&gt;t)=(1-p)^t.\n\\]\nPor tanto,\n\\[\nF_T(t)=1-(1-p)^{\\lfloor t\\rfloor}\n\\]\npara \\(t\\ge1\\), interpretando adecuadamente la función escalonada.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#propiedad-sin-memoria",
+    "href": "11-distribuciones-discretas-especiales.html#propiedad-sin-memoria",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.8 Propiedad sin memoria",
+    "text": "11.8 Propiedad sin memoria\nLa geométrica satisface\n\\[\nP(T&gt;s+t\\mid T&gt;s)=P(T&gt;t),\n\\]\npara \\(s,t\\ge0\\) enteros.\nDemostración:\n\\[\nP(T&gt;s+t\\mid T&gt;s)\n=\\frac{P(T&gt;s+t)}{P(T&gt;s)}\n=\\frac{(1-p)^{s+t}}{(1-p)^s}\n=(1-p)^t.\n\\]\nLa distribución geométrica es la única distribución discreta sobre enteros positivos con esta propiedad, bajo condiciones naturales de no degeneración.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#esperanza-de-la-geométrica",
+    "href": "11-distribuciones-discretas-especiales.html#esperanza-de-la-geométrica",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.9 Esperanza de la geométrica",
+    "text": "11.9 Esperanza de la geométrica\nUsando la identidad para variables enteras positivas\n\\[\nE[T]=\\sum_{t=0}^{\\infty}P(T&gt;t),\n\\]\nobtenemos\n\\[\nE[T]=\\sum_{t=0}^{\\infty}(1-p)^t=\\frac1p.\n\\]\nAdemás,\n\\[\n\\operatorname{Var}(T)=\\frac{1-p}{p^2}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#distribución-binomial-negativa",
+    "href": "11-distribuciones-discretas-especiales.html#distribución-binomial-negativa",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.10 Distribución binomial negativa",
+    "text": "11.10 Distribución binomial negativa\nSea \\(T_r\\) el número total de ensayos necesarios para observar el \\(r\\)-ésimo éxito, con \\(r\\in\\mathbb N\\).\nEntonces\n\\[\nT_r\\sim\\operatorname{BinomialNegativa}(r,p)\n\\]\nbajo la parametrización de número total de ensayos, con soporte\n\\[\n\\{r,r+1,r+2,\\ldots\\}.\n\\]\nLa PMF es\n\\[\nP(T_r=t)\n=\\binom{t-1}{r-1}p^r(1-p)^{t-r},\n\\]\npara \\(t\\ge r\\).",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#derivación-de-la-pmf-binomial-negativa",
+    "href": "11-distribuciones-discretas-especiales.html#derivación-de-la-pmf-binomial-negativa",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.11 Derivación de la PMF binomial negativa",
+    "text": "11.11 Derivación de la PMF binomial negativa\nEl evento \\(\\{T_r=t\\}\\) exige dos condiciones:\n\nen los primeros \\(t-1\\) ensayos ocurren exactamente \\(r-1\\) éxitos;\nel ensayo \\(t\\) es éxito.\n\nPor independencia,\n\\[\nP(T_r=t)\n=\\binom{t-1}{r-1}p^{r-1}(1-p)^{t-r}p,\n\\]\nque conduce a la fórmula anterior.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#representación-como-suma-de-geométricas",
+    "href": "11-distribuciones-discretas-especiales.html#representación-como-suma-de-geométricas",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.12 Representación como suma de geométricas",
+    "text": "11.12 Representación como suma de geométricas\nSean \\(G_1,\\ldots,G_r\\) independientes y geométricas con parámetro \\(p\\), cada una contando ensayos desde un éxito hasta el siguiente. Entonces\n\\[\nT_r=G_1+\\cdots+G_r.\n\\]\nDe aquí se obtiene inmediatamente\n\\[\nE[T_r]=\\frac{r}{p}\n\\]\ny\n\\[\n\\operatorname{Var}(T_r)=\\frac{r(1-p)}{p^2}.\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#relación-con-el-conteo-de-fracasos",
+    "href": "11-distribuciones-discretas-especiales.html#relación-con-el-conteo-de-fracasos",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.13 Relación con el conteo de fracasos",
+    "text": "11.13 Relación con el conteo de fracasos\nOtra parametrización define\n\\[\nY=T_r-r,\n\\]\nque cuenta el número de fracasos antes del \\(r\\)-ésimo éxito. Entonces\n\\[\nP(Y=y)\n=\\binom{y+r-1}{r-1}p^r(1-p)^y,\n\\]\npara \\(y=0,1,2,\\ldots\\).\nEsta es la convención empleada por las funciones dnbinom, pnbinom y rnbinom de R.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#relaciones-entre-las-cuatro-familias",
+    "href": "11-distribuciones-discretas-especiales.html#relaciones-entre-las-cuatro-familias",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.14 Relaciones entre las cuatro familias",
+    "text": "11.14 Relaciones entre las cuatro familias\n\nBernoulli es Binomial\\((1,p)\\).\nUna binomial es suma de Bernoulli independientes.\nUna geométrica es BinomialNegativa\\((1,p)\\) bajo la parametrización de tiempo hasta el éxito.\nUna binomial negativa es suma de geométricas independientes con el mismo \\(p\\).\n\nEstas relaciones permiten derivar propiedades de una familia a partir de otra.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#selección-estructural-del-modelo",
+    "href": "11-distribuciones-discretas-especiales.html#selección-estructural-del-modelo",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.15 Selección estructural del modelo",
+    "text": "11.15 Selección estructural del modelo\nLa pregunta matemática central es qué variable se está definiendo:\n\nindicador de un solo ensayo \\(\\rightarrow\\) Bernoulli;\nnúmero de éxitos en un número fijo de ensayos \\(\\rightarrow\\) binomial;\ntiempo hasta el primer éxito \\(\\rightarrow\\) geométrica;\ntiempo hasta el \\(r\\)-ésimo éxito \\(\\rightarrow\\) binomial negativa.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#ejercicios-teóricos",
+    "href": "11-distribuciones-discretas-especiales.html#ejercicios-teóricos",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.16 Ejercicios teóricos",
+    "text": "11.16 Ejercicios teóricos\n\nVerifica directamente que la PMF Bernoulli suma 1.\nDeriva la PMF binomial a partir de una suma de Bernoulli independientes.\nDemuestra la normalización binomial mediante el teorema binomial.\nObtén \\(E[X]\\) y \\(\\operatorname{Var}(X)\\) de una binomial usando indicadores.\nDemuestra la fórmula \\(P(T&gt;t)=(1-p)^t\\) para una geométrica.\nDemuestra formalmente la propiedad sin memoria.\nObtén \\(E[T]=1/p\\) usando probabilidades de cola.\nDeriva la PMF binomial negativa a partir del evento de que el último ensayo sea el \\(r\\)-ésimo éxito.\nUsa la representación como suma de geométricas para obtener media y varianza de la binomial negativa.\nReto ★. Demuestra que si una distribución sobre los enteros positivos satisface la propiedad sin memoria y \\(P(T&gt;1)&gt;0\\), entonces su cola debe ser geométrica.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#materiales-complementarios-del-capítulo",
+    "href": "11-distribuciones-discretas-especiales.html#materiales-complementarios-del-capítulo",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.17 Materiales complementarios del capítulo",
+    "text": "11.17 Materiales complementarios del capítulo\n\n\n\nMaterial\nFormato\nAcceso\nPropósito\n\n\n\n\nCuaderno de Google Colab\nNotebook interactivo (R)\nAbrir en Colab\nExplorar computacionalmente las distribuciones del capítulo en el volumen aplicado.\n\n\nCuaderno de R\nR Markdown\nAbrir cuaderno R\nReproducir cálculos, gráficas y simulaciones en R/RStudio.\n\n\nPresentación\nPDF / PPT\nPróximamente\nSe incorporará cuando se proporcionen los enlaces.\n\n\nVideo\nVideo\nPróximamente\nExplicación audiovisual complementaria.\n\n\nInfografía\nImagen / PDF\nPróximamente\nSíntesis visual de distribuciones y relaciones estructurales.\n\n\n\nLos cuadernos computacionales se alojan en Introducción a la Probabilidad con R y GeoGebra y sirven como apoyo práctico de este desarrollo teórico.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
+    "objectID": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
+    "href": "11-distribuciones-discretas-especiales.html#referencias-del-capítulo",
+    "title": "11  Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa",
+    "section": "11.18 Referencias del capítulo",
+    "text": "11.18 Referencias del capítulo\nEl desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de Walpole et al. (2012), Devore (2016), Montgomery y Runger (2018) y Johnson (2018).\n\n\n\n\nDevore, Jay L. 2016. Probability and Statistics for Engineering and the Sciences. 9.ª ed. Cengage Learning.\n\n\nJohnson, Richard A. 2018. Miller & Freund’s Probability and Statistics for Engineers. 9.ª ed. Pearson.\n\n\nMontgomery, Douglas C., y George C. Runger. 2018. Applied Statistics and Probability for Engineers. 7.ª ed. Wiley.\n\n\nWalpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. Probabilidad y estadística para ingeniería y ciencias. 9.ª ed. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referencias",

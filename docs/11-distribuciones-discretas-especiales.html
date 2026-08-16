@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Referencias – Fundamentos Teóricos de Introducción a la Probabilidad</title>
+<title>11&nbsp; Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa – Fundamentos Teóricos de Introducción a la Probabilidad</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -55,7 +55,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11-distribuciones-discretas-especiales.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./10-esperanza-varianza-chebyshev.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -94,6 +95,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -106,7 +136,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">Referencias</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11-distribuciones-discretas-especiales.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -227,13 +257,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-distribuciones-discretas-especiales.html" class="sidebar-item-text sidebar-link">
+  <a href="./11-distribuciones-discretas-especiales.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
 </li>
@@ -242,15 +272,38 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En este capítulo</h2>
+   
+  <ul>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link active" data-scroll-target="#objetivos"><span class="header-section-number">11.1</span> Objetivos</a></li>
+  <li><a href="#variable-de-bernoulli" id="toc-variable-de-bernoulli" class="nav-link" data-scroll-target="#variable-de-bernoulli"><span class="header-section-number">11.2</span> Variable de Bernoulli</a></li>
+  <li><a href="#la-binomial-como-suma-de-bernoulli" id="toc-la-binomial-como-suma-de-bernoulli" class="nav-link" data-scroll-target="#la-binomial-como-suma-de-bernoulli"><span class="header-section-number">11.3</span> La binomial como suma de Bernoulli</a></li>
+  <li><a href="#momentos-de-la-binomial" id="toc-momentos-de-la-binomial" class="nav-link" data-scroll-target="#momentos-de-la-binomial"><span class="header-section-number">11.4</span> Momentos de la binomial</a></li>
+  <li><a href="#cociente-entre-masas-consecutivas" id="toc-cociente-entre-masas-consecutivas" class="nav-link" data-scroll-target="#cociente-entre-masas-consecutivas"><span class="header-section-number">11.5</span> Cociente entre masas consecutivas</a></li>
+  <li><a href="#distribución-geométrica" id="toc-distribución-geométrica" class="nav-link" data-scroll-target="#distribución-geométrica"><span class="header-section-number">11.6</span> Distribución geométrica</a></li>
+  <li><a href="#función-de-supervivencia-geométrica" id="toc-función-de-supervivencia-geométrica" class="nav-link" data-scroll-target="#función-de-supervivencia-geométrica"><span class="header-section-number">11.7</span> Función de supervivencia geométrica</a></li>
+  <li><a href="#propiedad-sin-memoria" id="toc-propiedad-sin-memoria" class="nav-link" data-scroll-target="#propiedad-sin-memoria"><span class="header-section-number">11.8</span> Propiedad sin memoria</a></li>
+  <li><a href="#esperanza-de-la-geométrica" id="toc-esperanza-de-la-geométrica" class="nav-link" data-scroll-target="#esperanza-de-la-geométrica"><span class="header-section-number">11.9</span> Esperanza de la geométrica</a></li>
+  <li><a href="#distribución-binomial-negativa" id="toc-distribución-binomial-negativa" class="nav-link" data-scroll-target="#distribución-binomial-negativa"><span class="header-section-number">11.10</span> Distribución binomial negativa</a></li>
+  <li><a href="#derivación-de-la-pmf-binomial-negativa" id="toc-derivación-de-la-pmf-binomial-negativa" class="nav-link" data-scroll-target="#derivación-de-la-pmf-binomial-negativa"><span class="header-section-number">11.11</span> Derivación de la PMF binomial negativa</a></li>
+  <li><a href="#representación-como-suma-de-geométricas" id="toc-representación-como-suma-de-geométricas" class="nav-link" data-scroll-target="#representación-como-suma-de-geométricas"><span class="header-section-number">11.12</span> Representación como suma de geométricas</a></li>
+  <li><a href="#relación-con-el-conteo-de-fracasos" id="toc-relación-con-el-conteo-de-fracasos" class="nav-link" data-scroll-target="#relación-con-el-conteo-de-fracasos"><span class="header-section-number">11.13</span> Relación con el conteo de fracasos</a></li>
+  <li><a href="#relaciones-entre-las-cuatro-familias" id="toc-relaciones-entre-las-cuatro-familias" class="nav-link" data-scroll-target="#relaciones-entre-las-cuatro-familias"><span class="header-section-number">11.14</span> Relaciones entre las cuatro familias</a></li>
+  <li><a href="#selección-estructural-del-modelo" id="toc-selección-estructural-del-modelo" class="nav-link" data-scroll-target="#selección-estructural-del-modelo"><span class="header-section-number">11.15</span> Selección estructural del modelo</a></li>
+  <li><a href="#ejercicios-teóricos" id="toc-ejercicios-teóricos" class="nav-link" data-scroll-target="#ejercicios-teóricos"><span class="header-section-number">11.16</span> Ejercicios teóricos</a></li>
+  <li><a href="#materiales-complementarios-del-capítulo" id="toc-materiales-complementarios-del-capítulo" class="nav-link" data-scroll-target="#materiales-complementarios-del-capítulo"><span class="header-section-number">11.17</span> Materiales complementarios del capítulo</a></li>
+  <li><a href="#referencias-del-capítulo" id="toc-referencias-del-capítulo" class="nav-link" data-scroll-target="#referencias-del-capítulo"><span class="header-section-number">11.18</span> Referencias del capítulo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Referencias</h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></h1>
 </div>
 
 
@@ -267,31 +320,310 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<section id="objetivos" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">11.1</span> Objetivos</h2>
+<p>Este capítulo presenta formalmente cuatro familias discretas construidas a partir de ensayos de Bernoulli. Se estudiarán sus funciones de masa, soportes, momentos, relaciones estructurales y propiedades características.</p>
+</section>
+<section id="variable-de-bernoulli" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="variable-de-bernoulli"><span class="header-section-number">11.2</span> Variable de Bernoulli</h2>
+<p>Sea <span class="math inline">\(X\)</span> una variable con soporte <span class="math inline">\(\{0,1\}\)</span> tal que</p>
+<p><span class="math display">\[
+P(X=1)=p,\qquad P(X=0)=1-p,
+\]</span></p>
+<p>con <span class="math inline">\(0\le p\le1\)</span>. Entonces</p>
+<p><span class="math display">\[
+X\sim\operatorname{Bernoulli}(p).
+\]</span></p>
+<p>Su PMF puede escribirse como</p>
+<p><span class="math display">\[
+p_X(x)=p^x(1-p)^{1-x},\qquad x\in\{0,1\}.
+\]</span></p>
+<p>La esperanza es</p>
+<p><span class="math display">\[
+E[X]=0(1-p)+1(p)=p,
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+E[X^2]=p.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)=p-p^2=p(1-p).
+\]</span></p>
+</section>
+<section id="la-binomial-como-suma-de-bernoulli" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="la-binomial-como-suma-de-bernoulli"><span class="header-section-number">11.3</span> La binomial como suma de Bernoulli</h2>
+<p>Sean</p>
+<p><span class="math display">\[
+X_1,\ldots,X_n
+\]</span></p>
+<p>variables Bernoulli independientes con parámetro común <span class="math inline">\(p\)</span>, y defina</p>
+<p><span class="math display">\[
+S_n=X_1+\cdots+X_n.
+\]</span></p>
+<p>Entonces <span class="math inline">\(S_n\)</span> cuenta el número de éxitos y</p>
+<p><span class="math display">\[
+\boxed{S_n\sim\operatorname{Binomial}(n,p)}.
+\]</span></p>
+<p>Para <span class="math inline">\(x=0,1,\ldots,n\)</span>,</p>
+<p><span class="math display">\[
+P(S_n=x)=\binom{n}{x}p^x(1-p)^{n-x}.
+\]</span></p>
+<p>La normalización se verifica mediante el teorema binomial:</p>
+<p><span class="math display">\[
+\sum_{x=0}^{n}\binom{n}{x}p^x(1-p)^{n-x}
+=(p+1-p)^n=1.
+\]</span></p>
+</section>
+<section id="momentos-de-la-binomial" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="momentos-de-la-binomial"><span class="header-section-number">11.4</span> Momentos de la binomial</h2>
+<p>Por linealidad,</p>
+<p><span class="math display">\[
+E[S_n]=\sum_{i=1}^{n}E[X_i]=np.
+\]</span></p>
+<p>Como las variables son independientes,</p>
+<p><span class="math display">\[
+\operatorname{Var}(S_n)
+=\sum_{i=1}^{n}\operatorname{Var}(X_i)
+=np(1-p).
+\]</span></p>
+<p>La representación como suma de Bernoulli es más estructural que una derivación puramente algebraica de los momentos.</p>
+</section>
+<section id="cociente-entre-masas-consecutivas" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="cociente-entre-masas-consecutivas"><span class="header-section-number">11.5</span> Cociente entre masas consecutivas</h2>
+<p>Para una binomial,</p>
+<p><span class="math display">\[
+\frac{P(X=x+1)}{P(X=x)}
+=\frac{n-x}{x+1}\frac{p}{1-p}.
+\]</span></p>
+<p>Esta relación permite estudiar la forma de la PMF y localizar sus modos.</p>
+</section>
+<section id="distribución-geométrica" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="distribución-geométrica"><span class="header-section-number">11.6</span> Distribución geométrica</h2>
+<p>Considere una sucesión de ensayos de Bernoulli independientes con parámetro <span class="math inline">\(p\)</span>. Sea</p>
+<p><span class="math display">\[
+T=\inf\{n\ge1:X_n=1\},
+\]</span></p>
+<p>el tiempo discreto hasta el primer éxito.</p>
+<p>Entonces</p>
+<p><span class="math display">\[
+T\sim\operatorname{Geométrica}(p)
+\]</span></p>
+<p>con soporte <span class="math inline">\(\{1,2,\ldots\}\)</span> y</p>
+<p><span class="math display">\[
+P(T=t)=(1-p)^{t-1}p.
+\]</span></p>
+<p>La normalización se obtiene de la serie geométrica:</p>
+<p><span class="math display">\[
+\sum_{t=1}^{\infty}(1-p)^{t-1}p
+=p\sum_{j=0}^{\infty}(1-p)^j=1.
+\]</span></p>
+</section>
+<section id="función-de-supervivencia-geométrica" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="función-de-supervivencia-geométrica"><span class="header-section-number">11.7</span> Función de supervivencia geométrica</h2>
+<p>Para <span class="math inline">\(t=0,1,2,\ldots\)</span>,</p>
+<p><span class="math display">\[
+P(T&gt;t)=(1-p)^t.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+F_T(t)=1-(1-p)^{\lfloor t\rfloor}
+\]</span></p>
+<p>para <span class="math inline">\(t\ge1\)</span>, interpretando adecuadamente la función escalonada.</p>
+</section>
+<section id="propiedad-sin-memoria" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="propiedad-sin-memoria"><span class="header-section-number">11.8</span> Propiedad sin memoria</h2>
+<p>La geométrica satisface</p>
+<p><span class="math display">\[
+P(T&gt;s+t\mid T&gt;s)=P(T&gt;t),
+\]</span></p>
+<p>para <span class="math inline">\(s,t\ge0\)</span> enteros.</p>
+<p>Demostración:</p>
+<p><span class="math display">\[
+P(T&gt;s+t\mid T&gt;s)
+=\frac{P(T&gt;s+t)}{P(T&gt;s)}
+=\frac{(1-p)^{s+t}}{(1-p)^s}
+=(1-p)^t.
+\]</span></p>
+<p>La distribución geométrica es la única distribución discreta sobre enteros positivos con esta propiedad, bajo condiciones naturales de no degeneración.</p>
+</section>
+<section id="esperanza-de-la-geométrica" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="esperanza-de-la-geométrica"><span class="header-section-number">11.9</span> Esperanza de la geométrica</h2>
+<p>Usando la identidad para variables enteras positivas</p>
+<p><span class="math display">\[
+E[T]=\sum_{t=0}^{\infty}P(T&gt;t),
+\]</span></p>
+<p>obtenemos</p>
+<p><span class="math display">\[
+E[T]=\sum_{t=0}^{\infty}(1-p)^t=\frac1p.
+\]</span></p>
+<p>Además,</p>
+<p><span class="math display">\[
+\operatorname{Var}(T)=\frac{1-p}{p^2}.
+\]</span></p>
+</section>
+<section id="distribución-binomial-negativa" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="distribución-binomial-negativa"><span class="header-section-number">11.10</span> Distribución binomial negativa</h2>
+<p>Sea <span class="math inline">\(T_r\)</span> el número total de ensayos necesarios para observar el <span class="math inline">\(r\)</span>-ésimo éxito, con <span class="math inline">\(r\in\mathbb N\)</span>.</p>
+<p>Entonces</p>
+<p><span class="math display">\[
+T_r\sim\operatorname{BinomialNegativa}(r,p)
+\]</span></p>
+<p>bajo la parametrización de número total de ensayos, con soporte</p>
+<p><span class="math display">\[
+\{r,r+1,r+2,\ldots\}.
+\]</span></p>
+<p>La PMF es</p>
+<p><span class="math display">\[
+P(T_r=t)
+=\binom{t-1}{r-1}p^r(1-p)^{t-r},
+\]</span></p>
+<p>para <span class="math inline">\(t\ge r\)</span>.</p>
+</section>
+<section id="derivación-de-la-pmf-binomial-negativa" class="level2" data-number="11.11">
+<h2 data-number="11.11" class="anchored" data-anchor-id="derivación-de-la-pmf-binomial-negativa"><span class="header-section-number">11.11</span> Derivación de la PMF binomial negativa</h2>
+<p>El evento <span class="math inline">\(\{T_r=t\}\)</span> exige dos condiciones:</p>
+<ol type="1">
+<li>en los primeros <span class="math inline">\(t-1\)</span> ensayos ocurren exactamente <span class="math inline">\(r-1\)</span> éxitos;</li>
+<li>el ensayo <span class="math inline">\(t\)</span> es éxito.</li>
+</ol>
+<p>Por independencia,</p>
+<p><span class="math display">\[
+P(T_r=t)
+=\binom{t-1}{r-1}p^{r-1}(1-p)^{t-r}p,
+\]</span></p>
+<p>que conduce a la fórmula anterior.</p>
+</section>
+<section id="representación-como-suma-de-geométricas" class="level2" data-number="11.12">
+<h2 data-number="11.12" class="anchored" data-anchor-id="representación-como-suma-de-geométricas"><span class="header-section-number">11.12</span> Representación como suma de geométricas</h2>
+<p>Sean <span class="math inline">\(G_1,\ldots,G_r\)</span> independientes y geométricas con parámetro <span class="math inline">\(p\)</span>, cada una contando ensayos desde un éxito hasta el siguiente. Entonces</p>
+<p><span class="math display">\[
+T_r=G_1+\cdots+G_r.
+\]</span></p>
+<p>De aquí se obtiene inmediatamente</p>
+<p><span class="math display">\[
+E[T_r]=\frac{r}{p}
+\]</span></p>
+<p>y</p>
+<p><span class="math display">\[
+\operatorname{Var}(T_r)=\frac{r(1-p)}{p^2}.
+\]</span></p>
+</section>
+<section id="relación-con-el-conteo-de-fracasos" class="level2" data-number="11.13">
+<h2 data-number="11.13" class="anchored" data-anchor-id="relación-con-el-conteo-de-fracasos"><span class="header-section-number">11.13</span> Relación con el conteo de fracasos</h2>
+<p>Otra parametrización define</p>
+<p><span class="math display">\[
+Y=T_r-r,
+\]</span></p>
+<p>que cuenta el número de fracasos antes del <span class="math inline">\(r\)</span>-ésimo éxito. Entonces</p>
+<p><span class="math display">\[
+P(Y=y)
+=\binom{y+r-1}{r-1}p^r(1-p)^y,
+\]</span></p>
+<p>para <span class="math inline">\(y=0,1,2,\ldots\)</span>.</p>
+<p>Esta es la convención empleada por las funciones <code>dnbinom</code>, <code>pnbinom</code> y <code>rnbinom</code> de R.</p>
+</section>
+<section id="relaciones-entre-las-cuatro-familias" class="level2" data-number="11.14">
+<h2 data-number="11.14" class="anchored" data-anchor-id="relaciones-entre-las-cuatro-familias"><span class="header-section-number">11.14</span> Relaciones entre las cuatro familias</h2>
+<ul>
+<li>Bernoulli es Binomial<span class="math inline">\((1,p)\)</span>.</li>
+<li>Una binomial es suma de Bernoulli independientes.</li>
+<li>Una geométrica es BinomialNegativa<span class="math inline">\((1,p)\)</span> bajo la parametrización de tiempo hasta el éxito.</li>
+<li>Una binomial negativa es suma de geométricas independientes con el mismo <span class="math inline">\(p\)</span>.</li>
+</ul>
+<p>Estas relaciones permiten derivar propiedades de una familia a partir de otra.</p>
+</section>
+<section id="selección-estructural-del-modelo" class="level2" data-number="11.15">
+<h2 data-number="11.15" class="anchored" data-anchor-id="selección-estructural-del-modelo"><span class="header-section-number">11.15</span> Selección estructural del modelo</h2>
+<p>La pregunta matemática central es qué variable se está definiendo:</p>
+<ul>
+<li>indicador de un solo ensayo <span class="math inline">\(\rightarrow\)</span> Bernoulli;</li>
+<li>número de éxitos en un número fijo de ensayos <span class="math inline">\(\rightarrow\)</span> binomial;</li>
+<li>tiempo hasta el primer éxito <span class="math inline">\(\rightarrow\)</span> geométrica;</li>
+<li>tiempo hasta el <span class="math inline">\(r\)</span>-ésimo éxito <span class="math inline">\(\rightarrow\)</span> binomial negativa.</li>
+</ul>
+</section>
+<section id="ejercicios-teóricos" class="level2" data-number="11.16">
+<h2 data-number="11.16" class="anchored" data-anchor-id="ejercicios-teóricos"><span class="header-section-number">11.16</span> Ejercicios teóricos</h2>
+<ol type="1">
+<li>Verifica directamente que la PMF Bernoulli suma 1.</li>
+<li>Deriva la PMF binomial a partir de una suma de Bernoulli independientes.</li>
+<li>Demuestra la normalización binomial mediante el teorema binomial.</li>
+<li>Obtén <span class="math inline">\(E[X]\)</span> y <span class="math inline">\(\operatorname{Var}(X)\)</span> de una binomial usando indicadores.</li>
+<li>Demuestra la fórmula <span class="math inline">\(P(T&gt;t)=(1-p)^t\)</span> para una geométrica.</li>
+<li>Demuestra formalmente la propiedad sin memoria.</li>
+<li>Obtén <span class="math inline">\(E[T]=1/p\)</span> usando probabilidades de cola.</li>
+<li>Deriva la PMF binomial negativa a partir del evento de que el último ensayo sea el <span class="math inline">\(r\)</span>-ésimo éxito.</li>
+<li>Usa la representación como suma de geométricas para obtener media y varianza de la binomial negativa.</li>
+<li><strong>Reto ★.</strong> Demuestra que si una distribución sobre los enteros positivos satisface la propiedad sin memoria y <span class="math inline">\(P(T&gt;1)&gt;0\)</span>, entonces su cola debe ser geométrica.</li>
+</ol>
+</section>
+<section id="materiales-complementarios-del-capítulo" class="level2" data-number="11.17">
+<h2 data-number="11.17" class="anchored" data-anchor-id="materiales-complementarios-del-capítulo"><span class="header-section-number">11.17</span> Materiales complementarios del capítulo</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Material</th>
+<th>Formato</th>
+<th>Acceso</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cuaderno de Google Colab</td>
+<td>Notebook interactivo (R)</td>
+<td><a href="https://colab.research.google.com/github/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/notebooks/11-distribuciones-discretas-especiales-colab.ipynb">Abrir en Colab</a></td>
+<td>Explorar computacionalmente las distribuciones del capítulo en el volumen aplicado.</td>
+</tr>
+<tr class="even">
+<td>Cuaderno de R</td>
+<td>R Markdown</td>
+<td><a href="https://github.com/gilbertorodriguez59/introduccion-probabilidad-r-geogebra-dev/blob/main/cuadernos-r/11-distribuciones-discretas-especiales.Rmd">Abrir cuaderno R</a></td>
+<td>Reproducir cálculos, gráficas y simulaciones en R/RStudio.</td>
+</tr>
+<tr class="odd">
+<td>Presentación</td>
+<td>PDF / PPT</td>
+<td>Próximamente</td>
+<td>Se incorporará cuando se proporcionen los enlaces.</td>
+</tr>
+<tr class="even">
+<td>Video</td>
+<td>Video</td>
+<td>Próximamente</td>
+<td>Explicación audiovisual complementaria.</td>
+</tr>
+<tr class="odd">
+<td>Infografía</td>
+<td>Imagen / PDF</td>
+<td>Próximamente</td>
+<td>Síntesis visual de distribuciones y relaciones estructurales.</td>
+</tr>
+</tbody>
+</table>
+<p>Los cuadernos computacionales se alojan en <strong>Introducción a la Probabilidad con R y GeoGebra</strong> y sirven como apoyo práctico de este desarrollo teórico.</p>
+</section>
+<section id="referencias-del-capítulo" class="level2" data-number="11.18">
+<h2 data-number="11.18" class="anchored" data-anchor-id="referencias-del-capítulo"><span class="header-section-number">11.18</span> Referencias del capítulo</h2>
+<p>El desarrollo de Bernoulli, binomial, geométrica y binomial negativa sigue la formulación estándar de <span class="citation" data-cites="walpole2012">Walpole et&nbsp;al. (<a href="references.html#ref-walpole2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="devore2016">Devore (<a href="references.html#ref-devore2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="montgomery2018">Montgomery y Runger (<a href="references.html#ref-montgomery2018" role="doc-biblioref">2018</a>)</span> y <span class="citation" data-cites="johnson2018">Johnson (<a href="references.html#ref-johnson2018" role="doc-biblioref">2018</a>)</span>.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-devore2016" class="csl-entry" role="listitem">
-Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and
-the Sciences</em>. 9th ed. Cengage Learning.
+Devore, Jay L. 2016. <em>Probability and Statistics for Engineering and the Sciences</em>. 9.ª ed. Cengage Learning.
 </div>
 <div id="ref-johnson2018" class="csl-entry" role="listitem">
-Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and
-Statistics for Engineers</em>. 9th ed. Pearson.
-</div>
-<div id="ref-kerns2010" class="csl-entry" role="listitem">
-Kerns, G. Jay. 2010. <em>Introduction to Probability and Statistics
-Using r</em>. 1st ed.
+Johnson, Richard A. 2018. <em>Miller &amp; Freund’s Probability and Statistics for Engineers</em>. 9.ª ed. Pearson.
 </div>
 <div id="ref-montgomery2018" class="csl-entry" role="listitem">
-Montgomery, Douglas C., and George C. Runger. 2018. <em>Applied
-Statistics and Probability for Engineers</em>. 7th ed. Wiley.
+Montgomery, Douglas C., y George C. Runger. 2018. <em>Applied Statistics and Probability for Engineers</em>. 7.ª ed. Wiley.
 </div>
 <div id="ref-walpole2012" class="csl-entry" role="listitem">
-Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.
-2012. <em>Probabilidad y Estadística Para Ingeniería y Ciencias</em>.
-9th ed. Pearson.
+Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, y Keying Ye. 2012. <em>Probabilidad y estadística para ingeniería y ciencias</em>. 9.ª ed. Pearson.
 </div>
 </div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -696,11 +1028,14 @@ Walpole, Ronald E., Raymond H. Myers, Sharon L. Myers, and Keying Ye.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11-distribuciones-discretas-especiales.html" class="pagination-link" aria-label="Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Distribuciones discretas especiales I: Bernoulli, binomial, geométrica y binomial negativa</span></span>
+      <a href="./10-esperanza-varianza-chebyshev.html" class="pagination-link" aria-label="Esperanza matemática, momentos, varianza y desigualdades probabilísticas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Esperanza matemática, momentos, varianza y desigualdades probabilísticas</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Referencias">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
