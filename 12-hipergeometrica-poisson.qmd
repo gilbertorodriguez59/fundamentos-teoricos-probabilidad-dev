@@ -1,0 +1,296 @@
+# Distribuciones discretas especiales II: hipergeométrica y Poisson
+
+## Objetivos
+
+Este capítulo desarrolla formalmente dos familias discretas fundamentales: la distribución hipergeométrica, asociada al muestreo sin reemplazo en poblaciones finitas, y la distribución de Poisson, asociada al conteo de eventos raros o dispersos en intervalos.
+
+## Distribución hipergeométrica
+
+Sea una población finita de tamaño $N$ con $K$ elementos clasificados como éxitos y $N-K$ como fracasos. Se extrae una muestra de tamaño $n$ sin reemplazo y se define $X$ como el número de éxitos observados.
+
+Entonces
+
+$$
+P(X=x)=\frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}},
+$$
+
+para
+
+$$
+\max(0,n-N+K)\le x\le\min(n,K).
+$$
+
+### Normalización
+
+La identidad de Vandermonde
+
+$$
+\sum_x \binom{K}{x}\binom{N-K}{n-x}=\binom{N}{n}
+$$
+
+implica inmediatamente que
+
+$$
+\sum_x P(X=x)=1.
+$$
+
+## Media de la hipergeométrica
+
+Escribamos
+
+$$
+X=I_1+\cdots+I_n,
+$$
+
+donde $I_j$ indica que la extracción $j$ corresponde a uno de los $K$ elementos de interés. Por simetría,
+
+$$
+E[I_j]=\frac KN.
+$$
+
+Por linealidad,
+
+$$
+\boxed{E[X]=n\frac KN}.
+$$
+
+La independencia no es necesaria para este argumento.
+
+## Varianza de la hipergeométrica
+
+Las variables indicadoras de distintas extracciones no son independientes. Para $i\ne j$,
+
+$$
+E[I_iI_j]=\frac KN\frac{K-1}{N-1}.
+$$
+
+De aquí se obtiene
+
+$$
+\operatorname{Cov}(I_i,I_j)
+=-\frac{K(N-K)}{N^2(N-1)}.
+$$
+
+Al sumar varianzas y covarianzas,
+
+$$
+\boxed{
+\operatorname{Var}(X)
+=n\frac KN\left(1-\frac KN\right)\frac{N-n}{N-1}
+}.
+$$
+
+El factor
+
+$$
+\frac{N-n}{N-1}
+$$
+
+expresa la reducción de variabilidad debida al muestreo sin reemplazo.
+
+## Aproximación binomial de la hipergeométrica
+
+Si $N$ es grande respecto de $n$ y
+
+$$
+p=\frac KN,
+$$
+
+la dependencia inducida por no reemplazar es débil. En este régimen,
+
+$$
+\operatorname{Hipergeométrica}(N,K,n)
+\approx
+\operatorname{Binomial}(n,p).
+$$
+
+La convergencia puede verse comparando los factores sucesivos de ambas PMF cuando $N\to\infty$, $K/N\to p$ y $n$ permanece fijo.
+
+## Distribución de Poisson
+
+Para $\lambda>0$, una variable $X$ tiene distribución de Poisson si
+
+$$
+\boxed{P(X=x)=e^{-\lambda}\frac{\lambda^x}{x!}},
+\qquad x=0,1,2,\ldots
+$$
+
+Escribimos
+
+$$
+X\sim\operatorname{Poisson}(\lambda).
+$$
+
+## Normalización
+
+Por la serie exponencial,
+
+$$
+e^{\lambda}=\sum_{x=0}^{\infty}\frac{\lambda^x}{x!}.
+$$
+
+Por tanto,
+
+$$
+\sum_{x=0}^{\infty}e^{-\lambda}\frac{\lambda^x}{x!}=1.
+$$
+
+## Media y varianza de Poisson
+
+Para la media,
+
+$$
+E[X]
+=\sum_{x=1}^{\infty}x e^{-\lambda}\frac{\lambda^x}{x!}
+=\lambda e^{-\lambda}\sum_{x=1}^{\infty}\frac{\lambda^{x-1}}{(x-1)!}
+=\lambda.
+$$
+
+Asimismo,
+
+$$
+E[X(X-1)]=\lambda^2.
+$$
+
+Como
+
+$$
+X^2=X(X-1)+X,
+$$
+
+se sigue que
+
+$$
+E[X^2]=\lambda^2+\lambda
+$$
+
+y entonces
+
+$$
+\boxed{\operatorname{Var}(X)=\lambda}.
+$$
+
+## Función generadora de probabilidades
+
+La función generadora de probabilidades es
+
+$$
+G_X(s)=E[s^X].
+$$
+
+Para una Poisson,
+
+$$
+G_X(s)=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(\lambda s)^x}{x!}
+=\exp\{\lambda(s-1)\}.
+$$
+
+Esta expresión permite obtener momentos y estudiar sumas de variables independientes.
+
+## Suma de Poisson independientes
+
+Si
+
+$$
+X\sim\operatorname{Poisson}(\lambda_1),
+\qquad
+Y\sim\operatorname{Poisson}(\lambda_2)
+$$
+
+son independientes, entonces
+
+$$
+G_{X+Y}(s)=G_X(s)G_Y(s)
+=\exp\{(\lambda_1+\lambda_2)(s-1)\}.
+$$
+
+Por unicidad de la función generadora,
+
+$$
+\boxed{X+Y\sim\operatorname{Poisson}(\lambda_1+\lambda_2)}.
+$$
+
+El resultado se extiende a cualquier suma finita de variables Poisson independientes.
+
+## Límite de Poisson de la binomial
+
+Sea
+
+$$
+X_n\sim\operatorname{Binomial}(n,p_n),
+$$
+
+y supongamos
+
+$$
+np_n\to\lambda>0.
+$$
+
+Para $x$ fijo,
+
+$$
+P(X_n=x)
+=\binom nx p_n^x(1-p_n)^{n-x}.
+$$
+
+Tomando, por simplicidad, $p_n=\lambda/n$,
+
+$$
+P(X_n=x)
+=\frac{n(n-1)\cdots(n-x+1)}{x!}
+\left(\frac{\lambda}{n}\right)^x
+\left(1-\frac{\lambda}{n}\right)^{n-x}.
+$$
+
+Cuando $n\to\infty$,
+
+$$
+\frac{n(n-1)\cdots(n-x+1)}{n^x}\to1
+$$
+
+y
+
+$$
+\left(1-\frac{\lambda}{n}\right)^n\to e^{-\lambda}.
+$$
+
+Por tanto,
+
+$$
+\boxed{
+P(X_n=x)\to e^{-\lambda}\frac{\lambda^x}{x!}
+}.
+$$
+
+Éste es el teorema límite de Poisson para eventos raros.
+
+## Interpretación de $\lambda$
+
+El parámetro $\lambda$ representa el número esperado de eventos en el intervalo considerado. Si existe una tasa $r$ por unidad y el intervalo tiene longitud $t$, se modela habitualmente con
+
+$$
+\lambda=rt.
+$$
+
+Esta interpretación anticipa el proceso de Poisson, que requiere una teoría adicional sobre conteos en intervalos disjuntos y tiempos de llegada.
+
+## Diferencias estructurales
+
+La hipergeométrica surge de un espacio finito con muestreo sin reemplazo. La Poisson posee soporte infinito y suele aparecer como límite de conteos binomiales de eventos raros. La primera exhibe dependencia negativa entre extracciones; la segunda se caracteriza por igualdad entre media y varianza.
+
+## Ejercicios
+
+1. Demuestra la normalización hipergeométrica usando la identidad de Vandermonde.
+2. Obtén $E[X]$ de la hipergeométrica mediante variables indicadoras.
+3. Deriva la covarianza entre dos indicadores de extracciones sin reemplazo.
+4. A partir del ejercicio anterior, demuestra la fórmula de la varianza hipergeométrica.
+5. Demuestra la normalización de la distribución Poisson mediante la serie de $e^\lambda$.
+6. Obtén $E[X(X-1)]$ para $X\sim\operatorname{Poisson}(\lambda)$.
+7. Usa el resultado anterior para demostrar que $\operatorname{Var}(X)=\lambda$.
+8. Demuestra el resultado de suma de Poisson independientes usando funciones generadoras.
+9. Demuestra el límite binomial–Poisson para $p_n=\lambda/n$.
+10. **Reto.** Discute por qué la varianza hipergeométrica tiende a la binomial cuando $N\to\infty$ con $K/N\to p$ y $n$ fijo.
+
+## Referencias del capítulo
+
+El desarrollo teórico de las distribuciones hipergeométrica y de Poisson, sus momentos y resultados límite sigue el tratamiento estándar de @walpole2012, @devore2016, @montgomery2018 y @johnson2018.
