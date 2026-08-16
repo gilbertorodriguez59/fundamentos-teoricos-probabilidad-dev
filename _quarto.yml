@@ -30,6 +30,7 @@ book:
     - 11-distribuciones-discretas-especiales.qmd
     - 12-hipergeometrica-poisson.qmd
     - 13-distribuciones-continuas-especiales.qmd
+    - 14-gamma-weibull-beta.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
