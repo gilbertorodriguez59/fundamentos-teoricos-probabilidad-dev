@@ -29,6 +29,7 @@ book:
     - 10-esperanza-varianza-chebyshev.qmd
     - 11-distribuciones-discretas-especiales.qmd
     - 12-hipergeometrica-poisson.qmd
+    - 13-distribuciones-continuas-especiales.qmd
     - references.qmd
   page-footer:
     center: "Licencia CC BY-NC-SA 4.0"
